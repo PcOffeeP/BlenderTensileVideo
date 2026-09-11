@@ -3,12 +3,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 from pathlib import Path
 
 LABEL_KEYS = (
     "video_id", "has_fracture", "fracture_time_s", "fracture_mechanism",
-    "fracture_site", "special_case", "material_type", "seed",
+    "fracture_site", "special_case", "material_type", "generator_version", "seed",
 )
 
 
@@ -31,8 +32,9 @@ def make_labels(config: dict, contract: dict) -> dict:
             raise ValueError(f"Illegal contract enum: {key}")
     if label["material_type"] != "金属" or type(label["seed"]) is not int or label["seed"] != 1001:
         raise ValueError("Material and seed differ from the frozen prototype")
-    return {"schema_version": "synthetic-tensile-video/v0.1", **label,
-            "generator_version": "blender-tensile/v0.1"}
+    if not re.fullmatch(r"blender-tensile/v\d+\.\d+", label["generator_version"]):
+        raise ValueError("Invalid generator_version")
+    return {"schema_version": "synthetic-tensile-video/v0.1", **label}
 
 
 def main() -> None:

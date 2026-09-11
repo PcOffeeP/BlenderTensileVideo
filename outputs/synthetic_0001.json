@@ -7,6 +7,6 @@
   "fracture_site": "inside_gauge",
   "special_case": null,
   "material_type": "金属",
-  "seed": 1001,
-  "generator_version": "blender-tensile/v0.1"
+  "generator_version": "blender-tensile/v0.2",
+  "seed": 1001
 }

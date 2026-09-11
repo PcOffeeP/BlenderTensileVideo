@@ -15,10 +15,10 @@ Non-goals:
 ## 文档
 
 - [整体生成任务书](docs/phase-1-task.md)：保留原文，作为后续生成工作的目标、标签语义与交付边界依据。
-- [MVP 约束与过程总结](docs/MVP.md)：目标、冻结场景、动画与标签、生成验收、当前状态及后续修正方向。
+- [MVP 约束与过程总结](docs/MVP.md)：目标、冻结场景、v0.2 动画与标签、生成验收及当前状态。
 - [首条 QA 报告](docs/qa-synthetic_0001.md)：视频及标签检查结果、独立复核与接入限制。
 
-当前金属断裂动态观感的修正方向已确认，尚未实施；本轮 QA 结论不代表该修正已完成。
+v0.2 已将最终断离改为短促的局部卸载：7.0 秒首次完全断离，自由断口在随后三帧有限回缩，夹持端保持锚定，之后不反弹。
 
 首条 [完整视频](outputs/synthetic_0001.mp4) 和 [视频级标签](outputs/synthetic_0001.json) 已生成，单视频质量检查通过。下游直接读取同名 JSON 的接入验收尚未完成；完成本条后停止，未进行批量生成。
 
@@ -36,7 +36,7 @@ Non-goals:
 /Applications/Blender.app/Contents/MacOS/Blender --background --python scripts/build_golden_prototype.py -- --stage keyframes
 ```
 
-检查 `artifacts/previews/` 的初始、颈缩、断前相邻帧、首次完全断离、断后五张预览，再正式渲染：
+检查 `artifacts/previews/` 的初始、颈缩、断前相邻帧、首次完全断离、三帧卸载过程和稳定断后状态，再正式渲染：
 
 ```bash
 /Applications/Blender.app/Contents/MacOS/Blender --background --python scripts/build_golden_prototype.py -- --stage final

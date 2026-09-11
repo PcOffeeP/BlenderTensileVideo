@@ -13,7 +13,7 @@
   "fracture_mechanism": "韧性断裂",
   "fracture_site": "inside_gauge",
   "special_case": null,
-  "generator_version": "blender-tensile/v0.1",
+  "generator_version": "blender-tensile/v0.2",
   "specimen_template": "flat_dogbone_v1",
   "material_profile": "neutral_brushed_metal_v1",
   "machine_template": "dual_grip_machine_l1_v1",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the deterministic v0.1 flat-dogbone tensile Golden Prototype.
+"""Build the deterministic v0.2 flat-dogbone tensile Golden Prototype.
 
 Run from the repository root:
   /Applications/Blender.app/Contents/MacOS/Blender --background --python \
@@ -64,13 +64,31 @@ def deformation_at(t):
 def upper_displacement_at(t):
     if t < 7.0:
         return deformation_at(t)[0]
-    # A small deterministic post-fracture pull continues after separation.
-    return 0.99 + 0.09 * min(1.0, (t - 7.0) / 3.0)
+    # Continue the pre-break crosshead motion without a jump. The rapid motion
+    # after fracture comes from local elastic unloading, not a fixture jump.
+    return 0.95 + 0.09 * min(1.0, (t - 7.0) / 3.0)
 
 
 def smoothstep(x):
     x = max(0.0, min(1.0, x))
     return x * x * (3.0 - 2.0 * x)
+
+
+# Frame 211 (7.0 s) is already visibly open. During the next three frames,
+# each free end unloads 0.14 W toward its own grip. The local displacement
+# decays to zero at the shoulder/grip boundary, keeping every clamped end
+# anchored and avoiding a long, polymer-like rebound.
+FRACTURE_HALF_GAP_W = 0.10
+FREE_END_RECOIL_W = 0.14
+RECOIL_DURATION_S = 3.0 / FPS
+
+
+def recoil_at(t):
+    if t <= 7.0:
+        return 0.0
+    p = min(1.0, (t - 7.0) / RECOIL_DURATION_S)
+    # Front-loaded release: 56% after one frame, 89% after two, complete at 3.
+    return FREE_END_RECOIL_W * (1.0 - (1.0 - p) ** 2)
 
 
 def gauge_width(z, centre, neck):
@@ -119,24 +137,28 @@ def profile_points(t, half=None):
 
     if half == "lower":
         refs = [item for item in full if item[0] <= 0.0]
-        left = [(-deformed_width(z, x), mapped(z)) for z, x in refs]
+        def lower_unload(z):
+            return -recoil_at(t) * max(0.0, min(1.0, (z + 2.0) / 2.0))
+        left = [(-deformed_width(z, x), mapped(z) + lower_unload(z)) for z, x in refs]
         centre = 0.5 * stretch
         end_width = gauge_width(centre, centre, neck)
-        # The first separated edge is inside the necked mid-gauge and slightly
-        # irregular, while retaining a clearly visible background gap.
-        left[-1] = (-end_width, centre - 0.16 - 0.025)
-        right = [(deformed_width(z, x), mapped(z)) for z, x in reversed(refs)]
-        right[0] = (end_width, centre - 0.16 + 0.030)
+        cut_z = centre - FRACTURE_HALF_GAP_W - recoil_at(t)
+        left[-1] = (-end_width, cut_z - 0.015)
+        right = [(deformed_width(z, x), mapped(z) + lower_unload(z)) for z, x in reversed(refs)]
+        right[0] = (end_width, cut_z + 0.015)
         return left + right
     if half == "upper":
         refs = [item for item in full if item[0] >= 0.0]
         delta = upper_displacement_at(t) - stretch
-        left = [(-deformed_width(z, x), mapped(z) + delta) for z, x in refs]
+        def upper_unload(z):
+            return recoil_at(t) * max(0.0, min(1.0, (2.0 - z) / 2.0))
+        left = [(-deformed_width(z, x), mapped(z) + delta + upper_unload(z)) for z, x in refs]
         centre = 0.5 * stretch
         start_width = gauge_width(centre, centre, neck)
-        left[0] = (-start_width, centre + delta + 0.16 + 0.030)
-        right = [(deformed_width(z, x), mapped(z) + delta) for z, x in reversed(refs)]
-        right[-1] = (start_width, centre + delta + 0.16 - 0.025)
+        cut_z = centre + delta + FRACTURE_HALF_GAP_W + recoil_at(t)
+        left[0] = (-start_width, cut_z + 0.015)
+        right = [(deformed_width(z, x), mapped(z) + delta + upper_unload(z)) for z, x in reversed(refs)]
+        right[-1] = (start_width, cut_z - 0.015)
         return left + right
 
     left = [(-deformed_width(z, x), mapped(z)) for z, x in full]
@@ -348,6 +370,28 @@ def write_geometry_evidence(objects, digest):
     crosshead_extent = GRIP_OUTER_Z + 0.18 + 0.26
     upper_final = crosshead_extent + upper_displacement_at(t_for_frame(300))
     total_height = upper_final - (-crosshead_extent)
+    def break_state(frame):
+        t = t_for_frame(frame)
+        stretch, _ = deformation_at(min(t, 7.0))
+        fixture_delta = upper_displacement_at(t) - stretch
+        recoil = recoil_at(t) if frame >= FRACTURE_FRAME else 0.0
+        return {
+            "frame": frame,
+            "time_s": round(t, 6),
+            "connected_components": 1 if frame <= LAST_CONTINUOUS_FRAME else 2,
+            "fixture_delta_w": round(fixture_delta, 6),
+            "free_end_recoil_w_each": round(recoil, 6),
+            "lower_free_end_z_w": round(0.5 * stretch - FRACTURE_HALF_GAP_W - recoil, 6) if frame >= FRACTURE_FRAME else None,
+            "upper_free_end_z_w": round(0.5 * stretch + fixture_delta + FRACTURE_HALF_GAP_W + recoil, 6) if frame >= FRACTURE_FRAME else None,
+            # Each deliberately irregular cut edge intrudes 0.015 W toward the
+            # gap, so this records the closest rendered silhouette distance.
+            "minimum_central_gap_w": round(fixture_delta + 2.0 * FRACTURE_HALF_GAP_W + 2.0 * recoil - 0.03, 6) if frame >= FRACTURE_FRAME else 0.0,
+            "grip_anchor_recoil_w": 0.0,
+            "lower_shoulder_anchor_z_w": -2.0,
+            "upper_shoulder_anchor_z_w": round(2.0 + upper_displacement_at(t), 6),
+            "anchors_match_grip_motion": True,
+        }
+
     evidence = {
         "config_sha256": hashlib.sha256(CONFIG_PATH.read_bytes()).hexdigest(),
         "geometry_sha256": digest,
@@ -388,6 +432,18 @@ def write_geometry_evidence(objects, digest):
             "grip_length_w": 1.5,
         },
         "key_times": {"frame_210_s": t_for_frame(210), "frame_211_s": t_for_frame(211)},
+        "component_count_by_frame_range": [
+            {"frames": [1, LAST_CONTINUOUS_FRAME], "connected_components": 1},
+            {"frames": [FRACTURE_FRAME, 300], "connected_components": 2},
+        ],
+        "v0_2_unloading": {
+            "design_reason": "Local free-end unloading makes final ductile separation read as a short metal-like release while retaining necking and anchored grips.",
+            "cut_half_gap_w": FRACTURE_HALF_GAP_W,
+            "free_end_recoil_w_each": FREE_END_RECOIL_W,
+            "recoil_duration_frames": 3,
+            "recoil_duration_s": RECOIL_DURATION_S,
+            "states": [break_state(frame) for frame in (210, 211, 212, 213, 214, 220, 271)],
+        },
     }
     (SCENE_DIR / "synthetic_0001_geometry_evidence.json").write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")
 
@@ -427,7 +483,7 @@ def build():
     bpy.context.scene["last_continuous_frame"] = LAST_CONTINUOUS_FRAME
     bpy.context.scene["time_mapping"] = "t=(frame-1)/30"
     if STAGE == "keyframes":
-        for frame, name in [(1, "state_initial_f001.png"), (196, "state_necking_f196.png"), (210, "state_continuous_f210.png"), (211, "state_first_fracture_f211.png"), (271, "state_post_fracture_f271.png")]:
+        for frame, name in [(1, "state_initial_f001.png"), (196, "state_necking_f196.png"), (205, "state_late_necking_f205.png"), (210, "state_continuous_f210.png"), (211, "state_first_fracture_f211.png"), (212, "state_unloading_f212.png"), (214, "state_unloading_complete_f214.png"), (220, "state_stable_post_fracture_f220.png"), (271, "state_post_fracture_f271.png")]:
             render_still(frame, name)
         bpy.ops.wm.save_as_mainfile(filepath=str(SCENE_DIR / "synthetic_0001_animated.blend"))
     elif STAGE == "final":
