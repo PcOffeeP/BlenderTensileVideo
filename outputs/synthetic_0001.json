@@ -1,0 +1,12 @@
+{
+  "schema_version": "synthetic-tensile-video/v0.1",
+  "video_id": "synthetic_0001",
+  "has_fracture": true,
+  "fracture_time_s": 7.0,
+  "fracture_mechanism": "韧性断裂",
+  "fracture_site": "inside_gauge",
+  "special_case": null,
+  "material_type": "金属",
+  "seed": 1001,
+  "generator_version": "blender-tensile/v0.1"
+}

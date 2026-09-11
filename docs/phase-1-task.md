@@ -216,3 +216,4 @@ Codex 完成后应自动检查：
 
 验收结果：
 - 每项 Acceptance Criteria 的通过/失败状态
+```

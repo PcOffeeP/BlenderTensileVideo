@@ -2,3 +2,8 @@
 __pycache__/
 *.py[cod]
 .venv/
+
+# Reproducible render intermediates and Blender backups
+artifacts/
+*.blend1
+*.blend2
