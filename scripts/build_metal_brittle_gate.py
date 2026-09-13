@@ -24,7 +24,10 @@ FRAME_INITIAL = 1
 FRAME_PRE = 180
 FRAME_FIRST_SEPARATED = 181
 FRAME_POST = 210
-GAP_AT_FIRST = 0.62
+GAP_AT_FIRST = CFG["implementation"]["initial_separation_gap_w"]
+POST_FRACTURE_FIXTURE_SHIFT = CFG["implementation"]["post_fracture_fixture_shift_w"]
+RELEASE_DURATION_FRAMES = CFG["implementation"]["local_release_duration_frames"]
+RELEASE_EXTRA_GAP = CFG["implementation"]["local_release_extra_gap_w"]
 SHOULDER_RADIUS = 0.80
 SHOULDER_ANGLE = math.acos(0.75)
 SHOULDER_TOP_Z = 2.0 + 2.0 * SHOULDER_RADIUS * math.sin(SHOULDER_ANGLE)
@@ -90,7 +93,13 @@ def extruded_profile(name, points_xz, material):
 
 def upper_shift(frame):
     """Finite, uniform-gauge elongation: no ductile necking."""
-    return 0.42 * min(1.0, (frame - 1) / (FRAME_PRE - 1)) + max(0, frame - FRAME_FIRST_SEPARATED) * 0.0015
+    return POST_FRACTURE_FIXTURE_SHIFT * min(1.0, (frame - 1) / (FRAME_PRE - 1))
+
+
+def separation_gap(frame):
+    """Initial brittle gap plus a short, local three-frame release only."""
+    release = min(1.0, max(0.0, frame - FRAME_FIRST_SEPARATED) / RELEASE_DURATION_FRAMES)
+    return GAP_AT_FIRST + RELEASE_EXTRA_GAP * release
 
 
 def golden_outline(frame, half=None, gap=0.0):
@@ -205,7 +214,7 @@ def render_state(frame, filename, separated=False):
     setup_render()
     build_machine(machine, jaw, frame)
     if separated:
-        separated_specimen(specimen, frame, GAP_AT_FIRST + 0.010 * (frame - FRAME_FIRST_SEPARATED))
+        separated_specimen(specimen, frame, separation_gap(frame))
     else:
         continuous_specimen(specimen, frame)
     bpy.context.scene.frame_set(frame)
@@ -215,8 +224,8 @@ def render_state(frame, filename, separated=False):
 
 def write_gate_note():
     checks = []
-    for frame in (FRAME_FIRST_SEPARATED, FRAME_POST, 240, 270, 300):
-        target_gap = GAP_AT_FIRST + 0.010 * (frame - FRAME_FIRST_SEPARATED)
+    for frame in (FRAME_FIRST_SEPARATED, 184, FRAME_POST, 240, 270, 300):
+        target_gap = separation_gap(frame)
         lower = golden_outline(frame, "lower", target_gap)
         upper = golden_outline(frame, "upper", target_gap)
         lower_count = sum(1 for z, _ in [(-GRIP_OUTER_Z, 0.90), (-SHOULDER_TOP_Z, 0.90)] if z <= 0) + 1
@@ -242,13 +251,13 @@ Fixed camera: orthographic frontal view.  FPS: {FPS}; time mapping: `t=(frame-1)
 | initial | {FRAME_INITIAL} | {t_for_frame(FRAME_INITIAL):.6f} | 1 | one watertight dog-bone mesh |
 | pre-fracture | {FRAME_PRE} | {t_for_frame(FRAME_PRE):.6f} | 1 | one watertight dog-bone mesh; uniform 1.00-unit gauge, no neck |
 | first separation | {FRAME_FIRST_SEPARATED} | {t_for_frame(FRAME_FIRST_SEPARATED):.6f} | 2 | `Specimen_Lower_Component` and `Specimen_Upper_Component` have no shared vertices; central gap = {GAP_AT_FIRST:.2f} units |
-| post-fracture | {FRAME_POST} | {t_for_frame(FRAME_POST):.6f} | 2 | independent components; central gap grows while grip anchors remain visible |
+| post-fracture | {FRAME_POST} | {t_for_frame(FRAME_POST):.6f} | 2 | independent components; the short local release is complete and the gap is stable |
 
 The relevant geometric proof is direct in this script: `continuous_specimen()` creates one mesh through frame {FRAME_PRE}; `separated_specimen()` is first called at frame {FRAME_FIRST_SEPARATED} and creates two separate meshes. This is a still-frame design gate only, not an MP4, label sidecar, or physical fracture simulation.
 
 ## Post-break geometry validation
 
-The release displacement is linear from the cut to the shoulder (`z=±2`), with a zero release at each shoulder/grip anchor. The table uses actual extrema of the two generated outlines; monotonicity means each cut-to-shoulder chain has strictly increasing Z and therefore has no Z-direction fold-back.
+The release displacement is linear from the cut to the shoulder (`z=±2`), with a zero release at each shoulder/grip anchor. It completes over {RELEASE_DURATION_FRAMES} frames and adds at most {RELEASE_EXTRA_GAP:.2f} W; the upper fixture freezes at {POST_FRACTURE_FIXTURE_SHIFT:.2f} W from f181 onward. The table uses actual extrema of the two generated outlines; monotonicity means each cut-to-shoulder chain has strictly increasing Z and therefore has no Z-direction fold-back.
 
 | frame | requested central gap | actual component bbox Z gap | no fold-back |
 |---:|---:|---:|---|
@@ -260,6 +269,7 @@ The release displacement is linear from the cut to the shoulder (`z=±2`), with 
 render_state(FRAME_INITIAL, "state_initial_f001.png")
 render_state(FRAME_PRE, "state_prefracture_f180.png")
 render_state(FRAME_FIRST_SEPARATED, "state_first_separation_f181.png", separated=True)
+render_state(184, "validation_f184.png", separated=True)
 render_state(FRAME_POST, "state_postfracture_f210.png", separated=True)
 for _frame in (240, 270, 300):
     render_state(_frame, f"validation_f{_frame:03d}.png", separated=True)

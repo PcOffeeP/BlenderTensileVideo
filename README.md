@@ -60,7 +60,7 @@ python3 scripts/check_continuity.py outputs/synthetic_0001.mp4
 
 ## 金属脆性断裂单条候选
 
-`configs/synthetic_0002.json` 为首个新机制原型：保持现有金属试样、夹具、正面机位及中性光照，在第 181 帧（6.0 秒）首次完全断离；此候选尚不计入 70/18 的正式批次。先检查关键帧，再渲染完整视频：
+`configs/synthetic_0002.json` 为首个新机制原型：保持现有金属试样、夹具、正面机位及中性光照，在第 181 帧（6.0 秒）首次完全断离。上夹具在断离时停止，断口只作短暂局部卸载，随后间隙稳定；此候选尚不计入 70/18 的正式批次。先检查关键帧，再渲染完整视频：
 
 ```bash
 /Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python scripts/build_metal_brittle_gate.py

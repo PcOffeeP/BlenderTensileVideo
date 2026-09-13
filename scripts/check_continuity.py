@@ -37,7 +37,7 @@ def inspect(video: Path, config: dict) -> dict:
     passed = (len(frames) == frame_count and first == first_expected
               and bool(np.all(gap_counts[:first_expected] == 0))
               and bool(np.all(gap_counts[first_expected:] >= 2)))
-    return {
+    report = {
         "method": "Fixed mid-gauge ROI, center strip vs neutral background, 20 gray-level contrast threshold",
         "roi_xywh": [377, 200, 100, 100],
         "frames": len(frames),
@@ -52,6 +52,37 @@ def inspect(video: Path, config: dict) -> dict:
         "minimum_postfracture_gap_rows": int(gap_counts[first_expected:].min()),
         "limitation": "Valid only for this fixed camera, neutral background and unoccluded specimen; corroborate with geometry and manual frame inspection.",
     }
+    if config["implementation"].get("post_fracture_fixture_motion") == "freeze_at_fracture":
+        # The top crosshead is isolated from the specimen in this fixed scene.
+        # Track its dark top edge in every decoded frame, rather than trusting
+        # fixture keyframes alone. The old, continuously driven video moves it
+        # several pixels after f181 and should fail this check.
+        fixture_raw = subprocess.check_output([
+            "ffmpeg", "-v", "error", "-i", str(video), "-vf",
+            "crop=240:90:307:55,format=gray", "-f", "rawvideo", "-"
+        ])
+        fixture_frames = np.frombuffer(fixture_raw, dtype=np.uint8).reshape(-1, 90, 240)
+        top_edges = []
+        for fixture_frame in fixture_frames:
+            ys = np.flatnonzero(np.any(fixture_frame[:50, 15:225] < 55, axis=1))
+            top_edges.append(int(ys[0]) if len(ys) else None)
+        post_edges = top_edges[first_expected:]
+        stopped = (len(top_edges) == frame_count and all(y is not None for y in post_edges)
+                   and max(post_edges) - min(post_edges) <= 1)
+        release_end = first_expected + config["implementation"]["local_release_duration_frames"]
+        steady_gap_rows = gap_counts[release_end:]
+        steady_gap = (len(steady_gap_rows) > 0
+                      and int(steady_gap_rows.max() - steady_gap_rows.min()) <= 2)
+        report["fixture_stop"] = {
+            "passed": stopped and steady_gap,
+            "method": "Top crosshead edge in fixed frontal ROI, dark-pixel threshold 55; post-fracture drift at most one encoded pixel; post-release gap variation at most two pixel rows",
+            "crosshead_top_y_first_separated": top_edges[first_expected],
+            "crosshead_top_y_last_frame": top_edges[-1],
+            "post_fracture_crosshead_range_px": None if not all(y is not None for y in post_edges) else max(post_edges) - min(post_edges),
+            "post_release_gap_range_rows": None if not len(steady_gap_rows) else int(steady_gap_rows.max() - steady_gap_rows.min()),
+        }
+        report["passed"] = report["passed"] and stopped and steady_gap
+    return report
 
 
 if __name__ == "__main__":

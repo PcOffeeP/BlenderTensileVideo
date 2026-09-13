@@ -1,9 +1,9 @@
 """Render the single deterministic metal-brittle prototype from its config.
 
 Run from the repository root:
-  /Applications/Blender.app/Contents/MacOS/Blender --background --python \
+  /Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python \
     scripts/build_metal_brittle_video.py -- --stage keyframes
-  /Applications/Blender.app/Contents/MacOS/Blender --background --python \
+  /Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python \
     scripts/build_metal_brittle_video.py -- --stage video
 
 `keyframes` renders the four visual gate states. `video` renders an ignored
@@ -14,6 +14,7 @@ import math
 import json
 import sys
 import hashlib
+import os
 import bpy
 from mathutils import Vector
 
@@ -43,6 +44,9 @@ if any(CFG.get(key) != value for key, value in EXPECTED_PROFILE.items()):
 FPS = CFG["fps"]
 TOTAL_FRAMES = int(round(CFG["duration_s"] * FPS))
 THICKNESS_W = CFG["implementation"]["thickness_w"]
+POST_FRACTURE_FIXTURE_SHIFT = CFG["implementation"]["post_fracture_fixture_shift_w"]
+RELEASE_DURATION_FRAMES = CFG["implementation"]["local_release_duration_frames"]
+RELEASE_EXTRA_GAP = CFG["implementation"]["local_release_extra_gap_w"]
 EXPECTED_DIMENSIONS = {
     "gauge_width_w": 1.0,
     "gauge_length_w": 4.0,
@@ -50,6 +54,11 @@ EXPECTED_DIMENSIONS = {
     "grip_width_w": 1.8,
     "grip_length_w": 1.5,
     "shoulder_radius_w": 0.8,
+    "post_fracture_fixture_motion": "freeze_at_fracture",
+    "post_fracture_fixture_shift_w": 0.42,
+    "initial_separation_gap_w": 0.62,
+    "local_release_duration_frames": 3,
+    "local_release_extra_gap_w": 0.10,
 }
 if any(CFG["implementation"].get(key) != value for key, value in EXPECTED_DIMENSIONS.items()):
     raise ValueError("synthetic_0002 dimensions must match the frozen L1 metal scene")
@@ -57,7 +66,7 @@ FRAME_INITIAL = 1
 FRAME_PRE = CFG["implementation"]["last_continuous_frame"]
 FRAME_FIRST_SEPARATED = CFG["implementation"]["fracture_frame"]
 FRAME_POST = 210
-GAP_AT_FIRST = 0.62
+GAP_AT_FIRST = CFG["implementation"]["initial_separation_gap_w"]
 SHOULDER_RADIUS = 0.80
 SHOULDER_ANGLE = math.acos(0.75)
 SHOULDER_TOP_Z = 2.0 + 2.0 * SHOULDER_RADIUS * math.sin(SHOULDER_ANGLE)
@@ -132,7 +141,13 @@ def extruded_profile(name, points_xz, material):
 
 def upper_shift(frame):
     """Finite, uniform-gauge elongation: no ductile necking."""
-    return 0.42 * min(1.0, (frame - 1) / (FRAME_PRE - 1)) + max(0, frame - FRAME_FIRST_SEPARATED) * 0.0015
+    return POST_FRACTURE_FIXTURE_SHIFT * min(1.0, (frame - 1) / (FRAME_PRE - 1))
+
+
+def separation_gap(frame):
+    """Initial brittle gap plus only a short local free-end release."""
+    release = min(1.0, max(0.0, frame - FRAME_FIRST_SEPARATED) / RELEASE_DURATION_FRAMES)
+    return GAP_AT_FIRST + RELEASE_EXTRA_GAP * release
 
 
 def golden_outline(frame, half=None, gap=0.0):
@@ -260,7 +275,7 @@ def setup_animated_scene():
         if frame <= FRAME_PRE:
             objects.append(continuous_specimen(specimen, frame))
         else:
-            gap = GAP_AT_FIRST + 0.010 * (frame - FRAME_FIRST_SEPARATED)
+            gap = separation_gap(frame)
             objects.extend(separated_specimen(specimen, frame, gap))
         for obj in objects[-1:] if frame <= FRAME_PRE else objects[-2:]:
             obj.hide_render = True
@@ -280,7 +295,9 @@ def render_gate_states(scene):
     for frame, name in [(FRAME_INITIAL, "synthetic_0002_state_initial_f001.png"),
                         (FRAME_PRE, "synthetic_0002_state_prefracture_f180.png"),
                         (FRAME_FIRST_SEPARATED, "synthetic_0002_state_first_separation_f181.png"),
-                        (FRAME_POST, "synthetic_0002_state_postfracture_f210.png")]:
+                        (184, "synthetic_0002_state_release_complete_f184.png"),
+                        (FRAME_POST, "synthetic_0002_state_postfracture_f210.png"),
+                        (TOTAL_FRAMES, "synthetic_0002_state_postfracture_f300.png")]:
         scene.frame_set(frame)
         scene.render.image_settings.file_format = "PNG"
         scene.render.filepath = str(OUT / name)
@@ -295,10 +312,17 @@ def render_video(scene):
     scene.render.ffmpeg.codec = "H264"
     scene.render.ffmpeg.constant_rate_factor = "MEDIUM"
     scene.render.ffmpeg.ffmpeg_preset = "REALTIME"
-    scene.render.filepath = str(OUT / (CFG["video_id"] + ".mp4"))
+    video = OUT / (CFG["video_id"] + ".mp4")
+    temporary_video = OUT / (CFG["video_id"] + ".rendering.mp4")
+    if temporary_video.exists():
+        temporary_video.unlink()
+    scene.render.filepath = str(temporary_video)
     scene.frame_set(1)
     bpy.ops.render.render(animation=True)
-    video = OUT / (CFG["video_id"] + ".mp4")
+    # Blender has closed the MP4 only after animation render returns. Promote
+    # the finished temporary file atomically, keeping an existing candidate
+    # intact if an interrupted render never returns.
+    os.replace(temporary_video, video)
     evidence = {
         "schema_version": "synthetic-render-evidence/v0.1",
         "video_id": CFG["video_id"],
