@@ -13,8 +13,15 @@ LABEL_KEYS = (
     "fracture_site", "special_case", "material_type", "generator_version", "seed",
 )
 
-MATERIAL_BY_SCENE_PROFILE = {
-    "metal_flat_dogbone_l1_front_v1": ("金属", "neutral_brushed_metal_v1"),
+MATERIAL_PROFILES_BY_SCENE = {
+    "metal_flat_dogbone_l1_front_v1": {
+        "金属": {"neutral_brushed_metal_v1"},
+    },
+    "major_fractures_review_v1": {
+        "金属": {"neutral_brushed_metal_v1"},
+        "高分子": {"matte_polymer_gray_v1"},
+        "复材": {"laminate_composite_neutral_v1"},
+    },
 }
 
 
@@ -51,8 +58,8 @@ def make_labels(config: dict, contract: dict) -> dict:
             raise ValueError(f"Normal fracture requires {key}")
         if label[key] is not None and label[key] not in contract[enum_key]:
             raise ValueError(f"Illegal contract enum: {key}")
-    material_profile = MATERIAL_BY_SCENE_PROFILE.get(config.get("scene_profile_id"))
-    if material_profile is None or (label["material_type"], config.get("material_profile")) != material_profile:
+    material_profiles = MATERIAL_PROFILES_BY_SCENE.get(config.get("scene_profile_id"), {})
+    if config.get("material_profile") not in material_profiles.get(label["material_type"], set()):
         raise ValueError("Material label must match the frozen scene and material profile")
     if type(label["seed"]) is not int or label["seed"] < 0:
         raise ValueError("seed must be a nonnegative integer")
