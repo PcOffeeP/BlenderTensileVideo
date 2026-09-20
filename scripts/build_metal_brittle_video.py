@@ -38,6 +38,7 @@ EXPECTED_PROFILE = {
     "tensile_axis": "Z",
     "moving_component": "Grip_Upper",
     "fixed_component": "Grip_Lower",
+    "generator_version": "blender-tensile/v0.5",
 }
 if any(CFG.get(key) != value for key, value in EXPECTED_PROFILE.items()):
     raise ValueError("synthetic_0002 metal-brittle scene/material configuration required")
@@ -67,6 +68,16 @@ FRAME_PRE = CFG["implementation"]["last_continuous_frame"]
 FRAME_FIRST_SEPARATED = CFG["implementation"]["fracture_frame"]
 FRAME_POST = 210
 GAP_AT_FIRST = CFG["implementation"]["initial_separation_gap_w"]
+FRACTURE_PROFILE = CFG["implementation"]["fracture_profile"]
+if FRACTURE_PROFILE.get("id") != "metal_brittle_complementary_irregular_v1":
+    raise ValueError("synthetic_0002 requires the frozen v0.5 metal brittle fracture profile")
+FRACTURE_POINTS = tuple((float(x), float(z)) for x, z in FRACTURE_PROFILE["x_z_points_w"])
+EXPECTED_FRACTURE_POINTS = (
+    (-0.50, -0.050), (-0.37, -0.025), (-0.23, -0.065), (-0.07, 0.040),
+    (0.12, 0.015), (0.27, 0.075), (0.39, 0.035), (0.50, 0.060),
+)
+if FRACTURE_POINTS != EXPECTED_FRACTURE_POINTS or FRACTURE_PROFILE.get("edge_bevel_w") != 0.014:
+    raise ValueError("synthetic_0002 fracture profile parameters must match the frozen v0.5 scene")
 SHOULDER_RADIUS = 0.80
 SHOULDER_ANGLE = math.acos(0.75)
 SHOULDER_TOP_Z = 2.0 + 2.0 * SHOULDER_RADIUS * math.sin(SHOULDER_ANGLE)
@@ -118,7 +129,7 @@ def cube(name, location, scale, material):
     return obj
 
 
-def extruded_profile(name, points_xz, material):
+def extruded_profile(name, points_xz, material, bevel_width=0.035):
     """One watertight mesh, extruded along Y; point order follows perimeter."""
     depth = THICKNESS_W
     vertices = [(x, -depth / 2, z) for x, z in points_xz] + [(x, depth / 2, z) for x, z in points_xz]
@@ -134,7 +145,7 @@ def extruded_profile(name, points_xz, material):
     obj = bpy.data.objects.new(name, mesh)
     bpy.context.collection.objects.link(obj)
     bevel = obj.modifiers.new("Micro_Edge", "BEVEL")
-    bevel.width = 0.035
+    bevel.width = bevel_width
     bevel.segments = 2
     return obj
 
@@ -171,7 +182,7 @@ def golden_outline(frame, half=None, gap=0.0):
     def mapped(z):
         return z if z <= -2.0 else z + stretch if z >= 2.0 else z + stretch * (z + 2.0) / 4.0
     if half == "lower":
-        refs = [(z,w) for z,w in full if z <= 0.0]
+        refs = [(z,w) for z,w in full if z < 0.0]
         # Local release has its full value at the cut and falls linearly to
         # zero at the gauge/shoulder boundary (z=-2).  Every neighbouring
         # gauge vertex moves with it, so no hooked or self-crossing outline
@@ -180,16 +191,21 @@ def golden_outline(frame, half=None, gap=0.0):
             release = gap / 2 * max(0.0, min(1.0, (z + 2.0) / 2.0))
             return mapped(z) - release
         left = [(-w, lower_z(z)) for z,w in refs]
+        # The endpoints remain on the 1.00-W gauge edges while the interior
+        # turns form a restrained, non-periodic metal-fracture silhouette.
+        # The upper component uses this same line, offset only by the gap.
+        fracture = [(x, mapped(z) - gap / 2) for x, z in FRACTURE_POINTS]
         right = [(w, lower_z(z)) for z,w in reversed(refs)]
-        return left + right
+        return left + fracture + right
     if half == "upper":
-        refs = [(z,w) for z,w in full if z >= 0.0]
+        refs = [(z,w) for z,w in full if z > 0.0]
         def upper_z(z):
             release = gap / 2 * max(0.0, min(1.0, (2.0 - z) / 2.0))
             return mapped(z) + release
         left = [(-w, upper_z(z)) for z,w in refs]
         right = [(w, upper_z(z)) for z,w in reversed(refs)]
-        return left + right
+        fracture = [(x, mapped(z) + gap / 2) for x, z in FRACTURE_POINTS]
+        return left + right + list(reversed(fracture))
     return [(-w, mapped(z)) for z,w in full] + [(w, mapped(z)) for z,w in reversed(full)]
 
 
@@ -198,8 +214,9 @@ def continuous_specimen(material, frame):
 
 
 def separated_specimen(material, frame, gap):
-    return (extruded_profile("Specimen_Lower_Component", golden_outline(frame, "lower", gap), material),
-            extruded_profile("Specimen_Upper_Component", golden_outline(frame, "upper", gap), material))
+    fracture_bevel = FRACTURE_PROFILE["edge_bevel_w"]
+    return (extruded_profile("Specimen_Lower_Component", golden_outline(frame, "lower", gap), material, fracture_bevel),
+            extruded_profile("Specimen_Upper_Component", golden_outline(frame, "upper", gap), material, fracture_bevel))
 
 
 def build_machine(machine, jaw, frame):

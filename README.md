@@ -5,7 +5,7 @@ Must Preserve:
 - 以 docs/phase-1-task.md 为整体生成工作的上位依据，docs/MVP.md 记录当前阶段的落实与总结。
 - 数据交付为完整 MP4 及同名视频级 JSON；下游接入状态不得冒称通过。
 - 后续合成微调试点的配额和门禁指向独立设计文档，不能把候选参考或目标配额写成已完成产物。
-- 新类别的试验视频在完成门禁前留在 artifacts/，不能与阶段一的正式 outputs/ 混淆；Blender 自动运行要返回可靠错误码。
+- 新类别的试验视频在完成门禁前留在 artifacts/；通过画面、媒体和独立复核后才复制到正式 outputs/；Blender 自动运行要返回可靠错误码。
 Non-goals:
 - 批量生成或替代现有数据处理链路。
 -->
@@ -20,7 +20,7 @@ Non-goals:
 - [MVP 约束与过程总结](docs/MVP.md)：目标、冻结场景、v0.2 动画与标签、生成验收及当前状态。
 - [首条 QA 报告](docs/qa-synthetic_0001.md)：视频及标签检查结果、独立复核与接入限制。
 - [合成微调可行性试点设计](docs/synthetic-pilot-design.md)：88 条目标配额、原型参考门禁、双源数据入口与基座对照试验。
-- [第二条候选 QA 报告](docs/qa-synthetic_0002.md)：金属脆性断裂原型的编码、标签、连续性与复现证据。
+- [第二条 QA 报告](docs/qa-synthetic_0002.md)：金属脆性断裂视频的断口、编码、标签、连续性与复现证据。
 
 v0.2 已将最终断离改为短促的局部卸载：7.0 秒首次完全断离，自由断口在随后三帧有限回缩，夹持端保持锚定，之后不反弹。
 
@@ -58,9 +58,9 @@ python3 scripts/check_continuity.py outputs/synthetic_0001.mp4
 
 视频标签只复用 v4.1 的机制、位置与特殊情况枚举；帧窗口标签、子视频、采样帧和训练 release 继续属于现有数据链路。当前发现该链路源入口读取 CSV，直接读取本项目同名 JSON 的支持仍需单独确认。
 
-## 金属脆性断裂单条候选
+## 金属脆性断裂视频
 
-`configs/synthetic_0002.json` 为首个新机制原型：保持现有金属试样、夹具、正面机位及中性光照，在第 181 帧（6.0 秒）首次完全断离。上夹具在断离时停止，断口只作短暂局部卸载，随后间隙稳定；此候选尚不计入 70/18 的正式批次。先检查关键帧，再渲染完整视频：
+`configs/synthetic_0002.json` 为首个新机制视频：保持现有金属试样、夹具、正面机位及中性光照，在第 181 帧（6.0 秒）首次完全断离。断口采用轻微斜向、非周期性的互补不规则轮廓；上夹具在断离时停止，断口只作短暂局部卸载，随后间隙稳定。先检查关键帧，再渲染完整视频：
 
 ```bash
 /Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python scripts/build_metal_brittle_gate.py
@@ -68,7 +68,7 @@ python3 scripts/check_continuity.py outputs/synthetic_0001.mp4
 /Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python scripts/build_metal_brittle_video.py -- --stage video
 ```
 
-`--python-exit-code 1` 让配置不合法或脚本报错时返回非零退出码，自动构建必须保留此选项。候选完整视频及同名视频级标签保存在 Git 忽略的 `artifacts/prototypes/metal_brittle/`；渲染完成后执行：
+`--python-exit-code 1` 让配置不合法或脚本报错时返回非零退出码，自动构建必须保留此选项。渲染和门禁证据先保存在 Git 忽略的 `artifacts/prototypes/metal_brittle/`；渲染完成后执行：
 
 ```bash
 python3 scripts/write_labels.py --config configs/synthetic_0002.json --contract ../mVllm_2/pipeline/contracts/tensile_vlm_v4_1.json --output-dir artifacts/prototypes/metal_brittle
@@ -77,6 +77,8 @@ python3 scripts/check_continuity.py artifacts/prototypes/metal_brittle/synthetic
 ```
 
 `render-evidence.json` 只用于内部 QA，绑定本次构建的配置、脚本和 MP4 哈希，不属于 Blender 对下游的同名文件交付，也不定义子视频切片。
+
+画面、媒体和独立复核通过后，正式交付为 `outputs/synthetic_0002.mp4` 与 `outputs/synthetic_0002.json`。它们与候选目录中的已验收文件逐字节一致；本条是已完成的单视频原型，尚未计入后续 70/18 批量数据划分。
 
 <!-- DECISION-LOG
 D001 — 曾将规则入口集中指向 docs/MVP.md（已由 D002 替代），运行命令继续保留在 README。
@@ -88,4 +90,6 @@ D003 — 另设后续合成微调试点设计入口，不改写首条 MVP 的运
 Why: 88 条可行性试点包含新的标签覆盖、数据接入和真实对照门禁，不能混作首条 Golden Prototype 的已验收范围。
 D004 — 新类别先以 Git 忽略的单条候选视频验证视觉、标签与媒体；构建命令显式设置 Blender Python 失败退出码。
 Why: 先做可重建原型门禁，并防止自动化在配置不合法而 Blender 默认仍返回零退出码时误用旧视频。
+D005 — 新类别候选通过画面、媒体和独立复核后，才将同名 MP4/JSON 复制到 outputs 作为正式单视频交付。
+Why: artifacts 用于可重建证据和试验候选；用户需要从 outputs 直接找到最终数据文件，候选与正式交付不能混淆。
 -->

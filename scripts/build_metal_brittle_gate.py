@@ -25,6 +25,16 @@ FRAME_PRE = 180
 FRAME_FIRST_SEPARATED = 181
 FRAME_POST = 210
 GAP_AT_FIRST = CFG["implementation"]["initial_separation_gap_w"]
+FRACTURE_PROFILE = CFG["implementation"]["fracture_profile"]
+if FRACTURE_PROFILE.get("id") != "metal_brittle_complementary_irregular_v1":
+    raise ValueError("synthetic_0002 requires the frozen v0.5 metal brittle fracture profile")
+FRACTURE_POINTS = tuple((float(x), float(z)) for x, z in FRACTURE_PROFILE["x_z_points_w"])
+EXPECTED_FRACTURE_POINTS = (
+    (-0.50, -0.050), (-0.37, -0.025), (-0.23, -0.065), (-0.07, 0.040),
+    (0.12, 0.015), (0.27, 0.075), (0.39, 0.035), (0.50, 0.060),
+)
+if FRACTURE_POINTS != EXPECTED_FRACTURE_POINTS or FRACTURE_PROFILE.get("edge_bevel_w") != 0.014:
+    raise ValueError("synthetic_0002 fracture profile parameters must match the frozen v0.5 scene")
 POST_FRACTURE_FIXTURE_SHIFT = CFG["implementation"]["post_fracture_fixture_shift_w"]
 RELEASE_DURATION_FRAMES = CFG["implementation"]["local_release_duration_frames"]
 RELEASE_EXTRA_GAP = CFG["implementation"]["local_release_extra_gap_w"]
@@ -70,7 +80,7 @@ def cube(name, location, scale, material):
     return obj
 
 
-def extruded_profile(name, points_xz, material):
+def extruded_profile(name, points_xz, material, bevel_width=0.035):
     """One watertight mesh, extruded along Y; point order follows perimeter."""
     depth = THICKNESS_W
     vertices = [(x, -depth / 2, z) for x, z in points_xz] + [(x, depth / 2, z) for x, z in points_xz]
@@ -86,7 +96,7 @@ def extruded_profile(name, points_xz, material):
     obj = bpy.data.objects.new(name, mesh)
     bpy.context.collection.objects.link(obj)
     bevel = obj.modifiers.new("Micro_Edge", "BEVEL")
-    bevel.width = 0.035
+    bevel.width = bevel_width
     bevel.segments = 2
     return obj
 
@@ -123,7 +133,7 @@ def golden_outline(frame, half=None, gap=0.0):
     def mapped(z):
         return z if z <= -2.0 else z + stretch if z >= 2.0 else z + stretch * (z + 2.0) / 4.0
     if half == "lower":
-        refs = [(z,w) for z,w in full if z <= 0.0]
+        refs = [(z,w) for z,w in full if z < 0.0]
         # Local release has its full value at the cut and falls linearly to
         # zero at the gauge/shoulder boundary (z=-2).  Every neighbouring
         # gauge vertex moves with it, so no hooked or self-crossing outline
@@ -132,16 +142,18 @@ def golden_outline(frame, half=None, gap=0.0):
             release = gap / 2 * max(0.0, min(1.0, (z + 2.0) / 2.0))
             return mapped(z) - release
         left = [(-w, lower_z(z)) for z,w in refs]
+        fracture = [(x, mapped(z) - gap / 2) for x, z in FRACTURE_POINTS]
         right = [(w, lower_z(z)) for z,w in reversed(refs)]
-        return left + right
+        return left + fracture + right
     if half == "upper":
-        refs = [(z,w) for z,w in full if z >= 0.0]
+        refs = [(z,w) for z,w in full if z > 0.0]
         def upper_z(z):
             release = gap / 2 * max(0.0, min(1.0, (2.0 - z) / 2.0))
             return mapped(z) + release
         left = [(-w, upper_z(z)) for z,w in refs]
         right = [(w, upper_z(z)) for z,w in reversed(refs)]
-        return left + right
+        fracture = [(x, mapped(z) + gap / 2) for x, z in FRACTURE_POINTS]
+        return left + right + list(reversed(fracture))
     return [(-w, mapped(z)) for z,w in full] + [(w, mapped(z)) for z,w in reversed(full)]
 
 
@@ -150,8 +162,9 @@ def continuous_specimen(material, frame):
 
 
 def separated_specimen(material, frame, gap):
-    return (extruded_profile("Specimen_Lower_Component", golden_outline(frame, "lower", gap), material),
-            extruded_profile("Specimen_Upper_Component", golden_outline(frame, "upper", gap), material))
+    fracture_bevel = FRACTURE_PROFILE["edge_bevel_w"]
+    return (extruded_profile("Specimen_Lower_Component", golden_outline(frame, "lower", gap), material, fracture_bevel),
+            extruded_profile("Specimen_Upper_Component", golden_outline(frame, "upper", gap), material, fracture_bevel))
 
 
 def build_machine(machine, jaw, frame):
@@ -222,25 +235,50 @@ def render_state(frame, filename, separated=False):
     bpy.ops.render.render(write_still=True)
 
 
+def polygon_is_simple(points):
+    """Check the planar loop before extrusion creates the closed mesh."""
+    if len(points) < 3 or any(math.dist(a, b) <= 1e-8 for a, b in zip(points, points[1:] + points[:1])):
+        return False
+    area2 = sum(x1 * z2 - x2 * z1 for (x1, z1), (x2, z2) in zip(points, points[1:] + points[:1]))
+    if abs(area2) <= 1e-8:
+        return False
+    def orient(a, b, c):
+        return (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0])
+    def crosses(a, b, c, d):
+        return orient(a, b, c) * orient(a, b, d) < 0 and orient(c, d, a) * orient(c, d, b) < 0
+    count = len(points)
+    for i in range(count):
+        for j in range(i + 1, count):
+            if j in (i, (i + 1) % count) or i == (j + 1) % count:
+                continue
+            if crosses(points[i], points[(i + 1) % count], points[j], points[(j + 1) % count]):
+                return False
+    return True
+
+
+def transverse_fracture_gaps(frame, gap):
+    """Actual paired Z gaps at all frozen profile samples, left to right."""
+    stretch = upper_shift(frame)
+    def mapped(z):
+        return z if z <= -2.0 else z + stretch if z >= 2.0 else z + stretch * (z + 2.0) / 4.0
+    return [((mapped(z) + gap / 2) - (mapped(z) - gap / 2)) for _, z in FRACTURE_POINTS]
+
+
 def write_gate_note():
     checks = []
     for frame in (FRAME_FIRST_SEPARATED, 184, FRAME_POST, 240, 270, 300):
         target_gap = separation_gap(frame)
         lower = golden_outline(frame, "lower", target_gap)
         upper = golden_outline(frame, "upper", target_gap)
-        lower_count = sum(1 for z, _ in [(-GRIP_OUTER_Z, 0.90), (-SHOULDER_TOP_Z, 0.90)] if z <= 0) + 1
-        # The profile halves are constructed from increasing z samples first.
-        lower_left = [z for _, z in lower[:len(lower)//2]]
-        upper_left = [z for _, z in upper[:len(upper)//2]]
-        lower_monotonic = all(b > a for a, b in zip(lower_left, lower_left[1:]))
-        upper_monotonic = all(b > a for a, b in zip(upper_left, upper_left[1:]))
-        actual_gap = min(z for _, z in upper) - max(z for _, z in lower)
-        if not (actual_gap > 0 and lower_monotonic and upper_monotonic):
-            raise RuntimeError(f"geometry validation failed f={frame}: gap={actual_gap}, lower_monotonic={lower_monotonic}, upper_monotonic={upper_monotonic}")
-        checks.append((frame, target_gap, actual_gap, lower_monotonic and upper_monotonic))
+        transverse_gap = min(transverse_fracture_gaps(frame, target_gap))
+        bbox_gap = min(z for _, z in upper) - max(z for _, z in lower)
+        simple = polygon_is_simple(lower) and polygon_is_simple(upper)
+        if not (transverse_gap > 0 and bbox_gap > 0 and simple):
+            raise RuntimeError(f"geometry validation failed f={frame}: transverse_gap={transverse_gap}, bbox_gap={bbox_gap}, simple={simple}")
+        checks.append((frame, target_gap, transverse_gap, bbox_gap, simple))
     check_rows = "\n".join(
-        f"| {frame} | {target:.3f} | {actual:.3f} | {'yes' if monotonic else 'no'} |"
-        for frame, target, actual, monotonic in checks
+        f"| {frame} | {target:.3f} | {transverse:.3f} | {bbox:.3f} | {'yes' if simple else 'no'} |"
+        for frame, target, transverse, bbox, simple in checks
     )
     note = f"""# Metal brittle inside-gauge keyframe gate
 
@@ -250,17 +288,17 @@ Fixed camera: orthographic frontal view.  FPS: {FPS}; time mapping: `t=(frame-1)
 |---|---:|---:|---:|---|
 | initial | {FRAME_INITIAL} | {t_for_frame(FRAME_INITIAL):.6f} | 1 | one watertight dog-bone mesh |
 | pre-fracture | {FRAME_PRE} | {t_for_frame(FRAME_PRE):.6f} | 1 | one watertight dog-bone mesh; uniform 1.00-unit gauge, no neck |
-| first separation | {FRAME_FIRST_SEPARATED} | {t_for_frame(FRAME_FIRST_SEPARATED):.6f} | 2 | `Specimen_Lower_Component` and `Specimen_Upper_Component` have no shared vertices; central gap = {GAP_AT_FIRST:.2f} units |
+| first separation | {FRAME_FIRST_SEPARATED} | {t_for_frame(FRAME_FIRST_SEPARATED):.6f} | 2 | `Specimen_Lower_Component` and `Specimen_Upper_Component` have no shared vertices; all fracture-profile samples have a positive {GAP_AT_FIRST:.2f}-unit separation |
 | post-fracture | {FRAME_POST} | {t_for_frame(FRAME_POST):.6f} | 2 | independent components; the short local release is complete and the gap is stable |
 
 The relevant geometric proof is direct in this script: `continuous_specimen()` creates one mesh through frame {FRAME_PRE}; `separated_specimen()` is first called at frame {FRAME_FIRST_SEPARATED} and creates two separate meshes. This is a still-frame design gate only, not an MP4, label sidecar, or physical fracture simulation.
 
 ## Post-break geometry validation
 
-The release displacement is linear from the cut to the shoulder (`z=±2`), with a zero release at each shoulder/grip anchor. It completes over {RELEASE_DURATION_FRAMES} frames and adds at most {RELEASE_EXTRA_GAP:.2f} W; the upper fixture freezes at {POST_FRACTURE_FIXTURE_SHIFT:.2f} W from f181 onward. The table uses actual extrema of the two generated outlines; monotonicity means each cut-to-shoulder chain has strictly increasing Z and therefore has no Z-direction fold-back.
+The frozen `metal_brittle_complementary_irregular_v1` profile has eight non-periodic transverse samples, a restrained left-to-right tilt, and offsets from -0.065 W to +0.075 W. The release displacement is linear from the cut to the shoulder (`z=±2`), with a zero release at each shoulder/grip anchor. It completes over {RELEASE_DURATION_FRAMES} frames and adds at most {RELEASE_EXTRA_GAP:.2f} W; the upper fixture freezes at {POST_FRACTURE_FIXTURE_SHIFT:.2f} W from f181 onward. Each planar outline is checked for nonzero area, nondegenerate edges, and no self-intersections before its two-sided extrusion creates a closed mesh.
 
-| frame | requested central gap | actual component bbox Z gap | no fold-back |
-|---:|---:|---:|---|
+| frame | requested profile gap | min transverse profile gap | component bbox Z clearance | simple closed profiles |
+|---:|---:|---:|---:|---:|
 {check_rows}
 """
     (OUT / "GATE.md").write_text(note, encoding="utf-8")
