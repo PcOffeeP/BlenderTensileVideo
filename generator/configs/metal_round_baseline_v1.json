@@ -1,0 +1,10 @@
+{
+  "schema": "metal-round-render-config/v1",
+  "id": "metal_round_baseline_v1_candidate",
+  "generator_version": "metal-round-generator/v1.0",
+  "render": {"width": 854, "height": 480, "fps": 30, "frame_count": 204},
+  "timeline": {"neck_start_frame": 76, "last_continuous_frame": 151, "first_split_frame": 152, "recoil_end_frame": 192},
+  "geometry": {"overall_half_length": 4.52, "gauge_radius": 0.28, "grip_radius": 0.48, "neck_radius": 0.12, "axial_upper_displacement": 0.18, "initial_separation": 0.08, "postbreak_local_recoil": 0.25},
+  "presentation": {"camera_ortho_scale": 23.0, "background": [0.095, 0.125, 0.115], "silver": [0.42, 0.47, 0.48]},
+  "variation_interface": {"permitted_dimensions_from_design_v1": ["presentation.camera_angle_distance_lighting_background_duration_event_timing", "deformation.axial_extension_neck_opening_recoil_damping"], "status": "interface_only; no candidate value range has been user-approved"}
+}

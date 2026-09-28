@@ -4,6 +4,6 @@ __pycache__/
 .venv/
 
 # Reproducible render intermediates and Blender backups
-artifacts/
+_work/
 *.blend1
 *.blend2

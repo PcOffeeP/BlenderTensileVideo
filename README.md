@@ -1,125 +1,88 @@
-<!-- DOCUMENT-CONTRACT
-Purpose: 提供 Blender 拉伸原型的文档、运行、联合审查与验证入口。
-Scope: 仓库导航、已验收单视频复现、断裂大类审查批次、交付文件与检查边界。
-Must Preserve:
-- 以 docs/phase-1-task.md 为整体生成工作的上位依据，docs/MVP.md 记录当前阶段的落实与总结。
-- 数据交付为完整 MP4 及同名视频级 JSON；下游接入状态不得冒称通过。
-- 后续合成微调试点的配额和门禁指向独立设计文档，不能把候选参考或目标配额写成已完成产物。
-- 新类别的试验视频在完成门禁前留在 artifacts/；通过画面、媒体和独立复核后才复制到正式 outputs/；Blender 自动运行要返回可靠错误码。
-Non-goals:
-- 未经逐类审查直接生成 88 条试点数据，或替代现有数据处理链路。
--->
+# Blender 拉伸模拟视频
 
-# BlenderTensileVideo
+## 本轮总任务
 
-使用 Blender 生成一条金属扁平哑铃形试样的拉伸、颈缩及韧性断裂视频，断裂位于标距内部。固定输出为 10 秒、30 FPS、854×480，7.0 秒首次完全断离。
+按 [整体设计 v1.0](DESIGN.md)，系统梳理金属、高分子、复材、陶瓷的基本样式，先确认样式，再在其支持范围内变化拍摄和运动参数。最终服务于微调训练，当前交付整条视频及六组标签；后期数据处理不在本轮范围内。
 
-## 文档
+**新版首批：每个纳入样式 3 条（基准、拍摄/呈现变化、变形/运动变化）；具体样式数待证据与样片核验确定。** 基准和参数试片先由用户确认，第一批最终视频逐条人工核验，第二批已确认范围内的常规变体采用分层抽样。
 
-- [整体生成任务书](docs/phase-1-task.md)：保留原文，作为后续生成工作的目标、标签语义与交付边界依据。
-- [MVP 约束与过程总结](docs/MVP.md)：目标、冻结场景、v0.2 动画与标签、生成验收及当前状态。
-- [首条 QA 报告](docs/qa-synthetic_0001.md)：视频及标签检查结果、独立复核与接入限制。
-- [合成微调可行性试点设计](docs/synthetic-pilot-design.md)：88 条目标配额、原型参考门禁、双源数据入口与基座对照试验。
-- [第二条 QA 报告](docs/qa-synthetic_0002.md)：金属脆性断裂视频的断口、编码、标签、连续性与复现证据。
-- [断裂大类联合审查批次 QA](docs/qa-major-fracture-review-batch.md)：六条新增候选的覆盖、媒体检查、审查重点与发布边界。
+**当前进度：整体设计已成文，首个基准候选已完成制作、技术检查及独立复核，待用户核验；新版通过视频 0 条，尚未发布训练集。** 首个样式为金属圆棒局部颈缩后分离（P02 / video_0006）；具体参数范围尚未通过。
 
-v0.2 已将最终断离改为短促的局部卸载：7.0 秒首次完全断离，自由断口在随后三帧有限回缩，夹持端保持锚定，之后不反弹。
+历史库存保留 **11 条成片**（7 条原有成果、4 条有边界的研究初稿）。历史 23 席位中仍有 12 个缺项；这一计数仅描述旧来源标签调查，不是新版目标数。已有验收范围继续有效，不自动升级为新版标签或训练资格。
 
-首条 [完整视频](outputs/synthetic_0001.mp4) 和 [视频级标签](outputs/synthetic_0001.json) 已生成，单视频质量检查通过。下游直接读取同名 JSON 的接入验收尚未完成；完成本条后停止，未进行批量生成。
+## 新版首批待办
 
-## 单条复现
+- [x] 汇总并保存已确认的整体方案、标签边界、扩参和人工核验规则。
+- [x] 重建首个可复用基准，检查实际网格与编码视频，提交用户查看视频及六组标签。
+- [ ] 用户核验金属圆棒基准的比例、颈缩、断后运动及六组标签；有反馈则修正，确认后再扩参。
+- [ ] 按四类材料继续整理适用样式与证据；缺失视频时补充可核验实验记录，不把材料与模式机械全组合。
+- [ ] 基准确认后制作两类参数试片，明确每种样式已核验的范围及耦合约束。
+- [ ] 第一批逐条人工核验后，收录视频、说明、配置与验收范围；按纳入样式计算实际交付数量。
 
-需要 Blender、Python 3、ffmpeg/ffprobe；像素连续性检查另需 NumPy。以下命令从仓库根目录执行，Blender 可执行路径按安装位置调整。配置固定为 `configs/synthetic_0001.json`，本实现不提供批量入口。
+旧成果下列列表与索引中的 `items` 保留历史编号。新版推进状态存放于同一索引的 `current_program`，不另建进度总表。
 
-```bash
-/Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python scripts/build_golden_prototype.py -- --stage scene
-```
+### 首个待核验候选
 
-查看 `artifacts/previews/scene_gate_initial.png`，完成 Scene Gate 后再生成动画关键状态：
+[金属圆棒基准视频（6.8 秒）](_work/2026-09-28-first-batch/metal_round/candidate/metal_round_baseline_v1_candidate.mp4) · [标签、来源与验收范围](_work/2026-09-28-first-batch/metal_round/candidate/metal_round_baseline_v1_candidate.facts.json) · [生成器用法](generator/README.md)
 
-```bash
-/Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python scripts/build_golden_prototype.py -- --stage keyframes
-```
+预期标签：**金属｜完全断裂｜韧性断裂｜标距内｜夹持异常无｜拍摄异常无**。标签尚待用户确认；“标距内”指生成器定义的区域，原实验正式标距未知。
 
-检查 `artifacts/previews/` 的初始、颈缩、断前相邻帧、首次完全断离、三帧卸载过程和稳定断后状态，再正式渲染：
+已检查 204 帧的实际可见网格连通性、夹口连接、颈部变化、长度连续性和分离间隙，最终 MP4 全片解码正常，并查看关键及断裂相邻帧。独立复核提出的一处来源时间窗口错误已按原片第 648/649 帧（零基，21.600/21.633 秒）修正，无需视觉返工。
 
-```bash
-/Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python scripts/build_golden_prototype.py -- --stage final
-```
+**需要人工判断的限制：** 试样比原片明显细长，比例及回复量是未标定的定性设定；本次检查不证明材料本构、体积守恒、精确断面或三维轨迹。此候选暂存工作区，尚未收录 `outputs/`，不计入训练可用视频。
 
-渲染成功后，用同一配置写标签并检查媒体。`--contract` 显式指向现有数据项目的权威标签契约，以下以相邻 `mVllm_2` 仓库为例：
+## 已确定的初步视频
 
-```bash
-python3 scripts/write_labels.py --config configs/synthetic_0001.json --contract ../mVllm_2/pipeline/contracts/tensile_vlm_v4_1.json
-python3 scripts/validate_output.py --config configs/synthetic_0001.json --contract ../mVllm_2/pipeline/contracts/tensile_vlm_v4_1.json
-python3 scripts/check_continuity.py outputs/synthetic_0001.mp4
-```
+| 编号 | 视频与现象 | JSON | 身份 |
+|---|---|---|---|
+| P01 | [金属 · 已接受MVP平板韧性](outputs/synthetic_0001.mp4) | [说明](outputs/synthetic_0001.json) | 原有成果 |
+| P02 | [金属 · 圆棒局部颈缩后分离](outputs/confirmed/P02_round_0006.mp4) | [说明](outputs/confirmed/P02_round_0006.json) | 原有成果 |
+| P04 | [金属 · 带肋杆突发分离](outputs/confirmed/P04_ribbed_0065.mp4) | [说明](outputs/confirmed/P04_ribbed_0065.json) | 原有成果 |
+| P06 | [金属 · 保持连接的局部颈缩](outputs/confirmed/P06_continuous_metal.mp4) | [说明](outputs/confirmed/P06_continuous_metal.json) | 原有成果 |
+| P08 | [高分子 · 细长跨接段从连续到非跨接（机制待定）](outputs/research/P08_0074_research_visibility_approx.mp4) | [说明](outputs/research/P08_0074_research_visibility_approx.json) | 新增研究初稿 |
+| P12 | [高分子 · 高分子连续拉伸](outputs/confirmed/P12_polymer_continuous.mp4) | [说明](outputs/confirmed/P12_polymer_continuous.json) | 原有成果 |
+| P13 | [高分子 · 上端保留长带，断后甩起和下落](outputs/research/P13_soft_motion_0025.mp4) | [说明](outputs/research/P13_soft_motion_0025.json) | 新增研究初稿 |
+| P14 | [复材 · 细条中断及上夹口短暂亮变](outputs/research/p14_0026_research.mp4) | [说明](outputs/research/p14_0026_research.json) | 新增研究初稿 |
+| P17 | [高分子 · 窄板小变形突断](outputs/confirmed/P17_polymer_brittle.mp4) | [说明](outputs/confirmed/P17_polymer_brittle.json) | 原有成果 |
+| P21 | [复材 · 等宽板持续连接](outputs/confirmed/P21_composite_continuous.mp4) | [说明](outputs/confirmed/P21_composite_continuous.json) | 原有成果 |
+| P23 | [其他(编织结构) · 下端保留长带，快速回弹后残余弯曲](outputs/research/P23_woven_0082.mp4) | [说明](outputs/research/P23_woven_0082.json) | 新增研究初稿 |
 
-正式数据文件位于 `outputs/synthetic_0001.mp4` 与 `outputs/synthetic_0001.json`；预览、场景与机器检查证据位于 Git 忽略的 `artifacts/`。重复执行会重建这些本地生成产物。`--stage final` 不替代前两步人工画面检查。
+新增初稿的边界：P08 仅表示跨接不再可见；P13 断点和下夹口未知；P14 仅表示中断与亮变，展示时间轴经过重排；P23 使用单层表面及深度避让假设，已修复重复摆动、穿透和长度跳变。均不宣称定量力学真实性。
 
-视频标签只复用 v4.1 的机制、位置与特殊情况枚举；帧窗口标签、子视频、采样帧和训练 release 继续属于现有数据链路。当前发现该链路源入口读取 CSV，直接读取本项目同名 JSON 的支持仍需单独确认。
+## 历史调查中的缺项与证据入口
 
-## 金属脆性断裂视频
+| 编号 | 还缺的类别 | 下一步 |
+|---|---|---|
+| P03 | 高分子 · 未夹紧 | 本地唯一候选属历史测试集；需独立、可见滑移/脱出过程参考。 |
+| P05 | 复材 · 界面脱粘 | 候选筛选及0053全片补查后，尚无清楚界面张开过程。 |
+| P07 | 金属 · 齐根断裂 | 0008/0031/0059/0060尚未提供可辨夹口邻近失效。 |
+| P09 | 高分子 · 半脆半韧断裂 | 本地唯一候选属历史测试集；外部片尚未证明所需混合破坏过程。 |
+| P10 | 其他(编织结构) · 视频异常 | 0015可见重取景；需核验材料身份及新版样式/标签。 |
+| P11 | 复材 · 界面脱粘、齐根断裂 | 分别核验脱粘类别与夹口根部位置；0017/0027的观察尚不足，不能预设两个破坏阶段。 |
+| P15 | 复材 · 脆性断裂 | 替代来源与0100全片检查仍缺少清楚破坏拓扑。 |
+| P16 | 复材 · 韧性断裂 | 0099未明确显示试样中断；不能把装置运动作为试样破坏。 |
+| P18 | 复材 · 视频异常 | 0034可见上夹口手臂遮挡；需核验新版样式/标签。 |
+| P19 | 高分子 · 视频异常 | 0045可见张紧线转松环，位置/机制未知；按六组标签重新核验，不能沿用原标签推断机制。 |
+| P20 | 其他(无机非) · 视频异常 | 0050可见宏观裂纹及编辑标注；材料未证实为陶瓷，暂不计入陶瓷覆盖。 |
+| P22 | 复材 · 齐根断裂 | 0064为人工操作、0076事件不可辨，需夹口邻近失效参考。 |
 
-`configs/synthetic_0002.json` 为首个新机制视频：保持现有金属试样、夹具、正面机位及中性光照，在第 181 帧（6.0 秒）首次完全断离。断口采用轻微斜向、非周期性的互补不规则轮廓；上夹具在断离时停止，断口只作短暂局部卸载，随后间隙稳定。先检查关键帧，再渲染完整视频：
+这些条目用于继续找证据。新版六组标签已经明确交付口径；具体样式及材料、机制、位置的证据仍须分别核验。旧标签不直接作为新版配额，也不要求补足旧 23 席位后才能开展新版首批。
 
-```bash
-/Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python scripts/build_metal_brittle_gate.py
-/Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python scripts/build_metal_brittle_video.py -- --stage keyframes
-/Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python scripts/build_metal_brittle_video.py -- --stage video
-```
+## 制作必须保留的依据
 
-`--python-exit-code 1` 让配置不合法或脚本报错时返回非零退出码，自动构建必须保留此选项。渲染和门禁证据先保存在 Git 忽略的 `artifacts/prototypes/metal_brittle/`；渲染完成后执行：
+每个试样明确：材料与结构、相对尺寸和外形、夹持/加载端、断前变化、可见事件与时间、断后固定端/自由端及轨迹、镜头与遮挡。记录源标签、观察事实、建模假设和未知的区别；无标尺不编造绝对尺寸，未知尺寸不阻塞有依据的视觉初稿。
 
-```bash
-python3 scripts/write_labels.py --config configs/synthetic_0002.json --contract ../mVllm_2/pipeline/contracts/tensile_vlm_v4_1.json --output-dir artifacts/prototypes/metal_brittle
-python3 scripts/validate_output.py --config configs/synthetic_0002.json --contract ../mVllm_2/pipeline/contracts/tensile_vlm_v4_1.json --output-dir artifacts/prototypes/metal_brittle --render-evidence artifacts/prototypes/metal_brittle/render-evidence.json --report artifacts/prototypes/metal_brittle/media-qa.json
-python3 scripts/check_continuity.py artifacts/prototypes/metal_brittle/synthetic_0002.mp4 --config configs/synthetic_0002.json --report artifacts/prototypes/metal_brittle/continuity-qa.json
-```
+初稿验收关注：外形可辨、事件顺序符合来源、夹持端与实际夹具网格连接、带宽/长度连续、无穿透或凭空摆动，以及最终编码视频与 JSON 一致。已同意按需加入重力、回复、阻尼等简单力学近似，接受定性局限；不要求严谨数值仿真认证。
 
-`render-evidence.json` 只用于内部 QA，绑定本次构建的配置、脚本和 MP4 哈希，不属于 Blender 对下游的同名文件交付，也不定义子视频切片。
+## 文件入口
 
-画面、媒体和独立复核通过后，正式交付为 `outputs/synthetic_0002.mp4` 与 `outputs/synthetic_0002.json`。它们与候选目录中的已验收文件逐字节一致；本条是已完成的单视频原型，尚未计入后续 70/18 批量数据划分。
+- **本页**：唯一人工维护的任务、结果与待办入口；不要另开并行进度文档。
+- [DESIGN.md](DESIGN.md)：已确认的整体规则与方案；不维护另一份动态清单。
+- [outputs/index.json](outputs/index.json)：唯一机器总索引，含历史席位/成果与新版推进状态。目录中的 JSON 与同名 MP4 配对；MVP 原路径保留。
+- [generator/README.md](generator/README.md)：本轮保留的可复用生成器、配置与重建命令；开发中的工具不代表样片已通过。
+- [AGENTS.md](AGENTS.md)：长期工作原则与中间文件存放规则。
+- [_work/README.md](_work/README.md)：统一可清理工作区说明；旧规则、调查、脚本、场景、测试和状态文件已整体归档于其中。
 
-## 断裂大类联合审查批次
+原始视频：`/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/standard-videos`。原片不在清理范围。删除工作区不会删除成片、JSON、核心索引、设计文档或新版保留的生成器；会失去详细调查帧与未迁入复用工具的旧构建场景。
 
-`configs/synthetic_0003.json` 至 `synthetic_0008.json` 组成一次性视觉审查批次，与已验收的 `0001/0002` 一并覆盖 V4.1 的五种断裂机制和三种断裂位置。它不是 88 条试点批量数据，也不执行机制与位置的笛卡尔积：
-
-| ID | 材料 | 机制 | 位置 |
-| --- | --- | --- | --- |
-| `0003` | 高分子 | 韧性断裂 | `inside_gauge` |
-| `0004` | 复材 | 界面脱粘 | `inside_gauge` |
-| `0005` | 复材 | 爆炸性断裂 | `inside_gauge` |
-| `0006` | 金属 | 半脆半韧断裂 | `inside_gauge` |
-| `0007` | 金属 | 韧性断裂 | `outside_gauge_non_root` |
-| `0008` | 金属 | 脆性断裂 | `grip_root` |
-
-统一生成器先为每条渲染五张关键状态图，画面门禁全部通过后才渲染完整视频：
-
-```bash
-for id in 0003 0004 0005 0006 0007 0008; do
-  /Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python scripts/build_major_fracture_review_batch.py -- --id "$id" --stage keyframes
-done
-
-for id in 0003 0004 0005 0006 0007 0008; do
-  /Applications/Blender.app/Contents/MacOS/Blender --python-exit-code 1 --background --python scripts/build_major_fracture_review_batch.py -- --id "$id" --stage video
-done
-```
-
-完整视频生成后，逐条用 `scripts/write_labels.py` 写入简洁同名 JSON，再运行 `scripts/validate_major_fracture_review_batch.py` 汇总媒体、标签、关键帧和构建来源检查。候选保存在 Git 忽略的 `artifacts/review_batches/major_fractures_v1/`；用户完成联合视觉审查前不复制到 `outputs/`。`scripts/build_major_fracture_review_batch_v06.py` 只用于保存早期候选的精确来源，新的重建使用当前生成器。`0006` 因缺少可靠真实近景参考，始终作为待用户判断的视觉语义候选，不因技术检查通过而自动取得批量生成资格。
-
-<!-- DECISION-LOG
-D001 — 曾将规则入口集中指向 docs/MVP.md（已由 D002 替代），运行命令继续保留在 README。
-Why: 按用户要求整合多轮设计，避免 README 与旧任务书、场景规格、补充文档形成平行入口。
-D002 — 分别链接整体生成任务书、当前 MVP 总结与单条 QA。
-Supersedes: D001
-Why: 用户要求整体任务书继续独立保留并指导后续工作，MVP 总结不取代其地位。
-D003 — 另设后续合成微调试点设计入口，不改写首条 MVP 的运行与验收历史。
-Why: 88 条可行性试点包含新的标签覆盖、数据接入和真实对照门禁，不能混作首条 Golden Prototype 的已验收范围。
-D004 — 新类别先以 Git 忽略的单条候选视频验证视觉、标签与媒体；构建命令显式设置 Blender Python 失败退出码。
-Why: 先做可重建原型门禁，并防止自动化在配置不合法而 Blender 默认仍返回零退出码时误用旧视频。
-D005 — 新类别候选通过画面、媒体和独立复核后，才将同名 MP4/JSON 复制到 outputs 作为正式单视频交付。
-Why: artifacts 用于可重建证据和试验候选；用户需要从 outputs 直接找到最终数据文件，候选与正式交付不能混淆。
-D006 — 将六条新类别候选与已验收的 0001/0002 组成一次联合审查，候选在审查通过前保留于 artifacts。
-Why: 用户要求先一次性查看整体断裂大类，再决定哪些原型可进入 88 条试点生成；联合审查不等于正式发布或规模化授权。
--->
+更新：2026-09-28。
