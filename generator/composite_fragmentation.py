@@ -5,10 +5,24 @@ Fixed baseline only; no approved parameter range or constitutive inference.
 import bpy, math, json, sys, argparse
 from pathlib import Path
 from mathutils import Vector
-VERSION='composite-fragmentation/0.1.0'
-p=argparse.ArgumentParser();p.add_argument('--out',required=True);p.add_argument('--render',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args(sys.argv[sys.argv.index('--')+1:])
+VERSION='composite-fragmentation/0.2.0'
+p=argparse.ArgumentParser();p.add_argument('--out',required=True);p.add_argument('--variant',choices=['local','full_span'],default='full_span');p.add_argument('--render',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args(sys.argv[sys.argv.index('--')+1:])
 out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=True)
 C={'implementation_version':VERSION,'fps':30,'frames':600,'resolution':[960,540],'loading_axis':'z','fixed_end':'lower','moving_end':'upper','free_span':5.0,'width':0.60,'strand_boundaries':[-.3,-.22,-.11,-.025,.09,.19,.3],'strand_splay_x':[-.085,-.040,-.022,.009,.034,.073],'strand_shear_factors':[.95,1.1,.9,1.05,.98,1.0],'surface_texture':'subtle axial colour bands, illustrative rather than observed fiber orientation','thickness':0.12,'grip_overlap':0.48,'synthetic_gauge':[-1.5,1.5],'units':'dimensionless relative coordinates','event_frame':481,'settled_frame':526,'maximum_grip_displacement':0.10,'strand_count':6,'strand_seam_centres':[-.25,.12,-.05,.26,-.15,.05],'fracture_plane_slope_y':0.8,'local_shear_y':0.10,'splay_plateau_z':[-.35,.35],'splay_zero_z':[-.85,.85],'decay_amplitude_ratio':0.16,'decay_cycles':2.0,'free_detached_fragments':0,'camera':{'position':[9,-17,3],'look_at':[0,0,0],'projection':'orthographic','ortho_scale':16.4},'renderer':{'engine':'BLENDER_WORKBENCH','studio_light':'paint.sl','aa':'8','world_color':[.13,.16,.19],'cavity':'BOTH','color':'MATERIAL','view_transform':'Standard'},'fixture':{'jaw_inner_y':[-.06,.06],'jaw_centres_y':[-.26,.26],'jaw_size':[1.48,.40,.72],'jaw_centres_z':[-2.86,2.86],'body_size':[2.40,1.1,.70],'body_centres_z':[-3.33,3.33],'shaft_size':[.75,.80,.57],'shaft_centres_z':[-3.94,3.94],'bolt_x':[-.96,.96],'bolt_size':[.19,.12,.19],'bevel_width':.035,'bevel_segments':3},'encoding':{'codec':'libx264','preset':'slow','crf':16,'pixel_format':'yuv420p'},'rear_panel':False,'machine_columns':False,'no_constitutive_solver':True,'scope':'fixed qualitative rapid rupture with longitudinal branched remnants; strand count and geometry authored, reinforcement and layup unknown'}
+C.update({'variant':a.variant,'geometry_preset_version':'local/0.1.0' if a.variant=='local' else 'full_span/0.2.0'})
+if a.variant=='full_span':
+ # Explicit fixed irregular partition, not an inferred ply count or fiber count.
+ widths=[.031,.046,.037,.055,.032,.049,.043,.028,.051,.035,.050,.036,.041,.066]
+ widths=[w*.6/sum(widths) for w in widths];bounds=[-.3]
+ for w in widths:bounds.append(bounds[-1]+w)
+ gaps=[.052,.035,.064,.041,.057,.039,.062,.036,.055,.046,.063,.038,.050]
+ offsets=[0.0]
+ for gap in gaps:offsets.append(offsets[-1]+gap)
+ offsets=[q-(offsets[0]+offsets[-1])/2 for q in offsets]
+ C.update({'strand_count':42,'width_partition_count':14,'depth_partition_count':3,'depth_boundaries':[-.06,-.02,.02,.06],'strand_boundaries':bounds,'strand_splay_x':offsets,'strand_shear_factors':[1.05,.96,1.08,1.0,1.12,.95,1.07,.98,1.10,1.01,.97,1.06,1.02,1.09],'strand_seam_centres':[-.62,.34,-.17,.67,-.43,.11,.48,-.71,.25,-.08,.57,-.32,.03,-.53],'local_shear_y':.16,'depth_splay_factor':1.5,'splay_plateau_z':[-.95,.95],'splay_zero_z':[-2.5,2.5],'cap_corrugation_amplitude_x':.018,'cap_corrugation_amplitude_y':.012,'width_subdivisions':6,'depth_subdivisions':2,'strand_tilts_x':[-.11,-.087,-.093,-.068,-.050,-.055,-.036,-.048,-.028,-.008,-.019,.003,.008,.026],'centreline_bias_x':.09,'centreline_tilt_x':-.05,'scope':'whole free span rapid splitting, 42 geometric bundles are an authored discretization, not observed plies or fiber count','free_span_split_onset_frame':481})
+if a.variant=='full_span':
+ C['tilt_safety_scale_applied']=.65;C['strand_tilts_x']=[t*.65 for t in C['strand_tilts_x']]
+ C['minimum_ordered_neighbour_margin_before_envelope']=min((b-a)-2.5*abs(tb-ta) for a,b,ta,tb in zip(C['strand_splay_x'],C['strand_splay_x'][1:],C['strand_tilts_x'],C['strand_tilts_x'][1:]))
 bpy.ops.object.select_all(action='SELECT');bpy.ops.object.delete(use_global=False)
 s=bpy.context.scene;s.render.engine='BLENDER_WORKBENCH';s.render.resolution_x,s.render.resolution_y=C['resolution'];s.render.resolution_percentage=100;s.render.fps=30;s.frame_start=1;s.frame_end=600;s.render.image_settings.file_format='PNG';s.render.film_transparent=False
 sh=s.display.shading;sh.light='STUDIO';sh.studiolight_rotate_z=.5;sh.studio_light='paint.sl';sh.color_type='MATERIAL';sh.show_shadows=True;sh.show_cavity=True;sh.cavity_type='BOTH';sh.curvature_ridge_factor=1.1;sh.curvature_valley_factor=1.1;sh.show_specular_highlight=True;sh.background_type='WORLD';s.world.color=(.13,.16,.19);s.display.render_aa='8';s.view_settings.view_transform='Standard'
@@ -34,7 +48,7 @@ def event_strength(f):
  u=(f-481)/45
  return 1+.16*(1-u)**2*math.sin(4*math.pi*u)
 def envelope(z):return max(0,min(1,(.85-abs(z))/.50))
-def build(f):
+def build_local(f):
  d=displacement(f);strength=event_strength(f);vs=[];src=[];faces=[];cache={}
  # Common cell planes allow genuinely welded neighbours before rupture, not merely coincident objects.
  # All event shear is piecewise affine in actual z; unit determinant preserves material volume.
@@ -67,6 +81,88 @@ def build(f):
  for pp in me.polygons:
   pp.use_smooth=False;pp.material_index=int(abs(sum(src[i][0] for i in pp.vertices)/len(pp.vertices))*1700)%5
  return me
+def full_envelope(z):
+ u=max(0,min(1,(2.5-abs(z))/1.55));return .5-.5*math.cos(math.pi*u)
+def build_full(f):
+ d=displacement(f);strength=event_strength(f);vs=[];src=[];faces=[];owners=[];cache={}
+ outer=[-2.98,-2.5,-2.35,-2.15,-1.9,-1.65,-1.4,-1.15,-.95]
+ levels=[(z,False) for z in outer]+[(z,True) for z in sorted(C['strand_seam_centres'])]+[(z,False) for z in [.95,1.15,1.4,1.65,1.9,2.15,2.35,2.5,2.98]]
+ def vid(v,q):
+  k=tuple(round(t,9) for t in v)
+  if k not in cache:cache[k]=len(vs);vs.append(v);src.append(q)
+  return cache[k]
+ for col,cut in enumerate(C['strand_seam_centres']):
+  ci=next(j for j,(u,sl) in enumerate(levels) if sl and abs(u-cut)<1e-8)
+  for depth in range(3):
+   ya,yb=C['depth_boundaries'][depth:depth+2];yc=(ya+yb)/2
+   for dep_sub in range(2):
+    whole_ya,whole_yb=C['depth_boundaries'][depth:depth+2];ya=whole_ya+(whole_yb-whole_ya)*dep_sub/2;yb=whole_ya+(whole_yb-whole_ya)*(dep_sub+1)/2
+    for sub in range(6):
+     left,right=C['strand_boundaries'][col:col+2];xa=left+(right-left)*sub/6;xb=left+(right-left)*(sub+1)/6
+     for j in range(len(levels)-1):
+      part=0 if j<ci else 1;ids=[]
+      for k in [j,j+1]:
+       u,sl=levels[k]
+       for x,y in [(xa,ya),(xb,ya),(xb,yb),(xa,yb)]:
+        z=u+(.8*y+.018*math.sin(100*x)+.012*math.sin(160*y+4.3*x) if sl else 0)
+        e=full_envelope(z);sg=1 if part==0 else -1
+        xx=x+(C['strand_splay_x'][col]+.09+(-.05+C['strand_tilts_x'][col])*z)*strength*e
+        yy=y+(yc*1.5+sg*.16*C['strand_shear_factors'][col])*strength*e
+        zz=z+d*max(0,min(1,(z+2.5)/5));ids.append(vid((xx,yy,zz),(x,y,z)))
+      for inds in [(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)]:faces.append(tuple(ids[k] for k in inds));owners.append((col,depth,part))
+ seen={};discard=set()
+ for k,fa in enumerate(faces):
+  kk=tuple(sorted(fa))
+  if kk in seen:discard.update([k,seen[kk]])
+  else:seen[kk]=k
+ keep=[k for k in range(len(faces)) if k not in discard];faces=[faces[k] for k in keep];owners=[owners[k] for k in keep]
+ used=sorted({i for fa in faces for i in fa});remap={old:new for new,old in enumerate(used)};vs=[vs[i] for i in used];src=[src[i] for i in used];faces=[tuple(remap[i] for i in fa) for fa in faces]
+ me=bpy.data.meshes.new('whole span conserved material');me.from_pydata(vs,[],faces);[me.materials.append(m) for m in surface_mats];me.update()
+ attr=me.attributes.new('source_coordinate','FLOAT_VECTOR','POINT')
+ for i,q in enumerate(src):attr.data[i].vector=q
+ for name,idx in [('bundle_column',0),('bundle_depth',1),('bundle_part',2)]:
+  att=me.attributes.new(name,'INT','FACE')
+  for i,owner in enumerate(owners):att.data[i].value=owner[idx]
+ for pp in me.polygons:pp.use_smooth=True;pp.material_index=int(abs(sum(src[i][0] for i in pp.vertices)/len(pp.vertices))*1700)%5
+ # Smooth corner normals are presentation only; measured material sections remain unchanged.
+ return me
+def build(f):return build_local(f) if a.variant=='local' else build_full(f)
+def measure_full(me,vv,r,f):
+ caps={};boundaries={};depth_boundaries={};thickness=[];width_edges=[]
+ for pp in me.polygons:
+  col=me.attributes['bundle_column'].data[pp.index].value;dep=me.attributes['bundle_depth'].data[pp.index].value;part=me.attributes['bundle_part'].data[pp.index].value
+  qs=[me.attributes['source_coordinate'].data[i].vector for i in pp.vertices]
+  def plane(q):return q.z-.8*q.y-.018*math.sin(100*q.x)-.012*math.sin(160*q.y+4.3*q.x)
+  if f>=481 and all(abs(plane(q)-C['strand_seam_centres'][col])<1e-6 for q in qs):caps.setdefault(col,{'lower':[],'upper':[]})['lower' if part==0 else 'upper'].extend(vv[i].y for i in pp.vertices)
+  if all(abs(q.x-qs[0].x)<1e-6 for q in qs) and any(abs(qs[0].x-x)<1e-6 for x in C['strand_boundaries'][1:-1]):
+   side='left' if pp.normal.x>0 else 'right'
+   for i,q in zip(pp.vertices,qs):boundaries.setdefault(tuple(round(t,6) for t in q),{'left':[],'right':[]})[side].append(vv[i].x)
+  if all(abs(q.y-qs[0].y)<1e-6 for q in qs) and abs(abs(qs[0].y)-.02)<1e-6:
+   side='front' if pp.normal.y>0 else 'back'
+   for i,q in zip(pp.vertices,qs):depth_boundaries.setdefault((col,part)+tuple(round(t,6) for t in q),{'front':[],'back':[]})[side].append(vv[i].y)
+ for edge in me.edges:
+  i,j=edge.vertices;qi=me.attributes['source_coordinate'].data[i].vector;qj=me.attributes['source_coordinate'].data[j].vector
+  if abs(qi.z-.95)<1e-6 and abs(qj.z-.95)<1e-6:
+   if abs(qi.x-qj.x)<1e-6 and abs(abs(qi.y-qj.y)-.02)<1e-6:thickness.append((vv[i]-vv[j]).length)
+   if abs(qi.y-qj.y)<1e-6 and abs(qi.x-qj.x)>1e-6:width_edges.append((vv[i]-vv[j]).length)
+ section_graph={}
+ for edge in me.edges:
+  i,j=edge.vertices;qi=me.attributes['source_coordinate'].data[i].vector;qj=me.attributes['source_coordinate'].data[j].vector
+  if abs(qi.z-.95)<1e-6 and abs(qj.z-.95)<1e-6:section_graph.setdefault(i,set()).add(j);section_graph.setdefault(j,set()).add(i)
+ section_seen=set();section_components=0
+ for v in section_graph:
+  if v in section_seen:continue
+  section_components+=1;todo=[v];section_seen.add(v)
+  while todo:
+   u=todo.pop()
+   for w in section_graph[u]:
+    if w not in section_seen:section_seen.add(w);todo.append(w)
+ r['actual_section_boundary_components_measured']=section_components
+ clear=[min(q['lower'])-max(q['upper']) for q in caps.values() if q['lower'] and q['upper']]
+ xg=[min(v['right'])-max(v['left']) for v in boundaries.values() if v['left'] and v['right']]
+ yg=[min(v['back'])-max(v['front']) for v in depth_boundaries.values() if v['front'] and v['back']]
+ r.update({'rupture_cap_y_clearance_min_measured':min(clear,default=0),'cap_penetration_detected':min(clear,default=0)<-1e-6,'adjacent_width_signed_clearance_min':min(xg,default=0),'adjacent_width_signed_clearance_max':max(xg,default=0),'adjacent_depth_signed_clearance_min':min(yg,default=0),'adjacent_depth_signed_clearance_max':max(yg,default=0),'section_thickness_min_measured':min(thickness)*2,'section_bundle_width_min_measured':min(width_edges)*6,'section_bundle_area_min_measured':min(thickness)*2*min(width_edges)*6,'section_measurement_source_z':.95,'penetration_check_scope':'evaluated cap y separating axes; signed ordered width and depth boundary clearances by actual material-coordinate face ownership; not full swept collision solver'})
+ return r
 obj=bpy.data.objects.new('actual_composite_material',build(1));s.collection.objects.link(obj)
 def update(f):
  old=obj.data;obj.data=build(f);bpy.data.meshes.remove(old)
@@ -106,6 +202,8 @@ def check(f):
   ids=[i for i in range(len(vv)) if abs(me.attributes['source_coordinate'].data[i].vector.x-x)<1e-6 and abs(me.attributes['source_coordinate'].data[i].vector.y+.06)<1e-6]
   idsset=set(ids);lengths.append(sum((vv[e.vertices[0]]-vv[e.vertices[1]]).length for e in me.edges if e.vertices[0] in idsset and e.vertices[1] in idsset))
  r={'frame':f,'time_s':(f-1)/30,'component_count_measured':len(cs),'components':con,'has_material_path_between_jaws':any(c['lower'] and c['upper'] for c in con),'signed_material_volume':vol,'jaw_contact_max_error':jawerrors,'jaw_embedded_z_overlap_min':min(jawoverlaps),'upper_jaw_displacement':d,'z_bounds':[min(v.z for v in vv),max(v.z for v in vv)],'same_material_outer_edge_lengths':lengths,'authored_strand_widths':[round(b-a,6) for a,b in zip(C['strand_boundaries'],C['strand_boundaries'][1:])],'authored_thickness':.12,'splay_strength':event_strength(f),'coordinates':[[round(t,9) for t in v] for v in vv]}
+ if a.variant=='full_span':
+  r=measure_full(me,vv,r,f);ev.to_mesh_clear();return r
  # Measure actual complementary cap clearances and neighbouring strip boundary separation.
  caps={}
  for pp in me.polygons:
@@ -153,8 +251,16 @@ for f in keyframes:update(f);s.render.filepath=str(out/'previews'/('frame_%04d.p
 (out/'mesh_checks.json').write_text(json.dumps({'config':C,'samples':checks,'post_settle_max_vertex_displacement':stop,'measurement_scope':'actual evaluated graph, signed closed surface volume, jaw inner faces and material points; measured sections at source z=+/-0.35, complementary cap and strip-boundary separating axes; no constitutive or swept collision solver'},indent=2))
 update(600);bpy.ops.wm.save_as_mainfile(filepath=str(out/'scene.blend'));(out/'config.json').write_text(json.dumps(C,indent=2))
 if a.render:
- allchecks=[]
+ allchecks=[];post_reference=None;post_previous=None;motion_max=0.0;motion_step_max=0.0;motion_z_max=0.0;settled_motion_max=0.0
  for f in range(1,601):
-  r=check(f);r.pop('coordinates');allchecks.append(r);s.render.filepath=str(out/'frames'/('frame_%04d.png'%f))
+  r=check(f);coords=r.pop('coordinates')
+  if f>=481:
+   if post_reference is None:post_reference=coords
+   delta=max(math.dist(v,w) for v,w in zip(coords,post_reference));motion_max=max(motion_max,delta);motion_z_max=max(motion_z_max,max(abs(v[2]-w[2]) for v,w in zip(coords,post_reference)))
+   if post_previous is not None:motion_step_max=max(motion_step_max,max(math.dist(v,w) for v,w in zip(coords,post_previous)))
+   post_previous=coords
+   if f>=526:settled_motion_max=max(settled_motion_max,delta)
+  allchecks.append(r);s.render.filepath=str(out/'frames'/('frame_%04d.png'%f))
   if not(a.resume and Path(s.render.filepath).exists()):bpy.ops.render.render(write_still=True)
  (out/'all_frame_mesh_checks.json').write_text(json.dumps(allchecks,indent=2))
+ (out/'actual_post_motion.json').write_text(json.dumps({'post_event_evaluated_frames':120,'reference_frame':481,'reference_matches_settled_strength':True,'max_vertex_distance_from_event_and_settled':motion_max,'max_one_frame_vertex_motion':motion_step_max,'max_axial_vertex_motion':motion_z_max,'settled_to_end_vertex_motion':settled_motion_max,'actual_scene_object_names':[o.name for o in s.objects],'camera_location':list(cam.location),'camera_scale':cam.data.ortho_scale},indent=2))
