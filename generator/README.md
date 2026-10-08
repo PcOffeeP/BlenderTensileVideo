@@ -11,6 +11,7 @@
 | [polymer_brittle.py](polymer_brittle.py) | `polymer-brittle/1.0` | 0032参考的窄平条小变形脆断；`--out`、`--keys-only`；960×540。 |
 | [polymer_mixed.py](polymer_mixed.py) | `polymer-mixed/1.0.0` | 0014参考的有限变形后快速斜裂候选，混合模式尚未确认；`--out`、`--render`、`--checks-only`；1280×720。 |
 | [composite_fragmentation.py](composite_fragmentation.py) | `composite-fragmentation/0.1.0` | 0040参考的局部快速分束候选；`--out`、`--render`、`--resume`；960×540。 |
+| [metal_flat.py](metal_flat.py) | `metal-flat/1.2.0` | 0058参考的平板狗骨有限变形断裂；`--reference`显式来源记录、`--out`、`--render`；960×540。局部缩窄和完整断裂为作者扩展，主模式未知。 |
 
 各入口均为20秒、30fps的定性几何动画，在配置输出中记录实现版本与适用范围，不读取 `_work/` 输入。参数只对应离散首版候选，未标定本构，未批准连续范围。当前金属代码是1.1.0；本轮颈缩成片仍记录原1.0.1配置，以其同名JSON及自包含烘焙场景精确追溯，不因代码复制而改写成片版本。
 
@@ -44,3 +45,7 @@ ffmpeg -framerate 30 -start_number 1 -i /absolute/new/output/metal/frames/%04d.p
 ```
 
 新增PNG序列：脆性高分子 `frames/%06d.png`；有限变形高分子与复材分束 `frames/frame_%04d.png`。省略全渲染时仍输出关键状态和配置；`polymer_mixed.py --checks-only` 单独检查600帧。最终编码及来源标签包装仍须完成，裸入口输出不等于可收录或可训练视频。
+
+平板入口使用矩形截面和原生共享材料边界缓存。未裂区删除重合内部断面，渐进开裂阶段保留有限面积连接，最后连接切断后保持静止；保存场景通过自身网格与显隐关键帧播放，不读取外部处理脚本。1.1.0以重合坐标检查连接的草稿已拒绝，不是可用基准。
+
+`--reference`是独立的显式JSON输入，包含`source_id`、`source_path`、`source_sha256`、`structure`（`flat_strip`或`flat_dogbone`）、`source_labels`、`observations`、`unknowns`、`source_time_mapping`和`geometry_assumptions`。入口核对源文件SHA；来源内容由制作与复核人员核实，字段齐全不证明材料行为。当前固定局部伸长增量0.18、均匀伸长增量0.02，宽厚收缩指数0.58/0.42仅为作者耦合假设，不能推广为源实验测量或批准范围。输出`frames/%06d.png`、配置、关键状态、实际网格检查及待完善的成片JSON；仍须最终编码、独立复核与用户验收。

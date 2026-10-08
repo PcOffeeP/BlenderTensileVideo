@@ -3,9 +3,9 @@
   "updated": "2026-10-08",
   "design_document": "../DESIGN.md",
   "design_version": "v1.8",
-  "status": "baseline_expansion_videos_user_accepted",
+  "status": "next_geometry_baseline_checked_pending_user_acceptance",
   "approved_video_count": 10,
-  "reviewable_candidate_count": 0,
+  "reviewable_candidate_count": 1,
   "batch_complete": false,
   "batch_released": false,
   "items": [
@@ -347,7 +347,7 @@
       "video_path": "current/composite_rapid_strand_fragmentation/composite_rapid_strand_fragmentation_baseline_v0_1.mp4",
       "metadata_path": "current/composite_rapid_strand_fragmentation/composite_rapid_strand_fragmentation_baseline_v0_1.json",
       "sha256": "7216102004e389b2472c15f382984a21e0d55038ad5066eedb2ba5e020e6881d",
-      "metadata_sha256": "9c5d3152dd37047d89e6728581c16e16dc24562638f4d9ba35ed498b13728dd7",
+      "metadata_sha256": "0c62d6767398d7131fcaa16e0573a0d8b6af675a8a80e09f75251adfc3fb06d3",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -377,7 +377,45 @@
       "acceptance_scope": "single_video_visual_acceptance"
     }
   ],
-  "candidates": [],
+  "candidates": [
+    {
+      "id": "metal_flat_limited_deformation_rupture_baseline_v1",
+      "style_id": "metal_flat_limited_deformation_rupture",
+      "title": "金属平板有限变形后断裂（韧性预期，主模式未知）",
+      "status": "checked_pending_user_acceptance",
+      "source_id": "video_0058",
+      "video_path": "../_work/next-baselines-20261008/metal-flat-connected/metal_flat_limited_deformation_rupture_baseline_v1.mp4",
+      "metadata_path": "../_work/next-baselines-20261008/metal-flat-connected/metal_flat_limited_deformation_rupture_baseline_v1.json",
+      "sha256": "b1e9ec7b708cdf621721b4e1300506d002f51f5f59907489279a8c71bcb6d065",
+      "metadata_sha256": "b60a29a64caa737d4cc24c8bf5cacd18ed56a09f10e8d370807735fc98cedc28",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "expected_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "无法确认",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_qualitative_initial_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false,
+      "expected_mode_coverage_verified": false
+    }
+  ],
   "materials": [
     {
       "material": "金属",
@@ -420,9 +458,10 @@
     }
   ],
   "next_steps": [
-    "三条新增固定基础视频已按原候选SHA收录；本轮十条均仅接受当前视频视觉效果，样式、连续参数范围与训练发布分别保持未批准。",
-    "高分子半脆半韧与复材爆炸性保留预期/核验区别；复材韧性保留视觉证据缺口，当前不能声称全部机制已覆盖。",
-    "继续已授权的下一步模板与变体准备；各样式可调参数与耦合范围须按已确认方案分别核验，扩大范围先确认。"
+    "用户查看0058来源的金属平板有限变形固定首例；独立检查及主Agent成片查看已完成，接受后按SHA收录。",
+    "高分子0014及复材0040主模式依据裁决继续无法确认；现片视觉接受有效，不为升标签添造运动。",
+    "高分子局部颈缩/颈缩传播的7条韧性来源不足以确认可见行为，复材韧性0030/0099仍有证据缺口。",
+    "先补有依据基础样式，再确认离散参数变化；当前没有连续范围批准或训练发布。"
   ],
   "management_cleanup_status": "complete",
   "source_inventory": {
@@ -513,11 +552,37 @@
         ],
         "source_mode": "爆炸性断裂",
         "status": "video_visually_accepted_mode_unconfirmed"
+      },
+      {
+        "material": "高分子",
+        "source_ids": [
+          "video_0012",
+          "video_0055",
+          "video_0074",
+          "video_0077",
+          "video_0080",
+          "video_0085",
+          "video_0097"
+        ],
+        "requested_behavior": "local_necking_or_neck_propagation",
+        "source_mode": "韧性断裂",
+        "status": "insufficient_visible_new_or_propagating_neck_evidence",
+        "note": "Source labels do not specifically identify necking; global elongation and preformed dogbone waist do not establish it."
       }
     ],
     "parameter_ranges_accepted": false,
     "selected_candidate_generation_complete": true,
-    "all_requested_mode_coverage_complete": false
+    "all_requested_mode_coverage_complete": false,
+    "next_geometry_baseline": {
+      "source_id": "video_0058",
+      "style_id": "metal_flat_limited_deformation_rupture",
+      "status": "checked_pending_user_acceptance",
+      "expected_mode": "韧性断裂",
+      "checked_mode": "无法确认",
+      "expected_mode_coverage_verified": false,
+      "note": "Native shared material connection repaired and independently verified; finite local narrowing and complete separation are authored extensions, not verified neck-growth behavior.",
+      "candidate_id": "metal_flat_limited_deformation_rupture_baseline_v1"
+    }
   },
   "initial_baseline_batch": {
     "accepted_video_count": 10,

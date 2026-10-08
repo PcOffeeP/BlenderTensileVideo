@@ -2395,5 +2395,21 @@
       "Qualitative fixed-video review and visual acceptance do not establish microscopic mechanism, calibrated constitutive behavior, source formal gauge or a parameter range.",
       "All original label values, source observations, author assumptions and unknowns are preserved."
     ]
+  },
+  "mode_evidence_adjudication": {
+    "date": "2026-10-08",
+    "status": "checked_mode_remains_unknown",
+    "video_sha256": "7216102004e389b2472c15f382984a21e0d55038ad5066eedb2ba5e020e6881d",
+    "report": "_work/next-baselines-20261008/review/mode_evidence_adjudication.md",
+    "basis": "Existing source and encoded-video evidence reviewed without repeating the same mechanical review. The source whole failure region and crack distribution are insufficiently visible; rapid strands cannot distinguish explosive morphology from longitudinal splitting with transverse rupture.",
+    "terminology_scope": "Explosive is considered here as a mechanical composite failure morphology. Absence of confirmed flame, chemical blast or free-fragment trajectories is not the basis for retaining unknown. This is a terminology inference from the mechanical tensile classification context, not a quoted standard criterion or confirmation that the source follows that standard.",
+    "primary_context_source": {
+      "url": "https://ntrs.nasa.gov/api/citations/20260000246/downloads/NASA-TM-20260000246.pdf",
+      "printed_page": 9,
+      "table": "Table 3",
+      "scope": "Explosive and longitudinal splitting are listed separately; no source-specific category or quantitative parameter transferred."
+    },
+    "visual_acceptance_unchanged": true,
+    "training_released": false
   }
 }
