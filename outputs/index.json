@@ -3,7 +3,7 @@
   "updated": "2026-10-08",
   "design_document": "../DESIGN.md",
   "design_version": "v1.3",
-  "status": "rebuilding_evidence_and_continuous_model_required",
+  "status": "video_generation_paused",
   "approved_video_count": 0,
   "reviewable_candidate_count": 0,
   "batch_complete": false,
@@ -29,63 +29,10 @@
     }
   ],
   "next_steps": [
-    "补足圆棒断裂过程依据与连续模型，再制作整条基准；诊断预览不计 seed。",
-    "有依据的样式再制作呈现/运动变化；缺证据不凑数。",
-    "继续四类材料证据调查，历史测试来源不作模板。"
+    "用户恢复制作后，从 DESIGN 重新补证据并建立基准。",
+    "重新完成真实夹口、连续形变、断裂可见性、编码及适用验收。",
+    "用户逐条接受后收录，再推进有依据的变体与其他材料样式。"
   ],
-  "diagnostic": {
-    "style_id": "metal_round_neck_separation",
-    "status": "not_a_seed",
-    "key_state_count": 4,
-    "artifact_directory": "../_work/2026-10-08-rebuild/metal_round",
-    "observations": [
-      "实际求值网格在关键状态从一个连通分量变为两个；零间隙渲染只显示接缝，完全断裂未被图像证明。"
-    ],
-    "limitations": [
-      "四个独立静态状态，不是连续视频；无编码验收。",
-      "简化夹具不证明实际夹持力传递。",
-      "局部变形数值为未标定作者选择，不是通过的参数范围。"
-    ],
-    "next_required": [
-      "匹配材料与断裂过程的直接证据",
-      "真实夹口连接及连续材料段形变模型",
-      "整条编码、独立复核与用户逐条验收"
-    ],
-    "expected_labels": {
-      "material": "金属",
-      "fracture_result": "完全断裂",
-      "primary_failure": "韧性断裂",
-      "fracture_location": "标距内",
-      "gripping_anomaly": "无",
-      "camera_anomaly": "无"
-    },
-    "verified_labels": {
-      "fracture_result": "无法确认",
-      "note": "诊断预览不构成六组最终标签验收；标距为作者定义，实验正式标距未知。"
-    },
-    "mesh_measurement": {
-      "connected_key_state_components": 1,
-      "split_key_state_components": 2,
-      "surface_gap": 0.0,
-      "unit": "relative_scene_unit",
-      "scope": "作者生成的关键状态实际求值网格，不能替代图像判据及真实夹持核验"
-    },
-    "independent_review": {
-      "result": "not_approved_as_seed",
-      "scope": "真实场景四状态、断后所测帧顶点与夹具静止、实际预览；无连续动画或视频编码。",
-      "observed_components": [
-        1,
-        1,
-        1,
-        2
-      ],
-      "postbreak_max_vertex_change": 0.0,
-      "maximum_material_slice_relative_volume_error": 7.89e-05,
-      "limitations": [
-        "图像不足以证明完全断裂",
-        "坐标端接不是物理夹持核验",
-        "参数未标定，不能作已通过范围"
-      ]
-    }
-  }
+  "management_cleanup_status": "complete",
+  "pause_reason": "用户要求先完成管理与清理，暂不制作视频。"
 }
