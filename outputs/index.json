@@ -3,9 +3,9 @@
   "updated": "2026-10-08",
   "design_document": "../DESIGN.md",
   "design_version": "v1.10",
-  "status": "explosive_full_span_checked_pending_user_acceptance",
+  "status": "explosive_generation_paused_by_user",
   "approved_video_count": 11,
-  "reviewable_candidate_count": 1,
+  "reviewable_candidate_count": 0,
   "batch_complete": false,
   "batch_released": false,
   "items": [
@@ -416,46 +416,7 @@
       "acceptance_scope": "single_video_visual_acceptance"
     }
   ],
-  "candidates": [
-    {
-      "id": "composite_full_span_rapid_splitting_baseline_v0_2",
-      "style_id": "composite_full_span_rapid_splitting",
-      "title": "复材广自由段细束炸裂（参差裂端）",
-      "status": "checked_pending_user_acceptance",
-      "source_id": "video_0040",
-      "video_path": "../_work/explosive-revision-20261008/full_span/composite_full_span_rapid_splitting_baseline_v0_2.mp4",
-      "metadata_path": "../_work/explosive-revision-20261008/full_span/composite_full_span_rapid_splitting_baseline_v0_2.json",
-      "sha256": "37321cf35a555823a6035de6ee00310d092fe0eca05fbe9849ae575502f531c5",
-      "metadata_sha256": "94035ca2c2e21f26d227821740725c40881135533482bb5275c28d7ae6b4a54e",
-      "duration_s": 20,
-      "fps": 30,
-      "frames": 600,
-      "expected_labels": {
-        "材料类别": "复材",
-        "断裂结果": "完全断裂",
-        "单一主要破坏类别": "爆炸性断裂",
-        "断裂位置": "标距内",
-        "夹持异常": "无",
-        "拍摄异常": "无"
-      },
-      "checked_labels": {
-        "材料类别": "复材",
-        "断裂结果": "完全断裂",
-        "单一主要破坏类别": "爆炸性断裂",
-        "断裂位置": "标距内",
-        "夹持异常": "无",
-        "拍摄异常": "无"
-      },
-      "independent_review": "passed_for_fixed_qualitative_candidate",
-      "main_final_video_view_completed": true,
-      "user_accepted": false,
-      "style_accepted": false,
-      "parameter_range_accepted": false,
-      "training_released": false,
-      "expected_mode_coverage_verified": true,
-      "mode_confirmation_basis": "DESIGN_v1.10_project_visible_explosive_splitting_criterion"
-    }
-  ],
+  "candidates": [],
   "materials": [
     {
       "material": "金属",
@@ -500,7 +461,7 @@
   ],
   "next_steps": [
     "高分子半脆半韧按用户项目视觉判据确认当前样片，保持实际配置和弹塑份额未知；无需重生成。",
-    "用户查看新20秒广自由段细束炸裂候选；独立600帧与最终编码复核、主Agent播放完成，接受后收录。旧局部型保持。",
+    "爆炸性断裂生成按用户要求搁置；0.2候选已否定，不再待验收或用于爆炸性模板。等待用户明确恢复指示。",
     "复材韧性与高分子颈缩传播仍保留来源证据缺口；连续参数范围与训练发布未批准。"
   ],
   "management_cleanup_status": "complete",
@@ -584,7 +545,7 @@
           "video_0040"
         ],
         "source_mode": "爆炸性断裂",
-        "status": "full_span_candidate_mode_verified_pending_user_visual_acceptance",
+        "status": "generation_paused_candidate_rejected_visual_evidence_insufficient",
         "candidate_id": "composite_full_span_rapid_splitting_baseline_v0_2"
       },
       {
@@ -624,13 +585,52 @@
     "training_released": false
   },
   "explosive_revision": {
-    "status": "checked_pending_user_acceptance",
+    "status": "paused_by_user",
     "source_id": "video_0040",
-    "basis": "user feedback plus Shimadzu V18 continuous tensile frames for longitudinal splitting only",
+    "basis": "User rejection overrides prior visual pass; original0040 retained as source, supplementary splitting records insufficient for explosive effect.",
     "scope": "single full-free-span qualitative candidate; old accepted local video retained",
     "research_record": "../_work/explosive-revision-20261008/research.md",
     "candidate_id": "composite_full_span_rapid_splitting_baseline_v0_2",
     "implementation_version": "composite-fragmentation/0.2.0",
-    "old_accepted_local_retained": true
+    "old_accepted_local_retained": true,
+    "reason": "Full-span candidate rejected: hair-like strand rupture is not explosive fracture; supplemental reference lacks explosive visual evidence.",
+    "rejected_candidate": {
+      "id": "composite_full_span_rapid_splitting_baseline_v0_2",
+      "style_id": "composite_full_span_rapid_splitting",
+      "title": "复材广自由段细束炸裂（参差裂端）",
+      "status": "rejected_by_user_visual_mismatch",
+      "source_id": "video_0040",
+      "video_path": "../_work/explosive-revision-20261008/full_span/composite_full_span_rapid_splitting_baseline_v0_2.mp4",
+      "metadata_path": "../_work/explosive-revision-20261008/full_span/composite_full_span_rapid_splitting_baseline_v0_2.json",
+      "sha256": "37321cf35a555823a6035de6ee00310d092fe0eca05fbe9849ae575502f531c5",
+      "metadata_sha256": "e6a1d4f6d4da4fed85069527804b4ac0487f18f4468511c4458127d7761993f0",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "爆炸性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "无法确认",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "historical_technical_review_only_visual_mode_rejected",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false,
+      "expected_mode_coverage_verified": false
+    },
+    "resume_requires": "Explicit user instruction to resume"
   }
 }
