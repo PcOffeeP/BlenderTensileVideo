@@ -6,7 +6,7 @@
 |---|---|---|
 | [metal_initial.py](metal_initial.py) | `metal-initial-v1.1.0` | `--style ductile` 颈缩分离或 `brittle` 小变形突断；1280×720。 |
 | [polymer_initial.py](polymer_initial.py) | `polymer-initial/1.1.1` | `--style dogbone` 大伸长或 `film` 薄膜根部断裂；960×540。 |
-| [composite_initial.py](composite_initial.py) | `composite-initial/0.3.1` | `--kind debond` 脱粘后完全断裂或 `brittle` 低位突断；960×540。 |
+| [composite_initial.py](composite_initial.py) | `debond: composite-initial/0.4.0`；`brittle: composite-initial/0.3.1` | `--kind debond` 断裂与脱粘同步或 `brittle` 低位突断；960×540。 |
 | [ceramic_initial.py](ceramic_initial.py) | `ceramic-initial/1.0.1` | 陶瓷小形变脆断定性演示，`--out` 指定目录；1280×720。 |
 
 四者均为20秒、30fps的定性几何动画，在配置输出中记录实现版本与适用范围，不读取 `_work/` 输入。参数只对应离散首版候选，未标定本构，未批准连续范围。当前金属代码是1.1.0；本轮颈缩成片仍记录原1.0.1配置，以其同名JSON及自包含烘焙场景精确追溯，不因代码复制而改写成片版本。
@@ -30,4 +30,4 @@ ffmpeg -framerate 30 -start_number 1 -i /absolute/new/output/metal/frames/%04d.p
 
 颈缩参数 `--neck-local-stretch-amplitude` 仅适用于金属 `ductile`，默认4.0。它是局部轴向伸长增量，长度由材料坐标积分，半径按局部伸长的平方根倒数耦合变化。工程守卫为有限 `0 < A ≤ 4.0`，不是批准的材料/视觉连续范围；在 `brittle` 上显式传该参数会被拒绝。更弱离散值2.0作网格/关键状态验证，无新成片验收，接受的基准视频保持不变。
 
-本轮高分子1.1.1补机械连接、全机取景及顶梁净间隙，试样600帧顶点坐标/拓扑与1.0对比；复材0.3.1移除后板与孤立机架柱，采用夹具和试样视图，脱粘样片按用户纠正新增实际全断。陶瓷身份来自用户确认的video_0050，完整脆断是超出其可见裂纹阶段的初版建模扩展，原标签表与用户确认分别保存。
+高分子1.1.1补机械连接、全机取景及顶梁净间隙，试样600帧顶点坐标/拓扑与1.0对比；复材沿用已去后板与孤立机架柱的夹具和试样视图；debond0.4.0样片按用户进一步纠正将断裂与局部界面脱粘放在同一事件；brittle分支保留0.3.1配置，已接受旧成片不改写。陶瓷身份来自用户确认的video_0050，完整脆断是超出其可见裂纹阶段的初版建模扩展，原标签表与用户确认分别保存。

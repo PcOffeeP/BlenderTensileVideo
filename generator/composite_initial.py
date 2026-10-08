@@ -3,8 +3,10 @@ from pathlib import Path
 from mathutils import Vector
 V='composite-initial/0.3.1'
 p=argparse.ArgumentParser();p.add_argument('--kind',choices=['debond','brittle'],required=True);p.add_argument('--out',required=True);p.add_argument('--render',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args(sys.argv[sys.argv.index('--')+1:])
+if a.kind=='debond':V='composite-initial/0.4.0'
 out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=True)
-C={'version':V,'kind':a.kind,'fps':30,'frames':600,'resolution':[960,540],'loading_axis':'z','fixed_end':'lower','moving_end':'upper','free_span':5.0,'width':1.0,'thickness':0.18,'grip_overlap':0.48,'gauge_authored':[-1.5,1.5],'units':'dimensionless relative coordinates','event_frame':511,'maximum_grip_displacement':0.14 if a.kind=='debond' else 0.10,'fracture_z':-1.83 if a.kind=='brittle' else 0.0,'rear_panel':False,'machine_columns':False,'debond_final_result':'complete_rupture_after_interface_damage','debond_fracture_slope':0.22,'debond_local_shear':0.12,'debond_damage_full_frame':481,'brittle_local_shear':0.12,'brittle_fracture_slope':0.22,'no_constitutive_solver':True}
+C={'version':V,'kind':a.kind,'fps':30,'frames':600,'resolution':[960,540],'loading_axis':'z','fixed_end':'lower','moving_end':'upper','free_span':5.0,'width':1.0,'thickness':0.18,'grip_overlap':0.48,'gauge_authored':[-1.5,1.5],'units':'dimensionless relative coordinates','event_frame':511,'maximum_grip_displacement':0.14 if a.kind=='debond' else 0.10,'fracture_z':-1.83 if a.kind=='brittle' else 0.0,'rear_panel':False,'machine_columns':False,'debond_final_result':'complete_rupture_simultaneous_with_interface_opening','debond_fracture_slope':0.22,'debond_local_shear':0.12,'debond_damage_full_frame':511,'brittle_local_shear':0.12,'brittle_fracture_slope':0.22,'no_constitutive_solver':True}
+if a.kind=='debond':C.update({'debond_damage_onset_frame':511,'debond_damage_full_frame':511,'interface_and_complete_rupture_same_onset':True,'debond_event_timing':'simultaneous abrupt opening and complete rupture at frame511','debond_final_result':'complete_rupture_simultaneous_with_interface_opening'})
 bpy.ops.object.select_all(action='SELECT');bpy.ops.object.delete(use_global=False)
 s=bpy.context.scene;s.render.engine='BLENDER_WORKBENCH';s.render.resolution_x=960;s.render.resolution_y=540;s.render.resolution_percentage=100;s.render.fps=30;s.frame_start=1;s.frame_end=600
 s.render.image_settings.file_format='PNG';s.render.film_transparent=False
@@ -42,7 +44,7 @@ def build(f):
   for inds in [(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)]:faces.append(tuple(ids[i] for i in inds));mids.append(mi)
  if a.kind=='debond':
   xs=[-.5+i/20 for i in range(21)]
-  strength=smooth((min(f,481)-361)/120);length=1.6*strength
+  strength=1.0 if f>=C['event_frame'] else 0.0;length=1.6*strength
   for ply in range(2):
    sg=-1 if ply==0 else 1
    for part in range(2):
@@ -167,15 +169,20 @@ def check(f):
  if a.kind=='debond':
   owned=[set(),set()]
   for pp in me.polygons:owned[pp.material_index].update(pp.vertices)
-  rings={}
+  rings={};interface_rings={}
   for ply,ids in enumerate(owned):
    for i in ids:
     src=me.attributes['source_coordinate'].data[i].vector;part=me.attributes['source_part'].data[i].value
     key=(round(src.x,6),round(src.z,6),part if f>=511 else 0)
-    rings.setdefault(key,[[],[]])[ply].append(v[i].y)
-  gaps=[];th=[]
-  for lower,upper in rings.values():
-   if lower and upper:gaps.append(min(upper)-max(lower));th.extend([max(lower)-min(lower),max(upper)-min(upper)])
+    rings.setdefault(key,[[],[]])[ply].append((src.y,v[i].y))
+    # Only original y=0 material interface vertices can measure an interface gap.
+    # A bonded interior interface has no surface vertices, not a gap equal to bulk thickness.
+    if abs(src.y)<1e-6:interface_rings.setdefault(key,[[],[]])[ply].append(v[i].y)
+  gaps=[min(upper)-max(lower) for lower,upper in interface_rings.values() if lower and upper];th=[]
+  for layers in rings.values():
+   for ply,vs in enumerate(layers):
+    inner=[yy for sy,yy in vs if abs(sy)<1e-6];outer=[yy for sy,yy in vs if abs(sy-(-.09 if ply==0 else .09))<1e-6]
+    if inner and outer:th.append(abs(sum(inner)/len(inner)-sum(outer)/len(outer)))
   r['interface_opening_measured']=max(gaps,default=0);r['interface_clearance_measured_min']=min(gaps,default=0);r['ply_thickness_measured_min']=min(th,default=.09);r['inter_ply_penetration']=min(gaps,default=0)<-1e-6;r['section_actual_ply_thickness']=r['ply_thickness_measured_min']
  if f>=511 and len(comps)==2:
   seam=[]
@@ -192,7 +199,7 @@ def check(f):
    clear.append((uc-un.x*x)/un.z-(lc-ln.x*x)/ln.z)
   r['seam_clearance_measured_min']=min(clear);r['seam_clearance_measured_max']=max(clear);r['seam_penetration']=min(clear)<-1e-6
  ev.to_mesh_clear();return r
-keyframes=[1,241,362,421,481,510,511,540,600] if a.kind=='debond' else [1,241,481,507,510,511,540,600]
+keyframes=[1,241,481,507,508,509,510,511,512,513,514,515,540,600] if a.kind=='debond' else [1,241,481,507,510,511,540,600]
 checks=[check(f) for f in keyframes]
 # Post-event equality uses actual evaluated material coordinates, plus actual fixture locations.
 post=[check(f) for f in [C['event_frame'],C['event_frame']+1,540,600]]

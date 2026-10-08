@@ -2,10 +2,10 @@
   "schema": "tensile-video-index/v2",
   "updated": "2026-10-08",
   "design_document": "../DESIGN.md",
-  "design_version": "v1.6",
+  "design_version": "v1.7",
   "status": "checked_pending_user_acceptance",
-  "approved_video_count": 1,
-  "reviewable_candidate_count": 6,
+  "approved_video_count": 6,
+  "reviewable_candidate_count": 1,
   "batch_complete": false,
   "batch_released": false,
   "items": [
@@ -36,18 +36,16 @@
       "acceptance_scope": "single_video_visual_acceptance",
       "style_accepted": false,
       "parameter_range_accepted": false
-    }
-  ],
-  "candidates": [
+    },
     {
       "id": "metal_round_brittle_baseline_v1",
       "title": "金属圆棒小变形突断",
-      "status": "checked_pending_user_acceptance",
+      "status": "user_accepted_video",
       "source_id": "video_0003",
-      "video_path": "../_work/initial-batch-20261008/metal/brittle/metal_round_brittle_baseline_v1.mp4",
-      "metadata_path": "../_work/initial-batch-20261008/metal/brittle/metal_round_brittle_baseline_v1.json",
+      "video_path": "current/metal_round_brittle/metal_round_brittle_baseline_v1.mp4",
+      "metadata_path": "current/metal_round_brittle/metal_round_brittle_baseline_v1.json",
       "sha256": "19b3f862a13f4c38200f41bc56e05171cc10ec6721859aeeb97b1b09b22ddc08",
-      "metadata_sha256": "29f05c0729ba29e4d6c76f2596e0fbb8d329f8f0d9285cb3cd5001ec3efb35a4",
+      "metadata_sha256": "50fa9c662f0b9440bac0c276c6837f3c11b44af6b0c8fcbcdfffe6ed86047e66",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -61,18 +59,21 @@
       },
       "independent_review": "passed_for_qualitative_initial_candidate",
       "main_final_video_view_completed": true,
-      "user_accepted": false,
-      "training_released": false
+      "user_accepted": true,
+      "training_released": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "style_accepted": false,
+      "parameter_range_accepted": false
     },
     {
       "id": "polymer_black_dogbone_baseline_v2",
       "title": "高分子大伸长断裂",
-      "status": "checked_pending_user_acceptance",
+      "status": "user_accepted_video",
       "source_id": "video_0097",
-      "video_path": "../_work/feedback-revision-20261008/polymer/dogbone/polymer_black_dogbone_baseline_v2.mp4",
-      "metadata_path": "../_work/feedback-revision-20261008/polymer/dogbone/polymer_black_dogbone_baseline_v2.json",
+      "video_path": "current/polymer_black_flexible_dogbone/polymer_black_dogbone_baseline_v2.mp4",
+      "metadata_path": "current/polymer_black_flexible_dogbone/polymer_black_dogbone_baseline_v2.json",
       "sha256": "709bb8db6ee6bdbd28692d40b57f5e6d4248b1bb1368d9b045e8efd8a62b2eb7",
-      "metadata_sha256": "7e306f4dde8d0210604c09c272b8131acc828402bf0b42e84774f2f4c7142888",
+      "metadata_sha256": "c4f309f6d9d7abb7d43a1fbda4385c2b96db6428841553accbf8ebcc3875c0cd",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -86,18 +87,21 @@
       },
       "independent_review": "passed_for_qualitative_initial_candidate",
       "main_final_video_view_completed": true,
-      "user_accepted": false,
-      "training_released": false
+      "user_accepted": true,
+      "training_released": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "style_accepted": false,
+      "parameter_range_accepted": false
     },
     {
       "id": "polymer_yellow_film_grip_root_baseline_v2",
       "title": "高分子薄膜夹口根部断裂",
-      "status": "checked_pending_user_acceptance",
+      "status": "user_accepted_video",
       "source_id": "video_0025",
-      "video_path": "../_work/feedback-revision-20261008/polymer/film/polymer_yellow_film_grip_root_baseline_v2.mp4",
-      "metadata_path": "../_work/feedback-revision-20261008/polymer/film/polymer_yellow_film_grip_root_baseline_v2.json",
+      "video_path": "current/polymer_yellow_film_root_rupture/polymer_yellow_film_grip_root_baseline_v2.mp4",
+      "metadata_path": "current/polymer_yellow_film_root_rupture/polymer_yellow_film_grip_root_baseline_v2.json",
       "sha256": "6dae1dcc436a826b095a99e0e78baa1a444199eea03800875c5f10cff81cbece",
-      "metadata_sha256": "0b6f90febc2ca0e9078e9324c33d4be69b00c19f9ad1313205c0165afe6303b3",
+      "metadata_sha256": "2b86d1b3319835cec1958f347170eace75bab24288fbe9bc3ae538c254f46f86",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -111,18 +115,80 @@
       },
       "independent_review": "passed_for_qualitative_initial_candidate",
       "main_final_video_view_completed": true,
-      "user_accepted": false,
-      "training_released": false
+      "user_accepted": true,
+      "training_released": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "style_accepted": false,
+      "parameter_range_accepted": false
     },
     {
-      "id": "composite_interface_debond_complete_feedback_v0_3",
-      "title": "复材界面脱粘后完全断裂",
+      "id": "composite_brittle_lower_feedback_v0_3",
+      "title": "复材近下夹口突断",
+      "status": "user_accepted_video",
+      "source_id": "video_0100",
+      "video_path": "current/composite_brittle_lower/composite_brittle_lower_feedback_v0_3.mp4",
+      "metadata_path": "current/composite_brittle_lower/composite_brittle_lower_feedback_v0_3.json",
+      "sha256": "fed17e58fe19af53240695aec7c464df4574aa55210980dc1e48fb78f0be404a",
+      "metadata_sha256": "90cd9808664ebf06e871ba2df592d3534e94d9bbae9f2108a3fd008319d6c9b4",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_qualitative_initial_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": true,
+      "training_released": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "style_accepted": false,
+      "parameter_range_accepted": false
+    },
+    {
+      "id": "ceramic_dogbone_brittle_baseline_v1",
+      "title": "陶瓷小形变横向脆断",
+      "status": "user_accepted_video",
+      "source_id": "video_0050",
+      "video_path": "current/ceramic_dogbone_brittle/ceramic_dogbone_brittle_baseline_v1.mp4",
+      "metadata_path": "current/ceramic_dogbone_brittle/ceramic_dogbone_brittle_baseline_v1.json",
+      "sha256": "0fe9e04c0b921765b56b98cdc5b92ee0e7b8a234e345dacb0c5dc79a677e246c",
+      "metadata_sha256": "d1d9c321b0190c09f1782e7b403957ef5d097bd2ae120046624810d68a62ccf4",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "expected_labels": {
+        "材料类别": "陶瓷",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_qualitative_initial_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": true,
+      "training_released": false,
+      "material_identity_basis": "user_confirmation_2026-10-08",
+      "acceptance_scope": "single_video_visual_acceptance",
+      "style_accepted": false,
+      "parameter_range_accepted": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "composite_interface_debond_simultaneous_baseline_v0_4",
+      "title": "复材断裂与界面脱粘同时发生",
       "status": "checked_pending_user_acceptance",
       "source_id": "video_0020",
-      "video_path": "../_work/feedback-revision-20261008/composite/debond/composite_interface_debond_complete_feedback_v0_3.mp4",
-      "metadata_path": "../_work/feedback-revision-20261008/composite/debond/composite_interface_debond_complete_feedback_v0_3.json",
-      "sha256": "e50d2f1ed6a560431ffe6a5385c00b95095f9517f5849414f17d592f95070b7a",
-      "metadata_sha256": "8bcea27e68f7f987ca9d7aee5b0b2b56c842e95b96bf31cb4d5c60237ccd70af",
+      "video_path": "../_work/composite-simultaneous-20261008/composite_interface_debond_simultaneous_baseline_v0_4.mp4",
+      "metadata_path": "../_work/composite-simultaneous-20261008/composite_interface_debond_simultaneous_baseline_v0_4.json",
+      "sha256": "ff4b576ffd2c29a7c9812ce161ea4f8433993fe013183e5d082d9d7e3a963581",
+      "metadata_sha256": "3fe1b85dbfa8ebe9da43d812120c5c250ff6393d2dc3a4c8741c83dd14b039e7",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -138,63 +204,12 @@
       "main_final_video_view_completed": true,
       "user_accepted": false,
       "training_released": false
-    },
-    {
-      "id": "composite_brittle_lower_feedback_v0_3",
-      "title": "复材近下夹口突断",
-      "status": "checked_pending_user_acceptance",
-      "source_id": "video_0100",
-      "video_path": "../_work/feedback-revision-20261008/composite/brittle/composite_brittle_lower_feedback_v0_3.mp4",
-      "metadata_path": "../_work/feedback-revision-20261008/composite/brittle/composite_brittle_lower_feedback_v0_3.json",
-      "sha256": "fed17e58fe19af53240695aec7c464df4574aa55210980dc1e48fb78f0be404a",
-      "metadata_sha256": "1f13a0ece5e98c8f9af06eed9f1f5ea9a77c4b8a634f49c0b6e501fb0e56802b",
-      "duration_s": 20,
-      "fps": 30,
-      "frames": 600,
-      "expected_labels": {
-        "材料类别": "复材",
-        "断裂结果": "完全断裂",
-        "单一主要破坏类别": "脆性断裂",
-        "断裂位置": "标距外非根部",
-        "夹持异常": "无",
-        "拍摄异常": "无"
-      },
-      "independent_review": "passed_for_qualitative_initial_candidate",
-      "main_final_video_view_completed": true,
-      "user_accepted": false,
-      "training_released": false
-    },
-    {
-      "id": "ceramic_dogbone_brittle_baseline_v1",
-      "title": "陶瓷小形变横向脆断",
-      "status": "checked_pending_user_acceptance",
-      "source_id": "video_0050",
-      "video_path": "../_work/feedback-revision-20261008/ceramic/ceramic_dogbone_brittle_baseline_v1.mp4",
-      "metadata_path": "../_work/feedback-revision-20261008/ceramic/ceramic_dogbone_brittle_baseline_v1.json",
-      "sha256": "0fe9e04c0b921765b56b98cdc5b92ee0e7b8a234e345dacb0c5dc79a677e246c",
-      "metadata_sha256": "1acc5dac67ebec7db69e3bee5d49ba97da930f606efca19faf624139dba975f5",
-      "duration_s": 20,
-      "fps": 30,
-      "frames": 600,
-      "expected_labels": {
-        "材料类别": "陶瓷",
-        "断裂结果": "完全断裂",
-        "单一主要破坏类别": "脆性断裂",
-        "断裂位置": "标距内",
-        "夹持异常": "无",
-        "拍摄异常": "无"
-      },
-      "independent_review": "passed_for_qualitative_initial_candidate",
-      "main_final_video_view_completed": true,
-      "user_accepted": false,
-      "training_released": false,
-      "material_identity_basis": "user_confirmation_2026-10-08"
     }
   ],
   "materials": [
     {
       "material": "金属",
-      "status": "one_accepted_video_one_pending_user_acceptance",
+      "status": "two_accepted_videos",
       "source_ids": [
         "video_0006",
         "video_0003"
@@ -202,7 +217,7 @@
     },
     {
       "material": "高分子",
-      "status": "two_checked_candidates_pending_user_acceptance",
+      "status": "two_accepted_videos",
       "source_ids": [
         "video_0097",
         "video_0025"
@@ -210,7 +225,7 @@
     },
     {
       "material": "复材",
-      "status": "two_checked_candidates_pending_user_acceptance",
+      "status": "one_accepted_video_one_checked_candidate_pending_user_acceptance",
       "source_ids": [
         "video_0020",
         "video_0100"
@@ -218,7 +233,7 @@
     },
     {
       "material": "陶瓷",
-      "status": "one_checked_candidate_pending_user_acceptance",
+      "status": "one_accepted_video",
       "source_ids": [
         "video_0050"
       ],
@@ -226,8 +241,8 @@
     }
   ],
   "next_steps": [
-    "用户逐条验收六条待审视频的效果与六组标签；接受后按字节校验值收录。",
-    "颈缩较弱值2.0已作关键状态检查；新视频及连续变化范围仍须各自核验。"
+    "用户验收新复材断裂与界面脱粘同步视频；接受后按字节校验值收录。",
+    "六条已接受视频保持原字节，不扩大为连续参数范围批准或训练发布。"
   ],
   "management_cleanup_status": "complete",
   "source_inventory": {
