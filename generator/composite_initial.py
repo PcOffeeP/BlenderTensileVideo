@@ -1,10 +1,10 @@
 import bpy, math, json, sys, os, argparse
 from pathlib import Path
 from mathutils import Vector
-V='composite-initial/0.2.0'
-p=argparse.ArgumentParser();p.add_argument('--kind',choices=['debond','brittle'],required=True);p.add_argument('--out',required=True);p.add_argument('--render',action='store_true');a=p.parse_args(sys.argv[sys.argv.index('--')+1:])
+V='composite-initial/0.3.1'
+p=argparse.ArgumentParser();p.add_argument('--kind',choices=['debond','brittle'],required=True);p.add_argument('--out',required=True);p.add_argument('--render',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args(sys.argv[sys.argv.index('--')+1:])
 out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=True)
-C={'version':V,'kind':a.kind,'fps':30,'frames':600,'resolution':[960,540],'loading_axis':'z','fixed_end':'lower','moving_end':'upper','free_span':5.0,'width':1.0,'thickness':0.18,'grip_overlap':0.48,'gauge_authored':[-1.5,1.5],'units':'dimensionless relative coordinates','event_frame':481 if a.kind=='debond' else 511,'maximum_grip_displacement':0.14 if a.kind=='debond' else 0.10,'fracture_z':-1.83 if a.kind=='brittle' else None,'brittle_local_shear':0.12,'brittle_fracture_slope':0.22,'no_constitutive_solver':True}
+C={'version':V,'kind':a.kind,'fps':30,'frames':600,'resolution':[960,540],'loading_axis':'z','fixed_end':'lower','moving_end':'upper','free_span':5.0,'width':1.0,'thickness':0.18,'grip_overlap':0.48,'gauge_authored':[-1.5,1.5],'units':'dimensionless relative coordinates','event_frame':511,'maximum_grip_displacement':0.14 if a.kind=='debond' else 0.10,'fracture_z':-1.83 if a.kind=='brittle' else 0.0,'rear_panel':False,'machine_columns':False,'debond_final_result':'complete_rupture_after_interface_damage','debond_fracture_slope':0.22,'debond_local_shear':0.12,'debond_damage_full_frame':481,'brittle_local_shear':0.12,'brittle_fracture_slope':0.22,'no_constitutive_solver':True}
 bpy.ops.object.select_all(action='SELECT');bpy.ops.object.delete(use_global=False)
 s=bpy.context.scene;s.render.engine='BLENDER_WORKBENCH';s.render.resolution_x=960;s.render.resolution_y=540;s.render.resolution_percentage=100;s.render.fps=30;s.frame_start=1;s.frame_end=600
 s.render.image_settings.file_format='PNG';s.render.film_transparent=False
@@ -26,34 +26,46 @@ for sign in [-1,1]:
  fixtures.append((box('fixture body '+str(sign),(0,.30,sign*3.33),(2.40,1.1,.70),steel),sign))
  fixtures.append((box('loading shaft '+str(sign),(0,.33,sign*3.94),(.75,.80,.57),steel),sign))
  for x in [-.96,.96]: fixtures.append((box('bolt '+str(sign)+str(x),(x,-.32,sign*3.31),(.19,.12,.19),dark,.06),sign))
-box('left machine column',(-3.40,1.00,0),(.48,.75,8.8),blue);box('right machine column',(3.40,1.00,0),(.48,.75,8.8),blue)
-box('rear panel',(0,1.68,0),(7.3,.25,9.3),mat('panel',(.68,.72,.73)),.02)
+# Fixture-and-specimen view: no detached frame columns or rear panel.
 bpy.ops.object.camera_add(location=((14,-9,3.0) if a.kind=='debond' else (7.5,-17,3.0)));cam=bpy.context.object;cam.name='fixed_camera';cam.rotation_euler=(Vector((0,0,0))-cam.location).to_track_quat('-Z','Y').to_euler();cam.data.type='ORTHO';cam.data.ortho_scale=16.4;s.camera=cam
 # Mesh builder welds coincident material vertices; connectivity is subsequently measured on evaluated mesh.
 def smooth(v):v=max(0,min(1,v));return v*v*(3-2*v)
 def displacement(f): return C['maximum_grip_displacement']*smooth((f-1)/(C['event_frame']-1))
 def build(f):
- d=displacement(min(f,C['event_frame']));verts=[];faces=[];mids=[];cache={}
+ d=displacement(min(f,C['event_frame']));verts=[];faces=[];mids=[];cache={};sources=[];source_map={}
  def vid(v):
   k=tuple(round(t,9) for t in v)
-  if k not in cache:cache[k]=len(verts);verts.append(v)
+  if k not in cache:cache[k]=len(verts);verts.append(v);sources.append(source_map.get(k,(0,0,0,-1,-1)))
   return cache[k]
  def addcell(corners,mi):
   ids=[vid(v) for v in corners]
   for inds in [(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)]:faces.append(tuple(ids[i] for i in inds));mids.append(mi)
  if a.kind=='debond':
-  zs=[-2.98]+[-2.5+i*5/60 for i in range(61)]+[2.98]
-  strength=smooth((f-361)/120);length=1.6*strength
+  xs=[-.5+i/20 for i in range(21)]
+  strength=smooth((min(f,481)-361)/120);length=1.6*strength
   for ply in range(2):
    sg=-1 if ply==0 else 1
-   def point(x,y,z):
-    z1=z+d*max(0,min(1,(z+2.5)/5))
-    env=0 if length==0 or abs(z)>=length/2 else math.sin(math.pi*(z+length/2)/length)**2
-    opening=.10*strength*env
-    return (x,y+sg*opening/2,z1)
-   for za,zb in zip(zs,zs[1:]):
-    ya,yb=(-.09,0) if ply==0 else (0,.09)
-    addcell([point(x,y,z) for z in [za,zb] for y,x in [(ya,-.5),(ya,.5),(yb,.5),(yb,-.5)]],ply)
+   for part in range(2):
+    def point(x,y,z):
+     z1=z+d*max(0,min(1,(z+2.5)/5))
+     env=0 if length==0 or abs(z)>=length/2 else math.sin(math.pi*(z+length/2)/length)**2
+     opening=.10*strength*env
+     x1=x
+     if part==1 and f>=511:
+      cut=1.2+d*3.7/5
+      x1-=.12*max(0,(cut-z1)/(cut-d/2))
+     result=(x1,y+sg*opening/2,z1)
+     source_map[tuple(round(t,9) for t in result)]=(x,y,z,ply,part)
+     return result
+    for xa,xb in zip(xs,xs[1:]):
+     def levels(x):
+      br=.22*x
+      return [-2.98,-2.5]+[-.8+i*.1 for i in range(7)]+[br] if part==0 else [br]+[.2+i*.1 for i in range(7)]+[1.2,2.5,2.98]
+     lz=levels(xa);rz=levels(xb)
+     ya,yb=(-.09,0) if ply==0 else (0,.09)
+     for j in range(len(lz)-1):
+      corners=[point(xa,ya,lz[j]),point(xb,ya,rz[j]),point(xb,yb,rz[j]),point(xa,yb,lz[j]),point(xa,ya,lz[j+1]),point(xb,ya,rz[j+1]),point(xb,yb,rz[j+1]),point(xa,yb,lz[j+1])]
+      addcell(corners,ply)
  else:
   xs=[-.5+i/20 for i in range(21)]
   progress=1.0 if f>=511 else 0.0;gap=0.0
@@ -85,10 +97,17 @@ def build(f):
   if k in seen:discard.add(i);discard.add(seen[k])
   else:seen[k]=i
  ff=[face for i,face in enumerate(faces) if i not in discard];mm=[mi for i,mi in enumerate(mids) if i not in discard]
+ # Drop unreferenced construction-grid vertices, not material or boundary faces.
+ used=sorted({i for face in ff for i in face});remap={old:new for new,old in enumerate(used)}
+ verts=[verts[i] for i in used];sources=[sources[i] for i in used];ff=[tuple(remap[i] for i in face) for face in ff]
  mesh.clear_geometry();mesh.from_pydata(verts,[],ff);mesh.update()
  for p,mi in zip(mesh.polygons,mm):
   p.material_index=mi;p.use_smooth=True
  mesh.set_sharp_from_angle(angle=math.radians(40))
+ if a.kind=='debond':
+  source_attr=mesh.attributes.new('source_coordinate','FLOAT_VECTOR','POINT')
+  part_attr=mesh.attributes.new('source_part','INT','POINT')
+  for i,src in enumerate(sources):source_attr.data[i].vector=src[:3];part_attr.data[i].value=src[4]
  return mesh
 mesh=build(1);obj=bpy.data.objects.new('specimen_actual_material',mesh);s.collection.objects.link(obj)
 base_fixture={o.name:o.location.z for o,sign in fixtures}
@@ -100,30 +119,36 @@ def update(f):
 def check(f):
  update(f);dg=bpy.context.evaluated_depsgraph_get();ev=obj.evaluated_get(dg);me=ev.to_mesh();v=[obj.matrix_world@x.co for x in me.vertices];adj=[set() for x in v]
  for e in me.edges:u,w=e.vertices;adj[u].add(w);adj[w].add(u)
- seen=set();comps=[]
+ seen=set();comps=[];component_ids=[]
  for k in range(len(v)):
   if k in seen:continue
-  q=[k];seen.add(k);n=0
+  q=[k];seen.add(k);n=0;ids=[]
   while q:
-   u=q.pop();n+=1
+   u=q.pop();n+=1;ids.append(u)
    for w in adj[u]:
     if w not in seen:seen.add(w);q.append(w)
-  comps.append(n)
+  comps.append(n);component_ids.append(ids)
  me.calc_loop_triangles();vol=sum(v[t.vertices[0]].dot(v[t.vertices[1]].cross(v[t.vertices[2]]))/6 for t in me.loop_triangles)
  d=displacement(min(f,C['event_frame']));bottom=[vv for vv in v if vv.z< -2.51];top=[vv for vv in v if vv.z>2.51+d]
  contact=lambda vs: min(abs(abs(vv.y)-.09) for vv in vs)
  r={'frame':f,'time_s':(f-1)/30,'components_measured':len(comps),'component_vertices':comps,'vertices':len(v),'faces':len(me.polygons),'signed_volume':vol,'specimen_z_bounds':[min(vv.z for vv in v),max(vv.z for vv in v)],'grip_surface_contact_error':[contact(bottom),contact(top)],'upper_jaw_displacement':d,'coordinates':[[round(t,9) for t in vv] for vv in v]}
+ r['component_clamp_connections']=[{'vertex_count':len(ids),'z_bounds':[min(v[i].z for i in ids),max(v[i].z for i in ids)],'touches_lower_material_clamp':any(-2.98001<=v[i].z<=-2.49999 for i in ids),'touches_upper_material_clamp':any(2.49999+d<=v[i].z<=2.98001+d for i in ids)} for ids in component_ids]
+ for c,ids in zip(r['component_clamp_connections'],component_ids):
+  members=set(ids);cv=sum(v[t.vertices[0]].dot(v[t.vertices[1]].cross(v[t.vertices[2]]))/6 for t in me.loop_triangles if t.vertices[0] in members)
+  c['signed_surface_volume']=cv;c['boundary_kind']='internal_cavity_boundary' if cv<0 and not(c['touches_lower_material_clamp'] or c['touches_upper_material_clamp']) else 'material_outer_boundary'
+ r['has_material_surface_path_between_clamps']=any(c['touches_lower_material_clamp'] and c['touches_upper_material_clamp'] for c in r['component_clamp_connections'])
  # Track actual same-material left-edge paths and measured section dimensions at key states.
  if a.kind=='debond':
-  rings={}
-  for vv in v:
-   if abs(vv.x+.5)<1e-6 and -2.50001<=vv.z<=2.5+d+1e-5:rings.setdefault(round(vv.z,6),[]).append(vv)
-  paths=[[],[]];ths=[]
-  for zz,vs in sorted(rings.items()):
-   ys=sorted({round(vv.y,8) for vv in vs});paths[0].append(Vector((-.5,ys[0],zz)));paths[1].append(Vector((-.5,ys[-1],zz)))
-   if len(ys)==4:ths.extend([ys[1]-ys[0],ys[3]-ys[2]])
-  r['same_material_outer_ply_free_edge_lengths']=[sum((b-a).length for a,b in zip(pp,pp[1:])) for pp in paths]
-  r['section_actual_width']=max(vv.x for vv in v)-min(vv.x for vv in v);r['section_actual_ply_thickness_min']=min(ths,default=.09)
+  paths=[[[],[]],[[],[]]]
+  for i,vv in enumerate(v):
+   src=me.attributes['source_coordinate'].data[i].vector;part=me.attributes['source_part'].data[i].value
+   if abs(src.x+.5)<1e-6 and -2.50001<=src.z<=2.50001 and abs(abs(src.y)-.09)<1e-6:
+    ply=0 if src.y<0 else 1
+    if f<511 and abs(src.z-.22*src.x)<1e-6:
+     paths[ply][0].append((src.z,vv));paths[ply][1].append((src.z,vv))
+    else:paths[ply][part].append((src.z,vv))
+  r['same_material_outer_ply_segment_lengths']=[[sum((bb[1]-aa[1]).length for aa,bb in zip(pp,pp[1:])) for pp in [sorted(path,key=lambda q:q[0]) for path in ply]] for ply in paths]
+  r['section_actual_ply_thickness']=None
  else:
   si=set()
   for pp in me.polygons:
@@ -140,18 +165,22 @@ def check(f):
   r['section_actual_thickness']=max(vv.y for vv in v)-min(vv.y for vv in v)
  # Actual interface opening and fracture-face clearance from evaluated vertices and polygon planes.
  if a.kind=='debond':
+  owned=[set(),set()]
+  for pp in me.polygons:owned[pp.material_index].update(pp.vertices)
   rings={}
-  for vv in v:
-   if abs(vv.x+.5)<1e-6:rings.setdefault(round(vv.z,6),set()).add(round(vv.y,8))
-  gaps=[];ths=[]
-  for ys in rings.values():
-   yy=sorted(ys)
-   if len(yy)==4:gaps.append(yy[2]-yy[1]);ths.extend([yy[1]-yy[0],yy[3]-yy[2]])
-  r['interface_opening_measured']=max(gaps,default=0);r['ply_thickness_measured_min']=min(ths,default=.09);r['inter_ply_penetration']=False
- elif len(comps)==2:
+  for ply,ids in enumerate(owned):
+   for i in ids:
+    src=me.attributes['source_coordinate'].data[i].vector;part=me.attributes['source_part'].data[i].value
+    key=(round(src.x,6),round(src.z,6),part if f>=511 else 0)
+    rings.setdefault(key,[[],[]])[ply].append(v[i].y)
+  gaps=[];th=[]
+  for lower,upper in rings.values():
+   if lower and upper:gaps.append(min(upper)-max(lower));th.extend([max(lower)-min(lower),max(upper)-min(upper)])
+  r['interface_opening_measured']=max(gaps,default=0);r['interface_clearance_measured_min']=min(gaps,default=0);r['ply_thickness_measured_min']=min(th,default=.09);r['inter_ply_penetration']=min(gaps,default=0)<-1e-6;r['section_actual_ply_thickness']=r['ply_thickness_measured_min']
+ if f>=511 and len(comps)==2:
   seam=[]
   for pol in me.polygons:
-   if abs(pol.normal.z)>.9 and -2.0<pol.center.z<-1.6:
+   if abs(pol.normal.z)>.9 and ((-.2<pol.center.z<.3) if a.kind=='debond' else (-2.0<pol.center.z<-1.6)):
     vs=[v[i] for i in pol.vertices];n=(vs[1]-vs[0]).cross(vs[2]-vs[0]);cc=n.dot(vs[0]);seam.append((n,cc,vs))
   upp=[pp for pp in seam if pp[0].z<0];low=[pp for pp in seam if pp[0].z>0]
   # Derive actual boundary planes from evaluated mesh triangles, inspect their overlapping width.
@@ -163,7 +192,7 @@ def check(f):
    clear.append((uc-un.x*x)/un.z-(lc-ln.x*x)/ln.z)
   r['seam_clearance_measured_min']=min(clear);r['seam_clearance_measured_max']=max(clear);r['seam_penetration']=min(clear)<-1e-6
  ev.to_mesh_clear();return r
-keyframes=[1,241,421,480,481,540,600] if a.kind=='debond' else [1,241,481,507,510,511,540,600]
+keyframes=[1,241,362,421,481,510,511,540,600] if a.kind=='debond' else [1,241,481,507,510,511,540,600]
 checks=[check(f) for f in keyframes]
 # Post-event equality uses actual evaluated material coordinates, plus actual fixture locations.
 post=[check(f) for f in [C['event_frame'],C['event_frame']+1,540,600]]
@@ -171,13 +200,14 @@ stop=max(max(abs(x-y) for x,y in zip(sum(post[0]['coordinates'],[]),sum(q['coord
 for q in checks:q.pop('coordinates')
 for f in keyframes:
  update(f);s.render.filepath=str(out/'previews'/('frame_%04d.png'%f));bpy.ops.render.render(write_still=True)
-(out/'mesh_checks.json').write_text(json.dumps({'implementation_version':V,'config':C,'samples':checks,'post_event_max_vertex_displacement':stop,'scope':'evaluated mesh graph connectivity, signed closed material volume, face-to-jaw contact, fixed postevent geometry; no independent physics solver','contact_semantics':'intentional material overlap in jaws; face contact y=+/-0.09, grip embed 0.48','inter_ply_gap_max':0.10 if a.kind=='debond' else None,'fracture_opening_max':None,'fracture_gap_method':'measured local lateral shear across slanted complementary surfaces, no axial shortening' if a.kind=='brittle' else None},indent=2))
+(out/'mesh_checks.json').write_text(json.dumps({'implementation_version':V,'config':C,'samples':checks,'post_event_max_vertex_displacement':stop,'scope':'evaluated mesh graph connectivity, signed closed material volume, face-to-jaw contact, fixed postevent geometry; no independent physics solver','contact_semantics':'intentional material overlap in jaws; face contact y=+/-0.09, grip embed 0.48','inter_ply_gap_max':0.10 if a.kind=='debond' else None,'fracture_opening_max':None,'fracture_gap_method':'measured local lateral shear across slanted complementary surfaces, no axial shortening' if a.kind in ['brittle','debond'] else None},indent=2))
 update(600);bpy.ops.wm.save_as_mainfile(filepath=str(out/'scene.blend'))
 (out/'config.json').write_text(json.dumps(C,indent=2))
 if a.render:
  allchecks=[]
  for f in range(1,601):
   rr=check(f);rr.pop('coordinates');allchecks.append(rr)
-  s.render.filepath=str(out/'frames'/('frame_%04d.png'%f));bpy.ops.render.render(write_still=True)
+  s.render.filepath=str(out/'frames'/('frame_%04d.png'%f))
+  if not(a.resume and Path(s.render.filepath).exists()):bpy.ops.render.render(write_still=True)
 
 if a.render:(out/'all_frame_mesh_checks.json').write_text(json.dumps(allchecks,indent=2))

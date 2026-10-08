@@ -1,16 +1,34 @@
 """New qualitative metal candidates; no dependency on any earlier generator.
-Blender --background --python build_metal.py -- --style ductile --out PATH
+Blender --background --python generator/metal_initial.py -- --style ductile \
+    --neck-local-stretch-amplitude 4.0 --out PATH
 Saved scenes use baked absolute shape keys and ordinary jaw keyframes.
+The neck parameter changes material-coordinate stretch and its coupled section,
+length and loading-jaw displacement. Input bounds are implementation guards,
+not an accepted physical or visual parameter range.
 """
 import argparse, bpy, json, math, os, sys
 from pathlib import Path
 from mathutils import Vector
 import numpy as np
 
-VERSION='metal-initial-v1.0.2'
+VERSION='metal-initial-v1.1.0'
+NECK_DEFAULT=4.0
+NECK_ENGINEERING_MAX=4.0
 args=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
 p=argparse.ArgumentParser(); p.add_argument('--style',choices=['ductile','brittle'],required=True); p.add_argument('--out',required=True); p.add_argument('--render',action='store_true')
-A=p.parse_args(args); OUT=Path(A.out).resolve(); OUT.mkdir(parents=True,exist_ok=True)
+def neck_amplitude(value):
+ try: result=float(value)
+ except ValueError: raise argparse.ArgumentTypeError('neck amplitude must be a finite number')
+ if not math.isfinite(result) or not 0 < result <= NECK_ENGINEERING_MAX:
+  raise argparse.ArgumentTypeError('neck amplitude must be finite and 0 < value <= 4.0; this engineering guard preserves the current fixed-camera envelope and is not an accepted physical range')
+ return result
+p.add_argument('--neck-local-stretch-amplitude',type=neck_amplitude,default=None,
+ help='ductile only: dimensionless peak additional local axial stretch; default 4.0. Finite 0 < value <= 4.0 is an engineering input guard, not a validated physical/visual range')
+A=p.parse_args(args)
+if A.style=='brittle' and A.neck_local_stretch_amplitude is not None:
+ p.error('--neck-local-stretch-amplitude applies only to --style ductile; omit it for brittle')
+NECK_AMPLITUDE=(NECK_DEFAULT if A.neck_local_stretch_amplitude is None else A.neck_local_stretch_amplitude) if A.style=='ductile' else 0.0
+OUT=Path(A.out).resolve(); OUT.mkdir(parents=True,exist_ok=True)
 STYLE=A.style; DUCT=STYLE=='ductile'; FPS=30; END=600
 EVENT=552 if DUCT else 517
 CRACK_START=EVENT-8 if DUCT else EVENT-2
@@ -55,7 +73,7 @@ S=np.linspace(-HALF,HALF,NZ*2+1)
 def axial(f):
  u,n,q=progress(f); taper=np.clip((2.75-np.abs(S))/.35,0,1)
  lam=1+(.052*u if DUCT else .012*u)*taper
- if DUCT: lam+=4.0*n*np.exp(-(S/.215)**2)*taper
+ if DUCT: lam+=NECK_AMPLITUDE*n*np.exp(-(S/.215)**2)*taper
  Z=np.zeros(len(S)); Z[0]=-HALF
  Z[1:]=-HALF+np.cumsum((lam[:-1]+lam[1:])*.5*np.diff(S))
  # Shoulder and embedded end retain their thickness.
@@ -165,7 +183,7 @@ for ob in [lower,upper]:
   for fc in curves(ob.data.shape_keys.animation_data.action):
    for key in fc.keyframe_points: key.interpolation='LINEAR'
  except AttributeError: pass
-sc['implementation_version']=VERSION; sc['fracture_complete_frame']=EVENT; sc['unit_note']='dimensionless authored units; no claimed mm or constitutive calibration'; sc.frame_set(1)
+sc['implementation_version']=VERSION; sc['neck_local_stretch_amplitude']=NECK_AMPLITUDE; sc['fracture_complete_frame']=EVENT; sc['unit_note']='dimensionless authored units; no claimed mm or constitutive calibration'; sc.frame_set(1)
 bpy.ops.wm.save_as_mainfile(filepath=str(OUT/(NAME+'.blend')))
 
 def evaluated(ob):
@@ -208,12 +226,21 @@ for frame in sorted(set(list(range(1,END+1,10))+list(range(CRACK_START-1,EVENT+3
   grips_measured.append({'shaft_contact_x_error':max(abs(min(c.x for c in ring)-lx),abs(max(c.x for c in ring)-rx)), 'embedded_axial_overlap':axial_overlap,'method':'evaluated jaw inner-face x and exposed-edge z versus evaluated shaft ring extrema and end z; intended specimen/jaw clamping contact'})
  centerlo=parts[0][0][NZ*NR:(NZ+1)*NR]; centerhi=parts[1][0][:NR]
  gapvalues=[b.z-a.z for a,b in zip(centerlo,centerhi)]
- records.append({'frame':frame,'time_s':(frame-1)/FPS,'measured_geometric_components':components(parts),'evaluated_closed_mesh_volume':vtot,'volume_relative_change':vtot/baseline-1,'minimum_corresponding_fracture_gap':min(gapvalues),'maximum_corresponding_fracture_gap':max(gapvalues),'jaw_contacts':grips_measured,'top_jaw_z':float(grips[1].location.z),'minimum_radius':min(math.hypot(c.x,c.y) for c in centerlo)})
+ zlo=sum(c.z for c in parts[0][0][19*NR:20*NR])/NR
+ zhi=sum(c.z for c in parts[1][0][71*NR:72*NR])/NR
+ mean_gap=sum(gapvalues)/len(gapvalues)
+ section_area=abs(sum(a.x*b.y-b.x*a.y for a,b in zip(centerlo,centerlo[1:]+centerlo[:1])))/2
+ records.append({'frame':frame,'time_s':(frame-1)/FPS,'measured_geometric_components':components(parts),'evaluated_closed_mesh_volume':vtot,'volume_relative_change':vtot/baseline-1,'minimum_corresponding_fracture_gap':min(gapvalues),'maximum_corresponding_fracture_gap':max(gapvalues),'jaw_contacts':grips_measured,'top_jaw_z':float(grips[1].location.z),'minimum_radius':min(math.hypot(c.x,c.y) for c in centerlo),'same_material_station_s':[-2.563888888888889,2.563888888888889],'same_material_station_axial_span':zhi-zlo,'axial_material_length_projection_excluding_open_gap':zhi-zlo-mean_gap,'minimum_section_polygon_area':section_area})
  if frame>=EVENT: allcoords.append((frame,[tuple(float(x) for x in v) for part in parts for v in part[0]],tuple(grips[1].location)))
 post_motion=max((max(abs(x-y) for a,b in zip(allcoords[0][1],entry[1]) for x,y in zip(a,b)) for entry in allcoords),default=0)
 post_jaw=max((max(abs(a-b) for a,b in zip(allcoords[0][2],entry[2])) for entry in allcoords),default=0)
 (OUT/'mesh_checks.json').write_text(json.dumps({'implementation_version':VERSION,'measurement_note':'Evaluated mesh positions and actual edge graph with coincident interface vertex welding at 1e-5 units; two containers do not predetermine component count. Interior paired fracture caps are hidden while interface is unbroken. Not an FEM model.','samples':records,'postfracture_max_vertex_displacement':post_motion,'postfracture_max_loading_jaw_displacement':post_jaw,'max_volume_relative_change':max(abs(r['volume_relative_change']) for r in records)},indent=2))
-config={'implementation_version':VERSION,'style':STYLE,'render':{'engine':'BLENDER_WORKBENCH','resolution':[1280,720],'fps':FPS,'frames':END,'duration_s':20,'aa_samples':16,'fixed_camera':list(cam.location),'orthographic_scale':cam.data.ortho_scale,'shadow_enabled':False,'studio_light':sh.studio_light},'geometry':{'units':'dimensionless','original_half_length':HALF,'original_gauge_radius':R,'embedded_end_radius':.43,'authored_gauge_region':[-2.55,2.55],'formal_source_gauge':'unknown','rings_per_half':NZ+1,'angular_segments':NR,'fracture_surface': 'complementary shallow cup-cone and inclined lip' if DUCT else 'complementary near-planar transverse rough surface','surface_detail_mechanism':'authored qualitative shape, not a proven fracture mechanism'},'motion':{'lower_jaw':'fixed','upper_jaw':'source-informed loading displacement, freezes at completed rupture','uniform_stretch_at_rupture':.052 if DUCT else .012,'ductile_neck_local_stretch_amplitude':4.0 if DUCT else 0,'neck_material_sigma':.215 if DUCT else None,'crack_opening_units':GAP,'crack_start_frame':CRACK_START,'fracture_complete_frame':EVENT,'fracture_complete_time_s':(EVENT-1)/FPS,'postfracture_displacement':0,'opening_note':'Complementary surfaces open progressively from front to rear under last loading displacement; no region is removed and no rigid fragment recoil is added. Gap is authored qualitative finite opening, not measured source displacement. Ductile gap/original diameter=0.446 and gap/terminal neck diameter~1.0 versus visible source postrupture ratios~0.65 and~1.3. Source ratios include source postrupture motion; here finite opening is authored during final loading to make fracture visible before selected load stop.'},'materials':[{'name':m.name,'rgba':list(m.diffuse_color),'metallic':m.node_tree.nodes.get('Principled BSDF').inputs['Metallic'].default_value,'roughness':m.node_tree.nodes.get('Principled BSDF').inputs['Roughness'].default_value} for m in [steel,cutmat,jawmat,framemat,boltmat]],'saved_scene_animation':'baked absolute shape keys and ordinary jaw keys; no external script required'}
+config={'implementation_version':VERSION,'style':STYLE,'render':{'engine':'BLENDER_WORKBENCH','resolution':[1280,720],'fps':FPS,'frames':END,'duration_s':20,'aa_samples':16,'fixed_camera':list(cam.location),'orthographic_scale':cam.data.ortho_scale,'shadow_enabled':False,'studio_light':sh.studio_light},'geometry':{'units':'dimensionless','original_half_length':HALF,'original_gauge_radius':R,'embedded_end_radius':.43,'authored_gauge_region':[-2.55,2.55],'formal_source_gauge':'unknown','rings_per_half':NZ+1,'angular_segments':NR,'fracture_surface': 'complementary shallow cup-cone and inclined lip' if DUCT else 'complementary near-planar transverse rough surface','surface_detail_mechanism':'authored qualitative shape, not a proven fracture mechanism'},'motion':{'lower_jaw':'fixed','upper_jaw':'source-informed loading displacement, freezes at completed rupture','uniform_stretch_at_rupture':.052 if DUCT else .012,'ductile_neck_local_stretch_amplitude':NECK_AMPLITUDE,'neck_material_sigma':.215 if DUCT else None,'crack_opening_units':GAP,'crack_start_frame':CRACK_START,'fracture_complete_frame':EVENT,'fracture_complete_time_s':(EVENT-1)/FPS,'postfracture_displacement':0,'opening_note':'Complementary surfaces open progressively from front to rear under last loading displacement; no region is removed and no rigid fragment recoil is added. Gap is authored qualitative finite opening, not measured source displacement. Ductile gap/original diameter=0.446 and gap/terminal neck diameter~1.0 versus visible source postrupture ratios~0.65 and~1.3. Source ratios include source postrupture motion; here finite opening is authored during final loading to make fracture visible before selected load stop.'},'materials':[{'name':m.name,'rgba':list(m.diffuse_color),'metallic':m.node_tree.nodes.get('Principled BSDF').inputs['Metallic'].default_value,'roughness':m.node_tree.nodes.get('Principled BSDF').inputs['Roughness'].default_value} for m in [steel,cutmat,jawmat,framemat,boltmat]],'saved_scene_animation':'baked absolute shape keys and ordinary jaw keys; no external script required'}
+config['neck_parameter']={'cli_option':'--neck-local-stretch-amplitude','applicable_style':'ductile','selected_value':NECK_AMPLITUDE if DUCT else None,'default_value':NECK_DEFAULT,'units':'dimensionless additional local axial stretch','formula':'lambda(s,t)=1+0.052*u*taper(s)+amplitude*n*exp(-(s/0.215)^2)*taper(s); n=v^2*(3-2v), v=max(0,(u-0.53)/0.47), u=min(1,(frame-1)/(crack_start_frame-1))','taper_definition':'clamp((2.75-abs(s))/0.35,0,1)','coupling':'Axial positions integrate lambda over original material coordinates; radius=original radius/sqrt(lambda); loading jaw follows integrated end position. Paired fracture surfaces use the resulting same seam radius and match before crack opening.','engineering_input_guard':{'minimum_exclusive':0.0,'maximum_inclusive':NECK_ENGINEERING_MAX,'finite_required':True,'reason':'Larger amplitudes increase specimen and crosshead excursion beyond the baseline; the conservative input upper bound preserves current fixed-camera framing. Larger-value framing has not been verified.'},'accepted_continuous_parameter_range':None,'parameter_range_accepted':False,'scope_note':'Guarded inputs do not establish physical plausibility, label validity, or user acceptance of a new video; each changed value requires its own applicable checks and review.'}
+if DUCT:
+ final_radius=R/math.sqrt(1.052+NECK_AMPLITUDE)
+ config['motion']['terminal_neck_radius_from_material_mapping']=final_radius
+ config['motion']['opening_note']=f'Complementary surfaces open progressively from front to rear under last loading displacement; no region is removed and no rigid fragment recoil is added. Gap is authored qualitative finite opening, not measured source displacement. Gap/original diameter={GAP/(2*R):.6f}; gap/terminal neck diameter={GAP/(2*final_radius):.6f} for selected neck amplitude {NECK_AMPLITUDE}. Source postrupture ratios include actual source motion and are not a calibration of this varied geometry.'
 (OUT/'config.json').write_text(json.dumps(config,indent=2))
 for frame in [1,270,CRACK_START,EVENT-2,EVENT,600]:
  sc.frame_set(frame); sc.render.filepath=str(OUT/f'key_{frame:04d}.png'); bpy.ops.render.render(write_still=True)
