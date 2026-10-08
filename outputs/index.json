@@ -3,17 +3,35 @@
   "updated": "2026-10-08",
   "design_document": "../DESIGN.md",
   "design_version": "v1.4",
-  "status": "video_generation_paused",
+  "status": "baseline_rebuild_diagnostic_generated",
   "approved_video_count": 0,
   "reviewable_candidate_count": 0,
   "batch_complete": false,
   "batch_released": false,
   "items": [],
-  "candidates": [],
+  "candidates": [
+    {
+      "id": "metal_round_diagnostic_necking_v0_1",
+      "style": "metal_round_neck_separation",
+      "role": "intact_necking_implementation_diagnostic",
+      "status": "partial_seed_target_not_met",
+      "video": "../_work/rebuild-round-20261008/metal_round_diagnostic_necking_v0_1.mp4",
+      "metadata": "../_work/rebuild-round-20261008/metal_round_diagnostic_necking_v0_1.json",
+      "reviewable_as_seed": false,
+      "user_accepted": false,
+      "rupture_implemented": false,
+      "blockers": [
+        "分离过程依据与实现缺失；末态仍连接。",
+        "预期完全断裂及断后停止未通过；不作为新的未破坏样式。"
+      ],
+      "independent_review": "conditional_diagnostic_pass_full_seed_incomplete",
+      "sha256": "d710f3e981f3da0d5ff131986be8532394ea3ca1f474b217b04de3de1b689c4b"
+    }
+  ],
   "materials": [
     {
       "material": "金属",
-      "status": "evidence_and_new_baseline_required"
+      "status": "necking_diagnostic_generated_full_fracture_baseline_required"
     },
     {
       "material": "高分子",
@@ -29,10 +47,9 @@
     }
   ],
   "next_steps": [
-    "用户恢复制作后，从 DESIGN 重新补证据并建立基准。",
-    "重新完成真实夹口、连续形变、断裂可见性、编码及适用验收。",
+    "补足金属圆棒可辨认的分离过程依据，完成预期完全断裂基准；现有颈缩诊断不满足该目标。",
+    "完成真实夹口、连续形变、破坏可见性、断后停止、编码及独立复核。",
     "用户逐条接受后收录，再推进有依据的变体与其他材料样式。"
   ],
-  "management_cleanup_status": "complete",
-  "pause_reason": "用户要求先完成管理与清理，暂不制作视频。"
+  "management_cleanup_status": "complete"
 }
