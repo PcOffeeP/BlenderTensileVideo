@@ -1,0 +1,1717 @@
+{
+  "schema": "tensile-video-candidate/v3",
+  "id": "polymer_finite_deformation_oblique_rupture_baseline_v1",
+  "title": "高分子有限变形后斜裂突断（半脆半韧预期）",
+  "status": "user_accepted_video",
+  "design_version": "v1.8",
+  "user_accepted": true,
+  "style_accepted": false,
+  "continuous_parameter_range_approved": false,
+  "training_released": false,
+  "mixed_mode_coverage_verified": false,
+  "implementation": {
+    "version": "polymer-mixed/1.0.0",
+    "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/generator/polymer_mixed.py",
+    "sha256": "7cb88efd5fc2669e1653755fad28e37c1e0eab094eb5d116cc31e9e2d830f4f9",
+    "blender_version": "5.2.1 LTS",
+    "scope": "one qualitative weak deformation candidate, not a calibrated plastic/elastic material response"
+  },
+  "video": {
+    "path": "outputs/current/polymer_finite_deformation_oblique_rupture/polymer_finite_deformation_oblique_rupture_baseline_v1.mp4",
+    "sha256": "63bf46edbf5065c37f3114e864fb3f7fca5b41fbbcc259e38c51bcdf1dfbfeb6",
+    "bytes": 728220,
+    "duration_s": 20,
+    "fps": 30,
+    "frames": 600,
+    "resolution": [
+      1280,
+      720
+    ],
+    "ffprobe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "mime_codec_string": "avc1.64001f",
+          "width": 1280,
+          "height": 720,
+          "coded_width": 1280,
+          "coded_height": 720,
+          "has_b_frames": 2,
+          "sample_aspect_ratio": "1:1",
+          "display_aspect_ratio": "16:9",
+          "pix_fmt": "yuv420p",
+          "level": 31,
+          "color_range": "tv",
+          "color_transfer": "iec61966-2-1",
+          "color_primaries": "bt709",
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 4,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/15360",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 307200,
+          "duration": "20.000000",
+          "bit_rate": "288066",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "600",
+          "nb_read_frames": "600",
+          "extradata_size": 49,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "encoder": "Lavc62.28.101 libx264"
+          }
+        }
+      ],
+      "format": {
+        "filename": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coverage-expansion-20261008/polymer_mixed/polymer_finite_deformation_oblique_rupture_baseline_v1.mp4",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "20.000000",
+        "size": "728220",
+        "bit_rate": "291288",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf62.12.101"
+        }
+      }
+    }
+  },
+  "source": {
+    "id": "video_0014",
+    "path": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/standard-videos/video_0014.mp4",
+    "sha256": "ecbef3988894e1afdb8dfe6270e2afba834746450a4336d5118b2d03b78d07e5",
+    "duration_s": 5.3333,
+    "frame_count": 160,
+    "resolution": [
+      474,
+      816
+    ],
+    "mapping_record": {
+      "标准化文件名": "video_0014.mp4",
+      "原始文件名": "http_20251105_0003.mp4",
+      "来源目录": "raw-video/fetch",
+      "材料类别": "高分子",
+      "状态": "existing",
+      "duration": "5.333",
+      "resolution": "474x816",
+      "codec": "h264"
+    },
+    "original_xlsx_row": {
+      "id": "video_0014",
+      "断裂时间点": "4.63 s",
+      "断裂模式": "半脆半韧断裂",
+      "材料类型": "高分子",
+      "清晰度": "480P"
+    },
+    "label_table_sha256": "f21e0427be79f0bda2cde239f8b042342ccc61d9f288b27150a6af7806be3042",
+    "mapping_sha256": "f08263220cf1d70a271ac61c8d2e1dbdfdb6882e7fb56faf3ade7f4bd563820d",
+    "source_labels_unchanged": true,
+    "source_label_event_time_s": 4.63,
+    "source_observed_event_approximately_s": 4.78,
+    "observed_event_basis": "source dense-frame review communicated by main agent; author directly saw source intact4.68 and separated4.93, with rapid rupture between consecutive source diagnostic frames",
+    "observed_event_not_physical_measured_rupture_timestamp": true,
+    "unknown_material_grade_and_plastic_fraction": true
+  },
+  "time_mapping": {
+    "strategy": "retimed20s qualitative demonstration, source is only5.3333s; no constant speed source reconstruction",
+    "source_label_event_s": 4.63,
+    "source_observed_event_approximately_s": 4.78,
+    "simulation_complete_fracture_s": 16,
+    "time_fields_not_interchangeable": true,
+    "reference_anchors": [
+      {
+        "source_s": 0.3,
+        "simulation_s": 0,
+        "role": "initial shape reference"
+      },
+      {
+        "source_s": 4.68,
+        "simulation_s": 15.8,
+        "role": "last clearly intact inspected source anchor, author timeline allocation"
+      },
+      {
+        "source_s": 4.78,
+        "simulation_s": 16,
+        "role": "approximate visual source event vs authored full-cut event, not quantitative kinetic mapping"
+      },
+      {
+        "source_s": 5.3,
+        "simulation_s": 19.9666667,
+        "role": "final observation, synthetic stop interval"
+      }
+    ],
+    "simulation_stages": [
+      {
+        "frames": [
+          1,
+          475
+        ],
+        "description": "weak authored local stretch and coupled section reduction, plastic fraction unknown"
+      },
+      {
+        "frames": [
+          476,
+          480
+        ],
+        "description": "rapid inclined/jagged crack opens under loading while finite residual connection remains"
+      },
+      {
+        "frames": [
+          480,
+          481
+        ],
+        "description": "last finite connection cut with identical unique material coordinates and fixture positions"
+      },
+      {
+        "frames": [
+          481,
+          600
+        ],
+        "description": "selected stop condition, no postfracture geometry movement"
+      }
+    ]
+  },
+  "observations": [
+    "Source white narrow flat strip with gradual shoulder transition; extensometer and caption partly obscure specimen.",
+    "Source has rapid short oblique/jagged separation, end fragments remain held by their respective jaws.",
+    "Inspected4.63/4.68 frames do not clearly show complete rupture;4.93/end frames show separation.",
+    "No clear stable plastic zone or strong localized neck comparable to black high-extension source0097 is visible.",
+    "Finite extension and section-change magnitude cannot be reliably quantified from the source camera/occlusion."
+  ],
+  "author_assumptions": [
+    "Weak finite deformation and slight local thinning are a qualitative author extension, not source-measured plastic deformation.",
+    "Maximum local stretch1.08, relative thickness0.16 and shoulder/gauge dimensions are discrete author geometry choices.",
+    "Axial integration and inverse-square-root transverse scaling approximately preserve material volume under loading; no resin-specific plastic law or modulus is identified.",
+    "Oblique/short jagged complementary crack surface and front-to-rear/lateral propagation are simplified geometry.",
+    "The original source label half-brittle/half-ductile is expected only; oblique fracture and authored weak thinning cannot verify mixed-mode mechanism.",
+    "Upper loading and lower fixed boundary chosen for demonstration; exact source machine control and compliance unresolved.",
+    "Postfracture stop selected; source brief post-event interval does not establish zero physical recoil or controller delay.",
+    "Tiny rear central newly cut surface patch remains in unbonded zero-opening contact; actual vertex indices and graph distinguish this from bonded material.",
+    "No deleted material, no complete-fragment rigid jump at the final cut, no post-cut axial shrinking to generate the gap.",
+    "Only fixtures and specimen shown; source extensometer is omitted for visibility."
+  ],
+  "unknowns": [
+    "Exact polymer resin, grade, temperature, rate and composition.",
+    "Elastic/plastic strain partition, permanence of local section reduction and material strength.",
+    "Source formal gauge, actual thickness, width, physical scale and camera projection calibration.",
+    "Microscopic fracture mechanism and basis underlying original mixed-mode annotation.",
+    "Real crack path through thickness, fracture kinetics, source actuator delay and residual motion.",
+    "Force balance, contact pressure, arbitrary full-triangle self intersection and quantitative material dynamics not solved."
+  ],
+  "expected_labels": {
+    "材料类别": "高分子",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "半脆半韧断裂",
+    "断裂位置": "标距内",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "checked_labels": {
+    "材料类别": {
+      "value": "高分子",
+      "basis": "original source XLSX material label; exact resin/grade unknown"
+    },
+    "断裂结果": {
+      "value": "完全断裂",
+      "basis": "source end shows visible oblique separation; candidate has visible opening and actual evaluated edge graph no load path after481"
+    },
+    "单一主要破坏类别": {
+      "value": "无法确认",
+      "expected": "半脆半韧断裂",
+      "status": "unconfirmed_after_independent_review",
+      "basis": "source original label suggests mixed brittle/ductile; source lacks clear stable plastic zone and quantified strain partition. Author weak extension/section reduction and oblique rapid fracture cannot alone verify a mixed mechanism."
+    },
+    "断裂位置": {
+      "value": "标距内",
+      "basis": "candidate fracture within authored material gauge[-1.2,1.2]; formal source gauge unknown"
+    },
+    "夹持异常": {
+      "value": "无",
+      "basis": "all600 actual exterior jaw surface contacts and material end embedding checked; no candidate grip slip"
+    },
+    "拍摄异常": {
+      "value": "无",
+      "basis": "fixed camera and all evaluated fixtures/specimen within frame; encoding600/30fps/20s checked; source sensor/caption occlusion is not reproduced"
+    }
+  },
+  "complete_config": {
+    "implementation_version": "polymer-mixed/1.0.0",
+    "applicability": "one weak finite-deformation white polymer rapid oblique rupture qualitative candidate; mixed-mode label unverified",
+    "source_id": "video_0014",
+    "fps": 30,
+    "frames": 600,
+    "duration_s": 20,
+    "resolution": [
+      1280,
+      720
+    ],
+    "units": "relative author coordinates, no mm scale",
+    "rest_material_span": 4.8,
+    "initial_free_span": 4.0,
+    "grip_material_coordinate_ranges": [
+      [
+        -2.4,
+        -2.0
+      ],
+      [
+        2.0,
+        2.4
+      ]
+    ],
+    "initial_grip_embed": 0.4,
+    "authored_gauge": [
+      -1.2,
+      1.2
+    ],
+    "source_formal_gauge_known": false,
+    "gauge_width": 0.8,
+    "shoulder_width": 1.05,
+    "initial_thickness": 0.16,
+    "max_local_stretch": 1.08,
+    "transverse_scale": "inverse sqrt of local axial stretch, approximate constant material volume",
+    "stretch_shape": "0.3 uniform contribution plus0.7 Gaussian centered-0.15, width0.42, tapered to zero near grips",
+    "fracture_center_material_z": -0.15,
+    "fracture_slope": -0.45,
+    "fracture_jagged_amplitude": 0.012,
+    "last_connected_frame": 480,
+    "first_separated_frame": 481,
+    "event_time_s": 16.0,
+    "crack_start_frame": 475,
+    "crack_loading_travel": 0.055,
+    "last_ligament_u_range": [
+      0,
+      0.03125
+    ],
+    "last_ligament_thickness": 0.00016,
+    "minimum_resolved_opening": 1e-07,
+    "loading_end": "upper",
+    "fixed_end": "lower",
+    "axis": "z",
+    "selected_postfracture_condition": "stop all geometry and fixtures from first separated frame; no additional recoil or bending",
+    "camera_position": [
+      0,
+      -22,
+      0.1
+    ],
+    "camera_target": [
+      0,
+      0,
+      0.1
+    ],
+    "camera_ortho_scale": 12.4,
+    "camera_fixed": true,
+    "view": "fixtures and specimen only; no machine frame or backdrop",
+    "width_subdivisions": 32,
+    "thickness_layers": [
+      -0.08,
+      -0.06,
+      -0.04,
+      -0.02,
+      0,
+      0.02,
+      0.04,
+      0.06,
+      0.076,
+      0.0792,
+      0.07984,
+      0.08
+    ],
+    "renderer": "BLENDER_WORKBENCH",
+    "studio_light": "paint.sl",
+    "anti_alias_samples": 8,
+    "no_constitutive_solver": true,
+    "continuous_parameter_range_approved": false,
+    "full_stretch_equation": "lambda(z,f)=1+0.08*S((min(f,480)-1)/479)*mask(z)*(0.3+0.7*exp(-((z+0.15)/0.42)^2))",
+    "grip_mask_equation": "S((z+2)/0.3)*S((2-z)/0.3)",
+    "smoothstep": "S(v)=clamp(v,0,1)^2*(3-2*clamp(v,0,1))",
+    "longitudinal_mapping": "trapezoid integral of local lambda from-2.4 to z on400intervals; shared mapping used for both halves; linear interpolation between grid values",
+    "width_equation": "w0(z)=0.8+0.25*S((abs(z)-1.4)/0.5); final width=w0/sqrt(lambda)",
+    "thickness_equation": "h=0.16/sqrt(lambda); unchanged at embedded ends where mask0",
+    "fracture_surface_equation": "z=-0.15-0.45*u+0.012*sin(39*u), u in[-0.5,0.5]",
+    "crack_progress_equation": "p=S((min(f,480)-475)/5)",
+    "front_equation": "y_front=-0.08+0.15984*p",
+    "opening_equation": "w=max(S((y_front-y)/0.02),S((abs(u-0.015625)-0.015625)/0.15)*S((p-0.6)/0.4)); if0.055*p*w<=1e-7 setw0",
+    "upper_crack_displacement": "delta_z=0.055*p*(w+(1-w)*t), t=(z-fracture_surface)/(2.4-fracture_surface); applied under continuous loading before full cut",
+    "last_cut": "seam shared vertices and internal faces identify finite connection before481; from481 duplicate vertices on complementary cut faces, preserve coordinates; zero-opening rear contact unbonded",
+    "jaw_initial_centers": [
+      [
+        0,
+        -0.28,
+        -2.22
+      ],
+      [
+        0,
+        0.28,
+        -2.22
+      ],
+      [
+        0,
+        -0.28,
+        2.22
+      ],
+      [
+        0,
+        0.28,
+        2.22
+      ]
+    ],
+    "jaw_dimensions": [
+      1.65,
+      0.4,
+      0.7
+    ],
+    "housing_centers": [
+      [
+        0,
+        0.08,
+        -2.85
+      ],
+      [
+        0,
+        0.08,
+        2.85
+      ]
+    ],
+    "housing_dimensions": [
+      2.35,
+      1.15,
+      0.65
+    ],
+    "upper_fixture_motion": "follows mapped material upper endpoint plus crack-loading travel; lower fixed",
+    "materials": {
+      "specimen": [
+        0.83,
+        0.84,
+        0.82
+      ],
+      "fracture": [
+        0.63,
+        0.65,
+        0.63
+      ],
+      "steel": [
+        0.4,
+        0.45,
+        0.49
+      ],
+      "housing": [
+        0.16,
+        0.19,
+        0.22
+      ],
+      "bolts": [
+        0.1,
+        0.12,
+        0.14
+      ]
+    },
+    "world_color": [
+      0.12,
+      0.18,
+      0.24
+    ],
+    "shadows": false,
+    "cavity": "BOTH",
+    "color_management": "Standard",
+    "encoding": {
+      "codec": "libx264",
+      "crf": 18,
+      "pix_fmt": "yuv420p",
+      "movflags": "+faststart"
+    },
+    "scene_saved_scope": "scene_final_state.blend is final state only; generator independently reconstructs full600-frame sequence"
+  },
+  "technical_verification": {
+    "key_samples": [
+      {
+        "frame": 1,
+        "time_s": 0.0,
+        "measured_components": 1,
+        "component_vertex_counts": [
+          5006
+        ],
+        "actual_material_vertex_count": 5006,
+        "actual_material_face_count": 5004,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6748000080259308,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.4848117546229607,
+          "(-0.5, -0.08, 1)": 2.3493447082530223,
+          "(-0.5, 0.08, 0)": 2.4848117546229607,
+          "(-0.5, 0.08, 1)": 2.3493447082530223,
+          "(0, -0.08, 0)": 2.250000068268641,
+          "(0, -0.08, 1)": 2.550000081425713,
+          "(0, 0.08, 0)": 2.250000068268641,
+          "(0, 0.08, 1)": 2.550000081425713,
+          "(0.03125, -0.08, 0)": 2.2472699293488234,
+          "(0.03125, -0.08, 1)": 2.5528668694820547,
+          "(0.03125, 0.08, 0)": 2.2472699293488234,
+          "(0.03125, 0.08, 1)": 2.5528668694820547,
+          "(0.5, -0.08, 0)": 2.049344720320061,
+          "(0.5, -0.08, 1)": 2.784811744578855,
+          "(0.5, 0.08, 0)": 2.049344720320061,
+          "(0.5, 0.08, 1)": 2.784811744578855
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12800000711437295,
+            "actual_width": 0.8000000283122057,
+            "actual_thickness": 0.15999999797903,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12800000711437295,
+            "actual_width": 0.8000000283122057,
+            "actual_thickness": 0.15999999797903,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12800000711437295,
+            "actual_width": 0.8000000283122057,
+            "actual_thickness": 0.15999999797903,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12800000711437295,
+            "actual_width": 0.8000000283122057,
+            "actual_thickness": 0.15999999797903,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.0,
+        "fracture_gap_z_minmax": null,
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 0,
+        "top_to_bottom_material_graph_path_exists": true,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9408597350120544
+        ]
+      },
+      {
+        "frame": 241,
+        "time_s": 8.0,
+        "measured_components": 1,
+        "component_vertex_counts": [
+          5006
+        ],
+        "actual_material_vertex_count": 5006,
+        "actual_material_face_count": 5004,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6747994941918483,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.5240572896009286,
+          "(-0.5, -0.08, 1)": 2.375734680599769,
+          "(-0.5, 0.08, 0)": 2.5240572896009286,
+          "(-0.5, 0.08, 1)": 2.375734680599769,
+          "(0, -0.08, 0)": 2.280919871641962,
+          "(0, -0.08, 1)": 2.584531024707579,
+          "(0, 0.08, 0)": 2.280919871641962,
+          "(0, 0.08, 1)": 2.584531024707579,
+          "(0.03125, -0.08, 0)": 2.278077776833136,
+          "(0.03125, -0.08, 1)": 2.5875104107497537,
+          "(0.03125, 0.08, 0)": 2.278077776833136,
+          "(0.03125, 0.08, 1)": 2.5875104107497537,
+          "(0.5, -0.08, 0)": 2.072123764011174,
+          "(0.5, -0.08, 1)": 2.8276682050443385,
+          "(0.5, 0.08, 0)": 2.072123764011174,
+          "(0.5, 0.08, 1)": 2.8276682050443385
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12647074240106462,
+            "actual_width": 0.7952067171806108,
+            "actual_thickness": 0.15904134460729255,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12615832442042058,
+            "actual_width": 0.7942239007476987,
+            "actual_thickness": 0.15884478272930302,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.1264564702859337,
+            "actual_width": 0.7951618554038968,
+            "actual_thickness": 0.1590323614766399,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.1264774065884358,
+            "actual_width": 0.7952276293244271,
+            "actual_thickness": 0.15904553148635545,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.06544840433071064,
+        "fracture_gap_z_minmax": null,
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 0,
+        "top_to_bottom_material_graph_path_exists": true,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9502429962158203
+        ]
+      },
+      {
+        "frame": 421,
+        "time_s": 14.0,
+        "measured_components": 1,
+        "component_vertex_counts": [
+          5006
+        ],
+        "actual_material_vertex_count": 5006,
+        "actual_material_face_count": 5004,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6748001263839417,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.559842703581948,
+          "(-0.5, -0.08, 1)": 2.3998040186116527,
+          "(-0.5, 0.08, 0)": 2.559842703581948,
+          "(-0.5, 0.08, 1)": 2.3998040186116527,
+          "(0, -0.08, 0)": 2.3090729944119888,
+          "(0, -0.08, 1)": 2.6159721991682954,
+          "(0, 0.08, 0)": 2.3090729944119888,
+          "(0, 0.08, 1)": 2.6159721991682954,
+          "(0.03125, -0.08, 0)": 2.3061291682667218,
+          "(0.03125, -0.08, 1)": 2.6190542884752115,
+          "(0.03125, 0.08, 0)": 2.3061291682667218,
+          "(0.03125, 0.08, 1)": 2.6190542884752115,
+          "(0.5, -0.08, 0)": 2.092905263488505,
+          "(0.5, -0.08, 1)": 2.8667414541991465,
+          "(0.5, 0.08, 0)": 2.092905263488505,
+          "(0.5, 0.08, 1)": 2.8667414541991465
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12510983290957134,
+            "actual_width": 0.7909166815771181,
+            "actual_thickness": 0.1581833379639558,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12452705139300065,
+            "actual_width": 0.789072395489274,
+            "actual_thickness": 0.15781449042849624,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12508316551693244,
+            "actual_width": 0.7908323475945791,
+            "actual_thickness": 0.1581664690478564,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.1251223084982489,
+            "actual_width": 0.7909560946445735,
+            "actual_thickness": 0.1581912212838433,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.1250367144648794,
+        "fracture_gap_z_minmax": null,
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 0,
+        "top_to_bottom_material_graph_path_exists": true,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.958786129951477
+        ]
+      },
+      {
+        "frame": 475,
+        "time_s": 15.8,
+        "measured_components": 1,
+        "component_vertex_counts": [
+          5006
+        ],
+        "actual_material_vertex_count": 5006,
+        "actual_material_face_count": 5004,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6748002088951905,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.563093234249709,
+          "(-0.5, -0.08, 1)": 2.4019905186045545,
+          "(-0.5, 0.08, 0)": 2.563093234249709,
+          "(-0.5, 0.08, 1)": 2.4019905186045545,
+          "(0, -0.08, 0)": 2.311628656507366,
+          "(0, -0.08, 1)": 2.618826214373761,
+          "(0, 0.08, 0)": 2.311628656507366,
+          "(0, 0.08, 1)": 2.618826214373761,
+          "(0.03125, -0.08, 0)": 2.308675597026809,
+          "(0.03125, -0.08, 1)": 2.621917637930781,
+          "(0.03125, 0.08, 0)": 2.308675597026809,
+          "(0.03125, 0.08, 1)": 2.621917637930781,
+          "(0.5, -0.08, 0)": 2.0947933966721606,
+          "(0.5, -0.08, 1)": 2.8702903530800685,
+          "(0.5, 0.08, 0)": 2.0947933966721606,
+          "(0.5, 0.08, 1)": 2.8702903530800685
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12498775809662246,
+            "actual_width": 0.7905306989800053,
+            "actual_thickness": 0.15810615016326243,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12438106413655277,
+            "actual_width": 0.7886097430562609,
+            "actual_thickness": 0.1577219533351226,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12495996907113226,
+            "actual_width": 0.7904428174149248,
+            "actual_thickness": 0.15808856607508853,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12500073015476598,
+            "actual_width": 0.7905716768760986,
+            "actual_thickness": 0.15811434362147753,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.1304458250445828,
+        "fracture_gap_z_minmax": null,
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 0,
+        "top_to_bottom_material_graph_path_exists": true,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9595615863800049
+        ]
+      },
+      {
+        "frame": 476,
+        "time_s": 15.833333333333334,
+        "measured_components": 1,
+        "component_vertex_counts": [
+          5070
+        ],
+        "actual_material_vertex_count": 5070,
+        "actual_material_face_count": 5068,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6755294790342428,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.563102372422908,
+          "(-0.5, -0.08, 1)": 2.4024276574044348,
+          "(-0.5, 0.08, 0)": 2.563102372422908,
+          "(-0.5, 0.08, 1)": 2.407677012087384,
+          "(0, -0.08, 0)": 2.311635833945741,
+          "(0, -0.08, 1)": 2.619268256312087,
+          "(0, 0.08, 0)": 2.311635833945741,
+          "(0, 0.08, 1)": 2.624554182497924,
+          "(0.03125, -0.08, 0)": 2.308682750798956,
+          "(0.03125, -0.08, 1)": 2.622359704114944,
+          "(0.03125, 0.08, 0)": 2.308682750798956,
+          "(0.03125, 0.08, 1)": 2.6276454804971965,
+          "(0.5, -0.08, 0)": 2.09479870248912,
+          "(0.5, -0.08, 1)": 2.8707318203902608,
+          "(0.5, 0.08, 0)": 2.09479870248912,
+          "(0.5, 0.08, 1)": 2.8759868362364656
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.1249874153358767,
+            "actual_width": 0.7905296057043766,
+            "actual_thickness": 0.15810592632451329,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12438064857097132,
+            "actual_width": 0.7886084203714125,
+            "actual_thickness": 0.1577216817123433,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12498775161487956,
+            "actual_width": 0.7904417631094923,
+            "actual_thickness": 0.15812992727659708,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12501619407964004,
+            "actual_width": 0.7905706221365252,
+            "actual_thickness": 0.1581375096947527,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.1361810356910625,
+        "fracture_gap_z_minmax": [
+          0.0,
+          0.005285933613777161
+        ],
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 0,
+        "top_to_bottom_material_graph_path_exists": true,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9603838920593262
+        ]
+      },
+      {
+        "frame": 477,
+        "time_s": 15.866666666666667,
+        "measured_components": 1,
+        "component_vertex_counts": [
+          5198
+        ],
+        "actual_material_vertex_count": 5198,
+        "actual_material_face_count": 5196,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.67663693730019,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.563109520100512,
+          "(-0.5, -0.08, 1)": 2.4020014081096868,
+          "(-0.5, 0.08, 0)": 2.563109520100512,
+          "(-0.5, 0.08, 1)": 2.421228063986562,
+          "(0, -0.08, 0)": 2.3116414551602706,
+          "(0, -0.08, 1)": 2.618840448755657,
+          "(0, 0.08, 0)": 2.3116414551602706,
+          "(0, 0.08, 1)": 2.6382004111653514,
+          "(0.03125, -0.08, 0)": 2.3086883490732184,
+          "(0.03125, -0.08, 1)": 2.6219319228511373,
+          "(0.03125, 0.08, 0)": 2.3086883490732184,
+          "(0.03125, 0.08, 1)": 2.641291375246312,
+          "(0.5, -0.08, 0)": 2.0948028597988646,
+          "(0.5, -0.08, 1)": 2.8703080483556644,
+          "(0.5, 0.08, 0)": 2.0948028597988646,
+          "(0.5, 0.08, 1)": 2.889555369482686
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12498715453902744,
+            "actual_width": 0.7905287763218567,
+            "actual_thickness": 0.15810576139049531,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12438033408798677,
+            "actual_width": 0.7886074000130139,
+            "actual_thickness": 0.1577214868522352,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12533605877987647,
+            "actual_width": 0.7904408568395968,
+            "actual_thickness": 0.15864510420073474,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.1252121586713346,
+            "actual_width": 0.7905697920148782,
+            "actual_thickness": 0.15842741807866692,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.1498328909954931,
+        "fracture_gap_z_minmax": [
+          0.0,
+          0.019360005855560303
+        ],
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 0,
+        "top_to_bottom_material_graph_path_exists": true,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9623411297798157
+        ]
+      },
+      {
+        "frame": 479,
+        "time_s": 15.933333333333334,
+        "measured_components": 1,
+        "component_vertex_counts": [
+          5704
+        ],
+        "actual_material_vertex_count": 5704,
+        "actual_material_face_count": 5702,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.675193544133259,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.5631176711839587,
+          "(-0.5, -0.08, 1)": 2.402006988374143,
+          "(-0.5, 0.08, 0)": 2.5631176711839587,
+          "(-0.5, 0.08, 1)": 2.4102115574140486,
+          "(0, -0.08, 0)": 2.31164786473698,
+          "(0, -0.08, 1)": 2.618847700343809,
+          "(0, 0.08, 0)": 2.31164786473698,
+          "(0, 0.08, 1)": 2.668127622397358,
+          "(0.03125, -0.08, 0)": 2.3086947292758677,
+          "(0.03125, -0.08, 1)": 2.6219391951779922,
+          "(0.03125, 0.08, 0)": 2.3086947292758677,
+          "(0.03125, 0.08, 1)": 2.671217846810366,
+          "(0.5, -0.08, 0)": 2.094807590669369,
+          "(0.5, -0.08, 1)": 2.870317051978114,
+          "(0.5, 0.08, 0)": 2.094807590669369,
+          "(0.5, 0.08, 1)": 2.878530514218488
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12498684903345475,
+            "actual_width": 0.7905278338406642,
+            "actual_thickness": 0.15810556700375328,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.1243799634463056,
+            "actual_width": 0.7886062284887798,
+            "actual_thickness": 0.157721250657842,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12502773960212177,
+            "actual_width": 0.7904399142535734,
+            "actual_thickness": 0.15818954980465216,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12503845461665436,
+            "actual_width": 0.7905688118852676,
+            "actual_thickness": 0.158170889417622,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.17976647858727368,
+        "fracture_gap_z_minmax": [
+          0.0,
+          0.049280017614364624
+        ],
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 0,
+        "top_to_bottom_material_graph_path_exists": true,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9666326642036438
+        ]
+      },
+      {
+        "frame": 480,
+        "time_s": 15.966666666666667,
+        "measured_components": 1,
+        "component_vertex_counts": [
+          5708
+        ],
+        "actual_material_vertex_count": 5708,
+        "actual_material_face_count": 5706,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6749022817637604,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.5631186852015544,
+          "(-0.5, -0.08, 1)": 2.402007545606896,
+          "(-0.5, 0.08, 0)": 2.5631186852015544,
+          "(-0.5, 0.08, 1)": 2.402007545606896,
+          "(0, -0.08, 0)": 2.311648663913705,
+          "(0, -0.08, 1)": 2.618848477056236,
+          "(0, 0.08, 0)": 2.311648663913705,
+          "(0, 0.08, 1)": 2.6738483790218384,
+          "(0.03125, -0.08, 0)": 2.3086955279265107,
+          "(0.03125, -0.08, 1)": 2.6219399743382112,
+          "(0.03125, 0.08, 0)": 2.3086955279265107,
+          "(0.03125, 0.08, 1)": 2.676938443505001,
+          "(0.5, -0.08, 0)": 2.0948081796213276,
+          "(0.5, -0.08, 1)": 2.8703180450999257,
+          "(0.5, 0.08, 0)": 2.0948081796213276,
+          "(0.5, 0.08, 1)": 2.8703180450999257
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12498680432525952,
+            "actual_width": 0.7905276830435691,
+            "actual_thickness": 0.15810553755119575,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12437991851996616,
+            "actual_width": 0.7886061151153745,
+            "actual_thickness": 0.157721221133518,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12495900763464025,
+            "actual_width": 0.7904398011431751,
+            "actual_thickness": 0.15808795339488116,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12499978393297595,
+            "actual_width": 0.7905686987933113,
+            "actual_thickness": 0.15811374871177583,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.18548818237914794,
+        "fracture_gap_z_minmax": [
+          0.0,
+          0.05500000715255737
+        ],
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 0,
+        "top_to_bottom_material_graph_path_exists": true,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9674530029296875
+        ]
+      },
+      {
+        "frame": 481,
+        "time_s": 16.0,
+        "measured_components": 2,
+        "component_vertex_counts": [
+          2770,
+          2942
+        ],
+        "actual_material_vertex_count": 5712,
+        "actual_material_face_count": 5708,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6749022817658732,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.5631186852015544,
+          "(-0.5, -0.08, 1)": 2.402007545606896,
+          "(-0.5, 0.08, 0)": 2.5631186852015544,
+          "(-0.5, 0.08, 1)": 2.402007545606896,
+          "(0, -0.08, 0)": 2.311648663913705,
+          "(0, -0.08, 1)": 2.618848477056236,
+          "(0, 0.08, 0)": 2.311648663913705,
+          "(0, 0.08, 1)": 2.6738483790218384,
+          "(0.03125, -0.08, 0)": 2.3086955279265107,
+          "(0.03125, -0.08, 1)": 2.6219399743382112,
+          "(0.03125, 0.08, 0)": 2.3086955279265107,
+          "(0.03125, 0.08, 1)": 2.676938443505001,
+          "(0.5, -0.08, 0)": 2.0948081796213276,
+          "(0.5, -0.08, 1)": 2.8703180450999257,
+          "(0.5, 0.08, 0)": 2.0948081796213276,
+          "(0.5, 0.08, 1)": 2.8703180450999257
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12498680432525952,
+            "actual_width": 0.7905276830435691,
+            "actual_thickness": 0.15810553755119575,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12437991851996616,
+            "actual_width": 0.7886061151153745,
+            "actual_thickness": 0.157721221133518,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12495900763464025,
+            "actual_width": 0.7904398011431751,
+            "actual_thickness": 0.15808795339488116,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12499978393297595,
+            "actual_width": 0.7905686987933113,
+            "actual_thickness": 0.15811374871177583,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.18548818237914794,
+        "fracture_gap_z_minmax": [
+          0.0,
+          0.05500000715255737
+        ],
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 3.7329853057599394e-06,
+        "top_to_bottom_material_graph_path_exists": false,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9674530029296875
+        ]
+      },
+      {
+        "frame": 511,
+        "time_s": 17.0,
+        "measured_components": 2,
+        "component_vertex_counts": [
+          2770,
+          2942
+        ],
+        "actual_material_vertex_count": 5712,
+        "actual_material_face_count": 5708,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6749022817658732,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.5631186852015544,
+          "(-0.5, -0.08, 1)": 2.402007545606896,
+          "(-0.5, 0.08, 0)": 2.5631186852015544,
+          "(-0.5, 0.08, 1)": 2.402007545606896,
+          "(0, -0.08, 0)": 2.311648663913705,
+          "(0, -0.08, 1)": 2.618848477056236,
+          "(0, 0.08, 0)": 2.311648663913705,
+          "(0, 0.08, 1)": 2.6738483790218384,
+          "(0.03125, -0.08, 0)": 2.3086955279265107,
+          "(0.03125, -0.08, 1)": 2.6219399743382112,
+          "(0.03125, 0.08, 0)": 2.3086955279265107,
+          "(0.03125, 0.08, 1)": 2.676938443505001,
+          "(0.5, -0.08, 0)": 2.0948081796213276,
+          "(0.5, -0.08, 1)": 2.8703180450999257,
+          "(0.5, 0.08, 0)": 2.0948081796213276,
+          "(0.5, 0.08, 1)": 2.8703180450999257
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12498680432525952,
+            "actual_width": 0.7905276830435691,
+            "actual_thickness": 0.15810553755119575,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12437991851996616,
+            "actual_width": 0.7886061151153745,
+            "actual_thickness": 0.157721221133518,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12495900763464025,
+            "actual_width": 0.7904398011431751,
+            "actual_thickness": 0.15808795339488116,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12499978393297595,
+            "actual_width": 0.7905686987933113,
+            "actual_thickness": 0.15811374871177583,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.18548818237914794,
+        "fracture_gap_z_minmax": [
+          0.0,
+          0.05500000715255737
+        ],
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 3.7329853057599394e-06,
+        "top_to_bottom_material_graph_path_exists": false,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9674530029296875
+        ]
+      },
+      {
+        "frame": 556,
+        "time_s": 18.5,
+        "measured_components": 2,
+        "component_vertex_counts": [
+          2770,
+          2942
+        ],
+        "actual_material_vertex_count": 5712,
+        "actual_material_face_count": 5708,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6749022817658732,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.5631186852015544,
+          "(-0.5, -0.08, 1)": 2.402007545606896,
+          "(-0.5, 0.08, 0)": 2.5631186852015544,
+          "(-0.5, 0.08, 1)": 2.402007545606896,
+          "(0, -0.08, 0)": 2.311648663913705,
+          "(0, -0.08, 1)": 2.618848477056236,
+          "(0, 0.08, 0)": 2.311648663913705,
+          "(0, 0.08, 1)": 2.6738483790218384,
+          "(0.03125, -0.08, 0)": 2.3086955279265107,
+          "(0.03125, -0.08, 1)": 2.6219399743382112,
+          "(0.03125, 0.08, 0)": 2.3086955279265107,
+          "(0.03125, 0.08, 1)": 2.676938443505001,
+          "(0.5, -0.08, 0)": 2.0948081796213276,
+          "(0.5, -0.08, 1)": 2.8703180450999257,
+          "(0.5, 0.08, 0)": 2.0948081796213276,
+          "(0.5, 0.08, 1)": 2.8703180450999257
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12498680432525952,
+            "actual_width": 0.7905276830435691,
+            "actual_thickness": 0.15810553755119575,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12437991851996616,
+            "actual_width": 0.7886061151153745,
+            "actual_thickness": 0.157721221133518,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12495900763464025,
+            "actual_width": 0.7904398011431751,
+            "actual_thickness": 0.15808795339488116,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12499978393297595,
+            "actual_width": 0.7905686987933113,
+            "actual_thickness": 0.15811374871177583,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.18548818237914794,
+        "fracture_gap_z_minmax": [
+          0.0,
+          0.05500000715255737
+        ],
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 3.7329853057599394e-06,
+        "top_to_bottom_material_graph_path_exists": false,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9674530029296875
+        ]
+      },
+      {
+        "frame": 600,
+        "time_s": 19.966666666666665,
+        "measured_components": 2,
+        "component_vertex_counts": [
+          2770,
+          2942
+        ],
+        "actual_material_vertex_count": 5712,
+        "actual_material_face_count": 5708,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6749022817658732,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.5631186852015544,
+          "(-0.5, -0.08, 1)": 2.402007545606896,
+          "(-0.5, 0.08, 0)": 2.5631186852015544,
+          "(-0.5, 0.08, 1)": 2.402007545606896,
+          "(0, -0.08, 0)": 2.311648663913705,
+          "(0, -0.08, 1)": 2.618848477056236,
+          "(0, 0.08, 0)": 2.311648663913705,
+          "(0, 0.08, 1)": 2.6738483790218384,
+          "(0.03125, -0.08, 0)": 2.3086955279265107,
+          "(0.03125, -0.08, 1)": 2.6219399743382112,
+          "(0.03125, 0.08, 0)": 2.3086955279265107,
+          "(0.03125, 0.08, 1)": 2.676938443505001,
+          "(0.5, -0.08, 0)": 2.0948081796213276,
+          "(0.5, -0.08, 1)": 2.8703180450999257,
+          "(0.5, 0.08, 0)": 2.0948081796213276,
+          "(0.5, 0.08, 1)": 2.8703180450999257
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12498680432525952,
+            "actual_width": 0.7905276830435691,
+            "actual_thickness": 0.15810553755119575,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12437991851996616,
+            "actual_width": 0.7886061151153745,
+            "actual_thickness": 0.157721221133518,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12495900763464025,
+            "actual_width": 0.7904398011431751,
+            "actual_thickness": 0.15808795339488116,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12499978393297595,
+            "actual_width": 0.7905686987933113,
+            "actual_thickness": 0.15811374871177583,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area"
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.18548818237914794,
+        "fracture_gap_z_minmax": [
+          0.0,
+          0.05500000715255737
+        ],
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 3.7329853057599394e-06,
+        "top_to_bottom_material_graph_path_exists": false,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9674530029296875
+        ]
+      }
+    ],
+    "cut_transition": {
+      "last_connected_frame": 480,
+      "first_separated_frame": 481,
+      "unique_material_coordinate_sets_identical": true,
+      "maximum_same_material_path_change": 0.0,
+      "fixture_max_displacement": 0.0,
+      "volume_difference": 2.112754415861673e-12
+    },
+    "all_600_frame_summary": {
+      "evaluated_frames": 600,
+      "actual_connectivity": {
+        "one_component_frames": [
+          1,
+          480
+        ],
+        "two_component_frames": [
+          481,
+          600
+        ],
+        "embedded_lower_to_upper_material_graph_path_absent_after_cut": true
+      },
+      "all_actual_edge_incidence_two": true,
+      "maximum_actual_exterior_jaw_contact_error": 0.0,
+      "all_embedded_end_vertices_inside_actual_jaws": true,
+      "material_volume_bounds": [
+        0.6747994554395274,
+        0.6768343765786107
+      ],
+      "maximum_volume_relative_deviation": 0.0030147725674030124,
+      "volume_applicability": "near volume preservation during unfractured loading from coupled cross section/length; small geometric volume variation in local ligament during rupture is approximation, no incompressibility or calibrated constitutive claim",
+      "all_actual_seam_nonpenetrating": true,
+      "end_fracture_gap_z_minmax": [
+        0.0,
+        0.05500000715255737
+      ],
+      "end_unbonded_zero_opening_contact_area": 3.7329853057599394e-06,
+      "all_evaluated_meshes_in_frame": true,
+      "postfracture_max_material_vertex_motion": 0.0,
+      "first_to_last_actual_same_material_boundary_lengths": [
+        {
+          "(-0.5, -0.08, 0)": 2.4848117546229607,
+          "(-0.5, -0.08, 1)": 2.3493447082530223,
+          "(-0.5, 0.08, 0)": 2.4848117546229607,
+          "(-0.5, 0.08, 1)": 2.3493447082530223,
+          "(0, -0.08, 0)": 2.250000068268641,
+          "(0, -0.08, 1)": 2.550000081425713,
+          "(0, 0.08, 0)": 2.250000068268641,
+          "(0, 0.08, 1)": 2.550000081425713,
+          "(0.03125, -0.08, 0)": 2.2472699293488234,
+          "(0.03125, -0.08, 1)": 2.5528668694820547,
+          "(0.03125, 0.08, 0)": 2.2472699293488234,
+          "(0.03125, 0.08, 1)": 2.5528668694820547,
+          "(0.5, -0.08, 0)": 2.049344720320061,
+          "(0.5, -0.08, 1)": 2.784811744578855,
+          "(0.5, 0.08, 0)": 2.049344720320061,
+          "(0.5, 0.08, 1)": 2.784811744578855
+        },
+        {
+          "(-0.5, -0.08, 0)": 2.5631186852015544,
+          "(-0.5, -0.08, 1)": 2.402007545606896,
+          "(-0.5, 0.08, 0)": 2.5631186852015544,
+          "(-0.5, 0.08, 1)": 2.402007545606896,
+          "(0, -0.08, 0)": 2.311648663913705,
+          "(0, -0.08, 1)": 2.618848477056236,
+          "(0, 0.08, 0)": 2.311648663913705,
+          "(0, 0.08, 1)": 2.6738483790218384,
+          "(0.03125, -0.08, 0)": 2.3086955279265107,
+          "(0.03125, -0.08, 1)": 2.6219399743382112,
+          "(0.03125, 0.08, 0)": 2.3086955279265107,
+          "(0.03125, 0.08, 1)": 2.676938443505001,
+          "(0.5, -0.08, 0)": 2.0948081796213276,
+          "(0.5, -0.08, 1)": 2.8703180450999257,
+          "(0.5, 0.08, 0)": 2.0948081796213276,
+          "(0.5, 0.08, 1)": 2.8703180450999257
+        }
+      ],
+      "actual_material_section_sample_coordinates": [
+        -1.2,
+        -0.8,
+        0.8,
+        1.2
+      ],
+      "actual_section_measurement_limits": "area uses actual material corner vertices and two-triangle quadrilateral area; warped sections during crack opening are corner proxies, not an exhaustive plane-slice measurement or measured maximum neck area"
+    },
+    "measurement_scope": "actual single-object mesh edge connectivity/manifold incidence, material corner path lengths/areas, closed material volume, evaluated jaw surface contact, complementary seam clearance, actual camera projection; no force balance or general self-intersection solver",
+    "encoded_video_checked": {
+      "frames": 600,
+      "fps": "30/1",
+      "duration_s": 20.0,
+      "full_ffmpeg_decode": "passed before packaging, complete video decoded with ffmpeg -f null - and exit0"
+    },
+    "independent_review": "pending",
+    "main_final_video_view": "pending for this hash",
+    "user_acceptance": "pending",
+    "does_not_prove_mixed_mode": true
+  },
+  "evidence": {
+    "mesh_checks_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coverage-expansion-20261008/polymer_mixed/mesh_checks.json",
+    "mesh_checks_sha256": "edfd3156fae96b02239f497ac48796b2dc911fd230eccd86b2ffc10ebb1adba3",
+    "all_frame_checks_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coverage-expansion-20261008/polymer_mixed/all_frame_mesh_checks.json",
+    "all_frame_checks_sha256": "a373d7e4c917033cd77644cf402a342bcfe87fb6ea5b835763c00868c1382f7c",
+    "final_state_scene_sha256": "d8a1fc8a6294766be1fc9e65197dacb43730f200ae37c196f7c0ab47769541a1"
+  },
+  "main_agent_view_record": {
+    "status": "completed",
+    "date": "2026-10-08",
+    "video_sha256": "63bf46edbf5065c37f3114e864fb3f7fca5b41fbbcc259e38c51bcdf1dfbfeb6",
+    "method": "QuickTime原生打开最终MP4，播放并核对20秒末态；定位15.711s完整、16.105s斜裂分离；实际打开0001/0475/0481关键预览。",
+    "observations": [
+      "白色试样有限变形后出现快速锯齿斜裂口",
+      "断后两半留在原夹口且停止",
+      "夹具与试样视图无后板或机架柱"
+    ],
+    "scope": "固定视频视觉查看；不凭斜裂或作者变薄确认半脆半韧机制"
+  },
+  "acceptance": {
+    "user_accepted": true,
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "independent_review": "passed_for_qualitative_initial_candidate",
+    "main_final_video_view": "completed_for_final_sha256",
+    "scope": "single_video_visual_acceptance"
+  },
+  "style_id": "polymer_finite_deformation_oblique_rupture",
+  "independent_review_record": {
+    "status": "passed_for_qualitative_initial_candidate",
+    "date": "2026-10-08",
+    "video_sha256": "63bf46edbf5065c37f3114e864fb3f7fca5b41fbbcc259e38c51bcdf1dfbfeb6",
+    "report": "_work/coverage-expansion-20261008/review/polymer_mixed_final_review.md",
+    "coverage": [
+      "独立600帧闭合网格/面方向、实际夹口接触、连通路径及事件时序",
+      "同材料路径、面积/体积、切断前后坐标、夹具停止",
+      "实际互补面有符号开口及编码475–483密帧",
+      "最终编码/配置/源时点与作者假设边界"
+    ],
+    "measurements": {
+      "first_path_loss_frame": 481,
+      "fracture_event_volume_delta": 2.11e-12,
+      "all_frame_volume_range": [
+        0.674799455,
+        0.676834377
+      ],
+      "maximum_bvh_jaw_contact_gap": 2.46e-07,
+      "final_signed_complementary_gap_range": [
+        0,
+        0.055000007
+      ],
+      "unbonded_zero_opening_patch_area": 3.7329853e-06
+    },
+    "limitations": [
+      "极小未粘结零开口片不是材料边图粘结；不能用坐标焊接推定残余载荷连接",
+      "未做完整三角网格自交/本构标定",
+      "主要模式无法确认，不计半脆半韧已核验覆盖"
+    ]
+  },
+  "collection_record": {
+    "date": "2026-10-08",
+    "original_candidate_video_path": "_work/coverage-expansion-20261008/polymer_mixed/polymer_finite_deformation_oblique_rupture_baseline_v1.mp4",
+    "original_candidate_metadata_path": "_work/coverage-expansion-20261008/polymer_mixed/polymer_finite_deformation_oblique_rupture_baseline_v1.json",
+    "original_candidate_video_sha256": "63bf46edbf5065c37f3114e864fb3f7fca5b41fbbcc259e38c51bcdf1dfbfeb6",
+    "original_candidate_metadata_sha256": "bc73f247029515026e65412fe22c1b9e685f1aaafd783634ad52dd58216a7c76",
+    "video_copy_method": "byte-preserving copy; SHA256 matches original indexed candidate",
+    "original_work_files_retained": true,
+    "path_base": "repository root for relative artifact paths; source paths remain absolute",
+    "historical_probe_note": "Stored ffprobe filenames and review text describe the original candidate at check time; the current video path below identifies the byte-identical collected file."
+  },
+  "user_acceptance_record": {
+    "date": "2026-10-08",
+    "basis": "User accepted the visual effects of all three preceding fixed candidate videos and explicitly authorized the next step.",
+    "video_sha256": "63bf46edbf5065c37f3114e864fb3f7fca5b41fbbcc259e38c51bcdf1dfbfeb6",
+    "scope": "single_video_visual_acceptance",
+    "limits": [
+      "Only this fixed video visual effect is accepted.",
+      "Expected versus checked six-group labels and all unknowns remain unchanged.",
+      "No style, continuous parameter range or training release approval."
+    ]
+  },
+  "parameter_range_accepted": false,
+  "acceptance_scope": "single_video_visual_acceptance",
+  "current_status_clarification": {
+    "date": "2026-10-08",
+    "status": "user_accepted_video",
+    "video_sha256": "63bf46edbf5065c37f3114e864fb3f7fca5b41fbbcc259e38c51bcdf1dfbfeb6",
+    "independent_review_status": "passed_for_qualitative_initial_candidate",
+    "independent_review_record_ref": "independent_review_record",
+    "main_final_video_view_completed": true,
+    "main_video_view_record_ref": "main_agent_view_record",
+    "user_accepted": true,
+    "acceptance_scope": "single_video_visual_acceptance",
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "checked_labels": {
+      "材料类别": "高分子",
+      "断裂结果": "完全断裂",
+      "单一主要破坏类别": "无法确认",
+      "断裂位置": "标距内",
+      "夹持异常": "无",
+      "拍摄异常": "无"
+    },
+    "historical_pending_fields": [
+      "status",
+      "technical_verification.independent_review",
+      "technical_verification.main_final_video_view",
+      "technical_verification.user_acceptance"
+    ],
+    "interpretation": "Listed early pending/no-user-acceptance fields and review/view statements retain their check-time history. Current state follows the existing independent review and SHA-bound main view records, followed by single-video user visual acceptance; these earlier fields do not describe a currently outstanding visual-review gate.",
+    "limits": [
+      "Qualitative fixed-video review and visual acceptance do not establish microscopic mechanism, calibrated constitutive behavior, source formal gauge or a parameter range.",
+      "All original label values, source observations, author assumptions and unknowns are preserved."
+    ]
+  }
+}

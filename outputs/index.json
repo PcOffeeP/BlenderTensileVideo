@@ -3,9 +3,9 @@
   "updated": "2026-10-08",
   "design_document": "../DESIGN.md",
   "design_version": "v1.8",
-  "status": "baseline_expansion_checked_pending_user_acceptance",
-  "approved_video_count": 7,
-  "reviewable_candidate_count": 3,
+  "status": "baseline_expansion_videos_user_accepted",
+  "approved_video_count": 10,
+  "reviewable_candidate_count": 0,
   "batch_complete": false,
   "batch_released": false,
   "items": [
@@ -17,7 +17,7 @@
       "video_path": "current/metal_round_neck_separation/metal_round_ductile_baseline_v1.mp4",
       "metadata_path": "current/metal_round_neck_separation/metal_round_ductile_baseline_v1.json",
       "sha256": "acb37f0e079e850d4d0562bfd2af487e0b809bcf069e1b3af2652631ebe23b6f",
-      "metadata_sha256": "30b1294c5a35322586eda76918c89c16edc7d54b026f4702ae710d379efdeb57",
+      "metadata_sha256": "5aee60030a3c0ef218d88ddec489efe5b03afaf5971fa96104a2815aa52d5481",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -35,7 +35,15 @@
       "training_released": false,
       "acceptance_scope": "single_video_visual_acceptance",
       "style_accepted": false,
-      "parameter_range_accepted": false
+      "parameter_range_accepted": false,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      }
     },
     {
       "id": "metal_round_brittle_baseline_v1",
@@ -45,7 +53,7 @@
       "video_path": "current/metal_round_brittle/metal_round_brittle_baseline_v1.mp4",
       "metadata_path": "current/metal_round_brittle/metal_round_brittle_baseline_v1.json",
       "sha256": "19b3f862a13f4c38200f41bc56e05171cc10ec6721859aeeb97b1b09b22ddc08",
-      "metadata_sha256": "50fa9c662f0b9440bac0c276c6837f3c11b44af6b0c8fcbcdfffe6ed86047e66",
+      "metadata_sha256": "3b1e2ec70108c684398feed56dcabf66e561b0f2493d8350a0c6a207b9249915",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -63,7 +71,15 @@
       "training_released": false,
       "acceptance_scope": "single_video_visual_acceptance",
       "style_accepted": false,
-      "parameter_range_accepted": false
+      "parameter_range_accepted": false,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      }
     },
     {
       "id": "polymer_black_dogbone_baseline_v2",
@@ -73,7 +89,7 @@
       "video_path": "current/polymer_black_flexible_dogbone/polymer_black_dogbone_baseline_v2.mp4",
       "metadata_path": "current/polymer_black_flexible_dogbone/polymer_black_dogbone_baseline_v2.json",
       "sha256": "709bb8db6ee6bdbd28692d40b57f5e6d4248b1bb1368d9b045e8efd8a62b2eb7",
-      "metadata_sha256": "c4f309f6d9d7abb7d43a1fbda4385c2b96db6428841553accbf8ebcc3875c0cd",
+      "metadata_sha256": "c1c1a8a1893d8ff03dd6e6f32f229688f6f7af06ee58f433bcabe97defd8d38b",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -91,7 +107,15 @@
       "training_released": false,
       "acceptance_scope": "single_video_visual_acceptance",
       "style_accepted": false,
-      "parameter_range_accepted": false
+      "parameter_range_accepted": false,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      }
     },
     {
       "id": "polymer_yellow_film_grip_root_baseline_v2",
@@ -101,7 +125,7 @@
       "video_path": "current/polymer_yellow_film_root_rupture/polymer_yellow_film_grip_root_baseline_v2.mp4",
       "metadata_path": "current/polymer_yellow_film_root_rupture/polymer_yellow_film_grip_root_baseline_v2.json",
       "sha256": "6dae1dcc436a826b095a99e0e78baa1a444199eea03800875c5f10cff81cbece",
-      "metadata_sha256": "2b86d1b3319835cec1958f347170eace75bab24288fbe9bc3ae538c254f46f86",
+      "metadata_sha256": "01253f3db4420b14f4b0e1accb60e7f009241e9a54119d63345d3051ce167aa4",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -119,7 +143,15 @@
       "training_released": false,
       "acceptance_scope": "single_video_visual_acceptance",
       "style_accepted": false,
-      "parameter_range_accepted": false
+      "parameter_range_accepted": false,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "无法确认",
+        "断裂位置": "夹口根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      }
     },
     {
       "id": "composite_brittle_lower_feedback_v0_3",
@@ -129,7 +161,7 @@
       "video_path": "current/composite_brittle_lower/composite_brittle_lower_feedback_v0_3.mp4",
       "metadata_path": "current/composite_brittle_lower/composite_brittle_lower_feedback_v0_3.json",
       "sha256": "fed17e58fe19af53240695aec7c464df4574aa55210980dc1e48fb78f0be404a",
-      "metadata_sha256": "90cd9808664ebf06e871ba2df592d3534e94d9bbae9f2108a3fd008319d6c9b4",
+      "metadata_sha256": "49279b9bd78467493cbdde302dd919873b4b06b6c6d2fe36d0569432d178a8a8",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -147,7 +179,15 @@
       "training_released": false,
       "acceptance_scope": "single_video_visual_acceptance",
       "style_accepted": false,
-      "parameter_range_accepted": false
+      "parameter_range_accepted": false,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      }
     },
     {
       "id": "ceramic_dogbone_brittle_baseline_v1",
@@ -157,7 +197,7 @@
       "video_path": "current/ceramic_dogbone_brittle/ceramic_dogbone_brittle_baseline_v1.mp4",
       "metadata_path": "current/ceramic_dogbone_brittle/ceramic_dogbone_brittle_baseline_v1.json",
       "sha256": "0fe9e04c0b921765b56b98cdc5b92ee0e7b8a234e345dacb0c5dc79a677e246c",
-      "metadata_sha256": "d1d9c321b0190c09f1782e7b403957ef5d097bd2ae120046624810d68a62ccf4",
+      "metadata_sha256": "348c89e8e50f064a4eeb484cee0a2d3e66044b28ee8fbd8462338fd83a3a424e",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -176,7 +216,15 @@
       "material_identity_basis": "user_confirmation_2026-10-08",
       "acceptance_scope": "single_video_visual_acceptance",
       "style_accepted": false,
-      "parameter_range_accepted": false
+      "parameter_range_accepted": false,
+      "checked_labels": {
+        "材料类别": "陶瓷",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      }
     },
     {
       "id": "composite_interface_debond_simultaneous_baseline_v0_4",
@@ -186,7 +234,7 @@
       "video_path": "current/composite_interface_debond_simultaneous_complete/composite_interface_debond_simultaneous_baseline_v0_4.mp4",
       "metadata_path": "current/composite_interface_debond_simultaneous_complete/composite_interface_debond_simultaneous_baseline_v0_4.json",
       "sha256": "ff4b576ffd2c29a7c9812ce161ea4f8433993fe013183e5d082d9d7e3a963581",
-      "metadata_sha256": "013b66699408d182efbf0445306f6f862c3b46711c59530f6a3a4422eb828040",
+      "metadata_sha256": "8950fcf7f9063ead92aab4d18736aeaf54ffe82088c3192d4db52585e86c3950",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -204,20 +252,26 @@
       "training_released": false,
       "acceptance_scope": "single_video_visual_acceptance",
       "style_accepted": false,
-      "parameter_range_accepted": false
-    }
-  ],
-  "candidates": [
+      "parameter_range_accepted": false,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      }
+    },
     {
       "id": "polymer_pale_green_brittle_flat_strip_baseline_v1",
       "style_id": "polymer_pale_green_brittle_flat_strip",
       "title": "高分子窄平条脆断",
-      "status": "checked_pending_user_acceptance",
+      "status": "user_accepted_video",
       "source_id": "video_0032",
-      "video_path": "../_work/coverage-expansion-20261008/polymer_brittle/polymer_pale_green_brittle_flat_strip_baseline_v1.mp4",
-      "metadata_path": "../_work/coverage-expansion-20261008/polymer_brittle/polymer_pale_green_brittle_flat_strip_baseline_v1.json",
+      "video_path": "current/polymer_pale_green_brittle_flat_strip/polymer_pale_green_brittle_flat_strip_baseline_v1.mp4",
+      "metadata_path": "current/polymer_pale_green_brittle_flat_strip/polymer_pale_green_brittle_flat_strip_baseline_v1.json",
       "sha256": "5c7d0fd1f5a519c7040a99101a2dbb79a43cb04e7c474b1c4e14a3d206226ddc",
-      "metadata_sha256": "c34028ac04b7a8d3c9119e47c05992fd49303dbcda7927378d4cf24ce6072309",
+      "metadata_sha256": "1cf611ba56bbdda42527a88bd02f1985ce1b9ce8e4b355a202a35ed6e923d933",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -239,22 +293,23 @@
       },
       "independent_review": "passed_for_qualitative_initial_candidate",
       "main_final_video_view_completed": true,
-      "user_accepted": false,
+      "user_accepted": true,
       "style_accepted": false,
       "parameter_range_accepted": false,
       "training_released": false,
-      "expected_mode_coverage_verified": true
+      "expected_mode_coverage_verified": true,
+      "acceptance_scope": "single_video_visual_acceptance"
     },
     {
       "id": "polymer_finite_deformation_oblique_rupture_baseline_v1",
       "style_id": "polymer_finite_deformation_oblique_rupture",
       "title": "高分子有限变形后斜裂突断（半脆半韧预期）",
-      "status": "checked_pending_user_acceptance",
+      "status": "user_accepted_video",
       "source_id": "video_0014",
-      "video_path": "../_work/coverage-expansion-20261008/polymer_mixed/polymer_finite_deformation_oblique_rupture_baseline_v1.mp4",
-      "metadata_path": "../_work/coverage-expansion-20261008/polymer_mixed/polymer_finite_deformation_oblique_rupture_baseline_v1.json",
+      "video_path": "current/polymer_finite_deformation_oblique_rupture/polymer_finite_deformation_oblique_rupture_baseline_v1.mp4",
+      "metadata_path": "current/polymer_finite_deformation_oblique_rupture/polymer_finite_deformation_oblique_rupture_baseline_v1.json",
       "sha256": "63bf46edbf5065c37f3114e864fb3f7fca5b41fbbcc259e38c51bcdf1dfbfeb6",
-      "metadata_sha256": "bc73f247029515026e65412fe22c1b9e685f1aaafd783634ad52dd58216a7c76",
+      "metadata_sha256": "1909c2a400aae7ad3c33f37acfd6a34d81f99f4830ab751f2f4bf30e24b8d2e1",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -276,22 +331,23 @@
       },
       "independent_review": "passed_for_qualitative_initial_candidate",
       "main_final_video_view_completed": true,
-      "user_accepted": false,
+      "user_accepted": true,
       "style_accepted": false,
       "parameter_range_accepted": false,
       "training_released": false,
-      "expected_mode_coverage_verified": false
+      "expected_mode_coverage_verified": false,
+      "acceptance_scope": "single_video_visual_acceptance"
     },
     {
       "id": "composite_rapid_strand_fragmentation_baseline_v0_1",
       "style_id": "composite_rapid_strand_fragmentation",
       "title": "复材快速分束断裂（爆炸性预期）",
-      "status": "checked_pending_user_acceptance",
+      "status": "user_accepted_video",
       "source_id": "video_0040",
-      "video_path": "../_work/coverage-expansion-20261008/composite_fragmentation/composite_rapid_strand_fragmentation_baseline_v0_1.mp4",
-      "metadata_path": "../_work/coverage-expansion-20261008/composite_fragmentation/composite_rapid_strand_fragmentation_baseline_v0_1.json",
+      "video_path": "current/composite_rapid_strand_fragmentation/composite_rapid_strand_fragmentation_baseline_v0_1.mp4",
+      "metadata_path": "current/composite_rapid_strand_fragmentation/composite_rapid_strand_fragmentation_baseline_v0_1.json",
       "sha256": "7216102004e389b2472c15f382984a21e0d55038ad5066eedb2ba5e020e6881d",
-      "metadata_sha256": "3cb83b6bfa1b28076d9460482721ee84e07994ccef4a8a566ca3856c01a0aba1",
+      "metadata_sha256": "9c5d3152dd37047d89e6728581c16e16dc24562638f4d9ba35ed498b13728dd7",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -313,13 +369,15 @@
       },
       "independent_review": "passed_for_qualitative_initial_candidate",
       "main_final_video_view_completed": true,
-      "user_accepted": false,
+      "user_accepted": true,
       "style_accepted": false,
       "parameter_range_accepted": false,
       "training_released": false,
-      "expected_mode_coverage_verified": false
+      "expected_mode_coverage_verified": false,
+      "acceptance_scope": "single_video_visual_acceptance"
     }
   ],
+  "candidates": [],
   "materials": [
     {
       "material": "金属",
@@ -327,23 +385,29 @@
       "source_ids": [
         "video_0006",
         "video_0003"
-      ]
+      ],
+      "accepted_video_count": 2
     },
     {
       "material": "高分子",
-      "status": "two_accepted_videos",
+      "status": "four_accepted_videos",
       "source_ids": [
         "video_0097",
-        "video_0025"
-      ]
+        "video_0025",
+        "video_0032",
+        "video_0014"
+      ],
+      "accepted_video_count": 4
     },
     {
       "material": "复材",
-      "status": "two_accepted_videos",
+      "status": "three_accepted_videos",
       "source_ids": [
+        "video_0100",
         "video_0020",
-        "video_0100"
-      ]
+        "video_0040"
+      ],
+      "accepted_video_count": 3
     },
     {
       "material": "陶瓷",
@@ -351,13 +415,14 @@
       "source_ids": [
         "video_0050"
       ],
-      "material_identity_basis": "user_confirmation_2026-10-08"
+      "material_identity_basis": "user_confirmation_2026-10-08",
+      "accepted_video_count": 1
     }
   ],
   "next_steps": [
-    "用户逐条查看三条新增固定基础候选的效果与标签；接受后按字节校验值收录。",
+    "三条新增固定基础视频已按原候选SHA收录；本轮十条均仅接受当前视频视觉效果，样式、连续参数范围与训练发布分别保持未批准。",
     "高分子半脆半韧与复材爆炸性保留预期/核验区别；复材韧性保留视觉证据缺口，当前不能声称全部机制已覆盖。",
-    "确认各样式的可调参数与耦合范围后再批量生成；当前没有连续范围批准或训练发布。"
+    "继续已授权的下一步模板与变体准备；各样式可调参数与耦合范围须按已确认方案分别核验，扩大范围先确认。"
   ],
   "management_cleanup_status": "complete",
   "source_inventory": {
@@ -378,7 +443,7 @@
   "generation_complete": false,
   "baseline_expansion": {
     "scope": "material_by_supported_main_failure_behavior_baselines",
-    "status": "three_fixed_candidates_checked_pending_user_acceptance",
+    "status": "three_fixed_videos_user_accepted",
     "requested_by_user": "2026-10-08",
     "reuse_existing_metal_brittle": true,
     "planned": [
@@ -386,29 +451,41 @@
         "style_id": "polymer_pale_green_brittle_flat_strip",
         "source_id": "video_0032",
         "expected_mode": "脆性断裂",
-        "status": "checked_pending_user_acceptance",
+        "status": "user_accepted_video",
         "candidate_id": "polymer_pale_green_brittle_flat_strip_baseline_v1",
         "checked_mode": "脆性断裂",
-        "expected_mode_coverage_verified": true
+        "expected_mode_coverage_verified": true,
+        "video_id": "polymer_pale_green_brittle_flat_strip_baseline_v1",
+        "acceptance_scope": "single_video_visual_acceptance",
+        "style_accepted": false,
+        "parameter_range_accepted": false
       },
       {
         "style_id": "polymer_finite_deformation_oblique_rupture",
         "source_id": "video_0014",
         "expected_mode": "半脆半韧断裂",
-        "status": "checked_pending_user_acceptance",
+        "status": "user_accepted_video",
         "source_deformation_quantification": "unknown",
         "candidate_id": "polymer_finite_deformation_oblique_rupture_baseline_v1",
         "checked_mode": "无法确认",
-        "expected_mode_coverage_verified": false
+        "expected_mode_coverage_verified": false,
+        "video_id": "polymer_finite_deformation_oblique_rupture_baseline_v1",
+        "acceptance_scope": "single_video_visual_acceptance",
+        "style_accepted": false,
+        "parameter_range_accepted": false
       },
       {
         "style_id": "composite_rapid_strand_fragmentation",
         "source_id": "video_0040",
         "expected_mode": "爆炸性断裂",
-        "status": "checked_pending_user_acceptance",
+        "status": "user_accepted_video",
         "candidate_id": "composite_rapid_strand_fragmentation_baseline_v0_1",
         "checked_mode": "无法确认",
-        "expected_mode_coverage_verified": false
+        "expected_mode_coverage_verified": false,
+        "video_id": "composite_rapid_strand_fragmentation_baseline_v0_1",
+        "acceptance_scope": "single_video_visual_acceptance",
+        "style_accepted": false,
+        "parameter_range_accepted": false
       }
     ],
     "evidence_gaps": [
@@ -427,7 +504,7 @@
           "video_0014"
         ],
         "source_mode": "半脆半韧断裂",
-        "status": "candidate_created_mode_unconfirmed"
+        "status": "video_visually_accepted_mode_unconfirmed"
       },
       {
         "material": "复材",
@@ -435,7 +512,7 @@
           "video_0040"
         ],
         "source_mode": "爆炸性断裂",
-        "status": "candidate_created_mode_unconfirmed"
+        "status": "video_visually_accepted_mode_unconfirmed"
       }
     ],
     "parameter_ranges_accepted": false,
@@ -443,7 +520,7 @@
     "all_requested_mode_coverage_complete": false
   },
   "initial_baseline_batch": {
-    "accepted_video_count": 7,
+    "accepted_video_count": 10,
     "user_visual_acceptance_complete": true,
     "training_released": false
   }

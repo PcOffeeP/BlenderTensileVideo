@@ -811,7 +811,8 @@
     "parameter_range_accepted": false,
     "training_released": false,
     "independent_review": "passed_for_qualitative_initial_candidate",
-    "main_final_video_view": "completed_for_final_sha256"
+    "main_final_video_view": "completed_for_final_sha256",
+    "scope": "single_video_visual_acceptance"
   },
   "limitations": [
     "真实铺层、纤维方向和具体破坏组分未确认；本候选是透明的定性几何近似。",
@@ -898,5 +899,43 @@
     "sha256": "596e5faf4f8fbd9f1dea27a4b7b879d9f02545644c7070707aaa239eb38a33c5"
   },
   "implementation_file_role": "repository_path_at_original_implementation_git_revision",
-  "reusable_implementation_note": "原brittle成片由composite-initial/0.3.1生成，其实现SHA对应Git9afcf52。当前生成器仅修改debond同步事件分支；旧brittle配置和成片字节保留，不将历史SHA当作当前代码SHA。"
+  "reusable_implementation_note": "原brittle成片由composite-initial/0.3.1生成，其实现SHA对应Git9afcf52。当前生成器仅修改debond同步事件分支；旧brittle配置和成片字节保留，不将历史SHA当作当前代码SHA。",
+  "style_accepted": false,
+  "parameter_range_accepted": false,
+  "acceptance_scope": "single_video_visual_acceptance",
+  "current_status_clarification": {
+    "date": "2026-10-08",
+    "status": "user_accepted_video",
+    "video_sha256": "fed17e58fe19af53240695aec7c464df4574aa55210980dc1e48fb78f0be404a",
+    "independent_review_status": "passed_for_qualitative_initial_candidate",
+    "independent_review_record_ref": "independent_review_record",
+    "main_final_video_view_completed": true,
+    "main_video_view_record_ref": "main_agent_view_record",
+    "user_accepted": true,
+    "acceptance_scope": "single_video_visual_acceptance",
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "checked_labels": {
+      "材料类别": "复材",
+      "断裂结果": "完全断裂",
+      "单一主要破坏类别": "脆性断裂",
+      "断裂位置": "标距外非根部",
+      "夹持异常": "无",
+      "拍摄异常": "无"
+    },
+    "historical_pending_fields": [
+      "checked_labels_six_groups.材料类别.status",
+      "checked_labels_six_groups.断裂结果.status",
+      "checked_labels_six_groups.单一主要破坏类别.status",
+      "checked_labels_six_groups.断裂位置.status",
+      "checked_labels_six_groups.夹持异常.status",
+      "checked_labels_six_groups.拍摄异常.status"
+    ],
+    "interpretation": "Listed early pending/no-user-acceptance fields and review/view statements retain their check-time history. Current state follows the existing independent review and SHA-bound main view records, followed by single-video user visual acceptance; these earlier fields do not describe a currently outstanding visual-review gate.",
+    "limits": [
+      "Qualitative fixed-video review and visual acceptance do not establish microscopic mechanism, calibrated constitutive behavior, source formal gauge or a parameter range.",
+      "All original label values, source observations, author assumptions and unknowns are preserved."
+    ]
+  }
 }

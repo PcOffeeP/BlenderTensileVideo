@@ -2943,7 +2943,8 @@
     "independent_review_status": "passed_for_qualitative_initial_candidate",
     "main_final_video_view": "completed_for_final_sha256",
     "user_accepted": true,
-    "training_released": false
+    "training_released": false,
+    "scope": "single_video_visual_acceptance"
   },
   "verification_limits": [
     "technical checks do not establish polymer mechanism or material accuracy",
@@ -3018,5 +3019,49 @@
     "training_released": false,
     "note": "接受当前单条视频；保持原来源、原配置、核验标签及科学未知，不扩大为材料本构或参数范围确认。"
   },
-  "archive_note": "成片和完整配置、来源、检查及标签自包含说明已收录；工作场景和证据路径只作辅助追溯，理解已接受视频不依赖其存在。"
+  "archive_note": "成片和完整配置、来源、检查及标签自包含说明已收录；工作场景和证据路径只作辅助追溯，理解已接受视频不依赖其存在。",
+  "style_accepted": false,
+  "parameter_range_accepted": false,
+  "acceptance_scope": "single_video_visual_acceptance",
+  "current_status_clarification": {
+    "date": "2026-10-08",
+    "status": "user_accepted_video",
+    "video_sha256": "709bb8db6ee6bdbd28692d40b57f5e6d4248b1bb1368d9b045e8efd8a62b2eb7",
+    "independent_review_status": "passed_for_qualitative_initial_candidate",
+    "independent_review_record_ref": "independent_review_record",
+    "main_final_video_view_completed": true,
+    "main_video_view_record_ref": "main_agent_view_record",
+    "user_accepted": true,
+    "acceptance_scope": "single_video_visual_acceptance",
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "checked_labels": {
+      "材料类别": "高分子",
+      "断裂结果": "完全断裂",
+      "单一主要破坏类别": "韧性断裂",
+      "断裂位置": "标距内",
+      "夹持异常": "无",
+      "拍摄异常": "无"
+    },
+    "historical_pending_fields": [
+      "source.normalization_note",
+      "verified_labels.断裂结果.status",
+      "verified_labels.断裂结果.basis",
+      "verified_labels.单一主要破坏类别.status",
+      "verified_labels.单一主要破坏类别.basis",
+      "verified_labels.断裂位置.status",
+      "verified_labels.断裂位置.basis",
+      "verified_labels.夹持异常.status",
+      "verified_labels.夹持异常.basis",
+      "verified_labels.拍摄异常.status",
+      "verified_labels.拍摄异常.basis",
+      "verification_limits[1]"
+    ],
+    "interpretation": "Listed early pending/no-user-acceptance fields and review/view statements retain their check-time history. Current state follows the existing independent review and SHA-bound main view records, followed by single-video user visual acceptance; these earlier fields do not describe a currently outstanding visual-review gate.",
+    "limits": [
+      "Qualitative fixed-video review and visual acceptance do not establish microscopic mechanism, calibrated constitutive behavior, source formal gauge or a parameter range.",
+      "All original label values, source observations, author assumptions and unknowns are preserved."
+    ]
+  }
 }

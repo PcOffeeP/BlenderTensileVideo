@@ -1,0 +1,2399 @@
+{
+  "schema_version": "candidate-whole-video/1",
+  "candidate_id": "composite_rapid_strand_fragmentation_baseline_v0_1",
+  "style_id": "composite_rapid_strand_fragmentation",
+  "status": "user_accepted_video",
+  "design_version": "v1.8",
+  "implementation_version": "composite-fragmentation/0.1.0",
+  "implementation_file": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/generator/composite_fragmentation.py",
+  "implementation_sha256": "c2ef38fa9a45aafc73b1fc00fbde8785316a72cc12f812d070c514eee0e43bf7",
+  "generation_environment": {
+    "blender": "5.2.1 LTS,9e2066aef7ef",
+    "render_command": "/Applications/Blender.app/Contents/MacOS/Blender --background --python generator/composite_fragmentation.py -- --out _work/coverage-expansion-20261008/composite_fragmentation --render",
+    "encoding_command": "ffmpeg -framerate 30 -i frames/frame_%04d.png -frames:v 600 -c:v libx264 -preset slow -crf 16 -pix_fmt yuv420p -movflags +faststart candidate.mp4"
+  },
+  "full_generation_config": {
+    "implementation_version": "composite-fragmentation/0.1.0",
+    "fps": 30,
+    "frames": 600,
+    "resolution": [
+      960,
+      540
+    ],
+    "loading_axis": "z",
+    "fixed_end": "lower",
+    "moving_end": "upper",
+    "free_span": 5.0,
+    "width": 0.6,
+    "strand_boundaries": [
+      -0.3,
+      -0.22,
+      -0.11,
+      -0.025,
+      0.09,
+      0.19,
+      0.3
+    ],
+    "strand_splay_x": [
+      -0.085,
+      -0.04,
+      -0.022,
+      0.009,
+      0.034,
+      0.073
+    ],
+    "strand_shear_factors": [
+      0.95,
+      1.1,
+      0.9,
+      1.05,
+      0.98,
+      1.0
+    ],
+    "surface_texture": "subtle axial colour bands, illustrative rather than observed fiber orientation",
+    "thickness": 0.12,
+    "grip_overlap": 0.48,
+    "synthetic_gauge": [
+      -1.5,
+      1.5
+    ],
+    "units": "dimensionless relative coordinates",
+    "event_frame": 481,
+    "settled_frame": 526,
+    "maximum_grip_displacement": 0.1,
+    "strand_count": 6,
+    "strand_seam_centres": [
+      -0.25,
+      0.12,
+      -0.05,
+      0.26,
+      -0.15,
+      0.05
+    ],
+    "fracture_plane_slope_y": 0.8,
+    "local_shear_y": 0.1,
+    "splay_plateau_z": [
+      -0.35,
+      0.35
+    ],
+    "splay_zero_z": [
+      -0.85,
+      0.85
+    ],
+    "decay_amplitude_ratio": 0.16,
+    "decay_cycles": 2.0,
+    "free_detached_fragments": 0,
+    "camera": {
+      "position": [
+        9,
+        -17,
+        3
+      ],
+      "look_at": [
+        0,
+        0,
+        0
+      ],
+      "projection": "orthographic",
+      "ortho_scale": 16.4
+    },
+    "renderer": {
+      "engine": "BLENDER_WORKBENCH",
+      "studio_light": "paint.sl",
+      "aa": "8",
+      "world_color": [
+        0.13,
+        0.16,
+        0.19
+      ],
+      "cavity": "BOTH",
+      "color": "MATERIAL",
+      "view_transform": "Standard"
+    },
+    "fixture": {
+      "jaw_inner_y": [
+        -0.06,
+        0.06
+      ],
+      "jaw_centres_y": [
+        -0.26,
+        0.26
+      ],
+      "jaw_size": [
+        1.48,
+        0.4,
+        0.72
+      ],
+      "jaw_centres_z": [
+        -2.86,
+        2.86
+      ],
+      "body_size": [
+        2.4,
+        1.1,
+        0.7
+      ],
+      "body_centres_z": [
+        -3.33,
+        3.33
+      ],
+      "shaft_size": [
+        0.75,
+        0.8,
+        0.57
+      ],
+      "shaft_centres_z": [
+        -3.94,
+        3.94
+      ],
+      "bolt_x": [
+        -0.96,
+        0.96
+      ],
+      "bolt_size": [
+        0.19,
+        0.12,
+        0.19
+      ],
+      "bevel_width": 0.035,
+      "bevel_segments": 3
+    },
+    "encoding": {
+      "codec": "libx264",
+      "preset": "slow",
+      "crf": 16,
+      "pixel_format": "yuv420p"
+    },
+    "rear_panel": false,
+    "machine_columns": false,
+    "no_constitutive_solver": true,
+    "scope": "fixed qualitative rapid rupture with longitudinal branched remnants; strand count and geometry authored, reinforcement and layup unknown"
+  },
+  "source": {
+    "id": "video_0040",
+    "video": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/standard-videos/video_0040.mp4",
+    "video_sha256": "3dcf2a131481cc0ae6f73674758e98025d51edf2c5b7b2d4516efc4520750b78",
+    "mapping_csv": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/video_mapping.csv",
+    "mapping_sha256": "f08263220cf1d70a271ac61c8d2e1dbdfdb6882e7fb56faf3ade7f4bd563820d",
+    "original_filename": "http_20251104_0041.mp4",
+    "label_workbook": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/all_videos_tag.xlsx",
+    "label_workbook_sha256": "f21e0427be79f0bda2cde239f8b042342ccc61d9f288b27150a6af7806be3042",
+    "original_xlsx_row": {
+      "视频编号": "video_0040",
+      "事件时刻原值": "25.29 s",
+      "断裂类别原值": "爆炸性断裂",
+      "材料原值": "复材",
+      "分辨率原值": "<480P"
+    },
+    "original_xlsx_has_result_or_gauge_label": false,
+    "event_label_s": 25.29,
+    "duration_s": 27.498646,
+    "resolution": [
+      382,
+      384
+    ],
+    "fps": 30,
+    "observed_source_times_s": [
+      0.3,
+      24.79,
+      25.24,
+      25.29,
+      25.34,
+      25.59,
+      26.998646
+    ],
+    "additional_dense_excerpt_window_s": [
+      25.2,
+      25.5
+    ],
+    "dense_decoded_frames_inspected": 9,
+    "dense_observation": "first four extracted frames intact narrow segment; next frames show short branched upper residue and a gap. Exact onset cannot be calibrated beyond low frame rate and label/visible bracket."
+  },
+  "time_mapping": {
+    "anchor_pairs_source_to_generated_s": [
+      [
+        0,
+        0
+      ],
+      [
+        25.29,
+        16
+      ],
+      [
+        27.498646,
+        20
+      ]
+    ],
+    "generated_event_frame_1_based": 481,
+    "generated_event_pts_s": 16,
+    "generated_splitting_and_rupture_onset_same_frame": true,
+    "generated_settled_frame": 526,
+    "generated_settled_pts_s": 17.5,
+    "source_before_event_to_generated_ratio": 1.580625,
+    "source_after_event_to_generated_ratio": 0.5521615000000004,
+    "purpose": "continuous small loading then rapid mechanical multiple fracture surfaces and local strand splitting, finite decay, stopped observation; no loop/padding",
+    "source_post_motion_exact_replication": false,
+    "source_timing_uncertainty": "original event25.29s is dataset label; visible state changes between supplied25.29 and25.34frames;30fps cannot resolve physical crack speed"
+  },
+  "observations": [
+    "Original sheet identifies composite and explosive fracture, event25.29s; it does not establish constituent identity, free-fragment count or formal gauge.",
+    "Source before event already contains thin red/black measurement leads and attachment; these are not new flying material fibers.",
+    "Source changes rapidly from a narrow continuous strip-like segment to a visible gap with several short strand-like upper remnants. Lower remnant is partly occluded and blurred.",
+    "No reliable free material fragment trajectories or actual explosion/flame are established by these pixels. Blue apparatus light changes do not prove blast."
+  ],
+  "modelling_assumptions": [
+    "One narrow solid strip before event, subdivided into six unequal axial visual bundles during simultaneous multiple complementary ruptures; six is an author choice, not a measured fiber count.",
+    "Specific axial bands, irregular cut heights and local splay are schematic surface/geometry assumptions, not validated reinforcement direction, layup, architecture or microscopic mechanism.",
+    "All material remains in upper/lower anchored branched remnants; detached fragments are zero because their identity/trajectories cannot be reliably distinguished from pre-existing measurement wires.",
+    "Piecewise affine local lateral shear with actual z coordinates retained makes complementary fracture faces visibly separate without removing a strip or shortening the fragments.",
+    "Abrupt event at16s, local bounded splay oscillation decays over1.5s; jaws stop at event and root material remains attached. This is a selected qualitative boundary condition, not calibrated source damping.",
+    "Only the fixed baseline configuration is supplied; no valid continuous parameter range is inferred."
+  ],
+  "unknowns": [
+    "Exact reinforcement constituent, matrix, grade, fiber diameter, fiber orientation, ply count, weave/layup and microscopic failure mechanism.",
+    "Physical specimen dimensions, formal source gauge, load/strain history, constitutive law, crack propagation speed and damping.",
+    "Actual number of strand branches, free fragments or three-dimensional postfracture trajectories; low-resolution measurement attachment obscures parts of source."
+  ],
+  "expected_labels_six_groups": {
+    "材料类别": "复材",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "爆炸性断裂",
+    "断裂位置": "标距内",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "checked_labels_six_groups": {
+    "材料类别": {
+      "value": "复材",
+      "status": "checked_for_fixed_qualitative_candidate",
+      "evidence": "original XLSX row identifies composite; not inferred from appearance"
+    },
+    "断裂结果": {
+      "value": "完全断裂",
+      "status": "checked_for_fixed_qualitative_candidate",
+      "evidence": "独立600帧实际求值显示第481帧贯通路径丧失，2个分量各夹持一端；最终编码481及末态可见分束与背景开口。"
+    },
+    "单一主要破坏类别": {
+      "value": "无法确认",
+      "status": "unconfirmed_after_independent_review",
+      "evidence": "原标签爆炸性；最终编码与来源支持快速断开/多个短残束，不能单独核验爆炸性分类，保留无法确认。"
+    },
+    "断裂位置": {
+      "value": "标距内",
+      "status": "checked_for_fixed_qualitative_candidate",
+      "evidence": "all authored fracture faces lie inside synthetic gauge z[-1.5,1.5]; source formal gauge unknown"
+    },
+    "夹持异常": {
+      "value": "无",
+      "status": "checked_for_fixed_qualitative_candidate",
+      "evidence": "600 actual evaluated jaw inner-face contact and embedded extent checks; each final component remains attached to one jaw"
+    },
+    "拍摄异常": {
+      "value": "无",
+      "status": "checked_for_fixed_qualitative_candidate",
+      "evidence": "独立核验固定相机、全程入画、960×540/600帧30fps20秒、完整解码及主Agent实际打开最终视频。"
+    }
+  },
+  "technical_checks": {
+    "summary": {
+      "evaluated_frames": 600,
+      "component_distribution": {
+        "1": 480,
+        "2": 120
+      },
+      "first_loss_of_all_jaw_to_jaw_paths": {
+        "frame": 481,
+        "pts_s": 16.0
+      },
+      "longitudinal_split_onset_frame": 481,
+      "final_components": [
+        {
+          "vertices": 780,
+          "lower": true,
+          "upper": false
+        },
+        {
+          "vertices": 780,
+          "lower": false,
+          "upper": true
+        }
+      ],
+      "free_detached_fragments_measured": 0,
+      "all_final_components_attached_to_exactly_one_jaw": true,
+      "jaw_surface_contact_max_error": 1.1175870895385742e-08,
+      "jaw_embedded_z_overlap_min": 0.4799997806549072,
+      "volume_initial": 0.4291200358908706,
+      "volume_last_pre_event": 0.43631993803592195,
+      "volume_first_post_event": 0.4363200067231598,
+      "volume_post_min": 0.43631999446256486,
+      "volume_post_max": 0.4363200337747533,
+      "volume_loading_relative_change": 0.0167784541156224,
+      "loading_volume_interpretation": "small authored axial stretch without Poisson contraction, not an incompressibility or quantitative material assertion; rupture and lateral shear preserve loaded material volume",
+      "section_thickness_min": 0.11999999120831457,
+      "section_width_min": 0.07999998443759826,
+      "section_area_min": 0.009599997429177094,
+      "same_material_outer_edge_lengths_initial": [
+        5.9599999184479975,
+        5.9599999184479975
+      ],
+      "same_material_outer_edge_lengths_final": [
+        6.091379977437242,
+        6.089626531665769
+      ],
+      "rupture_cap_y_clearance_min": 0.048394400626420975,
+      "rupture_cap_y_clearance_max": 0.08240985125303268,
+      "adjacent_boundary_clearance_min": 0.0,
+      "adjacent_boundary_clearance_max": 0.050602465867996216,
+      "no_detected_cap_penetration": true,
+      "post_settle_max_vertex_displacement": 0.0,
+      "settle_frame": 526,
+      "settle_pts_s": 17.5,
+      "post_event_upper_jaw_displacement_constant": true,
+      "post_event_z_bounds_constant": true,
+      "no_rear_panel_or_columns": true,
+      "scope_limit": "evaluated surface edge graph, signed closed-surface material volume, corresponding source-coordinate edge/section measurements and cap/adjacent boundary separating-axis clearances; no full swept triangle collision or constitutive solver",
+      "local_post_event_max_vertex_distance_from_settled": 0.01587060692438948,
+      "local_post_event_max_one_frame_vertex_motion": 0.0053748542689591155,
+      "post_event_axial_vertex_motion": 0,
+      "adjacent_boundary_signed_clearance_min": 0.0,
+      "adjacent_boundary_gap_method": "source-coordinate pairs on actual opposing neighbour boundary polygons, side ownership inferred from outward normals, signed right-minus-left; not merely absolute spread"
+    },
+    "key_states": [
+      {
+        "frame": 1,
+        "time_s": 0.0,
+        "component_count_measured": 1,
+        "components": [
+          {
+            "vertices": 1372,
+            "lower": true,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": true,
+        "signed_material_volume": 0.4291200358908706,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.0,
+        "z_bounds": [
+          -2.9800000190734863,
+          2.9800000190734863
+        ],
+        "same_material_outer_edge_lengths": [
+          5.9599999184479975,
+          5.9599999184479975
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 0.0,
+        "rupture_cap_y_clearance_min_measured": 0.0,
+        "cap_clearance_applicability": "before rupture, caps are welded internal material",
+        "section_thickness_min_measured": 0.11999999896933634,
+        "section_width_min_measured": 0.08000001354142909,
+        "section_area_min_measured": 0.009600001542518385,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.0,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 241,
+        "time_s": 8.0,
+        "component_count_measured": 1,
+        "components": [
+          {
+            "vertices": 1372,
+            "lower": true,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": true,
+        "signed_material_volume": 0.4327200287116284,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.05,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.0299999713897705
+        ],
+        "same_material_outer_edge_lengths": [
+          6.0099999814038085,
+          6.0099999814038085
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 0.0,
+        "rupture_cap_y_clearance_min_measured": 0.0,
+        "cap_clearance_applicability": "before rupture, caps are welded internal material",
+        "section_thickness_min_measured": 0.11999999896933634,
+        "section_width_min_measured": 0.08000001354142909,
+        "section_area_min_measured": 0.009600001542518385,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.0,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 478,
+        "time_s": 15.9,
+        "component_count_measured": 1,
+        "components": [
+          {
+            "vertices": 1372,
+            "lower": true,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": true,
+        "signed_material_volume": 0.4363191783277216,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.099988330078125,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.0799882411956787
+        ],
+        "same_material_outer_edge_lengths": [
+          6.059988226150248,
+          6.059988226150248
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 0.0,
+        "rupture_cap_y_clearance_min_measured": 0.0,
+        "cap_clearance_applicability": "before rupture, caps are welded internal material",
+        "section_thickness_min_measured": 0.11999999896933634,
+        "section_width_min_measured": 0.08000001354142909,
+        "section_area_min_measured": 0.009600001542518385,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.0,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 479,
+        "time_s": 15.933333333333334,
+        "component_count_measured": 1,
+        "components": [
+          {
+            "vertices": 1372,
+            "lower": true,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": true,
+        "signed_material_volume": 0.4363196632032971,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.09999480613425926,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.0799949169158936
+        ],
+        "same_material_outer_edge_lengths": [
+          6.059995006608262,
+          6.059995006608262
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 0.0,
+        "rupture_cap_y_clearance_min_measured": 0.0,
+        "cap_clearance_applicability": "before rupture, caps are welded internal material",
+        "section_thickness_min_measured": 0.11999999896933634,
+        "section_width_min_measured": 0.08000001354142909,
+        "section_area_min_measured": 0.009600001542518385,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.0,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 480,
+        "time_s": 15.966666666666667,
+        "component_count_measured": 1,
+        "components": [
+          {
+            "vertices": 1372,
+            "lower": true,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": true,
+        "signed_material_volume": 0.43631993803592195,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.09999869972511574,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.079998731613159
+        ],
+        "same_material_outer_edge_lengths": [
+          6.059998692779283,
+          6.059998692779283
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 0.0,
+        "rupture_cap_y_clearance_min_measured": 0.0,
+        "cap_clearance_applicability": "before rupture, caps are welded internal material",
+        "section_thickness_min_measured": 0.11999999896933634,
+        "section_width_min_measured": 0.08000001354142909,
+        "section_area_min_measured": 0.009600001542518385,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.0,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 481,
+        "time_s": 16.0,
+        "component_count_measured": 2,
+        "components": [
+          {
+            "vertices": 780,
+            "lower": true,
+            "upper": false
+          },
+          {
+            "vertices": 780,
+            "lower": false,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": false,
+        "signed_material_volume": 0.4363200067231598,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.1,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "same_material_outer_edge_lengths": [
+          6.091379977437242,
+          6.089626531665769
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 1.0,
+        "rupture_cap_y_clearance_min_measured": 0.05999999865889549,
+        "cap_clearance_applicability": "separated complementary faces, y separating-axis clearance",
+        "section_thickness_min_measured": 0.11999999896933634,
+        "section_width_min_measured": 0.07999998443759826,
+        "section_area_min_measured": 0.009599998050058714,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.04500001668930054,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 482,
+        "time_s": 16.033333333333335,
+        "component_count_measured": 2,
+        "components": [
+          {
+            "vertices": 780,
+            "lower": true,
+            "upper": false
+          },
+          {
+            "vertices": 780,
+            "lower": false,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": false,
+        "signed_material_volume": 0.4363200069662601,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.1,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "same_material_outer_edge_lengths": [
+          6.094038276486917,
+          6.092138529998455
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 1.042163667821172,
+        "rupture_cap_y_clearance_min_measured": 0.06758946180343628,
+        "cap_clearance_applicability": "separated complementary faces, y separating-axis clearance",
+        "section_thickness_min_measured": 0.12000000284984705,
+        "section_width_min_measured": 0.07999998443759826,
+        "section_area_min_measured": 0.00959999836049951,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.04689738154411316,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 483,
+        "time_s": 16.066666666666666,
+        "component_count_measured": 2,
+        "components": [
+          {
+            "vertices": 780,
+            "lower": true,
+            "upper": false
+          },
+          {
+            "vertices": 780,
+            "lower": false,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": false,
+        "signed_material_volume": 0.4363200136733288,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.1,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "same_material_outer_edge_lengths": [
+          6.0963398003769536,
+          6.0943136483961995
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 1.077417933397902,
+        "rupture_cap_y_clearance_min_measured": 0.07393522560596466,
+        "cap_clearance_applicability": "separated complementary faces, y separating-axis clearance",
+        "section_thickness_min_measured": 0.11999999896933634,
+        "section_width_min_measured": 0.07999998443759826,
+        "section_area_min_measured": 0.009599998050058714,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.048483818769454956,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 484,
+        "time_s": 16.1,
+        "component_count_measured": 2,
+        "components": [
+          {
+            "vertices": 780,
+            "lower": true,
+            "upper": false
+          },
+          {
+            "vertices": 780,
+            "lower": false,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": false,
+        "signed_material_volume": 0.4363200187888765,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.1,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "same_material_outer_edge_lengths": [
+          6.098093726385296,
+          6.095971420458104
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 1.1035778743420936,
+        "rupture_cap_y_clearance_min_measured": 0.07864401489496231,
+        "cap_clearance_applicability": "separated complementary faces, y separating-axis clearance",
+        "section_thickness_min_measured": 0.11999999896933634,
+        "section_width_min_measured": 0.08000001354142909,
+        "section_area_min_measured": 0.009600001542518385,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.04966101050376892,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 490,
+        "time_s": 16.3,
+        "component_count_measured": 2,
+        "components": [
+          {
+            "vertices": 780,
+            "lower": true,
+            "upper": false
+          },
+          {
+            "vertices": 780,
+            "lower": false,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": false,
+        "signed_material_volume": 0.43632000649358815,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.1,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "same_material_outer_edge_lengths": [
+          6.095206115912731,
+          6.093242190512785
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 1.0601892098347492,
+        "rupture_cap_y_clearance_min_measured": 0.07083405554294586,
+        "cap_clearance_applicability": "separated complementary faces, y separating-axis clearance",
+        "section_thickness_min_measured": 0.11999999896933634,
+        "section_width_min_measured": 0.08000001354142909,
+        "section_area_min_measured": 0.009600001542518385,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.04770851135253906,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 500,
+        "time_s": 16.633333333333333,
+        "component_count_measured": 2,
+        "components": [
+          {
+            "vertices": 780,
+            "lower": true,
+            "upper": false
+          },
+          {
+            "vertices": 780,
+            "lower": false,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": false,
+        "signed_material_volume": 0.43632001727356357,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.1,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "same_material_outer_edge_lengths": [
+          6.088699579212286,
+          6.087093996952471
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 0.9557191585938009,
+        "rupture_cap_y_clearance_min_measured": 0.05202944949269295,
+        "cap_clearance_applicability": "separated complementary faces, y separating-axis clearance",
+        "section_thickness_min_measured": 0.11999999120831457,
+        "section_width_min_measured": 0.08000001354142909,
+        "section_area_min_measured": 0.009600000921636537,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.043007344007492065,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 510,
+        "time_s": 16.966666666666665,
+        "component_count_measured": 2,
+        "components": [
+          {
+            "vertices": 780,
+            "lower": true,
+            "upper": false
+          },
+          {
+            "vertices": 780,
+            "lower": false,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": false,
+        "signed_material_volume": 0.43631999446256486,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.1,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "same_material_outer_edge_lengths": [
+          6.092604539278774,
+          6.090783653983595
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 1.019626327381859,
+        "rupture_cap_y_clearance_min_measured": 0.0635327398777008,
+        "cap_clearance_applicability": "separated complementary faces, y separating-axis clearance",
+        "section_thickness_min_measured": 0.11999999120831457,
+        "section_width_min_measured": 0.07999998443759826,
+        "section_area_min_measured": 0.009599997429177094,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.04588320851325989,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 526,
+        "time_s": 17.5,
+        "component_count_measured": 2,
+        "components": [
+          {
+            "vertices": 780,
+            "lower": true,
+            "upper": false
+          },
+          {
+            "vertices": 780,
+            "lower": false,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": false,
+        "signed_material_volume": 0.4363200067231598,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.1,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "same_material_outer_edge_lengths": [
+          6.091379977437242,
+          6.089626531665769
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 1.0,
+        "rupture_cap_y_clearance_min_measured": 0.05999999865889549,
+        "cap_clearance_applicability": "separated complementary faces, y separating-axis clearance",
+        "section_thickness_min_measured": 0.11999999896933634,
+        "section_width_min_measured": 0.07999998443759826,
+        "section_area_min_measured": 0.009599998050058714,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.04500001668930054,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      },
+      {
+        "frame": 600,
+        "time_s": 19.966666666666665,
+        "component_count_measured": 2,
+        "components": [
+          {
+            "vertices": 780,
+            "lower": true,
+            "upper": false
+          },
+          {
+            "vertices": 780,
+            "lower": false,
+            "upper": true
+          }
+        ],
+        "has_material_path_between_jaws": false,
+        "signed_material_volume": 0.4363200067231598,
+        "jaw_contact_max_error": [
+          1.1175870895385742e-08,
+          1.1175870895385742e-08
+        ],
+        "jaw_embedded_z_overlap_min": 0.48000001907348633,
+        "upper_jaw_displacement": 0.1,
+        "z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "same_material_outer_edge_lengths": [
+          6.091379977437242,
+          6.089626531665769
+        ],
+        "authored_strand_widths": [
+          0.08,
+          0.11,
+          0.085,
+          0.115,
+          0.1,
+          0.11
+        ],
+        "authored_thickness": 0.12,
+        "splay_strength": 1.0,
+        "rupture_cap_y_clearance_min_measured": 0.05999999865889549,
+        "cap_clearance_applicability": "separated complementary faces, y separating-axis clearance",
+        "section_thickness_min_measured": 0.11999999896933634,
+        "section_width_min_measured": 0.07999998443759826,
+        "section_area_min_measured": 0.009599998050058714,
+        "adjacent_strip_boundary_x_clearance_min_measured": 0.0,
+        "adjacent_strip_boundary_x_clearance_max_measured": 0.04500001668930054,
+        "cap_penetration_detected": false,
+        "penetration_check_scope": "actual complementary cap y separating axes and corresponding neighbouring strip x boundary distances; fixed ordered branch maps, no swept collision solver"
+      }
+    ],
+    "full_video_decode": {
+      "exit_code": 0,
+      "command": "ffmpeg -v error -i candidate.mp4 -f null -"
+    },
+    "scientific_scope": "qualitative mechanical rapid multi-surface rupture candidate; explosive label does not mean combustion and technical checks do not establish material classification",
+    "actual_post_event_motion_and_scene": {
+      "actual_post_event_frames_evaluated": 120,
+      "signed_neighbour_clearances": [
+        {
+          "frame": 481,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 482,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04689738154411316
+        },
+        {
+          "frame": 483,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.048483818769454956
+        },
+        {
+          "frame": 484,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04966101050376892
+        },
+        {
+          "frame": 485,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.05037200450897217
+        },
+        {
+          "frame": 486,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.050602465867996216
+        },
+        {
+          "frame": 487,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.05037835240364075
+        },
+        {
+          "frame": 488,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.0497603714466095
+        },
+        {
+          "frame": 489,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.048835694789886475
+        },
+        {
+          "frame": 490,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04770851135253906
+        },
+        {
+          "frame": 491,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04648968577384949
+        },
+        {
+          "frame": 492,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.045286715030670166
+        },
+        {
+          "frame": 493,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.044194966554641724
+        },
+        {
+          "frame": 494,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04329070448875427
+        },
+        {
+          "frame": 495,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.042626410722732544
+        },
+        {
+          "frame": 496,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04222869873046875
+        },
+        {
+          "frame": 497,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04209858179092407
+        },
+        {
+          "frame": 498,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04221412539482117
+        },
+        {
+          "frame": 499,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.042534857988357544
+        },
+        {
+          "frame": 500,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.043007344007492065
+        },
+        {
+          "frame": 501,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.0435715913772583
+        },
+        {
+          "frame": 502,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.044167011976242065
+        },
+        {
+          "frame": 503,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04473823308944702
+        },
+        {
+          "frame": 504,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04523950815200806
+        },
+        {
+          "frame": 505,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04563778638839722
+        },
+        {
+          "frame": 506,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.0459141731262207
+        },
+        {
+          "frame": 507,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.0460641086101532
+        },
+        {
+          "frame": 508,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04609563946723938
+        },
+        {
+          "frame": 509,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.046026915311813354
+        },
+        {
+          "frame": 510,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04588320851325989
+        },
+        {
+          "frame": 511,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04569283127784729
+        },
+        {
+          "frame": 512,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04548409581184387
+        },
+        {
+          "frame": 513,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04528209567070007
+        },
+        {
+          "frame": 514,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.045106470584869385
+        },
+        {
+          "frame": 515,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04497000575065613
+        },
+        {
+          "frame": 516,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04487839341163635
+        },
+        {
+          "frame": 517,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04483073949813843
+        },
+        {
+          "frame": 518,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.044820696115493774
+        },
+        {
+          "frame": 519,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04483848810195923
+        },
+        {
+          "frame": 520,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.0448727011680603
+        },
+        {
+          "frame": 521,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.044912487268447876
+        },
+        {
+          "frame": 522,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04494887590408325
+        },
+        {
+          "frame": 523,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.044976234436035156
+        },
+        {
+          "frame": 524,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04499244689941406
+        },
+        {
+          "frame": 525,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04499903321266174
+        },
+        {
+          "frame": 526,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 527,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 528,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 529,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 530,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 531,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 532,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 533,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 534,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 535,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 536,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 537,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 538,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 539,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 540,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 541,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 542,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 543,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 544,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 545,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 546,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 547,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 548,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 549,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 550,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 551,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 552,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 553,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 554,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 555,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 556,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 557,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 558,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 559,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 560,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 561,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 562,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 563,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 564,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 565,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 566,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 567,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 568,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 569,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 570,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 571,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 572,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 573,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 574,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 575,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 576,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 577,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 578,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 579,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 580,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 581,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 582,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 583,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 584,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 585,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 586,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 587,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 588,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 589,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 590,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 591,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 592,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 593,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 594,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 595,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 596,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 597,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 598,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 599,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        },
+        {
+          "frame": 600,
+          "minimum_signed_neighbour_boundary_clearance": 0.0,
+          "maximum_signed_neighbour_boundary_clearance": 0.04500001668930054
+        }
+      ],
+      "signed_neighbour_clearance_min": 0.0,
+      "max_vertex_displacement_from_settled": 0.01587060692438948,
+      "max_post_event_one_frame_vertex_motion": 0.0053748542689591155,
+      "max_post_event_z_coordinate_motion": 0,
+      "settled_to_end_vertex_motion": 0.0,
+      "samples": [
+        {
+          "frame": 481,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 482,
+          "max_vertex_distance_from_settled": 0.0053748542689591155
+        },
+        {
+          "frame": 483,
+          "max_vertex_distance_from_settled": 0.009868896415449524
+        },
+        {
+          "frame": 484,
+          "max_vertex_distance_from_settled": 0.01320365431444131
+        },
+        {
+          "frame": 485,
+          "max_vertex_distance_from_settled": 0.015217717130352007
+        },
+        {
+          "frame": 486,
+          "max_vertex_distance_from_settled": 0.01587060692438948
+        },
+        {
+          "frame": 487,
+          "max_vertex_distance_from_settled": 0.015235806725767473
+        },
+        {
+          "frame": 488,
+          "max_vertex_distance_from_settled": 0.013485121368274927
+        },
+        {
+          "frame": 489,
+          "max_vertex_distance_from_settled": 0.010865686285825203
+        },
+        {
+          "frame": 490,
+          "max_vertex_distance_from_settled": 0.007672666616745461
+        },
+        {
+          "frame": 491,
+          "max_vertex_distance_from_settled": 0.004219985968434013
+        },
+        {
+          "frame": 492,
+          "max_vertex_distance_from_settled": 0.0008122181510093134
+        },
+        {
+          "frame": 493,
+          "max_vertex_distance_from_settled": 0.002280504941989842
+        },
+        {
+          "frame": 494,
+          "max_vertex_distance_from_settled": 0.004842067957218816
+        },
+        {
+          "frame": 495,
+          "max_vertex_distance_from_settled": 0.006723838986825389
+        },
+        {
+          "frame": 496,
+          "max_vertex_distance_from_settled": 0.007850465347963161
+        },
+        {
+          "frame": 497,
+          "max_vertex_distance_from_settled": 0.008219067232103965
+        },
+        {
+          "frame": 498,
+          "max_vertex_distance_from_settled": 0.007891760110509802
+        },
+        {
+          "frame": 499,
+          "max_vertex_distance_from_settled": 0.006983221324232887
+        },
+        {
+          "frame": 500,
+          "max_vertex_distance_from_settled": 0.005644736115107033
+        },
+        {
+          "frame": 501,
+          "max_vertex_distance_from_settled": 0.004046406165930476
+        },
+        {
+          "frame": 502,
+          "max_vertex_distance_from_settled": 0.002359707737525339
+        },
+        {
+          "frame": 503,
+          "max_vertex_distance_from_settled": 0.0007415356207067928
+        },
+        {
+          "frame": 504,
+          "max_vertex_distance_from_settled": 0.0006784631811859516
+        },
+        {
+          "frame": 505,
+          "max_vertex_distance_from_settled": 0.0018066569416812126
+        },
+        {
+          "frame": 506,
+          "max_vertex_distance_from_settled": 0.0025897074849034656
+        },
+        {
+          "frame": 507,
+          "max_vertex_distance_from_settled": 0.0030144311782299847
+        },
+        {
+          "frame": 508,
+          "max_vertex_distance_from_settled": 0.003103657665520632
+        },
+        {
+          "frame": 509,
+          "max_vertex_distance_from_settled": 0.002909086925556711
+        },
+        {
+          "frame": 510,
+          "max_vertex_distance_from_settled": 0.002501879619411181
+        },
+        {
+          "frame": 511,
+          "max_vertex_distance_from_settled": 0.0019626289276824605
+        },
+        {
+          "frame": 512,
+          "max_vertex_distance_from_settled": 0.0013713623141773954
+        },
+        {
+          "frame": 513,
+          "max_vertex_distance_from_settled": 0.0007991363024490991
+        },
+        {
+          "frame": 514,
+          "max_vertex_distance_from_settled": 0.0003015536998827815
+        },
+        {
+          "frame": 515,
+          "max_vertex_distance_from_settled": 8.501508957827036e-05
+        },
+        {
+          "frame": 516,
+          "max_vertex_distance_from_settled": 0.0003445014077082817
+        },
+        {
+          "frame": 517,
+          "max_vertex_distance_from_settled": 0.0004795568628608892
+        },
+        {
+          "frame": 518,
+          "max_vertex_distance_from_settled": 0.0005079676187632573
+        },
+        {
+          "frame": 519,
+          "max_vertex_distance_from_settled": 0.0004576179390059092
+        },
+        {
+          "frame": 520,
+          "max_vertex_distance_from_settled": 0.00036062513527069883
+        },
+        {
+          "frame": 521,
+          "max_vertex_distance_from_settled": 0.00024799410938972435
+        },
+        {
+          "frame": 522,
+          "max_vertex_distance_from_settled": 0.0001448500439627226
+        },
+        {
+          "frame": 523,
+          "max_vertex_distance_from_settled": 6.737970145377554e-05
+        },
+        {
+          "frame": 524,
+          "max_vertex_distance_from_settled": 2.135893049757071e-05
+        },
+        {
+          "frame": 525,
+          "max_vertex_distance_from_settled": 2.775634161784723e-06
+        },
+        {
+          "frame": 526,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 527,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 528,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 529,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 530,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 531,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 532,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 533,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 534,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 535,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 536,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 537,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 538,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 539,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 540,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 541,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 542,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 543,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 544,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 545,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 546,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 547,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 548,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 549,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 550,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 551,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 552,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 553,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 554,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 555,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 556,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 557,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 558,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 559,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 560,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 561,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 562,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 563,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 564,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 565,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 566,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 567,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 568,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 569,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 570,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 571,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 572,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 573,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 574,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 575,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 576,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 577,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 578,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 579,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 580,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 581,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 582,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 583,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 584,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 585,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 586,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 587,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 588,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 589,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 590,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 591,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 592,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 593,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 594,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 595,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 596,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 597,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 598,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 599,
+          "max_vertex_distance_from_settled": 0.0
+        },
+        {
+          "frame": 600,
+          "max_vertex_distance_from_settled": 0.0
+        }
+      ],
+      "actual_scene_object_names": [
+        "actual_composite_material",
+        "lower jaw -0.26",
+        "lower jaw 0.26",
+        "fixture body -1",
+        "loading shaft -1",
+        "bolt -1-0.96",
+        "bolt -10.96",
+        "upper jaw -0.26",
+        "upper jaw 0.26",
+        "fixture body 1",
+        "loading shaft 1",
+        "bolt 1-0.96",
+        "bolt 10.96",
+        "fixed_camera"
+      ],
+      "camera_location": [
+        9.0,
+        -17.0,
+        3.0
+      ],
+      "camera_scale": 16.399999618530273,
+      "rear_panel_or_columns_present": false
+    }
+  },
+  "video": {
+    "path": "outputs/current/composite_rapid_strand_fragmentation/composite_rapid_strand_fragmentation_baseline_v0_1.mp4",
+    "sha256": "7216102004e389b2472c15f382984a21e0d55038ad5066eedb2ba5e020e6881d",
+    "bytes": 381905,
+    "width": 960,
+    "height": 540,
+    "fps": 30,
+    "frames": 600,
+    "duration_s": 20,
+    "ffprobe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "mime_codec_string": "avc1.64001f",
+          "width": 960,
+          "height": 540,
+          "coded_width": 960,
+          "coded_height": 544,
+          "has_b_frames": 2,
+          "sample_aspect_ratio": "1:1",
+          "display_aspect_ratio": "16:9",
+          "pix_fmt": "yuv420p",
+          "level": 31,
+          "color_range": "tv",
+          "color_transfer": "iec61966-2-1",
+          "color_primaries": "bt709",
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 5,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/15360",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 307200,
+          "duration": "20.000000",
+          "bit_rate": "149536",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "600",
+          "nb_read_frames": "600",
+          "extradata_size": 51,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "encoder": "Lavc62.28.101 libx264"
+          }
+        }
+      ],
+      "format": {
+        "filename": "_work/coverage-expansion-20261008/composite_fragmentation/composite_rapid_strand_fragmentation_baseline_v0_1.mp4",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "20.000000",
+        "size": "381905",
+        "bit_rate": "152762",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf62.12.101"
+        }
+      }
+    }
+  },
+  "independent_review_record": {
+    "status": "passed_for_qualitative_initial_candidate",
+    "date": "2026-10-08",
+    "video_sha256": "7216102004e389b2472c15f382984a21e0d55038ad5066eedb2ba5e020e6881d",
+    "report": "_work/coverage-expansion-20261008/review/composite_fragmentation_final_review.md",
+    "coverage": [
+      "独立600帧实际闭合网格/连通与夹口路径",
+      "夹口BVH接触、材料路径与体积",
+      "有符号束间及互补断面间隙、断后衰减与停止",
+      "最终编码/配置/标签与来源假设边界"
+    ],
+    "mode_classification": "无法确认",
+    "limits": [
+      "仅快速分束完整断裂的固定定性候选",
+      "不计爆炸性已核验覆盖，不批准样式范围或训练发布"
+    ]
+  },
+  "main_agent_view_record": {
+    "status": "completed",
+    "date": "2026-10-08",
+    "video_sha256": "7216102004e389b2472c15f382984a21e0d55038ad5066eedb2ba5e020e6881d",
+    "method": "QuickTime原生打开最终MP4，播放并核对20秒末态；定位15.886s完整、16.105s分束；实际查看最终修正480/481关键预览。",
+    "observations": [
+      "暗灰窄条快速断开并局部分束，编码细束可见",
+      "夹口位置保持，20秒末态停止",
+      "无后板或孤立机架柱，采用夹具与试样视图"
+    ],
+    "scope": "当前固定视频视觉查看，不证明爆炸性机制、具体增强结构或连续参数范围"
+  },
+  "main_native_video_view_record": {
+    "status": "completed",
+    "date": "2026-10-08",
+    "video_sha256": "7216102004e389b2472c15f382984a21e0d55038ad5066eedb2ba5e020e6881d",
+    "method": "QuickTime原生打开最终MP4，播放并核对20秒末态；定位15.886s完整、16.105s分束；实际查看最终修正480/481关键预览。",
+    "observations": [
+      "暗灰窄条快速断开并局部分束，编码细束可见",
+      "夹口位置保持，20秒末态停止",
+      "无后板或孤立机架柱，采用夹具与试样视图"
+    ],
+    "scope": "当前固定视频视觉查看，不证明爆炸性机制、具体增强结构或连续参数范围"
+  },
+  "acceptance": {
+    "user_accepted": true,
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "independent_review": "passed_for_qualitative_initial_candidate",
+    "main_final_video_view": "completed_for_final_sha256",
+    "scope": "single_video_visual_acceptance"
+  },
+  "limitations": [
+    "Initial scientific/visual candidate; original explosive label supports consideration, not automatically checked classification.",
+    "Actual source attachments and camera effects are omitted from clean fixture/specimen reconstruction; specific source wires are not generated as shards.",
+    "Conserved loaded material and local ordered separating-axis geometry checked; no full swept collision or material physics solver."
+  ],
+  "explosive_mode_coverage_verified": false,
+  "collection_record": {
+    "date": "2026-10-08",
+    "original_candidate_video_path": "_work/coverage-expansion-20261008/composite_fragmentation/composite_rapid_strand_fragmentation_baseline_v0_1.mp4",
+    "original_candidate_metadata_path": "_work/coverage-expansion-20261008/composite_fragmentation/composite_rapid_strand_fragmentation_baseline_v0_1.json",
+    "original_candidate_video_sha256": "7216102004e389b2472c15f382984a21e0d55038ad5066eedb2ba5e020e6881d",
+    "original_candidate_metadata_sha256": "3cb83b6bfa1b28076d9460482721ee84e07994ccef4a8a566ca3856c01a0aba1",
+    "video_copy_method": "byte-preserving copy; SHA256 matches original indexed candidate",
+    "original_work_files_retained": true,
+    "path_base": "repository root for relative artifact paths; source paths remain absolute",
+    "historical_probe_note": "Stored ffprobe filenames and review text describe the original candidate at check time; the current video path below identifies the byte-identical collected file."
+  },
+  "user_acceptance_record": {
+    "date": "2026-10-08",
+    "basis": "User accepted the visual effects of all three preceding fixed candidate videos and explicitly authorized the next step.",
+    "video_sha256": "7216102004e389b2472c15f382984a21e0d55038ad5066eedb2ba5e020e6881d",
+    "scope": "single_video_visual_acceptance",
+    "limits": [
+      "Only this fixed video visual effect is accepted.",
+      "Expected versus checked six-group labels and all unknowns remain unchanged.",
+      "No style, continuous parameter range or training release approval."
+    ]
+  },
+  "user_accepted": true,
+  "style_accepted": false,
+  "parameter_range_accepted": false,
+  "training_released": false,
+  "acceptance_scope": "single_video_visual_acceptance",
+  "current_status_clarification": {
+    "date": "2026-10-08",
+    "status": "user_accepted_video",
+    "video_sha256": "7216102004e389b2472c15f382984a21e0d55038ad5066eedb2ba5e020e6881d",
+    "independent_review_status": "passed_for_qualitative_initial_candidate",
+    "independent_review_record_ref": "independent_review_record",
+    "main_final_video_view_completed": true,
+    "main_video_view_record_ref": "main_agent_view_record",
+    "user_accepted": true,
+    "acceptance_scope": "single_video_visual_acceptance",
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "checked_labels": {
+      "材料类别": "复材",
+      "断裂结果": "完全断裂",
+      "单一主要破坏类别": "无法确认",
+      "断裂位置": "标距内",
+      "夹持异常": "无",
+      "拍摄异常": "无"
+    },
+    "historical_pending_fields": [
+      "status"
+    ],
+    "interpretation": "Listed early pending/no-user-acceptance fields and review/view statements retain their check-time history. Current state follows the existing independent review and SHA-bound main view records, followed by single-video user visual acceptance; these earlier fields do not describe a currently outstanding visual-review gate.",
+    "limits": [
+      "Qualitative fixed-video review and visual acceptance do not establish microscopic mechanism, calibrated constitutive behavior, source formal gauge or a parameter range.",
+      "All original label values, source observations, author assumptions and unknowns are preserved."
+    ]
+  }
+}

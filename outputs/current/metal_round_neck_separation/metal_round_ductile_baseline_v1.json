@@ -9865,7 +9865,9 @@
       "date": "2026-10-08",
       "quote": "这个视频可以",
       "scope": "此条成片效果接受；颈缩程度作为后续变化参数。不批准连续参数范围或训练发布。"
-    }
+    },
+    "training_released": false,
+    "scope": "single_video_visual_acceptance"
   },
   "saved_scene": {
     "file": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/initial-batch-20261008/metal/ductile/metal_round_ductile_baseline_v1.blend",
@@ -9904,5 +9906,40 @@
     "user_acceptance": false
   },
   "reusable_implementation_note": "generator/metal_initial.py 当前为1.1.0。已接受颈缩成片仍由1.0.1生成；原配置/成片版本保持。默认4.0与原烘焙场景38帧比对通过浮点容差，较弱2.0只验证关键状态，不批准连续范围。",
-  "archive_note": "成片及完整配置/检查说明收录至outputs/current；saved_scene是工作场景辅助追溯标识，理解成片行为与标签不依赖场景文件。"
+  "archive_note": "成片及完整配置/检查说明收录至outputs/current；saved_scene是工作场景辅助追溯标识，理解成片行为与标签不依赖场景文件。",
+  "user_accepted": true,
+  "style_accepted": false,
+  "parameter_range_accepted": false,
+  "training_released": false,
+  "acceptance_scope": "single_video_visual_acceptance",
+  "current_status_clarification": {
+    "date": "2026-10-08",
+    "status": "user_accepted_video",
+    "video_sha256": "acb37f0e079e850d4d0562bfd2af487e0b809bcf069e1b3af2652631ebe23b6f",
+    "independent_review_status": "passed_for_qualitative_initial_candidates",
+    "independent_review_record_ref": "independent_review_record",
+    "main_final_video_view_completed": true,
+    "main_video_view_record_ref": "main_agent_view_record",
+    "user_accepted": true,
+    "acceptance_scope": "single_video_visual_acceptance",
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "checked_labels": {
+      "材料类别": "金属",
+      "断裂结果": "完全断裂",
+      "单一主要破坏类别": "韧性断裂",
+      "断裂位置": "标距内",
+      "夹持异常": "无",
+      "拍摄异常": "无"
+    },
+    "historical_pending_fields": [
+      "checked_labels.failure_category_basis"
+    ],
+    "interpretation": "Listed early pending/no-user-acceptance fields and review/view statements retain their check-time history. Current state follows the existing independent review and SHA-bound main view records, followed by single-video user visual acceptance; these earlier fields do not describe a currently outstanding visual-review gate.",
+    "limits": [
+      "Qualitative fixed-video review and visual acceptance do not establish microscopic mechanism, calibrated constitutive behavior, source formal gauge or a parameter range.",
+      "All original label values, source observations, author assumptions and unknowns are preserved."
+    ]
+  }
 }

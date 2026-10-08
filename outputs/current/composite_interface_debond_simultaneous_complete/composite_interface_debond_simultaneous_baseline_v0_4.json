@@ -1773,7 +1773,8 @@
       "date": "2026-10-08",
       "quote": "可以；下一步应该在当前的基础上，补充其他类别的基础视频",
       "scope": "本条同步断裂与界面脱粘成片的视觉接受"
-    }
+    },
+    "scope": "single_video_visual_acceptance"
   },
   "independent_review_record": {
     "date": "2026-10-08",
@@ -1819,5 +1820,45 @@
     "技术检查不等于材料微观机制证明、用户接受或连续参数范围批准。",
     "同步起始帧满足用户视觉纠正，真实微观事件间隔未标定。",
     "未进行全三角网格自交或材料本构求解。"
-  ]
+  ],
+  "user_accepted": true,
+  "style_accepted": false,
+  "parameter_range_accepted": false,
+  "training_released": false,
+  "acceptance_scope": "single_video_visual_acceptance",
+  "current_status_clarification": {
+    "date": "2026-10-08",
+    "status": "user_accepted_video",
+    "video_sha256": "ff4b576ffd2c29a7c9812ce161ea4f8433993fe013183e5d082d9d7e3a963581",
+    "independent_review_status": "passed_for_qualitative_initial_candidate",
+    "independent_review_record_ref": "independent_review_record",
+    "main_final_video_view_completed": true,
+    "main_video_view_record_ref": "main_agent_view_record",
+    "user_accepted": true,
+    "acceptance_scope": "single_video_visual_acceptance",
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "checked_labels": {
+      "材料类别": "复材",
+      "断裂结果": "完全断裂",
+      "单一主要破坏类别": "界面脱粘",
+      "断裂位置": "标距内",
+      "夹持异常": "无",
+      "拍摄异常": "无"
+    },
+    "historical_pending_fields": [
+      "checked_labels_six_groups.材料类别.status",
+      "checked_labels_six_groups.断裂结果.status",
+      "checked_labels_six_groups.单一主要破坏类别.status",
+      "checked_labels_six_groups.断裂位置.status",
+      "checked_labels_six_groups.夹持异常.status",
+      "checked_labels_six_groups.拍摄异常.status"
+    ],
+    "interpretation": "Listed early pending/no-user-acceptance fields and review/view statements retain their check-time history. Current state follows the existing independent review and SHA-bound main view records, followed by single-video user visual acceptance; these earlier fields do not describe a currently outstanding visual-review gate.",
+    "limits": [
+      "Qualitative fixed-video review and visual acceptance do not establish microscopic mechanism, calibrated constitutive behavior, source formal gauge or a parameter range.",
+      "All original label values, source observations, author assumptions and unknowns are preserved."
+    ]
+  }
 }
