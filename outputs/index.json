@@ -2,10 +2,10 @@
   "schema": "tensile-video-index/v2",
   "updated": "2026-10-08",
   "design_document": "../DESIGN.md",
-  "design_version": "v1.8",
-  "status": "next_geometry_baseline_checked_pending_user_acceptance",
-  "approved_video_count": 10,
-  "reviewable_candidate_count": 1,
+  "design_version": "v1.9",
+  "status": "accepted_baselines_with_user_visual_criterion_clarification",
+  "approved_video_count": 11,
+  "reviewable_candidate_count": 0,
   "batch_complete": false,
   "batch_released": false,
   "items": [
@@ -303,13 +303,13 @@
     {
       "id": "polymer_finite_deformation_oblique_rupture_baseline_v1",
       "style_id": "polymer_finite_deformation_oblique_rupture",
-      "title": "高分子有限变形后斜裂突断（半脆半韧预期）",
+      "title": "高分子均匀拉长后瞬时脆断（半脆半韧）",
       "status": "user_accepted_video",
       "source_id": "video_0014",
       "video_path": "current/polymer_finite_deformation_oblique_rupture/polymer_finite_deformation_oblique_rupture_baseline_v1.mp4",
       "metadata_path": "current/polymer_finite_deformation_oblique_rupture/polymer_finite_deformation_oblique_rupture_baseline_v1.json",
       "sha256": "63bf46edbf5065c37f3114e864fb3f7fca5b41fbbcc259e38c51bcdf1dfbfeb6",
-      "metadata_sha256": "1909c2a400aae7ad3c33f37acfd6a34d81f99f4830ab751f2f4bf30e24b8d2e1",
+      "metadata_sha256": "46c4b124d250b47d1a1910d91cb504bce9f5ac07eeb907da6992e35ab8229271",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -324,7 +324,7 @@
       "checked_labels": {
         "材料类别": "高分子",
         "断裂结果": "完全断裂",
-        "单一主要破坏类别": "无法确认",
+        "单一主要破坏类别": "半脆半韧断裂",
         "断裂位置": "标距内",
         "夹持异常": "无",
         "拍摄异常": "无"
@@ -335,8 +335,9 @@
       "style_accepted": false,
       "parameter_range_accepted": false,
       "training_released": false,
-      "expected_mode_coverage_verified": false,
-      "acceptance_scope": "single_video_visual_acceptance"
+      "expected_mode_coverage_verified": true,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "mode_confirmation_basis": "user_project_visual_criterion_DESIGN_v1.9"
     },
     {
       "id": "composite_rapid_strand_fragmentation_baseline_v0_1",
@@ -375,19 +376,17 @@
       "training_released": false,
       "expected_mode_coverage_verified": false,
       "acceptance_scope": "single_video_visual_acceptance"
-    }
-  ],
-  "candidates": [
+    },
     {
       "id": "metal_flat_limited_deformation_rupture_baseline_v1",
       "style_id": "metal_flat_limited_deformation_rupture",
       "title": "金属平板有限变形后断裂（韧性预期，主模式未知）",
-      "status": "checked_pending_user_acceptance",
+      "status": "user_accepted_video",
       "source_id": "video_0058",
-      "video_path": "../_work/next-baselines-20261008/metal-flat-connected/metal_flat_limited_deformation_rupture_baseline_v1.mp4",
-      "metadata_path": "../_work/next-baselines-20261008/metal-flat-connected/metal_flat_limited_deformation_rupture_baseline_v1.json",
+      "video_path": "current/metal_flat_limited_deformation_rupture/metal_flat_limited_deformation_rupture_baseline_v1.mp4",
+      "metadata_path": "current/metal_flat_limited_deformation_rupture/metal_flat_limited_deformation_rupture_baseline_v1.json",
       "sha256": "b1e9ec7b708cdf621721b4e1300506d002f51f5f59907489279a8c71bcb6d065",
-      "metadata_sha256": "b60a29a64caa737d4cc24c8bf5cacd18ed56a09f10e8d370807735fc98cedc28",
+      "metadata_sha256": "97dc9073ca123a2d15d8b4b597e6b21b89bf636b37025bd405dd893d459aa92d",
       "duration_s": 20,
       "fps": 30,
       "frames": 600,
@@ -409,22 +408,25 @@
       },
       "independent_review": "passed_for_qualitative_initial_candidate",
       "main_final_video_view_completed": true,
-      "user_accepted": false,
+      "user_accepted": true,
       "style_accepted": false,
       "parameter_range_accepted": false,
       "training_released": false,
-      "expected_mode_coverage_verified": false
+      "expected_mode_coverage_verified": false,
+      "acceptance_scope": "single_video_visual_acceptance"
     }
   ],
+  "candidates": [],
   "materials": [
     {
       "material": "金属",
-      "status": "two_accepted_videos",
+      "status": "three_accepted_videos",
       "source_ids": [
         "video_0006",
-        "video_0003"
+        "video_0003",
+        "video_0058"
       ],
-      "accepted_video_count": 2
+      "accepted_video_count": 3
     },
     {
       "material": "高分子",
@@ -458,10 +460,9 @@
     }
   ],
   "next_steps": [
-    "用户查看0058来源的金属平板有限变形固定首例；独立检查及主Agent成片查看已完成，接受后按SHA收录。",
-    "高分子0014及复材0040主模式依据裁决继续无法确认；现片视觉接受有效，不为升标签添造运动。",
-    "高分子局部颈缩/颈缩传播的7条韧性来源不足以确认可见行为，复材韧性0030/0099仍有证据缺口。",
-    "先补有依据基础样式，再确认离散参数变化；当前没有连续范围批准或训练发布。"
+    "高分子半脆半韧按用户项目视觉判据确认当前样片，保持实际配置和弹塑份额未知；无需重生成。",
+    "复材0040现片为0.1.0初版快速分束，未二次重渲染；核对用户希望保留现片确认类别还是增强丝束炸开效果。",
+    "复材韧性与高分子颈缩传播仍保留来源证据缺口；连续参数范围与训练发布未批准。"
   ],
   "management_cleanup_status": "complete",
   "source_inventory": {
@@ -506,12 +507,13 @@
         "status": "user_accepted_video",
         "source_deformation_quantification": "unknown",
         "candidate_id": "polymer_finite_deformation_oblique_rupture_baseline_v1",
-        "checked_mode": "无法确认",
-        "expected_mode_coverage_verified": false,
+        "checked_mode": "半脆半韧断裂",
+        "expected_mode_coverage_verified": true,
         "video_id": "polymer_finite_deformation_oblique_rupture_baseline_v1",
         "acceptance_scope": "single_video_visual_acceptance",
         "style_accepted": false,
-        "parameter_range_accepted": false
+        "parameter_range_accepted": false,
+        "mode_confirmation_basis": "user_project_visual_criterion_DESIGN_v1.9"
       },
       {
         "style_id": "composite_rapid_strand_fragmentation",
@@ -536,14 +538,6 @@
         ],
         "source_mode": "韧性断裂",
         "status": "insufficient_visible_ductile_deformation_evidence"
-      },
-      {
-        "material": "高分子",
-        "source_ids": [
-          "video_0014"
-        ],
-        "source_mode": "半脆半韧断裂",
-        "status": "video_visually_accepted_mode_unconfirmed"
       },
       {
         "material": "复材",
@@ -576,7 +570,7 @@
     "next_geometry_baseline": {
       "source_id": "video_0058",
       "style_id": "metal_flat_limited_deformation_rupture",
-      "status": "checked_pending_user_acceptance",
+      "status": "user_accepted_video",
       "expected_mode": "韧性断裂",
       "checked_mode": "无法确认",
       "expected_mode_coverage_verified": false,

@@ -1,0 +1,461 @@
+{
+  "schema": "tensile-video-candidate/v1",
+  "video_id": "metal_flat_limited_deformation_rupture_baseline_v1",
+  "style": "metal_flat_limited_deformation_rupture",
+  "implementation_version": "metal-flat/1.2.0",
+  "generator_path": "generator/metal_flat.py",
+  "generator_sha256": "3c3b0960d7f9cf15e72cc1cfee9531151ffa7ffc62c913d16af570568192a5b8",
+  "configuration": {
+    "implementation_version": "metal-flat/1.2.0",
+    "scope": "video_0058 flat dogbone limited deformation and terminal rupture qualitative extension; no verified progressive necking or calibrated constitutive law; one discrete point only",
+    "duration_s": 20,
+    "fps": 30,
+    "frames": 600,
+    "resolution": [
+      960,
+      540
+    ],
+    "geometry": {
+      "units": "dimensionless author units",
+      "structure": "flat_dogbone",
+      "original_length": 5.6,
+      "gauge_width": 0.64,
+      "thickness": 0.11,
+      "embedded_width": 0.94,
+      "authored_gauge_material_s": [
+        -2.15,
+        2.15
+      ],
+      "formal_source_gauge": "unknown",
+      "clamped_end_material_length": 0.3,
+      "axial_intervals": 80,
+      "rectangular_perimeter_vertices": 12,
+      "fracture_material_s": 0.0,
+      "fracture_face": "matching slightly inclined flat-section faces; no invented cup-cone morphology"
+    },
+    "deformation": {
+      "uniform_axial_stretch_amplitude": 0.02,
+      "neck_local_stretch_amplitude": 0.18,
+      "neck_material_sigma": 0.31,
+      "width_stretch_exponent": 0.58,
+      "thickness_stretch_exponent": 0.42000000000000004,
+      "formula": "lambda=1+0.02*u*free_mask+A*n*exp(-(s/0.31)^2)*free_mask; width=width0/lambda^0.58; thickness=thickness0/lambda^0.42; axial z integrates lambda ds",
+      "volume_constraint": "width*thickness*lambda equals original section in the continuum material map; closed evaluated triangulated mesh volume independently checked at every frame",
+      "opening": "last loading step combines progressive seam discontinuity and graded axial stretch within upper original material; no rigid-half translation, deleted slice or post-break recoil",
+      "finite_seam_opening_author_units": 0.075,
+      "extra_material_loading_after_crack_start": 0.008,
+      "opening_measurement": "authored finite geometric separation; not a measured physical crack-opening displacement"
+    },
+    "timeline": {
+      "loading_start_frame": 1,
+      "neck_onset_frame": 241,
+      "crack_start_frame": 501,
+      "fracture_complete_frame": 511,
+      "fracture_complete_time_s": 17.0,
+      "stop_frame": 511,
+      "postfracture": "loading jaw and both original material halves hold all vertex positions through frame600"
+    },
+    "presentation": {
+      "camera_position": [
+        4,
+        -24,
+        2.1
+      ],
+      "camera_target": [
+        0,
+        0,
+        0.25
+      ],
+      "orthographic_scale": 12.4,
+      "fixed_camera": true,
+      "renderer": "BLENDER_WORKBENCH",
+      "antialias_samples": 8,
+      "apparatus": "front/back contact jaws, connected caps and load rods leaving frame; no unsupported full machine architecture"
+    },
+    "presentation_simplifications": [
+      "source right-side extensometer omitted to expose specimen; original measurement-device obscuration is not simulated"
+    ],
+    "parameter_range_accepted": false,
+    "engineering_input_guard": {
+      "neck_amplitude": {
+        "minimum_exclusive": 0,
+        "maximum_inclusive": 2.5
+      },
+      "interpretation": "input guard only; every changed discrete configuration needs fresh checks and visual review"
+    },
+    "saved_scene_animation": "self-contained native connected boundary cache meshes and constant visibility keys; ordinary apparatus keys; no external handler/script/cache required",
+    "native_interface": "internal matching cap facets removed from both sides; shared boundary vertex indices and finite-area remaining material cross-section before511; complete separation at511"
+  },
+  "source": {
+    "source_id": "video_0058",
+    "source_path": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/standard-videos/video_0058.mp4",
+    "source_sha256": "223e57d643e5ac75e49fbf3af1cc9d530cebf6add76aef6fcba6586a6f770e2e",
+    "raw_source_path": "raw-video/fetch/http_20251106_0001.mp4",
+    "structure": "flat_dogbone",
+    "source_media": {
+      "duration_s": 5.909,
+      "resolution": [
+        638,
+        636
+      ]
+    },
+    "source_labels": {
+      "table": "all_videos_tag.xlsx",
+      "sheet": "Sheet1",
+      "row": 59,
+      "材料类别": "金属",
+      "单一主要破坏类别": "韧性断裂",
+      "event_time_s": 5.13,
+      "quality": "480P"
+    },
+    "observations": [
+      "Main agent inspected start,5.13,5.40,5.50,5.80s; additional 2,4,5.13,5.15s frames inspected in source-inspection.",
+      "Flat dogbone specimen has broad shoulders and narrower preformed central gauge region, opposing grips, and right-side extensometer occlusion.",
+      "At5.15s visible specimen remains continuous. From5.25s camera shake and blur obscure event separation and terminal path.",
+      "The preformed narrow waist is not evidence of progressively developing necking."
+    ],
+    "unknowns": [
+      "material grade and heat treatment",
+      "separation frame",
+      "postfracture material trajectory and fixture motion",
+      "whether source shows complete terminal separation",
+      "three-dimensional thickness",
+      "progressive necking not verified"
+    ],
+    "source_time_mapping": {
+      "source_total_s": 5.909,
+      "simulation_total_s": 20,
+      "source_event_soft_anchor_s": 5.13,
+      "soft_anchor_note": "XLSX event time is a soft timing hint only; visible continuity at5.15 and later blur prevent exact event matching.",
+      "mapping_type": "authored phase extension with qualitative terminal extension",
+      "phases": [
+        {
+          "source_s": [
+            0,
+            5.15
+          ],
+          "simulation_s": [
+            0,
+            16.666666666666668
+          ],
+          "role": "source flat dogbone/limited visible change informs finite loading; local narrowing is authored qualitative extension"
+        },
+        {
+          "source_s": null,
+          "simulation_s": [
+            16.666666666666668,
+            17
+          ],
+          "role": "authored complete terminal rupture, not directly proved source event"
+        },
+        {
+          "source_s": null,
+          "simulation_s": [
+            17,
+            20
+          ],
+          "role": "DESIGN selected stop boundary and stationary observation, not source-measured postfracture trajectory"
+        }
+      ]
+    },
+    "geometry_assumptions": [
+      "Original broad shoulders/narrow gauge represented by dimensionless flat dogbone; formal gauge and absolute dimensions remain unknown.",
+      "Local stretch amplitude0.18 and uniform axial stretch0.02 are discrete author assumptions expressing limited deformation, not source-calibrated strain.",
+      "Width and thickness contraction exponents0.58/0.42 are geometric volume-coupling assumptions, not measured source transverse strain.",
+      "Finite local narrowing and complete terminal rupture are qualitative author extensions; original ductile source label is retained but visual mechanism checked as unknown.",
+      "Source extensometer is omitted for specimen visibility; apparatus simplified to opposing grips, caps and load rods.",
+      "At authored17s completed rupture, grips and specimen stop as selected DESIGN boundary; source postfracture path remains unknown."
+    ]
+  },
+  "source_observations": [
+    "Main agent inspected start,5.13,5.40,5.50,5.80s; additional 2,4,5.13,5.15s frames inspected in source-inspection.",
+    "Flat dogbone specimen has broad shoulders and narrower preformed central gauge region, opposing grips, and right-side extensometer occlusion.",
+    "At5.15s visible specimen remains continuous. From5.25s camera shake and blur obscure event separation and terminal path.",
+    "The preformed narrow waist is not evidence of progressively developing necking."
+  ],
+  "assumptions": [
+    "Original broad shoulders/narrow gauge represented by dimensionless flat dogbone; formal gauge and absolute dimensions remain unknown.",
+    "Local stretch amplitude0.18 and uniform axial stretch0.02 are discrete author assumptions expressing limited deformation, not source-calibrated strain.",
+    "Width and thickness contraction exponents0.58/0.42 are geometric volume-coupling assumptions, not measured source transverse strain.",
+    "Finite local narrowing and complete terminal rupture are qualitative author extensions; original ductile source label is retained but visual mechanism checked as unknown.",
+    "Source extensometer is omitted for specimen visibility; apparatus simplified to opposing grips, caps and load rods.",
+    "At authored17s completed rupture, grips and specimen stop as selected DESIGN boundary; source postfracture path remains unknown.",
+    "Three-dimensional thickness and split transverse contraction are authored; cannot be fitted from one projected source view.",
+    "Lower clamp fixed; upper clamp loading ends at completed rupture. Source postrupture motion is recorded separately, not reinterpreted as stationary.",
+    "Time remapping extends or compresses phases to20s; not a calibrated strain-rate experiment.",
+    "Flat-section matching slanted faces illustrate separation, not microscopic fracture morphology."
+  ],
+  "unknowns": [
+    "material grade and heat treatment",
+    "separation frame",
+    "postfracture material trajectory and fixture motion",
+    "whether source shows complete terminal separation",
+    "three-dimensional thickness",
+    "progressive necking not verified",
+    "formal source gauge length",
+    "absolute dimensions",
+    "constitutive parameters",
+    "plastic/elastic strain split",
+    "microfracture morphology"
+  ],
+  "time_mapping": {
+    "source_total_s": 5.909,
+    "simulation_total_s": 20,
+    "source_event_soft_anchor_s": 5.13,
+    "soft_anchor_note": "XLSX event time is a soft timing hint only; visible continuity at5.15 and later blur prevent exact event matching.",
+    "mapping_type": "authored phase extension with qualitative terminal extension",
+    "phases": [
+      {
+        "source_s": [
+          0,
+          5.15
+        ],
+        "simulation_s": [
+          0,
+          16.666666666666668
+        ],
+        "role": "source flat dogbone/limited visible change informs finite loading; local narrowing is authored qualitative extension"
+      },
+      {
+        "source_s": null,
+        "simulation_s": [
+          16.666666666666668,
+          17
+        ],
+        "role": "authored complete terminal rupture, not directly proved source event"
+      },
+      {
+        "source_s": null,
+        "simulation_s": [
+          17,
+          20
+        ],
+        "role": "DESIGN selected stop boundary and stationary observation, not source-measured postfracture trajectory"
+      }
+    ]
+  },
+  "expected_labels": {
+    "材料类别": "金属",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "韧性断裂",
+    "断裂位置": "标距内",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "checked_labels": {
+    "材料类别": "金属",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "无法确认",
+    "断裂位置": "标距内",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "label_check_scope": "material identity from source table; terminal complete rupture, site, grips and camera are authored candidate properties subject to final-video and independent review; source ductile label is not verified progressive necking",
+  "technical_checks": {
+    "actual_evaluated_frames": 600,
+    "first_measured_separation_frame": 511,
+    "expected_separation_frame": 511,
+    "event_agrees": true,
+    "max_postfracture_vertex_displacement": 0.0,
+    "max_postfracture_apparatus_displacement": 0.0,
+    "volume_ratio_range": [
+      0.9999999450308299,
+      1.0067364736590443
+    ],
+    "min_measured_seam_gap": 0.0,
+    "max_measured_grip_contact_gap": 7.450580596923828e-09,
+    "max_measured_machine_joint_positive_gap": 2.384185791015625e-07,
+    "min_measured_cap_material_end_clearance": -4.76837158203125e-07,
+    "min_measured_same_material_axial_station_step": 0.06999945640563965,
+    "same_original_material_axial_intervals": 80,
+    "material_boundary_topology_changes": "original material rings preserved; interior interface vertices/faces removed while attached, only boundary topology changes",
+    "finite_ligament_area_at_frame510": 0.013014880843651187,
+    "measured_native_shared_boundary_area_at_frame510": 0.012991517216448006,
+    "native_edge_incidence_all_two": true,
+    "no_duplicate_native_internal_cap_faces": true,
+    "upper_final_loading_actual_axial_displacement_range": [
+      0.07521355152130127,
+      0.09428644180297852
+    ],
+    "upper_final_loading_displacement_is_nonuniform": true,
+    "all_material_endpoints_inside_jaws": true,
+    "all_specimen_jaws_caps_inside_frame": true,
+    "continuity_measurement": "actual native evaluated edge graph and face-edge incidence; no coordinate welding in measurement",
+    "penetration_scope": "corresponding matching cut vertices and same-material axial station order; intended jaw contact checked; no general full-triangle self-intersection solver",
+    "numeric_tolerance_note": "tiny cap/joint differences are evaluated float precision; approximate geometric check tolerance1e-5 author units; both post-event material and apparatus displacement exactly0 in saved caches",
+    "volume_note": "Transient partial seam-opening geometry peaks at+0.6736% closed triangulated volume; terminal volume+0.0029%. Original material axial intervals retained; finite geometric approximation, not exact incompressible fracture mechanics."
+  },
+  "technical_check_limits": "corresponding matching cut vertices and same-material axial station order; intended jaw contact checked; no general full-triangle self-intersection solver",
+  "acceptance": {
+    "user_accepted": true,
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "scope": "single_video_visual_acceptance"
+  },
+  "video": {
+    "path": "outputs/current/metal_flat_limited_deformation_rupture/metal_flat_limited_deformation_rupture_baseline_v1.mp4",
+    "sha256": "b1e9ec7b708cdf621721b4e1300506d002f51f5f59907489279a8c71bcb6d065",
+    "encoding_verified": true,
+    "frames": 600,
+    "fps": 30,
+    "duration_s": 20,
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 960,
+          "height": 540,
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "duration": "20.000000",
+          "nb_read_frames": "600"
+        }
+      ],
+      "format": {
+        "duration": "20.000000"
+      }
+    },
+    "full_decode_check": {
+      "command": "ffmpeg -v error -i <candidate.mp4> -f null -",
+      "exit_code": 0,
+      "stderr": "empty"
+    }
+  },
+  "independent_review": {
+    "status": "passed_for_qualitative_initial_candidate",
+    "video_sha256": "b1e9ec7b708cdf621721b4e1300506d002f51f5f59907489279a8c71bcb6d065"
+  },
+  "main_final_video_view_completed": true,
+  "implementation_interface_semantics": {
+    "construction": "One native boundary mesh per frame, with shared vertex indices for unbroken material interface. Paired matching internal cap faces are removed, and unused internal cap points removed from boundary mesh. Only exposed crack facets remain.",
+    "progressive_crack": "Finite-area shared material interface persists throughframe510; native graph loses grip-to-grip continuity atframe511. No measurement-time coordinate welding is used.",
+    "saved_scene": "511 native cache meshes with CONSTANT render/view visibility keys, final cache holds through600. No external Python, load handler, animation cache file or _work script is required to play saved scene.",
+    "source_scope": "Qualitative geometric fracture prescribed from0058 flat dogbone identity and weak deformation assumptions; not a solved constitutive fracture/bond model."
+  },
+  "preview_paths": [
+    "_work/next-baselines-20261008/metal-flat-connected/key_0001.png",
+    "_work/next-baselines-20261008/metal-flat-connected/key_0241.png",
+    "_work/next-baselines-20261008/metal-flat-connected/key_0421.png",
+    "_work/next-baselines-20261008/metal-flat-connected/key_0501.png",
+    "_work/next-baselines-20261008/metal-flat-connected/key_0502.png",
+    "_work/next-baselines-20261008/metal-flat-connected/key_0509.png",
+    "_work/next-baselines-20261008/metal-flat-connected/key_0510.png",
+    "_work/next-baselines-20261008/metal-flat-connected/key_0511.png",
+    "_work/next-baselines-20261008/metal-flat-connected/key_0600.png"
+  ],
+  "saved_scene_verification": {
+    "reopened_saved_scene": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/next-baselines-20261008/metal-flat-connected/metal_flat_limited_deformation_rupture_baseline_v1.blend",
+    "external_handlers_required": false,
+    "frames_checked": 600,
+    "all_native_checks_passed": true
+  },
+  "status": "user_accepted_video",
+  "main_agent_view_record": {
+    "status": "completed",
+    "date": "2026-10-08",
+    "video_sha256": "b1e9ec7b708cdf621721b4e1300506d002f51f5f59907489279a8c71bcb6d065",
+    "method": "QuickTime native opened final connected-version MP4, verified its URL, full-screen initial state and playback to20s terminal state; opened actual encoded frames510 and511 extracted from this MP4.",
+    "observations": [
+      "Flat dogbone with wide shoulders and modest local width reduction; grips visibly connect to load rods.",
+      "Encoded frame510 has a visible partial opening while native shared finite area remains; encoded511 shows background gap after complete separation.",
+      "Terminal state remains attached at both grips, no subsequent recoil or swing."
+    ],
+    "scope": "Fixed-video visual review; does not confirm ductile mechanism or a measured neck-growth process in source0058."
+  },
+  "style_id": "metal_flat_limited_deformation_rupture",
+  "role": "baseline",
+  "design_version": "v1.8",
+  "expected_mode_coverage_verified": false,
+  "user_accepted": true,
+  "training_released": false,
+  "independent_review_record": {
+    "status": "passed_for_qualitative_initial_candidate",
+    "date": "2026-10-08",
+    "video_sha256": "b1e9ec7b708cdf621721b4e1300506d002f51f5f59907489279a8c71bcb6d065",
+    "implementation_version": "metal-flat/1.2.0",
+    "report": "_work/next-baselines-20261008/review/metal_flat_connected_final_review.md",
+    "coverage": [
+      "Independent native evaluated edge graph and closed boundary checks over600 frames; no coordinate welding in measurement.",
+      "Measured finite residual material interface area at510 and actual path loss at511.",
+      "Independent BVH jaw and rod/cap contact, machine joints, camera envelope and fracture-surface signed opening.",
+      "Same-material region paths, area/volume, actual displacement gradients and postfracture freeze.",
+      "Final encoded SHA, frame count, full decoding and encoded501-512 event states; source and label scope."
+    ],
+    "measurements": {
+      "first_path_loss_frame": 511,
+      "finite_material_interface_area_at510": 0.0130148808,
+      "maximum_jaw_bvh_contact_error": 2.404e-07,
+      "maximum_rod_cap_bvh_error": 2.782e-07,
+      "minimum_signed_fracture_gap": -2.24e-08,
+      "volume_ratio_range": [
+        0.999999945,
+        1.006736474
+      ],
+      "terminal_volume_ratio": 1.000028975,
+      "upper_material_center_path_510_to511": [
+        2.948763,
+        2.915974
+      ],
+      "fracture_last_loading_volume_drop_fraction": 0.00566,
+      "postfracture_specimen_and_machine_motion": 0
+    },
+    "resolved_findings": [
+      "1.1.0 touching closed cap meshes did not form a native connected specimen;1.2.0 replaces them with shared boundary indices and removes internal cap pairs."
+    ],
+    "limits": [
+      "Fixed qualitative geometric candidate, not constitutive calibration or ductile/neck-growth classification proof.",
+      "Crack-region release has authored path and volume changes; no claim of strict volume conservation or zero deformation during final release.",
+      "No full general triangle self-intersection solver; signed corresponding fracture surfaces and intended contact independently checked."
+    ]
+  },
+  "style_accepted": false,
+  "parameter_range_accepted": false,
+  "acceptance_scope": "single_video_visual_acceptance",
+  "collection_record": {
+    "date": "2026-10-08",
+    "original_candidate_video_path": "_work/next-baselines-20261008/metal-flat-connected/metal_flat_limited_deformation_rupture_baseline_v1.mp4",
+    "original_candidate_metadata_path": "_work/next-baselines-20261008/metal-flat-connected/metal_flat_limited_deformation_rupture_baseline_v1.json",
+    "original_candidate_video_sha256": "b1e9ec7b708cdf621721b4e1300506d002f51f5f59907489279a8c71bcb6d065",
+    "original_candidate_metadata_sha256": "b60a29a64caa737d4cc24c8bf5cacd18ed56a09f10e8d370807735fc98cedc28",
+    "original_status": "checked_pending_user_acceptance",
+    "original_acceptance_record": {
+      "user_accepted": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false,
+      "scope": "single discrete qualitative candidate checked, pending user visual acceptance"
+    },
+    "video_copy_method": "byte-preserving copy; SHA256 matches original indexed candidate",
+    "original_work_files_retained": true,
+    "path_base": "repository root for relative artifact paths; absolute source and saved-scene paths retain their original locations",
+    "historical_check_note": "Original review, label-check scope and configuration are preserved at their check-time values; this record adds only subsequent user single-video visual acceptance and collected paths."
+  },
+  "user_acceptance_record": {
+    "date": "2026-10-08",
+    "quote": "没问题，很不错",
+    "video_sha256": "b1e9ec7b708cdf621721b4e1300506d002f51f5f59907489279a8c71bcb6d065",
+    "scope": "single_video_visual_acceptance",
+    "note": "用户接受当前金属平板固定视频视觉效果；预期韧性断裂与核验无法确认分别保留，不批准韧性机制或渐进颈缩已覆盖、样式、连续参数范围或训练发布。"
+  },
+  "current_status_clarification": {
+    "date": "2026-10-08",
+    "status": "user_accepted_video",
+    "video_sha256": "b1e9ec7b708cdf621721b4e1300506d002f51f5f59907489279a8c71bcb6d065",
+    "independent_review_record_ref": "independent_review_record",
+    "independent_review_status": "passed_for_qualitative_initial_candidate",
+    "main_agent_view_record_ref": "main_agent_view_record",
+    "main_final_video_view_completed": true,
+    "user_accepted": true,
+    "acceptance_scope": "single_video_visual_acceptance",
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "expected_mode": "韧性断裂",
+    "checked_mode": "无法确认",
+    "expected_mode_coverage_verified": false,
+    "interpretation": "Original source, qualitative checks and limitations remain unchanged. Later visual acceptance applies only to this fixed encoded video and does not establish ductile mechanism or source neck-growth behavior."
+  }
+}

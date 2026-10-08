@@ -9,7 +9,7 @@
 | [composite_initial.py](composite_initial.py) | `debond: composite-initial/0.4.0`；`brittle: composite-initial/0.3.1` | `--kind debond` 断裂与脱粘同步或 `brittle` 低位突断；960×540。 |
 | [ceramic_initial.py](ceramic_initial.py) | `ceramic-initial/1.0.1` | 陶瓷小形变脆断定性演示，`--out` 指定目录；1280×720。 |
 | [polymer_brittle.py](polymer_brittle.py) | `polymer-brittle/1.0` | 0032参考的窄平条小变形脆断；`--out`、`--keys-only`；960×540。 |
-| [polymer_mixed.py](polymer_mixed.py) | `polymer-mixed/1.0.0` | 0014参考的有限变形后快速斜裂候选，混合模式尚未确认；`--out`、`--render`、`--checks-only`；1280×720。 |
+| [polymer_mixed.py](polymer_mixed.py) | `polymer-mixed/1.0.0` | 0014参考的逐渐拉长后快速斜裂；当前固定样片按用户可见过程判据确认为半脆半韧，弹塑份额仍未知；`--out`、`--render`、`--checks-only`；1280×720。 |
 | [composite_fragmentation.py](composite_fragmentation.py) | `composite-fragmentation/0.1.0` | 0040参考的局部快速分束候选；`--out`、`--render`、`--resume`；960×540。 |
 | [metal_flat.py](metal_flat.py) | `metal-flat/1.2.0` | 0058参考的平板狗骨有限变形断裂；`--reference`显式来源记录、`--out`、`--render`；960×540。局部缩窄和完整断裂为作者扩展，主模式未知。 |
 

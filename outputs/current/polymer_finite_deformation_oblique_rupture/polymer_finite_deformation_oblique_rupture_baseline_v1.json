@@ -8,7 +8,7 @@
   "style_accepted": false,
   "continuous_parameter_range_approved": false,
   "training_released": false,
-  "mixed_mode_coverage_verified": false,
+  "mixed_mode_coverage_verified": true,
   "implementation": {
     "version": "polymer-mixed/1.0.0",
     "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/generator/polymer_mixed.py",
@@ -257,10 +257,11 @@
       "basis": "source end shows visible oblique separation; candidate has visible opening and actual evaluated edge graph no load path after481"
     },
     "单一主要破坏类别": {
-      "value": "无法确认",
-      "expected": "半脆半韧断裂",
-      "status": "unconfirmed_after_independent_review",
-      "basis": "source original label suggests mixed brittle/ductile; source lacks clear stable plastic zone and quantified strain partition. Author weak extension/section reduction and oblique rapid fracture cannot alone verify a mixed mechanism."
+      "value": "半脆半韧断裂",
+      "status": "confirmed_by_user_project_visual_criterion",
+      "basis": "User confirms accepted video: gradual visually uniform elongation before rupture, no visible local necking, then instantaneous brittle-like separation. Project visual classification; not measured plastic fraction or microscopic mixed mechanism.",
+      "criterion_ref": "DESIGN.md section3.1",
+      "expected": "半脆半韧断裂"
     },
     "断裂位置": {
       "value": "标距内",
@@ -1697,7 +1698,7 @@
     "checked_labels": {
       "材料类别": "高分子",
       "断裂结果": "完全断裂",
-      "单一主要破坏类别": "无法确认",
+      "单一主要破坏类别": "半脆半韧断裂",
       "断裂位置": "标距内",
       "夹持异常": "无",
       "拍摄异常": "无"
@@ -1712,6 +1713,36 @@
     "limits": [
       "Qualitative fixed-video review and visual acceptance do not establish microscopic mechanism, calibrated constitutive behavior, source formal gauge or a parameter range.",
       "All original label values, source observations, author assumptions and unknowns are preserved."
-    ]
+    ],
+    "label_criterion_ref": "user_label_confirmation"
+  },
+  "label_check_history": [
+    {
+      "date": "2026-10-08",
+      "value": {
+        "value": "无法确认",
+        "expected": "半脆半韧断裂",
+        "status": "unconfirmed_after_independent_review",
+        "basis": "source original label suggests mixed brittle/ductile; source lacks clear stable plastic zone and quantified strain partition. Author weak extension/section reduction and oblique rapid fracture cannot alone verify a mixed mechanism."
+      },
+      "scope": "Prior review used unresolved scientific elastic/plastic interpretation, before user clarified project visual criterion."
+    }
+  ],
+  "label_criterion_version": "DESIGN/v1.9",
+  "user_label_confirmation": {
+    "date": "2026-10-08",
+    "video_sha256": "63bf46edbf5065c37f3114e864fb3f7fca5b41fbbcc259e38c51bcdf1dfbfeb6",
+    "category": "半脆半韧断裂",
+    "user_basis": "断裂前逐渐、均匀拉长；断裂时脆断、瞬时断裂；不会出现颈缩。已有视频没问题。",
+    "scope": "current single-video project visual category; no continuous parameter or training-field change"
+  },
+  "operational_label_review": {
+    "date": "2026-10-08",
+    "role": "independent_reviewer",
+    "report_path": "_work/label-clarification-20261008/review/operational_mode_review.md",
+    "report_sha256": "617317a6d6f0758b505ee940297832c1cfccdbbbf3efd2378d8f56b811d97040",
+    "result": "confirmed_under_user_project_visual_criterion",
+    "scope": "Existing encoded loading and rupture states, configuration, unchanged MP4 hash; no rerender or repeat mechanical verification.",
+    "limits": "No confirmation of exact uniform strain, plastic fraction, microscopic mechanism, continuous parameter range or training release."
   }
 }
