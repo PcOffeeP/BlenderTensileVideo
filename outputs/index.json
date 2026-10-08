@@ -2,7 +2,7 @@
   "schema": "tensile-video-index/v2",
   "updated": "2026-10-08",
   "design_document": "../DESIGN.md",
-  "design_version": "v1.3",
+  "design_version": "v1.4",
   "status": "video_generation_paused",
   "approved_video_count": 0,
   "reviewable_candidate_count": 0,
