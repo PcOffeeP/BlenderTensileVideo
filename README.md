@@ -1,48 +1,40 @@
 # Blender 拉伸实验模拟视频
 
-当前方案：[DESIGN.md](DESIGN.md)（v1.4） · 生成工具：[generator/README.md](generator/README.md) · 唯一机器索引：[outputs/index.json](outputs/index.json) · 工作约定：[AGENTS.md](AGENTS.md)。
+当前方案：[DESIGN.md](DESIGN.md)（v1.5） · 生成工具：[generator/README.md](generator/README.md) · 唯一机器索引：[outputs/index.json](outputs/index.json) · 工作约定：[AGENTS.md](AGENTS.md)。
 
 ## 当前状态
 
-2026-10-08，用户判定所有旧 seed 不达标并要求清理重建。旧成片、候选、验收/调查历史、旧配置及旧工作区已删除；已接受数量 **0**，当前基准 **无**。原始实验视频保留，旧文件的 Git 提交历史保留。本轮在 `codex/rebuild-seeds-from-design` 分支进行。
+2026-10-08，新的首版已生成 **6条待用户验收候选**，全部为 **20秒、30fps、600帧**，覆盖金属、高分子、复材。已接受数量 **0**，当前基准 **无**；陶瓷来源未确认，因此四类覆盖尚未完成。本轮复用 `codex/rebuild-seeds-from-design` 分支。
 
-**管理与清理已完成，用户于 2026-10-08 恢复视频制作。** 本轮从 DESIGN v1.4 新建金属光圆棒实现，已生成首条连续颈缩诊断片（7 秒、210 帧、854×480、30 fps）。当前没有合格 seed 或已接受配置；新过程文件位于 `_work/rebuild-round-20261008/`。
+用户要求废弃的本轮错误7秒圆棒诊断，其视频、场景、实现与论文调查过程已删除，失效链接与索引已清除。此前收集的原始资料保留。
 
-## 目标与规则
+首版直接参考 `/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data` 中的真实视频及 `video_mapping.csv`、`all_videos_tag.xlsx` 标签，论文不是生成前提。每条目标15–30秒，合理压缩真实实验的加载、变形、破坏和断后观察时间，不把源时间与模拟时间混同。
 
-系统梳理金属、高分子、复材、陶瓷的材料/结构/几何/实际行为样式，交付整条视频、六组标签和可独立理解的来源/假设/验收说明。后续切片和训练流程不在本项目本轮范围。
+## 待验收视频
 
-当前圆棒：固定摄像；加载端与试样夹持端保持连接；断前按适用的弹性伸长、塑性伸长、局部颈缩及分离过程建模，同一材料段长度和截面受适用物理约束；断后夹具与试样停止可见运动。不得用任意间隙、删料或快速位移突出断裂。高弹性/柔性样式的有限衰减运动须有各自依据，不按材料大类统一套用。
+以下均完成技术检查、初版范围独立复核及主 Agent 实际打开播放。视频和同名JSON在工作目录，尚未收录为接受成果。
 
-六组预期标签：**材料类别｜断裂结果｜单一主要破坏类别｜断裂位置｜夹持异常｜拍摄异常**。具体值和边界以 DESIGN 为准，预期不等于已核验。
+| 候选 | 来源 | 主要破坏类别 | 模拟位置 | 结果 | 文件（均20秒） |
+|---|---|---|---|---|---|
+| 金属圆棒颈缩分离 | video_0006 | 韧性断裂 | 标距内 | 完全断裂 | [视频](_work/initial-batch-20261008/metal/ductile/metal_round_ductile_baseline_v1.mp4) · [JSON](_work/initial-batch-20261008/metal/ductile/metal_round_ductile_baseline_v1.json) |
+| 金属圆棒小变形突断 | video_0003 | 脆性断裂 | 标距内 | 完全断裂 | [视频](_work/initial-batch-20261008/metal/brittle/metal_round_brittle_baseline_v1.mp4) · [JSON](_work/initial-batch-20261008/metal/brittle/metal_round_brittle_baseline_v1.json) |
+| 高分子大伸长断裂 | video_0097 | 韧性断裂 | 标距内 | 完全断裂 | [视频](_work/initial-batch-20261008/polymer/dogbone/polymer_black_dogbone_baseline_v1.mp4) · [JSON](_work/initial-batch-20261008/polymer/dogbone/polymer_black_dogbone_baseline_v1.json) |
+| 高分子薄膜夹口根部断裂 | video_0025 | 无法确认 | 夹口根部 | 完全断裂 | [视频](_work/initial-batch-20261008/polymer/film/polymer_yellow_film_grip_root_baseline_v1.mp4) · [JSON](_work/initial-batch-20261008/polymer/film/polymer_yellow_film_grip_root_baseline_v1.json) |
+| 复材局部界面脱粘 | video_0020 | 界面脱粘 | 标距内 | 局部破坏但仍连接 | [视频](_work/initial-batch-20261008/composite/debond/composite_interface_debond_baseline_v0_2.mp4) · [JSON](_work/initial-batch-20261008/composite/debond/composite_interface_debond_baseline_v0_2.json) |
+| 复材近下夹口突断 | video_0100 | 脆性断裂 | 标距外非根部 | 完全断裂 | [视频](_work/initial-batch-20261008/composite/brittle/composite_brittle_lower_baseline_v0_2.mp4) · [JSON](_work/initial-batch-20261008/composite/brittle/composite_brittle_lower_baseline_v0_2.json) |
 
-每个纳入样式计划基准、呈现变化、运动变化各一条；有据变化不足时保留缺项。第一批逐条用户查看，第二批仅在已确认样式和范围内分层抽样。整批未完成，参数范围未批准，训练数据未发布。
+来源“齐根断裂”只确定位置，不据此推定薄膜破坏机制。位置按模拟定义的标距归类，来源正式标距未确认。界面脱粘采用两层局部开口的定性建模，真实铺层未知。video_0050标为“其他(无机非)/视频异常”，不能据此当作陶瓷样片。
 
-## 当前结果与待办
+## 检查范围与待办
 
-- [x] 清除旧 seed、历史生成记录、未通过诊断和缓存，移除旧生成入口及配置。
-- [x] 整理 AGENTS 中的文件管理与 Git 规范。
-- [x] 同步核心文档和总索引，核对引用与实际目录。
-- [x] 用户恢复制作，按 DESIGN v1.4 启动新的基准实现。
-- [x] 使用新的一手 S355 圆棒实验论文补颈缩依据，完成连续形变诊断与编码。
-- [ ] 补足可辨认的分离过程依据，完成预期完全断裂基准。
-- [ ] 后续制作须完成真实夹口、连续形变和可辨认的断裂过程，再进行编码、独立复核及用户逐条验收。
-- [ ] 基准接受后制作有依据的变体，并继续四类材料的适用样式调查。
+- [x] 将用户的来源、旧版废弃、材料/模式/位置覆盖及15–30秒要求保存至DESIGN v1.5。
+- [x] 删除本轮错误诊断及其过程，核对110条来源标签并实际查看选定参考的关键状态。
+- [x] 生成六条完整模拟视频及同名自包含JSON，记录完整配置/版本、来源、时间映射、观察、假设、未知、预期/核验标签与验收范围。
+- [x] 检查实际求值网格的夹口连接、连通性、事件时序、长度/截面/适用体积变化、断后停止/衰减及间隙；核对最终编码和哈希。
+- [x] 独立复核并修正复材轴向缩短、高分子夹具出画、金属突断间隙投影遮挡及来源说明串写。主 Agent 逐条打开最终MP4，播放事件阶段并检查初态、加载关键状态和末态。
+- [ ] 确认陶瓷来源，补足材料类别覆盖。
+- [ ] 用户逐条验收效果与标签；接受后按字节校验值复制到 `outputs/current/<样式>/`，同步本入口和总索引。
 
-本轮诊断：[视频](_work/rebuild-round-20261008/metal_round_diagnostic_necking_v0_1.mp4) · [配套 JSON](_work/rebuild-round-20261008/metal_round_diagnostic_necking_v0_1.json)。它仅呈现均匀伸长、局部颈缩和仍连接的停止状态，**未实现断裂，不是合格 seed 或新的未破坏样式**。主 Agent 已打开最终编码视频并播放至结束；逐帧网格检查支持连通、材料段体积近似、夹口面采样接触及末段静止。接触检查是规定运动下的几何采样，不是力学接触求解；停止段发生在断前，不证明断后行为。
-
-来源为 [Dzioba 等，Materials 2021, 14, 3117](https://doi.org/10.3390/ma14113117)：Fig.7 实验截帧支持颈缩发展顺序，未给出分离时刻画面。本轮已渲染并查看该图；几何、夹具、伸长幅度和演示时间仍是作者设定，未标定为 S355 本构重现。当前缺口是有依据的破坏区演变及可辨认分离过程；不使用任意间隙、删料或移动断片填补。独立复核结论为“诊断用途有条件通过，完整断裂 seed 不通过”；复核范围与限制保存在配套 JSON，用户尚未验收。此前已删除的诊断及脚本不作为重建依据。
-
-## 文件管理
-
-| 位置 | 用途 |
-|---|---|
-| `README.md`、`outputs/index.json` | 当前结果、状态与全部待办；不维护历史 seed 清单。 |
-| `DESIGN.md` | 当前确认的生成方案和标签规则。 |
-| `generator/` | 长期复用工具目录；目前仅有说明，无可用入口。 |
-| `outputs/current/<样式>/` | 经检查和用户接受的成片、同名 JSON；当前为空。 |
-| `_work/<任务>/` | 诊断片、待审候选和过程文件；本轮颈缩诊断位于重建任务目录。 |
-
-研究只保存生成与核验必需的依据；结论及时归入核心说明，不长期复制逐次过程。原始资料位于 `/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/standard-videos`，不属于工作区清理范围。工作区清理后不保证可恢复未收录实验，核心生成器不能依赖其文件。
+独立复核结论仅适用于这六条定性初版候选，不是本构标定、微观机制证明、连续参数范围批准或训练发布。未进行全三角网格自交求解；详细检查范围与局限写在各视频JSON。候选、抽帧、场景与日志统一在 `_work/initial-batch-20261008/`，README与总索引是唯一结果和待办入口。
 
 更新：2026-10-08。

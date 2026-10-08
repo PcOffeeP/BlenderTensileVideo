@@ -2,54 +2,215 @@
   "schema": "tensile-video-index/v2",
   "updated": "2026-10-08",
   "design_document": "../DESIGN.md",
-  "design_version": "v1.4",
-  "status": "baseline_rebuild_diagnostic_generated",
+  "design_version": "v1.5",
+  "status": "six_initial_candidates_ready_pending_user_acceptance",
   "approved_video_count": 0,
-  "reviewable_candidate_count": 0,
+  "reviewable_candidate_count": 6,
   "batch_complete": false,
   "batch_released": false,
   "items": [],
   "candidates": [
     {
-      "id": "metal_round_diagnostic_necking_v0_1",
-      "style": "metal_round_neck_separation",
-      "role": "intact_necking_implementation_diagnostic",
-      "status": "partial_seed_target_not_met",
-      "video": "../_work/rebuild-round-20261008/metal_round_diagnostic_necking_v0_1.mp4",
-      "metadata": "../_work/rebuild-round-20261008/metal_round_diagnostic_necking_v0_1.json",
-      "reviewable_as_seed": false,
+      "id": "metal_round_ductile_baseline_v1",
+      "title": "金属圆棒颈缩分离",
+      "status": "checked_pending_user_acceptance",
+      "source_id": "video_0006",
+      "video_path": "../_work/initial-batch-20261008/metal/ductile/metal_round_ductile_baseline_v1.mp4",
+      "metadata_path": "../_work/initial-batch-20261008/metal/ductile/metal_round_ductile_baseline_v1.json",
+      "sha256": "acb37f0e079e850d4d0562bfd2af487e0b809bcf069e1b3af2652631ebe23b6f",
+      "metadata_sha256": "82c586856f773368d247b017b3dbce73530a8aafdcb08eeccd89b7ab04d81249",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "expected_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_qualitative_initial_candidate",
+      "main_final_video_view_completed": true,
       "user_accepted": false,
-      "rupture_implemented": false,
-      "blockers": [
-        "分离过程依据与实现缺失；末态仍连接。",
-        "预期完全断裂及断后停止未通过；不作为新的未破坏样式。"
-      ],
-      "independent_review": "conditional_diagnostic_pass_full_seed_incomplete",
-      "sha256": "d710f3e981f3da0d5ff131986be8532394ea3ca1f474b217b04de3de1b689c4b"
+      "training_released": false
+    },
+    {
+      "id": "metal_round_brittle_baseline_v1",
+      "title": "金属圆棒小变形突断",
+      "status": "checked_pending_user_acceptance",
+      "source_id": "video_0003",
+      "video_path": "../_work/initial-batch-20261008/metal/brittle/metal_round_brittle_baseline_v1.mp4",
+      "metadata_path": "../_work/initial-batch-20261008/metal/brittle/metal_round_brittle_baseline_v1.json",
+      "sha256": "19b3f862a13f4c38200f41bc56e05171cc10ec6721859aeeb97b1b09b22ddc08",
+      "metadata_sha256": "82032649f370f1150747517245534e13ab57dc6ecf22a1a64a8de2d8bad79b2a",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "expected_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_qualitative_initial_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "training_released": false
+    },
+    {
+      "id": "polymer_black_dogbone_baseline_v1",
+      "title": "高分子大伸长断裂",
+      "status": "checked_pending_user_acceptance",
+      "source_id": "video_0097",
+      "video_path": "../_work/initial-batch-20261008/polymer/dogbone/polymer_black_dogbone_baseline_v1.mp4",
+      "metadata_path": "../_work/initial-batch-20261008/polymer/dogbone/polymer_black_dogbone_baseline_v1.json",
+      "sha256": "52c8432bb40331903dd0ffea5099da47f63efd206d28a3878c8e90205dd8b428",
+      "metadata_sha256": "b291d88996338ab8905a249ac6088e64c23c70daf3ba5694912f93ab0f3222ec",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_qualitative_initial_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "training_released": false
+    },
+    {
+      "id": "polymer_yellow_film_grip_root_baseline_v1",
+      "title": "高分子薄膜夹口根部断裂",
+      "status": "checked_pending_user_acceptance",
+      "source_id": "video_0025",
+      "video_path": "../_work/initial-batch-20261008/polymer/film/polymer_yellow_film_grip_root_baseline_v1.mp4",
+      "metadata_path": "../_work/initial-batch-20261008/polymer/film/polymer_yellow_film_grip_root_baseline_v1.json",
+      "sha256": "e24a2578b4233fa7057c85a39347449717afab704fc13cd5a8686d5981c72295",
+      "metadata_sha256": "279f7cc10aca4abfa0ccf9dba37a8e01a1a42b2186da5b6677c8d3f91f277dea",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "无法确认",
+        "断裂位置": "夹口根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_qualitative_initial_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "training_released": false
+    },
+    {
+      "id": "composite_interface_debond_baseline_v0_2",
+      "title": "复材局部界面脱粘",
+      "status": "checked_pending_user_acceptance",
+      "source_id": "video_0020",
+      "video_path": "../_work/initial-batch-20261008/composite/debond/composite_interface_debond_baseline_v0_2.mp4",
+      "metadata_path": "../_work/initial-batch-20261008/composite/debond/composite_interface_debond_baseline_v0_2.json",
+      "sha256": "11db0257f4a30b4d5e21274316c1a3cb875bc93fa21de7fac4a4aca9ef3e045c",
+      "metadata_sha256": "f871034c2b0605a614321d3e3133e8ee79603736cfc0f7a8a8f98737b6d3b26f",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "局部破坏但仍连接",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_qualitative_initial_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "training_released": false
+    },
+    {
+      "id": "composite_brittle_lower_baseline_v0_2",
+      "title": "复材近下夹口突断",
+      "status": "checked_pending_user_acceptance",
+      "source_id": "video_0100",
+      "video_path": "../_work/initial-batch-20261008/composite/brittle/composite_brittle_lower_baseline_v0_2.mp4",
+      "metadata_path": "../_work/initial-batch-20261008/composite/brittle/composite_brittle_lower_baseline_v0_2.json",
+      "sha256": "6265b94de1ab51596423b90a1f0bd7b80e595991daf1c342cf294e8e5941a6f4",
+      "metadata_sha256": "f3a02c1a3ae5c6e6b09cfdf25054cd21d2f263c89f8334e6a6342bdef29323d2",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_qualitative_initial_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "training_released": false
     }
   ],
   "materials": [
     {
       "material": "金属",
-      "status": "necking_diagnostic_generated_full_fracture_baseline_required"
+      "status": "two_checked_initial_candidates_pending_user_acceptance",
+      "source_ids": [
+        "video_0006",
+        "video_0003"
+      ]
     },
     {
       "material": "高分子",
-      "status": "evidence_and_new_baseline_required"
+      "status": "two_checked_initial_candidates_pending_user_acceptance",
+      "source_ids": [
+        "video_0097",
+        "video_0025"
+      ]
     },
     {
       "material": "复材",
-      "status": "evidence_and_new_baseline_required"
+      "status": "two_checked_initial_candidates_pending_user_acceptance",
+      "source_ids": [
+        "video_0020",
+        "video_0100"
+      ]
     },
     {
       "material": "陶瓷",
-      "status": "evidence_and_new_baseline_required"
+      "status": "material_identity_clarification_pending",
+      "source_ids": []
     }
   ],
   "next_steps": [
-    "补足金属圆棒可辨认的分离过程依据，完成预期完全断裂基准；现有颈缩诊断不满足该目标。",
-    "完成真实夹口、连续形变、破坏可见性、断后停止、编码及独立复核。",
-    "用户逐条接受后收录，再推进有依据的变体与其他材料样式。"
+    "用户逐条查看六条视频的效果与标签，接受后按校验值收录。",
+    "确认陶瓷来源；video_0050现标签不足以判定陶瓷。",
+    "依据用户反馈返工初版，再决定是否推进变体；本轮未批准连续参数范围。"
   ],
-  "management_cleanup_status": "complete"
+  "management_cleanup_status": "complete",
+  "source_inventory": {
+    "root": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data",
+    "labels": "all_videos_tag.xlsx",
+    "mapping": "video_mapping.csv",
+    "record_count": 110,
+    "material_counts": {
+      "金属": 53,
+      "复材": 39,
+      "高分子": 15,
+      "其他(编织)": 2,
+      "其他(无机非)": 1
+    },
+    "ceramic_gap": "无明确陶瓷标签；video_0050 为其他(无机非)/视频异常，材料身份待确认。",
+    "historical_sources_authorized_for_this_batch": true
+  }
 }
