@@ -5,7 +5,7 @@
   "design_version": "v1.12",
   "status": "training_batch1_geometry_checked_rendering_with_strict_blockers_and_pending_acceptance",
   "approved_video_count": 27,
-  "reviewable_candidate_count": 2,
+  "reviewable_candidate_count": 12,
   "batch_complete": false,
   "batch_released": false,
   "items": [
@@ -1722,11 +1722,11 @@
     {
       "id": "composite_brittle_40de05bc8db6",
       "template": "composite_brittle",
-      "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
+      "status": "checked_pending_user_acceptance",
       "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_40de05bc8db6/cf31a152fc1a013c/composite_brittle_40de05bc8db6.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_40de05bc8db6/cf31a152fc1a013c/composite_brittle_40de05bc8db6.json",
       "sha256": "b7d80b3fd70dd549423c37b9c0b93f7337fa009144395dc7cdbc0c47ce9c3180",
-      "metadata_sha256": "eddbf25d15c3c316c3fba2c4ae544a6ffeeb7a96412e93def722d8a08fbe2140",
+      "metadata_sha256": "9a697434fa6f16e93cde104cd0915da2c608934390be5d8851b3e536518c8868",
       "source_id": "video_0100",
       "duration_s": 20,
       "fps": 30,
@@ -1740,22 +1740,46 @@
         "夹持异常": "无",
         "拍摄异常": "无"
       },
-      "checked_labels": null,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
       "main_final_video_view_completed": true,
-      "independent_review": "pending_full_visual_difference_and_final_metadata",
+      "independent_review": "passed_material_labels_and_actual_metadata_archive",
       "user_accepted": false,
       "training_released": false,
       "style_accepted": false,
-      "parameter_range_accepted": false
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_composite_brittle.json",
+        "sha256": "c9414226f96a0dd10d60e6ca0621bb7dc27eb82bb25ab17df93fe863dd9a123c"
+      },
+      "material_and_label_review_completed": true,
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "outside_gauge_non_root",
+        "special_case": null
+      },
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "metadata_archive_review": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/composite_metadata_actual_recheck_v2.json",
+        "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
+      },
+      "pending_reasons": []
     },
     {
       "id": "composite_brittle_71add4d43545",
       "template": "composite_brittle",
-      "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
+      "status": "checked_pending_user_acceptance",
       "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_71add4d43545/4b01eabc2cde4b14/composite_brittle_71add4d43545.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_71add4d43545/4b01eabc2cde4b14/composite_brittle_71add4d43545.json",
       "sha256": "9a0940ea72dcc5771aac675ecbcb7f19679382fab0699c12cf3277cb4019408b",
-      "metadata_sha256": "a2e0cadea0ee13dda68276ab842c7c9a5a0f6abad8414be5dc0e966ed31aca49",
+      "metadata_sha256": "7d6dd7bb72fe6b362fc3260fc61400e2dc66bf1ff018c40487e8b6f7a8e3d6fb",
       "source_id": "video_0100",
       "duration_s": 20,
       "fps": 30,
@@ -1766,257 +1790,512 @@
         "断裂结果": "完全断裂",
         "单一主要破坏类别": "脆性断裂",
         "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_labels_and_actual_metadata_archive",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_composite_brittle.json",
+        "sha256": "c9414226f96a0dd10d60e6ca0621bb7dc27eb82bb25ab17df93fe863dd9a123c"
+      },
+      "material_and_label_review_completed": true,
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "outside_gauge_non_root",
+        "special_case": null
+      },
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "metadata_archive_review": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/composite_metadata_actual_recheck_v2.json",
+        "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
+      },
+      "pending_reasons": []
+    },
+    {
+      "id": "composite_brittle_85e1faca3a2f",
+      "template": "composite_brittle",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.json",
+      "sha256": "72caa9c42c92990c72c1447983b49fd6707d5834e0117464dec30f707e1c5aa3",
+      "metadata_sha256": "aacc3034ef432045a855a40e8167aa1f5515770f682d2e8fb0b7ead86895a0fb",
+      "source_id": "video_0100",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_labels_and_actual_metadata_archive",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_composite_brittle.json",
+        "sha256": "c9414226f96a0dd10d60e6ca0621bb7dc27eb82bb25ab17df93fe863dd9a123c"
+      },
+      "material_and_label_review_completed": true,
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "outside_gauge_non_root",
+        "special_case": null
+      },
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "metadata_archive_review": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/composite_metadata_actual_recheck_v2.json",
+        "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
+      },
+      "pending_reasons": []
+    },
+    {
+      "id": "composite_brittle_f8c38a77a63d",
+      "template": "composite_brittle",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.json",
+      "sha256": "f3cf15df21302ad1b6b7932a7d32f6454616b8d51c7c5bb17e0b65557e31f66f",
+      "metadata_sha256": "6a350158a82596dc9b535f57841ec4122ae6a267fc1786254c3b5e3f7b3d3c7d",
+      "source_id": "video_0100",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_labels_and_actual_metadata_archive",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_composite_brittle.json",
+        "sha256": "c9414226f96a0dd10d60e6ca0621bb7dc27eb82bb25ab17df93fe863dd9a123c"
+      },
+      "material_and_label_review_completed": true,
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "outside_gauge_non_root",
+        "special_case": null
+      },
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "metadata_archive_review": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/composite_metadata_actual_recheck_v2.json",
+        "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
+      },
+      "pending_reasons": []
+    },
+    {
+      "id": "debond_19ad315937d9",
+      "template": "debond",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.json",
+      "sha256": "e1d63ae77184b7f349baedd2f8214a65d653a670bb7dc5d2b0363c5c5bd33ddb",
+      "metadata_sha256": "14c582fefa6b6a57203eb0e5a2fe801a71ebc372e8085c04de1ea741224981aa",
+      "source_id": "video_0020",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_labels_and_actual_metadata_archive",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_debond.json",
+        "sha256": "d4fa3d583613309e7f80632ece4f3267560de4b7ced7fbcfcd5b6a743c79813e"
+      },
+      "material_and_label_review_completed": true,
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "界面脱粘",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "metadata_archive_review": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/debond_metadata_actual_recheck.json",
+        "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
+      },
+      "pending_reasons": []
+    },
+    {
+      "id": "debond_3a83e6589f3c",
+      "template": "debond",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.json",
+      "sha256": "cd1b961b8b2797823de92e9cf8d95b4d8f7bbd581061e7dd3c5bec6cddf39992",
+      "metadata_sha256": "f39ca49704c99285ef7352b20f7eb8c1959e245e5be59ceecb0eda7e2ad5f911",
+      "source_id": "video_0020",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_labels_and_actual_metadata_archive",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_debond.json",
+        "sha256": "d4fa3d583613309e7f80632ece4f3267560de4b7ced7fbcfcd5b6a743c79813e"
+      },
+      "material_and_label_review_completed": true,
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "界面脱粘",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "metadata_archive_review": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/debond_metadata_actual_recheck.json",
+        "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
+      },
+      "pending_reasons": []
+    },
+    {
+      "id": "debond_633abced1e80",
+      "template": "debond",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.json",
+      "sha256": "6bb1a62d1b1401bb09e756e7654918f2baeae34517b854de3bc00cef3802250b",
+      "metadata_sha256": "8a7269a4d0c2c880b58a4ad28ae729d31379ce6f273102e6a6e60e74e9c5a238",
+      "source_id": "video_0020",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_labels_and_actual_metadata_archive",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_debond.json",
+        "sha256": "d4fa3d583613309e7f80632ece4f3267560de4b7ced7fbcfcd5b6a743c79813e"
+      },
+      "material_and_label_review_completed": true,
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "界面脱粘",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "metadata_archive_review": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/debond_metadata_actual_recheck.json",
+        "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
+      },
+      "pending_reasons": []
+    },
+    {
+      "id": "debond_9a6e9873f857",
+      "template": "debond",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.json",
+      "sha256": "fdc8df3d1e643cf5855a4afb19b221850a4146b83e7adb944f5d2c4759cb4b3e",
+      "metadata_sha256": "fa5a8550253710f26ea0f3bacb4aa18bf66eddb6a2a980a5f853ce7004f21abe",
+      "source_id": "video_0020",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_labels_and_actual_metadata_archive",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_debond.json",
+        "sha256": "d4fa3d583613309e7f80632ece4f3267560de4b7ced7fbcfcd5b6a743c79813e"
+      },
+      "material_and_label_review_completed": true,
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "界面脱粘",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "metadata_archive_review": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/debond_metadata_actual_recheck.json",
+        "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
+      },
+      "pending_reasons": []
+    },
+    {
+      "id": "debond_f1b9bd026fc6",
+      "template": "debond",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.json",
+      "sha256": "08ce4e7c85d6ade0c370b940b121b80970ee1a83baa0bb9a54ebd05599d04187",
+      "metadata_sha256": "bd57a883a0af85fa2b5c15a3a971db3bd475cd8825318837e5a920ebe8bfb22b",
+      "source_id": "video_0020",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_labels_and_actual_metadata_archive",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_debond.json",
+        "sha256": "d4fa3d583613309e7f80632ece4f3267560de4b7ced7fbcfcd5b6a743c79813e"
+      },
+      "material_and_label_review_completed": true,
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "界面脱粘",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "metadata_archive_review": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/debond_metadata_actual_recheck.json",
+        "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
+      },
+      "pending_reasons": []
+    },
+    {
+      "id": "debond_f8acebcca850",
+      "template": "debond",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.json",
+      "sha256": "97108961137d83a4fe0e95c4b486170f882884ac4a02537bf4f214a9da13eeb0",
+      "metadata_sha256": "712f5528e3ee851bf7cb85fe9f684dcaf7632b02e3f363d0c1e65abe114e7887",
+      "source_id": "video_0020",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_labels_and_actual_metadata_archive",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_debond.json",
+        "sha256": "d4fa3d583613309e7f80632ece4f3267560de4b7ced7fbcfcd5b6a743c79813e"
+      },
+      "material_and_label_review_completed": true,
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "界面脱粘",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "metadata_archive_review": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/debond_metadata_actual_recheck.json",
+        "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
+      },
+      "pending_reasons": []
+    },
+    {
+      "id": "metal_brittle_24b9f8453ffd",
+      "template": "metal_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_24b9f8453ffd/299b1b60ab02fa6d/metal_brittle_24b9f8453ffd.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_24b9f8453ffd/299b1b60ab02fa6d/metal_brittle_24b9f8453ffd.json",
+      "sha256": "96b7fc198941bf66bb5f570954656ff3305edc125352d301de186c29a40e66af",
+      "metadata_sha256": "b9e4a83b6bedc3d4162fe18da0eb7df839a45fd0e481969df9385cd4db411aa1",
+      "source_id": "video_0003",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
         "夹持异常": "无",
         "拍摄异常": "无"
       },
       "checked_labels": null,
       "main_final_video_view_completed": true,
-      "independent_review": "pending_full_visual_difference_and_final_metadata",
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
       "user_accepted": false,
       "training_released": false,
       "style_accepted": false,
-      "parameter_range_accepted": false
-    },
-    {
-      "id": "composite_brittle_85e1faca3a2f",
-      "template": "composite_brittle",
-      "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.mp4",
-      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.json",
-      "sha256": "72caa9c42c92990c72c1447983b49fd6707d5834e0117464dec30f707e1c5aa3",
-      "metadata_sha256": "69906181f46a0e6bc7fce1d61e6978df85928b376cc985b8385df3eadf0ce6da",
-      "source_id": "video_0100",
-      "duration_s": 20,
-      "fps": 30,
-      "frames": 600,
-      "batch": "training_batch1",
-      "expected_labels": {
-        "材料类别": "复材",
-        "断裂结果": "完全断裂",
-        "单一主要破坏类别": "脆性断裂",
-        "断裂位置": "标距外非根部",
-        "夹持异常": "无",
-        "拍摄异常": "无"
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+        "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
       },
-      "checked_labels": null,
-      "main_final_video_view_completed": false,
-      "independent_review": "pending_full_visual_difference_and_final_metadata",
-      "user_accepted": false,
-      "training_released": false,
-      "style_accepted": false,
-      "parameter_range_accepted": false
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
     },
     {
-      "id": "composite_brittle_f8c38a77a63d",
-      "template": "composite_brittle",
-      "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.mp4",
-      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.json",
-      "sha256": "f3cf15df21302ad1b6b7932a7d32f6454616b8d51c7c5bb17e0b65557e31f66f",
-      "metadata_sha256": "f1b7cb080fba9fb139ce96058d41f942d18957d3e36b45a9b05153809274f205",
-      "source_id": "video_0100",
-      "duration_s": 20,
-      "fps": 30,
-      "frames": 600,
-      "batch": "training_batch1",
-      "expected_labels": {
-        "材料类别": "复材",
-        "断裂结果": "完全断裂",
-        "单一主要破坏类别": "脆性断裂",
-        "断裂位置": "标距外非根部",
-        "夹持异常": "无",
-        "拍摄异常": "无"
-      },
-      "checked_labels": null,
-      "main_final_video_view_completed": false,
-      "independent_review": "pending_full_visual_difference_and_final_metadata",
-      "user_accepted": false,
-      "training_released": false,
-      "style_accepted": false,
-      "parameter_range_accepted": false
-    },
-    {
-      "id": "debond_19ad315937d9",
-      "template": "debond",
-      "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.mp4",
-      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.json",
-      "sha256": "e1d63ae77184b7f349baedd2f8214a65d653a670bb7dc5d2b0363c5c5bd33ddb",
-      "metadata_sha256": "fa3033515f4767ce9467c35d4a60bf3dca8e1c66a500a68e21551ba126117fa5",
-      "source_id": "video_0020",
-      "duration_s": 20,
-      "fps": 30,
-      "frames": 600,
-      "batch": "training_batch1",
-      "expected_labels": {
-        "材料类别": "复材",
-        "断裂结果": "完全断裂",
-        "单一主要破坏类别": "界面脱粘",
-        "断裂位置": "标距内",
-        "夹持异常": "无",
-        "拍摄异常": "无"
-      },
-      "checked_labels": null,
-      "main_final_video_view_completed": false,
-      "independent_review": "pending_full_visual_difference_and_final_metadata",
-      "user_accepted": false,
-      "training_released": false,
-      "style_accepted": false,
-      "parameter_range_accepted": false
-    },
-    {
-      "id": "debond_3a83e6589f3c",
-      "template": "debond",
-      "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.mp4",
-      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.json",
-      "sha256": "cd1b961b8b2797823de92e9cf8d95b4d8f7bbd581061e7dd3c5bec6cddf39992",
-      "metadata_sha256": "9a5e8781058a6dc8fa467859a3ad9eab319ce2f0c532e39cd7666504a7d4b493",
-      "source_id": "video_0020",
-      "duration_s": 20,
-      "fps": 30,
-      "frames": 600,
-      "batch": "training_batch1",
-      "expected_labels": {
-        "材料类别": "复材",
-        "断裂结果": "完全断裂",
-        "单一主要破坏类别": "界面脱粘",
-        "断裂位置": "标距内",
-        "夹持异常": "无",
-        "拍摄异常": "无"
-      },
-      "checked_labels": null,
-      "main_final_video_view_completed": false,
-      "independent_review": "pending_full_visual_difference_and_final_metadata",
-      "user_accepted": false,
-      "training_released": false,
-      "style_accepted": false,
-      "parameter_range_accepted": false
-    },
-    {
-      "id": "debond_633abced1e80",
-      "template": "debond",
-      "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.mp4",
-      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.json",
-      "sha256": "6bb1a62d1b1401bb09e756e7654918f2baeae34517b854de3bc00cef3802250b",
-      "metadata_sha256": "314165b19b8dc9625995c3c4d6cddf51fba3844ddc3ba094de94dacdff9a2e88",
-      "source_id": "video_0020",
-      "duration_s": 20,
-      "fps": 30,
-      "frames": 600,
-      "batch": "training_batch1",
-      "expected_labels": {
-        "材料类别": "复材",
-        "断裂结果": "完全断裂",
-        "单一主要破坏类别": "界面脱粘",
-        "断裂位置": "标距内",
-        "夹持异常": "无",
-        "拍摄异常": "无"
-      },
-      "checked_labels": null,
-      "main_final_video_view_completed": false,
-      "independent_review": "pending_full_visual_difference_and_final_metadata",
-      "user_accepted": false,
-      "training_released": false,
-      "style_accepted": false,
-      "parameter_range_accepted": false
-    },
-    {
-      "id": "debond_9a6e9873f857",
-      "template": "debond",
-      "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.mp4",
-      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.json",
-      "sha256": "fdc8df3d1e643cf5855a4afb19b221850a4146b83e7adb944f5d2c4759cb4b3e",
-      "metadata_sha256": "e9ace30aa300c4c13b49fd9dcfb823c0d18a889fbeee32d3166dbeaed3256526",
-      "source_id": "video_0020",
-      "duration_s": 20,
-      "fps": 30,
-      "frames": 600,
-      "batch": "training_batch1",
-      "expected_labels": {
-        "材料类别": "复材",
-        "断裂结果": "完全断裂",
-        "单一主要破坏类别": "界面脱粘",
-        "断裂位置": "标距内",
-        "夹持异常": "无",
-        "拍摄异常": "无"
-      },
-      "checked_labels": null,
-      "main_final_video_view_completed": false,
-      "independent_review": "pending_full_visual_difference_and_final_metadata",
-      "user_accepted": false,
-      "training_released": false,
-      "style_accepted": false,
-      "parameter_range_accepted": false
-    },
-    {
-      "id": "debond_f1b9bd026fc6",
-      "template": "debond",
-      "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.mp4",
-      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.json",
-      "sha256": "08ce4e7c85d6ade0c370b940b121b80970ee1a83baa0bb9a54ebd05599d04187",
-      "metadata_sha256": "85646f76c85d20640007e310cf756deffd5f3977f34a8a21d3ec9666d95bedcf",
-      "source_id": "video_0020",
-      "duration_s": 20,
-      "fps": 30,
-      "frames": 600,
-      "batch": "training_batch1",
-      "expected_labels": {
-        "材料类别": "复材",
-        "断裂结果": "完全断裂",
-        "单一主要破坏类别": "界面脱粘",
-        "断裂位置": "标距内",
-        "夹持异常": "无",
-        "拍摄异常": "无"
-      },
-      "checked_labels": null,
-      "main_final_video_view_completed": false,
-      "independent_review": "pending_full_visual_difference_and_final_metadata",
-      "user_accepted": false,
-      "training_released": false,
-      "style_accepted": false,
-      "parameter_range_accepted": false
-    },
-    {
-      "id": "debond_f8acebcca850",
-      "template": "debond",
-      "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.mp4",
-      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.json",
-      "sha256": "97108961137d83a4fe0e95c4b486170f882884ac4a02537bf4f214a9da13eeb0",
-      "metadata_sha256": "b713d004506a886d675e018f315f798320b7aba2c2b0f9ac2355c5a831cbd8dd",
-      "source_id": "video_0020",
-      "duration_s": 20,
-      "fps": 30,
-      "frames": 600,
-      "batch": "training_batch1",
-      "expected_labels": {
-        "材料类别": "复材",
-        "断裂结果": "完全断裂",
-        "单一主要破坏类别": "界面脱粘",
-        "断裂位置": "标距内",
-        "夹持异常": "无",
-        "拍摄异常": "无"
-      },
-      "checked_labels": null,
-      "main_final_video_view_completed": false,
-      "independent_review": "pending_full_visual_difference_and_final_metadata",
-      "user_accepted": false,
-      "training_released": false,
-      "style_accepted": false,
-      "parameter_range_accepted": false
-    },
-    {
-      "id": "metal_brittle_24b9f8453ffd",
+      "id": "metal_brittle_5208fef67de7",
       "template": "metal_brittle",
-      "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_24b9f8453ffd/299b1b60ab02fa6d/metal_brittle_24b9f8453ffd.mp4",
-      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_24b9f8453ffd/299b1b60ab02fa6d/metal_brittle_24b9f8453ffd.json",
-      "sha256": "96b7fc198941bf66bb5f570954656ff3305edc125352d301de186c29a40e66af",
-      "metadata_sha256": "f10ecf3b031f6a889bc0f9d1e04bd6c16e316a43a20d010fdae95c4618b4c8e7",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_5208fef67de7/e0d63d0994544642/metal_brittle_5208fef67de7.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_5208fef67de7/e0d63d0994544642/metal_brittle_5208fef67de7.json",
+      "sha256": "22df21c45fe8ecd22c9d0eae507838f8c56ded13dcaa971585285391ce0a0a05",
+      "metadata_sha256": "1f33360a05a9fa9b9454dfe9dad97699a634e3880cfdc9838b65d99890d5076e",
       "source_id": "video_0003",
       "duration_s": 20,
       "fps": 30,
@@ -2031,21 +2310,70 @@
         "拍摄异常": "无"
       },
       "checked_labels": null,
-      "main_final_video_view_completed": false,
-      "independent_review": "pending_full_visual_difference_and_final_metadata",
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
       "user_accepted": false,
       "training_released": false,
       "style_accepted": false,
-      "parameter_range_accepted": false
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+        "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "metal_brittle_8fd177bc37cd",
+      "template": "metal_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_8fd177bc37cd/afbfd0a64e7ecd6c/metal_brittle_8fd177bc37cd.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_8fd177bc37cd/afbfd0a64e7ecd6c/metal_brittle_8fd177bc37cd.json",
+      "sha256": "74fce195156abf7108f65a1d75f74fc5a902de9d731439ef950f770977ae6562",
+      "metadata_sha256": "de9a610aef4c4a56c87a310e2ea90082392a92ca758072e81634dd47df5f397f",
+      "source_id": "video_0003",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+        "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
     },
     {
       "id": "metal_brittle_95bf83c84c0a",
       "template": "metal_brittle",
-      "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
       "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_95bf83c84c0a/630254443bf4d0f8/metal_brittle_95bf83c84c0a.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_95bf83c84c0a/630254443bf4d0f8/metal_brittle_95bf83c84c0a.json",
       "sha256": "83c1a8bc7f72ceb15434f32d09a43a67bc8552b3974056253a0a3415460ff2c5",
-      "metadata_sha256": "6d4f9cf0d16a5b897a1d489807cb96eb1c5ee5095c3e879bb301b71a8b032878",
+      "metadata_sha256": "017776b31845a0e51fa3f5d83cc99e4a53e42e855c2646575206b8f3bc9dcfc4",
       "source_id": "video_0003",
       "duration_s": 20,
       "fps": 30,
@@ -2060,12 +2388,880 @@
         "拍摄异常": "无"
       },
       "checked_labels": null,
-      "main_final_video_view_completed": false,
-      "independent_review": "pending_full_visual_difference_and_final_metadata",
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
       "user_accepted": false,
       "training_released": false,
       "style_accepted": false,
-      "parameter_range_accepted": false
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+        "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "metal_brittle_c3f0c995c8ef",
+      "template": "metal_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_c3f0c995c8ef/f6429b6982180419/metal_brittle_c3f0c995c8ef.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_c3f0c995c8ef/f6429b6982180419/metal_brittle_c3f0c995c8ef.json",
+      "sha256": "af77f19769bb1cc898025ed6be3c3627f561a722b92161940c2f6df0d2ec713e",
+      "metadata_sha256": "051dc718ec3fec65a543b53af071e6b691b89bfa0565d80d4cc5dcdb983c504b",
+      "source_id": "video_0003",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+        "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "metal_brittle_cc100241b5f7",
+      "template": "metal_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_cc100241b5f7/d57ef5d42534ee45/metal_brittle_cc100241b5f7.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_cc100241b5f7/d57ef5d42534ee45/metal_brittle_cc100241b5f7.json",
+      "sha256": "412cc4be06f6a3c7ae61d86083f1257c7548021cb1e290c9531439333a4eb71e",
+      "metadata_sha256": "861ef4f77b6cb0f480f21368768d6ef30bcb1dd4c3325222350aa80ced87a17c",
+      "source_id": "video_0003",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+        "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "metal_brittle_d113c4e01c83",
+      "template": "metal_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_d113c4e01c83/139b32c24bc6bc14/metal_brittle_d113c4e01c83.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_d113c4e01c83/139b32c24bc6bc14/metal_brittle_d113c4e01c83.json",
+      "sha256": "7eabf55a10f678daae08ffb78838bfb22b0ac2598e4ef7371b0964618b2ee21e",
+      "metadata_sha256": "f77ed5fe9f22a17d3d7144dcdf8f6ef618f62ba43bcaa11ccabb74f7979147ae",
+      "source_id": "video_0003",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+        "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "metal_brittle_dda4b5e6e727",
+      "template": "metal_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_dda4b5e6e727/0ce641ad891eda47/metal_brittle_dda4b5e6e727.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_dda4b5e6e727/0ce641ad891eda47/metal_brittle_dda4b5e6e727.json",
+      "sha256": "6702dfe11b3750f8a3576d05b07190ced9f30b20670b0843030af8137b57fd15",
+      "metadata_sha256": "d9244f377dd742af292a7703065ac2c569f93f470d155e13ababa4b5a1a68d79",
+      "source_id": "video_0003",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+        "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "mixed_2a9499713a2b",
+      "template": "mixed",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_2a9499713a2b/fdac8cf6db4b1b29/mixed_2a9499713a2b.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_2a9499713a2b/fdac8cf6db4b1b29/mixed_2a9499713a2b.json",
+      "sha256": "254007d33fe8222230c9834da013aebebbcab7b9488eeafa9bef979f72716b47",
+      "metadata_sha256": "0ab535b53da1d3c4011659f002e0eac6a771b738bbfad5464b9e0315130211c4",
+      "source_id": "video_0014",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+        "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": false
+    },
+    {
+      "id": "mixed_3568deb2ca33",
+      "template": "mixed",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_3568deb2ca33/a598f754f98dbcae/mixed_3568deb2ca33.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_3568deb2ca33/a598f754f98dbcae/mixed_3568deb2ca33.json",
+      "sha256": "3bd9fa61a5688ac68b3d132ff4b3c46c42f25341f654f78e01115f4d48feb22d",
+      "metadata_sha256": "23879c8804585ee56d912deb0af160092de7a693cc032c7cd5f90f63b0b268a9",
+      "source_id": "video_0014",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+        "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": false
+    },
+    {
+      "id": "mixed_474c4c10ff01",
+      "template": "mixed",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_474c4c10ff01/cbe93e29ae240cfe/mixed_474c4c10ff01.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_474c4c10ff01/cbe93e29ae240cfe/mixed_474c4c10ff01.json",
+      "sha256": "335b929c90bcfc1b8b6aefe376961df258fcc289a8fedf52012bbfb205f57efe",
+      "metadata_sha256": "ba6741bdaeaabb9fdf3e46aa1b60df4d319968618dc83e0bf7fd10529bb19e5c",
+      "source_id": "video_0014",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+        "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": false
+    },
+    {
+      "id": "mixed_6bd6ad919f7f",
+      "template": "mixed",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_6bd6ad919f7f/cde2e69aa79dea52/mixed_6bd6ad919f7f.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_6bd6ad919f7f/cde2e69aa79dea52/mixed_6bd6ad919f7f.json",
+      "sha256": "6ff0a736678a3ac248a3ffd732236ba820c88375000ff23888d72e6c03cd0c0e",
+      "metadata_sha256": "6152ced278381c94f2368b4162bf93d8b51e443132f388f6b9f027cfe1c6bc1a",
+      "source_id": "video_0014",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+        "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": false
+    },
+    {
+      "id": "mixed_8e505bb139b5",
+      "template": "mixed",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_8e505bb139b5/0ae78bbe2cbcc2a9/mixed_8e505bb139b5.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_8e505bb139b5/0ae78bbe2cbcc2a9/mixed_8e505bb139b5.json",
+      "sha256": "284eeda4283811ad34525606263406b0256a5a687fa2bd5fb0921a2adb276e3d",
+      "metadata_sha256": "d0c3790a4fcc7f26ccef41ab7d9968df641e3b807794be9f0e65ed52c19e0750",
+      "source_id": "video_0014",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+        "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": false
+    },
+    {
+      "id": "mixed_b6dd4440bb01",
+      "template": "mixed",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_b6dd4440bb01/d68545a590accaf5/mixed_b6dd4440bb01.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_b6dd4440bb01/d68545a590accaf5/mixed_b6dd4440bb01.json",
+      "sha256": "e8d380e1a86f367a686af4893b601ab57c685d07b5b3f2334b4474f4c433acb5",
+      "metadata_sha256": "2fef673c83d4a9cca5932d01c51fa1c95d56f8e3052e310746e22b43886d44de",
+      "source_id": "video_0014",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+        "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": false
+    },
+    {
+      "id": "mixed_c25215a9fc08",
+      "template": "mixed",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_c25215a9fc08/b5d0e4175e96743c/mixed_c25215a9fc08.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_c25215a9fc08/b5d0e4175e96743c/mixed_c25215a9fc08.json",
+      "sha256": "f0042bb4f7a5dbb7af6e5346a19d28d1bdd996a0c9106b7b78e446b3b3e27de2",
+      "metadata_sha256": "a4018bd36c4fb4203187ac190da6c9dcdbd443fad47cab343c27a5227eaad1a1",
+      "source_id": "video_0014",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+        "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": false
+    },
+    {
+      "id": "mixed_d78ee0af8f98",
+      "template": "mixed",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_d78ee0af8f98/9b9d7e6e89068b74/mixed_d78ee0af8f98.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_d78ee0af8f98/9b9d7e6e89068b74/mixed_d78ee0af8f98.json",
+      "sha256": "9c7913b746e43963235e94e829b5b57cb0f3cb760a9c7657aefde9225d7105fa",
+      "metadata_sha256": "3b1b4dfe1d510ec55a6b44d958b9e9b3ba2f0d9d68a00ed4045f5a1b8c336872",
+      "source_id": "video_0014",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+        "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": false
+    },
+    {
+      "id": "mixed_e4b70b9f11d1",
+      "template": "mixed",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_e4b70b9f11d1/3a7403d5ea862930/mixed_e4b70b9f11d1.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_e4b70b9f11d1/3a7403d5ea862930/mixed_e4b70b9f11d1.json",
+      "sha256": "6130391ab53d1350184b15810928de4dd6254ff5b917416546d05332210aa2b4",
+      "metadata_sha256": "da338432bf78ba82a7602497e32fff215b831d5c7c0f170f2d8866bc53d7cc1b",
+      "source_id": "video_0014",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+        "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": false
+    },
+    {
+      "id": "mixed_f22a4a698822",
+      "template": "mixed",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_f22a4a698822/02de1d955cdbe03f/mixed_f22a4a698822.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_f22a4a698822/02de1d955cdbe03f/mixed_f22a4a698822.json",
+      "sha256": "ca505531d85b6da56c9cf5c3c2d109b7846f8dd38c555da570d59cae3bbd5500",
+      "metadata_sha256": "c9914e00d183e4d9704e4935f18a09a2e0a03505818ece0617629c207dba9196",
+      "source_id": "video_0014",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+        "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": false
+    },
+    {
+      "id": "polymer_brittle_527d847f2741",
+      "template": "polymer_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_527d847f2741/c9037aa8bc8a9b75/polymer_brittle_527d847f2741.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_527d847f2741/c9037aa8bc8a9b75/polymer_brittle_527d847f2741.json",
+      "sha256": "a268af6b10b44dc7a620bddf4df2e9df2552a87386ee7df301ac6d36d6ac9f33",
+      "metadata_sha256": "e6a3c5e8d20dc40d33ef0acfef2a1ede194258818f4d9aa5704c5016f0be0ee0",
+      "source_id": "video_0032",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+        "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "polymer_brittle_7c88eeeae51f",
+      "template": "polymer_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_7c88eeeae51f/adfb7bbf8e460c61/polymer_brittle_7c88eeeae51f.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_7c88eeeae51f/adfb7bbf8e460c61/polymer_brittle_7c88eeeae51f.json",
+      "sha256": "91cb141e52d7ed16e4a4f7cd255b978eae50261854d9adb14b6d02842150960f",
+      "metadata_sha256": "e36dc465b906c6475d50df9e17e3d98c4e31ebf124a6fd924b34426aae616bec",
+      "source_id": "video_0032",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+        "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "polymer_brittle_b0cd99f7ae30",
+      "template": "polymer_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b0cd99f7ae30/303aff50310f92bc/polymer_brittle_b0cd99f7ae30.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b0cd99f7ae30/303aff50310f92bc/polymer_brittle_b0cd99f7ae30.json",
+      "sha256": "ca02e8ebcd31b934b5dd4150eb0957132f6231d759ba26095fa292978bcf2e98",
+      "metadata_sha256": "b920dc1de5eefed721bcfa7687a1b7f2746548480d306c42b956dce168db4037",
+      "source_id": "video_0032",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+        "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "polymer_brittle_b9ab8a238e19",
+      "template": "polymer_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b9ab8a238e19/513abd4d2ec8acf4/polymer_brittle_b9ab8a238e19.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b9ab8a238e19/513abd4d2ec8acf4/polymer_brittle_b9ab8a238e19.json",
+      "sha256": "2fef41e0911eafafbf6a5a13d532128cd63d44b62315659fc420af747cbac6ae",
+      "metadata_sha256": "85ecde9befe6abe8e30c3f665aa379246e8bbe43303955fdda26c81f533099cb",
+      "source_id": "video_0032",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+        "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "polymer_brittle_bcfe3a307376",
+      "template": "polymer_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_bcfe3a307376/e1783fa01c4f150d/polymer_brittle_bcfe3a307376.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_bcfe3a307376/e1783fa01c4f150d/polymer_brittle_bcfe3a307376.json",
+      "sha256": "6763dcb6a9b740f39566f5b2d2bf1671aaf3261fdb09c1fc90fb508332f810b5",
+      "metadata_sha256": "229e6c65b9aeb73d32ae9421a1186da7b1443d690b6c2b03dec88e1f66ab8f59",
+      "source_id": "video_0032",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+        "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "polymer_brittle_e2c15b3c1473",
+      "template": "polymer_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_e2c15b3c1473/44d4b2b618c005d7/polymer_brittle_e2c15b3c1473.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_e2c15b3c1473/44d4b2b618c005d7/polymer_brittle_e2c15b3c1473.json",
+      "sha256": "eca11870a7692c158707fd70794f610628dd512e9b2a1d18ad348919ce6861f9",
+      "metadata_sha256": "80b8f26bc7ccd257fa3678c588a895da3536de94c4167022bca03067002c6f3b",
+      "source_id": "video_0032",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+        "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "polymer_brittle_ea23f4e39317",
+      "template": "polymer_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_ea23f4e39317/aee88dd89417680a/polymer_brittle_ea23f4e39317.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_ea23f4e39317/aee88dd89417680a/polymer_brittle_ea23f4e39317.json",
+      "sha256": "31a66f4d51a74ff45f6a1020c6ec34d276b38b27965b13075c07c657fb657133",
+      "metadata_sha256": "65fd038e6fca8b2b227c5cd14dd26a4d7fdd5c29064ef68d430a5d5a0fb31975",
+      "source_id": "video_0032",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+        "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
+    },
+    {
+      "id": "polymer_brittle_f89aa7bc8961",
+      "template": "polymer_brittle",
+      "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_f89aa7bc8961/5d3bd34030557d9f/polymer_brittle_f89aa7bc8961.mp4",
+      "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_f89aa7bc8961/5d3bd34030557d9f/polymer_brittle_f89aa7bc8961.json",
+      "sha256": "a86e083a3ca8df61ee84a262965dc746e5b52291cda91883aeb6fe0c24ca82b5",
+      "metadata_sha256": "b02e2e2264006cecfbb063026707a15158a63ace0de7fd24d0641afa61a00a89",
+      "source_id": "video_0032",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": null,
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "main_agent_view_record": {
+        "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+        "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+      },
+      "material_and_label_review_completed": true,
+      "pending_reasons": [
+        "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+      ],
+      "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+      "metadata_finalizer_applied": true
     }
   ],
   "candidates": [],
@@ -2115,7 +3311,7 @@
     "高分子半脆半韧按用户项目视觉判据确认当前样片，保持实际配置和弹塑份额未知；无需重生成。",
     "爆炸性断裂生成按用户要求搁置；0.2候选已否定，不再待验收或用于爆炸性模板。等待用户明确恢复指示。",
     "复材韧性与高分子颈缩传播仍保留来源证据缺口；连续参数范围与训练发布未批准。",
-    "依照首批新增训练视频专项设计进入实施规划与制作；目标60个离散候选，逐片检查与接受后交付数据源，下游输入准备和训练发布遵循既有流程。"
+    "首批已编码38条：12条待逐片效果与标签接受，26条须完成最终元数据归档复验；另22条受严格门禁阻断。未收录current或训练发布。"
   ],
   "management_cleanup_status": "complete",
   "source_inventory": {
@@ -2335,11 +3531,11 @@
   "next_batch_design_document": "../docs/training-batch1-design.md",
   "training_batch1": {
     "design_document": "../docs/training-batch1-design.md",
-    "status": "geometry_checks_complete_with_strict_blockers_rendering_passed_templates",
+    "status": "38_encoded_12_reviewable_26_metadata_review_incomplete_strict_blockers",
     "implementation_authorized_on": "2026-10-09",
     "planned_candidate_count": 60,
-    "generated_video_count": 14,
-    "reviewable_count": 2,
+    "generated_video_count": 38,
+    "reviewable_count": 12,
     "user_accepted_video_count": 0,
     "work_directory": "../_work/training-batch1-20261009/",
     "scope": "Frozen discrete candidates; qualifications, finite regression and per-candidate evaluated checks precede review and individual user acceptance; no current promotion or downstream training release.",
@@ -2358,7 +3554,38 @@
         "independent_review": "passed_for_two_discrete_candidates_and_metadata_rechecked",
         "user_accepted": false,
         "training_released": false,
-        "metadata_sha256": "47fa06abcfee2b6f2be4c4d8470dd66822c90c0fabb4cb6409d6974eaabfb36d"
+        "metadata_sha256": "47fa06abcfee2b6f2be4c4d8470dd66822c90c0fabb4cb6409d6974eaabfb36d",
+        "title": "陶瓷小形变横向脆断：15秒失贯通候选",
+        "source_id": "video_0050",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "陶瓷",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": {
+          "材料类别": "陶瓷",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "v4_1_whole_video_labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "脆性断裂",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "style_accepted": false,
+        "parameter_range_accepted": false
       },
       {
         "id": "ceramic_fafb6d038402",
@@ -2371,16 +3598,47 @@
         "independent_review": "passed_for_two_discrete_candidates_and_metadata_rechecked",
         "user_accepted": false,
         "training_released": false,
-        "metadata_sha256": "4a493c95648b44f2fbe383fe6cd778af32e45c097ceeb4a558a96b2491ae0361"
+        "metadata_sha256": "4a493c95648b44f2fbe383fe6cd778af32e45c097ceeb4a558a96b2491ae0361",
+        "title": "陶瓷小形变横向脆断：13秒失贯通候选",
+        "source_id": "video_0050",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "陶瓷",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": {
+          "材料类别": "陶瓷",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "v4_1_whole_video_labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "脆性断裂",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "style_accepted": false,
+        "parameter_range_accepted": false
       },
       {
         "id": "composite_brittle_40de05bc8db6",
         "template": "composite_brittle",
-        "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
+        "status": "checked_pending_user_acceptance",
         "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_40de05bc8db6/cf31a152fc1a013c/composite_brittle_40de05bc8db6.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_40de05bc8db6/cf31a152fc1a013c/composite_brittle_40de05bc8db6.json",
         "sha256": "b7d80b3fd70dd549423c37b9c0b93f7337fa009144395dc7cdbc0c47ce9c3180",
-        "metadata_sha256": "eddbf25d15c3c316c3fba2c4ae544a6ffeeb7a96412e93def722d8a08fbe2140",
+        "metadata_sha256": "9a697434fa6f16e93cde104cd0915da2c608934390be5d8851b3e536518c8868",
         "source_id": "video_0100",
         "duration_s": 20,
         "fps": 30,
@@ -2394,22 +3652,46 @@
           "夹持异常": "无",
           "拍摄异常": "无"
         },
-        "checked_labels": null,
+        "checked_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距外非根部",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
         "main_final_video_view_completed": true,
-        "independent_review": "pending_full_visual_difference_and_final_metadata",
+        "independent_review": "passed_material_labels_and_actual_metadata_archive",
         "user_accepted": false,
         "training_released": false,
         "style_accepted": false,
-        "parameter_range_accepted": false
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_composite_brittle.json",
+          "sha256": "c9414226f96a0dd10d60e6ca0621bb7dc27eb82bb25ab17df93fe863dd9a123c"
+        },
+        "material_and_label_review_completed": true,
+        "v4_1_whole_video_labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "脆性断裂",
+          "fracture_site": "outside_gauge_non_root",
+          "special_case": null
+        },
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "metadata_archive_review": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/composite_metadata_actual_recheck_v2.json",
+          "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
+        },
+        "pending_reasons": []
       },
       {
         "id": "composite_brittle_71add4d43545",
         "template": "composite_brittle",
-        "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
+        "status": "checked_pending_user_acceptance",
         "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_71add4d43545/4b01eabc2cde4b14/composite_brittle_71add4d43545.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_71add4d43545/4b01eabc2cde4b14/composite_brittle_71add4d43545.json",
         "sha256": "9a0940ea72dcc5771aac675ecbcb7f19679382fab0699c12cf3277cb4019408b",
-        "metadata_sha256": "a2e0cadea0ee13dda68276ab842c7c9a5a0f6abad8414be5dc0e966ed31aca49",
+        "metadata_sha256": "7d6dd7bb72fe6b362fc3260fc61400e2dc66bf1ff018c40487e8b6f7a8e3d6fb",
         "source_id": "video_0100",
         "duration_s": 20,
         "fps": 30,
@@ -2420,257 +3702,512 @@
           "断裂结果": "完全断裂",
           "单一主要破坏类别": "脆性断裂",
           "断裂位置": "标距外非根部",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距外非根部",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_labels_and_actual_metadata_archive",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_composite_brittle.json",
+          "sha256": "c9414226f96a0dd10d60e6ca0621bb7dc27eb82bb25ab17df93fe863dd9a123c"
+        },
+        "material_and_label_review_completed": true,
+        "v4_1_whole_video_labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "脆性断裂",
+          "fracture_site": "outside_gauge_non_root",
+          "special_case": null
+        },
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "metadata_archive_review": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/composite_metadata_actual_recheck_v2.json",
+          "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
+        },
+        "pending_reasons": []
+      },
+      {
+        "id": "composite_brittle_85e1faca3a2f",
+        "template": "composite_brittle",
+        "status": "checked_pending_user_acceptance",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.json",
+        "sha256": "72caa9c42c92990c72c1447983b49fd6707d5834e0117464dec30f707e1c5aa3",
+        "metadata_sha256": "aacc3034ef432045a855a40e8167aa1f5515770f682d2e8fb0b7ead86895a0fb",
+        "source_id": "video_0100",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距外非根部",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距外非根部",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_labels_and_actual_metadata_archive",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_composite_brittle.json",
+          "sha256": "c9414226f96a0dd10d60e6ca0621bb7dc27eb82bb25ab17df93fe863dd9a123c"
+        },
+        "material_and_label_review_completed": true,
+        "v4_1_whole_video_labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "脆性断裂",
+          "fracture_site": "outside_gauge_non_root",
+          "special_case": null
+        },
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "metadata_archive_review": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/composite_metadata_actual_recheck_v2.json",
+          "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
+        },
+        "pending_reasons": []
+      },
+      {
+        "id": "composite_brittle_f8c38a77a63d",
+        "template": "composite_brittle",
+        "status": "checked_pending_user_acceptance",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.json",
+        "sha256": "f3cf15df21302ad1b6b7932a7d32f6454616b8d51c7c5bb17e0b65557e31f66f",
+        "metadata_sha256": "6a350158a82596dc9b535f57841ec4122ae6a267fc1786254c3b5e3f7b3d3c7d",
+        "source_id": "video_0100",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距外非根部",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距外非根部",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_labels_and_actual_metadata_archive",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_composite_brittle.json",
+          "sha256": "c9414226f96a0dd10d60e6ca0621bb7dc27eb82bb25ab17df93fe863dd9a123c"
+        },
+        "material_and_label_review_completed": true,
+        "v4_1_whole_video_labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "脆性断裂",
+          "fracture_site": "outside_gauge_non_root",
+          "special_case": null
+        },
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "metadata_archive_review": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/composite_metadata_actual_recheck_v2.json",
+          "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
+        },
+        "pending_reasons": []
+      },
+      {
+        "id": "debond_19ad315937d9",
+        "template": "debond",
+        "status": "checked_pending_user_acceptance",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.json",
+        "sha256": "e1d63ae77184b7f349baedd2f8214a65d653a670bb7dc5d2b0363c5c5bd33ddb",
+        "metadata_sha256": "14c582fefa6b6a57203eb0e5a2fe801a71ebc372e8085c04de1ea741224981aa",
+        "source_id": "video_0020",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "界面脱粘",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "界面脱粘",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_labels_and_actual_metadata_archive",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_debond.json",
+          "sha256": "d4fa3d583613309e7f80632ece4f3267560de4b7ced7fbcfcd5b6a743c79813e"
+        },
+        "material_and_label_review_completed": true,
+        "v4_1_whole_video_labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "界面脱粘",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "metadata_archive_review": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/debond_metadata_actual_recheck.json",
+          "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
+        },
+        "pending_reasons": []
+      },
+      {
+        "id": "debond_3a83e6589f3c",
+        "template": "debond",
+        "status": "checked_pending_user_acceptance",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.json",
+        "sha256": "cd1b961b8b2797823de92e9cf8d95b4d8f7bbd581061e7dd3c5bec6cddf39992",
+        "metadata_sha256": "f39ca49704c99285ef7352b20f7eb8c1959e245e5be59ceecb0eda7e2ad5f911",
+        "source_id": "video_0020",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "界面脱粘",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "界面脱粘",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_labels_and_actual_metadata_archive",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_debond.json",
+          "sha256": "d4fa3d583613309e7f80632ece4f3267560de4b7ced7fbcfcd5b6a743c79813e"
+        },
+        "material_and_label_review_completed": true,
+        "v4_1_whole_video_labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "界面脱粘",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "metadata_archive_review": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/debond_metadata_actual_recheck.json",
+          "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
+        },
+        "pending_reasons": []
+      },
+      {
+        "id": "debond_633abced1e80",
+        "template": "debond",
+        "status": "checked_pending_user_acceptance",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.json",
+        "sha256": "6bb1a62d1b1401bb09e756e7654918f2baeae34517b854de3bc00cef3802250b",
+        "metadata_sha256": "8a7269a4d0c2c880b58a4ad28ae729d31379ce6f273102e6a6e60e74e9c5a238",
+        "source_id": "video_0020",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "界面脱粘",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "界面脱粘",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_labels_and_actual_metadata_archive",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_debond.json",
+          "sha256": "d4fa3d583613309e7f80632ece4f3267560de4b7ced7fbcfcd5b6a743c79813e"
+        },
+        "material_and_label_review_completed": true,
+        "v4_1_whole_video_labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "界面脱粘",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "metadata_archive_review": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/debond_metadata_actual_recheck.json",
+          "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
+        },
+        "pending_reasons": []
+      },
+      {
+        "id": "debond_9a6e9873f857",
+        "template": "debond",
+        "status": "checked_pending_user_acceptance",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.json",
+        "sha256": "fdc8df3d1e643cf5855a4afb19b221850a4146b83e7adb944f5d2c4759cb4b3e",
+        "metadata_sha256": "fa5a8550253710f26ea0f3bacb4aa18bf66eddb6a2a980a5f853ce7004f21abe",
+        "source_id": "video_0020",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "界面脱粘",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "界面脱粘",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_labels_and_actual_metadata_archive",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_debond.json",
+          "sha256": "d4fa3d583613309e7f80632ece4f3267560de4b7ced7fbcfcd5b6a743c79813e"
+        },
+        "material_and_label_review_completed": true,
+        "v4_1_whole_video_labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "界面脱粘",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "metadata_archive_review": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/debond_metadata_actual_recheck.json",
+          "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
+        },
+        "pending_reasons": []
+      },
+      {
+        "id": "debond_f1b9bd026fc6",
+        "template": "debond",
+        "status": "checked_pending_user_acceptance",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.json",
+        "sha256": "08ce4e7c85d6ade0c370b940b121b80970ee1a83baa0bb9a54ebd05599d04187",
+        "metadata_sha256": "bd57a883a0af85fa2b5c15a3a971db3bd475cd8825318837e5a920ebe8bfb22b",
+        "source_id": "video_0020",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "界面脱粘",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "界面脱粘",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_labels_and_actual_metadata_archive",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_debond.json",
+          "sha256": "d4fa3d583613309e7f80632ece4f3267560de4b7ced7fbcfcd5b6a743c79813e"
+        },
+        "material_and_label_review_completed": true,
+        "v4_1_whole_video_labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "界面脱粘",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "metadata_archive_review": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/debond_metadata_actual_recheck.json",
+          "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
+        },
+        "pending_reasons": []
+      },
+      {
+        "id": "debond_f8acebcca850",
+        "template": "debond",
+        "status": "checked_pending_user_acceptance",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.json",
+        "sha256": "97108961137d83a4fe0e95c4b486170f882884ac4a02537bf4f214a9da13eeb0",
+        "metadata_sha256": "712f5528e3ee851bf7cb85fe9f684dcaf7632b02e3f363d0c1e65abe114e7887",
+        "source_id": "video_0020",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "界面脱粘",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": {
+          "材料类别": "复材",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "界面脱粘",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_labels_and_actual_metadata_archive",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_debond.json",
+          "sha256": "d4fa3d583613309e7f80632ece4f3267560de4b7ced7fbcfcd5b6a743c79813e"
+        },
+        "material_and_label_review_completed": true,
+        "v4_1_whole_video_labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "界面脱粘",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "metadata_archive_review": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/debond_metadata_actual_recheck.json",
+          "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
+        },
+        "pending_reasons": []
+      },
+      {
+        "id": "metal_brittle_24b9f8453ffd",
+        "template": "metal_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_24b9f8453ffd/299b1b60ab02fa6d/metal_brittle_24b9f8453ffd.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_24b9f8453ffd/299b1b60ab02fa6d/metal_brittle_24b9f8453ffd.json",
+        "sha256": "96b7fc198941bf66bb5f570954656ff3305edc125352d301de186c29a40e66af",
+        "metadata_sha256": "b9e4a83b6bedc3d4162fe18da0eb7df839a45fd0e481969df9385cd4db411aa1",
+        "source_id": "video_0003",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
           "夹持异常": "无",
           "拍摄异常": "无"
         },
         "checked_labels": null,
         "main_final_video_view_completed": true,
-        "independent_review": "pending_full_visual_difference_and_final_metadata",
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
         "user_accepted": false,
         "training_released": false,
         "style_accepted": false,
-        "parameter_range_accepted": false
-      },
-      {
-        "id": "composite_brittle_85e1faca3a2f",
-        "template": "composite_brittle",
-        "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.mp4",
-        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.json",
-        "sha256": "72caa9c42c92990c72c1447983b49fd6707d5834e0117464dec30f707e1c5aa3",
-        "metadata_sha256": "69906181f46a0e6bc7fce1d61e6978df85928b376cc985b8385df3eadf0ce6da",
-        "source_id": "video_0100",
-        "duration_s": 20,
-        "fps": 30,
-        "frames": 600,
-        "batch": "training_batch1",
-        "expected_labels": {
-          "材料类别": "复材",
-          "断裂结果": "完全断裂",
-          "单一主要破坏类别": "脆性断裂",
-          "断裂位置": "标距外非根部",
-          "夹持异常": "无",
-          "拍摄异常": "无"
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+          "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
         },
-        "checked_labels": null,
-        "main_final_video_view_completed": false,
-        "independent_review": "pending_full_visual_difference_and_final_metadata",
-        "user_accepted": false,
-        "training_released": false,
-        "style_accepted": false,
-        "parameter_range_accepted": false
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
       },
       {
-        "id": "composite_brittle_f8c38a77a63d",
-        "template": "composite_brittle",
-        "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.mp4",
-        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.json",
-        "sha256": "f3cf15df21302ad1b6b7932a7d32f6454616b8d51c7c5bb17e0b65557e31f66f",
-        "metadata_sha256": "f1b7cb080fba9fb139ce96058d41f942d18957d3e36b45a9b05153809274f205",
-        "source_id": "video_0100",
-        "duration_s": 20,
-        "fps": 30,
-        "frames": 600,
-        "batch": "training_batch1",
-        "expected_labels": {
-          "材料类别": "复材",
-          "断裂结果": "完全断裂",
-          "单一主要破坏类别": "脆性断裂",
-          "断裂位置": "标距外非根部",
-          "夹持异常": "无",
-          "拍摄异常": "无"
-        },
-        "checked_labels": null,
-        "main_final_video_view_completed": false,
-        "independent_review": "pending_full_visual_difference_and_final_metadata",
-        "user_accepted": false,
-        "training_released": false,
-        "style_accepted": false,
-        "parameter_range_accepted": false
-      },
-      {
-        "id": "debond_19ad315937d9",
-        "template": "debond",
-        "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.mp4",
-        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.json",
-        "sha256": "e1d63ae77184b7f349baedd2f8214a65d653a670bb7dc5d2b0363c5c5bd33ddb",
-        "metadata_sha256": "fa3033515f4767ce9467c35d4a60bf3dca8e1c66a500a68e21551ba126117fa5",
-        "source_id": "video_0020",
-        "duration_s": 20,
-        "fps": 30,
-        "frames": 600,
-        "batch": "training_batch1",
-        "expected_labels": {
-          "材料类别": "复材",
-          "断裂结果": "完全断裂",
-          "单一主要破坏类别": "界面脱粘",
-          "断裂位置": "标距内",
-          "夹持异常": "无",
-          "拍摄异常": "无"
-        },
-        "checked_labels": null,
-        "main_final_video_view_completed": false,
-        "independent_review": "pending_full_visual_difference_and_final_metadata",
-        "user_accepted": false,
-        "training_released": false,
-        "style_accepted": false,
-        "parameter_range_accepted": false
-      },
-      {
-        "id": "debond_3a83e6589f3c",
-        "template": "debond",
-        "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.mp4",
-        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.json",
-        "sha256": "cd1b961b8b2797823de92e9cf8d95b4d8f7bbd581061e7dd3c5bec6cddf39992",
-        "metadata_sha256": "9a5e8781058a6dc8fa467859a3ad9eab319ce2f0c532e39cd7666504a7d4b493",
-        "source_id": "video_0020",
-        "duration_s": 20,
-        "fps": 30,
-        "frames": 600,
-        "batch": "training_batch1",
-        "expected_labels": {
-          "材料类别": "复材",
-          "断裂结果": "完全断裂",
-          "单一主要破坏类别": "界面脱粘",
-          "断裂位置": "标距内",
-          "夹持异常": "无",
-          "拍摄异常": "无"
-        },
-        "checked_labels": null,
-        "main_final_video_view_completed": false,
-        "independent_review": "pending_full_visual_difference_and_final_metadata",
-        "user_accepted": false,
-        "training_released": false,
-        "style_accepted": false,
-        "parameter_range_accepted": false
-      },
-      {
-        "id": "debond_633abced1e80",
-        "template": "debond",
-        "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.mp4",
-        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.json",
-        "sha256": "6bb1a62d1b1401bb09e756e7654918f2baeae34517b854de3bc00cef3802250b",
-        "metadata_sha256": "314165b19b8dc9625995c3c4d6cddf51fba3844ddc3ba094de94dacdff9a2e88",
-        "source_id": "video_0020",
-        "duration_s": 20,
-        "fps": 30,
-        "frames": 600,
-        "batch": "training_batch1",
-        "expected_labels": {
-          "材料类别": "复材",
-          "断裂结果": "完全断裂",
-          "单一主要破坏类别": "界面脱粘",
-          "断裂位置": "标距内",
-          "夹持异常": "无",
-          "拍摄异常": "无"
-        },
-        "checked_labels": null,
-        "main_final_video_view_completed": false,
-        "independent_review": "pending_full_visual_difference_and_final_metadata",
-        "user_accepted": false,
-        "training_released": false,
-        "style_accepted": false,
-        "parameter_range_accepted": false
-      },
-      {
-        "id": "debond_9a6e9873f857",
-        "template": "debond",
-        "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.mp4",
-        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.json",
-        "sha256": "fdc8df3d1e643cf5855a4afb19b221850a4146b83e7adb944f5d2c4759cb4b3e",
-        "metadata_sha256": "e9ace30aa300c4c13b49fd9dcfb823c0d18a889fbeee32d3166dbeaed3256526",
-        "source_id": "video_0020",
-        "duration_s": 20,
-        "fps": 30,
-        "frames": 600,
-        "batch": "training_batch1",
-        "expected_labels": {
-          "材料类别": "复材",
-          "断裂结果": "完全断裂",
-          "单一主要破坏类别": "界面脱粘",
-          "断裂位置": "标距内",
-          "夹持异常": "无",
-          "拍摄异常": "无"
-        },
-        "checked_labels": null,
-        "main_final_video_view_completed": false,
-        "independent_review": "pending_full_visual_difference_and_final_metadata",
-        "user_accepted": false,
-        "training_released": false,
-        "style_accepted": false,
-        "parameter_range_accepted": false
-      },
-      {
-        "id": "debond_f1b9bd026fc6",
-        "template": "debond",
-        "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.mp4",
-        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.json",
-        "sha256": "08ce4e7c85d6ade0c370b940b121b80970ee1a83baa0bb9a54ebd05599d04187",
-        "metadata_sha256": "85646f76c85d20640007e310cf756deffd5f3977f34a8a21d3ec9666d95bedcf",
-        "source_id": "video_0020",
-        "duration_s": 20,
-        "fps": 30,
-        "frames": 600,
-        "batch": "training_batch1",
-        "expected_labels": {
-          "材料类别": "复材",
-          "断裂结果": "完全断裂",
-          "单一主要破坏类别": "界面脱粘",
-          "断裂位置": "标距内",
-          "夹持异常": "无",
-          "拍摄异常": "无"
-        },
-        "checked_labels": null,
-        "main_final_video_view_completed": false,
-        "independent_review": "pending_full_visual_difference_and_final_metadata",
-        "user_accepted": false,
-        "training_released": false,
-        "style_accepted": false,
-        "parameter_range_accepted": false
-      },
-      {
-        "id": "debond_f8acebcca850",
-        "template": "debond",
-        "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.mp4",
-        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.json",
-        "sha256": "97108961137d83a4fe0e95c4b486170f882884ac4a02537bf4f214a9da13eeb0",
-        "metadata_sha256": "b713d004506a886d675e018f315f798320b7aba2c2b0f9ac2355c5a831cbd8dd",
-        "source_id": "video_0020",
-        "duration_s": 20,
-        "fps": 30,
-        "frames": 600,
-        "batch": "training_batch1",
-        "expected_labels": {
-          "材料类别": "复材",
-          "断裂结果": "完全断裂",
-          "单一主要破坏类别": "界面脱粘",
-          "断裂位置": "标距内",
-          "夹持异常": "无",
-          "拍摄异常": "无"
-        },
-        "checked_labels": null,
-        "main_final_video_view_completed": false,
-        "independent_review": "pending_full_visual_difference_and_final_metadata",
-        "user_accepted": false,
-        "training_released": false,
-        "style_accepted": false,
-        "parameter_range_accepted": false
-      },
-      {
-        "id": "metal_brittle_24b9f8453ffd",
+        "id": "metal_brittle_5208fef67de7",
         "template": "metal_brittle",
-        "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_24b9f8453ffd/299b1b60ab02fa6d/metal_brittle_24b9f8453ffd.mp4",
-        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_24b9f8453ffd/299b1b60ab02fa6d/metal_brittle_24b9f8453ffd.json",
-        "sha256": "96b7fc198941bf66bb5f570954656ff3305edc125352d301de186c29a40e66af",
-        "metadata_sha256": "f10ecf3b031f6a889bc0f9d1e04bd6c16e316a43a20d010fdae95c4618b4c8e7",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_5208fef67de7/e0d63d0994544642/metal_brittle_5208fef67de7.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_5208fef67de7/e0d63d0994544642/metal_brittle_5208fef67de7.json",
+        "sha256": "22df21c45fe8ecd22c9d0eae507838f8c56ded13dcaa971585285391ce0a0a05",
+        "metadata_sha256": "1f33360a05a9fa9b9454dfe9dad97699a634e3880cfdc9838b65d99890d5076e",
         "source_id": "video_0003",
         "duration_s": 20,
         "fps": 30,
@@ -2685,21 +4222,70 @@
           "拍摄异常": "无"
         },
         "checked_labels": null,
-        "main_final_video_view_completed": false,
-        "independent_review": "pending_full_visual_difference_and_final_metadata",
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
         "user_accepted": false,
         "training_released": false,
         "style_accepted": false,
-        "parameter_range_accepted": false
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+          "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "metal_brittle_8fd177bc37cd",
+        "template": "metal_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_8fd177bc37cd/afbfd0a64e7ecd6c/metal_brittle_8fd177bc37cd.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_8fd177bc37cd/afbfd0a64e7ecd6c/metal_brittle_8fd177bc37cd.json",
+        "sha256": "74fce195156abf7108f65a1d75f74fc5a902de9d731439ef950f770977ae6562",
+        "metadata_sha256": "de9a610aef4c4a56c87a310e2ea90082392a92ca758072e81634dd47df5f397f",
+        "source_id": "video_0003",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+          "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
       },
       {
         "id": "metal_brittle_95bf83c84c0a",
         "template": "metal_brittle",
-        "status": "encoded_technical_checks_pending_view_review_and_visual_difference",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
         "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_95bf83c84c0a/630254443bf4d0f8/metal_brittle_95bf83c84c0a.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_95bf83c84c0a/630254443bf4d0f8/metal_brittle_95bf83c84c0a.json",
         "sha256": "83c1a8bc7f72ceb15434f32d09a43a67bc8552b3974056253a0a3415460ff2c5",
-        "metadata_sha256": "6d4f9cf0d16a5b897a1d489807cb96eb1c5ee5095c3e879bb301b71a8b032878",
+        "metadata_sha256": "017776b31845a0e51fa3f5d83cc99e4a53e42e855c2646575206b8f3bc9dcfc4",
         "source_id": "video_0003",
         "duration_s": 20,
         "fps": 30,
@@ -2714,12 +4300,880 @@
           "拍摄异常": "无"
         },
         "checked_labels": null,
-        "main_final_video_view_completed": false,
-        "independent_review": "pending_full_visual_difference_and_final_metadata",
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
         "user_accepted": false,
         "training_released": false,
         "style_accepted": false,
-        "parameter_range_accepted": false
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+          "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "metal_brittle_c3f0c995c8ef",
+        "template": "metal_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_c3f0c995c8ef/f6429b6982180419/metal_brittle_c3f0c995c8ef.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_c3f0c995c8ef/f6429b6982180419/metal_brittle_c3f0c995c8ef.json",
+        "sha256": "af77f19769bb1cc898025ed6be3c3627f561a722b92161940c2f6df0d2ec713e",
+        "metadata_sha256": "051dc718ec3fec65a543b53af071e6b691b89bfa0565d80d4cc5dcdb983c504b",
+        "source_id": "video_0003",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+          "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "metal_brittle_cc100241b5f7",
+        "template": "metal_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_cc100241b5f7/d57ef5d42534ee45/metal_brittle_cc100241b5f7.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_cc100241b5f7/d57ef5d42534ee45/metal_brittle_cc100241b5f7.json",
+        "sha256": "412cc4be06f6a3c7ae61d86083f1257c7548021cb1e290c9531439333a4eb71e",
+        "metadata_sha256": "861ef4f77b6cb0f480f21368768d6ef30bcb1dd4c3325222350aa80ced87a17c",
+        "source_id": "video_0003",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+          "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "metal_brittle_d113c4e01c83",
+        "template": "metal_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_d113c4e01c83/139b32c24bc6bc14/metal_brittle_d113c4e01c83.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_d113c4e01c83/139b32c24bc6bc14/metal_brittle_d113c4e01c83.json",
+        "sha256": "7eabf55a10f678daae08ffb78838bfb22b0ac2598e4ef7371b0964618b2ee21e",
+        "metadata_sha256": "f77ed5fe9f22a17d3d7144dcdf8f6ef618f62ba43bcaa11ccabb74f7979147ae",
+        "source_id": "video_0003",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+          "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "metal_brittle_dda4b5e6e727",
+        "template": "metal_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_dda4b5e6e727/0ce641ad891eda47/metal_brittle_dda4b5e6e727.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_dda4b5e6e727/0ce641ad891eda47/metal_brittle_dda4b5e6e727.json",
+        "sha256": "6702dfe11b3750f8a3576d05b07190ced9f30b20670b0843030af8137b57fd15",
+        "metadata_sha256": "d9244f377dd742af292a7703065ac2c569f93f470d155e13ababa4b5a1a68d79",
+        "source_id": "video_0003",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_metal_brittle.json",
+          "sha256": "2335fdfff793f5a41f4e55011a8621e8b61de7c50ded4889c234870e73566cc4"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Current JSON comparison still pending despite passed visual evidence; freeze canonical review v2, reapply and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "mixed_2a9499713a2b",
+        "template": "mixed",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_2a9499713a2b/fdac8cf6db4b1b29/mixed_2a9499713a2b.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_2a9499713a2b/fdac8cf6db4b1b29/mixed_2a9499713a2b.json",
+        "sha256": "254007d33fe8222230c9834da013aebebbcab7b9488eeafa9bef979f72716b47",
+        "metadata_sha256": "0ab535b53da1d3c4011659f002e0eac6a771b738bbfad5464b9e0315130211c4",
+        "source_id": "video_0014",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "半脆半韧断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+          "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": false
+      },
+      {
+        "id": "mixed_3568deb2ca33",
+        "template": "mixed",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_3568deb2ca33/a598f754f98dbcae/mixed_3568deb2ca33.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_3568deb2ca33/a598f754f98dbcae/mixed_3568deb2ca33.json",
+        "sha256": "3bd9fa61a5688ac68b3d132ff4b3c46c42f25341f654f78e01115f4d48feb22d",
+        "metadata_sha256": "23879c8804585ee56d912deb0af160092de7a693cc032c7cd5f90f63b0b268a9",
+        "source_id": "video_0014",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "半脆半韧断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+          "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": false
+      },
+      {
+        "id": "mixed_474c4c10ff01",
+        "template": "mixed",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_474c4c10ff01/cbe93e29ae240cfe/mixed_474c4c10ff01.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_474c4c10ff01/cbe93e29ae240cfe/mixed_474c4c10ff01.json",
+        "sha256": "335b929c90bcfc1b8b6aefe376961df258fcc289a8fedf52012bbfb205f57efe",
+        "metadata_sha256": "ba6741bdaeaabb9fdf3e46aa1b60df4d319968618dc83e0bf7fd10529bb19e5c",
+        "source_id": "video_0014",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "半脆半韧断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+          "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": false
+      },
+      {
+        "id": "mixed_6bd6ad919f7f",
+        "template": "mixed",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_6bd6ad919f7f/cde2e69aa79dea52/mixed_6bd6ad919f7f.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_6bd6ad919f7f/cde2e69aa79dea52/mixed_6bd6ad919f7f.json",
+        "sha256": "6ff0a736678a3ac248a3ffd732236ba820c88375000ff23888d72e6c03cd0c0e",
+        "metadata_sha256": "6152ced278381c94f2368b4162bf93d8b51e443132f388f6b9f027cfe1c6bc1a",
+        "source_id": "video_0014",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "半脆半韧断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+          "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": false
+      },
+      {
+        "id": "mixed_8e505bb139b5",
+        "template": "mixed",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_8e505bb139b5/0ae78bbe2cbcc2a9/mixed_8e505bb139b5.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_8e505bb139b5/0ae78bbe2cbcc2a9/mixed_8e505bb139b5.json",
+        "sha256": "284eeda4283811ad34525606263406b0256a5a687fa2bd5fb0921a2adb276e3d",
+        "metadata_sha256": "d0c3790a4fcc7f26ccef41ab7d9968df641e3b807794be9f0e65ed52c19e0750",
+        "source_id": "video_0014",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "半脆半韧断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+          "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": false
+      },
+      {
+        "id": "mixed_b6dd4440bb01",
+        "template": "mixed",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_b6dd4440bb01/d68545a590accaf5/mixed_b6dd4440bb01.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_b6dd4440bb01/d68545a590accaf5/mixed_b6dd4440bb01.json",
+        "sha256": "e8d380e1a86f367a686af4893b601ab57c685d07b5b3f2334b4474f4c433acb5",
+        "metadata_sha256": "2fef673c83d4a9cca5932d01c51fa1c95d56f8e3052e310746e22b43886d44de",
+        "source_id": "video_0014",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "半脆半韧断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+          "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": false
+      },
+      {
+        "id": "mixed_c25215a9fc08",
+        "template": "mixed",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_c25215a9fc08/b5d0e4175e96743c/mixed_c25215a9fc08.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_c25215a9fc08/b5d0e4175e96743c/mixed_c25215a9fc08.json",
+        "sha256": "f0042bb4f7a5dbb7af6e5346a19d28d1bdd996a0c9106b7b78e446b3b3e27de2",
+        "metadata_sha256": "a4018bd36c4fb4203187ac190da6c9dcdbd443fad47cab343c27a5227eaad1a1",
+        "source_id": "video_0014",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "半脆半韧断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+          "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": false
+      },
+      {
+        "id": "mixed_d78ee0af8f98",
+        "template": "mixed",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_d78ee0af8f98/9b9d7e6e89068b74/mixed_d78ee0af8f98.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_d78ee0af8f98/9b9d7e6e89068b74/mixed_d78ee0af8f98.json",
+        "sha256": "9c7913b746e43963235e94e829b5b57cb0f3cb760a9c7657aefde9225d7105fa",
+        "metadata_sha256": "3b1b4dfe1d510ec55a6b44d958b9e9b3ba2f0d9d68a00ed4045f5a1b8c336872",
+        "source_id": "video_0014",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "半脆半韧断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+          "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": false
+      },
+      {
+        "id": "mixed_e4b70b9f11d1",
+        "template": "mixed",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_e4b70b9f11d1/3a7403d5ea862930/mixed_e4b70b9f11d1.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_e4b70b9f11d1/3a7403d5ea862930/mixed_e4b70b9f11d1.json",
+        "sha256": "6130391ab53d1350184b15810928de4dd6254ff5b917416546d05332210aa2b4",
+        "metadata_sha256": "da338432bf78ba82a7602497e32fff215b831d5c7c0f170f2d8866bc53d7cc1b",
+        "source_id": "video_0014",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "半脆半韧断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+          "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": false
+      },
+      {
+        "id": "mixed_f22a4a698822",
+        "template": "mixed",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_f22a4a698822/02de1d955cdbe03f/mixed_f22a4a698822.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_f22a4a698822/02de1d955cdbe03f/mixed_f22a4a698822.json",
+        "sha256": "ca505531d85b6da56c9cf5c3c2d109b7846f8dd38c555da570d59cae3bbd5500",
+        "metadata_sha256": "c9914e00d183e4d9704e4935f18a09a2e0a03505818ece0617629c207dba9196",
+        "source_id": "video_0014",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "半脆半韧断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_mixed.json",
+          "sha256": "8ce57e6992fd77e1721d692266706e9277c6a45ffa3d4b90463367908c32fc1e"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Canonical visual_difference status passed must be adapted to verified using frozen review evidence, then finalize JSON and independently recheck archive."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": false
+      },
+      {
+        "id": "polymer_brittle_527d847f2741",
+        "template": "polymer_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_527d847f2741/c9037aa8bc8a9b75/polymer_brittle_527d847f2741.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_527d847f2741/c9037aa8bc8a9b75/polymer_brittle_527d847f2741.json",
+        "sha256": "a268af6b10b44dc7a620bddf4df2e9df2552a87386ee7df301ac6d36d6ac9f33",
+        "metadata_sha256": "e6a3c5e8d20dc40d33ef0acfef2a1ede194258818f4d9aa5704c5016f0be0ee0",
+        "source_id": "video_0032",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+          "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "polymer_brittle_7c88eeeae51f",
+        "template": "polymer_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_7c88eeeae51f/adfb7bbf8e460c61/polymer_brittle_7c88eeeae51f.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_7c88eeeae51f/adfb7bbf8e460c61/polymer_brittle_7c88eeeae51f.json",
+        "sha256": "91cb141e52d7ed16e4a4f7cd255b978eae50261854d9adb14b6d02842150960f",
+        "metadata_sha256": "e36dc465b906c6475d50df9e17e3d98c4e31ebf124a6fd924b34426aae616bec",
+        "source_id": "video_0032",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+          "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "polymer_brittle_b0cd99f7ae30",
+        "template": "polymer_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b0cd99f7ae30/303aff50310f92bc/polymer_brittle_b0cd99f7ae30.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b0cd99f7ae30/303aff50310f92bc/polymer_brittle_b0cd99f7ae30.json",
+        "sha256": "ca02e8ebcd31b934b5dd4150eb0957132f6231d759ba26095fa292978bcf2e98",
+        "metadata_sha256": "b920dc1de5eefed721bcfa7687a1b7f2746548480d306c42b956dce168db4037",
+        "source_id": "video_0032",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+          "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "polymer_brittle_b9ab8a238e19",
+        "template": "polymer_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b9ab8a238e19/513abd4d2ec8acf4/polymer_brittle_b9ab8a238e19.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b9ab8a238e19/513abd4d2ec8acf4/polymer_brittle_b9ab8a238e19.json",
+        "sha256": "2fef41e0911eafafbf6a5a13d532128cd63d44b62315659fc420af747cbac6ae",
+        "metadata_sha256": "85ecde9befe6abe8e30c3f665aa379246e8bbe43303955fdda26c81f533099cb",
+        "source_id": "video_0032",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+          "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "polymer_brittle_bcfe3a307376",
+        "template": "polymer_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_bcfe3a307376/e1783fa01c4f150d/polymer_brittle_bcfe3a307376.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_bcfe3a307376/e1783fa01c4f150d/polymer_brittle_bcfe3a307376.json",
+        "sha256": "6763dcb6a9b740f39566f5b2d2bf1671aaf3261fdb09c1fc90fb508332f810b5",
+        "metadata_sha256": "229e6c65b9aeb73d32ae9421a1186da7b1443d690b6c2b03dec88e1f66ab8f59",
+        "source_id": "video_0032",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+          "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "polymer_brittle_e2c15b3c1473",
+        "template": "polymer_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_e2c15b3c1473/44d4b2b618c005d7/polymer_brittle_e2c15b3c1473.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_e2c15b3c1473/44d4b2b618c005d7/polymer_brittle_e2c15b3c1473.json",
+        "sha256": "eca11870a7692c158707fd70794f610628dd512e9b2a1d18ad348919ce6861f9",
+        "metadata_sha256": "80b8f26bc7ccd257fa3678c588a895da3536de94c4167022bca03067002c6f3b",
+        "source_id": "video_0032",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+          "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "polymer_brittle_ea23f4e39317",
+        "template": "polymer_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_ea23f4e39317/aee88dd89417680a/polymer_brittle_ea23f4e39317.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_ea23f4e39317/aee88dd89417680a/polymer_brittle_ea23f4e39317.json",
+        "sha256": "31a66f4d51a74ff45f6a1020c6ec34d276b38b27965b13075c07c657fb657133",
+        "metadata_sha256": "65fd038e6fca8b2b227c5cd14dd26a4d7fdd5c29064ef68d430a5d5a0fb31975",
+        "source_id": "video_0032",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+          "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
+      },
+      {
+        "id": "polymer_brittle_f89aa7bc8961",
+        "template": "polymer_brittle",
+        "status": "encoded_material_review_passed_pending_final_metadata_archive_review",
+        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_f89aa7bc8961/5d3bd34030557d9f/polymer_brittle_f89aa7bc8961.mp4",
+        "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_f89aa7bc8961/5d3bd34030557d9f/polymer_brittle_f89aa7bc8961.json",
+        "sha256": "a86e083a3ca8df61ee84a262965dc746e5b52291cda91883aeb6fe0c24ca82b5",
+        "metadata_sha256": "b02e2e2264006cecfbb063026707a15158a63ace0de7fd24d0641afa61a00a89",
+        "source_id": "video_0032",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "batch": "training_batch1",
+        "expected_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "checked_labels": null,
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_material_and_label_review; final_metadata_archive_review_incomplete",
+        "user_accepted": false,
+        "training_released": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "main_agent_view_record": {
+          "path": "../_work/training-batch1-20261009-fastcheck/review/main_video_view_polymer_brittle.json",
+          "sha256": "65c8a4e79aea99049d1b020abb22be76021dada63796930b3ccd4e2cf0637421"
+        },
+        "material_and_label_review_completed": true,
+        "pending_reasons": [
+          "Finalizer applied eight actual JSONs successfully; independent actual metadata archive recheck not yet run."
+        ],
+        "review_execution_blocker": "Independent reviewer turn failed with account usage limit; no replacement independent review claimed.",
+        "metadata_finalizer_applied": true
       }
     ],
     "unmodified_film_regression": "failed_numeric_gap_guard; legacy_float32_residual_diagnosed; full_old_new_regression_not_completed; excluded_from60",
@@ -2789,6 +5243,21 @@
       "progress_record": "../_work/training-batch1-20261009-fastcheck/execution/execution_checks.json"
     },
     "rendering_jobs": 4,
-    "technical_encoded_pending_review_count": 12
+    "technical_encoded_pending_review_count": 26,
+    "technical_pending_review_count": 26,
+    "render_final_summary": "../_work/training-batch1-20261009-fastcheck/comparison-runs/render-final-summary.json",
+    "main_final_video_view_completed_count": 38,
+    "rendering_status": "complete",
+    "independent_material_and_label_review_completed_count": 38,
+    "final_metadata_review_blocker": {
+      "status": "blocked_by_independent_reviewer_account_usage_limit",
+      "affected_candidate_count": 26,
+      "resume_steps": [
+        "Freeze metal canonical review v2; reapply eight JSONs and consume actual archive proofs.",
+        "Independently recheck eight polymer actual applied metadata/archive proofs.",
+        "Normalize mixed canonical visual_difference using frozen sixteen-pair evidence; finalize ten JSONs and independently recheck actual archive proofs."
+      ],
+      "existing_protected_reports_unchanged": true
+    }
   }
 }

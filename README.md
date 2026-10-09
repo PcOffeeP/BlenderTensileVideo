@@ -16,19 +16,30 @@
 
 ### 首批新增训练视频设计
 
-[首批新增训练视频设计](docs/training-batch1-design.md)用于下一阶段制作与下游输入准备。用户已确认新增约60条、按有效行为空间分配（金属20、高分子28、复材10、陶瓷2），以及在已接受端点之间选取新的离散档位。文档列出具体候选、资格／组合检查、逐片接受与标签交付边界。用户已于2026-10-09授权开始实施；有限参数入口与冻结配置已完成，107个配置的作者侧检查已完成；隔离检查已完成：107个当前节点中81项通过、10项失败、16项因失败依赖未执行；25项旧源均实际检查600帧，20项通过、5项失败。已编码2条陶瓷候选，完成主观看与独立材料／标签复核，配套JSON已修订并通过一致性复核，现有2条待逐条验收。执行与检查证据保存在`_work/training-batch1-20261009/`，已生成候选的路径和当前状态记录在index中。现有27条作为参考，不靠重复渲染计入新增数量；实际交付由通过检查与接受的配置决定。
+[首批新增训练视频设计](docs/training-batch1-design.md)用于下一阶段制作与下游输入准备。用户已确认新增约60条、按有效行为空间分配（金属20、高分子28、复材10、陶瓷2），以及在已接受端点之间选取新的离散档位。文档列出具体候选、资格／组合检查、逐片接受与标签交付边界。用户已于2026-10-09授权开始实施；有限参数入口与冻结配置已完成，107个配置的作者侧检查已完成；隔离检查已完成：107个当前节点中81项通过、10项失败、16项因失败依赖未执行；25项旧源均实际检查600帧，20项通过、5项失败。已编码38条候选，逐片主观看及独立材料／标签复核已完成；其中12条最终JSON及归档复验通过，待逐条验收，另26条仍有元数据收尾缺项。执行与检查证据保存在`_work/training-batch1-20261009/`，已生成候选的路径和当前状态记录在index中。现有27条作为参考，不靠重复渲染计入新增数量；实际交付由通过检查与接受的配置决定。
 
-当前检查阻塞：狗骨旧0.85配置及部分新增资格配置未通过严格负间隙门禁，相关候选暂不渲染；既有浮点累积残差的诊断与限定事件帧处理提案已完成独立复核，容差与几何尚未改变。未修改的薄膜分支同样保留失败，不计入新增60条。其余模板继续推进。批量交叉积计算已通过独立等价审查，已在隔离执行目录启用，已对适用节点完成实际600帧检查（当前91项、旧源25项，另16项依赖阻断未执行），旧证据与两条陶瓷待验收文件保留。是否采用限定首断帧精度认证等待用户确认；金属韧断两组旧版回归另因实际体积上界约1.00636超过冻结门限1.0052而失败，正在核对门限依据与测量记录；其12条候选暂被完整模板回归阻断。连同狗骨10条，保持当前门禁时本批上限为38条，其他模板仍须各自检查。[金属体积独立复核](_work/training-batch1-20261009-fastcheck/review/metal_volume_review.json)确认是实际开口区几何近似，未发现测量接线问题；是否允许确切历史回归例外或改变体积判据等待用户确认。旧源25项已完成实际600帧检查，20项通过、5项失败；当前检查已经结束，通过模板改为4路渲染；编码成片逐条完成主观看、完整差异参照和独立标签复核。
+当前检查阻塞：狗骨旧0.85配置及部分新增资格配置未通过严格负间隙门禁，相关候选暂不渲染；既有浮点累积残差的诊断与限定事件帧处理提案已完成独立复核，容差与几何尚未改变。未修改的薄膜分支同样保留失败，不计入新增60条。其余模板继续推进。批量交叉积计算已通过独立等价审查，已在隔离执行目录启用，已对适用节点完成实际600帧检查（当前91项、旧源25项，另16项依赖阻断未执行），旧证据与两条陶瓷待验收文件保留。是否采用限定首断帧精度认证等待用户确认；金属韧断两组旧版回归另因实际体积上界约1.00636超过冻结门限1.0052而失败，已完成门限依据与测量记录独立核对；其12条候选暂被完整模板回归阻断。连同狗骨10条，保持当前门禁时本批上限为38条，其他模板仍须各自检查。[金属体积独立复核](_work/training-batch1-20261009-fastcheck/review/metal_volume_review.json)确认是实际开口区几何近似，未发现测量接线问题；是否允许确切历史回归例外或改变体积判据等待用户确认。旧源25项已完成实际600帧检查，20项通过、5项失败；当前检查与4路渲染已经结束；38条均完成主观看，60组所需精确差异参照均已由独立复核逐组查看。
 
-当前已编码14条，其中陶瓷2条已完成复核待验收，另12条新成片仍在完成观看／差异与标签复核，具体路径及状态见index；未复核成片不进入待验收清单。
+当前已编码38条（陶瓷2、金属脆断8、高分子脆断8、半脆半韧10、复材脆断4、同步脱粘6），均为20秒、600帧、30fps且完整解码通过；38条均完成主Agent逐片观看和独立材料／标签复核。陶瓷2、复材脆断4及同步脱粘6，共12条最终JSON及归档复验通过，列入待验收。其余26条暂不进入待验收：金属8条当前JSON的比较状态仍需与已通过的独立报告统一后复验；高分子脆断8条JSON已实际修订，待独立归档复验；半脆半韧10条待规范报告比较字段、修订JSON及归档复验。独立reviewer续接已收到账号用量限制，这部分未完成；恢复后按index记录继续，不重渲染已完成成片。所有旧报告与证明保留，复材曾发现的共享汇总依赖缺口已通过v2固定逐配对证据修复。
 
-首批当前待验收（均20秒、600帧，未收录current、未训练发布）：
+首批当前12条待验收（均20秒、600帧，未收录current、未训练发布）：
 
 | 候选 | 核验标签 | 文件 |
 |---|---|---|
 | 陶瓷13秒失贯通 | 陶瓷／完全断裂／脆性断裂／标距内／无夹持与拍摄异常 | [视频](_work/training-batch1-20261009/execution/runs/ceramic_fafb6d038402/321ad3776c4157e1/ceramic_fafb6d038402.mp4) · [JSON](_work/training-batch1-20261009/execution/runs/ceramic_fafb6d038402/321ad3776c4157e1/ceramic_fafb6d038402.json) |
 | 陶瓷15秒失贯通 | 陶瓷／完全断裂／脆性断裂／标距内／无夹持与拍摄异常 | [视频](_work/training-batch1-20261009/execution/runs/ceramic_54c9123982ca/a99ea32b123b992f/ceramic_54c9123982ca.mp4) · [JSON](_work/training-batch1-20261009/execution/runs/ceramic_54c9123982ca/a99ea32b123b992f/ceramic_54c9123982ca.json) |
+| 复材脆断 40de05bc8db6 | 复材／完全断裂／脆性断裂／标距外非根部／无／无 | [视频](_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_40de05bc8db6/cf31a152fc1a013c/composite_brittle_40de05bc8db6.mp4) · [JSON](_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_40de05bc8db6/cf31a152fc1a013c/composite_brittle_40de05bc8db6.json) |
+| 复材脆断 71add4d43545 | 复材／完全断裂／脆性断裂／标距外非根部／无／无 | [视频](_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_71add4d43545/4b01eabc2cde4b14/composite_brittle_71add4d43545.mp4) · [JSON](_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_71add4d43545/4b01eabc2cde4b14/composite_brittle_71add4d43545.json) |
+| 复材脆断 85e1faca3a2f | 复材／完全断裂／脆性断裂／标距外非根部／无／无 | [视频](_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.mp4) · [JSON](_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.json) |
+| 复材脆断 f8c38a77a63d | 复材／完全断裂／脆性断裂／标距外非根部／无／无 | [视频](_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.mp4) · [JSON](_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.json) |
+| 同步脱粘 19ad315937d9 | 复材／完全断裂／界面脱粘／标距内／无／无 | [视频](_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.mp4) · [JSON](_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.json) |
+| 同步脱粘 3a83e6589f3c | 复材／完全断裂／界面脱粘／标距内／无／无 | [视频](_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.mp4) · [JSON](_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.json) |
+| 同步脱粘 633abced1e80 | 复材／完全断裂／界面脱粘／标距内／无／无 | [视频](_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.mp4) · [JSON](_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.json) |
+| 同步脱粘 9a6e9873f857 | 复材／完全断裂／界面脱粘／标距内／无／无 | [视频](_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.mp4) · [JSON](_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.json) |
+| 同步脱粘 f1b9bd026fc6 | 复材／完全断裂／界面脱粘／标距内／无／无 | [视频](_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.mp4) · [JSON](_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.json) |
+| 同步脱粘 f8acebcca850 | 复材／完全断裂／界面脱粘／标距内／无／无 | [视频](_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.mp4) · [JSON](_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.json) |
 
+材料与微观机制、本构参数、来源正式标距及精确首次肉眼可判分离仍按JSON记录未知。部分离散差异在原生分辨率下细微，未保证下游降采样可区分或训练收益。原27条已接受视频与JSON本次逐字节校验保持。
 
 ### 第一阶段已接受组合视频
 
