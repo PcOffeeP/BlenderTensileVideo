@@ -2048,11 +2048,14 @@
       },
       {
         "template": "metal_ductile",
-        "status": "strict_volume_envelope_regression_failed_diagnostic_in_progress",
+        "status": "strict_volume_regression_failed_policy_pending_confirmation",
         "affected_candidate_count": 12,
         "measured_volume_upper_ratio_approx": 1.0063646,
         "frozen_upper_bound": 1.0052,
-        "scope": "Two old-source finite regression gates failed; all12 metal ductile candidates blocked by complete template regression. No tolerance or geometry change authorized."
+        "scope": "Two old-source finite regression gates failed; all12 metal ductile candidates blocked by complete template regression. No tolerance or geometry change authorized.",
+        "independent_review": "../_work/training-batch1-20261009-fastcheck/review/metal_volume_review.json",
+        "diagnostic": "../_work/training-batch1-20261009-fastcheck/checks/metal_volume_diagnostic/summary.json",
+        "exception_implemented": false
       }
     ],
     "optimized_execution_directory": "../_work/training-batch1-20261009-fastcheck/",
@@ -2071,6 +2074,14 @@
       "migration_manifest": "../_work/training-batch1-20261009-fastcheck/migration_manifest.json",
       "current_configuration_count": 107,
       "old_source_regression_configuration_count": 25
+    },
+    "old_source_regression_execution": {
+      "status": "complete_with_strict_failures",
+      "actual_600_frame_configurations": 25,
+      "passed": 20,
+      "failed": 5,
+      "blocked": 0,
+      "progress_record": "../_work/training-batch1-20261009-fastcheck/execution/execution_regression-checks.json"
     }
   }
 }
