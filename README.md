@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-2026-10-08，当前 **十一条20秒基础视频已由用户接受并收录**：金属3条、高分子4条、复材3条、陶瓷1条。新金属平板按原候选SHA收录，视频字节保持。高分子半脆半韧已按用户补充的项目视觉判据确认当前样片；新版复材广自由段分束候选已被用户否定，爆炸性断裂生成暂停；旧局部型及其他已接受视频继续保留。样式与连续参数范围、训练发布分别记录，六组生成/验收标签不替代下游训练字段。
+2026-10-09，当前 **十一条20秒基础视频已由用户接受并收录，另有九条第一阶段单参数变体待用户验收**。已接受基础片分布为金属3条、高分子4条、复材3条、陶瓷1条；新变体分布为金属2条、高分子3条、复材3条、陶瓷1条。新金属平板按原候选SHA收录，视频字节保持。高分子半脆半韧已按用户补充的项目视觉判据确认当前样片；新版复材广自由段分束候选已被用户否定，爆炸性断裂生成暂停；旧局部型及其他已接受视频继续保留。样式与连续参数范围、训练发布分别记录，六组生成/验收标签不替代下游训练字段。
 
 用户要求废弃的本轮错误7秒圆棒诊断，其视频、场景、实现与论文调查过程已删除，失效链接与索引已清除。此前收集的原始资料保留。
 
@@ -12,7 +12,29 @@
 
 ## 当前成果
 
-2026-10-09，用户确认第一阶段围绕断前伸长、金属颈缩、同类别内破坏位置、事件时序与同步脱粘展开离散变体设计。关键规则归入全局DESIGN，候选值、测量定义及实现检查要求见 [第一阶段断裂参数专项设计](docs/fracture-variation-stage1.md)。这是参数设计确认，尚未完成参数入口实现、新变体制作、范围核验或训练发布；已有十一条成片与爆炸性暂停状态保持。
+2026-10-09，用户确认第一阶段围绕断前伸长、金属颈缩、同类别内破坏位置、事件时序与同步脱粘展开离散变体设计。关键规则归入全局DESIGN，候选值、测量定义及实现检查要求见 [第一阶段断裂参数专项设计](docs/fracture-variation-stage1.md)。参数入口和九条单参数变体已完成制作及适用检查，均为20秒、30fps、600帧，独立复核及主Agent成片查看已完成，等待逐条效果与标签验收；连续范围、耦合组合和训练发布仍未批准。已有十一条成片与爆炸性暂停状态保持。
+
+### 第一阶段单参数候选
+
+| 候选 | 单一变化 | 主要类别／位置 | 文件（20秒） |
+|---|---|---|---|
+| 金属韧断：较弱颈缩 | A：4→2 | 韧性断裂／标距内 | [视频](_work/fracture-stage1-20261009/metal/ductile_a2/metal_round_ductile_stage1_a2_v1.mp4) · [JSON](_work/fracture-stage1-20261009/metal/ductile_a2/metal_round_ductile_stage1_a2_v1.json) |
+| 金属脆断：标距内偏移 | 破坏中心：0→+0.75 | 脆性断裂／标距内 | [视频](_work/fracture-stage1-20261009/metal/brittle_center_p075/metal_round_brittle_stage1_center_p075_v1.mp4) · [JSON](_work/fracture-stage1-20261009/metal/brittle_center_p075/metal_round_brittle_stage1_center_p075_v1.json) |
+| 高分子韧断：较小伸长 | 伸长增量×0.85 | 韧性断裂／标距内 | [视频](_work/fracture-stage1-20261009/polymer/dogbone_stretch085/polymer_black_dogbone_stage1_stretch085_v1.mp4) · [JSON](_work/fracture-stage1-20261009/polymer/dogbone_stretch085/polymer_black_dogbone_stage1_stretch085_v1.json) |
+| 高分子脆断：标距内偏移 | 破坏材料分数：0.50→0.55 | 脆性断裂／标距内 | [视频](_work/fracture-stage1-20261009/polymer/brittle_position055/polymer_brittle_stage1_position055_v1.mp4) · [JSON](_work/fracture-stage1-20261009/polymer/brittle_position055/polymer_brittle_stage1_position055_v1.json) |
+| 高分子半脆半韧：较大伸长 | 伸长增量×1.15 | 半脆半韧断裂／标距内 | [视频](_work/fracture-stage1-20261009/polymer/mixed_stretch115/polymer_mixed_stage1_stretch115_v1.mp4) · [JSON](_work/fracture-stage1-20261009/polymer/mixed_stretch115/polymer_mixed_stage1_stretch115_v1.json) |
+| 复材脆断：低位偏移 | 破坏中心：−1.83→−1.95 | 脆性断裂／标距外非根部 | [视频](_work/fracture-stage1-20261009/composite/composite_brittle_stage1_position_minus012_v1/composite_brittle_stage1_position_minus012_v1.mp4) · [JSON](_work/fracture-stage1-20261009/composite/composite_brittle_stage1_position_minus012_v1/composite_brittle_stage1_position_minus012_v1.json) |
+| 复材同步脱粘：较短范围 | 脱粘长度×0.8 | 界面脱粘／标距内 | [视频](_work/fracture-stage1-20261009/composite/composite_debond_stage1_length080_v1/composite_debond_stage1_length080_v1.mp4) · [JSON](_work/fracture-stage1-20261009/composite/composite_debond_stage1_length080_v1/composite_debond_stage1_length080_v1.json) |
+| 复材同步脱粘：较大开口 | 界面开口×1.2 | 界面脱粘／标距内 | [视频](_work/fracture-stage1-20261009/composite/composite_debond_stage1_opening120_v1/composite_debond_stage1_opening120_v1.mp4) · [JSON](_work/fracture-stage1-20261009/composite/composite_debond_stage1_opening120_v1/composite_debond_stage1_opening120_v1.json) |
+| 陶瓷脆断：较早断裂 | 最终失去贯通：16→12秒 | 脆性断裂／标距内 | [视频](_work/fracture-stage1-20261009/ceramic/time12/ceramic_brittle_stage1_time12_v1.mp4) · [JSON](_work/fracture-stage1-20261009/ceramic/time12/ceramic_brittle_stage1_time12_v1.json) |
+
+每条同名JSON区分完整配置、来源、作者假设、实际测量、六组预期／核验标签和验收范围。九条均保留为`_work`候选；未收录到current。复材脱粘与断裂仍同时开始。半脆半韧伸长测量扣除裂缝开口，最后连接前增量比例约1.14999934。
+
+[整段视频V4.1标签预览](_work/fracture-stage1-20261009/labels.v4_1.preview.jsonl)已对照实际下游`pipeline/contracts/tensile_vlm_v4_1.json`核验字段和值，并通过其既有验证器：`clip_state`、`fracture_mechanism`、`fracture_site`、`special_case`。这些20秒整段均包含破坏事件，预览状态为“发生断裂”。材料身份与精确事件时间仍保存在模拟JSON；预览不是已发布训练集，未来切片须按实际区间重新标注，未更改切片规则或绑定训练prompt发布版本。
+
+新入口默认回归覆盖各适用分支600帧；九候选各完成实际求值检查及最终完整解码。[独立复核](_work/fracture-stage1-20261009/review/stage1_final_review.md)限定于这些离散定性视频。金属圆棒沿用已接受基准的重合界面几何连接，几何焊接检查与原生共享索引连接分别记录；不将其写成原生单网格连接。没有进行一般三角网格自交求解或本构标定。高分子大伸长的1.15倍与原位置、时间及固定相机组合因机架出框被阻断，未生成可用候选；这不影响另一模板的半脆半韧1.15倍。
+
+### 已接受基础视频
 
 已接受的十一条原成片按字节校验值收录，原来源、配置及核验范围保持。旧七条JSON的早期 pending 文本保留为历史核验记录，并依据已有独立复核、主Agent观看与用户接受记录追加当前状态澄清，不将定性视觉接受写成机制证明。旧脱粘版本先脱粘后断裂，已被本次用户纠正撤销，不再作为待验收成片。
 
@@ -34,7 +56,7 @@
 
 video_0050陶瓷身份由用户确认；原表“其他(无机非)/视频异常”保持。源视频可见逐渐发展的横向裂纹，末态完整分离和具体事件时间缺少直接证据。陶瓷初版的完整脆断为作者定性扩展，材料牌号、微观机制及本构参数未知；不能当成源视频逐帧复现。
 
-金属增加颈缩控制 `--neck-local-stretch-amplitude`，默认4.0保留已接受效果，局部轴向伸长、截面及加载端位置耦合计算。较弱2.0仅生成关键状态并核验；默认值与原场景38帧比对通过浮点容差。工程守卫 `0 < A ≤ 4.0` 不表示连续范围已批准，接受的原成片仍为1.0.1配置。
+金属颈缩控制 `--neck-local-stretch-amplitude` 默认4.0保留已接受效果，局部轴向伸长、截面及加载端位置耦合计算。第一阶段较弱2.0已制作完整待验收视频，新默认与已接受烘焙场景600帧坐标、拓扑及夹具保持一致。工程守卫 `0 < A ≤ 4.0` 不表示连续范围已批准，接受的原成片仍为1.0.1配置。
 
 ## 基础模板覆盖与本轮补充
 
@@ -87,7 +109,9 @@ video_0050陶瓷身份由用户确认；原表“其他(无机非)/视频异常�
 - [x] 爆炸性0.2完成技术检查与主Agent播放，但用户否定视觉效果，撤销类别通过结论。
 - [x] 记录0.2候选拒绝并暂停爆炸性生成，不再列为待验收。
 - [x] 确认第一阶段断裂参数设计及全局／专项文档分层规则。
-- [ ] 按专项设计补齐参数入口，核对固定基准版本并制作单参数离散候选，逐条检查效果与标签；通过后验证耦合组合。
+- [x] 按专项设计补齐适用参数入口，完成固定基准600帧回归与九条单参数候选的逐帧检查、编码、独立复核和主Agent成片查看。
+- [x] 输出与实际下游V4.1接口相符的整段标签预览，保持六组模拟标签与训练字段区分。
+- [ ] 用户逐条确认九条候选效果与标签，接受后收录；随后检查已通过离散参数的耦合组合。
 - [ ] 补足未确认机制的行为依据；不以参数设计确认替代适用范围核验或训练发布。
 
 实际求值检查覆盖夹口连接、连通性、事件时序、同一材料段长度/截面/适用体积、断后停止或衰减、间隙与局部穿透；最终编码核对帧数/时间及JSON。独立复核结论适用于各离散定性候选，不是本构标定、微观机制证明、连续参数批准或训练发布。未进行全三角网格自交求解，详细范围与局限记录在JSON。

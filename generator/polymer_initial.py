@@ -1,4 +1,4 @@
-"""Source-constrained qualitative polymer candidates, implementation 1.1.1.
+"""Source-constrained qualitative polymer candidates, implementation 1.2.0.
 
 Blender --background --python generator/polymer_initial.py -- --style dogbone|film
   --out <directory> [--keys-only]
@@ -6,19 +6,27 @@ Uses no files in _work; renders frames and evaluated-mesh measurements.
 Specific material constitutive properties are unknown. This is author-controlled
 geometry animation, not calibrated mechanics or approval of a parameter range.
 """
-import bpy, math, json, sys, argparse
+import bpy, math, json, sys, argparse, hashlib, struct
 from pathlib import Path
 from mathutils import Vector
 from bpy_extras.object_utils import world_to_camera_view
 
-VERSION = 'polymer-initial/1.1.1'
+VERSION = 'polymer-initial/1.2.0'
 ap=argparse.ArgumentParser(); ap.add_argument('--style',choices=['dogbone','film'],required=True)
 ap.add_argument('--out',required=True); ap.add_argument('--keys-only',action='store_true')
+ap.add_argument('--checks-only',action='store_true')
+ap.add_argument('--stretch-increment-factor',type=float,choices=[.85,1.,1.15],default=1.)
+ap.add_argument('--fracture-material-fraction',type=float,default=None)
+ap.add_argument('--event-time-s',type=float,choices=[12.,15.,16.,17.],default=16.)
 args=ap.parse_args(sys.argv[sys.argv.index('--')+1:]); out=Path(args.out); out.mkdir(parents=True,exist_ok=True)
-film=args.style=='film'; N=180; K=12 if film else 90; fps=30; rupture=16.0
+film=args.style=='film'; N=180; fps=30; rupture=args.event_time_s
+if film and (args.stretch_increment_factor!=1. or args.fracture_material_fraction is not None or rupture!=16.): ap.error('stage1 parameters apply only to dogbone; film keeps its accepted fixed configuration')
+fraction=12/N if film else (.5 if args.fracture_material_fraction is None else args.fracture_material_fraction)
+if not film and (not math.isfinite(fraction) or not .4<=fraction<=.6 or abs(fraction*N-round(fraction*N))>1e-7): ap.error('dogbone fracture fraction must be a material ring in [0.4,0.6], inside authored gauge')
+K=round(fraction*N); EVENT=round(rupture*fps)+1; STOP=rupture+2.5
 cfg={'implementation_version':VERSION,'style':args.style,'duration_s':20,'fps':fps,'resolution':[960,540],
- 'rupture_s':rupture,'end_motion_s':18.5,'axis':'Z','fixed_end':'lower','loading_end':'upper',
- 'rest_exposed_span_author_units':3.0 if film else 2.8,'max_local_axial_stretch':2.05 if film else 3.0,
+ 'rupture_s':rupture,'end_motion_s':STOP,'axis':'Z','fixed_end':'lower','loading_end':'upper',
+ 'rest_exposed_span_author_units':3.0 if film else 2.8,'max_local_axial_stretch':2.05 if film else 1+2*args.stretch_increment_factor,
  'film_uniform_width':0.46,'dogbone_gauge_width':0.26,'dogbone_end_width':0.70,
  'thickness_author_units':0.024 if film else 0.075,'initial_grip_embed':0.20,
  'post_relaxation_gauge_stretch':1.85 if film else 1.18,'camera_fixed':True,'camera_position':[3,-25,4.6],'camera_target':[0,0,2.45],'orthographic_scale':18.0,
@@ -36,7 +44,7 @@ cfg={'implementation_version':VERSION,'style':args.style,'duration_s':20,'fps':f
  'hollow_sleeve_outer_section':[.60,.78],'hollow_sleeve_inner_section':[.32,.52],
  'hollow_sleeve_height':.64,'nominal_guide_clearance_per_side':.01,
  'scope':'qualitative load path and guide geometry; no calibrated machine actuator or stress model'},
- 'motion_configuration':{'loading_curve':'smoothstep(t/16)','unload_curve':'smoothstep(tau/.45)',
+ 'motion_configuration':{'loading_curve':f'smoothstep(t/{rupture})','unload_curve':'smoothstep(tau/.45)',
  'finite_motion_duration_s':2.5,'fade':'exp(-1.65*tau)*smoothstep((2.5-tau)/.65)',
  'upper_bend_radian_amplitude':2.2 if film else .36,'upper_bend_angular_frequency':7.5,
  'lower_bend_radian_amplitude':0 if film else .38,'lower_bend_angular_frequency':8,
@@ -45,12 +53,23 @@ cfg={'implementation_version':VERSION,'style':args.style,'duration_s':20,'fps':f
  'transverse_scale':'inverse square root of local axial stretch','cross_section_orientation':'local centerline tangent normal'},
  'range_status':'only this discrete candidate; not calibrated physics or approved continuous range'}
 
+cfg['stage1']={'stretch_increment_factor':args.stretch_increment_factor,'stretch_increment_definition':'lambda_candidate-1=k*(lambda_baseline-1)','baseline_max_local_axial_stretch':2.05 if film else 3.,'fracture_material_fraction':fraction,'authored_gauge_fraction':[.23,.77] if not film else None,'gauge_marker_rings':[54,126] if not film else [30,150],'first_topology_split_frame':EVENT,'first_crack_pre_frame':EVENT-1,'final_connected_pre_frame':EVENT-1,'post_motion_stop_frame':round(STOP*fps)+1,'engineering_position_guard':[.4,.6] if not film else None,'source_formal_gauge':'unknown','scope':'dogbone only; discrete factors .85/1/1.15 and event12/15/17;16s default regression; ring-grid position guard is not range approval','baseline_implementation_version':'polymer-initial/1.1.1','film_stage1_parameters_open':False}
+
 def smooth(x): x=max(0.,min(1.,x)); return x*x*(3-2*x)
 def mask(u):
  if film: return smooth((u-.065)/.045)*smooth((.935-u)/.045)
  return smooth((u-.10)/.13)*smooth((.90-u)/.13)
 def width0(u): return .46 if film else .70-.44*mask(u)
 REST=cfg['rest_exposed_span_author_units']+.4
+# Preserve the baseline frame; extra selected loading travel requires equal fixed
+# rail/top-member extension so the moving guides retain the original clearance.
+base_span=sum(REST/N*((1+2*mask(i/N))+(1+2*mask((i+1)/N)))/2 for i in range(N))
+selected_span=sum(REST/N*((1+(cfg['max_local_axial_stretch']-1)*mask(i/N))+(1+(cfg['max_local_axial_stretch']-1)*mask((i+1)/N)))/2 for i in range(N))
+frame_extension=max(0.,selected_span-base_span) if not film else 0.
+cfg['machine_connection']['fixed_frame_extension_for_selected_loading_travel']=frame_extension
+cfg['machine_connection']['guide_rail_size'][2]+=frame_extension
+cfg['machine_connection']['guide_rail_z_center']+=frame_extension/2
+cfg['machine_connection']['fixed_top_crossmember_z']+=frame_extension
 def calc(t):
  p=smooth(t/rupture); broken=t>=rupture
  tau=max(0.,t-rupture); unload=smooth(tau/.45) if broken else 0
@@ -132,11 +151,11 @@ for end in ['lower','upper']:
  for x in [-.36,.36]:
   bpy.ops.mesh.primitive_cylinder_add(vertices=24,radius=.075,depth=.055,location=(x,-.47,0),rotation=(math.pi/2,0,0))
   ob=bpy.context.object; ob.name=end+'_jaw_bolt'; ob.data.materials.append(dark); jaws.append((ob,end,-.47))
-rails=[box('left_test_frame',(-2.35,.6,2.525),(.3,.5,9.25),steel),
- box('right_test_frame',(2.35,.6,2.525),(.3,.5,9.25),steel)]
+rails=[box('left_test_frame',(-2.35,.6,2.525+frame_extension/2),(.3,.5,9.25+frame_extension),steel),
+ box('right_test_frame',(2.35,.6,2.525+frame_extension/2),(.3,.5,9.25+frame_extension),steel)]
 box('lab_backdrop',(0,1.4,2.2),(13,.15,14),mat('backdrop',(.48,.52,.56)))
 base=box('test_base',(0,.4,-2.1),(5.4,1.4,.3),dark)
-fixed_crossmember=box('top_crossmember',(0,.4,7.15),(5.3,.7,.35),dark)
+fixed_crossmember=box('top_crossmember',(0,.4,7.15+frame_extension),(5.3,.7,.35),dark)
 caps={end:box(end+'_grip_cap',(0,0,0),(1.12,.95,.14),dark) for end in ['lower','upper']}
 def rod(name):
  bpy.ops.mesh.primitive_cylinder_add(vertices=32,radius=.12,depth=1,location=(0,0,0))
@@ -249,25 +268,37 @@ def measure(frame):
  for ob in mechanism:
   oe=ob.evaluated_get(dg); om=oe.to_mesh(); projected += [world_to_camera_view(scene,camera,ob.matrix_world@p.co) for p in om.vertices]; oe.to_mesh_clear()
  framing=[min(p.x for p in projected),max(p.x for p in projected),min(p.y for p in projected),max(p.y for p in projected)]
- result={'machine_connections':machine_measurements(dg,v[0][2],v[4*N][2]),'projected_specimen_jaw_and_machine_bounds':framing,'all_specimen_and_jaws_inside_frame':all(0<=x<=1 for x in framing),'frame':frame,'time_s':t,'measured_components':len(g),'volume_author_units3':volume,'material_arc_length':arc,
+ g0,g1=cfg['stage1']['gauge_marker_rings']; gauge=sum((rings[i+1]-rings[i]).length for i in range(g0,g1)) if t<rupture else None
+ sections=[]
+ for i in range(g0,g1+1):
+  if abs(i-K)<=1:continue
+  pp=[m.vertices[4*i+j].co for j in range(4)]; aa=(pp[1]-pp[0]).cross(pp[3]-pp[0]).length
+  sections.append({'material_ring':i,'material_fraction':i/N,'area':aa,'area_ratio_to_same_initial_section':aa/(width0(i/N)*cfg['thickness_author_units'])})
+ result={'same_material_gauge_arc_length':gauge,'gauge_length_ratio':gauge/(REST*(g1-g0)/N) if gauge is not None else None,'complete_material_sections_excluding_fracture_rings':sections,'minimum_complete_section_ratio':min(q['area_ratio_to_same_initial_section'] for q in sections),'fracture_section_area_available':t<rupture,'actual_fracture_material_fraction':K/N,'actual_initial_fracture_material_fraction_from_ring_centroid':(rings[K].z-rings[0].z)/(rings[N].z-rings[0].z) if frame==1 else None,'material_graph_grip_path_exists':any(0 in gg and 4*N in gg for gg in g),'evaluated_coordinate_sha256':hashlib.sha256(b''.join(struct.pack('<ddd',*q) for q in v)).hexdigest(),'evaluated_topology_sha256':hashlib.sha256(str([tuple(pp.vertices) for pp in m.polygons]).encode()).hexdigest(),'machine_connections':machine_measurements(dg,v[0][2],v[4*N][2]),'projected_specimen_jaw_and_machine_bounds':framing,'all_specimen_and_jaws_inside_frame':all(0<=x<=1 for x in framing),'frame':frame,'time_s':t,'measured_components':len(g),'volume_author_units3':volume,'material_arc_length':arc,
   'central_cross_section_area':area,'grip_measurements':contact,'component_z_bounds':minz,'axial_gap':gap,
   'vertices':v,'jaw_positions':[tuple(o.location) for o,e,y in jaws]}
  ev.to_mesh_clear(); return result
 
 sample_frames=[1,121,301,451,480,481,482,486,496,511,541,556,571,600]
-checks=[measure(f) for f in (sample_frames if args.keys_only else range(1,601))]
+checks=[measure(f) for f in range(1,601)]
 baseline=checks[0]['volume_author_units3']
-for r in checks: r['volume_ratio_to_initial']=r['volume_author_units3']/baseline
+initial_sections={q['material_ring']:q['area'] for q in checks[0]['complete_material_sections_excluding_fracture_rings']}
+initial_gauge_length=checks[0]['same_material_gauge_arc_length']
+for r in checks:
+ r['volume_ratio_to_initial']=r['volume_author_units3']/baseline
+ if r['same_material_gauge_arc_length'] is not None:r['gauge_length_ratio']=r['same_material_gauge_arc_length']/initial_gauge_length
+ for q in r['complete_material_sections_excluding_fracture_rings']:q['area_ratio_to_same_initial_section']=q['area']/initial_sections[q['material_ring']]
+ r['minimum_complete_section_ratio']=min(q['area_ratio_to_same_initial_section'] for q in r['complete_material_sections_excluding_fracture_rings'])
 last=checks[-1]; prev=checks[-2]
 motion=max((Vector(a)-Vector(b)).length for a,b in zip(last['vertices'],prev['vertices']))
-postmax=max((Vector(a)-Vector(b)).length for r0,r1 in zip(checks,checks[1:]) if r0['time_s']>=18.5 for a,b in zip(r0['vertices'],r1['vertices']))
+postmax=max((Vector(a)-Vector(b)).length for r0,r1 in zip(checks,checks[1:]) if r0['time_s']>=STOP for a,b in zip(r0['vertices'],r1['vertices']))
 summary={'frames_measured':len(checks),'all_grip_endpoints_in_actual_jaws':all(g['axial_grip_overlap'] for r in checks for g in r['grip_measurements']),
  'max_contact_surface_gap':max(g['surface_gap'] for r in checks for g in r['grip_measurements']),
  'all_specimen_and_jaws_inside_frame':all(r['all_specimen_and_jaws_inside_frame'] for r in checks),
  'volume_ratio_bounds':[min(r['volume_ratio_to_initial'] for r in checks),max(r['volume_ratio_to_initial'] for r in checks)],
  'first_two_component_frame':next(r['frame'] for r in checks if r['measured_components']==2),
- 'minimum_axial_component_gap_after_first_split':min(r['axial_gap'] for r in checks if r['time_s']>16),
- 'max_vertex_step_after_18_5s':postmax, 'rigid_grip_regions_verified_by_construction_and_endpoint_contact':'all12gripmaterialrings have strain1 and zero prescribed bend'}
+ 'minimum_axial_component_gap_after_first_split':min(r['axial_gap'] for r in checks if r['time_s']>rupture),
+ 'max_vertex_step_after_motion_stop':postmax,'motion_stop_s':STOP,'first_measured_positive_component_gap_frame':next(r['frame'] for r in checks if r['axial_gap']>1e-6),'first_crack_pre_measurement':next(r for r in checks if r['frame']==EVENT-1).copy(),'final_connected_pre_measurement':next(r for r in checks if r['frame']==EVENT-1).copy(), 'post_event_upper_jaw_position_step':max((Vector(aa)-Vector(bb)).length for r,q in zip(checks,checks[1:]) if r['frame']>=EVENT for aa,bb in zip(r['jaw_positions'],q['jaw_positions'])), 'rigid_grip_regions_verified_by_construction_and_endpoint_contact':'all12gripmaterialrings have strain1 and zero prescribed bend'}
 summary['machine_connections']={
  'max_absolute_joint_surface_gap':max(abs(next(v for k,v in c.items() if k.endswith('surface_gap'))) for r in checks for c in r['machine_connections']['contacts']),
  'minimum_actual_guide_clearance':min(v for r in checks for c in r['machine_connections']['guide_clearances'] for v in c['actual_evaluated_hollow_sleeve_clearances']),
@@ -277,17 +308,19 @@ summary['machine_connections']={
  'crosshead_relative_to_upper_jaw_z_offset_range':[min(r['machine_connections']['upper_jaw_to_crosshead_z_offset'] for r in checks),max(r['machine_connections']['upper_jaw_to_crosshead_z_offset'] for r in checks)],
  'all_machine_and_specimen_inside_frame':all(r['all_specimen_and_jaws_inside_frame'] for r in checks)}
 for r in checks: del r['vertices']
+for k in ['first_crack_pre_measurement','final_connected_pre_measurement']: summary[k].pop('vertices',None)
 report={'all_frame_summary':summary,'configuration':cfg,'evaluated_mesh_checks':checks,'motion_19_to_19_9667_max_vertex_delta':motion,
  'limits':['prescribed mesh motion, not constitutive prediction','material identity from source spreadsheet',
  '3D fracture microgeometry unresolved in source; planar edge used','no external physics validation or user acceptance'],
  'camera_transform':list(camera.matrix_world[0])+list(camera.matrix_world[1])+list(camera.matrix_world[2])}
 (out/'mesh_checks.json').write_text(json.dumps(report,indent=2))
 (out/'configuration.json').write_text(json.dumps(cfg,indent=2))
-keys=[1,241,451,480,482,496,526,556,600]
-for frame in keys:
+if not summary['all_specimen_and_jaws_inside_frame'] and not args.checks_only:raise RuntimeError('selected loading travel extends the fixed machine outside the fixed camera; see mesh_checks.json; do not render/promote before presentation decision')
+keys=sorted(set([1,241,round(EVENT*.9),EVENT-1,EVENT,EVENT+1,EVENT+15,round(STOP*fps)+1,600]))
+for frame in ([] if args.checks_only else keys):
  scene.frame_set(frame); update(frame); scene.render.filepath=str(out/f'key_{frame:04d}.png'); bpy.ops.render.render(write_still=True)
 update(1); bpy.ops.wm.save_as_mainfile(filepath=str(out/(args.style+'_initial.blend')))
-if not args.keys_only:
+if not args.keys_only and not args.checks_only:
  frames=out/'frames'; frames.mkdir(exist_ok=True)
  for frame in range(1,601):
   scene.frame_set(frame); update(frame); scene.render.filepath=str(frames/f'{frame:06d}.png'); bpy.ops.render.render(write_still=True)

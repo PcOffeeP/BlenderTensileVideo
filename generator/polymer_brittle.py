@@ -9,29 +9,34 @@ from pathlib import Path
 from mathutils import Vector
 from bpy_extras.object_utils import world_to_camera_view
 
-IMPLEMENTATION='polymer-brittle/1.0'
+IMPLEMENTATION='polymer-brittle/1.1.0'
 parser=argparse.ArgumentParser(); parser.add_argument('--out',required=True); parser.add_argument('--keys-only',action='store_true')
+parser.add_argument('--checks-only',action='store_true')
+parser.add_argument('--fracture-material-fraction',type=float,default=.5)
+parser.add_argument('--event-time-s',type=float,choices=[12.,15.,16.,17.],default=16.)
 args=parser.parse_args(sys.argv[sys.argv.index('--')+1:]); out=Path(args.out); out.mkdir(parents=True,exist_ok=True)
+if not math.isfinite(args.fracture_material_fraction) or not .45<=args.fracture_material_fraction<=.55 or abs(args.fracture_material_fraction*160-round(args.fracture_material_fraction*160))>1e-7:parser.error('fracture fraction must be a material ring in [0.45,0.55]')
+EVENT=round(args.event_time_s*30)+1
 CONFIG={'implementation_version':IMPLEMENTATION,'scope':'only pale-green near-uniform flat-strip small-deformation brittle visual style referenced to video_0032; not all polymers',
- 'duration_s':20,'fps':30,'resolution':[960,540],'rupture_time_s':16,'rupture_frame':481,
+ 'duration_s':20,'fps':30,'resolution':[960,540],'rupture_time_s':args.event_time_s,'rupture_frame':EVENT,
  'rest_material_length_author_units':4.0,'rest_width_author_units':.18,'rest_thickness_author_units':.035,
- 'axial_intervals':160,'fracture_material_fraction':.50,'fracture_edge_slope_degrees':3,
+ 'axial_intervals':160,'fracture_material_fraction':args.fracture_material_fraction,'fracture_edge_slope_degrees':3,
  'author_reference_gauge_material_fraction':[.15,.85],'formal_source_gauge':'unknown',
  'maximum_free_span_elastic_stretch':1.012,'clamped_material_fraction_each_end':.05,'strain_ramp_material_fraction':.025,
- 'loading_curve':'smoothstep(time/16)','transverse_scale':'local stretch^-0.5, small-strain geometric volume approximation',
- 'fracture_motion':'single event at16s releases the prescribed small free-span axial strain; anchored ends remain fixed; graded material-point displacement, no rigid piece translation or deleted material',
- 'after_event':'all material vertices, jaws, caps and load rods constant from16s onward; no delayed rebound/sway',
+ 'loading_curve':f'smoothstep(time/{args.event_time_s})','transverse_scale':'local stretch^-0.5, small-strain geometric volume approximation',
+ 'fracture_motion':f'single event at{args.event_time_s}s releases the prescribed small free-span axial strain; anchored ends remain fixed; graded material-point displacement, no rigid piece translation or deleted material',
+ 'after_event':f'all material vertices, jaws, caps and load rods constant from{args.event_time_s}s onward; no delayed rebound/sway',
  'camera_position':[2,-25,2],'camera_target':[0,0,.02],'orthographic_scale':9.3,'camera_fixed':True,
  'presentation':'connected grips, caps and load rods close view; rods intentionally exit image, no full machine frame represented',
  'jaw_size':[1.12,.4,.24],'grip_embed_author_units':.20,'grip_cap_size':[1.12,.95,.14],'load_rod_radius':.12,
  'polymer_color':[.64,.77,.50],'renderer':'BLENDER_WORKBENCH','antialias_samples':8,
  'source_phase_retiming':'source excerpt4.544s to authored20s sequence; phase extension, not compression of a measured full experiment',
- 'parameter_range_acceptance':False}
-N=CONFIG['axial_intervals']; K=N//2; FPS=30; REST=4.; WIDTH=.18; THICKNESS=.035
+ 'parameter_range_acceptance':False,'stage1':{'baseline_implementation_version':'polymer-brittle/1.0','position_engineering_guard':[.45,.55],'full_fracture_fraction_bounds':[args.fracture_material_fraction-.18/2*math.tan(math.radians(3))/4,args.fracture_material_fraction+.18/2*math.tan(math.radians(3))/4],'first_crack_pre_frame':EVENT-1,'final_connected_pre_frame':EVENT-1,'event_candidates_s':[12,15,17],'default_regression_event_s':16,'stretch_parameter_open':False,'scope':'small deformation brittle only; ring-grid guard is not continuous approval'}}
+N=CONFIG['axial_intervals']; K=round(args.fracture_material_fraction*N); FPS=30; REST=4.; WIDTH=.18; THICKNESS=.035
 def smooth(x): x=max(0.,min(1.,x)); return x*x*(3-2*x)
 def strain_mask(u): return smooth((u-.05)/.025)*smooth((.95-u)/.025)
 def coordinates(t):
- broken=t>=16; p=smooth(min(t,16)/16)
+ broken=t>=args.event_time_s; p=smooth(min(t,args.event_time_s)/args.event_time_s)
  loaded=[1+.012*p*strain_mask(i/N) for i in range(N+1)]
  steps=[REST/N*(loaded[i]+loaded[i+1])/2 for i in range(N)]
  bottom=-2.; top=bottom+sum(steps)
@@ -118,7 +123,7 @@ def measure(frame):
  rings=[sum((pts[4*i+j] for j in range(4)),Vector())/4 for i in range(N+1)]
  segments=[]
  for i in range(N):
-  a=sum((pts[4*(N+1)+j] for j in range(4)),Vector())/4 if frame>=481 and i==K else rings[i]
+  a=sum((pts[4*(N+1)+j] for j in range(4)),Vector())/4 if frame>=EVENT and i==K else rings[i]
   segments.append((rings[i+1]-a).length)
  areas=[(pts[4*i+1]-pts[4*i]).length*(pts[4*i+3]-pts[4*i]).length for i in range(N+1)]
  component_bounds=[bounds([pts[i] for i in g]) for g in groups]
@@ -138,7 +143,8 @@ def measure(frame):
  # Coordinates hash is from actual evaluated specimen vertices, not intended inputs.
  h=hashlib.sha256()
  for p in pts:h.update(struct.pack('<ddd',*p))
- result={'frame':frame,'time_s':t,'measured_components':len(groups),'actual_volume':volume,
+ g0,g1=24,136; gauge=sum(segments[g0:g1]); sections=[{'material_ring':i,'material_fraction':i/N,'area':areas[i],'area_ratio_to_same_initial_section':areas[i]/(WIDTH*THICKNESS)} for i in range(g0,g1+1) if abs(i-K)>1]
+ result={'same_material_gauge_arc_length':gauge,'gauge_length_ratio':gauge/(REST*(g1-g0)/N),'complete_material_sections_excluding_fracture_rings':sections,'minimum_complete_section_ratio':min(q['area_ratio_to_same_initial_section'] for q in sections),'fracture_section_area_available':t<args.event_time_s,'actual_initial_full_fracture_material_fraction_bounds':[(min(p.z for p in pts[4*K:4*K+4])-rings[0].z)/REST,(max(p.z for p in pts[4*K:4*K+4])-rings[0].z)/REST] if frame==1 else None,'material_graph_grip_path_exists':any(0 in gg and 4*N in gg for gg in groups),'evaluated_topology_sha256':hashlib.sha256(str([tuple(pp.vertices) for pp in m.polygons]).encode()).hexdigest(),'frame':frame,'time_s':t,'measured_components':len(groups),'actual_volume':volume,
   'same_material_path_length':sum(segments),'lower_half_material_path_length':sum(segments[:K]),'upper_half_material_path_length':sum(segments[K:]),
   'central_section_area':areas[K],'min_section_area':min(areas),'max_section_area':max(areas),
   'component_bounds':component_bounds,'minimum_axial_component_gap':cut_gap,'grip_checks':grip_checks,
@@ -146,13 +152,19 @@ def measure(frame):
   'evaluated_specimen_coordinate_sha256':h.hexdigest(),'vertices':[tuple(p) for p in pts],
   'actual_jaw_cap_rod_positions':[tuple(o.location) for o in [o for o,ee in jaws]+list(caps.values())+list(rods.values())]}
  e.to_mesh_clear();return result
-frames=[1,121,301,451,475,477,479,480,481,482,483,484,487,496,511,541,571,600] if args.keys_only else list(range(1,601))
+frames=list(range(1,601))
 checks=[measure(frame) for frame in frames]; initial=checks[0]['actual_volume']
-for check in checks:check['actual_volume_ratio_to_initial']=check['actual_volume']/initial
-post=[r for r in checks if r['frame']>=481]
+initial_sections={q['material_ring']:q['area'] for q in checks[0]['complete_material_sections_excluding_fracture_rings']}
+initial_gauge_length=checks[0]['same_material_gauge_arc_length']
+for check in checks:
+ check['actual_volume_ratio_to_initial']=check['actual_volume']/initial
+ check['gauge_length_ratio']=check['same_material_gauge_arc_length']/initial_gauge_length
+ for q in check['complete_material_sections_excluding_fracture_rings']:q['area_ratio_to_same_initial_section']=q['area']/initial_sections[q['material_ring']]
+ check['minimum_complete_section_ratio']=min(q['area_ratio_to_same_initial_section'] for q in check['complete_material_sections_excluding_fracture_rings'])
+post=[r for r in checks if r['frame']>=EVENT]
 post_motion=max((Vector(a)-Vector(b)).length for r,q in zip(post,post[1:]) for a,b in zip(r['vertices'],q['vertices']))
 post_machine=max((Vector(a)-Vector(b)).length for r,q in zip(post,post[1:]) for a,b in zip(r['actual_jaw_cap_rod_positions'],q['actual_jaw_cap_rod_positions']))
-before=next(r for r in checks if r['frame']==480)['vertices']; after=next(r for r in checks if r['frame']==481)['vertices']
+before=next(r for r in checks if r['frame']==EVENT-1)['vertices']; after=next(r for r in checks if r['frame']==EVENT)['vertices']
 lower_release=[after[i][2]-before[i][2] for i in range(4*(K+1))]
 upper_release=[after[4*(N+1)+j][2]-before[4*K+j][2] for j in range(4)]+[after[i][2]-before[i][2] for i in range(4*(K+1),4*(N+1))]
 summary={'frames_measured':len(checks),'component_transition_frame':next(r['frame'] for r in checks if r['measured_components']==2),
@@ -170,12 +182,14 @@ summary={'frames_measured':len(checks),'component_transition_frame':next(r['fram
  'no_material_removed':'same160 axial material intervals on both sides of shared fracture slice; only slice vertex connectivity is split',
  'event_release_scope':'nonzero displacement gradient along material path and fixed anchors; not rigid-piece translation'}
 for check in checks:del check['vertices']
+summary['first_crack_pre_measurement']=next(r for r in checks if r['frame']==EVENT-1)
+summary['final_connected_pre_measurement']=next(r for r in checks if r['frame']==EVENT-1)
 (out/'mesh_checks.json').write_text(json.dumps({'configuration':CONFIG,'summary':summary,'actual_evaluated_frames':checks},indent=2))
 (out/'configuration.json').write_text(json.dumps(CONFIG,indent=2))
-for frame in [1,301,451,477,479,480,481,482,484,600]:
+for frame in ([] if args.checks_only else sorted(set([1,301,EVENT-4,EVENT-2,EVENT-1,EVENT,EVENT+1,600]))):
  scene.frame_set(frame);update(frame);scene.render.filepath=str(out/f'key_{frame:04d}.png');bpy.ops.render.render(write_still=True)
 update(1);bpy.ops.wm.save_as_mainfile(filepath=str(out/'polymer_brittle_initial_scene.blend'))
-if not args.keys_only:
+if not args.keys_only and not args.checks_only:
  directory=out/'frames';directory.mkdir(exist_ok=True)
  for frame in range(1,601):scene.frame_set(frame);update(frame);scene.render.filepath=str(directory/f'{frame:06d}.png');bpy.ops.render.render(write_still=True)
 print('BRITTLE_DONE',IMPLEMENTATION,str(out),flush=True)
