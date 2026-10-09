@@ -1,8 +1,8 @@
 {
   "schema": "tensile-video-index/v2",
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "design_document": "../DESIGN.md",
-  "design_version": "v1.10",
+  "design_version": "v1.12",
   "status": "explosive_generation_paused_by_user",
   "approved_video_count": 11,
   "reviewable_candidate_count": 0,
@@ -462,7 +462,8 @@
   "next_steps": [
     "高分子半脆半韧按用户项目视觉判据确认当前样片，保持实际配置和弹塑份额未知；无需重生成。",
     "爆炸性断裂生成按用户要求搁置；0.2候选已否定，不再待验收或用于爆炸性模板。等待用户明确恢复指示。",
-    "复材韧性与高分子颈缩传播仍保留来源证据缺口；连续参数范围与训练发布未批准。"
+    "复材韧性与高分子颈缩传播仍保留来源证据缺口；连续参数范围与训练发布未批准。",
+    "按docs第一阶段专项设计补齐断裂参数入口并核对固定基准版本；先核验单参数离散候选，再检查耦合组合。设计确认不替代参数范围核验或训练发布。"
   ],
   "management_cleanup_status": "complete",
   "source_inventory": {
@@ -632,5 +633,21 @@
       "expected_mode_coverage_verified": false
     },
     "resume_requires": "Explicit user instruction to resume"
+  },
+  "fracture_variation_stage1": {
+    "design_document": "../docs/fracture-variation-stage1.md",
+    "status": "design_confirmed_implementation_pending",
+    "design_confirmed_on": "2026-10-09",
+    "parameter_axes": [
+      "prefracture_elongation",
+      "metal_necking_degree_and_extent",
+      "failure_location_within_same_site_class",
+      "failure_event_timing",
+      "simultaneous_debond_extent_and_opening"
+    ],
+    "discrete_candidates_verified": false,
+    "parameter_ranges_accepted": false,
+    "new_videos_generated": false,
+    "training_released": false
   }
 }
