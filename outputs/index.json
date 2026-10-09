@@ -3,9 +3,9 @@
   "updated": "2026-10-09",
   "design_document": "../DESIGN.md",
   "design_version": "v1.12",
-  "status": "coupled_videos_user_accepted_explosive_paused",
+  "status": "training_batch1_in_progress_two_ceramic_candidates_pending_user_acceptance",
   "approved_video_count": 27,
-  "reviewable_candidate_count": 0,
+  "reviewable_candidate_count": 2,
   "batch_complete": false,
   "batch_released": false,
   "items": [
@@ -1630,6 +1630,94 @@
         "parameter_range_accepted": false,
         "training_released": false
       }
+    },
+    {
+      "id": "ceramic_54c9123982ca",
+      "template": "ceramic",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/training-batch1-20261009/execution/runs/ceramic_54c9123982ca/a99ea32b123b992f/ceramic_54c9123982ca.mp4",
+      "metadata_path": "../_work/training-batch1-20261009/execution/runs/ceramic_54c9123982ca/a99ea32b123b992f/ceramic_54c9123982ca.json",
+      "sha256": "641aecc653e5c88369fccff3d58d96656352729c78875ee39e4a541e3eb21aaa",
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_for_two_discrete_candidates_and_metadata_rechecked",
+      "user_accepted": false,
+      "training_released": false,
+      "metadata_sha256": "582596440ee7c0ec8abf0856dd5752ff662bae78b30811fa7632a3265c2951c3",
+      "title": "陶瓷小形变横向脆断：15秒失贯通候选",
+      "source_id": "video_0050",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "陶瓷",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "陶瓷",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "style_accepted": false,
+      "parameter_range_accepted": false
+    },
+    {
+      "id": "ceramic_fafb6d038402",
+      "template": "ceramic",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/training-batch1-20261009/execution/runs/ceramic_fafb6d038402/321ad3776c4157e1/ceramic_fafb6d038402.mp4",
+      "metadata_path": "../_work/training-batch1-20261009/execution/runs/ceramic_fafb6d038402/321ad3776c4157e1/ceramic_fafb6d038402.json",
+      "sha256": "4acc117d71ddf8959c321ed355690fa81ad3ee5b4627b94645d8691b96374235",
+      "main_final_video_view_completed": true,
+      "independent_review": "passed_for_two_discrete_candidates_and_metadata_rechecked",
+      "user_accepted": false,
+      "training_released": false,
+      "metadata_sha256": "a224244c6175ae7ceac987b47b1d0d37962366a02a4398378d338557cc59dec7",
+      "title": "陶瓷小形变横向脆断：13秒失贯通候选",
+      "source_id": "video_0050",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "batch": "training_batch1",
+      "expected_labels": {
+        "材料类别": "陶瓷",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "陶瓷",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "style_accepted": false,
+      "parameter_range_accepted": false
     }
   ],
   "candidates": [],
@@ -1899,14 +1987,45 @@
   "next_batch_design_document": "../docs/training-batch1-design.md",
   "training_batch1": {
     "design_document": "../docs/training-batch1-design.md",
-    "status": "implementation_in_progress_entrypoints_and_validation_setup",
+    "status": "author_checks_complete_independent_checks_in_progress",
     "implementation_authorized_on": "2026-10-09",
     "planned_candidate_count": 60,
-    "generated_video_count": 0,
-    "reviewable_count": 0,
+    "generated_video_count": 2,
+    "reviewable_count": 2,
     "user_accepted_video_count": 0,
     "work_directory": "../_work/training-batch1-20261009/",
     "scope": "Frozen discrete candidates; qualifications, finite regression and per-candidate evaluated checks precede review and individual user acceptance; no current promotion or downstream training release.",
-    "training_released": false
+    "training_released": false,
+    "author_checked_configuration_count": 107,
+    "planned_geometry_check_configuration_count": 107,
+    "generated_candidates": [
+      {
+        "id": "ceramic_54c9123982ca",
+        "template": "ceramic",
+        "status": "checked_pending_user_acceptance",
+        "video_path": "../_work/training-batch1-20261009/execution/runs/ceramic_54c9123982ca/a99ea32b123b992f/ceramic_54c9123982ca.mp4",
+        "metadata_path": "../_work/training-batch1-20261009/execution/runs/ceramic_54c9123982ca/a99ea32b123b992f/ceramic_54c9123982ca.json",
+        "sha256": "641aecc653e5c88369fccff3d58d96656352729c78875ee39e4a541e3eb21aaa",
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_for_two_discrete_candidates_and_metadata_rechecked",
+        "user_accepted": false,
+        "training_released": false,
+        "metadata_sha256": "582596440ee7c0ec8abf0856dd5752ff662bae78b30811fa7632a3265c2951c3"
+      },
+      {
+        "id": "ceramic_fafb6d038402",
+        "template": "ceramic",
+        "status": "checked_pending_user_acceptance",
+        "video_path": "../_work/training-batch1-20261009/execution/runs/ceramic_fafb6d038402/321ad3776c4157e1/ceramic_fafb6d038402.mp4",
+        "metadata_path": "../_work/training-batch1-20261009/execution/runs/ceramic_fafb6d038402/321ad3776c4157e1/ceramic_fafb6d038402.json",
+        "sha256": "4acc117d71ddf8959c321ed355690fa81ad3ee5b4627b94645d8691b96374235",
+        "main_final_video_view_completed": true,
+        "independent_review": "passed_for_two_discrete_candidates_and_metadata_rechecked",
+        "user_accepted": false,
+        "training_released": false,
+        "metadata_sha256": "a224244c6175ae7ceac987b47b1d0d37962366a02a4398378d338557cc59dec7"
+      }
+    ],
+    "unmodified_film_regression": "failed_numeric_gap_guard; legacy_float32_residual_diagnosed; full_old_new_regression_not_completed; excluded_from60"
   }
 }
