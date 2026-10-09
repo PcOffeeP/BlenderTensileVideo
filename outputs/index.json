@@ -3,9 +3,9 @@
   "updated": "2026-10-09",
   "design_document": "../DESIGN.md",
   "design_version": "v1.12",
-  "status": "stage1_single_videos_user_accepted_explosive_paused",
+  "status": "coupled_candidates_pending_user_acceptance_explosive_paused",
   "approved_video_count": 20,
-  "reviewable_candidate_count": 0,
+  "reviewable_candidate_count": 7,
   "batch_complete": false,
   "batch_released": false,
   "items": [
@@ -1100,7 +1100,379 @@
       }
     }
   ],
-  "candidates": [],
+  "candidates": [
+    {
+      "id": "metal_round_ductile_coupled_a2_time12_v1",
+      "title": "金属韧断：较弱颈缩＋12秒",
+      "style_id": "metal_round_ductile",
+      "source_id": "video_0006",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/coupled-stage1-20261009/metal/ductile_a2_time12/metal_round_ductile_coupled_a2_time12_v1.mp4",
+      "metadata_path": "../_work/coupled-stage1-20261009/metal/ductile_a2_time12/metal_round_ductile_coupled_a2_time12_v1.json",
+      "sha256": "e9c8037d2f14372649b66cebb3c59f21501ec3c3d7a6f8e05bf4d8d7f6914a2f",
+      "metadata_sha256": "00d1d9a0d18ce31524b9f6d078500933a23e3e9e7a097116a758b8dc6066ecb1",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "variation": "A=2；12秒",
+      "expected_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_single_discrete_qualitative_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false,
+      "expected_mode_coverage_verified": true,
+      "acceptance_scope": "single_discrete_candidate_pending_user_visual_acceptance",
+      "downstream_label_preview": {
+        "contract_version": "tensile-vlm/v4.1",
+        "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+        "input_scope": "entire_paired_20_second_video",
+        "labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "韧性断裂",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "format_validation": "passed_by_existing_v4_1_validator",
+        "training_released": false,
+        "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata."
+      }
+    },
+    {
+      "id": "metal_round_brittle_coupled_center_p075_time15_v1",
+      "title": "金属脆断：位置偏移＋15秒",
+      "style_id": "metal_round_brittle",
+      "source_id": "video_0003",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/coupled-stage1-20261009/metal/brittle_center_p075_time15/metal_round_brittle_coupled_center_p075_time15_v1.mp4",
+      "metadata_path": "../_work/coupled-stage1-20261009/metal/brittle_center_p075_time15/metal_round_brittle_coupled_center_p075_time15_v1.json",
+      "sha256": "1aec598054a268bd0e8ba0bd705504b2cd8218564b1461e6846c37023df1a849",
+      "metadata_sha256": "934dd83102a125c80248c59cc5f6ffcb885c9615b5fb5a4eefa93a8dcb6e04ed",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "variation": "材料中心+0.75；15秒",
+      "expected_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_single_discrete_qualitative_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false,
+      "expected_mode_coverage_verified": true,
+      "acceptance_scope": "single_discrete_candidate_pending_user_visual_acceptance",
+      "downstream_label_preview": {
+        "contract_version": "tensile-vlm/v4.1",
+        "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+        "input_scope": "entire_paired_20_second_video",
+        "labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "脆性断裂",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "format_validation": "passed_by_existing_v4_1_validator",
+        "training_released": false,
+        "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata."
+      }
+    },
+    {
+      "id": "polymer_dogbone_coupled_stretch085_time17_v1",
+      "title": "高分子韧断：较小伸长＋17秒",
+      "style_id": "polymer_black_flexible_dogbone",
+      "source_id": "video_0097",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/coupled-stage1-20261009/polymer/polymer_dogbone_coupled_stretch085_time17_v1/polymer_dogbone_coupled_stretch085_time17_v1.mp4",
+      "metadata_path": "../_work/coupled-stage1-20261009/polymer/polymer_dogbone_coupled_stretch085_time17_v1/polymer_dogbone_coupled_stretch085_time17_v1.json",
+      "sha256": "f8b465299eb63cc1f3f30a450acc30416e51456e68c54377aad67fd113830385",
+      "metadata_sha256": "9cd9e776ad156f15d78c5b1e7bebe0bce86aae0e71aeab71f19090cc602ad051",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "variation": "伸长增量×0.85；17秒",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_single_discrete_qualitative_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false,
+      "expected_mode_coverage_verified": true,
+      "acceptance_scope": "single_discrete_candidate_pending_user_visual_acceptance",
+      "downstream_label_preview": {
+        "contract_version": "tensile-vlm/v4.1",
+        "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+        "input_scope": "entire_paired_20_second_video",
+        "labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "韧性断裂",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "format_validation": "passed_by_existing_v4_1_validator",
+        "training_released": false,
+        "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata."
+      }
+    },
+    {
+      "id": "polymer_brittle_coupled_position055_time12_v1",
+      "title": "高分子脆断：位置偏移＋12秒",
+      "style_id": "polymer_pale_green_brittle_flat_strip",
+      "source_id": "video_0032",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/coupled-stage1-20261009/polymer/polymer_brittle_coupled_position055_time12_v1/polymer_brittle_coupled_position055_time12_v1.mp4",
+      "metadata_path": "../_work/coupled-stage1-20261009/polymer/polymer_brittle_coupled_position055_time12_v1/polymer_brittle_coupled_position055_time12_v1.json",
+      "sha256": "c7e93f5ca20cd38fe93882d73b33425aceedae1b935ddafef4d58a2abcd7f598",
+      "metadata_sha256": "f44d601f88abfcf8f005e22429a22bc78ac8ee3e7f7f7e300e62f3474a51ae23",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "variation": "材料分数0.55；12秒",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_single_discrete_qualitative_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false,
+      "expected_mode_coverage_verified": true,
+      "acceptance_scope": "single_discrete_candidate_pending_user_visual_acceptance",
+      "downstream_label_preview": {
+        "contract_version": "tensile-vlm/v4.1",
+        "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+        "input_scope": "entire_paired_20_second_video",
+        "labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "脆性断裂",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "format_validation": "passed_by_existing_v4_1_validator",
+        "training_released": false,
+        "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata."
+      }
+    },
+    {
+      "id": "polymer_mixed_coupled_stretch115_time15_v1",
+      "title": "高分子半脆半韧：较大伸长＋15秒",
+      "style_id": "polymer_finite_deformation_oblique_rupture",
+      "source_id": "video_0014",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/polymer_mixed_coupled_stretch115_time15_v1.mp4",
+      "metadata_path": "../_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/polymer_mixed_coupled_stretch115_time15_v1.json",
+      "sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492",
+      "metadata_sha256": "6b35be726dbee16c70b276b7d283cc95cb21d5f4209ef3ac7ef4daafc2eb7e69",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "variation": "伸长增量×1.15；15秒",
+      "expected_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_single_discrete_qualitative_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false,
+      "expected_mode_coverage_verified": true,
+      "acceptance_scope": "single_discrete_candidate_pending_user_visual_acceptance",
+      "downstream_label_preview": {
+        "contract_version": "tensile-vlm/v4.1",
+        "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+        "input_scope": "entire_paired_20_second_video",
+        "labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "半脆半韧断裂",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "format_validation": "passed_by_existing_v4_1_validator",
+        "training_released": false,
+        "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata."
+      }
+    },
+    {
+      "id": "composite_brittle_coupled_center_minus195_time12_v1",
+      "title": "复材脆断：低位偏移＋12秒",
+      "style_id": "composite_brittle_lower",
+      "source_id": "video_0100",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/composite_brittle_coupled_center_minus195_time12_v1.mp4",
+      "metadata_path": "../_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/composite_brittle_coupled_center_minus195_time12_v1.json",
+      "sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2",
+      "metadata_sha256": "448d8a99b351373811a97381e35d6bc68737b41f933280da0bb171ddfdbbc2c0",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "variation": "材料中心−1.95；12秒",
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_single_discrete_qualitative_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false,
+      "expected_mode_coverage_verified": true,
+      "acceptance_scope": "single_discrete_candidate_pending_user_visual_acceptance",
+      "downstream_label_preview": {
+        "contract_version": "tensile-vlm/v4.1",
+        "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+        "input_scope": "entire_paired_20_second_video",
+        "labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "脆性断裂",
+          "fracture_site": "outside_gauge_non_root",
+          "special_case": null
+        },
+        "format_validation": "passed_by_existing_v4_1_validator",
+        "training_released": false,
+        "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata."
+      }
+    },
+    {
+      "id": "composite_debond_coupled_length080_opening120_time15_v1",
+      "title": "复材同步脱粘：长度＋开口＋15秒",
+      "style_id": "composite_interface_debond_simultaneous_complete",
+      "source_id": "video_0020",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "../_work/coupled-stage1-20261009/composite/composite_debond_coupled_length080_opening120_time15_v1/composite_debond_coupled_length080_opening120_time15_v1.mp4",
+      "metadata_path": "../_work/coupled-stage1-20261009/composite/composite_debond_coupled_length080_opening120_time15_v1/composite_debond_coupled_length080_opening120_time15_v1.json",
+      "sha256": "645a632daf815b8b4bb48eb64e9652536e5a992cd45c97c6fec7068703e3b32a",
+      "metadata_sha256": "f3dffbbf05f30fb849e245afc35a5110b315da33bda24acda464731e6c55592b",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "variation": "长度×0.8；开口×1.2；15秒",
+      "expected_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "independent_review": "passed_for_single_discrete_qualitative_candidate",
+      "main_final_video_view_completed": true,
+      "user_accepted": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false,
+      "expected_mode_coverage_verified": true,
+      "acceptance_scope": "single_discrete_candidate_pending_user_visual_acceptance",
+      "downstream_label_preview": {
+        "contract_version": "tensile-vlm/v4.1",
+        "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+        "input_scope": "entire_paired_20_second_video",
+        "labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "界面脱粘",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "format_validation": "passed_by_existing_v4_1_validator",
+        "training_released": false,
+        "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata."
+      }
+    }
+  ],
   "materials": [
     {
       "material": "金属",
@@ -1147,8 +1519,8 @@
     "高分子半脆半韧按用户项目视觉判据确认当前样片，保持实际配置和弹塑份额未知；无需重生成。",
     "爆炸性断裂生成按用户要求搁置；0.2候选已否定，不再待验收或用于爆炸性模板。等待用户明确恢复指示。",
     "复材韧性与高分子颈缩传播仍保留来源证据缺口；连续参数范围与训练发布未批准。",
-    "九条第一阶段单参数视频效果与标签已由用户接受并按原SHA收录；下一步仅组合已核验的离散参数，逐条检查耦合组合并提交效果与标签验收。",
-    "后续按已确认适用组合安排批量数量，并使用实际下游接口输出训练数据；当前仅整段20秒V4.1标签预览，未切片、未绑定发布prompt或发布训练集。"
+    "后续按已确认适用组合安排批量数量，并使用实际下游接口输出训练数据；当前仅整段20秒V4.1标签预览，未切片、未绑定发布prompt或发布训练集。",
+    "逐条确认本轮七条组合视频效果与标签，接受后按SHA收录；再以通过的离散组合安排批量数量及训练接口输出。"
   ],
   "management_cleanup_status": "complete",
   "source_inventory": {
@@ -1342,6 +1714,22 @@
     "rejected_combination": "dogbone stretch1.15 with default position/time and fixed camera: machine exceeds framing; not usable range",
     "user_accepted_video_count": 9,
     "user_accepted_on": "2026-10-09",
-    "acceptance_scope": "single_video_visual_and_label_acceptance"
+    "acceptance_scope": "single_video_visual_and_label_acceptance",
+    "coupling_validation": {
+      "design_document": "../docs/fracture-coupling-validation.md",
+      "status": "seven_coupled_candidates_checked_pending_user_acceptance",
+      "planned_count": 7,
+      "reviewable_count": 7,
+      "user_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false,
+      "single_time_qualifications_checked": true,
+      "combination_checks_completed": true,
+      "final_encoding_checked": true,
+      "independent_review_completed": true,
+      "main_final_video_view_completed": true,
+      "label_preview_path": "../_work/coupled-stage1-20261009/labels.v4_1.preview.jsonl",
+      "scope": "Seven discrete coupled qualitative candidates, not continuous approval; single-time engineering qualifications are not user acceptance of separate time-only videos"
+    }
   }
 }
