@@ -1,0 +1,2231 @@
+{
+  "schema": "tensile-video-candidate/v1",
+  "candidate_id": "composite_brittle_coupled_center_minus195_time12_v1",
+  "style_id": "composite_brittle_lower",
+  "status": "user_accepted_video",
+  "design_version": "v1.12",
+  "parameter_design": "docs/fracture-variation-stage1.md",
+  "implementation_version": "composite-initial/0.5.0",
+  "implementation_file": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/generator/composite_initial.py",
+  "implementation_sha256": "9b6d3ec3ea72ebfe15b5d84ed8d8c57f3aa47e96605ba5744634d09d54bb46c0",
+  "full_generation_config": {
+    "version": "composite-initial/0.5.0",
+    "baseline_implementation_version": "composite-initial/0.3.1",
+    "kind": "brittle",
+    "fps": 30,
+    "frames": 600,
+    "resolution": [
+      960,
+      540
+    ],
+    "loading_axis": "z",
+    "fixed_end": "lower",
+    "moving_end": "upper",
+    "free_span": 5.0,
+    "width": 1.0,
+    "thickness": 0.18,
+    "grip_overlap": 0.48,
+    "gauge_authored": [
+      -1.5,
+      1.5
+    ],
+    "units": "dimensionless relative coordinates",
+    "event_frame": 361,
+    "event_time_s": 12.0,
+    "maximum_grip_displacement": 0.1,
+    "fracture_z": -1.95,
+    "rear_panel": false,
+    "machine_columns": false,
+    "debond_final_result": "complete_rupture_simultaneous_with_interface_opening",
+    "debond_fracture_slope": 0.22,
+    "debond_local_shear": 0.12,
+    "brittle_local_shear": 0.12,
+    "brittle_fracture_slope": 0.22,
+    "no_constitutive_solver": true,
+    "debond_length_factor": 1.0,
+    "debond_opening_factor": 1.0,
+    "debond_length": 1.6,
+    "debond_opening": 0.1,
+    "fracture_material_bounds": [
+      -2.06,
+      -1.8399999999999999
+    ],
+    "damage_material_bounds": [
+      -2.06,
+      -1.8399999999999999
+    ],
+    "shear_support_material_upper": -0.75,
+    "parameter_scope": "stage1 discrete candidates; no accepted continuous range",
+    "camera": {
+      "location": [
+        7.5,
+        -17,
+        3.0
+      ],
+      "look_at": [
+        0,
+        0,
+        0
+      ],
+      "orthographic_scale": 16.4,
+      "fixed_all_frames": true
+    },
+    "renderer": "BLENDER_WORKBENCH",
+    "render_aa": "8",
+    "world_color": [
+      0.13,
+      0.16,
+      0.19
+    ],
+    "specimen_color": [
+      0.15,
+      0.18,
+      0.21
+    ],
+    "other_assumed_ply_color": [
+      0.23,
+      0.27,
+      0.3
+    ],
+    "loading_function": "dmax*smoothstep((frame-1)/(event_frame-1)), held at event",
+    "damage_function": "abrupt whole seam lateral shear; simultaneous sinusoidal local interface opening for debond",
+    "clamp": {
+      "front_back_y": [
+        -0.29,
+        0.29
+      ],
+      "jaw_size": [
+        1.48,
+        0.4,
+        0.72
+      ],
+      "centre_z": [
+        -2.86,
+        2.86
+      ]
+    },
+    "encoding": {
+      "codec": "libx264",
+      "crf": 16,
+      "preset": "slow",
+      "pixel_format": "yuv420p",
+      "audio": false
+    }
+  },
+  "video": {
+    "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/composite_brittle_lower/composite_brittle_coupled_center_minus195_time12_v1.mp4",
+    "status": "user_accepted_video",
+    "fps": 30,
+    "frames": 600,
+    "duration_s": 20,
+    "width": 960,
+    "height": 540,
+    "file": "composite_brittle_coupled_center_minus195_time12_v1.mp4",
+    "sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2",
+    "bytes": 369867
+  },
+  "source": {
+    "id": "video_0100",
+    "path": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/standard-videos/video_0100.mp4",
+    "sha256": "79ad9d52ad9148bc12e946de390acc42c1ce0e6419b64e0220eb4bead9f89e09",
+    "mapping_csv": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/video_mapping.csv",
+    "labels_xlsx": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/all_videos_tag.xlsx",
+    "original_labels": {
+      "断裂时间点": "100.166 s",
+      "断裂模式": "脆性断裂",
+      "材料类型": "复材",
+      "清晰度": "720P"
+    },
+    "original_filename": "749713af810113414347fed17027ebaa.mp4",
+    "duration_s": 102.9,
+    "original_result_and_location_labels": "not supplied in original spreadsheet"
+  },
+  "accepted_baseline_reference": {
+    "metadata_path": "outputs/current/composite_brittle_lower/composite_brittle_lower_feedback_v0_3.json",
+    "candidate_id": "composite_brittle_lower_feedback_v0_3",
+    "implementation_version": "composite-initial/0.3.1",
+    "video_sha256": "fed17e58fe19af53240695aec7c464df4574aa55210980dc1e48fb78f0be404a",
+    "implementation_sha256": "596e5faf4f8fbd9f1dea27a4b7b879d9f02545644c7070707aaa239eb38a33c5",
+    "reference_only_acceptance_not_inherited": true
+  },
+  "source_observations": [
+    "来源身份来自all_videos_tag.xlsx和video_mapping.csv，颜色不作为材料依据。",
+    "深色近侧视平板条被上下真实夹口夹持，未见金属式塑性颈缩。",
+    "下夹口上方暴露段有局部曲折损伤，侧视投影与测量附件遮挡使准确断面结构难确认。",
+    "事件附近上方自由端出现轻微侧偏；测量附件断后摆开，不能视为试样飞动。"
+  ],
+  "observations": [
+    "All600 evaluated frames measured; geometry observations are in technical_checks. Final video visual inspection and user acceptance are recorded separately in SHA-bound records.",
+    "No material clamp path after measured whole-seam rupture; both fragments remain attached to their respective jaw.",
+    "Entire measured oblique seam stays outside lower authored gauge boundary and above lower clamp root.",
+    "Supplemental all600 evaluated frames confirm actual entire oblique fracture remains in the selected position class.",
+    "Static scene.blend stores frame600 geometry; frame_set does not reconstruct this programmatic animation.",
+    "Technical qualification of the time value is separate from this coupled-candidate qualification."
+  ],
+  "modelling_assumptions": [
+    "所有尺寸均为无量纲作者相对几何，未由来源毫米标尺标定。",
+    "固定相机与理想真实夹口接触；设备柔度和真实控制延迟未求解。",
+    "采用参考约束的定性几何动画，不是有限元、本构预测或标准符合性证明。",
+    "中央60%作为作者模拟标距，不代表来源正式标距。",
+    "完整板条用无纤维纹理的等效连续固体表达，具体破坏组分未知。",
+    "近下端低倾角斜裂面为作者几何近似；上裂面局部x方向剪切0.12表达来源轻微侧偏，未标定幅度。",
+    "破断后停止加载与几何运动是DESIGN选择的试验条件，不声称原实验完全静止。",
+    "后板按用户反馈移除，孤立设备柱按独立复核移除；夹口与固定相机保留，采用夹具与试样视图。",
+    "破断后停止加载与运动是选定生成条件，不声称来源设备和附件完全静止。",
+    "Stage1 changes are uncalibrated qualitative author parameters; source does not measure these candidate values.",
+    "Discrete candidate changes do not establish continuous accepted ranges."
+  ],
+  "unknowns": [
+    "材料牌号、基体、纤维种类、纤维方向、铺层数/织构。",
+    "真实厚度、宽度、正式标距、载荷、伸长率和横梁柔度。",
+    "真实三维裂面/界面路径、控制延迟与可恢复能量。",
+    "来源侧视及遮挡不能证实微观纤维断裂或完整层合结构。"
+  ],
+  "time_mapping": {
+    "frame_definition": "PTS=(frame-1)/30;600 displayed frames cover20s, final frame PTS19.9666666667",
+    "source_annotation_s": 100.166,
+    "source_annotation_is": "provided source label, not physical highspeed timestamp",
+    "anchor_pairs_source_to_generated_s": [
+      [
+        0,
+        0
+      ],
+      [
+        100.166,
+        12.0
+      ],
+      [
+        102.9,
+        20
+      ]
+    ],
+    "events": {
+      "loading_start": {
+        "frame_1_based": 1,
+        "time_s": 0.0
+      },
+      "first_crack": {
+        "frame_1_based": 361,
+        "time_s": 12.0
+      },
+      "debond_start": null,
+      "final_loss_of_clamp_path": {
+        "frame_1_based": 361,
+        "time_s": 12.0
+      },
+      "geometric_complete_separation": {
+        "frame_1_based": 361,
+        "time_s": 12.0
+      },
+      "visually_readable_complete_separation": "Complete separation is visible in final encoded video; earliest visually decidable separation frame remains unmeasured and is not equated to topology loss",
+      "postevent_stop": {
+        "frame_1_based": 361,
+        "time_s": 12.0
+      }
+    },
+    "source_to_generated_mapping_method": "piecewise linear between listed anchor pairs for documentation; authored loading/rupture schedule, no claim of source frame-by-frame trajectory match"
+  },
+  "expected_labels_six_groups": {
+    "材料类别": "复材",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "脆性断裂",
+    "断裂位置": "标距外非根部",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "checked_labels_six_groups": {
+    "材料类别": {
+      "value": "复材",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "断裂结果": {
+      "value": "完全断裂",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "单一主要破坏类别": {
+      "value": "脆性断裂",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "断裂位置": {
+      "value": "标距外非根部",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "夹持异常": {
+      "value": "无",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "拍摄异常": {
+      "value": "无",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    }
+  },
+  "technical_checks": {
+    "implementation_version": "composite-initial/0.5.0",
+    "config": {
+      "version": "composite-initial/0.5.0",
+      "baseline_implementation_version": "composite-initial/0.3.1",
+      "kind": "brittle",
+      "fps": 30,
+      "frames": 600,
+      "resolution": [
+        960,
+        540
+      ],
+      "loading_axis": "z",
+      "fixed_end": "lower",
+      "moving_end": "upper",
+      "free_span": 5.0,
+      "width": 1.0,
+      "thickness": 0.18,
+      "grip_overlap": 0.48,
+      "gauge_authored": [
+        -1.5,
+        1.5
+      ],
+      "units": "dimensionless relative coordinates",
+      "event_frame": 361,
+      "event_time_s": 12.0,
+      "maximum_grip_displacement": 0.1,
+      "fracture_z": -1.95,
+      "rear_panel": false,
+      "machine_columns": false,
+      "debond_final_result": "complete_rupture_simultaneous_with_interface_opening",
+      "debond_fracture_slope": 0.22,
+      "debond_local_shear": 0.12,
+      "brittle_local_shear": 0.12,
+      "brittle_fracture_slope": 0.22,
+      "no_constitutive_solver": true,
+      "debond_length_factor": 1.0,
+      "debond_opening_factor": 1.0,
+      "debond_length": 1.6,
+      "debond_opening": 0.1,
+      "fracture_material_bounds": [
+        -2.06,
+        -1.8399999999999999
+      ],
+      "damage_material_bounds": [
+        -2.06,
+        -1.8399999999999999
+      ],
+      "shear_support_material_upper": -0.75,
+      "parameter_scope": "stage1 discrete candidates; no accepted continuous range",
+      "camera": {
+        "location": [
+          7.5,
+          -17,
+          3.0
+        ],
+        "look_at": [
+          0,
+          0,
+          0
+        ],
+        "orthographic_scale": 16.4,
+        "fixed_all_frames": true
+      },
+      "renderer": "BLENDER_WORKBENCH",
+      "render_aa": "8",
+      "world_color": [
+        0.13,
+        0.16,
+        0.19
+      ],
+      "specimen_color": [
+        0.15,
+        0.18,
+        0.21
+      ],
+      "other_assumed_ply_color": [
+        0.23,
+        0.27,
+        0.3
+      ],
+      "loading_function": "dmax*smoothstep((frame-1)/(event_frame-1)), held at event",
+      "damage_function": "abrupt whole seam lateral shear; simultaneous sinusoidal local interface opening for debond",
+      "clamp": {
+        "front_back_y": [
+          -0.29,
+          0.29
+        ],
+        "jaw_size": [
+          1.48,
+          0.4,
+          0.72
+        ],
+        "centre_z": [
+          -2.86,
+          2.86
+        ]
+      },
+      "encoding": {
+        "codec": "libx264",
+        "crf": 16,
+        "preset": "slow",
+        "pixel_format": "yuv420p",
+        "audio": false
+      }
+    },
+    "samples": [
+      {
+        "frame": 1,
+        "time_s": 0.0,
+        "components_measured": 1,
+        "component_vertices": [
+          2436
+        ],
+        "vertices": 2436,
+        "faces": 2434,
+        "signed_volume": 1.0728000358109664,
+        "specimen_z_bounds": [
+          -2.9800000190734863,
+          2.9800000190734863
+        ],
+        "grip_surface_contact_error": [
+          3.5762786898541066e-09,
+          3.5762786898541066e-09
+        ],
+        "upper_jaw_displacement": 0.0,
+        "component_clamp_connections": [
+          {
+            "vertex_count": 2436,
+            "z_bounds": [
+              -2.9800000190734863,
+              2.9800000190734863
+            ],
+            "touches_lower_material_clamp": true,
+            "touches_upper_material_clamp": true,
+            "signed_surface_volume": 1.0728000358109664,
+            "boundary_kind": "material_outer_boundary"
+          }
+        ],
+        "has_material_surface_path_between_clamps": true,
+        "same_material_lower_upper_left_edge_lengths": [
+          0.920000072966382,
+          5.039999977810123
+        ],
+        "section_actual_thickness": 0.18000000715255737,
+        "tracked_material_segment_path_lengths": [
+          0.4400000557019984,
+          4.559999966410735
+        ],
+        "tracked_material_segment_initial_bounds": [
+          [
+            -2.5,
+            -2.06
+          ],
+          [
+            -2.06,
+            2.5
+          ]
+        ],
+        "tracked_material_gauge_axial_length": 3.0,
+        "tracked_material_gauge_lambda": 1.0,
+        "tracked_intact_section_material_z": 1.5,
+        "tracked_intact_section_width": 1.0,
+        "tracked_intact_section_thickness": 0.18000000233451524,
+        "tracked_intact_section_area": 0.18000000233451524,
+        "actual_evaluated_jaw_checks": [
+          {
+            "sign": -1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4771249294281006,
+            "material_max_abs_x": 0.5
+          },
+          {
+            "sign": 1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.48000001907348633,
+            "material_max_abs_x": 0.5
+          }
+        ],
+        "non_two_face_edges": 0,
+        "whole_damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "fracture_material_bounds_measured": [
+          -2.059999942779541,
+          -1.840000033378601
+        ],
+        "entire_actual_fracture_position_class_maintained": true
+      },
+      {
+        "frame": 181,
+        "time_s": 6.0,
+        "components_measured": 1,
+        "component_vertices": [
+          2436
+        ],
+        "vertices": 2436,
+        "faces": 2434,
+        "signed_volume": 1.0818000507631496,
+        "specimen_z_bounds": [
+          -2.9800000190734863,
+          3.0299999713897705
+        ],
+        "grip_surface_contact_error": [
+          3.5762786898541066e-09,
+          3.5762786898541066e-09
+        ],
+        "upper_jaw_displacement": 0.05,
+        "component_clamp_connections": [
+          {
+            "vertex_count": 2436,
+            "z_bounds": [
+              -2.9800000190734863,
+              3.0299999713897705
+            ],
+            "touches_lower_material_clamp": true,
+            "touches_upper_material_clamp": true,
+            "signed_surface_volume": 1.0818000507631496,
+            "boundary_kind": "material_outer_boundary"
+          }
+        ],
+        "has_material_surface_path_between_clamps": true,
+        "same_material_lower_upper_left_edge_lengths": [
+          0.9244000916342741,
+          5.085599893432746
+        ],
+        "section_actual_thickness": 0.18000000715255737,
+        "tracked_material_segment_path_lengths": [
+          0.44430446852320776,
+          4.605599882033357
+        ],
+        "tracked_material_segment_initial_bounds": [
+          [
+            -2.5,
+            -2.06
+          ],
+          [
+            -2.06,
+            2.5
+          ]
+        ],
+        "tracked_material_gauge_axial_length": 3.03000009059906,
+        "tracked_material_gauge_lambda": 1.0100000301996868,
+        "tracked_intact_section_material_z": 1.5,
+        "tracked_intact_section_width": 1.0,
+        "tracked_intact_section_thickness": 0.18000000233451524,
+        "tracked_intact_section_area": 0.18000000233451524,
+        "actual_evaluated_jaw_checks": [
+          {
+            "sign": -1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4771249294281006,
+            "material_max_abs_x": 0.5
+          },
+          {
+            "sign": 1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.48000001907348633,
+            "material_max_abs_x": 0.5
+          }
+        ],
+        "non_two_face_edges": 0,
+        "whole_damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "fracture_material_bounds_measured": [
+          -2.059999942779541,
+          -1.840000033378601
+        ],
+        "entire_actual_fracture_position_class_maintained": true
+      },
+      {
+        "frame": 331,
+        "time_s": 11.0,
+        "components_measured": 1,
+        "component_vertices": [
+          2436
+        ],
+        "vertices": 2436,
+        "faces": 2434,
+        "signed_volume": 1.090445883630385,
+        "specimen_z_bounds": [
+          -2.9800000190734863,
+          3.0780324935913086
+        ],
+        "grip_surface_contact_error": [
+          3.5762786898541066e-09,
+          3.5762786898541066e-09
+        ],
+        "upper_jaw_displacement": 0.09803240740740742,
+        "component_clamp_connections": [
+          {
+            "vertex_count": 2436,
+            "z_bounds": [
+              -2.9800000190734863,
+              3.0780324935913086
+            ],
+            "touches_lower_material_clamp": true,
+            "touches_upper_material_clamp": true,
+            "signed_surface_volume": 1.090445883630385,
+            "boundary_kind": "material_outer_boundary"
+          }
+        ],
+        "has_material_surface_path_between_clamps": true,
+        "same_material_lower_upper_left_edge_lengths": [
+          0.9286267695133675,
+          5.129405699167774
+        ],
+        "section_actual_thickness": 0.18000000715255737,
+        "tracked_material_segment_path_lengths": [
+          0.44843935475778673,
+          4.649405687768385
+        ],
+        "tracked_material_segment_initial_bounds": [
+          [
+            -2.5,
+            -2.06
+          ],
+          [
+            -2.06,
+            2.5
+          ]
+        ],
+        "tracked_material_gauge_axial_length": 3.0588194131851196,
+        "tracked_material_gauge_lambda": 1.0196064710617065,
+        "tracked_intact_section_material_z": 1.5,
+        "tracked_intact_section_width": 1.0,
+        "tracked_intact_section_thickness": 0.18000000233451524,
+        "tracked_intact_section_area": 0.18000000233451524,
+        "actual_evaluated_jaw_checks": [
+          {
+            "sign": -1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4771249294281006,
+            "material_max_abs_x": 0.5
+          },
+          {
+            "sign": 1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.48000001907348633,
+            "material_max_abs_x": 0.5
+          }
+        ],
+        "non_two_face_edges": 0,
+        "whole_damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "fracture_material_bounds_measured": [
+          -2.059999942779541,
+          -1.840000033378601
+        ],
+        "entire_actual_fracture_position_class_maintained": true
+      },
+      {
+        "frame": 358,
+        "time_s": 11.9,
+        "components_measured": 1,
+        "component_vertices": [
+          2436
+        ],
+        "vertices": 2436,
+        "faces": 2434,
+        "signed_volume": 1.0907963116407398,
+        "specimen_z_bounds": [
+          -2.9800000190734863,
+          3.079979181289673
+        ],
+        "grip_surface_contact_error": [
+          3.5762786898541066e-09,
+          3.5762786898541066e-09
+        ],
+        "upper_jaw_displacement": 0.09997928240740742,
+        "component_clamp_connections": [
+          {
+            "vertex_count": 2436,
+            "z_bounds": [
+              -2.9800000190734863,
+              3.079979181289673
+            ],
+            "touches_lower_material_clamp": true,
+            "touches_upper_material_clamp": true,
+            "signed_surface_volume": 1.0907963116407398,
+            "boundary_kind": "material_outer_boundary"
+          }
+        ],
+        "has_material_surface_path_between_clamps": true,
+        "same_material_lower_upper_left_edge_lengths": [
+          0.9287981979493479,
+          5.131181022707608
+        ],
+        "section_actual_thickness": 0.18000000715255737,
+        "tracked_material_segment_path_lengths": [
+          0.44860696844742715,
+          4.651181244138914
+        ],
+        "tracked_material_segment_initial_bounds": [
+          [
+            -2.5,
+            -2.06
+          ],
+          [
+            -2.06,
+            2.5
+          ]
+        ],
+        "tracked_material_gauge_axial_length": 3.0599875450134277,
+        "tracked_material_gauge_lambda": 1.0199958483378093,
+        "tracked_intact_section_material_z": 1.5,
+        "tracked_intact_section_width": 1.0,
+        "tracked_intact_section_thickness": 0.18000000233451524,
+        "tracked_intact_section_area": 0.18000000233451524,
+        "actual_evaluated_jaw_checks": [
+          {
+            "sign": -1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4771249294281006,
+            "material_max_abs_x": 0.5
+          },
+          {
+            "sign": 1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4799997806549072,
+            "material_max_abs_x": 0.5
+          }
+        ],
+        "non_two_face_edges": 0,
+        "whole_damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "fracture_material_bounds_measured": [
+          -2.059999942779541,
+          -1.840000033378601
+        ],
+        "entire_actual_fracture_position_class_maintained": true
+      },
+      {
+        "frame": 359,
+        "time_s": 11.933333333333334,
+        "components_measured": 1,
+        "component_vertices": [
+          2436
+        ],
+        "vertices": 2436,
+        "faces": 2434,
+        "signed_volume": 1.0907983887210169,
+        "specimen_z_bounds": [
+          -2.9800000190734863,
+          3.079990863800049
+        ],
+        "grip_surface_contact_error": [
+          3.5762786898541066e-09,
+          3.5762786898541066e-09
+        ],
+        "upper_jaw_displacement": 0.09999077503429356,
+        "component_clamp_connections": [
+          {
+            "vertex_count": 2436,
+            "z_bounds": [
+              -2.9800000190734863,
+              3.079990863800049
+            ],
+            "touches_lower_material_clamp": true,
+            "touches_upper_material_clamp": true,
+            "signed_surface_volume": 1.0907983887210169,
+            "boundary_kind": "material_outer_boundary"
+          }
+        ],
+        "has_material_surface_path_between_clamps": true,
+        "same_material_lower_upper_left_edge_lengths": [
+          0.9287991507135823,
+          5.1311917405584
+        ],
+        "section_actual_thickness": 0.18000000715255737,
+        "tracked_material_segment_path_lengths": [
+          0.4486079212116615,
+          4.651191729159011
+        ],
+        "tracked_material_segment_initial_bounds": [
+          [
+            -2.5,
+            -2.06
+          ],
+          [
+            -2.06,
+            2.5
+          ]
+        ],
+        "tracked_material_gauge_axial_length": 3.0599944591522217,
+        "tracked_material_gauge_lambda": 1.0199981530507405,
+        "tracked_intact_section_material_z": 1.5,
+        "tracked_intact_section_width": 1.0,
+        "tracked_intact_section_thickness": 0.18000000233451524,
+        "tracked_intact_section_area": 0.18000000233451524,
+        "actual_evaluated_jaw_checks": [
+          {
+            "sign": -1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4771249294281006,
+            "material_max_abs_x": 0.5
+          },
+          {
+            "sign": 1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.48000001907348633,
+            "material_max_abs_x": 0.5
+          }
+        ],
+        "non_two_face_edges": 0,
+        "whole_damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "fracture_material_bounds_measured": [
+          -2.059999942779541,
+          -1.840000033378601
+        ],
+        "entire_actual_fracture_position_class_maintained": true
+      },
+      {
+        "frame": 360,
+        "time_s": 11.966666666666667,
+        "components_measured": 1,
+        "component_vertices": [
+          2436
+        ],
+        "vertices": 2436,
+        "faces": 2434,
+        "signed_volume": 1.0907996431229396,
+        "specimen_z_bounds": [
+          -2.9800000190734863,
+          3.0799977779388428
+        ],
+        "grip_surface_contact_error": [
+          3.5762786898541066e-09,
+          3.5762786898541066e-09
+        ],
+        "upper_jaw_displacement": 0.0999976894718793,
+        "component_clamp_connections": [
+          {
+            "vertex_count": 2436,
+            "z_bounds": [
+              -2.9800000190734863,
+              3.0799977779388428
+            ],
+            "touches_lower_material_clamp": true,
+            "touches_upper_material_clamp": true,
+            "signed_surface_volume": 1.0907996431229396,
+            "boundary_kind": "material_outer_boundary"
+          }
+        ],
+        "has_material_surface_path_between_clamps": true,
+        "same_material_lower_upper_left_edge_lengths": [
+          0.928799865282405,
+          5.131197934820731
+        ],
+        "section_actual_thickness": 0.18000000715255737,
+        "tracked_material_segment_path_lengths": [
+          0.4486086357804842,
+          4.651197923421344
+        ],
+        "tracked_material_segment_initial_bounds": [
+          [
+            -2.5,
+            -2.06
+          ],
+          [
+            -2.06,
+            2.5
+          ]
+        ],
+        "tracked_material_gauge_axial_length": 3.059998631477356,
+        "tracked_material_gauge_lambda": 1.0199995438257854,
+        "tracked_intact_section_material_z": 1.5,
+        "tracked_intact_section_width": 1.0,
+        "tracked_intact_section_thickness": 0.18000000233451524,
+        "tracked_intact_section_area": 0.18000000233451524,
+        "actual_evaluated_jaw_checks": [
+          {
+            "sign": -1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4771249294281006,
+            "material_max_abs_x": 0.5
+          },
+          {
+            "sign": 1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.48000001907348633,
+            "material_max_abs_x": 0.5
+          }
+        ],
+        "non_two_face_edges": 0,
+        "whole_damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "fracture_material_bounds_measured": [
+          -2.059999942779541,
+          -1.840000033378601
+        ],
+        "entire_actual_fracture_position_class_maintained": true
+      },
+      {
+        "frame": 361,
+        "time_s": 12.0,
+        "components_measured": 2,
+        "component_vertices": [
+          1050,
+          1428
+        ],
+        "vertices": 2478,
+        "faces": 2474,
+        "signed_volume": 1.0908000687602926,
+        "specimen_z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "grip_surface_contact_error": [
+          3.5762786898541066e-09,
+          3.5762786898541066e-09
+        ],
+        "upper_jaw_displacement": 0.1,
+        "component_clamp_connections": [
+          {
+            "vertex_count": 1050,
+            "z_bounds": [
+              -2.9800000190734863,
+              -1.826799988746643
+            ],
+            "touches_lower_material_clamp": true,
+            "touches_upper_material_clamp": false,
+            "signed_surface_volume": 0.187380012461972,
+            "boundary_kind": "material_outer_boundary"
+          },
+          {
+            "vertex_count": 1428,
+            "z_bounds": [
+              -2.0511999130249023,
+              3.0799999237060547
+            ],
+            "touches_lower_material_clamp": false,
+            "touches_upper_material_clamp": true,
+            "signed_surface_volume": 0.9034200562983207,
+            "boundary_kind": "material_outer_boundary"
+          }
+        ],
+        "has_material_surface_path_between_clamps": false,
+        "same_material_lower_upper_left_edge_lengths": [
+          0.9288001034720126,
+          5.137492704961703
+        ],
+        "section_actual_thickness": 0.18000000715255737,
+        "seam_clearance_measured_min": 0.024241638151935252,
+        "seam_clearance_measured_max": 0.02851285425558947,
+        "seam_penetration": false,
+        "tracked_material_segment_path_lengths": [
+          0.44860887397009175,
+          4.657492693562315
+        ],
+        "tracked_material_segment_initial_bounds": [
+          [
+            -2.5,
+            -2.06
+          ],
+          [
+            -2.06,
+            2.5
+          ]
+        ],
+        "tracked_material_gauge_axial_length": null,
+        "tracked_intact_section_material_z": 1.5,
+        "tracked_intact_section_width": 1.0,
+        "tracked_intact_section_thickness": 0.18000000233451524,
+        "tracked_intact_section_area": 0.18000000233451524,
+        "actual_evaluated_jaw_checks": [
+          {
+            "sign": -1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4771249294281006,
+            "material_max_abs_x": 0.5
+          },
+          {
+            "sign": 1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.48000001907348633,
+            "material_max_abs_x": 0.5
+          }
+        ],
+        "non_two_face_edges": 0,
+        "whole_damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "fracture_material_bounds_measured": [
+          -2.059999942779541,
+          -1.840000033378601
+        ],
+        "entire_actual_fracture_position_class_maintained": true
+      },
+      {
+        "frame": 362,
+        "time_s": 12.033333333333333,
+        "components_measured": 2,
+        "component_vertices": [
+          1050,
+          1428
+        ],
+        "vertices": 2478,
+        "faces": 2474,
+        "signed_volume": 1.0908000687602926,
+        "specimen_z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "grip_surface_contact_error": [
+          3.5762786898541066e-09,
+          3.5762786898541066e-09
+        ],
+        "upper_jaw_displacement": 0.1,
+        "component_clamp_connections": [
+          {
+            "vertex_count": 1050,
+            "z_bounds": [
+              -2.9800000190734863,
+              -1.826799988746643
+            ],
+            "touches_lower_material_clamp": true,
+            "touches_upper_material_clamp": false,
+            "signed_surface_volume": 0.187380012461972,
+            "boundary_kind": "material_outer_boundary"
+          },
+          {
+            "vertex_count": 1428,
+            "z_bounds": [
+              -2.0511999130249023,
+              3.0799999237060547
+            ],
+            "touches_lower_material_clamp": false,
+            "touches_upper_material_clamp": true,
+            "signed_surface_volume": 0.9034200562983207,
+            "boundary_kind": "material_outer_boundary"
+          }
+        ],
+        "has_material_surface_path_between_clamps": false,
+        "same_material_lower_upper_left_edge_lengths": [
+          0.9288001034720126,
+          5.137492704961703
+        ],
+        "section_actual_thickness": 0.18000000715255737,
+        "seam_clearance_measured_min": 0.024241638151935252,
+        "seam_clearance_measured_max": 0.02851285425558947,
+        "seam_penetration": false,
+        "tracked_material_segment_path_lengths": [
+          0.44860887397009175,
+          4.657492693562315
+        ],
+        "tracked_material_segment_initial_bounds": [
+          [
+            -2.5,
+            -2.06
+          ],
+          [
+            -2.06,
+            2.5
+          ]
+        ],
+        "tracked_material_gauge_axial_length": null,
+        "tracked_intact_section_material_z": 1.5,
+        "tracked_intact_section_width": 1.0,
+        "tracked_intact_section_thickness": 0.18000000233451524,
+        "tracked_intact_section_area": 0.18000000233451524,
+        "actual_evaluated_jaw_checks": [
+          {
+            "sign": -1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4771249294281006,
+            "material_max_abs_x": 0.5
+          },
+          {
+            "sign": 1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.48000001907348633,
+            "material_max_abs_x": 0.5
+          }
+        ],
+        "non_two_face_edges": 0,
+        "whole_damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "fracture_material_bounds_measured": [
+          -2.059999942779541,
+          -1.840000033378601
+        ],
+        "entire_actual_fracture_position_class_maintained": true
+      },
+      {
+        "frame": 363,
+        "time_s": 12.066666666666666,
+        "components_measured": 2,
+        "component_vertices": [
+          1050,
+          1428
+        ],
+        "vertices": 2478,
+        "faces": 2474,
+        "signed_volume": 1.0908000687602926,
+        "specimen_z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "grip_surface_contact_error": [
+          3.5762786898541066e-09,
+          3.5762786898541066e-09
+        ],
+        "upper_jaw_displacement": 0.1,
+        "component_clamp_connections": [
+          {
+            "vertex_count": 1050,
+            "z_bounds": [
+              -2.9800000190734863,
+              -1.826799988746643
+            ],
+            "touches_lower_material_clamp": true,
+            "touches_upper_material_clamp": false,
+            "signed_surface_volume": 0.187380012461972,
+            "boundary_kind": "material_outer_boundary"
+          },
+          {
+            "vertex_count": 1428,
+            "z_bounds": [
+              -2.0511999130249023,
+              3.0799999237060547
+            ],
+            "touches_lower_material_clamp": false,
+            "touches_upper_material_clamp": true,
+            "signed_surface_volume": 0.9034200562983207,
+            "boundary_kind": "material_outer_boundary"
+          }
+        ],
+        "has_material_surface_path_between_clamps": false,
+        "same_material_lower_upper_left_edge_lengths": [
+          0.9288001034720126,
+          5.137492704961703
+        ],
+        "section_actual_thickness": 0.18000000715255737,
+        "seam_clearance_measured_min": 0.024241638151935252,
+        "seam_clearance_measured_max": 0.02851285425558947,
+        "seam_penetration": false,
+        "tracked_material_segment_path_lengths": [
+          0.44860887397009175,
+          4.657492693562315
+        ],
+        "tracked_material_segment_initial_bounds": [
+          [
+            -2.5,
+            -2.06
+          ],
+          [
+            -2.06,
+            2.5
+          ]
+        ],
+        "tracked_material_gauge_axial_length": null,
+        "tracked_intact_section_material_z": 1.5,
+        "tracked_intact_section_width": 1.0,
+        "tracked_intact_section_thickness": 0.18000000233451524,
+        "tracked_intact_section_area": 0.18000000233451524,
+        "actual_evaluated_jaw_checks": [
+          {
+            "sign": -1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4771249294281006,
+            "material_max_abs_x": 0.5
+          },
+          {
+            "sign": 1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.48000001907348633,
+            "material_max_abs_x": 0.5
+          }
+        ],
+        "non_two_face_edges": 0,
+        "whole_damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "fracture_material_bounds_measured": [
+          -2.059999942779541,
+          -1.840000033378601
+        ],
+        "entire_actual_fracture_position_class_maintained": true
+      },
+      {
+        "frame": 600,
+        "time_s": 19.966666666666665,
+        "components_measured": 2,
+        "component_vertices": [
+          1050,
+          1428
+        ],
+        "vertices": 2478,
+        "faces": 2474,
+        "signed_volume": 1.0908000687602926,
+        "specimen_z_bounds": [
+          -2.9800000190734863,
+          3.0799999237060547
+        ],
+        "grip_surface_contact_error": [
+          3.5762786898541066e-09,
+          3.5762786898541066e-09
+        ],
+        "upper_jaw_displacement": 0.1,
+        "component_clamp_connections": [
+          {
+            "vertex_count": 1050,
+            "z_bounds": [
+              -2.9800000190734863,
+              -1.826799988746643
+            ],
+            "touches_lower_material_clamp": true,
+            "touches_upper_material_clamp": false,
+            "signed_surface_volume": 0.187380012461972,
+            "boundary_kind": "material_outer_boundary"
+          },
+          {
+            "vertex_count": 1428,
+            "z_bounds": [
+              -2.0511999130249023,
+              3.0799999237060547
+            ],
+            "touches_lower_material_clamp": false,
+            "touches_upper_material_clamp": true,
+            "signed_surface_volume": 0.9034200562983207,
+            "boundary_kind": "material_outer_boundary"
+          }
+        ],
+        "has_material_surface_path_between_clamps": false,
+        "same_material_lower_upper_left_edge_lengths": [
+          0.9288001034720126,
+          5.137492704961703
+        ],
+        "section_actual_thickness": 0.18000000715255737,
+        "seam_clearance_measured_min": 0.024241638151935252,
+        "seam_clearance_measured_max": 0.02851285425558947,
+        "seam_penetration": false,
+        "tracked_material_segment_path_lengths": [
+          0.44860887397009175,
+          4.657492693562315
+        ],
+        "tracked_material_segment_initial_bounds": [
+          [
+            -2.5,
+            -2.06
+          ],
+          [
+            -2.06,
+            2.5
+          ]
+        ],
+        "tracked_material_gauge_axial_length": null,
+        "tracked_intact_section_material_z": 1.5,
+        "tracked_intact_section_width": 1.0,
+        "tracked_intact_section_thickness": 0.18000000233451524,
+        "tracked_intact_section_area": 0.18000000233451524,
+        "actual_evaluated_jaw_checks": [
+          {
+            "sign": -1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4771249294281006,
+            "material_max_abs_x": 0.5
+          },
+          {
+            "sign": 1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.48000001907348633,
+            "material_max_abs_x": 0.5
+          }
+        ],
+        "non_two_face_edges": 0,
+        "whole_damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "fracture_material_bounds_measured": [
+          -2.059999942779541,
+          -1.840000033378601
+        ],
+        "entire_actual_fracture_position_class_maintained": true
+      }
+    ],
+    "evaluated_frame_count": 600,
+    "post_event_max_vertex_displacement": 0.0,
+    "post_event_max_fixture_displacement": 0.0,
+    "scope": "600 evaluated mesh frames: graph paths, closed edges, signed volume, tracked material lengths and intact section, actual bevelled jaws, interface and seam-plane clearance; no full triangle self-intersection or constitutive solver",
+    "contact_semantics": "intentional jaw embed0.48; evaluated inner planes and outer material measured",
+    "full_triangle_selfintersection_checked": false,
+    "all_frame_summary": {
+      "first_complete_rupture_frame_by_measured_clamp_path": 361,
+      "first_interface_opening_frame_by_measurement": null,
+      "simultaneous_onset_checked": null,
+      "pre_event_every_frame_spans_clamps": true,
+      "post_event_every_frame_two_clamped_fragments": true,
+      "signed_volume_initial": 1.0728000358109664,
+      "signed_volume_min": 1.0728000358109664,
+      "signed_volume_max": 1.0908000687602926,
+      "volume_at_last_connected": 1.0907996431229396,
+      "volume_at_first_disconnected": 1.0908000687602926,
+      "volume_max_relative_change": 0.016778553643241878,
+      "maximum_actual_jaw_contact_error": 1.4901161193847656e-08,
+      "minimum_actual_jaw_embed_z": 0.4771249294281006,
+      "maximum_non_two_face_edges": 0,
+      "seam_clearance_min": 0.024241638151935252,
+      "interface_opening_max": 0,
+      "detected_seam_or_interface_penetration": false,
+      "position_guard": "entire fracture endpoints and full sinusoidal debond support constrained in initial material coordinates; actual fracture extrema measured each frame",
+      "length_definition": "tracked outer material edge path for each future fragment; gauge length is axial projection between initial z=-1.5,+1.5 prior to rupture",
+      "intact_section_definition": "same initial material section at z=1.5, outside fracture/opening region",
+      "volume_interpretation": "fixed thickness and prescribed axial stretch, small volume increase is authored geometric approximation; not incompressibility",
+      "pre_first_crack": {
+        "frame": 360,
+        "time_s": 11.966666666666667,
+        "components_measured": 1,
+        "component_vertices": [
+          2436
+        ],
+        "vertices": 2436,
+        "faces": 2434,
+        "signed_volume": 1.0907996431229396,
+        "specimen_z_bounds": [
+          -2.9800000190734863,
+          3.0799977779388428
+        ],
+        "grip_surface_contact_error": [
+          3.5762786898541066e-09,
+          3.5762786898541066e-09
+        ],
+        "upper_jaw_displacement": 0.0999976894718793,
+        "component_clamp_connections": [
+          {
+            "vertex_count": 2436,
+            "z_bounds": [
+              -2.9800000190734863,
+              3.0799977779388428
+            ],
+            "touches_lower_material_clamp": true,
+            "touches_upper_material_clamp": true,
+            "signed_surface_volume": 1.0907996431229396,
+            "boundary_kind": "material_outer_boundary"
+          }
+        ],
+        "has_material_surface_path_between_clamps": true,
+        "same_material_lower_upper_left_edge_lengths": [
+          0.928799865282405,
+          5.131197934820731
+        ],
+        "section_actual_thickness": 0.18000000715255737,
+        "tracked_material_segment_path_lengths": [
+          0.4486086357804842,
+          4.651197923421344
+        ],
+        "tracked_material_segment_initial_bounds": [
+          [
+            -2.5,
+            -2.06
+          ],
+          [
+            -2.06,
+            2.5
+          ]
+        ],
+        "tracked_material_gauge_axial_length": 3.059998631477356,
+        "tracked_material_gauge_lambda": 1.0199995438257854,
+        "tracked_intact_section_material_z": 1.5,
+        "tracked_intact_section_width": 1.0,
+        "tracked_intact_section_thickness": 0.18000000233451524,
+        "tracked_intact_section_area": 0.18000000233451524,
+        "actual_evaluated_jaw_checks": [
+          {
+            "sign": -1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4771249294281006,
+            "material_max_abs_x": 0.5
+          },
+          {
+            "sign": 1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.48000001907348633,
+            "material_max_abs_x": 0.5
+          }
+        ],
+        "non_two_face_edges": 0,
+        "whole_damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "fracture_material_bounds_measured": [
+          -2.059999942779541,
+          -1.840000033378601
+        ],
+        "entire_actual_fracture_position_class_maintained": true
+      },
+      "last_actual_connection": {
+        "frame": 360,
+        "time_s": 11.966666666666667,
+        "components_measured": 1,
+        "component_vertices": [
+          2436
+        ],
+        "vertices": 2436,
+        "faces": 2434,
+        "signed_volume": 1.0907996431229396,
+        "specimen_z_bounds": [
+          -2.9800000190734863,
+          3.0799977779388428
+        ],
+        "grip_surface_contact_error": [
+          3.5762786898541066e-09,
+          3.5762786898541066e-09
+        ],
+        "upper_jaw_displacement": 0.0999976894718793,
+        "component_clamp_connections": [
+          {
+            "vertex_count": 2436,
+            "z_bounds": [
+              -2.9800000190734863,
+              3.0799977779388428
+            ],
+            "touches_lower_material_clamp": true,
+            "touches_upper_material_clamp": true,
+            "signed_surface_volume": 1.0907996431229396,
+            "boundary_kind": "material_outer_boundary"
+          }
+        ],
+        "has_material_surface_path_between_clamps": true,
+        "same_material_lower_upper_left_edge_lengths": [
+          0.928799865282405,
+          5.131197934820731
+        ],
+        "section_actual_thickness": 0.18000000715255737,
+        "tracked_material_segment_path_lengths": [
+          0.4486086357804842,
+          4.651197923421344
+        ],
+        "tracked_material_segment_initial_bounds": [
+          [
+            -2.5,
+            -2.06
+          ],
+          [
+            -2.06,
+            2.5
+          ]
+        ],
+        "tracked_material_gauge_axial_length": 3.059998631477356,
+        "tracked_material_gauge_lambda": 1.0199995438257854,
+        "tracked_intact_section_material_z": 1.5,
+        "tracked_intact_section_width": 1.0,
+        "tracked_intact_section_thickness": 0.18000000233451524,
+        "tracked_intact_section_area": 0.18000000233451524,
+        "actual_evaluated_jaw_checks": [
+          {
+            "sign": -1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.4771249294281006,
+            "material_max_abs_x": 0.5
+          },
+          {
+            "sign": 1,
+            "inner_planes_y": [
+              -0.08999998867511749,
+              0.08999998867511749
+            ],
+            "contact_error_max": 1.4901161193847656e-08,
+            "overlap_z": 0.48000001907348633,
+            "material_max_abs_x": 0.5
+          }
+        ],
+        "non_two_face_edges": 0,
+        "whole_damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "fracture_material_bounds_measured": [
+          -2.059999942779541,
+          -1.840000033378601
+        ],
+        "entire_actual_fracture_position_class_maintained": true
+      },
+      "two_prefracture_measurements_equal_reason": "abrupt whole seam failure and simultaneous interface opening; both events measured at same onset frame"
+    },
+    "supplemental_whole_damage_measurement": {
+      "evaluated_frame_count": 600,
+      "entire_actual_fracture_position_class_maintained_every_frame": true,
+      "actual_debond_full_support_every_frame_checked": false,
+      "method": "evaluated mesh source_coordinate attributes; full support endpoint vertices exist and have zero y displacement; all nonzero opening vertices stay within full support; zero opening outside support; all measured oblique fracture extrema retain position class"
+    }
+  },
+  "acceptance": {
+    "user_accepted": true,
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "independent_review": "passed_for_single_discrete_qualitative_candidate",
+    "main_final_video_view": "completed_for_final_sha256",
+    "acceptance_scope": "single_video_visual_and_label_acceptance",
+    "encoded_video_check": "passed",
+    "independent_review_completed": true,
+    "main_final_video_view_completed": true,
+    "final_encoding": "passed",
+    "main_agent_final_video_view": "completed_for_final_sha256",
+    "status": "user_accepted_video",
+    "scope": "single_video_visual_and_label_acceptance",
+    "user_acceptance_record": {
+      "date": "2026-10-09",
+      "user_statement": "可以，都没问题",
+      "context": "Acceptance of the seven listed 20-second first-stage coupled videos and their presented visual effects and labels",
+      "video_id": "composite_brittle_coupled_center_minus195_time12_v1",
+      "video_sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2",
+      "accepted_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false
+    }
+  },
+  "user_accepted": true,
+  "style_accepted": false,
+  "parameter_range_accepted": false,
+  "training_released": false,
+  "limitations": [
+    "No constitutive or microscopic failure validation.",
+    "Seam plane and interply clearance measured; full triangle selfintersection not checked.",
+    "Final encoded video, main-agent view, independent review and user acceptance completed for this discrete video.",
+    "Six label groups checked and accepted for this specific coupled video; acceptance is recorded independently from its single-parameter references.",
+    "The saved Blender scene is a static frame600 snapshot; rendering must call the frozen builder update for each frame.",
+    "A600frame check and key previews are not a full encoded-video validation; root still must view final video, and user acceptance remains required."
+  ],
+  "frozen_source_file": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_initial_frozen.py",
+  "verification_wrapper": {
+    "file": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/verify_and_build.py",
+    "sha256": "bbe787d931335790a509e49f6ab38022deffa2ed3590d41d015905b892646782",
+    "scope": "additional actual material-coordinate full debond support and fracture bounds; does not alter frozen builder"
+  },
+  "accepted_single_parameter_references": [
+    {
+      "candidate_id": "composite_brittle_stage1_position_minus012_v1",
+      "metadata_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/composite_brittle_lower/composite_brittle_stage1_position_minus012_v1.json",
+      "metadata_sha256": "b52d6c24964e19e9ce37cc26e7a1ad17efd129f98c1eb9d310ed66fe4eaf36fd",
+      "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/composite_brittle_lower/composite_brittle_stage1_position_minus012_v1.mp4",
+      "video_sha256": "2372c4c4108ef2696f8e2ede4fcb62ff65b8747d4d13f74f2abad11075478e21",
+      "accepted_parameter_config": {
+        "version": "composite-initial/0.5.0",
+        "baseline_implementation_version": "composite-initial/0.3.1",
+        "kind": "brittle",
+        "fps": 30,
+        "frames": 600,
+        "resolution": [
+          960,
+          540
+        ],
+        "loading_axis": "z",
+        "fixed_end": "lower",
+        "moving_end": "upper",
+        "free_span": 5.0,
+        "width": 1.0,
+        "thickness": 0.18,
+        "grip_overlap": 0.48,
+        "gauge_authored": [
+          -1.5,
+          1.5
+        ],
+        "units": "dimensionless relative coordinates",
+        "event_frame": 511,
+        "event_time_s": 17.0,
+        "maximum_grip_displacement": 0.1,
+        "fracture_z": -1.95,
+        "rear_panel": false,
+        "machine_columns": false,
+        "debond_final_result": "complete_rupture_simultaneous_with_interface_opening",
+        "debond_fracture_slope": 0.22,
+        "debond_local_shear": 0.12,
+        "brittle_local_shear": 0.12,
+        "brittle_fracture_slope": 0.22,
+        "no_constitutive_solver": true,
+        "debond_length_factor": 1.0,
+        "debond_opening_factor": 1.0,
+        "debond_length": 1.6,
+        "debond_opening": 0.1,
+        "fracture_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "damage_material_bounds": [
+          -2.06,
+          -1.8399999999999999
+        ],
+        "shear_support_material_upper": -0.75,
+        "parameter_scope": "stage1 discrete candidates; no accepted continuous range",
+        "camera": {
+          "location": [
+            7.5,
+            -17,
+            3.0
+          ],
+          "look_at": [
+            0,
+            0,
+            0
+          ],
+          "orthographic_scale": 16.4,
+          "fixed_all_frames": true
+        },
+        "renderer": "BLENDER_WORKBENCH",
+        "render_aa": "8",
+        "world_color": [
+          0.13,
+          0.16,
+          0.19
+        ],
+        "specimen_color": [
+          0.15,
+          0.18,
+          0.21
+        ],
+        "other_assumed_ply_color": [
+          0.23,
+          0.27,
+          0.3
+        ],
+        "loading_function": "dmax*smoothstep((frame-1)/(event_frame-1)), held at event",
+        "damage_function": "abrupt whole seam lateral shear; simultaneous sinusoidal local interface opening for debond",
+        "clamp": {
+          "front_back_y": [
+            -0.29,
+            0.29
+          ],
+          "jaw_size": [
+            1.48,
+            0.4,
+            0.72
+          ],
+          "centre_z": [
+            -2.86,
+            2.86
+          ]
+        },
+        "encoding": {
+          "codec": "libx264",
+          "crf": 16,
+          "preset": "slow",
+          "pixel_format": "yuv420p",
+          "audio": false
+        }
+      },
+      "reference_only_acceptance_not_inherited": true
+    }
+  ],
+  "single_time_qualification": {
+    "qualification_id": "qualification_brittle_default_time12",
+    "status": "passed_technical_qualification_only",
+    "evidence_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/single_time_qualification.json",
+    "qualification_config": {
+      "version": "composite-initial/0.5.0",
+      "baseline_implementation_version": "composite-initial/0.3.1",
+      "kind": "brittle",
+      "fps": 30,
+      "frames": 600,
+      "resolution": [
+        960,
+        540
+      ],
+      "loading_axis": "z",
+      "fixed_end": "lower",
+      "moving_end": "upper",
+      "free_span": 5.0,
+      "width": 1.0,
+      "thickness": 0.18,
+      "grip_overlap": 0.48,
+      "gauge_authored": [
+        -1.5,
+        1.5
+      ],
+      "units": "dimensionless relative coordinates",
+      "event_frame": 361,
+      "event_time_s": 12.0,
+      "maximum_grip_displacement": 0.1,
+      "fracture_z": -1.83,
+      "rear_panel": false,
+      "machine_columns": false,
+      "debond_final_result": "complete_rupture_simultaneous_with_interface_opening",
+      "debond_fracture_slope": 0.22,
+      "debond_local_shear": 0.12,
+      "brittle_local_shear": 0.12,
+      "brittle_fracture_slope": 0.22,
+      "no_constitutive_solver": true,
+      "debond_length_factor": 1.0,
+      "debond_opening_factor": 1.0,
+      "debond_length": 1.6,
+      "debond_opening": 0.1,
+      "fracture_material_bounds": [
+        -1.9400000000000002,
+        -1.72
+      ],
+      "damage_material_bounds": [
+        -1.9400000000000002,
+        -1.72
+      ],
+      "shear_support_material_upper": -0.6300000000000001,
+      "parameter_scope": "stage1 discrete candidates; no accepted continuous range",
+      "camera": {
+        "location": [
+          7.5,
+          -17,
+          3.0
+        ],
+        "look_at": [
+          0,
+          0,
+          0
+        ],
+        "orthographic_scale": 16.4,
+        "fixed_all_frames": true
+      },
+      "renderer": "BLENDER_WORKBENCH",
+      "render_aa": "8",
+      "world_color": [
+        0.13,
+        0.16,
+        0.19
+      ],
+      "specimen_color": [
+        0.15,
+        0.18,
+        0.21
+      ],
+      "other_assumed_ply_color": [
+        0.23,
+        0.27,
+        0.3
+      ],
+      "loading_function": "dmax*smoothstep((frame-1)/(event_frame-1)), held at event",
+      "damage_function": "abrupt whole seam lateral shear; simultaneous sinusoidal local interface opening for debond",
+      "clamp": {
+        "front_back_y": [
+          -0.29,
+          0.29
+        ],
+        "jaw_size": [
+          1.48,
+          0.4,
+          0.72
+        ],
+        "centre_z": [
+          -2.86,
+          2.86
+        ]
+      },
+      "encoding": {
+        "codec": "libx264",
+        "crf": 16,
+        "preset": "slow",
+        "pixel_format": "yuv420p",
+        "audio": false
+      }
+    },
+    "limits": "default non-time parameters only; distinct from coupled check; no independent scientific review, full encoded video or user acceptance"
+  },
+  "coupled_parameter_selection": {
+    "fracture_center": -1.95,
+    "event_time_s": 12.0,
+    "debond_length_factor": null,
+    "debond_opening_factor": null,
+    "combination_technical_status": "passed_600_evaluated_frames",
+    "combination_acceptance": "user_accepted_video",
+    "acceptance_scope": "single_video_visual_and_label_acceptance"
+  },
+  "evidence": {
+    "mesh_checks": {
+      "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/mesh_checks.json",
+      "sha256": "58e3f85b872dadda5f8272049db90bcd2f935195747f89c862944a7cf4a7148f"
+    },
+    "all_frame_mesh_checks": {
+      "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/all_frame_mesh_checks.json",
+      "sha256": "68f87b6c3465fb7ceb9aed1081d8c21a0055a1dfd7f01f5836f681cf7bbbb97b"
+    },
+    "config": {
+      "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/config.json",
+      "sha256": "30d16322acdde338cd79b4bb69245efe2aed4a1b86d71c7b271432c7d0da2a4b"
+    },
+    "scene": {
+      "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/scene.blend",
+      "sha256": "910a0e7e8589fc4caa05708de09a2fc1332e0dcca3ed5ac1c5189c708327d58b",
+      "scope": "static_frame600_snapshot_not_animated_frame_set"
+    },
+    "key_previews": [
+      {
+        "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/previews/frame_0001.png",
+        "sha256": "7ce15562bcf7976438bf9784ef6ec5b6088a1783da1ee8244c61d63ad21950a7",
+        "frame": 1
+      },
+      {
+        "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/previews/frame_0181.png",
+        "sha256": "5dffc8313d0d6a9eef14962911470d46c8d0490c3b6cbfd7fdd91ae5532431f0",
+        "frame": 181
+      },
+      {
+        "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/previews/frame_0331.png",
+        "sha256": "298245355ece483a23b90403de6f428f28fce10e59d1e99280b473d896b1b18e",
+        "frame": 331
+      },
+      {
+        "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/previews/frame_0358.png",
+        "sha256": "afe4436ce64c060da3799577bdae9e1df0b3dbeb3fe4eb579016afc9e9be05d4",
+        "frame": 358
+      },
+      {
+        "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/previews/frame_0359.png",
+        "sha256": "e57502851c926620b80784ae372c46e1bd1b0378629d9582767ae89ba6a60e69",
+        "frame": 359
+      },
+      {
+        "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/previews/frame_0360.png",
+        "sha256": "adb9bfccae5f4bd6c98ced9e84a5c3a44721e92ac16560a30ad2e74a1d062116",
+        "frame": 360
+      },
+      {
+        "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/previews/frame_0361.png",
+        "sha256": "2a81d5721eaf0c95b523f097135753da3f0f20faeca94bd2ae93d31f7dba5ebf",
+        "frame": 361
+      },
+      {
+        "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/previews/frame_0362.png",
+        "sha256": "7908eddfdfd3b595c2713c1e160c812d1216e2c14c33a6c721d5005b7f27e72d",
+        "frame": 362
+      },
+      {
+        "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/previews/frame_0363.png",
+        "sha256": "45f3d89f336a74b864b4d064e47166fffc75e68bae69e0de22e2d6d831d0c9fb",
+        "frame": 363
+      },
+      {
+        "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/previews/frame_0600.png",
+        "sha256": "56348ad8c99e92c8a6f576aa66ac457da6622fd70faa8c98ac29ed6185f40d5a",
+        "frame": 600
+      }
+    ]
+  },
+  "label_check_history": [
+    {
+      "stage": "developer_before_final_review",
+      "checked_labels": {
+        "材料类别": {
+          "value": "无法确认",
+          "expected": "复材",
+          "status": "pending_independent_review_final_encoded_video_main_view_and_user_acceptance",
+          "technical_evidence_only": "source_identity_record"
+        },
+        "断裂结果": {
+          "value": "无法确认",
+          "expected": "完全断裂",
+          "status": "pending_independent_review_final_encoded_video_main_view_and_user_acceptance",
+          "technical_evidence_only": "600_evaluated_mesh_frames_and_key_state_previews"
+        },
+        "单一主要破坏类别": {
+          "value": "无法确认",
+          "expected": "脆性断裂",
+          "status": "pending_independent_review_final_encoded_video_main_view_and_user_acceptance",
+          "technical_evidence_only": "600_evaluated_mesh_frames_and_key_state_previews"
+        },
+        "断裂位置": {
+          "value": "无法确认",
+          "expected": "标距外非根部",
+          "status": "pending_independent_review_final_encoded_video_main_view_and_user_acceptance",
+          "technical_evidence_only": "600_evaluated_mesh_frames_and_key_state_previews"
+        },
+        "夹持异常": {
+          "value": "无法确认",
+          "expected": "无",
+          "status": "pending_independent_review_final_encoded_video_main_view_and_user_acceptance",
+          "technical_evidence_only": "600_evaluated_mesh_frames_and_key_state_previews"
+        },
+        "拍摄异常": {
+          "value": "无法确认",
+          "expected": "无",
+          "status": "pending_independent_review_final_encoded_video_main_view_and_user_acceptance",
+          "technical_evidence_only": "600_evaluated_mesh_frames_and_key_state_previews"
+        }
+      },
+      "verified_labels": null
+    },
+    {
+      "stage": "synchronize_current_completion_aliases",
+      "previous_values": {
+        "acceptance_encoded_video_check": "pending"
+      }
+    }
+  ],
+  "checked_labels": {
+    "材料类别": "复材",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "脆性断裂",
+    "断裂位置": "标距外非根部",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "verified_labels": {
+    "材料类别": {
+      "value": "复材",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "断裂结果": {
+      "value": "完全断裂",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "单一主要破坏类别": {
+      "value": "脆性断裂",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "断裂位置": {
+      "value": "标距外非根部",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "夹持异常": {
+      "value": "无",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "拍摄异常": {
+      "value": "无",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    }
+  },
+  "final_label_check_basis": {
+    "material": "Preserved source identity or explicit user confirmation",
+    "mode": "Source-associated/project visual criterion plus independent final-video review, not microscopic mechanism proof",
+    "result_site_anomalies": "Actual evaluated geometry and final encoded video",
+    "independent_report": {
+      "status": "passed_for_single_discrete_qualitative_candidate",
+      "report_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/review/coupled_final_review.md",
+      "report_sha256": "074223a7e8006dfcacdb94661a98bb9b60997a098079c7c578b5985c593bc616",
+      "video_sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2",
+      "scope": "See complete report and per-candidate limitations; not a constitutive calibration, range approval, or user acceptance"
+    }
+  },
+  "video_file": "composite_brittle_coupled_center_minus195_time12_v1.mp4",
+  "sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2",
+  "bytes": 369867,
+  "final_media_validation": {
+    "video_name": "composite_brittle_coupled_center_minus195_time12_v1.mp4",
+    "bytes": 369867,
+    "sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2",
+    "width": 960,
+    "height": 540,
+    "widthheight": "960x540",
+    "frames": 600,
+    "png_count": 600,
+    "png_continuous_1_600": true,
+    "r_frame_rate": "30/1",
+    "avg_frame_rate": "30/1",
+    "stream_duration_seconds": 20.0,
+    "file_duration_seconds": 20.0,
+    "ffmpeg_full_decode_exit_code": 0,
+    "video": "composite_brittle_coupled_center_minus195_time12_v1.mp4",
+    "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/composite_brittle_lower/composite_brittle_coupled_center_minus195_time12_v1.mp4"
+  },
+  "main_agent_view_record": {
+    "video_sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2",
+    "date": "2026-10-09",
+    "method": "Opened final encoded MP4 in QuickTime Player and visually inspected sought states, not uninterrupted full-playback proof",
+    "requested_seek_seconds": [
+      11.8,
+      20
+    ],
+    "observations": "Prebreak continuous flat specimen; final narrow oblique low-position seam and separated ends retained at respective jaws, no rear board. Exact earliest visible split not measured.",
+    "user_accepted": false,
+    "scope": "Final encoded key states plus independent whole-frame checks"
+  },
+  "independent_review_record": {
+    "status": "passed_for_single_discrete_qualitative_candidate",
+    "report_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/review/coupled_final_review.md",
+    "report_sha256": "074223a7e8006dfcacdb94661a98bb9b60997a098079c7c578b5985c593bc616",
+    "video_sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2",
+    "scope": "See complete report and per-candidate limitations; not a constitutive calibration, range approval, or user acceptance"
+  },
+  "acceptance_scope": "single_video_visual_and_label_acceptance",
+  "downstream_label_preview": {
+    "contract_version": "tensile-vlm/v4.1",
+    "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+    "input_scope": "entire_paired_20_second_video",
+    "labels": {
+      "clip_state": "发生断裂",
+      "fracture_mechanism": "脆性断裂",
+      "fracture_site": "outside_gauge_non_root",
+      "special_case": null
+    },
+    "format_validation": "passed_by_existing_v4_1_validator",
+    "training_released": false,
+    "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata.",
+    "status": "user_accepted_label_preview_not_training_release",
+    "user_accepted": true,
+    "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/composite_brittle_lower/composite_brittle_coupled_center_minus195_time12_v1.mp4",
+    "video_sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2"
+  },
+  "acceptance_history": [
+    {
+      "stage": "before_user_acceptance_2026-10-09",
+      "status": "checked_pending_user_acceptance",
+      "acceptance": {
+        "user_accepted": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "training_released": false,
+        "independent_review": "passed_for_single_discrete_qualitative_candidate",
+        "main_final_video_view": "completed_for_final_sha256",
+        "acceptance_scope": "unaccepted_coupled_parameter_candidate",
+        "encoded_video_check": "passed",
+        "independent_review_completed": true,
+        "main_final_video_view_completed": true,
+        "final_encoding": "passed",
+        "main_agent_final_video_view": "completed_for_final_sha256"
+      },
+      "acceptance_scope": "single_discrete_candidate_pending_user_visual_acceptance",
+      "verified_labels": {
+        "材料类别": {
+          "value": "复材",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "断裂结果": {
+          "value": "完全断裂",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "单一主要破坏类别": {
+          "value": "脆性断裂",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "断裂位置": {
+          "value": "标距外非根部",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "夹持异常": {
+          "value": "无",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "拍摄异常": {
+          "value": "无",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        }
+      },
+      "checked_labels_six_groups": {
+        "材料类别": {
+          "value": "复材",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "断裂结果": {
+          "value": "完全断裂",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "单一主要破坏类别": {
+          "value": "脆性断裂",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "断裂位置": {
+          "value": "标距外非根部",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "夹持异常": {
+          "value": "无",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "拍摄异常": {
+          "value": "无",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        }
+      },
+      "observations": [
+        "All600 evaluated frames measured; geometry observations are in technical_checks. Final video visual observations pending.",
+        "No material clamp path after measured whole-seam rupture; both fragments remain attached to their respective jaw.",
+        "Entire measured oblique seam stays outside lower authored gauge boundary and above lower clamp root.",
+        "Supplemental all600 evaluated frames confirm actual entire oblique fracture remains in the selected position class.",
+        "Static scene.blend stores frame600 geometry; frame_set does not reconstruct this programmatic animation.",
+        "Technical qualification of the time value is separate from this coupled-candidate qualification."
+      ],
+      "limitations": [
+        "No constitutive or microscopic failure validation.",
+        "Seam plane and interply clearance measured; full triangle selfintersection not checked.",
+        "Final encoded video, human view and independent review pending.",
+        "All label checks remain developmental/pending; accepted single-parameter records do not accept this combination.",
+        "The saved Blender scene is a static frame600 snapshot; rendering must call the frozen builder update for each frame.",
+        "A600frame check and key previews are not a full encoded-video validation; root still must view final video, and user acceptance remains required."
+      ],
+      "coupled_parameter_selection": {
+        "fracture_center": -1.95,
+        "event_time_s": 12.0,
+        "debond_length_factor": null,
+        "debond_opening_factor": null,
+        "combination_technical_status": "passed_600_evaluated_frames",
+        "combination_acceptance": "pending"
+      },
+      "downstream_label_preview": {
+        "contract_version": "tensile-vlm/v4.1",
+        "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+        "input_scope": "entire_paired_20_second_video",
+        "labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "脆性断裂",
+          "fracture_site": "outside_gauge_non_root",
+          "special_case": null
+        },
+        "format_validation": "passed_by_existing_v4_1_validator",
+        "training_released": false,
+        "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata."
+      }
+    }
+  ],
+  "user_acceptance_record": {
+    "date": "2026-10-09",
+    "user_statement": "可以，都没问题",
+    "context": "Acceptance of the seven listed 20-second first-stage coupled videos and their presented visual effects and labels",
+    "video_id": "composite_brittle_coupled_center_minus195_time12_v1",
+    "video_sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2",
+    "accepted_labels": {
+      "材料类别": "复材",
+      "断裂结果": "完全断裂",
+      "单一主要破坏类别": "脆性断裂",
+      "断裂位置": "标距外非根部",
+      "夹持异常": "无",
+      "拍摄异常": "无"
+    },
+    "acceptance_scope": "single_video_visual_and_label_acceptance",
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false
+  },
+  "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/composite_brittle_lower/composite_brittle_coupled_center_minus195_time12_v1.mp4",
+  "promotion_provenance": {
+    "original_candidate_video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/composite_brittle_coupled_center_minus195_time12_v1.mp4",
+    "original_candidate_metadata_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/composite/composite_brittle_coupled_center_minus195_time12_v1/composite_brittle_coupled_center_minus195_time12_v1.json",
+    "original_candidate_metadata_sha256": "448d8a99b351373811a97381e35d6bc68737b41f933280da0bb171ddfdbbc2c0",
+    "copied_without_reencoding": true,
+    "original_video_sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2",
+    "current_video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/composite_brittle_lower/composite_brittle_coupled_center_minus195_time12_v1.mp4",
+    "current_metadata_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/composite_brittle_lower/composite_brittle_coupled_center_minus195_time12_v1.json"
+  }
+}

@@ -1,0 +1,2339 @@
+{
+  "schema": "tensile-video-candidate/v3",
+  "design_version": "v1.8",
+  "style_id": "polymer_finite_deformation_oblique_rupture",
+  "source": {
+    "id": "video_0014",
+    "path": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/standard-videos/video_0014.mp4",
+    "sha256": "ecbef3988894e1afdb8dfe6270e2afba834746450a4336d5118b2d03b78d07e5",
+    "duration_s": 5.3333,
+    "frame_count": 160,
+    "resolution": [
+      474,
+      816
+    ],
+    "mapping_record": {
+      "标准化文件名": "video_0014.mp4",
+      "原始文件名": "http_20251105_0003.mp4",
+      "来源目录": "raw-video/fetch",
+      "材料类别": "高分子",
+      "状态": "existing",
+      "duration": "5.333",
+      "resolution": "474x816",
+      "codec": "h264"
+    },
+    "original_xlsx_row": {
+      "id": "video_0014",
+      "断裂时间点": "4.63 s",
+      "断裂模式": "半脆半韧断裂",
+      "材料类型": "高分子",
+      "清晰度": "480P"
+    },
+    "label_table_sha256": "f21e0427be79f0bda2cde239f8b042342ccc61d9f288b27150a6af7806be3042",
+    "mapping_sha256": "f08263220cf1d70a271ac61c8d2e1dbdfdb6882e7fb56faf3ade7f4bd563820d",
+    "source_labels_unchanged": true,
+    "source_label_event_time_s": 4.63,
+    "source_observed_event_approximately_s": 4.78,
+    "observed_event_basis": "source dense-frame review communicated by main agent; author directly saw source intact4.68 and separated4.93, with rapid rupture between consecutive source diagnostic frames",
+    "observed_event_not_physical_measured_rupture_timestamp": true,
+    "unknown_material_grade_and_plastic_fraction": true
+  },
+  "observations": [
+    "Source white narrow flat strip with gradual shoulder transition; extensometer and caption partly obscure specimen.",
+    "Source has rapid short oblique/jagged separation, end fragments remain held by their respective jaws.",
+    "Inspected4.63/4.68 frames do not clearly show complete rupture;4.93/end frames show separation.",
+    "No clear stable plastic zone or strong localized neck comparable to black high-extension source0097 is visible.",
+    "Finite extension and section-change magnitude cannot be reliably quantified from the source camera/occlusion."
+  ],
+  "author_assumptions": [
+    "Weak finite deformation and slight local thinning are a qualitative author extension, not source-measured plastic deformation.",
+    "Maximum local stretch1.08, relative thickness0.16 and shoulder/gauge dimensions are discrete author geometry choices.",
+    "Axial integration and inverse-square-root transverse scaling approximately preserve material volume under loading; no resin-specific plastic law or modulus is identified.",
+    "Oblique/short jagged complementary crack surface and front-to-rear/lateral propagation are simplified geometry.",
+    "The original source label half-brittle/half-ductile is expected only; oblique fracture and authored weak thinning cannot verify mixed-mode mechanism.",
+    "Upper loading and lower fixed boundary chosen for demonstration; exact source machine control and compliance unresolved.",
+    "Postfracture stop selected; source brief post-event interval does not establish zero physical recoil or controller delay.",
+    "Tiny rear central newly cut surface patch remains in unbonded zero-opening contact; actual vertex indices and graph distinguish this from bonded material.",
+    "No deleted material, no complete-fragment rigid jump at the final cut, no post-cut axial shrinking to generate the gap.",
+    "Only fixtures and specimen shown; source extensometer is omitted for visibility."
+  ],
+  "unknowns": [
+    "Exact polymer resin, grade, temperature, rate and composition.",
+    "Elastic/plastic strain partition, permanence of local section reduction and material strength.",
+    "Source formal gauge, actual thickness, width, physical scale and camera projection calibration.",
+    "Microscopic fracture mechanism and basis underlying original mixed-mode annotation.",
+    "Real crack path through thickness, fracture kinetics, source actuator delay and residual motion.",
+    "Force balance, contact pressure, arbitrary full-triangle self intersection and quantitative material dynamics not solved."
+  ],
+  "expected_labels": {
+    "材料类别": "高分子",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "半脆半韧断裂",
+    "断裂位置": "标距内",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "candidate_id": "polymer_mixed_coupled_stretch115_time15_v1",
+  "id": "polymer_mixed_coupled_stretch115_time15_v1",
+  "title": "polymer_mixed_coupled_stretch115_time15_v1",
+  "role": "coupled_stage1_candidate",
+  "status": "user_accepted_video",
+  "user_accepted": true,
+  "style_accepted": false,
+  "parameter_range_accepted": false,
+  "continuous_parameter_range_approved": false,
+  "training_released": false,
+  "implementation_version": "polymer-mixed/1.1.0",
+  "implementation_file": "_work/coupled-stage1-20261009/polymer/frozen/polymer_mixed.py",
+  "implementation_sha256": "ff6b081606f921385a456fb77419ba3f5e2c2d407c4ff638f84ef58e6afe7e0d",
+  "production_implementation_file": "generator/polymer_mixed.py",
+  "production_implementation_sha256_at_freeze": "ff6b081606f921385a456fb77419ba3f5e2c2d407c4ff638f84ef58e6afe7e0d",
+  "configuration": {
+    "implementation_version": "polymer-mixed/1.1.0",
+    "applicability": "gradual visually uniform extension without obvious necking then rapid oblique rupture; project mixed criterion; quantitative mechanics unknown",
+    "source_id": "video_0014",
+    "fps": 30,
+    "frames": 600,
+    "duration_s": 20,
+    "resolution": [
+      1280,
+      720
+    ],
+    "units": "relative author coordinates, no mm scale",
+    "rest_material_span": 4.8,
+    "initial_free_span": 4.0,
+    "grip_material_coordinate_ranges": [
+      [
+        -2.4,
+        -2.0
+      ],
+      [
+        2.0,
+        2.4
+      ]
+    ],
+    "initial_grip_embed": 0.4,
+    "authored_gauge": [
+      -1.2,
+      1.2
+    ],
+    "source_formal_gauge_known": false,
+    "gauge_width": 0.8,
+    "shoulder_width": 1.05,
+    "initial_thickness": 0.16,
+    "max_local_stretch": 1.092,
+    "transverse_scale": "inverse sqrt of local axial stretch, approximate constant material volume",
+    "stretch_shape": "0.3 uniform plus0.7 Gaussian centered -0.15, width0.42, tapered to zero near grips",
+    "fracture_center_material_z": -0.15,
+    "fracture_slope": -0.45,
+    "fracture_jagged_amplitude": 0.012,
+    "last_connected_frame": 450,
+    "first_separated_frame": 451,
+    "event_time_s": 15.0,
+    "crack_start_frame": 445,
+    "crack_loading_travel": 0.06325,
+    "last_ligament_u_range": [
+      0,
+      0.03125
+    ],
+    "last_ligament_thickness": 0.00016,
+    "minimum_resolved_opening": 1e-07,
+    "loading_end": "upper",
+    "fixed_end": "lower",
+    "axis": "z",
+    "selected_postfracture_condition": "stop all geometry and fixtures from first separated frame; no additional recoil or bending",
+    "camera_position": [
+      0,
+      -22,
+      0.1
+    ],
+    "camera_target": [
+      0,
+      0,
+      0.1
+    ],
+    "camera_ortho_scale": 12.4,
+    "camera_fixed": true,
+    "view": "fixtures and specimen only; no machine frame or backdrop",
+    "width_subdivisions": 32,
+    "thickness_layers": [
+      -0.08,
+      -0.06,
+      -0.04,
+      -0.02,
+      0,
+      0.02,
+      0.04,
+      0.06,
+      0.076,
+      0.0792,
+      0.07984,
+      0.08
+    ],
+    "renderer": "BLENDER_WORKBENCH",
+    "studio_light": "paint.sl",
+    "anti_alias_samples": 8,
+    "no_constitutive_solver": true,
+    "continuous_parameter_range_approved": false,
+    "stage1": {
+      "baseline_crack_loading_travel": 0.055,
+      "crack_loading_travel_coupling": "baseline0.055 times stretch_increment_factor; original loading stage coupled, not independent fracture opening control",
+      "baseline_implementation_version": "polymer-mixed/1.0.0",
+      "stretch_increment_factor": 1.15,
+      "stretch_increment_definition": "lambda_candidate-1=k*(lambda_baseline-1)",
+      "position_engineering_guard": [
+        -0.3,
+        0
+      ],
+      "full_fracture_material_z_bounds": [
+        -0.387,
+        0.08700000000000001
+      ],
+      "event_candidates_s": [
+        12,
+        15,
+        17
+      ],
+      "default_regression_event_s": 16,
+      "first_crack_pre_frame": 445,
+      "final_connected_pre_frame": 450,
+      "actual_first_opening_frame_expected": 446,
+      "scope": "discrete candidates; guards do not approve continuous ranges or combinations"
+    }
+  },
+  "complete_config": {
+    "implementation_version": "polymer-mixed/1.1.0",
+    "applicability": "gradual visually uniform extension without obvious necking then rapid oblique rupture; project mixed criterion; quantitative mechanics unknown",
+    "source_id": "video_0014",
+    "fps": 30,
+    "frames": 600,
+    "duration_s": 20,
+    "resolution": [
+      1280,
+      720
+    ],
+    "units": "relative author coordinates, no mm scale",
+    "rest_material_span": 4.8,
+    "initial_free_span": 4.0,
+    "grip_material_coordinate_ranges": [
+      [
+        -2.4,
+        -2.0
+      ],
+      [
+        2.0,
+        2.4
+      ]
+    ],
+    "initial_grip_embed": 0.4,
+    "authored_gauge": [
+      -1.2,
+      1.2
+    ],
+    "source_formal_gauge_known": false,
+    "gauge_width": 0.8,
+    "shoulder_width": 1.05,
+    "initial_thickness": 0.16,
+    "max_local_stretch": 1.092,
+    "transverse_scale": "inverse sqrt of local axial stretch, approximate constant material volume",
+    "stretch_shape": "0.3 uniform plus0.7 Gaussian centered -0.15, width0.42, tapered to zero near grips",
+    "fracture_center_material_z": -0.15,
+    "fracture_slope": -0.45,
+    "fracture_jagged_amplitude": 0.012,
+    "last_connected_frame": 450,
+    "first_separated_frame": 451,
+    "event_time_s": 15.0,
+    "crack_start_frame": 445,
+    "crack_loading_travel": 0.06325,
+    "last_ligament_u_range": [
+      0,
+      0.03125
+    ],
+    "last_ligament_thickness": 0.00016,
+    "minimum_resolved_opening": 1e-07,
+    "loading_end": "upper",
+    "fixed_end": "lower",
+    "axis": "z",
+    "selected_postfracture_condition": "stop all geometry and fixtures from first separated frame; no additional recoil or bending",
+    "camera_position": [
+      0,
+      -22,
+      0.1
+    ],
+    "camera_target": [
+      0,
+      0,
+      0.1
+    ],
+    "camera_ortho_scale": 12.4,
+    "camera_fixed": true,
+    "view": "fixtures and specimen only; no machine frame or backdrop",
+    "width_subdivisions": 32,
+    "thickness_layers": [
+      -0.08,
+      -0.06,
+      -0.04,
+      -0.02,
+      0,
+      0.02,
+      0.04,
+      0.06,
+      0.076,
+      0.0792,
+      0.07984,
+      0.08
+    ],
+    "renderer": "BLENDER_WORKBENCH",
+    "studio_light": "paint.sl",
+    "anti_alias_samples": 8,
+    "no_constitutive_solver": true,
+    "continuous_parameter_range_approved": false,
+    "stage1": {
+      "baseline_crack_loading_travel": 0.055,
+      "crack_loading_travel_coupling": "baseline0.055 times stretch_increment_factor; original loading stage coupled, not independent fracture opening control",
+      "baseline_implementation_version": "polymer-mixed/1.0.0",
+      "stretch_increment_factor": 1.15,
+      "stretch_increment_definition": "lambda_candidate-1=k*(lambda_baseline-1)",
+      "position_engineering_guard": [
+        -0.3,
+        0
+      ],
+      "full_fracture_material_z_bounds": [
+        -0.387,
+        0.08700000000000001
+      ],
+      "event_candidates_s": [
+        12,
+        15,
+        17
+      ],
+      "default_regression_event_s": 16,
+      "first_crack_pre_frame": 445,
+      "final_connected_pre_frame": 450,
+      "actual_first_opening_frame_expected": 446,
+      "scope": "discrete candidates; guards do not approve continuous ranges or combinations"
+    }
+  },
+  "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/polymer_finite_deformation_oblique_rupture/polymer_mixed_coupled_stretch115_time15_v1.mp4",
+  "video_sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492",
+  "video_bytes": 732159,
+  "scene_snapshot": {
+    "path": "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/scene_final_state.blend",
+    "sha256": "09ca1efd36fc132d5e87fb7661085232df6125bae0d15444dea415073cea79dc",
+    "is_static_snapshot": true,
+    "complete_animation_replay": "use frozen generator with exact render argv, not snapshot.frame_set"
+  },
+  "baseline_provenance": {
+    "original_baseline_json": "outputs/current/polymer_finite_deformation_oblique_rupture/polymer_finite_deformation_oblique_rupture_baseline_v1.json",
+    "original_baseline_json_sha256": "46c4b124d250b47d1a1910d91cb504bce9f5ac07eeb907da6992e35ab8229271",
+    "original_baseline_video_sha256": "63bf46edbf5065c37f3114e864fb3f7fca5b41fbbcc259e38c51bcdf1dfbfeb6",
+    "original_baseline_implementation_version": "polymer-mixed/1.0.0",
+    "accepted_single_parameter_json": "outputs/current/polymer_finite_deformation_oblique_rupture/polymer_mixed_stage1_stretch115_v1.json",
+    "accepted_single_parameter_json_sha256": "6bf42829c969cdebc20de70d8b27ce3f0b65d2d48cac803751d17f75cec78278",
+    "accepted_single_parameter_video_sha256": "1e6efd113d7e510615870599b32383f37ccdd2a04d167d364890414342366935",
+    "accepted_single_parameter_configuration": {
+      "implementation_version": "polymer-mixed/1.1.0",
+      "applicability": "gradual visually uniform extension without obvious necking then rapid oblique rupture; project mixed criterion; quantitative mechanics unknown",
+      "source_id": "video_0014",
+      "fps": 30,
+      "frames": 600,
+      "duration_s": 20,
+      "resolution": [
+        1280,
+        720
+      ],
+      "units": "relative author coordinates, no mm scale",
+      "rest_material_span": 4.8,
+      "initial_free_span": 4.0,
+      "grip_material_coordinate_ranges": [
+        [
+          -2.4,
+          -2.0
+        ],
+        [
+          2.0,
+          2.4
+        ]
+      ],
+      "initial_grip_embed": 0.4,
+      "authored_gauge": [
+        -1.2,
+        1.2
+      ],
+      "source_formal_gauge_known": false,
+      "gauge_width": 0.8,
+      "shoulder_width": 1.05,
+      "initial_thickness": 0.16,
+      "max_local_stretch": 1.092,
+      "transverse_scale": "inverse sqrt of local axial stretch, approximate constant material volume",
+      "stretch_shape": "0.3 uniform plus0.7 Gaussian centered -0.15, width0.42, tapered to zero near grips",
+      "fracture_center_material_z": -0.15,
+      "fracture_slope": -0.45,
+      "fracture_jagged_amplitude": 0.012,
+      "last_connected_frame": 480,
+      "first_separated_frame": 481,
+      "event_time_s": 16.0,
+      "crack_start_frame": 475,
+      "crack_loading_travel": 0.06325,
+      "last_ligament_u_range": [
+        0,
+        0.03125
+      ],
+      "last_ligament_thickness": 0.00016,
+      "minimum_resolved_opening": 1e-07,
+      "loading_end": "upper",
+      "fixed_end": "lower",
+      "axis": "z",
+      "selected_postfracture_condition": "stop all geometry and fixtures from first separated frame; no additional recoil or bending",
+      "camera_position": [
+        0,
+        -22,
+        0.1
+      ],
+      "camera_target": [
+        0,
+        0,
+        0.1
+      ],
+      "camera_ortho_scale": 12.4,
+      "camera_fixed": true,
+      "view": "fixtures and specimen only; no machine frame or backdrop",
+      "width_subdivisions": 32,
+      "thickness_layers": [
+        -0.08,
+        -0.06,
+        -0.04,
+        -0.02,
+        0,
+        0.02,
+        0.04,
+        0.06,
+        0.076,
+        0.0792,
+        0.07984,
+        0.08
+      ],
+      "renderer": "BLENDER_WORKBENCH",
+      "studio_light": "paint.sl",
+      "anti_alias_samples": 8,
+      "no_constitutive_solver": true,
+      "continuous_parameter_range_approved": false,
+      "stage1": {
+        "baseline_crack_loading_travel": 0.055,
+        "crack_loading_travel_coupling": "baseline0.055 times stretch_increment_factor; original loading stage coupled, not independent fracture opening control",
+        "baseline_implementation_version": "polymer-mixed/1.0.0",
+        "stretch_increment_factor": 1.15,
+        "stretch_increment_definition": "lambda_candidate-1=k*(lambda_baseline-1)",
+        "position_engineering_guard": [
+          -0.3,
+          0
+        ],
+        "full_fracture_material_z_bounds": [
+          -0.387,
+          0.08700000000000001
+        ],
+        "event_candidates_s": [
+          12,
+          15,
+          17
+        ],
+        "default_regression_event_s": 16,
+        "first_crack_pre_frame": 475,
+        "final_connected_pre_frame": 480,
+        "actual_first_opening_frame_expected": 476,
+        "scope": "discrete candidates; guards do not approve continuous ranges or combinations"
+      }
+    },
+    "acceptance_and_checked_labels_not_inherited": true
+  },
+  "acceptance": {
+    "status": "user_accepted_video",
+    "scope": "single_video_visual_and_label_acceptance",
+    "user_accepted": true,
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "independent_review_completed": true,
+    "main_final_video_view_completed": true,
+    "final_encoding": "passed",
+    "independent_review": "passed_for_single_discrete_qualitative_candidate",
+    "main_final_video_view": "completed_for_final_sha256",
+    "main_agent_final_video_view": "completed_for_final_sha256",
+    "acceptance_scope": "single_video_visual_and_label_acceptance",
+    "user_acceptance_record": {
+      "date": "2026-10-09",
+      "user_statement": "可以，都没问题",
+      "context": "Acceptance of the seven listed 20-second first-stage coupled videos and their presented visual effects and labels",
+      "video_id": "polymer_mixed_coupled_stretch115_time15_v1",
+      "video_sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492",
+      "accepted_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false
+    }
+  },
+  "checked_labels": {
+    "材料类别": "高分子",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "半脆半韧断裂",
+    "断裂位置": "标距内",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "checked_label_status": "Final encoding, independent review, main final video view and user visual/label acceptance completed for this video SHA; no style, parameter range or training release approval",
+  "verified_labels": {
+    "材料类别": {
+      "value": "高分子",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "断裂结果": {
+      "value": "完全断裂",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "单一主要破坏类别": {
+      "value": "半脆半韧断裂",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "断裂位置": {
+      "value": "标距内",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "夹持异常": {
+      "value": "无",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "拍摄异常": {
+      "value": "无",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    }
+  },
+  "single_time_qualification": {
+    "path": "_work/coupled-stage1-20261009/polymer/qualification_mixed_time15/mesh_checks.json",
+    "sha256": "613e45ba2108d18f58c694de7266f815d9632532bb1acb57bc1e3b8ffd5010b4",
+    "config": {
+      "implementation_version": "polymer-mixed/1.1.0",
+      "applicability": "gradual visually uniform extension without obvious necking then rapid oblique rupture; project mixed criterion; quantitative mechanics unknown",
+      "source_id": "video_0014",
+      "fps": 30,
+      "frames": 600,
+      "duration_s": 20,
+      "resolution": [
+        1280,
+        720
+      ],
+      "units": "relative author coordinates, no mm scale",
+      "rest_material_span": 4.8,
+      "initial_free_span": 4.0,
+      "grip_material_coordinate_ranges": [
+        [
+          -2.4,
+          -2.0
+        ],
+        [
+          2.0,
+          2.4
+        ]
+      ],
+      "initial_grip_embed": 0.4,
+      "authored_gauge": [
+        -1.2,
+        1.2
+      ],
+      "source_formal_gauge_known": false,
+      "gauge_width": 0.8,
+      "shoulder_width": 1.05,
+      "initial_thickness": 0.16,
+      "max_local_stretch": 1.08,
+      "transverse_scale": "inverse sqrt of local axial stretch, approximate constant material volume",
+      "stretch_shape": "0.3 uniform plus0.7 Gaussian centered -0.15, width0.42, tapered to zero near grips",
+      "fracture_center_material_z": -0.15,
+      "fracture_slope": -0.45,
+      "fracture_jagged_amplitude": 0.012,
+      "last_connected_frame": 450,
+      "first_separated_frame": 451,
+      "event_time_s": 15.0,
+      "crack_start_frame": 445,
+      "crack_loading_travel": 0.055,
+      "last_ligament_u_range": [
+        0,
+        0.03125
+      ],
+      "last_ligament_thickness": 0.00016,
+      "minimum_resolved_opening": 1e-07,
+      "loading_end": "upper",
+      "fixed_end": "lower",
+      "axis": "z",
+      "selected_postfracture_condition": "stop all geometry and fixtures from first separated frame; no additional recoil or bending",
+      "camera_position": [
+        0,
+        -22,
+        0.1
+      ],
+      "camera_target": [
+        0,
+        0,
+        0.1
+      ],
+      "camera_ortho_scale": 12.4,
+      "camera_fixed": true,
+      "view": "fixtures and specimen only; no machine frame or backdrop",
+      "width_subdivisions": 32,
+      "thickness_layers": [
+        -0.08,
+        -0.06,
+        -0.04,
+        -0.02,
+        0,
+        0.02,
+        0.04,
+        0.06,
+        0.076,
+        0.0792,
+        0.07984,
+        0.08
+      ],
+      "renderer": "BLENDER_WORKBENCH",
+      "studio_light": "paint.sl",
+      "anti_alias_samples": 8,
+      "no_constitutive_solver": true,
+      "continuous_parameter_range_approved": false,
+      "stage1": {
+        "baseline_crack_loading_travel": 0.055,
+        "crack_loading_travel_coupling": "baseline0.055 times stretch_increment_factor; original loading stage coupled, not independent fracture opening control",
+        "baseline_implementation_version": "polymer-mixed/1.0.0",
+        "stretch_increment_factor": 1.0,
+        "stretch_increment_definition": "lambda_candidate-1=k*(lambda_baseline-1)",
+        "position_engineering_guard": [
+          -0.3,
+          0
+        ],
+        "full_fracture_material_z_bounds": [
+          -0.387,
+          0.08700000000000001
+        ],
+        "event_candidates_s": [
+          12,
+          15,
+          17
+        ],
+        "default_regression_event_s": 16,
+        "first_crack_pre_frame": 445,
+        "final_connected_pre_frame": 450,
+        "actual_first_opening_frame_expected": 446,
+        "scope": "discrete candidates; guards do not approve continuous ranges or combinations"
+      }
+    },
+    "validation": {
+      "status": "passed_development_geometry_checks_only",
+      "frames_measured": 600,
+      "actual_path_loss_frame": 451,
+      "actual_path_loss_time_s": 15.0,
+      "continuous_connected_before_event": true,
+      "disconnected_after_event": true,
+      "camera_and_grip_checks_passed": true,
+      "event_order_and_selected_stop_passed": true,
+      "independent_material_label_review": "pending",
+      "final_encoding": "pending",
+      "main_final_video_view": "pending",
+      "user_acceptance": false
+    },
+    "actual_summary": {
+      "frames_measured": 600,
+      "first_material_grip_path_loss_frame": 451,
+      "first_measured_opening_frame": 446,
+      "first_crack_pre_measurement": {
+        "raw_gauge_marker_axial_distance_including_crack": 2.4992427825927734,
+        "same_material_gauge_seam_opening_axial": 0.0,
+        "material_gauge_definition": "sum of lower and upper same-material axial projections between gauge markers and their same-material seam boundaries, excludes seam opening; raw marker distance separately reported",
+        "actual_initial_full_fracture_material_z_bounds": null,
+        "same_material_gauge_axial_projection_length": 2.4992427825927734,
+        "gauge_length_ratio": 1.04135111803408,
+        "gauge_marker_material_z": [
+          -1.2,
+          1.2
+        ],
+        "complete_material_sections_excluding_fracture_zone": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.1249878847688341,
+            "actual_width": 0.7905311136703654,
+            "actual_thickness": 0.15810622084911738,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9764677954834221
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12438121388957513,
+            "actual_width": 0.7886102343386394,
+            "actual_thickness": 0.15772204190766687,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9717281795026441
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12496011067743244,
+            "actual_width": 0.7904432321513903,
+            "actual_thickness": 0.15808865444223022,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9762508104064069
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12500086426436144,
+            "actual_width": 0.7905720915449641,
+            "actual_thickness": 0.15811443197421263,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9765691977865933
+          }
+        ],
+        "material_graph_grip_path_exists": true,
+        "evaluated_coordinate_sha256": "988aa8e915e3b62a5cb227909d361376401eaca378c42d6e7dcaa39947ab2b47",
+        "evaluated_topology_sha256": "c453f96b7a98fd2fe946175fe6bbb96010938376529748fe2eccbe733855f32d",
+        "frame": 445,
+        "time_s": 14.8,
+        "measured_components": 1,
+        "component_vertex_counts": [
+          5006
+        ],
+        "actual_material_vertex_count": 5006,
+        "actual_material_face_count": 5004,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6748002114287958,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.5630897120226575,
+          "(-0.5, -0.08, 1)": 2.401988267245211,
+          "(-0.5, 0.08, 0)": 2.5630897120226575,
+          "(-0.5, 0.08, 1)": 2.401988267245211,
+          "(0, -0.08, 0)": 2.3116258948605077,
+          "(0, -0.08, 1)": 2.618823257555638,
+          "(0, 0.08, 0)": 2.3116258948605077,
+          "(0, 0.08, 1)": 2.618823257555638,
+          "(0.03125, -0.08, 0)": 2.3086728484300996,
+          "(0.03125, -0.08, 1)": 2.6219146743426895,
+          "(0.03125, 0.08, 0)": 2.3086728484300996,
+          "(0.03125, 0.08, 1)": 2.6219146743426895,
+          "(0.5, -0.08, 0)": 2.094791379899346,
+          "(0.5, -0.08, 1)": 2.870286608438102,
+          "(0.5, 0.08, 0)": 2.094791379899346,
+          "(0.5, 0.08, 1)": 2.870286608438102
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.1249878847688341,
+            "actual_width": 0.7905311136703654,
+            "actual_thickness": 0.15810622084911738,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9764677954834221
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12438121388957513,
+            "actual_width": 0.7886102343386394,
+            "actual_thickness": 0.15772204190766687,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9717281795026441
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12496011067743244,
+            "actual_width": 0.7904432321513903,
+            "actual_thickness": 0.15808865444223022,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9762508104064069
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12500086426436144,
+            "actual_width": 0.7905720915449641,
+            "actual_thickness": 0.15811443197421263,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9765691977865933
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.13043999829876896,
+        "fracture_gap_z_minmax": null,
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 0,
+        "top_to_bottom_material_graph_path_exists": true,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9595608115196228
+        ]
+      },
+      "final_connected_pre_measurement": {
+        "raw_gauge_marker_axial_distance_including_crack": 2.5542795658111572,
+        "same_material_gauge_seam_opening_axial": 0.05499999597668648,
+        "material_gauge_definition": "sum of lower and upper same-material axial projections between gauge markers and their same-material seam boundaries, excludes seam opening; raw marker distance separately reported",
+        "actual_initial_full_fracture_material_z_bounds": null,
+        "same_material_gauge_axial_projection_length": 2.4992795698344707,
+        "gauge_length_ratio": 1.0413664460508447,
+        "gauge_marker_material_z": [
+          -1.2,
+          1.2
+        ],
+        "complete_material_sections_excluding_fracture_zone": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12498680432525952,
+            "actual_width": 0.7905276830435691,
+            "actual_thickness": 0.15810553755119575,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9764593545184648
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12437991851996616,
+            "actual_width": 0.7886061151153745,
+            "actual_thickness": 0.157721221133518,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9717180594281365
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12495900763464025,
+            "actual_width": 0.7904398011431751,
+            "actual_thickness": 0.15808795339488116,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9762421928850719
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12499978393297595,
+            "actual_width": 0.7905686987933113,
+            "actual_thickness": 0.15811374871177583,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9765607576981133
+          }
+        ],
+        "material_graph_grip_path_exists": true,
+        "evaluated_coordinate_sha256": "fba753eb0adc7183ad948a91a86af5500407de747eeba8bf45e347891b17cb91",
+        "evaluated_topology_sha256": "9f8eef6f3ed786f4a40407bbbf1ac81916634c4a1599d5b0a2a83a9fc191e9da",
+        "frame": 450,
+        "time_s": 14.966666666666667,
+        "measured_components": 1,
+        "component_vertex_counts": [
+          5708
+        ],
+        "actual_material_vertex_count": 5708,
+        "actual_material_face_count": 5706,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6749022817637604,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.5631186852015544,
+          "(-0.5, -0.08, 1)": 2.402007545606896,
+          "(-0.5, 0.08, 0)": 2.5631186852015544,
+          "(-0.5, 0.08, 1)": 2.402007545606896,
+          "(0, -0.08, 0)": 2.311648663913705,
+          "(0, -0.08, 1)": 2.618848477056236,
+          "(0, 0.08, 0)": 2.311648663913705,
+          "(0, 0.08, 1)": 2.6738483790218384,
+          "(0.03125, -0.08, 0)": 2.3086955279265107,
+          "(0.03125, -0.08, 1)": 2.6219399743382112,
+          "(0.03125, 0.08, 0)": 2.3086955279265107,
+          "(0.03125, 0.08, 1)": 2.676938443505001,
+          "(0.5, -0.08, 0)": 2.0948081796213276,
+          "(0.5, -0.08, 1)": 2.8703180450999257,
+          "(0.5, 0.08, 0)": 2.0948081796213276,
+          "(0.5, 0.08, 1)": 2.8703180450999257
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12498680432525952,
+            "actual_width": 0.7905276830435691,
+            "actual_thickness": 0.15810553755119575,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9764593545184648
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12437991851996616,
+            "actual_width": 0.7886061151153745,
+            "actual_thickness": 0.157721221133518,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9717180594281365
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12495900763464025,
+            "actual_width": 0.7904398011431751,
+            "actual_thickness": 0.15808795339488116,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9762421928850719
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12499978393297595,
+            "actual_width": 0.7905686987933113,
+            "actual_thickness": 0.15811374871177583,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9765607576981133
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.18548818237914794,
+        "fracture_gap_z_minmax": [
+          0.0,
+          0.05500000715255737
+        ],
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 0,
+        "top_to_bottom_material_graph_path_exists": true,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9674530029296875
+        ]
+      },
+      "all_grip_contacts": true,
+      "max_grip_surface_gap": 0.0,
+      "all_in_frame": true,
+      "fracture_penetration_found": false,
+      "all_post_event_coordinate_hashes_identical": true,
+      "all_post_event_fixture_displacements_identical": true,
+      "volume_ratio_range": [
+        0.9999991792060651,
+        1.0030147432781964
+      ],
+      "area_measurement_scope": "tracked intact sections at materialz -1.2,-.8,.8,1.2; excludes whole oblique fracture zone; not a global minimum search or necking proof"
+    },
+    "does_not_imply_user_acceptance": true,
+    "actual_last_ligament_probe": {
+      "frame": 450,
+      "time_s": 14.966666666666667,
+      "implementation_sha256": "ff6b081606f921385a456fb77419ba3f5e2c2d407c4ff638f84ef58e6afe7e0d",
+      "actual_last_ligament_corners": [
+        {
+          "material_u": 0,
+          "material_y": 0.07984,
+          "actual_lower_vertex_index": 1189,
+          "actual_upper_vertex_index": 1189,
+          "actual_lower_coordinate": [
+            0.0,
+            0.0768260732293129,
+            -0.0883559063076973
+          ],
+          "actual_upper_coordinate": [
+            0.0,
+            0.0768260732293129,
+            -0.0883559063076973
+          ],
+          "actual_coordinate_match_gap": 0.0,
+          "matches_same_actual_vertex_index": true
+        },
+        {
+          "material_u": 0.03125,
+          "material_y": 0.07984,
+          "actual_lower_vertex_index": 1259,
+          "actual_upper_vertex_index": 1259,
+          "actual_lower_coordinate": [
+            0.024056289345026016,
+            0.07682616263628006,
+            -0.09137822687625885
+          ],
+          "actual_upper_coordinate": [
+            0.024056289345026016,
+            0.07682616263628006,
+            -0.09137822687625885
+          ],
+          "actual_coordinate_match_gap": 0.0,
+          "matches_same_actual_vertex_index": true
+        },
+        {
+          "material_u": 0.03125,
+          "material_y": 0.08,
+          "actual_lower_vertex_index": 1239,
+          "actual_upper_vertex_index": 1239,
+          "actual_lower_coordinate": [
+            0.024056289345026016,
+            0.0769801214337349,
+            -0.09137822687625885
+          ],
+          "actual_upper_coordinate": [
+            0.024056289345026016,
+            0.0769801214337349,
+            -0.09137822687625885
+          ],
+          "actual_coordinate_match_gap": 0.0,
+          "matches_same_actual_vertex_index": true
+        },
+        {
+          "material_u": 0,
+          "material_y": 0.08,
+          "actual_lower_vertex_index": 1169,
+          "actual_upper_vertex_index": 1169,
+          "actual_lower_coordinate": [
+            0.0,
+            0.07698003947734833,
+            -0.0883559063076973
+          ],
+          "actual_upper_coordinate": [
+            0.0,
+            0.07698003947734833,
+            -0.0883559063076973
+          ],
+          "actual_coordinate_match_gap": 0.0,
+          "matches_same_actual_vertex_index": true
+        }
+      ],
+      "actual_ligament_section_area": 3.7328832093590783e-06,
+      "all_corner_vertex_indices_shared": true,
+      "definition": "finite two-triangle area spanned by actual matched material corner vertices at last connected state; connection area only, excluded from intact-section/necking measurement",
+      "scope": "corner area and vertex identities, not calibrated stress or microscopic mechanism"
+    }
+  },
+  "actual_measurements": {
+    "all_frame_summary": {
+      "frames_measured": 600,
+      "first_material_grip_path_loss_frame": 451,
+      "first_measured_opening_frame": 446,
+      "first_crack_pre_measurement": {
+        "raw_gauge_marker_axial_distance_including_crack": 2.5141292810440063,
+        "same_material_gauge_seam_opening_axial": 0.0,
+        "material_gauge_definition": "sum of lower and upper same-material axial projections between gauge markers and their same-material seam boundaries, excludes seam opening; raw marker distance separately reported",
+        "actual_initial_full_fracture_material_z_bounds": null,
+        "same_material_gauge_axial_projection_length": 2.5141292810440063,
+        "gauge_length_ratio": 1.0475538254756203,
+        "gauge_marker_material_z": [
+          -1.2,
+          1.2
+        ],
+        "complete_material_sections_excluding_fracture_zone": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12454824846745345,
+            "actual_width": 0.7891395833350628,
+            "actual_thickness": 0.15782791548683786,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9730331370697877
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.1238559696106654,
+            "actual_width": 0.7869433661008874,
+            "actual_thickness": 0.1573886746403395,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9676247088017371
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12451653190734406,
+            "actual_width": 0.7890390826990062,
+            "actual_thickness": 0.15780780992998097,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9727853514577052
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12456306072167281,
+            "actual_width": 0.7891864868046383,
+            "actual_thickness": 0.15783730349747127,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9731488577994445
+          }
+        ],
+        "material_graph_grip_path_exists": true,
+        "evaluated_coordinate_sha256": "d6aae988d4e19f537cd15928bd4c1ed47fb1d28d7de315a40fa773f8e08733b6",
+        "evaluated_topology_sha256": "c453f96b7a98fd2fe946175fe6bbb96010938376529748fe2eccbe733855f32d",
+        "frame": 445,
+        "time_s": 14.8,
+        "measured_components": 1,
+        "component_vertex_counts": [
+          5006
+        ],
+        "actual_material_vertex_count": 5006,
+        "actual_material_face_count": 5004,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6748006491508532,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.5748502338102055,
+          "(-0.5, -0.08, 1)": 2.4098996638283,
+          "(-0.5, 0.08, 0)": 2.5748502338102055,
+          "(-0.5, 0.08, 1)": 2.4098996638283,
+          "(0, -0.08, 0)": 2.3208704121517347,
+          "(0, -0.08, 1)": 2.6291471760439387,
+          "(0, 0.08, 0)": 2.3208704121517347,
+          "(0, 0.08, 1)": 2.6291471760439387,
+          "(0.03125, -0.08, 0)": 2.3178839892422607,
+          "(0.03125, -0.08, 1)": 2.632272346636426,
+          "(0.03125, 0.08, 0)": 2.3178839892422607,
+          "(0.03125, 0.08, 1)": 2.632272346636426,
+          "(0.5, -0.08, 0)": 2.1016234182262354,
+          "(0.5, -0.08, 1)": 2.8831264767223326,
+          "(0.5, 0.08, 0)": 2.1016234182262354,
+          "(0.5, 0.08, 1)": 2.8831264767223326
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12454824846745345,
+            "actual_width": 0.7891395833350628,
+            "actual_thickness": 0.15782791548683786,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9730331370697877
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.1238559696106654,
+            "actual_width": 0.7869433661008874,
+            "actual_thickness": 0.1573886746403395,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9676247088017371
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12451653190734406,
+            "actual_width": 0.7890390826990062,
+            "actual_thickness": 0.15780780992998097,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9727853514577052
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12456306072167281,
+            "actual_width": 0.7891864868046383,
+            "actual_thickness": 0.15783730349747127,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9731488577994445
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.15000599804358483,
+        "fracture_gap_z_minmax": null,
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 0,
+        "top_to_bottom_material_graph_path_exists": true,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.962365984916687
+        ]
+      },
+      "final_connected_pre_measurement": {
+        "raw_gauge_marker_axial_distance_including_crack": 2.5774214267730713,
+        "same_material_gauge_seam_opening_axial": 0.06325000151991844,
+        "material_gauge_definition": "sum of lower and upper same-material axial projections between gauge markers and their same-material seam boundaries, excludes seam opening; raw marker distance separately reported",
+        "actual_initial_full_fracture_material_z_bounds": null,
+        "same_material_gauge_axial_projection_length": 2.514171425253153,
+        "gauge_length_ratio": 1.0475713855620667,
+        "gauge_marker_material_z": [
+          -1.2,
+          1.2
+        ],
+        "complete_material_sections_excluding_fracture_zone": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12454701839539746,
+            "actual_width": 0.7891356179380925,
+            "actual_thickness": 0.15782713656960495,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9730235271323844
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12385449579950185,
+            "actual_width": 0.7869386700844248,
+            "actual_thickness": 0.1573877337801899,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9676131946526617
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12451527908321186,
+            "actual_width": 0.7890350790263656,
+            "actual_thickness": 0.15780702501185476,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9727755637697164
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12456183079589067,
+            "actual_width": 0.7891825971704114,
+            "actual_thickness": 0.15783651282546401,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9731392490048056
+          }
+        ],
+        "material_graph_grip_path_exists": true,
+        "evaluated_coordinate_sha256": "8b6ec96112d2a0941ec1a51710fbe7946ff91b5d067883fac34fe032a49a5ace",
+        "evaluated_topology_sha256": "9f8eef6f3ed786f4a40407bbbf1ac81916634c4a1599d5b0a2a83a9fc191e9da",
+        "frame": 450,
+        "time_s": 14.966666666666667,
+        "measured_components": 1,
+        "component_vertex_counts": [
+          5708
+        ],
+        "actual_material_vertex_count": 5708,
+        "actual_material_face_count": 5706,
+        "closed_manifold_edge_incidence": true,
+        "measured_material_volume": 0.6749194151776468,
+        "same_material_boundary_path_lengths": {
+          "(-0.5, -0.08, 0)": 2.574883562869544,
+          "(-0.5, -0.08, 1)": 2.409922053757937,
+          "(-0.5, 0.08, 0)": 2.574883562869544,
+          "(-0.5, 0.08, 1)": 2.409922053757937,
+          "(0, -0.08, 0)": 2.320896594924777,
+          "(0, -0.08, 1)": 2.6291763818338603,
+          "(0, 0.08, 0)": 2.320896594924777,
+          "(0, 0.08, 1)": 2.6924262407892385,
+          "(0.03125, -0.08, 0)": 2.317910078473382,
+          "(0.03125, -0.08, 1)": 2.6323016548172244,
+          "(0.03125, 0.08, 0)": 2.317910078473382,
+          "(0.03125, 0.08, 1)": 2.6955498759560603,
+          "(0.5, -0.08, 0)": 2.101642798938038,
+          "(0.5, -0.08, 1)": 2.8831628418025264,
+          "(0.5, 0.08, 0)": 2.101642798938038,
+          "(0.5, 0.08, 1)": 2.8831628418025264
+        },
+        "actual_material_sections": [
+          {
+            "material_coordinate_z": -1.2,
+            "actual_section_corner_area": 0.12454701839539746,
+            "actual_width": 0.7891356179380925,
+            "actual_thickness": 0.15782713656960495,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9730235271323844
+          },
+          {
+            "material_coordinate_z": -0.8,
+            "actual_section_corner_area": 0.12385449579950185,
+            "actual_width": 0.7869386700844248,
+            "actual_thickness": 0.1573877337801899,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9676131946526617
+          },
+          {
+            "material_coordinate_z": 0.8,
+            "actual_section_corner_area": 0.12451527908321186,
+            "actual_width": 0.7890350790263656,
+            "actual_thickness": 0.15780702501185476,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9727755637697164
+          },
+          {
+            "material_coordinate_z": 1.2,
+            "actual_section_corner_area": 0.12456183079589067,
+            "actual_width": 0.7891825971704114,
+            "actual_thickness": 0.15783651282546401,
+            "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+            "area_ratio_to_same_initial_section": 0.9731392490048056
+          }
+        ],
+        "actual_grip_contacts": [
+          {
+            "end": "lower",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          },
+          {
+            "end": "upper",
+            "actual_front_surface_gap": 0.0,
+            "end_material_vertices_inside_actual_jaw_z_span": true
+          }
+        ],
+        "upper_fixture_displacement": 0.2133114097360189,
+        "fracture_gap_z_minmax": [
+          0.0,
+          0.06325000524520874
+        ],
+        "fracture_penetration": false,
+        "actual_zero_opening_contact_area": 0,
+        "top_to_bottom_material_graph_path_exists": true,
+        "all_evaluated_meshes_in_frame": true,
+        "camera_projected_xy_bounds": [
+          0.4052419364452362,
+          0.5947580933570862,
+          0.030465416610240936,
+          0.9714419841766357
+        ]
+      },
+      "all_grip_contacts": true,
+      "max_grip_surface_gap": 0.0,
+      "all_in_frame": true,
+      "fracture_penetration_found": false,
+      "all_post_event_coordinate_hashes_identical": true,
+      "all_post_event_fixture_displacements_identical": true,
+      "volume_ratio_range": [
+        0.9999991660719971,
+        1.0034569283226207
+      ],
+      "area_measurement_scope": "tracked intact sections at materialz -1.2,-.8,.8,1.2; excludes whole oblique fracture zone; not a global minimum search or necking proof"
+    },
+    "first_crack_pre_measurement": {
+      "raw_gauge_marker_axial_distance_including_crack": 2.5141292810440063,
+      "same_material_gauge_seam_opening_axial": 0.0,
+      "material_gauge_definition": "sum of lower and upper same-material axial projections between gauge markers and their same-material seam boundaries, excludes seam opening; raw marker distance separately reported",
+      "actual_initial_full_fracture_material_z_bounds": null,
+      "same_material_gauge_axial_projection_length": 2.5141292810440063,
+      "gauge_length_ratio": 1.0475538254756203,
+      "gauge_marker_material_z": [
+        -1.2,
+        1.2
+      ],
+      "complete_material_sections_excluding_fracture_zone": [
+        {
+          "material_coordinate_z": -1.2,
+          "actual_section_corner_area": 0.12454824846745345,
+          "actual_width": 0.7891395833350628,
+          "actual_thickness": 0.15782791548683786,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9730331370697877
+        },
+        {
+          "material_coordinate_z": -0.8,
+          "actual_section_corner_area": 0.1238559696106654,
+          "actual_width": 0.7869433661008874,
+          "actual_thickness": 0.1573886746403395,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9676247088017371
+        },
+        {
+          "material_coordinate_z": 0.8,
+          "actual_section_corner_area": 0.12451653190734406,
+          "actual_width": 0.7890390826990062,
+          "actual_thickness": 0.15780780992998097,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9727853514577052
+        },
+        {
+          "material_coordinate_z": 1.2,
+          "actual_section_corner_area": 0.12456306072167281,
+          "actual_width": 0.7891864868046383,
+          "actual_thickness": 0.15783730349747127,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9731488577994445
+        }
+      ],
+      "material_graph_grip_path_exists": true,
+      "evaluated_coordinate_sha256": "d6aae988d4e19f537cd15928bd4c1ed47fb1d28d7de315a40fa773f8e08733b6",
+      "evaluated_topology_sha256": "c453f96b7a98fd2fe946175fe6bbb96010938376529748fe2eccbe733855f32d",
+      "frame": 445,
+      "time_s": 14.8,
+      "measured_components": 1,
+      "component_vertex_counts": [
+        5006
+      ],
+      "actual_material_vertex_count": 5006,
+      "actual_material_face_count": 5004,
+      "closed_manifold_edge_incidence": true,
+      "measured_material_volume": 0.6748006491508532,
+      "same_material_boundary_path_lengths": {
+        "(-0.5, -0.08, 0)": 2.5748502338102055,
+        "(-0.5, -0.08, 1)": 2.4098996638283,
+        "(-0.5, 0.08, 0)": 2.5748502338102055,
+        "(-0.5, 0.08, 1)": 2.4098996638283,
+        "(0, -0.08, 0)": 2.3208704121517347,
+        "(0, -0.08, 1)": 2.6291471760439387,
+        "(0, 0.08, 0)": 2.3208704121517347,
+        "(0, 0.08, 1)": 2.6291471760439387,
+        "(0.03125, -0.08, 0)": 2.3178839892422607,
+        "(0.03125, -0.08, 1)": 2.632272346636426,
+        "(0.03125, 0.08, 0)": 2.3178839892422607,
+        "(0.03125, 0.08, 1)": 2.632272346636426,
+        "(0.5, -0.08, 0)": 2.1016234182262354,
+        "(0.5, -0.08, 1)": 2.8831264767223326,
+        "(0.5, 0.08, 0)": 2.1016234182262354,
+        "(0.5, 0.08, 1)": 2.8831264767223326
+      },
+      "actual_material_sections": [
+        {
+          "material_coordinate_z": -1.2,
+          "actual_section_corner_area": 0.12454824846745345,
+          "actual_width": 0.7891395833350628,
+          "actual_thickness": 0.15782791548683786,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9730331370697877
+        },
+        {
+          "material_coordinate_z": -0.8,
+          "actual_section_corner_area": 0.1238559696106654,
+          "actual_width": 0.7869433661008874,
+          "actual_thickness": 0.1573886746403395,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9676247088017371
+        },
+        {
+          "material_coordinate_z": 0.8,
+          "actual_section_corner_area": 0.12451653190734406,
+          "actual_width": 0.7890390826990062,
+          "actual_thickness": 0.15780780992998097,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9727853514577052
+        },
+        {
+          "material_coordinate_z": 1.2,
+          "actual_section_corner_area": 0.12456306072167281,
+          "actual_width": 0.7891864868046383,
+          "actual_thickness": 0.15783730349747127,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9731488577994445
+        }
+      ],
+      "actual_grip_contacts": [
+        {
+          "end": "lower",
+          "actual_front_surface_gap": 0.0,
+          "end_material_vertices_inside_actual_jaw_z_span": true
+        },
+        {
+          "end": "upper",
+          "actual_front_surface_gap": 0.0,
+          "end_material_vertices_inside_actual_jaw_z_span": true
+        }
+      ],
+      "upper_fixture_displacement": 0.15000599804358483,
+      "fracture_gap_z_minmax": null,
+      "fracture_penetration": false,
+      "actual_zero_opening_contact_area": 0,
+      "top_to_bottom_material_graph_path_exists": true,
+      "all_evaluated_meshes_in_frame": true,
+      "camera_projected_xy_bounds": [
+        0.4052419364452362,
+        0.5947580933570862,
+        0.030465416610240936,
+        0.962365984916687
+      ]
+    },
+    "final_connected_pre_measurement": {
+      "raw_gauge_marker_axial_distance_including_crack": 2.5774214267730713,
+      "same_material_gauge_seam_opening_axial": 0.06325000151991844,
+      "material_gauge_definition": "sum of lower and upper same-material axial projections between gauge markers and their same-material seam boundaries, excludes seam opening; raw marker distance separately reported",
+      "actual_initial_full_fracture_material_z_bounds": null,
+      "same_material_gauge_axial_projection_length": 2.514171425253153,
+      "gauge_length_ratio": 1.0475713855620667,
+      "gauge_marker_material_z": [
+        -1.2,
+        1.2
+      ],
+      "complete_material_sections_excluding_fracture_zone": [
+        {
+          "material_coordinate_z": -1.2,
+          "actual_section_corner_area": 0.12454701839539746,
+          "actual_width": 0.7891356179380925,
+          "actual_thickness": 0.15782713656960495,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9730235271323844
+        },
+        {
+          "material_coordinate_z": -0.8,
+          "actual_section_corner_area": 0.12385449579950185,
+          "actual_width": 0.7869386700844248,
+          "actual_thickness": 0.1573877337801899,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9676131946526617
+        },
+        {
+          "material_coordinate_z": 0.8,
+          "actual_section_corner_area": 0.12451527908321186,
+          "actual_width": 0.7890350790263656,
+          "actual_thickness": 0.15780702501185476,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9727755637697164
+        },
+        {
+          "material_coordinate_z": 1.2,
+          "actual_section_corner_area": 0.12456183079589067,
+          "actual_width": 0.7891825971704114,
+          "actual_thickness": 0.15783651282546401,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9731392490048056
+        }
+      ],
+      "material_graph_grip_path_exists": true,
+      "evaluated_coordinate_sha256": "8b6ec96112d2a0941ec1a51710fbe7946ff91b5d067883fac34fe032a49a5ace",
+      "evaluated_topology_sha256": "9f8eef6f3ed786f4a40407bbbf1ac81916634c4a1599d5b0a2a83a9fc191e9da",
+      "frame": 450,
+      "time_s": 14.966666666666667,
+      "measured_components": 1,
+      "component_vertex_counts": [
+        5708
+      ],
+      "actual_material_vertex_count": 5708,
+      "actual_material_face_count": 5706,
+      "closed_manifold_edge_incidence": true,
+      "measured_material_volume": 0.6749194151776468,
+      "same_material_boundary_path_lengths": {
+        "(-0.5, -0.08, 0)": 2.574883562869544,
+        "(-0.5, -0.08, 1)": 2.409922053757937,
+        "(-0.5, 0.08, 0)": 2.574883562869544,
+        "(-0.5, 0.08, 1)": 2.409922053757937,
+        "(0, -0.08, 0)": 2.320896594924777,
+        "(0, -0.08, 1)": 2.6291763818338603,
+        "(0, 0.08, 0)": 2.320896594924777,
+        "(0, 0.08, 1)": 2.6924262407892385,
+        "(0.03125, -0.08, 0)": 2.317910078473382,
+        "(0.03125, -0.08, 1)": 2.6323016548172244,
+        "(0.03125, 0.08, 0)": 2.317910078473382,
+        "(0.03125, 0.08, 1)": 2.6955498759560603,
+        "(0.5, -0.08, 0)": 2.101642798938038,
+        "(0.5, -0.08, 1)": 2.8831628418025264,
+        "(0.5, 0.08, 0)": 2.101642798938038,
+        "(0.5, 0.08, 1)": 2.8831628418025264
+      },
+      "actual_material_sections": [
+        {
+          "material_coordinate_z": -1.2,
+          "actual_section_corner_area": 0.12454701839539746,
+          "actual_width": 0.7891356179380925,
+          "actual_thickness": 0.15782713656960495,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9730235271323844
+        },
+        {
+          "material_coordinate_z": -0.8,
+          "actual_section_corner_area": 0.12385449579950185,
+          "actual_width": 0.7869386700844248,
+          "actual_thickness": 0.1573877337801899,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9676131946526617
+        },
+        {
+          "material_coordinate_z": 0.8,
+          "actual_section_corner_area": 0.12451527908321186,
+          "actual_width": 0.7890350790263656,
+          "actual_thickness": 0.15780702501185476,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9727755637697164
+        },
+        {
+          "material_coordinate_z": 1.2,
+          "actual_section_corner_area": 0.12456183079589067,
+          "actual_width": 0.7891825971704114,
+          "actual_thickness": 0.15783651282546401,
+          "method": "actual matching material corner vertices; quadrilateral two-triangle area",
+          "area_ratio_to_same_initial_section": 0.9731392490048056
+        }
+      ],
+      "actual_grip_contacts": [
+        {
+          "end": "lower",
+          "actual_front_surface_gap": 0.0,
+          "end_material_vertices_inside_actual_jaw_z_span": true
+        },
+        {
+          "end": "upper",
+          "actual_front_surface_gap": 0.0,
+          "end_material_vertices_inside_actual_jaw_z_span": true
+        }
+      ],
+      "upper_fixture_displacement": 0.2133114097360189,
+      "fracture_gap_z_minmax": [
+        0.0,
+        0.06325000524520874
+      ],
+      "fracture_penetration": false,
+      "actual_zero_opening_contact_area": 0,
+      "top_to_bottom_material_graph_path_exists": true,
+      "all_evaluated_meshes_in_frame": true,
+      "camera_projected_xy_bounds": [
+        0.4052419364452362,
+        0.5947580933570862,
+        0.030465416610240936,
+        0.9714419841766357
+      ]
+    },
+    "all_frame_mesh_report": "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/all_frame_mesh_checks.json",
+    "all_frame_mesh_report_sha256": "f4b1fe08572c31d8c381cbd5d62324dbfb07aeef5e8900f05b31a6fe34923485",
+    "same_time_default_increment_comparison": [
+      {
+        "frame": 445,
+        "time_s": 14.8,
+        "candidate_gauge_length_ratio": 1.0475538254756203,
+        "same_time_default_gauge_length_ratio": 1.04135111803408,
+        "measured_increment_ratio": 1.1500009609517268
+      },
+      {
+        "frame": 450,
+        "time_s": 14.966666666666667,
+        "candidate_gauge_length_ratio": 1.0475713855620667,
+        "same_time_default_gauge_length_ratio": 1.0413664460508447,
+        "measured_increment_ratio": 1.1499993377143243
+      }
+    ],
+    "actual_last_ligament_probe": {
+      "frame": 450,
+      "time_s": 14.966666666666667,
+      "implementation_sha256": "ff6b081606f921385a456fb77419ba3f5e2c2d407c4ff638f84ef58e6afe7e0d",
+      "actual_last_ligament_corners": [
+        {
+          "material_u": 0,
+          "material_y": 0.07984,
+          "actual_lower_vertex_index": 1189,
+          "actual_upper_vertex_index": 1189,
+          "actual_lower_coordinate": [
+            0.0,
+            0.07640279084444046,
+            -0.0791092962026596
+          ],
+          "actual_upper_coordinate": [
+            0.0,
+            0.07640279084444046,
+            -0.0791092962026596
+          ],
+          "actual_coordinate_match_gap": 0.0,
+          "matches_same_actual_vertex_index": true
+        },
+        {
+          "material_u": 0.03125,
+          "material_y": 0.07984,
+          "actual_lower_vertex_index": 1259,
+          "actual_upper_vertex_index": 1259,
+          "actual_lower_coordinate": [
+            0.023923750966787338,
+            0.07640288770198822,
+            -0.0821651890873909
+          ],
+          "actual_upper_coordinate": [
+            0.023923750966787338,
+            0.07640288770198822,
+            -0.0821651890873909
+          ],
+          "actual_coordinate_match_gap": 0.0,
+          "matches_same_actual_vertex_index": true
+        },
+        {
+          "material_u": 0.03125,
+          "material_y": 0.08,
+          "actual_lower_vertex_index": 1239,
+          "actual_upper_vertex_index": 1239,
+          "actual_lower_coordinate": [
+            0.023923750966787338,
+            0.076555997133255,
+            -0.0821651890873909
+          ],
+          "actual_upper_coordinate": [
+            0.023923750966787338,
+            0.076555997133255,
+            -0.0821651890873909
+          ],
+          "actual_coordinate_match_gap": 0.0,
+          "matches_same_actual_vertex_index": true
+        },
+        {
+          "material_u": 0,
+          "material_y": 0.08,
+          "actual_lower_vertex_index": 1169,
+          "actual_upper_vertex_index": 1169,
+          "actual_lower_coordinate": [
+            0.0,
+            0.07655590027570724,
+            -0.0791092962026596
+          ],
+          "actual_upper_coordinate": [
+            0.0,
+            0.07655590027570724,
+            -0.0791092962026596
+          ],
+          "actual_coordinate_match_gap": 0.0,
+          "matches_same_actual_vertex_index": true
+        }
+      ],
+      "actual_ligament_section_area": 3.692713679991701e-06,
+      "all_corner_vertex_indices_shared": true,
+      "definition": "finite two-triangle area spanned by actual matched material corner vertices at last connected state; connection area only, excluded from intact-section/necking measurement",
+      "scope": "corner area and vertex identities, not calibrated stress or microscopic mechanism"
+    },
+    "transition": {
+      "last_connected_frame": 450,
+      "first_separated_frame": 451,
+      "unique_material_coordinate_sets_identical": true,
+      "maximum_same_material_path_change": 0.0,
+      "fixture_max_displacement": 0.0,
+      "volume_difference": -7.105427357601002e-13
+    },
+    "postfracture_max_material_vertex_motion": 0.0
+  },
+  "technical_verification": {
+    "status": "passed_development_geometry_checks_only",
+    "frames_measured": 600,
+    "actual_path_loss_frame": 451,
+    "actual_path_loss_time_s": 15.0,
+    "continuous_connected_before_event": true,
+    "disconnected_after_event": true,
+    "camera_and_grip_checks_passed": true,
+    "event_order_and_selected_stop_passed": true,
+    "independent_material_label_review": "passed_for_single_discrete_qualitative_candidate",
+    "final_encoding": "passed",
+    "main_final_video_view": "completed_for_final_sha256",
+    "user_acceptance": true,
+    "scope": "Measured development geometry with completed final encoding, discrete independent review, main-agent view and single-video user acceptance; no continuous range or physical calibration"
+  },
+  "verification_limits": [
+    "Discrete coupled qualitative geometry candidate only; no continuous range, style or training approval.",
+    "No force balance, calibrated constitutive solver or general triangle self-intersection solver.",
+    "Source identity and observations preserved; source scientific unknowns remain.",
+    "Static snapshot does not replay this procedural animation.",
+    "PNG key previews are not final encoded visibility; first visually decidable separation awaits full movie.",
+    "All checked labels and acceptance reset for this candidate."
+  ],
+  "source_sha256_verified_at_preparation": "ecbef3988894e1afdb8dfe6270e2afba834746450a4336d5118b2d03b78d07e5",
+  "generated_events": {
+    "frame_time_formula": "(frame-1)/30",
+    "loading_start": {
+      "frame": 1,
+      "time_s": 0
+    },
+    "first_crack_pre": {
+      "frame": 445,
+      "time_s": 14.8
+    },
+    "first_measured_crack_or_split": {
+      "frame": 446,
+      "time_s": 14.833333333333334,
+      "basis": "first measured positive oblique opening while a connected ligament remains"
+    },
+    "first_measured_positive_opening": {
+      "frame": 446,
+      "time_s": 14.833333333333334
+    },
+    "final_loss_of_grip_to_grip_material_path": {
+      "frame": 451,
+      "time_s": 15
+    },
+    "post_motion_stop": {
+      "frame": 451,
+      "time_s": 15.0
+    },
+    "last_encoded_frame_expected": {
+      "frame": 600,
+      "time_s": 19.966666666666665
+    },
+    "encoded_duration_expected_s": 20,
+    "visible_separation_in_encoded_movie_status": "Complete separation is visible in final encoded video; earliest visually decidable separation frame remains unmeasured and is not equated to topology loss"
+  },
+  "generated_time_map": {
+    "frame_time_formula": "(frame-1)/30",
+    "duration_s": 20,
+    "frames": 600,
+    "generated_final_path_loss_s": 15,
+    "generated_first_opening_s": 14.833333333333334,
+    "generated_stop_s": 15.0,
+    "source_mapping_from_accepted_single_parameter": {
+      "strategy": "retimed20s qualitative demonstration, source is only5.3333s; no constant speed source reconstruction",
+      "source_label_event_s": 4.63,
+      "source_observed_event_approximately_s": 4.78,
+      "simulation_complete_fracture_s": 16,
+      "time_fields_not_interchangeable": true,
+      "reference_anchors": [
+        {
+          "source_s": 0.3,
+          "simulation_s": 0,
+          "role": "initial shape reference"
+        },
+        {
+          "source_s": 4.68,
+          "simulation_s": 15.8,
+          "role": "last clearly intact inspected source anchor, author timeline allocation"
+        },
+        {
+          "source_s": 4.78,
+          "simulation_s": 16,
+          "role": "approximate visual source event vs authored full-cut event, not quantitative kinetic mapping"
+        },
+        {
+          "source_s": 5.3,
+          "simulation_s": 19.9666667,
+          "role": "final observation, synthetic stop interval"
+        }
+      ],
+      "simulation_stages": [
+        {
+          "frames": [
+            1,
+            475
+          ],
+          "description": "gradual authored stretch and coupled section reduction; no obvious necking remains subject to final video review"
+        },
+        {
+          "frames": [
+            476,
+            480
+          ],
+          "description": "retained rapid oblique crack phase with finite material connection"
+        },
+        {
+          "frames": [
+            481,
+            600
+          ],
+          "description": "full separation, selected specimen and fixture stop condition"
+        }
+      ]
+    },
+    "source_mapping_original_baseline": {
+      "strategy": "retimed20s qualitative demonstration, source is only5.3333s; no constant speed source reconstruction",
+      "source_label_event_s": 4.63,
+      "source_observed_event_approximately_s": 4.78,
+      "simulation_complete_fracture_s": 16,
+      "time_fields_not_interchangeable": true,
+      "reference_anchors": [
+        {
+          "source_s": 0.3,
+          "simulation_s": 0,
+          "role": "initial shape reference"
+        },
+        {
+          "source_s": 4.68,
+          "simulation_s": 15.8,
+          "role": "last clearly intact inspected source anchor, author timeline allocation"
+        },
+        {
+          "source_s": 4.78,
+          "simulation_s": 16,
+          "role": "approximate visual source event vs authored full-cut event, not quantitative kinetic mapping"
+        },
+        {
+          "source_s": 5.3,
+          "simulation_s": 19.9666667,
+          "role": "final observation, synthetic stop interval"
+        }
+      ],
+      "simulation_stages": [
+        {
+          "frames": [
+            1,
+            475
+          ],
+          "description": "weak authored local stretch and coupled section reduction, plastic fraction unknown"
+        },
+        {
+          "frames": [
+            476,
+            480
+          ],
+          "description": "rapid inclined/jagged crack opens under loading while finite residual connection remains"
+        },
+        {
+          "frames": [
+            480,
+            481
+          ],
+          "description": "last finite connection cut with identical unique material coordinates and fixture positions"
+        },
+        {
+          "frames": [
+            481,
+            600
+          ],
+          "description": "selected stop condition, no postfracture geometry movement"
+        }
+      ]
+    },
+    "retiming": "author-controlled phase retiming; not calibrated source correspondence",
+    "source_and_simulation_times_are_distinct": true,
+    "current_stages": {
+      "loaded_connected_frames": [
+        1,
+        445
+      ],
+      "partially_open_connected_frames": [
+        446,
+        450
+      ],
+      "disconnected_frames": [
+        451,
+        600
+      ],
+      "stopped_frames": [
+        451,
+        600
+      ]
+    }
+  },
+  "time_mapping": {
+    "frame_time_formula": "(frame-1)/30",
+    "duration_s": 20,
+    "frames": 600,
+    "generated_final_path_loss_s": 15,
+    "generated_first_opening_s": 14.833333333333334,
+    "generated_stop_s": 15.0,
+    "source_mapping_from_accepted_single_parameter": {
+      "strategy": "retimed20s qualitative demonstration, source is only5.3333s; no constant speed source reconstruction",
+      "source_label_event_s": 4.63,
+      "source_observed_event_approximately_s": 4.78,
+      "simulation_complete_fracture_s": 16,
+      "time_fields_not_interchangeable": true,
+      "reference_anchors": [
+        {
+          "source_s": 0.3,
+          "simulation_s": 0,
+          "role": "initial shape reference"
+        },
+        {
+          "source_s": 4.68,
+          "simulation_s": 15.8,
+          "role": "last clearly intact inspected source anchor, author timeline allocation"
+        },
+        {
+          "source_s": 4.78,
+          "simulation_s": 16,
+          "role": "approximate visual source event vs authored full-cut event, not quantitative kinetic mapping"
+        },
+        {
+          "source_s": 5.3,
+          "simulation_s": 19.9666667,
+          "role": "final observation, synthetic stop interval"
+        }
+      ],
+      "simulation_stages": [
+        {
+          "frames": [
+            1,
+            475
+          ],
+          "description": "gradual authored stretch and coupled section reduction; no obvious necking remains subject to final video review"
+        },
+        {
+          "frames": [
+            476,
+            480
+          ],
+          "description": "retained rapid oblique crack phase with finite material connection"
+        },
+        {
+          "frames": [
+            481,
+            600
+          ],
+          "description": "full separation, selected specimen and fixture stop condition"
+        }
+      ]
+    },
+    "source_mapping_original_baseline": {
+      "strategy": "retimed20s qualitative demonstration, source is only5.3333s; no constant speed source reconstruction",
+      "source_label_event_s": 4.63,
+      "source_observed_event_approximately_s": 4.78,
+      "simulation_complete_fracture_s": 16,
+      "time_fields_not_interchangeable": true,
+      "reference_anchors": [
+        {
+          "source_s": 0.3,
+          "simulation_s": 0,
+          "role": "initial shape reference"
+        },
+        {
+          "source_s": 4.68,
+          "simulation_s": 15.8,
+          "role": "last clearly intact inspected source anchor, author timeline allocation"
+        },
+        {
+          "source_s": 4.78,
+          "simulation_s": 16,
+          "role": "approximate visual source event vs authored full-cut event, not quantitative kinetic mapping"
+        },
+        {
+          "source_s": 5.3,
+          "simulation_s": 19.9666667,
+          "role": "final observation, synthetic stop interval"
+        }
+      ],
+      "simulation_stages": [
+        {
+          "frames": [
+            1,
+            475
+          ],
+          "description": "weak authored local stretch and coupled section reduction, plastic fraction unknown"
+        },
+        {
+          "frames": [
+            476,
+            480
+          ],
+          "description": "rapid inclined/jagged crack opens under loading while finite residual connection remains"
+        },
+        {
+          "frames": [
+            480,
+            481
+          ],
+          "description": "last finite connection cut with identical unique material coordinates and fixture positions"
+        },
+        {
+          "frames": [
+            481,
+            600
+          ],
+          "description": "selected stop condition, no postfracture geometry movement"
+        }
+      ]
+    },
+    "retiming": "author-controlled phase retiming; not calibrated source correspondence",
+    "source_and_simulation_times_are_distinct": true,
+    "current_stages": {
+      "loaded_connected_frames": [
+        1,
+        445
+      ],
+      "partially_open_connected_frames": [
+        446,
+        450
+      ],
+      "disconnected_frames": [
+        451,
+        600
+      ],
+      "stopped_frames": [
+        451,
+        600
+      ]
+    }
+  },
+  "selected_change": {
+    "stretch_increment_factor": 1.15,
+    "event_time_s": 15,
+    "fracture_position": "unchanged default -0.15 material z",
+    "definition": "candidate gauge ratio minus1 divided by same-time default gauge ratio minus1",
+    "comparison_results": [
+      {
+        "frame": 445,
+        "time_s": 14.8,
+        "candidate_gauge_length_ratio": 1.0475538254756203,
+        "same_time_default_gauge_length_ratio": 1.04135111803408,
+        "measured_increment_ratio": 1.1500009609517268
+      },
+      {
+        "frame": 450,
+        "time_s": 14.966666666666667,
+        "candidate_gauge_length_ratio": 1.0475713855620667,
+        "same_time_default_gauge_length_ratio": 1.0413664460508447,
+        "measured_increment_ratio": 1.1499993377143243
+      }
+    ]
+  },
+  "coupled_loading_configuration": {
+    "crack_loading_travel": 0.06325,
+    "baseline_crack_loading_travel": 0.055,
+    "factor": 1.15,
+    "definition": "original crack-stage loading travel coupled to selected stretch factor; excludes crack opening from gauge material length",
+    "last_connection_is_neck_measurement": false,
+    "connection_area_scope": "finite two-triangle area spanned by actual matched material corner vertices at last connected state; connection area only, excluded from intact-section/necking measurement",
+    "post_split_zero_opening_contact_area": 3.692769269036944e-06,
+    "zero_opening_contact_note": "tiny complementary unbonded contact after graph separation remains; coordinate contact is not material connection"
+  },
+  "render_preparation": {
+    "manifest_path": "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/render_manifest.json",
+    "manifest_sha256": "5253c75789542fcdb61c86b2212c14d803b6b7697af62f4a46bf069446dae1ff",
+    "key_preview_paths": [
+      "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0001.png",
+      "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0241.png",
+      "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0445.png",
+      "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0446.png",
+      "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0448.png",
+      "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0449.png",
+      "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0450.png",
+      "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0451.png",
+      "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0452.png",
+      "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0556.png",
+      "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0600.png"
+    ],
+    "full_render_started": false,
+    "final_encoding": "passed"
+  },
+  "local_key_preview_inspection": {
+    "viewer": "delegated implementation agent",
+    "opened_actual_keyframes": [
+      450,
+      451
+    ],
+    "result": "oblique opening with uniform intact gauge away from seam; finite final material connection not visually resolvable at this PNG scale",
+    "scope": "selected PNG development visual inspection; main-agent final movie view pending",
+    "first_visually_decidable_fully_separated_encoded_frame": "unmeasured",
+    "record_stage": "historical_development_key_preview_before_final_encoding_and_main_view",
+    "current_state_note": "Historical key-frame scope retained; final encoding, independent review, main final view and user acceptance completed in separate SHA-bound records"
+  },
+  "label_check_history": [
+    {
+      "stage": "developer_before_final_review",
+      "checked_labels": {
+        "材料类别": "待核验",
+        "断裂结果": "待核验",
+        "单一主要破坏类别": "待核验",
+        "断裂位置": "待核验",
+        "夹持异常": "待核验",
+        "拍摄异常": "待核验"
+      },
+      "verified_labels": {}
+    },
+    {
+      "stage": "synchronize_current_completion_aliases",
+      "previous_values": {
+        "checked_label_status": "development measurements available; independent review, final encoding, main final video view and user acceptance pending",
+        "acceptance_status": "pending"
+      }
+    }
+  ],
+  "final_label_check_basis": {
+    "material": "Preserved source identity or explicit user confirmation",
+    "mode": "Source-associated/project visual criterion plus independent final-video review, not microscopic mechanism proof",
+    "result_site_anomalies": "Actual evaluated geometry and final encoded video",
+    "independent_report": {
+      "status": "passed_for_single_discrete_qualitative_candidate",
+      "report_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/review/coupled_final_review.md",
+      "report_sha256": "074223a7e8006dfcacdb94661a98bb9b60997a098079c7c578b5985c593bc616",
+      "video_sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492",
+      "scope": "See complete report and per-candidate limitations; not a constitutive calibration, range approval, or user acceptance"
+    }
+  },
+  "video_file": "polymer_mixed_coupled_stretch115_time15_v1.mp4",
+  "sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492",
+  "bytes": 732159,
+  "final_media_validation": {
+    "video_name": "polymer_mixed_coupled_stretch115_time15_v1.mp4",
+    "bytes": 732159,
+    "sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492",
+    "width": 1280,
+    "height": 720,
+    "widthheight": "1280x720",
+    "frames": 600,
+    "png_count": 600,
+    "png_continuous_1_600": true,
+    "r_frame_rate": "30/1",
+    "avg_frame_rate": "30/1",
+    "stream_duration_seconds": 20.0,
+    "file_duration_seconds": 20.0,
+    "ffmpeg_full_decode_exit_code": 0,
+    "video": "polymer_mixed_coupled_stretch115_time15_v1.mp4",
+    "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/polymer_finite_deformation_oblique_rupture/polymer_mixed_coupled_stretch115_time15_v1.mp4"
+  },
+  "main_agent_view_record": {
+    "video_sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492",
+    "date": "2026-10-09",
+    "method": "Opened final encoded MP4 in QuickTime Player and visually inspected sought states, not uninterrupted full-playback proof",
+    "requested_seek_seconds": [
+      14.7,
+      20
+    ],
+    "observations": "Prebreak elongated nearly uniform gauge with no macroscopic neck; final oblique rough transverse split visible with retained jaws. Tiny last connection/zero-gap contact cannot be inferred visually. Exact earliest visible split not measured.",
+    "user_accepted": false,
+    "scope": "Final encoded key states plus independent whole-frame checks"
+  },
+  "independent_review_record": {
+    "status": "passed_for_single_discrete_qualitative_candidate",
+    "report_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/review/coupled_final_review.md",
+    "report_sha256": "074223a7e8006dfcacdb94661a98bb9b60997a098079c7c578b5985c593bc616",
+    "video_sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492",
+    "scope": "See complete report and per-candidate limitations; not a constitutive calibration, range approval, or user acceptance"
+  },
+  "acceptance_scope": "single_video_visual_and_label_acceptance",
+  "downstream_label_preview": {
+    "contract_version": "tensile-vlm/v4.1",
+    "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+    "input_scope": "entire_paired_20_second_video",
+    "labels": {
+      "clip_state": "发生断裂",
+      "fracture_mechanism": "半脆半韧断裂",
+      "fracture_site": "inside_gauge",
+      "special_case": null
+    },
+    "format_validation": "passed_by_existing_v4_1_validator",
+    "training_released": false,
+    "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata.",
+    "status": "user_accepted_label_preview_not_training_release",
+    "user_accepted": true,
+    "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/polymer_finite_deformation_oblique_rupture/polymer_mixed_coupled_stretch115_time15_v1.mp4",
+    "video_sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492"
+  },
+  "acceptance_history": [
+    {
+      "stage": "before_user_acceptance_2026-10-09",
+      "status": "checked_pending_user_acceptance",
+      "acceptance": {
+        "status": "pending_user_acceptance",
+        "scope": "this discrete coupled candidate only",
+        "user_accepted": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "training_released": false,
+        "independent_review_completed": true,
+        "main_final_video_view_completed": true,
+        "final_encoding": "passed",
+        "independent_review": "passed_for_single_discrete_qualitative_candidate",
+        "main_final_video_view": "completed_for_final_sha256",
+        "main_agent_final_video_view": "completed_for_final_sha256"
+      },
+      "acceptance_scope": "single_discrete_candidate_pending_user_visual_acceptance",
+      "verified_labels": {
+        "材料类别": {
+          "value": "高分子",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "断裂结果": {
+          "value": "完全断裂",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "单一主要破坏类别": {
+          "value": "半脆半韧断裂",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "断裂位置": {
+          "value": "标距内",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "夹持异常": {
+          "value": "无",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "拍摄异常": {
+          "value": "无",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        }
+      },
+      "checked_label_status": "Final encoding, independent review and main final video key-state viewing completed; only user acceptance pending; no parameter range or training release approval",
+      "technical_verification": {
+        "status": "passed_development_geometry_checks_only",
+        "frames_measured": 600,
+        "actual_path_loss_frame": 451,
+        "actual_path_loss_time_s": 15.0,
+        "continuous_connected_before_event": true,
+        "disconnected_after_event": true,
+        "camera_and_grip_checks_passed": true,
+        "event_order_and_selected_stop_passed": true,
+        "independent_material_label_review": "pending",
+        "final_encoding": "pending",
+        "main_final_video_view": "pending",
+        "user_acceptance": false
+      },
+      "render_preparation": {
+        "manifest_path": "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/render_manifest.json",
+        "manifest_sha256": "5253c75789542fcdb61c86b2212c14d803b6b7697af62f4a46bf069446dae1ff",
+        "key_preview_paths": [
+          "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0001.png",
+          "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0241.png",
+          "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0445.png",
+          "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0446.png",
+          "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0448.png",
+          "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0449.png",
+          "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0450.png",
+          "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0451.png",
+          "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0452.png",
+          "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0556.png",
+          "_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/previews/frame_0600.png"
+        ],
+        "full_render_started": false,
+        "final_encoding": "pending"
+      },
+      "local_key_preview_inspection": {
+        "viewer": "delegated implementation agent",
+        "opened_actual_keyframes": [
+          450,
+          451
+        ],
+        "result": "oblique opening with uniform intact gauge away from seam; finite final material connection not visually resolvable at this PNG scale",
+        "scope": "selected PNG development visual inspection; main-agent final movie view pending",
+        "first_visually_decidable_fully_separated_encoded_frame": "unmeasured"
+      },
+      "observations": [
+        "Source white narrow flat strip with gradual shoulder transition; extensometer and caption partly obscure specimen.",
+        "Source has rapid short oblique/jagged separation, end fragments remain held by their respective jaws.",
+        "Inspected4.63/4.68 frames do not clearly show complete rupture;4.93/end frames show separation.",
+        "No clear stable plastic zone or strong localized neck comparable to black high-extension source0097 is visible.",
+        "Finite extension and section-change magnitude cannot be reliably quantified from the source camera/occlusion."
+      ],
+      "downstream_label_preview": {
+        "contract_version": "tensile-vlm/v4.1",
+        "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+        "input_scope": "entire_paired_20_second_video",
+        "labels": {
+          "clip_state": "发生断裂",
+          "fracture_mechanism": "半脆半韧断裂",
+          "fracture_site": "inside_gauge",
+          "special_case": null
+        },
+        "format_validation": "passed_by_existing_v4_1_validator",
+        "training_released": false,
+        "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata."
+      }
+    }
+  ],
+  "user_acceptance_record": {
+    "date": "2026-10-09",
+    "user_statement": "可以，都没问题",
+    "context": "Acceptance of the seven listed 20-second first-stage coupled videos and their presented visual effects and labels",
+    "video_id": "polymer_mixed_coupled_stretch115_time15_v1",
+    "video_sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492",
+    "accepted_labels": {
+      "材料类别": "高分子",
+      "断裂结果": "完全断裂",
+      "单一主要破坏类别": "半脆半韧断裂",
+      "断裂位置": "标距内",
+      "夹持异常": "无",
+      "拍摄异常": "无"
+    },
+    "acceptance_scope": "single_video_visual_and_label_acceptance",
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false
+  },
+  "promotion_provenance": {
+    "original_candidate_video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/polymer_mixed_coupled_stretch115_time15_v1.mp4",
+    "original_candidate_metadata_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/coupled-stage1-20261009/polymer/polymer_mixed_coupled_stretch115_time15_v1/polymer_mixed_coupled_stretch115_time15_v1.json",
+    "original_candidate_metadata_sha256": "6b35be726dbee16c70b276b7d283cc95cb21d5f4209ef3ac7ef4daafc2eb7e69",
+    "copied_without_reencoding": true,
+    "original_video_sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492",
+    "current_video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/polymer_finite_deformation_oblique_rupture/polymer_mixed_coupled_stretch115_time15_v1.mp4",
+    "current_metadata_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/polymer_finite_deformation_oblique_rupture/polymer_mixed_coupled_stretch115_time15_v1.json"
+  }
+}
