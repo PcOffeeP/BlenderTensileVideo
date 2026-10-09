@@ -1,4 +1,4 @@
-"""Source-constrained qualitative polymer candidates, implementation 1.2.0.
+"""Source-constrained qualitative polymer candidates, implementation 1.3.0.
 
 Blender --background --python generator/polymer_initial.py -- --style dogbone|film
   --out <directory> [--keys-only]
@@ -11,16 +11,18 @@ from pathlib import Path
 from mathutils import Vector
 from bpy_extras.object_utils import world_to_camera_view
 
-VERSION = 'polymer-initial/1.2.0'
+VERSION = 'polymer-initial/1.3.0'
+STRETCH_FACTOR_CHOICES=(.85,.90,.925,.95,.975,1.,1.15)
+EVENT_TIME_CHOICES=(12.,15.,16.,16.5,17.)
 ap=argparse.ArgumentParser(); ap.add_argument('--style',choices=['dogbone','film'],required=True)
 ap.add_argument('--out',required=True); ap.add_argument('--keys-only',action='store_true')
 ap.add_argument('--checks-only',action='store_true')
-ap.add_argument('--stretch-increment-factor',type=float,choices=[.85,1.,1.15],default=1.)
+ap.add_argument('--stretch-increment-factor',type=float,choices=STRETCH_FACTOR_CHOICES,default=1.)
 ap.add_argument('--fracture-material-fraction',type=float,default=None)
-ap.add_argument('--event-time-s',type=float,choices=[12.,15.,16.,17.],default=16.)
+ap.add_argument('--event-time-s',type=float,choices=EVENT_TIME_CHOICES,default=16.)
 args=ap.parse_args(sys.argv[sys.argv.index('--')+1:]); out=Path(args.out); out.mkdir(parents=True,exist_ok=True)
 film=args.style=='film'; N=180; fps=30; rupture=args.event_time_s
-if film and (args.stretch_increment_factor!=1. or args.fracture_material_fraction is not None or rupture!=16.): ap.error('stage1 parameters apply only to dogbone; film keeps its accepted fixed configuration')
+if film and (args.stretch_increment_factor!=1. or args.fracture_material_fraction is not None or rupture!=16.): ap.error('variation parameters apply only to dogbone; film keeps its accepted fixed configuration')
 fraction=12/N if film else (.5 if args.fracture_material_fraction is None else args.fracture_material_fraction)
 if not film and (not math.isfinite(fraction) or not .4<=fraction<=.6 or abs(fraction*N-round(fraction*N))>1e-7): ap.error('dogbone fracture fraction must be a material ring in [0.4,0.6], inside authored gauge')
 K=round(fraction*N); EVENT=round(rupture*fps)+1; STOP=rupture+2.5
@@ -53,7 +55,7 @@ cfg={'implementation_version':VERSION,'style':args.style,'duration_s':20,'fps':f
  'transverse_scale':'inverse square root of local axial stretch','cross_section_orientation':'local centerline tangent normal'},
  'range_status':'only this discrete candidate; not calibrated physics or approved continuous range'}
 
-cfg['stage1']={'stretch_increment_factor':args.stretch_increment_factor,'stretch_increment_definition':'lambda_candidate-1=k*(lambda_baseline-1)','baseline_max_local_axial_stretch':2.05 if film else 3.,'fracture_material_fraction':fraction,'authored_gauge_fraction':[.23,.77] if not film else None,'gauge_marker_rings':[54,126] if not film else [30,150],'first_topology_split_frame':EVENT,'first_crack_pre_frame':EVENT-1,'final_connected_pre_frame':EVENT-1,'post_motion_stop_frame':round(STOP*fps)+1,'engineering_position_guard':[.4,.6] if not film else None,'source_formal_gauge':'unknown','scope':'dogbone only; discrete factors .85/1/1.15 and event12/15/17;16s default regression; ring-grid position guard is not range approval','baseline_implementation_version':'polymer-initial/1.1.1','film_stage1_parameters_open':False}
+cfg['stage1']={'stretch_increment_factor':args.stretch_increment_factor,'stretch_increment_definition':'lambda_candidate-1=k*(lambda_baseline-1)','baseline_max_local_axial_stretch':2.05 if film else 3.,'fracture_material_fraction':fraction,'authored_gauge_fraction':[.23,.77] if not film else None,'gauge_marker_rings':[54,126] if not film else [30,150],'first_topology_split_frame':EVENT,'first_crack_pre_frame':EVENT-1,'final_connected_pre_frame':EVENT-1,'post_motion_stop_frame':round(STOP*fps)+1,'engineering_position_guard':[.4,.6] if not film else None,'source_formal_gauge':'unknown','allowed_stretch_increment_factors':list(STRETCH_FACTOR_CHOICES) if not film else [1.],'allowed_event_times_s':list(EVENT_TIME_CHOICES) if not film else [16.],'default_stretch_increment_factor':1.,'default_event_time_s':16.,'scope':'Stage1 and training-batch1 variation inputs apply only to dogbone; film is fixed. New values and combinations require applicable checks and user acceptance; dogbone factor1.15 remains supported for diagnosis but failed fixed-camera framing and is excluded from training-batch1. Ring-grid position guard is not range approval.','baseline_implementation_version':'polymer-initial/1.1.1','film_stage1_parameters_open':False}
 
 def smooth(x): x=max(0.,min(1.,x)); return x*x*(3-2*x)
 def mask(u):

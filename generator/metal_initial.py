@@ -11,7 +11,8 @@ from pathlib import Path
 from mathutils import Vector
 import numpy as np
 
-VERSION='metal-initial-v1.2.0'
+VERSION='metal-initial-v1.3.0'
+FRACTURE_TIME_CHOICES=(12,14,15,16,17)
 NECK_DEFAULT=4.0
 NECK_ENGINEERING_MAX=4.0
 args=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
@@ -31,7 +32,7 @@ def finite_value(value):
  return result
 p.add_argument('--neck-material-sigma',type=finite_value,default=None,help='ductile only: Gaussian width in initial material units; default .215, engineering guard [.15,.30]')
 p.add_argument('--fracture-material-center',type=finite_value,default=0.0,help='initial axial material coordinate; also moves ductile neck center; full affected zone must remain in authored gauge')
-p.add_argument('--fracture-complete-time-s',type=int,choices=[12,15,17],default=None,help='first frame without end-to-end material path; omitted retains style baseline; all preceding loading stages retimed')
+p.add_argument('--fracture-complete-time-s',type=int,choices=FRACTURE_TIME_CHOICES,default=None,help='first frame without end-to-end material path; omitted retains style baseline; discrete candidate times require checks; all preceding loading stages retimed')
 p.add_argument('--skip-key-previews',action='store_true',help='save and check scene without rendering key previews')
 A=p.parse_args(args)
 if A.style=='brittle' and (A.neck_local_stretch_amplitude is not None or A.neck_material_sigma is not None):
@@ -276,7 +277,7 @@ if DUCT:
  final_radius=R/math.sqrt(1.052+NECK_AMPLITUDE)
  config['motion']['terminal_neck_radius_from_material_mapping']=final_radius
  config['motion']['opening_note']=f'Complementary surfaces open progressively from front to rear under last loading displacement; no region is removed and no rigid fragment recoil is added. Gap is authored qualitative finite opening, not measured source displacement. Gap/original diameter={GAP/(2*R):.6f}; gap/terminal neck diameter={GAP/(2*final_radius):.6f} for selected neck amplitude {NECK_AMPLITUDE}. Source postrupture ratios include actual source motion and are not a calibration of this varied geometry.'
-config['stage1_parameters']={'fracture_material_center':CENTER,'neck_material_center':CENTER if DUCT else None,'neck_material_sigma':NECK_SIGMA if DUCT else None,'initial_material_coordinate_grid':S.tolist(),'fracture_affected_zone':[CENTER-.6,CENTER+.6],'neck_3sigma_zone':[CENTER-3*NECK_SIGMA,CENTER+3*NECK_SIGMA] if DUCT else None,'engineering_guards':{'sigma_ductile':[.15,.30],'full_affected_zone_inside_gauge':[-2.55,2.55],'timing_discrete_s':[12,15,17]},'timing_default_frame':552 if DUCT else 517,'timing_selected_override_s':A.fracture_complete_time_s,'coupling':'Moved seam is included exactly in initial material grid. Ductile stretch, radial contraction, fracture geometry, opening fade and jaw endpoint all use same material center; no postbreak translation is introduced. Gaussian has infinite tails; 3sigma bounds are a field envelope, not hard support.','scope':'Discrete candidate inputs and engineering guards; no physical calibration or continuous range acceptance.'}
+config['stage1_parameters']={'fracture_material_center':CENTER,'neck_material_center':CENTER if DUCT else None,'neck_material_sigma':NECK_SIGMA if DUCT else None,'initial_material_coordinate_grid':S.tolist(),'fracture_affected_zone':[CENTER-.6,CENTER+.6],'neck_3sigma_zone':[CENTER-3*NECK_SIGMA,CENTER+3*NECK_SIGMA] if DUCT else None,'engineering_guards':{'sigma_ductile':[.15,.30],'full_affected_zone_inside_gauge':[-2.55,2.55],'timing_discrete_s':list(FRACTURE_TIME_CHOICES)},'timing_default_frame':552 if DUCT else 517,'timing_selected_override_s':A.fracture_complete_time_s,'coupling':'Moved seam is included exactly in initial material grid. Ductile stretch, radial contraction, fracture geometry, opening fade and jaw endpoint all use same material center; no postbreak translation is introduced. Gaussian has infinite tails; 3sigma bounds are a field envelope, not hard support.','scope':'Stage1 and training-batch1 discrete candidate inputs and engineering guards; new values and combinations require applicable mesh, visibility and material/label checks and user acceptance. No physical calibration or continuous range acceptance.'}
 first_open=next((r['frame'] for r in records if r['maximum_corresponding_fracture_gap']>1e-5),None)
 first_disconnected=next((r['frame'] for r in records if r['measured_geometric_components']>1),None)
 config['measured_events']={'first_open_gap_frame':first_open,'first_loss_of_geometric_path_frame':first_disconnected,'loading_begin_frame':1,'postbreak_stopped_frame':EVENT,'method':'All 600 actual evaluated edge graphs with coincident vertex welding at 1e-5 units; this is geometric contact connectivity, not bonded FEM topology. First opening uses measured paired fracture-ring gap >1e-5.'}

@@ -1896,5 +1896,17 @@
       "style_accepted": false
     }
   },
-  "next_batch_design_document": "../docs/training-batch1-design.md"
+  "next_batch_design_document": "../docs/training-batch1-design.md",
+  "training_batch1": {
+    "design_document": "../docs/training-batch1-design.md",
+    "status": "implementation_in_progress_entrypoints_and_validation_setup",
+    "implementation_authorized_on": "2026-10-09",
+    "planned_candidate_count": 60,
+    "generated_video_count": 0,
+    "reviewable_count": 0,
+    "user_accepted_video_count": 0,
+    "work_directory": "../_work/training-batch1-20261009/",
+    "scope": "Frozen discrete candidates; qualifications, finite regression and per-candidate evaluated checks precede review and individual user acceptance; no current promotion or downstream training release.",
+    "training_released": false
+  }
 }

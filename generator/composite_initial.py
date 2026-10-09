@@ -2,7 +2,7 @@ import bpy, math, json, sys, os, argparse
 import hashlib
 from pathlib import Path
 from mathutils import Vector
-V='composite-initial/0.5.0'
+V='composite-initial/0.6.0'
 p=argparse.ArgumentParser()
 p.add_argument('--kind',choices=['debond','brittle'],required=True)
 p.add_argument('--out',required=True)
@@ -10,9 +10,9 @@ p.add_argument('--render',action='store_true')
 p.add_argument('--resume',action='store_true')
 p.add_argument('--skip-previews',action='store_true',help='checks and scene only')
 p.add_argument('--fracture-center',type=float,default=None,help='initial material z; entire damage field follows')
-p.add_argument('--event-time-s',type=float,choices=[12.,15.,17.],default=17.)
-p.add_argument('--debond-length-factor',type=float,choices=[.8,1.,1.2],default=1.)
-p.add_argument('--debond-opening-factor',type=float,choices=[.8,1.,1.2],default=1.)
+p.add_argument('--event-time-s',type=float,choices=[12.,15.,16.,17.],default=17.)
+p.add_argument('--debond-length-factor',type=float,choices=[.8,.9,1.,1.2],default=1.)
+p.add_argument('--debond-opening-factor',type=float,choices=[.8,1.,1.1,1.2],default=1.)
 a=p.parse_args(sys.argv[sys.argv.index('--')+1:])
 center=(-1.83 if a.kind=='brittle' else 0.) if a.fracture_center is None else a.fracture_center
 if not math.isfinite(center):p.error('fracture center must be finite')
@@ -28,7 +28,17 @@ else:
  if not(-2.5<seam_bounds[0] and seam_bounds[1]<-1.5):p.error('entire brittle seam must stay below gauge and above lower clamp root')
  if center+1.2>=2.5:p.error('shear support must end below upper jaw')
 out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=True)
-C={'version':V,'baseline_implementation_version':'composite-initial/0.4.0' if a.kind=='debond' else 'composite-initial/0.3.1','kind':a.kind,'fps':30,'frames':600,'resolution':[960,540],'loading_axis':'z','fixed_end':'lower','moving_end':'upper','free_span':5.0,'width':1.0,'thickness':0.18,'grip_overlap':0.48,'gauge_authored':[-1.5,1.5],'units':'dimensionless relative coordinates','event_frame':1+round(a.event_time_s*30),'event_time_s':a.event_time_s,'maximum_grip_displacement':0.14 if a.kind=='debond' else 0.10,'fracture_z':center,'rear_panel':False,'machine_columns':False,'debond_final_result':'complete_rupture_simultaneous_with_interface_opening','debond_fracture_slope':0.22,'debond_local_shear':0.12,'brittle_local_shear':0.12,'brittle_fracture_slope':0.22,'no_constitutive_solver':True,'debond_length_factor':a.debond_length_factor,'debond_opening_factor':a.debond_opening_factor,'debond_length':1.6*a.debond_length_factor,'debond_opening':.10*a.debond_opening_factor,'fracture_material_bounds':seam_bounds,'damage_material_bounds':damage_bounds,'shear_support_material_upper':center+1.2,'parameter_scope':'stage1 discrete candidates; no accepted continuous range','camera':{'location':[14,-9,3.] if a.kind=='debond' else [7.5,-17,3.],'look_at':[0,0,0],'orthographic_scale':16.4,'fixed_all_frames':True},'renderer':'BLENDER_WORKBENCH','render_aa':'8','world_color':[.13,.16,.19],'specimen_color':[.15,.18,.21],'other_assumed_ply_color':[.23,.27,.3],'loading_function':'dmax*smoothstep((frame-1)/(event_frame-1)), held at event','damage_function':'abrupt whole seam lateral shear; simultaneous sinusoidal local interface opening for debond','clamp':{'front_back_y':[-.29,.29],'jaw_size':[1.48,.40,.72],'centre_z':[-2.86,2.86]},'encoding':{'codec':'libx264','crf':16,'preset':'slow','pixel_format':'yuv420p','audio':False}}
+C={'version':V,'baseline_implementation_version':'composite-initial/0.4.0' if a.kind=='debond' else 'composite-initial/0.3.1','kind':a.kind,'fps':30,'frames':600,'resolution':[960,540],'loading_axis':'z','fixed_end':'lower','moving_end':'upper','free_span':5.0,'width':1.0,'thickness':0.18,'grip_overlap':0.48,'gauge_authored':[-1.5,1.5],'units':'dimensionless relative coordinates','event_frame':1+round(a.event_time_s*30),'event_time_s':a.event_time_s,'maximum_grip_displacement':0.14 if a.kind=='debond' else 0.10,'fracture_z':center,'rear_panel':False,'machine_columns':False,'debond_final_result':'complete_rupture_simultaneous_with_interface_opening','debond_fracture_slope':0.22,'debond_local_shear':0.12,'brittle_local_shear':0.12,'brittle_fracture_slope':0.22,'no_constitutive_solver':True,'debond_length_factor':a.debond_length_factor,'debond_opening_factor':a.debond_opening_factor,'debond_length':1.6*a.debond_length_factor,'debond_opening':.10*a.debond_opening_factor,'fracture_material_bounds':seam_bounds,'damage_material_bounds':damage_bounds,'shear_support_material_upper':center+1.2,'camera':{'location':[14,-9,3.] if a.kind=='debond' else [7.5,-17,3.],'look_at':[0,0,0],'orthographic_scale':16.4,'fixed_all_frames':True},'renderer':'BLENDER_WORKBENCH','render_aa':'8','world_color':[.13,.16,.19],'specimen_color':[.15,.18,.21],'other_assumed_ply_color':[.23,.27,.3],'loading_function':'dmax*smoothstep((frame-1)/(event_frame-1)), held at event','damage_function':'abrupt whole seam lateral shear; simultaneous sinusoidal local interface opening for debond','clamp':{'front_back_y':[-.29,.29],'jaw_size':[1.48,.40,.72],'centre_z':[-2.86,2.86]},'encoding':{'codec':'libx264','crf':16,'preset':'slow','pixel_format':'yuv420p','audio':False}}
+C.update({
+ 'parameter_scope':'stage1 and training-batch1 finite discrete candidates; new values and combinations pending material/visual qualification; no accepted continuous range',
+ 'parameter_design_documents':['docs/fracture-variation-stage1.md','docs/fracture-coupling-validation.md','docs/training-batch1-design.md'],
+ 'parameter_definitions':{
+  'fracture_center':{'unit':'initial dimensionless material z','default':-1.83 if a.kind=='brittle' else 0.,'engineering_guard':'entire seam and damage field must remain within the same authored site class'},
+  'event_time_s':{'unit':'simulation seconds from frame1=0','default':17.,'discrete_values':[12.,15.,16.,17.],'applicable_kinds':['brittle','debond']},
+  'debond_length_factor':{'unit':'baseline debond support length multiplier','default':1.,'discrete_values':[.8,.9,1.,1.2],'applicable_kinds':['debond'],'brittle_required_value':1.},
+  'debond_opening_factor':{'unit':'baseline interface opening multiplier','default':1.,'discrete_values':[.8,1.,1.1,1.2],'applicable_kinds':['debond'],'brittle_required_value':1.}},
+ 'batch1_new_discrete_values':{'event_time_s':[16.],'debond_length_factor':[.9],'debond_opening_factor':[1.1]},
+ 'batch1_new_value_qualification':'pending_material_and_visual_checks; parser support does not establish applicability or acceptance'})
 if a.kind=='debond':C.update({'debond_damage_onset_frame':C['event_frame'],'debond_damage_full_frame':C['event_frame'],'interface_and_complete_rupture_same_onset':True,'debond_event_timing':'simultaneous abrupt opening and complete rupture'})
 bpy.ops.object.select_all(action='SELECT');bpy.ops.object.delete(use_global=False)
 s=bpy.context.scene;s.render.engine='BLENDER_WORKBENCH';s.render.resolution_x=960;s.render.resolution_y=540;s.render.resolution_percentage=100;s.render.fps=30;s.frame_start=1;s.frame_end=600

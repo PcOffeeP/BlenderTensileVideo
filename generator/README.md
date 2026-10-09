@@ -4,16 +4,16 @@
 
 | 入口 | 实现版本 | 适用范围与选项 |
 |---|---|---|
-| [metal_initial.py](metal_initial.py) | `metal-initial-v1.2.0` | `--style ductile` 颈缩分离或 `brittle` 小变形突断；1280×720。 |
-| [polymer_initial.py](polymer_initial.py) | `polymer-initial/1.2.0` | `--style dogbone` 大伸长或 `film` 薄膜根部断裂；960×540。 |
-| [composite_initial.py](composite_initial.py) | `composite-initial/0.5.0` | `--kind debond` 断裂与脱粘同步或 `brittle` 低位突断；960×540。 |
-| [ceramic_initial.py](ceramic_initial.py) | `ceramic-initial/1.1.0` | 陶瓷小形变脆断定性演示，`--out` 指定目录；1280×720。 |
-| [polymer_brittle.py](polymer_brittle.py) | `polymer-brittle/1.1.0` | 0032参考的窄平条小变形脆断；`--out`、`--keys-only`；960×540。 |
-| [polymer_mixed.py](polymer_mixed.py) | `polymer-mixed/1.1.0` | 0014参考的逐渐拉长后快速斜裂；当前固定样片按用户可见过程判据确认为半脆半韧，弹塑份额仍未知；`--out`、`--render`、`--checks-only`；1280×720。 |
+| [metal_initial.py](metal_initial.py) | `metal-initial-v1.3.0` | `--style ductile` 颈缩分离或 `brittle` 小变形突断；1280×720。 |
+| [polymer_initial.py](polymer_initial.py) | `polymer-initial/1.3.0` | `--style dogbone` 大伸长或 `film` 薄膜根部断裂；960×540。 |
+| [composite_initial.py](composite_initial.py) | `composite-initial/0.6.0` | `--kind debond` 断裂与脱粘同步或 `brittle` 低位突断；960×540。 |
+| [ceramic_initial.py](ceramic_initial.py) | `ceramic-initial/1.2.0` | 陶瓷小形变脆断定性演示，`--out` 指定目录；1280×720。 |
+| [polymer_brittle.py](polymer_brittle.py) | `polymer-brittle/1.2.0` | 0032参考的窄平条小变形脆断；`--out`、`--keys-only`；960×540。 |
+| [polymer_mixed.py](polymer_mixed.py) | `polymer-mixed/1.2.0` | 0014参考的逐渐拉长后快速斜裂；当前固定样片按用户可见过程判据确认为半脆半韧，弹塑份额仍未知；`--out`、`--render`、`--checks-only`；1280×720。 |
 | [composite_fragmentation.py](composite_fragmentation.py) | `composite-fragmentation/0.2.0` | 爆炸性制作暂停；full_span候选被用户否定，不是有效爆炸性模板；`--variant full_span`（默认）沿自由段细束展开，`--variant local`保留0.1局部几何预设；`--out`、`--render`、`--resume`；960×540。 |
 | [metal_flat.py](metal_flat.py) | `metal-flat/1.2.0` | 0058参考的平板狗骨有限变形断裂；`--reference`显式来源记录、`--out`、`--render`；960×540。局部缩窄和完整断裂为作者扩展，主模式未知。 |
 
-各入口均为20秒、30fps的定性几何动画，在配置输出中记录实现版本与适用范围，不读取 `_work/` 输入。参数只对应离散首版候选，未标定本构，未批准连续范围。当前金属代码是1.2.0；本轮颈缩成片仍记录原1.0.1配置，以其同名JSON及自包含烘焙场景精确追溯，不因代码复制而改写成片版本。
+各入口均为20秒、30fps的定性几何动画，在配置输出中记录实现版本与适用范围，不读取 `_work/` 输入。参数支持第一阶段及[首批新增设计](../docs/training-batch1-design.md)中的有限候选；新增允许值仍需资格、组合和逐片验收，未标定本构，未批准连续范围。当前金属代码是1.3.0；本轮颈缩成片仍记录原1.0.1配置，以其同名JSON及自包含烘焙场景精确追溯，不因代码复制而改写成片版本。
 
 在项目根目录运行，输出使用新的绝对目录，避免覆盖待验收候选：
 
@@ -67,10 +67,25 @@ ffmpeg -framerate 30 -start_number 1 -i /absolute/new/output/metal/frames/%04d.p
 | 复材 | `--fracture-center`、`--event-time-s`、`--debond-length-factor`、`--debond-opening-factor` | 后两项仅debond；脱粘与断裂同起始事件；brittle位置仍标距外非根部。 |
 | 陶瓷 | `--fracture-center-z`、`--final-disconnection-time-s` | 完整裂区在模拟标距内；保留原裂纹发展阶段和断后静止。 |
 
-新离散时间候选为12、15、17秒，按实际最终失去贯通连接事件核验；各入口的省略默认值保持原基准。配置、起裂锚点、首次实际开口及失去连接的时间分别保存。完整动画以各入口为准；金属保存烘焙动画，其余入口的静态场景不能单靠`frame_set`重放整片。
+第一阶段离散时间候选为12、15、17秒；首批新增允许值按下表分别扩展，按实际最终失去贯通连接事件核验。各入口的省略默认值保持原基准。配置、起裂锚点、首次实际开口及失去连接的时间分别保存。完整动画以各入口为准；金属保存烘焙动画，其余入口的静态场景不能单靠`frame_set`重放整片。
 
 运行Blender Python入口时，在`--`之前使用`--python-exit-code 1`，并核对成功日志、600张帧及最终编码；仅进程退出码或旧帧缓存不足以证明制作成功。例如：
 
 ```sh
 /Applications/Blender.app/Contents/MacOS/Blender --background -t 2 --python-exit-code 1 --python generator/metal_initial.py -- --style ductile --neck-local-stretch-amplitude 2 --out /absolute/new/output/metal-a2 --render
 ```
+
+## 首批新增离散参数支持
+
+按[首批新增设计](../docs/training-batch1-design.md)扩展解析和配置输出；入口支持不表示新增值已通过材料、画面或组合检查，实际结果见README/index。
+
+| 入口 | 本批新增允许值 | 适用边界 |
+|---|---|---|
+| 金属 | 最终失贯通14、16秒 | 原韧断／脆断分支；A与位置沿用原工程守卫 |
+| 高分子大伸长 | 倍率0.90、0.925、0.95、0.975；16.5秒 | 仅dogbone，film固定；1.15诊断支持不表示构图通过 |
+| 高分子窄平条 | 14秒 | 原小伸长、位置及裂面 |
+| 高分子半脆半韧 | 倍率1.05、1.075、1.10；15.5秒 | 原视觉判据与阶段映射 |
+| 复材 | 长度0.9、开口1.1；16秒 | 长度／开口仅debond；brittle中心−1.89沿用原位置守卫 |
+| 陶瓷 | 13秒 | 原裂纹发展窗口及断后静止 |
+
+新配置记录实现版本、允许值与适用范围。新增时间沿用各模板原阶段映射；旧成片版本与接受记录不反写。资格及有限回归、600帧实际求值、最终编码、独立复核和逐片接受分别记录。

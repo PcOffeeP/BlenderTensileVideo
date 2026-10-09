@@ -9,11 +9,12 @@ from pathlib import Path
 from mathutils import Vector
 from bpy_extras.object_utils import world_to_camera_view
 
-IMPLEMENTATION='polymer-brittle/1.1.0'
+IMPLEMENTATION='polymer-brittle/1.2.0'
+EVENT_TIME_CHOICES=(12.,14.,15.,16.,17.)
 parser=argparse.ArgumentParser(); parser.add_argument('--out',required=True); parser.add_argument('--keys-only',action='store_true')
 parser.add_argument('--checks-only',action='store_true')
 parser.add_argument('--fracture-material-fraction',type=float,default=.5)
-parser.add_argument('--event-time-s',type=float,choices=[12.,15.,16.,17.],default=16.)
+parser.add_argument('--event-time-s',type=float,choices=EVENT_TIME_CHOICES,default=16.)
 args=parser.parse_args(sys.argv[sys.argv.index('--')+1:]); out=Path(args.out); out.mkdir(parents=True,exist_ok=True)
 if not math.isfinite(args.fracture_material_fraction) or not .45<=args.fracture_material_fraction<=.55 or abs(args.fracture_material_fraction*160-round(args.fracture_material_fraction*160))>1e-7:parser.error('fracture fraction must be a material ring in [0.45,0.55]')
 EVENT=round(args.event_time_s*30)+1
@@ -31,7 +32,7 @@ CONFIG={'implementation_version':IMPLEMENTATION,'scope':'only pale-green near-un
  'jaw_size':[1.12,.4,.24],'grip_embed_author_units':.20,'grip_cap_size':[1.12,.95,.14],'load_rod_radius':.12,
  'polymer_color':[.64,.77,.50],'renderer':'BLENDER_WORKBENCH','antialias_samples':8,
  'source_phase_retiming':'source excerpt4.544s to authored20s sequence; phase extension, not compression of a measured full experiment',
- 'parameter_range_acceptance':False,'stage1':{'baseline_implementation_version':'polymer-brittle/1.0','position_engineering_guard':[.45,.55],'full_fracture_fraction_bounds':[args.fracture_material_fraction-.18/2*math.tan(math.radians(3))/4,args.fracture_material_fraction+.18/2*math.tan(math.radians(3))/4],'first_crack_pre_frame':EVENT-1,'final_connected_pre_frame':EVENT-1,'event_candidates_s':[12,15,17],'default_regression_event_s':16,'stretch_parameter_open':False,'scope':'small deformation brittle only; ring-grid guard is not continuous approval'}}
+ 'parameter_range_acceptance':False,'stage1':{'baseline_implementation_version':'polymer-brittle/1.0','position_engineering_guard':[.45,.55],'full_fracture_fraction_bounds':[args.fracture_material_fraction-.18/2*math.tan(math.radians(3))/4,args.fracture_material_fraction+.18/2*math.tan(math.radians(3))/4],'first_crack_pre_frame':EVENT-1,'final_connected_pre_frame':EVENT-1,'event_candidates_s':[t for t in EVENT_TIME_CHOICES if t!=16.],'allowed_event_times_s':list(EVENT_TIME_CHOICES),'default_regression_event_s':16,'stretch_parameter_open':False,'scope':'Stage1 and training-batch1 discrete small-deformation brittle candidates only; new values and combinations require applicable checks and user acceptance. Ring-grid guard is not continuous approval'}}
 N=CONFIG['axial_intervals']; K=round(args.fracture_material_fraction*N); FPS=30; REST=4.; WIDTH=.18; THICKNESS=.035
 def smooth(x): x=max(0.,min(1.,x)); return x*x*(3-2*x)
 def strain_mask(u): return smooth((u-.05)/.025)*smooth((.95-u)/.025)
