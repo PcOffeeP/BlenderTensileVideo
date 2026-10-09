@@ -1987,7 +1987,7 @@
   "next_batch_design_document": "../docs/training-batch1-design.md",
   "training_batch1": {
     "design_document": "../docs/training-batch1-design.md",
-    "status": "author_checks_complete_independent_checks_in_progress",
+    "status": "isolated_optimized_independent_checks_in_progress_precision_policy_pending_confirmation",
     "implementation_authorized_on": "2026-10-09",
     "planned_candidate_count": 60,
     "generated_video_count": 2,
@@ -2046,6 +2046,23 @@
         "precision_diagnostic": "../_work/training-batch1-20261009/checks/dogbone_precision_diagnostic/diagnostic.json",
         "scope": "Failed gates remain failed; old0.85 residual independently replayed as float32 accumulation and found in accepted history; new values require separate evidence. No tolerance or geometry change authorized; other templates continue."
       }
-    ]
+    ],
+    "optimized_execution_directory": "../_work/training-batch1-20261009-fastcheck/",
+    "precision_policy": {
+      "status": "pending_human_confirmation",
+      "proposal": "../_work/training-batch1-20261009/review/precision_policy_review.json",
+      "strict_policy_maximum_candidate_count": 50,
+      "event_precision_certification_implemented": false
+    },
+    "performance_optimization": {
+      "status": "isolated_migration_verified_actual600_checks_in_progress",
+      "changes_scientific_predicates": false,
+      "changes_tolerances": false,
+      "review": "../_work/training-batch1-20261009/review/performance_helper_review.json",
+      "geometry_checks_per_claimed_pass": 600,
+      "migration_manifest": "../_work/training-batch1-20261009-fastcheck/migration_manifest.json",
+      "current_configuration_count": 107,
+      "old_source_regression_configuration_count": 25
+    }
   }
 }
