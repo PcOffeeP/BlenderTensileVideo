@@ -1,0 +1,1170 @@
+{
+  "schema": "blender-tensile-candidate/1.0",
+  "video_id": "metal_round_brittle_stage1_center_p075_v1",
+  "style_id": "metal_round_brittle",
+  "role": "stage1_single_parameter_candidate",
+  "implementation_version": "metal-initial-v1.2.0",
+  "design_version": "DESIGN-v1.12 + fracture-variation-stage1 confirmed 2026-10-09",
+  "status": "user_accepted_video",
+  "video_file": "metal_round_brittle_stage1_center_p075_v1.mp4",
+  "sha256": "9c76f1f2a0b91797ec3637e309259b94f8e14b0683f028f0a15c388b33645bc8",
+  "bytes": 481046,
+  "source": {
+    "id": "video_0003",
+    "path": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/standard-videos/video_0003.mp4",
+    "sha256": "efb2ba8f01e992fdf8e883d48f99e34f331e1ce2b2dec06bd30d3962439f8634",
+    "mapping_record": {
+      "标准化文件名": "video_0003.mp4",
+      "原始文件名": "http_20251104_0031.mp4",
+      "来源目录": "raw-video/fetch",
+      "材料类别": "金属",
+      "状态": "existing",
+      "duration": "30.4",
+      "resolution": "518x602",
+      "codec": "h264"
+    },
+    "tag_workbook": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/all_videos_tag.xlsx",
+    "original_tag_row": {
+      "id": "video_0003",
+      "断裂时间点": "26.19 s",
+      "断裂模式": "脆性断裂",
+      "材料类型": "金属",
+      "清晰度": "480P"
+    },
+    "annotation_time_s": 26.19,
+    "duration_s": 30.4,
+    "observed_separation_bounds_s": [
+      26.2,
+      26.3
+    ],
+    "observed_bounds_note": "Additional 20fps event sampling supports a conservative 0.10s observation interval; sample raster indices are not exact native-frame event timing. Original label is preserved separately.",
+    "direct_pixels_inspected": [
+      "initial",
+      "late loading",
+      "last visually connected neck or shaft",
+      "first separated halves",
+      "postfracture frames"
+    ]
+  },
+  "time_mapping": {
+    "generated_duration_s": 20,
+    "generated_event_s": 17.2,
+    "source_event_anchor_s": 26.25,
+    "source_event_anchor_type": "midpoint of direct pixel observation interval",
+    "segments": [
+      {
+        "source_s": [
+          0,
+          26.25
+        ],
+        "generated_s": [
+          0,
+          17.2
+        ],
+        "compression_source_seconds_per_generated_second": 1.5261627906976745
+      },
+      {
+        "source_s": [
+          26.25,
+          30.4
+        ],
+        "generated_s": [
+          17.2,
+          20
+        ],
+        "compression_source_seconds_per_generated_second": 1.4821428571428563
+      }
+    ],
+    "last_loading_crack_progression_generated_s": [
+      17.133333333333333,
+      17.2
+    ],
+    "mapping_limit": "Semantic phase mapping, not pointwise kinematic reproduction. Entire source span is represented without loops or padding; laboratory elapsed time is not simulated time."
+  },
+  "observations": [
+    "Source shows a smooth round reduced section clamped in opposed jaws.",
+    "Little visible uniform deformation and no pronounced plastic neck precede a transverse separation.",
+    "Source upper fixture continues moving after rupture; finite postrupture motion is not reinterpreted as zero."
+  ],
+  "authored_assumptions": [
+    "Dimensionless relative geometry reconstructed from pixels; no absolute dimensions, material grade, force, strain-rate or constitutive law inferred.",
+    "Lower jaw fixed and upper jaw supplies loading; final rupture triggers immediate stop in accordance with selected DESIGN condition. This changes apparatus control relative to source.",
+    "Volume-preserving axial stretch with radius proportional to inverse square root of local axial stretch; fracture face detail is qualitative and not a proof of cup-cone or microscopic mechanism.",
+    "Fracture faces are complementary, paired interior caps until damage opens. Interface connection is judged by actual evaluated coincident vertices; Blender mesh-container separation is not used as component evidence.",
+    "Finite crack opening is created by last loading displacement while a residual interface ligament remains; no specimen section is removed, no whole-half postfracture translation or recoil is applied.",
+    "Background, apparatus detail and lighting are simplified to preserve specimen visibility.",
+    "Stage1 altered values are author-selected discrete examples, not source measurement or a calibrated material response.",
+    "Center +0.75 initial material units (14.706% of the authored 5.1-unit gauge length) is an author-selected bounded one-sided offset. Full crack influence envelope [0.15,1.35] stays within [-2.55,2.55]. Width, small stretch, original near-planar crack face and event timing remain unchanged. Material ring spacing adapts to include the moved seam exactly; this is a discretization consequence, not a second behavioral parameter."
+  ],
+  "unknowns": [
+    "Exact alloy, heat treatment and strain-rate.",
+    "Absolute specimen dimensions and formal experimental gauge length.",
+    "Subframe rupture initiation and microscopic crack path.",
+    "Quantitative relation between crosshead motion, gauge extension and machine compliance.",
+    "Three-dimensional trajectory and elastic unloading in the recorded experiment.",
+    "New continuous video visibility, naturalness and six labels await final rendering, main-agent viewing and independent review.",
+    "Source does not calibrate the selected neck amplitude or one-sided fracture displacement.",
+    "Continuous parameter range, arbitrary coupled combinations and training release are not approved."
+  ],
+  "baseline_reference": {
+    "accepted_json": "outputs/current/metal_round_brittle/metal_round_brittle_baseline_v1.json",
+    "accepted_implementation_version": "metal-initial-v1.0.2",
+    "accepted_video_sha256": "19b3f862a13f4c38200f41bc56e05171cc10ec6721859aeeb97b1b09b22ddc08",
+    "pre_stage1_reusable_version": "metal-initial-v1.1.0",
+    "new_version": "metal-initial-v1.2.0",
+    "note": "Old accepted metadata remains unchanged; all 600 frames are compared separately, parameterization does not regenerate or replace accepted bytes."
+  },
+  "parameter_variation": {
+    "changed_axis": "fracture_material_center",
+    "selected_value": 0.75,
+    "baseline_value": 0.0,
+    "all_other_behavior_axes": "baseline defaults",
+    "classification_constraint": {
+      "材料类别": "金属",
+      "断裂结果": "完全断裂",
+      "单一主要破坏类别": "脆性断裂",
+      "断裂位置": "标距内",
+      "夹持异常": "无",
+      "拍摄异常": "无"
+    }
+  },
+  "full_generation_configuration": {
+    "implementation_version": "metal-initial-v1.2.0",
+    "style": "brittle",
+    "render": {
+      "engine": "BLENDER_WORKBENCH",
+      "resolution": [
+        1280,
+        720
+      ],
+      "fps": 30,
+      "frames": 600,
+      "duration_s": 20,
+      "aa_samples": 16,
+      "fixed_camera": [
+        5.0,
+        -25.0,
+        0.15000000596046448
+      ],
+      "orthographic_scale": 18.5,
+      "shadow_enabled": false,
+      "studio_light": "paint.sl"
+    },
+    "geometry": {
+      "units": "dimensionless",
+      "original_half_length": 3.25,
+      "original_gauge_radius": 0.28,
+      "embedded_end_radius": 0.43,
+      "authored_gauge_region": [
+        -2.55,
+        2.55
+      ],
+      "formal_source_gauge": "unknown",
+      "rings_per_half": 91,
+      "angular_segments": 48,
+      "fracture_surface": "complementary near-planar transverse rough surface",
+      "surface_detail_mechanism": "authored qualitative shape, not a proven fracture mechanism"
+    },
+    "motion": {
+      "lower_jaw": "fixed",
+      "upper_jaw": "source-informed loading displacement, freezes at completed rupture",
+      "uniform_stretch_at_rupture": 0.012,
+      "ductile_neck_local_stretch_amplitude": 0.0,
+      "neck_material_sigma": null,
+      "crack_opening_units": 0.03,
+      "crack_start_frame": 515,
+      "fracture_complete_frame": 517,
+      "fracture_complete_time_s": 17.2,
+      "postfracture_displacement": 0,
+      "opening_note": "Complementary surfaces open progressively from front to rear under last loading displacement; no region is removed and no rigid fragment recoil is added. Gap is authored qualitative finite opening, not measured source displacement. Ductile gap/original diameter=0.446 and gap/terminal neck diameter~1.0 versus visible source postrupture ratios~0.65 and~1.3. Source ratios include source postrupture motion; here finite opening is authored during final loading to make fracture visible before selected load stop."
+    },
+    "materials": [
+      {
+        "name": "machined steel",
+        "rgba": [
+          0.47999998927116394,
+          0.5099999904632568,
+          0.5400000214576721,
+          1.0
+        ],
+        "metallic": 0.8999999761581421,
+        "roughness": 0.30000001192092896
+      },
+      {
+        "name": "new fracture surface",
+        "rgba": [
+          0.28999999165534973,
+          0.3100000023841858,
+          0.33000001311302185,
+          1.0
+        ],
+        "metallic": 0.6000000238418579,
+        "roughness": 0.30000001192092896
+      },
+      {
+        "name": "blackened grip steel",
+        "rgba": [
+          0.08500000089406967,
+          0.0949999988079071,
+          0.10999999940395355,
+          1.0
+        ],
+        "metallic": 0.800000011920929,
+        "roughness": 0.30000001192092896
+      },
+      {
+        "name": "machine housing",
+        "rgba": [
+          0.2800000011920929,
+          0.3100000023841858,
+          0.3400000035762787,
+          1.0
+        ],
+        "metallic": 0.6499999761581421,
+        "roughness": 0.30000001192092896
+      },
+      {
+        "name": "bolt metal",
+        "rgba": [
+          0.6000000238418579,
+          0.6299999952316284,
+          0.6600000262260437,
+          1.0
+        ],
+        "metallic": 0.8999999761581421,
+        "roughness": 0.30000001192092896
+      }
+    ],
+    "saved_scene_animation": "baked absolute shape keys and ordinary jaw keys; no external script required",
+    "neck_parameter": {
+      "cli_option": "--neck-local-stretch-amplitude",
+      "applicable_style": "ductile",
+      "selected_value": null,
+      "default_value": 4.0,
+      "units": "dimensionless additional local axial stretch",
+      "formula": "lambda(s,t)=1+0.052*u*taper(s)+amplitude*n*exp(-((s-center)/sigma)^2)*taper(s); n=v^2*(3-2v), v=max(0,(u-0.53)/0.47), u=min(1,(frame-1)/(crack_start_frame-1))",
+      "taper_definition": "clamp((2.75-abs(s))/0.35,0,1)",
+      "coupling": "Axial positions integrate lambda over original material coordinates; radius=original radius/sqrt(lambda); loading jaw follows integrated end position. Paired fracture surfaces use the resulting same seam radius and match before crack opening.",
+      "engineering_input_guard": {
+        "minimum_exclusive": 0.0,
+        "maximum_inclusive": 4.0,
+        "finite_required": true,
+        "reason": "Larger amplitudes increase specimen and crosshead excursion beyond the baseline; the conservative input upper bound preserves current fixed-camera framing. Larger-value framing has not been verified."
+      },
+      "accepted_continuous_parameter_range": null,
+      "parameter_range_accepted": false,
+      "scope_note": "Guarded inputs do not establish physical plausibility, label validity, or user acceptance of a new video; each changed value requires its own applicable checks and review."
+    },
+    "stage1_parameters": {
+      "fracture_material_center": 0.75,
+      "neck_material_center": null,
+      "neck_material_sigma": null,
+      "initial_material_coordinate_grid": [
+        -3.25,
+        -3.2055555555555557,
+        -3.161111111111111,
+        -3.1166666666666667,
+        -3.0722222222222224,
+        -3.0277777777777777,
+        -2.9833333333333334,
+        -2.938888888888889,
+        -2.8944444444444444,
+        -2.85,
+        -2.8055555555555554,
+        -2.761111111111111,
+        -2.716666666666667,
+        -2.672222222222222,
+        -2.6277777777777778,
+        -2.583333333333333,
+        -2.5388888888888888,
+        -2.4944444444444445,
+        -2.45,
+        -2.4055555555555554,
+        -2.361111111111111,
+        -2.3166666666666664,
+        -2.272222222222222,
+        -2.227777777777778,
+        -2.1833333333333336,
+        -2.138888888888889,
+        -2.094444444444444,
+        -2.05,
+        -2.0055555555555555,
+        -1.961111111111111,
+        -1.9166666666666665,
+        -1.8722222222222222,
+        -1.8277777777777777,
+        -1.7833333333333332,
+        -1.738888888888889,
+        -1.6944444444444444,
+        -1.65,
+        -1.6055555555555554,
+        -1.5611111111111111,
+        -1.5166666666666666,
+        -1.472222222222222,
+        -1.4277777777777778,
+        -1.3833333333333333,
+        -1.3388888888888888,
+        -1.2944444444444443,
+        -1.25,
+        -1.2055555555555553,
+        -1.161111111111111,
+        -1.1166666666666667,
+        -1.072222222222222,
+        -1.0277777777777777,
+        -0.9833333333333334,
+        -0.9388888888888887,
+        -0.8944444444444444,
+        -0.8500000000000001,
+        -0.8055555555555554,
+        -0.7611111111111111,
+        -0.7166666666666668,
+        -0.672222222222222,
+        -0.6277777777777778,
+        -0.583333333333333,
+        -0.5388888888888888,
+        -0.49444444444444446,
+        -0.44999999999999973,
+        -0.40555555555555545,
+        -0.36111111111111116,
+        -0.31666666666666643,
+        -0.27222222222222214,
+        -0.22777777777777786,
+        -0.18333333333333313,
+        -0.13888888888888884,
+        -0.09444444444444411,
+        -0.04999999999999982,
+        -0.005555555555555536,
+        0.038888888888889195,
+        0.08333333333333348,
+        0.12777777777777777,
+        0.1722222222222225,
+        0.21666666666666679,
+        0.26111111111111107,
+        0.3055555555555558,
+        0.3500000000000001,
+        0.3944444444444444,
+        0.4388888888888891,
+        0.4833333333333334,
+        0.5277777777777781,
+        0.5722222222222224,
+        0.6166666666666667,
+        0.6611111111111114,
+        0.7055555555555557,
+        0.75,
+        0.7777777777777778,
+        0.8055555555555556,
+        0.8333333333333334,
+        0.8611111111111112,
+        0.8888888888888888,
+        0.9166666666666666,
+        0.9444444444444444,
+        0.9722222222222222,
+        1.0,
+        1.0277777777777777,
+        1.0555555555555556,
+        1.0833333333333333,
+        1.1111111111111112,
+        1.1388888888888888,
+        1.1666666666666665,
+        1.1944444444444444,
+        1.2222222222222223,
+        1.25,
+        1.2777777777777777,
+        1.3055555555555556,
+        1.3333333333333333,
+        1.3611111111111112,
+        1.3888888888888888,
+        1.4166666666666665,
+        1.4444444444444444,
+        1.4722222222222223,
+        1.5,
+        1.5277777777777777,
+        1.5555555555555554,
+        1.5833333333333333,
+        1.6111111111111112,
+        1.6388888888888888,
+        1.6666666666666665,
+        1.6944444444444444,
+        1.7222222222222223,
+        1.75,
+        1.7777777777777777,
+        1.8055555555555556,
+        1.8333333333333333,
+        1.8611111111111112,
+        1.8888888888888888,
+        1.9166666666666665,
+        1.9444444444444444,
+        1.972222222222222,
+        2.0,
+        2.0277777777777777,
+        2.0555555555555554,
+        2.083333333333333,
+        2.1111111111111107,
+        2.138888888888889,
+        2.1666666666666665,
+        2.1944444444444446,
+        2.2222222222222223,
+        2.25,
+        2.2777777777777777,
+        2.3055555555555554,
+        2.333333333333333,
+        2.3611111111111107,
+        2.388888888888889,
+        2.4166666666666665,
+        2.4444444444444446,
+        2.4722222222222223,
+        2.5,
+        2.5277777777777777,
+        2.5555555555555554,
+        2.583333333333333,
+        2.6111111111111107,
+        2.638888888888889,
+        2.6666666666666665,
+        2.6944444444444446,
+        2.7222222222222223,
+        2.75,
+        2.7777777777777777,
+        2.8055555555555554,
+        2.833333333333333,
+        2.861111111111111,
+        2.888888888888889,
+        2.9166666666666665,
+        2.944444444444444,
+        2.9722222222222223,
+        3.0,
+        3.0277777777777777,
+        3.0555555555555554,
+        3.083333333333333,
+        3.111111111111111,
+        3.138888888888889,
+        3.1666666666666665,
+        3.194444444444444,
+        3.222222222222222,
+        3.25
+      ],
+      "fracture_affected_zone": [
+        0.15000000000000002,
+        1.35
+      ],
+      "neck_3sigma_zone": null,
+      "engineering_guards": {
+        "sigma_ductile": [
+          0.15,
+          0.3
+        ],
+        "full_affected_zone_inside_gauge": [
+          -2.55,
+          2.55
+        ],
+        "timing_discrete_s": [
+          12,
+          15,
+          17
+        ]
+      },
+      "timing_default_frame": 517,
+      "timing_selected_override_s": null,
+      "coupling": "Moved seam is included exactly in initial material grid. Ductile stretch, radial contraction, fracture geometry, opening fade and jaw endpoint all use same material center; no postbreak translation is introduced. Gaussian has infinite tails; 3sigma bounds are a field envelope, not hard support.",
+      "scope": "Discrete candidate inputs and engineering guards; no physical calibration or continuous range acceptance."
+    },
+    "measured_events": {
+      "first_open_gap_frame": 516,
+      "first_loss_of_geometric_path_frame": 517,
+      "loading_begin_frame": 1,
+      "postbreak_stopped_frame": 517,
+      "method": "All 600 actual evaluated edge graphs with coincident vertex welding at 1e-5 units; this is geometric contact connectivity, not bonded FEM topology. First opening uses measured paired fracture-ring gap >1e-5."
+    },
+    "prefracture_measurements": {
+      "before_first_opening": {
+        "gauge_markers_initial_material_s": [
+          -2.55,
+          2.55
+        ],
+        "gauge_axial_projection_length_excluding_open_gap": 5.160413210093975,
+        "gauge_axial_projection_length_including_gap": 5.160413217544556,
+        "mean_fracture_seam_gap_subtracted": 7.450580596923828e-09,
+        "same_material_local_segment_lambda_axial_projection": [
+          1.0119981318712234,
+          1.0107413880965288
+        ],
+        "lambda_g_axial_projection": 1.0118457251042812,
+        "minimum_intact_section_area_ratio": 0.9881422583395434,
+        "minimum_intact_section_material_s": -2.361111111111111,
+        "neck_center_complete_section_area_ratio": 0.9881422583395434,
+        "crack_zone_excluded_from_area_measurement": false,
+        "excluded_material_zone": null
+      },
+      "before_final_loss_of_connection": {
+        "gauge_markers_initial_material_s": [
+          -2.55,
+          2.55
+        ],
+        "gauge_axial_projection_length_excluding_open_gap": 5.169683988640706,
+        "gauge_axial_projection_length_including_gap": 5.175413322448731,
+        "mean_fracture_seam_gap_subtracted": 0.005729333808024724,
+        "same_material_local_segment_lambda_axial_projection": [
+          1.0119981318712234,
+          1.0107524289804346
+        ],
+        "lambda_g_axial_projection": 1.0136635248150776,
+        "minimum_intact_section_area_ratio": 0.9881422583395434,
+        "minimum_intact_section_material_s": -2.361111111111111,
+        "neck_center_complete_section_area_ratio": null,
+        "crack_zone_excluded_from_area_measurement": true,
+        "excluded_material_zone": [
+          0.15000000000000002,
+          1.35
+        ]
+      },
+      "area_definition": "Transverse xy projected polygon area of same evaluated material ring relative to frame1; exclude entire +/-0.6 material crack-affected zone once first opening occurs. Neck-center area at final connected state is unavailable in progressive crack zone; intact area minimum is reported separately. Axial material-marker projection subtracts mean paired fracture-seam gap to exclude crack opening; also report raw span, subtracted gap and two same-material local segments.",
+      "local_material_segments": {
+        "lower_track_initial_s": [
+          -2.4055555555555554,
+          -0.13888888888888884
+        ],
+        "upper_track_initial_s": [
+          1.3055555555555556,
+          2.7222222222222223
+        ]
+      },
+      "material_origin": "initial undeformed axial coordinates; authored gauge differs from unknown formal source gauge"
+    },
+    "generator_source_sha256": "c20bbbc6d071a72842a2689e996b8f69dc5736de165feb305c3d7fd5425e506d"
+  },
+  "expected_labels": {
+    "材料类别": "金属",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "脆性断裂",
+    "断裂位置": "标距内",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "checked_labels": {
+    "材料类别": "金属",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "脆性断裂",
+    "断裂位置": "标距内",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "technical_checks": {
+    "all_frames_evaluated": 600,
+    "measured_events": {
+      "first_open_gap_frame": 516,
+      "first_loss_of_geometric_path_frame": 517,
+      "loading_begin_frame": 1,
+      "postbreak_stopped_frame": 517,
+      "method": "All 600 actual evaluated edge graphs with coincident vertex welding at 1e-5 units; this is geometric contact connectivity, not bonded FEM topology. First opening uses measured paired fracture-ring gap >1e-5."
+    },
+    "prefracture_measurements": {
+      "before_first_opening": {
+        "gauge_markers_initial_material_s": [
+          -2.55,
+          2.55
+        ],
+        "gauge_axial_projection_length_excluding_open_gap": 5.160413210093975,
+        "gauge_axial_projection_length_including_gap": 5.160413217544556,
+        "mean_fracture_seam_gap_subtracted": 7.450580596923828e-09,
+        "same_material_local_segment_lambda_axial_projection": [
+          1.0119981318712234,
+          1.0107413880965288
+        ],
+        "lambda_g_axial_projection": 1.0118457251042812,
+        "minimum_intact_section_area_ratio": 0.9881422583395434,
+        "minimum_intact_section_material_s": -2.361111111111111,
+        "neck_center_complete_section_area_ratio": 0.9881422583395434,
+        "crack_zone_excluded_from_area_measurement": false,
+        "excluded_material_zone": null
+      },
+      "before_final_loss_of_connection": {
+        "gauge_markers_initial_material_s": [
+          -2.55,
+          2.55
+        ],
+        "gauge_axial_projection_length_excluding_open_gap": 5.169683988640706,
+        "gauge_axial_projection_length_including_gap": 5.175413322448731,
+        "mean_fracture_seam_gap_subtracted": 0.005729333808024724,
+        "same_material_local_segment_lambda_axial_projection": [
+          1.0119981318712234,
+          1.0107524289804346
+        ],
+        "lambda_g_axial_projection": 1.0136635248150776,
+        "minimum_intact_section_area_ratio": 0.9881422583395434,
+        "minimum_intact_section_material_s": -2.361111111111111,
+        "neck_center_complete_section_area_ratio": null,
+        "crack_zone_excluded_from_area_measurement": true,
+        "excluded_material_zone": [
+          0.15000000000000002,
+          1.35
+        ]
+      },
+      "area_definition": "Transverse xy projected polygon area of same evaluated material ring relative to frame1; exclude entire +/-0.6 material crack-affected zone once first opening occurs. Neck-center area at final connected state is unavailable in progressive crack zone; intact area minimum is reported separately. Axial material-marker projection subtracts mean paired fracture-seam gap to exclude crack opening; also report raw span, subtracted gap and two same-material local segments.",
+      "local_material_segments": {
+        "lower_track_initial_s": [
+          -2.4055555555555554,
+          -0.13888888888888884
+        ],
+        "upper_track_initial_s": [
+          1.3055555555555556,
+          2.7222222222222223
+        ]
+      },
+      "material_origin": "initial undeformed axial coordinates; authored gauge differs from unknown formal source gauge"
+    },
+    "geometric_components_by_interval": [
+      [
+        1,
+        516,
+        1
+      ],
+      [
+        517,
+        600,
+        2
+      ]
+    ],
+    "maximum_jaw_contact_x_error": 5.960464477539063e-08,
+    "minimum_axial_embedding_overlap": 0.42999982833862305,
+    "minimum_paired_fracture_gap": 0.0,
+    "maximum_absolute_volume_relative_change": 0.0013648934990011519,
+    "postfracture_max_vertex_displacement": 2.384185791015625e-07,
+    "postfracture_max_jaw_displacement": 0.0,
+    "postfracture_float_tolerance": 2e-06,
+    "gap_penetration_float_tolerance": 2e-06,
+    "measurement_method": "Evaluated mesh positions and actual edge graph with coincident interface vertex welding at 1e-5 units; two containers do not predetermine component count. Interior paired fracture caps are hidden while interface is unbroken. Not an FEM model.",
+    "penetration_scope": "Corresponding fracture point gaps and jaw contact/embedding only. No whole-mesh triangle self-intersection proof; clamping contact is intended.",
+    "volume_scope": "Evaluated closed-cap geometry; overlap and opened progressive fracture introduce geometric approximation, not exact incompressible mechanics.",
+    "key_preview_developer_view": "Developer opened final key PNG only; final continuous playback and independent judgment remain pending."
+  },
+  "acceptance": {
+    "user_accepted": true,
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "independent_review": "passed_for_single_discrete_qualitative_candidate",
+    "main_agent_final_video_view": "completed_for_final_sha256",
+    "final_encoding": "passed",
+    "scope": "single_video_visual_and_label_acceptance",
+    "independent_review_completed": true,
+    "main_final_video_view_completed": true,
+    "main_final_video_view": "completed_for_final_sha256",
+    "status": "user_accepted_video",
+    "acceptance_scope": "single_video_visual_and_label_acceptance",
+    "user_acceptance_record": {
+      "date": "2026-10-09",
+      "user_statement": "可以，没问题",
+      "context": "Acceptance of the nine listed first-stage single-parameter videos and their presented visual effects and labels",
+      "video_id": "metal_round_brittle_stage1_center_p075_v1",
+      "video_sha256": "9c76f1f2a0b91797ec3637e309259b94f8e14b0683f028f0a15c388b33645bc8",
+      "accepted_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false
+    }
+  },
+  "saved_scene": {
+    "path": "_work/fracture-stage1-20261009/metal/brittle_center_p075/metal_round_brittle_baseline_v1.blend",
+    "sha256": "f7d4aa9a720d684bec9c9e01885703ec3f4c8ec5ede4232052f17f1d4ee69a94",
+    "self_contained": true,
+    "animation": "baked absolute shape keys and ordinary linear jaw keys; embedded stage1_configuration_json; no script dependencies"
+  },
+  "render_handoff": {
+    "frame_start": 1,
+    "frame_end": 600,
+    "fps": 30,
+    "resolution": [
+      1280,
+      720
+    ],
+    "frames_pattern": "_work/fracture-stage1-20261009/metal/brittle_center_p075/frames/%04d.png",
+    "mp4_filename": "metal_round_brittle_stage1_center_p075_v1.mp4",
+    "argv": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/metal/brittle_center_p075/metal_round_brittle_baseline_v1.blend",
+      "-t",
+      "2",
+      "-o",
+      "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/metal/brittle_center_p075/frames/####",
+      "-F",
+      "PNG",
+      "-s",
+      "1",
+      "-e",
+      "600",
+      "-a"
+    ]
+  },
+  "default_regression": {
+    "records": [
+      {
+        "style": "brittle",
+        "reference": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/metal/original_default_brittle/metal_round_brittle_baseline_v1.blend",
+        "compared": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/metal/default_brittle/metal_round_brittle_baseline_v1.blend",
+        "frames": 600,
+        "maximum_evaluated_specimen_coordinate_error": 0.0,
+        "maximum_jaw_location_error": 0.0,
+        "mesh_faces_equal": true,
+        "camera_equal": true,
+        "tolerance": 2e-06,
+        "passed": true
+      },
+      {
+        "style": "brittle",
+        "reference": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/metal/original_default_brittle/metal_round_brittle_baseline_v1.blend",
+        "compared": "_work/initial-batch-20261008/metal/brittle/metal_round_brittle_baseline_v1.blend",
+        "frames": 600,
+        "maximum_evaluated_specimen_coordinate_error": 0.0,
+        "maximum_jaw_location_error": 0.0,
+        "mesh_faces_equal": true,
+        "camera_equal": true,
+        "tolerance": 2e-06,
+        "passed": true
+      }
+    ],
+    "scope": "Every actual evaluated vertex and jaw position over all 600 frames, exact face topology and camera. No new encoded default video or pixel regression. Accepted video metadata version remains unchanged.",
+    "versions": {
+      "pre_stage1_reusable": "metal-initial-v1.1.0",
+      "new_reusable": "metal-initial-v1.2.0",
+      "accepted_ductile": "metal-initial-v1.0.1",
+      "accepted_brittle": "metal-initial-v1.0.2"
+    }
+  },
+  "engineering_input_checks": {
+    "rejected_cases": [
+      {
+        "args": [
+          "--style",
+          "ductile",
+          "--neck-local-stretch-amplitude",
+          "nan"
+        ],
+        "returncode": 2,
+        "rejection": "usage: Blender [-h] --style {ductile,brittle} --out OUT [--render]\n               [--neck-local-stretch-amplitude NECK_LOCAL_STRETCH_AMPLITUDE]\n               [--neck-material-sigma NECK_MATERIAL_SIGMA]\n               [--fracture-material-center FRACTURE_MATERIAL_CENTER]\n               [--fracture-complete-time-s {12,15,17}] [--skip-key-previews]\nBlender: error: argument --neck-local-stretch-amplitude: neck amplitude must be finite and 0 < value <= 4.0; this engineering guard preserves the current fixed-camera envelope and is not an accepted physical range\n",
+        "no_output_created": true
+      },
+      {
+        "args": [
+          "--style",
+          "ductile",
+          "--neck-material-sigma",
+          ".5"
+        ],
+        "returncode": 2,
+        "rejection": "usage: Blender [-h] --style {ductile,brittle} --out OUT [--render]\n               [--neck-local-stretch-amplitude NECK_LOCAL_STRETCH_AMPLITUDE]\n               [--neck-material-sigma NECK_MATERIAL_SIGMA]\n               [--fracture-material-center FRACTURE_MATERIAL_CENTER]\n               [--fracture-complete-time-s {12,15,17}] [--skip-key-previews]\nBlender: error: neck sigma engineering guard requires .15 <= value <= .30; no continuous range is accepted\n",
+        "no_output_created": true
+      },
+      {
+        "args": [
+          "--style",
+          "brittle",
+          "--neck-material-sigma",
+          ".2"
+        ],
+        "returncode": 2,
+        "rejection": "usage: Blender [-h] --style {ductile,brittle} --out OUT [--render]\n               [--neck-local-stretch-amplitude NECK_LOCAL_STRETCH_AMPLITUDE]\n               [--neck-material-sigma NECK_MATERIAL_SIGMA]\n               [--fracture-material-center FRACTURE_MATERIAL_CENTER]\n               [--fracture-complete-time-s {12,15,17}] [--skip-key-previews]\nBlender: error: neck amplitude and sigma apply only to --style ductile; omit them for brittle\n",
+        "no_output_created": true
+      },
+      {
+        "args": [
+          "--style",
+          "brittle",
+          "--fracture-material-center",
+          "2"
+        ],
+        "returncode": 2,
+        "rejection": "usage: Blender [-h] --style {ductile,brittle} --out OUT [--render]\n               [--neck-local-stretch-amplitude NECK_LOCAL_STRETCH_AMPLITUDE]\n               [--neck-material-sigma NECK_MATERIAL_SIGMA]\n               [--fracture-material-center FRACTURE_MATERIAL_CENTER]\n               [--fracture-complete-time-s {12,15,17}] [--skip-key-previews]\nBlender: error: full fracture/neck affected zone must remain inside authored gauge [-2.55,2.55]\n",
+        "no_output_created": true
+      },
+      {
+        "args": [
+          "--style",
+          "brittle",
+          "--fracture-complete-time-s",
+          "13"
+        ],
+        "returncode": 2,
+        "rejection": "usage: Blender [-h] --style {ductile,brittle} --out OUT [--render]\n               [--neck-local-stretch-amplitude NECK_LOCAL_STRETCH_AMPLITUDE]\n               [--neck-material-sigma NECK_MATERIAL_SIGMA]\n               [--fracture-material-center FRACTURE_MATERIAL_CENTER]\n               [--fracture-complete-time-s {12,15,17}] [--skip-key-previews]\nBlender: error: argument --fracture-complete-time-s: invalid choice: '13' (choose from 12, 15, 17)\n",
+        "no_output_created": true
+      }
+    ],
+    "timing_checkpoint_checks": [
+      {
+        "style": "brittle",
+        "selected_complete_time_s": 12,
+        "evaluated": [
+          {
+            "frame": 1,
+            "time_s": 0.0,
+            "components": 1,
+            "minimum_gap": 0.0,
+            "maximum_gap": 0.0
+          },
+          {
+            "frame": 359,
+            "time_s": 11.933333333333334,
+            "components": 1,
+            "minimum_gap": 0.0,
+            "maximum_gap": 0.0
+          },
+          {
+            "frame": 360,
+            "time_s": 11.966666666666667,
+            "components": 1,
+            "minimum_gap": 0.0,
+            "maximum_gap": 0.015000000596046448
+          },
+          {
+            "frame": 361,
+            "time_s": 12.0,
+            "components": 2,
+            "minimum_gap": 0.029999997466802597,
+            "maximum_gap": 0.030000001192092896
+          },
+          {
+            "frame": 362,
+            "time_s": 12.033333333333333,
+            "components": 2,
+            "minimum_gap": 0.029999997466802597,
+            "maximum_gap": 0.030000003054738045
+          },
+          {
+            "frame": 600,
+            "time_s": 19.966666666666665,
+            "components": 2,
+            "minimum_gap": 0.029999997466802597,
+            "maximum_gap": 0.030000001192092896
+          }
+        ],
+        "postbreak_coordinate_error": 2.384185791015625e-07,
+        "passed": true,
+        "scope": "Event neighborhood checkpoints only; no candidate video, full-frame timing range or visual acceptance."
+      },
+      {
+        "style": "brittle",
+        "selected_complete_time_s": 15,
+        "evaluated": [
+          {
+            "frame": 1,
+            "time_s": 0.0,
+            "components": 1,
+            "minimum_gap": 0.0,
+            "maximum_gap": 0.0
+          },
+          {
+            "frame": 449,
+            "time_s": 14.933333333333334,
+            "components": 1,
+            "minimum_gap": 0.0,
+            "maximum_gap": 0.0
+          },
+          {
+            "frame": 450,
+            "time_s": 14.966666666666667,
+            "components": 1,
+            "minimum_gap": 0.0,
+            "maximum_gap": 0.015000000596046448
+          },
+          {
+            "frame": 451,
+            "time_s": 15.0,
+            "components": 2,
+            "minimum_gap": 0.029999997466802597,
+            "maximum_gap": 0.030000001192092896
+          },
+          {
+            "frame": 452,
+            "time_s": 15.033333333333333,
+            "components": 2,
+            "minimum_gap": 0.0299999937415123,
+            "maximum_gap": 0.030000008642673492
+          },
+          {
+            "frame": 600,
+            "time_s": 19.966666666666665,
+            "components": 2,
+            "minimum_gap": 0.029999997466802597,
+            "maximum_gap": 0.030000001192092896
+          }
+        ],
+        "postbreak_coordinate_error": 2.384185791015625e-07,
+        "passed": true,
+        "scope": "Event neighborhood checkpoints only; no candidate video, full-frame timing range or visual acceptance."
+      },
+      {
+        "style": "brittle",
+        "selected_complete_time_s": 17,
+        "evaluated": [
+          {
+            "frame": 1,
+            "time_s": 0.0,
+            "components": 1,
+            "minimum_gap": 0.0,
+            "maximum_gap": 0.0
+          },
+          {
+            "frame": 509,
+            "time_s": 16.933333333333334,
+            "components": 1,
+            "minimum_gap": 0.0,
+            "maximum_gap": 3.725290298461914e-08
+          },
+          {
+            "frame": 510,
+            "time_s": 16.966666666666665,
+            "components": 1,
+            "minimum_gap": 0.0,
+            "maximum_gap": 0.015000000596046448
+          },
+          {
+            "frame": 511,
+            "time_s": 17.0,
+            "components": 2,
+            "minimum_gap": 0.029999997466802597,
+            "maximum_gap": 0.030000001192092896
+          },
+          {
+            "frame": 512,
+            "time_s": 17.033333333333335,
+            "components": 2,
+            "minimum_gap": 0.029999997466802597,
+            "maximum_gap": 0.030000008642673492
+          },
+          {
+            "frame": 600,
+            "time_s": 19.966666666666665,
+            "components": 2,
+            "minimum_gap": 0.029999997466802597,
+            "maximum_gap": 0.030000001192092896
+          }
+        ],
+        "postbreak_coordinate_error": 2.384185791015625e-07,
+        "passed": true,
+        "scope": "Event neighborhood checkpoints only; no candidate video, full-frame timing range or visual acceptance."
+      }
+    ],
+    "scope": "Illegal inputs rejected before output; valid timing entries verified at event-neighborhood checkpoints only, not full timing-variant videos."
+  },
+  "label_check_history": [
+    {
+      "stage": "developer_before_final_review",
+      "checked_labels": {
+        "labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "无法确认",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无法确认"
+        },
+        "status": "developer_full_evaluated_mesh_and_key_previews_only_pending_independent_review",
+        "material_basis": "unchanged source original metal identity",
+        "result_basis": "measured end-to-end geometric coincident-vertex edge path lost, two actual geometric components thereafter",
+        "failure_category_basis": "expected source-associated ductile/brittle behavior retained; new final encoded video and independent material review pending",
+        "location_basis": "entire initial-material affected zone inside authored gauge; formal source gauge unknown",
+        "grip_basis": "all600 evaluated shaft/jaw inner faces and axial embedding; no loose-grip target",
+        "recording_basis": "fixed saved camera; final encoded visibility and obstruction await view"
+      },
+      "verified_labels": null
+    }
+  ],
+  "verified_labels": {
+    "材料类别": {
+      "value": "金属",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "断裂结果": {
+      "value": "完全断裂",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "单一主要破坏类别": {
+      "value": "脆性断裂",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "断裂位置": {
+      "value": "标距内",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "夹持异常": {
+      "value": "无",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "拍摄异常": {
+      "value": "无",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    }
+  },
+  "final_label_check_basis": {
+    "material": "Preserved source identity or explicit user confirmation",
+    "mode": "Source-associated/project visual criterion plus independent final-video review, not microscopic mechanism proof",
+    "result_site_anomalies": "Actual evaluated geometry and final encoded video",
+    "independent_report": {
+      "status": "passed_for_single_discrete_qualitative_candidate",
+      "report_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/review/stage1_final_review.md",
+      "report_sha256": "b0ccd029fde3c0dcc8ddcad9707f3e50012155084daf3ada477f18ac246e1645",
+      "video_sha256": "9c76f1f2a0b91797ec3637e309259b94f8e14b0683f028f0a15c388b33645bc8",
+      "scope": "See complete report and per-candidate limitations; not a constitutive calibration, range approval, or user acceptance"
+    }
+  },
+  "final_media_validation": {
+    "video": "metal_round_brittle_stage1_center_p075_v1.mp4",
+    "ffmpeg_full_decode_exit_code": 0,
+    "png_count": 600,
+    "png_first": "0001.png",
+    "png_last": "0600.png",
+    "width": 1280,
+    "height": 720,
+    "r_frame_rate": "30/1",
+    "avg_frame_rate": "30/1",
+    "frames": 600,
+    "stream_duration_seconds": 20.0,
+    "file_duration_seconds": 20.0,
+    "bytes": 481046,
+    "sha256": "9c76f1f2a0b91797ec3637e309259b94f8e14b0683f028f0a15c388b33645bc8",
+    "checks": {
+      "png_count_600": true,
+      "frame_count_600": true,
+      "fps_30": true,
+      "decode_success": true
+    },
+    "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/metal_round_brittle/metal_round_brittle_stage1_center_p075_v1.mp4"
+  },
+  "main_agent_view_record": {
+    "date": "2026-10-09",
+    "video_sha256": "9c76f1f2a0b91797ec3637e309259b94f8e14b0683f028f0a15c388b33645bc8",
+    "method": "Native QuickTime open, playback from 0 to 20 seconds, direct screenshots of listed states; supplementary frame previews as needed",
+    "observed_states": [
+      "initial",
+      "separated_final_20s"
+    ],
+    "user_accepted": false,
+    "scope": "Main-agent viewing only, not user acceptance or physical calibration",
+    "record_stage": "before_user_acceptance_2026-10-09"
+  },
+  "independent_review_record": {
+    "status": "passed_for_single_discrete_qualitative_candidate",
+    "report_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/review/stage1_final_review.md",
+    "report_sha256": "b0ccd029fde3c0dcc8ddcad9707f3e50012155084daf3ada477f18ac246e1645",
+    "video_sha256": "9c76f1f2a0b91797ec3637e309259b94f8e14b0683f028f0a15c388b33645bc8",
+    "scope": "See complete report and per-candidate limitations; not a constitutive calibration, range approval, or user acceptance"
+  },
+  "user_accepted": true,
+  "style_accepted": false,
+  "parameter_range_accepted": false,
+  "training_released": false,
+  "acceptance_scope": "single_video_visual_and_label_acceptance",
+  "downstream_label_preview": {
+    "contract_version": "tensile-vlm/v4.1",
+    "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+    "input_scope": "entire_paired_20_second_video",
+    "labels": {
+      "clip_state": "发生断裂",
+      "fracture_mechanism": "脆性断裂",
+      "fracture_site": "inside_gauge",
+      "special_case": null
+    },
+    "format_validation": "passed_by_existing_v4_1_validator",
+    "training_released": false,
+    "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata.",
+    "status": "user_accepted_label_preview_not_training_release",
+    "user_accepted": true,
+    "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/metal_round_brittle/metal_round_brittle_stage1_center_p075_v1.mp4",
+    "video_sha256": "9c76f1f2a0b91797ec3637e309259b94f8e14b0683f028f0a15c388b33645bc8"
+  },
+  "acceptance_history": [
+    {
+      "stage": "before_user_acceptance_2026-10-09",
+      "status": "checked_pending_user_acceptance",
+      "acceptance": {
+        "user_accepted": false,
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "training_released": false,
+        "independent_review": "passed_for_single_discrete_qualitative_candidate",
+        "main_agent_final_video_view": "completed_for_final_sha256",
+        "final_encoding": "passed",
+        "scope": "two single-parameter development candidates; technical mesh checks do not establish final visual/material acceptance",
+        "independent_review_completed": true,
+        "main_final_video_view_completed": true,
+        "main_final_video_view": "completed_for_final_sha256"
+      },
+      "acceptance_scope": "single_discrete_candidate_pending_user_visual_acceptance",
+      "verified_labels": {
+        "材料类别": {
+          "value": "金属",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "断裂结果": {
+          "value": "完全断裂",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "单一主要破坏类别": {
+          "value": "脆性断裂",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "断裂位置": {
+          "value": "标距内",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "夹持异常": {
+          "value": "无",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "拍摄异常": {
+          "value": "无",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        }
+      },
+      "checked_labels_six_groups": null
+    }
+  ],
+  "user_acceptance_record": {
+    "date": "2026-10-09",
+    "user_statement": "可以，没问题",
+    "context": "Acceptance of the nine listed first-stage single-parameter videos and their presented visual effects and labels",
+    "video_id": "metal_round_brittle_stage1_center_p075_v1",
+    "video_sha256": "9c76f1f2a0b91797ec3637e309259b94f8e14b0683f028f0a15c388b33645bc8",
+    "accepted_labels": {
+      "材料类别": "金属",
+      "断裂结果": "完全断裂",
+      "单一主要破坏类别": "脆性断裂",
+      "断裂位置": "标距内",
+      "夹持异常": "无",
+      "拍摄异常": "无"
+    },
+    "acceptance_scope": "single_video_visual_and_label_acceptance",
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false
+  },
+  "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/metal_round_brittle/metal_round_brittle_stage1_center_p075_v1.mp4",
+  "promotion_provenance": {
+    "original_candidate_video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/metal/brittle_center_p075/metal_round_brittle_stage1_center_p075_v1.mp4",
+    "original_candidate_metadata_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/metal/brittle_center_p075/metal_round_brittle_stage1_center_p075_v1.json",
+    "original_candidate_metadata_sha256": "b0426235c5aea670edf5da7a50e19bbd666daed00542cc62ae34be351792fd2c",
+    "copied_without_reencoding": true,
+    "original_video_sha256": "9c76f1f2a0b91797ec3637e309259b94f8e14b0683f028f0a15c388b33645bc8",
+    "current_video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/metal_round_brittle/metal_round_brittle_stage1_center_p075_v1.mp4",
+    "current_metadata_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/metal_round_brittle/metal_round_brittle_stage1_center_p075_v1.json"
+  }
+}

@@ -1,0 +1,3642 @@
+{
+  "schema": "tensile-candidate/v1",
+  "design_version": "v1.8",
+  "style_id": "polymer_pale_green_brittle_flat_strip",
+  "source": {
+    "standard_video_path": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/standard-videos/video_0032.mp4",
+    "sha256": "5ecb645a73ac2ad373155ccb5544eec48e8f5ecd4c767255eddd919a3505842e",
+    "mapping_original": {
+      "标准化文件名": "video_0032.mp4",
+      "原始文件名": "http_20251105_0013.mp4",
+      "来源目录": "raw-video/fetch",
+      "材料类别": "高分子",
+      "状态": "existing",
+      "duration": "4.544",
+      "resolution": "402x726",
+      "codec": "h264"
+    },
+    "excel_original_labels": {
+      "id": "video_0032",
+      "断裂时间点": "3.37 s",
+      "断裂模式": "脆性断裂",
+      "材料类型": "高分子",
+      "清晰度": "480P"
+    },
+    "excel_location": "all_videos_tag.xlsx Sheet1 row33",
+    "excel_sha256": "f21e0427be79f0bda2cde239f8b042342ccc61d9f288b27150a6af7806be3042",
+    "mapping_sha256": "f08263220cf1d70a271ac61c8d2e1dbdfdb6882e7fb56faf3ade7f4bd563820d",
+    "source_format_duration_s": 4.543979,
+    "source_video_stream_duration_s": 4.5333,
+    "source_frames": 136,
+    "source_resolution": [
+      402,
+      726
+    ],
+    "source_fps": "30/1",
+    "source_event_label_s": 3.37,
+    "source_normalized_labels": {
+      "材料类别": "高分子",
+      "断裂结果": "完全断裂",
+      "单一主要破坏类别": "脆性断裂",
+      "断裂位置": "无法确认",
+      "夹持异常": "无法确认",
+      "拍摄异常": "无法确认"
+    },
+    "source_normalization_note": "material and brittle mode supplied by original metadata; near-middle complete separation supported by opened source frames; formal gauge and anomaly groups not supplied in metadata, not inferred as certainty",
+    "id": "video_0032"
+  },
+  "source_observations": {
+    "main_agent": "已实际查看0032初始/3.42s图片：淡绿色窄平条，小变形横向突断，无明显塑性颈缩；授权以此制作独立脆断平条样式。",
+    "implementer": "实际打开0.300、3.320、3.370、3.420、3.670、4.511s源帧。夹具间淡绿窄条近等宽，事件前仍连续；3.370s附近出现中央近横向细白断口，3.420/3.670/4.511s仍分离，未见持续大伸长或晃动。",
+    "inspection_times_s": [
+      0.3,
+      3.32,
+      3.37,
+      3.42,
+      3.67,
+      4.511
+    ],
+    "scope": "source frames support visual phenomenology; do not establish chemical grade, calibrated properties or microscopic fracture mechanism"
+  },
+  "modeling_assumptions": [
+    "相对几何、厚度、1.2%自由段小弹性伸长和3度横向断面角均为作者定性值，不是从来源标尺测量或校准。",
+    "使用近等宽平条，未添加狗骨肩部、塑性颈缩、颈缩传播、预裂纹、损伤渐变或柔性摆动。",
+    "下夹具固定、上夹具缓慢加载；位移曲线为作者smoothstep，不推定来源设备的实际控制速率。",
+    "16s事件内释放作者的小弹性伸长，两个夹持锚点维持约束。各材料点轴向位移从锚点至断口渐变，不将整块断片平移、不删除材料、不预置缺料带。",
+    "从16s起全部试样顶点和装置坐标固定，未加入延迟回弹、晃动或断后继续运动。",
+    "宽度和厚度按局部伸长平方根逆缩放，为小变形近似体积守恒几何；非测得泊松比或材料本构。",
+    "切面仅有来源可支持的近横向形态，微观裂纹/断面粗糙度无法解析；平面切面和角度属于最低细节近似。",
+    "作者参考标距u=[.15,.85]，破断u=.5；正式实验标距未知，预期标距内只对作者定义区域成立。",
+    "呈现夹具、夹具帽和传力杆近景；传力杆明确延伸到画框外，不呈现完整机架，亦不声称精确重建来源夹具型号。",
+    "源视频仅4.544s。20s是作者阶段延长及事件重定时，不称为真实实验全程的时间压缩。"
+  ],
+  "unknowns": [
+    "具体聚合物牌号、配方、热处理或环境未知。",
+    "真实毫米尺寸、厚度、标距、应力应变和真实夹具行程未知。",
+    "二维窄条投影不唯一决定三维几何；真实弹性缩短比例和断面微观形态未知。",
+    "Excel断裂时刻3.37s为事件标签，未独立测得微观裂纹起始。",
+    "源帧未证明任意参数范围或任意高分子均可按该样式破断。"
+  ],
+  "expected_labels": {
+    "材料类别": "高分子",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "脆性断裂",
+    "断裂位置": "标距内",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "candidate_id": "polymer_brittle_stage1_position055_v1",
+  "id": "polymer_brittle_stage1_position055_v1",
+  "title": "高分子小变形脆断材料位置0.55单参候选",
+  "role": "stage1 single-parameter discrete candidate",
+  "status": "user_accepted_video",
+  "user_accepted": true,
+  "style_accepted": false,
+  "parameter_range_accepted": false,
+  "continuous_parameter_range_approved": false,
+  "training_released": false,
+  "implementation_version": "polymer-brittle/1.1.0",
+  "implementation_file": "generator/polymer_brittle.py",
+  "implementation_sha256": "81d2f224c4f7aad68751c8332b5f5901bf3d76fd02704d95c9839775b5b4cbe1",
+  "configuration": {
+    "implementation_version": "polymer-brittle/1.1.0",
+    "scope": "only pale-green near-uniform flat-strip small-deformation brittle visual style referenced to video_0032; not all polymers",
+    "duration_s": 20,
+    "fps": 30,
+    "resolution": [
+      960,
+      540
+    ],
+    "rupture_time_s": 16.0,
+    "rupture_frame": 481,
+    "rest_material_length_author_units": 4.0,
+    "rest_width_author_units": 0.18,
+    "rest_thickness_author_units": 0.035,
+    "axial_intervals": 160,
+    "fracture_material_fraction": 0.55,
+    "fracture_edge_slope_degrees": 3,
+    "author_reference_gauge_material_fraction": [
+      0.15,
+      0.85
+    ],
+    "formal_source_gauge": "unknown",
+    "maximum_free_span_elastic_stretch": 1.012,
+    "clamped_material_fraction_each_end": 0.05,
+    "strain_ramp_material_fraction": 0.025,
+    "loading_curve": "smoothstep(time/16.0)",
+    "transverse_scale": "local stretch^-0.5, small-strain geometric volume approximation",
+    "fracture_motion": "single event at16.0s releases the prescribed small free-span axial strain; anchored ends remain fixed; graded material-point displacement, no rigid piece translation or deleted material",
+    "after_event": "all material vertices, jaws, caps and load rods constant from16.0s onward; no delayed rebound/sway",
+    "camera_position": [
+      2,
+      -25,
+      2
+    ],
+    "camera_target": [
+      0,
+      0,
+      0.02
+    ],
+    "orthographic_scale": 9.3,
+    "camera_fixed": true,
+    "presentation": "connected grips, caps and load rods close view; rods intentionally exit image, no full machine frame represented",
+    "jaw_size": [
+      1.12,
+      0.4,
+      0.24
+    ],
+    "grip_embed_author_units": 0.2,
+    "grip_cap_size": [
+      1.12,
+      0.95,
+      0.14
+    ],
+    "load_rod_radius": 0.12,
+    "polymer_color": [
+      0.64,
+      0.77,
+      0.5
+    ],
+    "renderer": "BLENDER_WORKBENCH",
+    "antialias_samples": 8,
+    "source_phase_retiming": "source excerpt4.544s to authored20s sequence; phase extension, not compression of a measured full experiment",
+    "parameter_range_acceptance": false,
+    "stage1": {
+      "baseline_implementation_version": "polymer-brittle/1.0",
+      "position_engineering_guard": [
+        0.45,
+        0.55
+      ],
+      "full_fracture_fraction_bounds": [
+        0.5488208249661316,
+        0.5511791750338685
+      ],
+      "first_crack_pre_frame": 480,
+      "final_connected_pre_frame": 480,
+      "event_candidates_s": [
+        12,
+        15,
+        17
+      ],
+      "default_regression_event_s": 16,
+      "stretch_parameter_open": false,
+      "scope": "small deformation brittle only; ring-grid guard is not continuous approval"
+    }
+  },
+  "complete_config": {
+    "implementation_version": "polymer-brittle/1.1.0",
+    "scope": "only pale-green near-uniform flat-strip small-deformation brittle visual style referenced to video_0032; not all polymers",
+    "duration_s": 20,
+    "fps": 30,
+    "resolution": [
+      960,
+      540
+    ],
+    "rupture_time_s": 16.0,
+    "rupture_frame": 481,
+    "rest_material_length_author_units": 4.0,
+    "rest_width_author_units": 0.18,
+    "rest_thickness_author_units": 0.035,
+    "axial_intervals": 160,
+    "fracture_material_fraction": 0.55,
+    "fracture_edge_slope_degrees": 3,
+    "author_reference_gauge_material_fraction": [
+      0.15,
+      0.85
+    ],
+    "formal_source_gauge": "unknown",
+    "maximum_free_span_elastic_stretch": 1.012,
+    "clamped_material_fraction_each_end": 0.05,
+    "strain_ramp_material_fraction": 0.025,
+    "loading_curve": "smoothstep(time/16.0)",
+    "transverse_scale": "local stretch^-0.5, small-strain geometric volume approximation",
+    "fracture_motion": "single event at16.0s releases the prescribed small free-span axial strain; anchored ends remain fixed; graded material-point displacement, no rigid piece translation or deleted material",
+    "after_event": "all material vertices, jaws, caps and load rods constant from16.0s onward; no delayed rebound/sway",
+    "camera_position": [
+      2,
+      -25,
+      2
+    ],
+    "camera_target": [
+      0,
+      0,
+      0.02
+    ],
+    "orthographic_scale": 9.3,
+    "camera_fixed": true,
+    "presentation": "connected grips, caps and load rods close view; rods intentionally exit image, no full machine frame represented",
+    "jaw_size": [
+      1.12,
+      0.4,
+      0.24
+    ],
+    "grip_embed_author_units": 0.2,
+    "grip_cap_size": [
+      1.12,
+      0.95,
+      0.14
+    ],
+    "load_rod_radius": 0.12,
+    "polymer_color": [
+      0.64,
+      0.77,
+      0.5
+    ],
+    "renderer": "BLENDER_WORKBENCH",
+    "antialias_samples": 8,
+    "source_phase_retiming": "source excerpt4.544s to authored20s sequence; phase extension, not compression of a measured full experiment",
+    "parameter_range_acceptance": false,
+    "stage1": {
+      "baseline_implementation_version": "polymer-brittle/1.0",
+      "position_engineering_guard": [
+        0.45,
+        0.55
+      ],
+      "full_fracture_fraction_bounds": [
+        0.5488208249661316,
+        0.5511791750338685
+      ],
+      "first_crack_pre_frame": 480,
+      "final_connected_pre_frame": 480,
+      "event_candidates_s": [
+        12,
+        15,
+        17
+      ],
+      "default_regression_event_s": 16,
+      "stretch_parameter_open": false,
+      "scope": "small deformation brittle only; ring-grid guard is not continuous approval"
+    }
+  },
+  "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/polymer_pale_green_brittle_flat_strip/polymer_brittle_stage1_position055_v1.mp4",
+  "video_sha256": "a0e084d4e056e37e3a6c9d5f173bcac04e9e3d50cce7a1ca5a436162d8e10048",
+  "video_bytes": 268130,
+  "scene_snapshot": "_work/fracture-stage1-20261009/polymer/brittle_position055/polymer_brittle_initial_scene.blend",
+  "baseline_provenance": {
+    "json": "outputs/current/polymer_pale_green_brittle_flat_strip/polymer_pale_green_brittle_flat_strip_baseline_v1.json",
+    "video_sha256": "5c7d0fd1f5a519c7040a99101a2dbb79a43cb04e7c474b1c4e14a3d206226ddc",
+    "original_implementation_version": "polymer-brittle/1.0",
+    "accepted_baseline_status_not_inherited": true
+  },
+  "acceptance": {
+    "user_accepted": true,
+    "independent_review_completed": true,
+    "main_final_video_view_completed": true,
+    "scope": "single_video_visual_and_label_acceptance",
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "final_encoding": "passed",
+    "independent_review": "passed_for_single_discrete_qualitative_candidate",
+    "main_final_video_view": "completed_for_final_sha256",
+    "main_agent_final_video_view": "completed_for_final_sha256",
+    "status": "user_accepted_video",
+    "acceptance_scope": "single_video_visual_and_label_acceptance",
+    "user_acceptance_record": {
+      "date": "2026-10-09",
+      "user_statement": "可以，没问题",
+      "context": "Acceptance of the nine listed first-stage single-parameter videos and their presented visual effects and labels",
+      "video_id": "polymer_brittle_stage1_position055_v1",
+      "video_sha256": "a0e084d4e056e37e3a6c9d5f173bcac04e9e3d50cce7a1ca5a436162d8e10048",
+      "accepted_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "training_released": false
+    }
+  },
+  "checked_labels": {
+    "材料类别": "高分子",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "脆性断裂",
+    "断裂位置": "标距内",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "verified_labels": {
+    "材料类别": {
+      "value": "高分子",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "断裂结果": {
+      "value": "完全断裂",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "单一主要破坏类别": {
+      "value": "脆性断裂",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "断裂位置": {
+      "value": "标距内",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "夹持异常": {
+      "value": "无",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    },
+    "拍摄异常": {
+      "value": "无",
+      "status": "checked_for_single_qualitative_video_user_accepted",
+      "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+    }
+  },
+  "main_agent_view_record": {
+    "date": "2026-10-09",
+    "video_sha256": "a0e084d4e056e37e3a6c9d5f173bcac04e9e3d50cce7a1ca5a436162d8e10048",
+    "method": "Native QuickTime open, playback from 0 to 20 seconds, direct initial/final screenshots",
+    "observed_states": [
+      "initial",
+      "separated_stopped_final_20s"
+    ],
+    "user_accepted": false,
+    "scope": "Main-agent viewing, not user acceptance or physical calibration",
+    "record_stage": "before_user_acceptance_2026-10-09"
+  },
+  "independent_review_record": {
+    "status": "passed_for_single_discrete_qualitative_candidate",
+    "report_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/review/stage1_final_review.md",
+    "report_sha256": "b0ccd029fde3c0dcc8ddcad9707f3e50012155084daf3ada477f18ac246e1645",
+    "video_sha256": "a0e084d4e056e37e3a6c9d5f173bcac04e9e3d50cce7a1ca5a436162d8e10048",
+    "scope": "See complete report and per-candidate limitations; not a constitutive calibration, range approval, or user acceptance"
+  },
+  "generated_time_map": {
+    "frame_time_formula": "(frame-1)/30",
+    "duration_s": 20,
+    "rupture_time_s": 16,
+    "rupture_frame": 481,
+    "material_and_machine_stop_time_s": 16,
+    "anchors": [
+      {
+        "source_s": 0.3,
+        "generated_s": 0,
+        "meaning": "available initial reference state"
+      },
+      {
+        "source_s": 3.37,
+        "generated_s": 16,
+        "meaning": "source labelled fracture / generated event"
+      },
+      {
+        "source_s": 4.511,
+        "generated_s": 20,
+        "meaning": "post-event reference / authored end"
+      }
+    ],
+    "retiming_kind": "phase extension and author-controlled small loading, not physical calibration or source full-time compression"
+  },
+  "time_mapping": {
+    "frame_time_formula": "(frame-1)/30",
+    "duration_s": 20,
+    "rupture_time_s": 16,
+    "rupture_frame": 481,
+    "material_and_machine_stop_time_s": 16,
+    "anchors": [
+      {
+        "source_s": 0.3,
+        "generated_s": 0,
+        "meaning": "available initial reference state"
+      },
+      {
+        "source_s": 3.37,
+        "generated_s": 16,
+        "meaning": "source labelled fracture / generated event"
+      },
+      {
+        "source_s": 4.511,
+        "generated_s": 20,
+        "meaning": "post-event reference / authored end"
+      }
+    ],
+    "retiming_kind": "phase extension and author-controlled small loading, not physical calibration or source full-time compression"
+  },
+  "generated_events": {
+    "frame_time_formula": "(frame-1)/30",
+    "loading_start": {
+      "frame": 1,
+      "time_s": 0
+    },
+    "first_actual_crack_event": {
+      "frame": 481,
+      "time_s": 16.0,
+      "method": "topological split for dogbone (zero initial gap) and brittle; first measured seam opening for mixed"
+    },
+    "first_measured_positive_opening": {
+      "frame": 481,
+      "time_s": 16.0
+    },
+    "final_loss_of_grip_to_grip_material_path": {
+      "frame": 481,
+      "time_s": 16.0
+    },
+    "post_motion_stop": {
+      "frame": 481,
+      "time_s": 16.0
+    },
+    "last_encoded_frame_expected": {
+      "frame": 600,
+      "time_s": 19.966666666666665
+    },
+    "encoded_duration_expected_s": 20,
+    "visible_separation_in_encoded_movie_status": "Complete separation is visible in final encoded video; earliest visually decidable separation frame remains unmeasured and is not equated to topology loss"
+  },
+  "actual_measurements": {
+    "first_crack_pre": {
+      "frame": 480,
+      "time_s": 15.966666666666667,
+      "gauge_length_ratio": 1.0119998543506386,
+      "gauge_length": 2.8335995534429657,
+      "material_graph_grip_path_exists": true
+    },
+    "final_connected_pre": {
+      "frame": 480,
+      "time_s": 15.966666666666667,
+      "gauge_length_ratio": 1.0119998543506386,
+      "gauge_length": 2.8335995534429657,
+      "material_graph_grip_path_exists": true
+    },
+    "gauge_method": "same material ring-centroid path arc length",
+    "measured_stretch_increment_factor_against_default_first_crack_pre": null,
+    "section_measurements": {
+      "method": "evaluated same material ring corner area, ratios to actual initial same-ring areas; exclude fracture ring and adjacent rings",
+      "first_crack_pre_min_complete_area_ratio": 0.9881424887282384,
+      "final_connected_pre_min_complete_area_ratio": 0.9881424887282384,
+      "first_crack_pre_sections": [
+        {
+          "material_ring": 24,
+          "material_fraction": 0.15,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 25,
+          "material_fraction": 0.15625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 26,
+          "material_fraction": 0.1625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 27,
+          "material_fraction": 0.16875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 28,
+          "material_fraction": 0.175,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 29,
+          "material_fraction": 0.18125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 30,
+          "material_fraction": 0.1875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 31,
+          "material_fraction": 0.19375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 32,
+          "material_fraction": 0.2,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 33,
+          "material_fraction": 0.20625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 34,
+          "material_fraction": 0.2125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 35,
+          "material_fraction": 0.21875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 36,
+          "material_fraction": 0.225,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 37,
+          "material_fraction": 0.23125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 38,
+          "material_fraction": 0.2375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 39,
+          "material_fraction": 0.24375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 40,
+          "material_fraction": 0.25,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 41,
+          "material_fraction": 0.25625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 42,
+          "material_fraction": 0.2625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 43,
+          "material_fraction": 0.26875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 44,
+          "material_fraction": 0.275,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 45,
+          "material_fraction": 0.28125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 46,
+          "material_fraction": 0.2875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 47,
+          "material_fraction": 0.29375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 48,
+          "material_fraction": 0.3,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 49,
+          "material_fraction": 0.30625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 50,
+          "material_fraction": 0.3125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 51,
+          "material_fraction": 0.31875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 52,
+          "material_fraction": 0.325,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 53,
+          "material_fraction": 0.33125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 54,
+          "material_fraction": 0.3375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 55,
+          "material_fraction": 0.34375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 56,
+          "material_fraction": 0.35,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 57,
+          "material_fraction": 0.35625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 58,
+          "material_fraction": 0.3625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 59,
+          "material_fraction": 0.36875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 60,
+          "material_fraction": 0.375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 61,
+          "material_fraction": 0.38125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 62,
+          "material_fraction": 0.3875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 63,
+          "material_fraction": 0.39375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 64,
+          "material_fraction": 0.4,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 65,
+          "material_fraction": 0.40625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 66,
+          "material_fraction": 0.4125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 67,
+          "material_fraction": 0.41875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 68,
+          "material_fraction": 0.425,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 69,
+          "material_fraction": 0.43125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 70,
+          "material_fraction": 0.4375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 71,
+          "material_fraction": 0.44375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 72,
+          "material_fraction": 0.45,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 73,
+          "material_fraction": 0.45625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 74,
+          "material_fraction": 0.4625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 75,
+          "material_fraction": 0.46875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 76,
+          "material_fraction": 0.475,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 77,
+          "material_fraction": 0.48125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 78,
+          "material_fraction": 0.4875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 79,
+          "material_fraction": 0.49375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 80,
+          "material_fraction": 0.5,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 81,
+          "material_fraction": 0.50625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 82,
+          "material_fraction": 0.5125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 83,
+          "material_fraction": 0.51875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 84,
+          "material_fraction": 0.525,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 85,
+          "material_fraction": 0.53125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 86,
+          "material_fraction": 0.5375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 90,
+          "material_fraction": 0.5625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 91,
+          "material_fraction": 0.56875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 92,
+          "material_fraction": 0.575,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 93,
+          "material_fraction": 0.58125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 94,
+          "material_fraction": 0.5875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 95,
+          "material_fraction": 0.59375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 96,
+          "material_fraction": 0.6,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 97,
+          "material_fraction": 0.60625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 98,
+          "material_fraction": 0.6125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 99,
+          "material_fraction": 0.61875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 100,
+          "material_fraction": 0.625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 101,
+          "material_fraction": 0.63125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 102,
+          "material_fraction": 0.6375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 103,
+          "material_fraction": 0.64375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 104,
+          "material_fraction": 0.65,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 105,
+          "material_fraction": 0.65625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 106,
+          "material_fraction": 0.6625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 107,
+          "material_fraction": 0.66875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 108,
+          "material_fraction": 0.675,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 109,
+          "material_fraction": 0.68125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 110,
+          "material_fraction": 0.6875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 111,
+          "material_fraction": 0.69375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 112,
+          "material_fraction": 0.7,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 113,
+          "material_fraction": 0.70625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 114,
+          "material_fraction": 0.7125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 115,
+          "material_fraction": 0.71875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 116,
+          "material_fraction": 0.725,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 117,
+          "material_fraction": 0.73125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 118,
+          "material_fraction": 0.7375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 119,
+          "material_fraction": 0.74375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 120,
+          "material_fraction": 0.75,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 121,
+          "material_fraction": 0.75625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 122,
+          "material_fraction": 0.7625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 123,
+          "material_fraction": 0.76875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 124,
+          "material_fraction": 0.775,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 125,
+          "material_fraction": 0.78125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 126,
+          "material_fraction": 0.7875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 127,
+          "material_fraction": 0.79375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 128,
+          "material_fraction": 0.8,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 129,
+          "material_fraction": 0.80625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 130,
+          "material_fraction": 0.8125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 131,
+          "material_fraction": 0.81875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 132,
+          "material_fraction": 0.825,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 133,
+          "material_fraction": 0.83125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 134,
+          "material_fraction": 0.8375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 135,
+          "material_fraction": 0.84375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 136,
+          "material_fraction": 0.85,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        }
+      ],
+      "final_connected_pre_sections": [
+        {
+          "material_ring": 24,
+          "material_fraction": 0.15,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 25,
+          "material_fraction": 0.15625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 26,
+          "material_fraction": 0.1625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 27,
+          "material_fraction": 0.16875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 28,
+          "material_fraction": 0.175,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 29,
+          "material_fraction": 0.18125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 30,
+          "material_fraction": 0.1875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 31,
+          "material_fraction": 0.19375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 32,
+          "material_fraction": 0.2,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 33,
+          "material_fraction": 0.20625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 34,
+          "material_fraction": 0.2125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 35,
+          "material_fraction": 0.21875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 36,
+          "material_fraction": 0.225,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 37,
+          "material_fraction": 0.23125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 38,
+          "material_fraction": 0.2375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 39,
+          "material_fraction": 0.24375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 40,
+          "material_fraction": 0.25,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 41,
+          "material_fraction": 0.25625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 42,
+          "material_fraction": 0.2625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 43,
+          "material_fraction": 0.26875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 44,
+          "material_fraction": 0.275,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 45,
+          "material_fraction": 0.28125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 46,
+          "material_fraction": 0.2875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 47,
+          "material_fraction": 0.29375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 48,
+          "material_fraction": 0.3,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 49,
+          "material_fraction": 0.30625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 50,
+          "material_fraction": 0.3125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 51,
+          "material_fraction": 0.31875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 52,
+          "material_fraction": 0.325,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 53,
+          "material_fraction": 0.33125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 54,
+          "material_fraction": 0.3375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 55,
+          "material_fraction": 0.34375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 56,
+          "material_fraction": 0.35,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 57,
+          "material_fraction": 0.35625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 58,
+          "material_fraction": 0.3625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 59,
+          "material_fraction": 0.36875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 60,
+          "material_fraction": 0.375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 61,
+          "material_fraction": 0.38125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 62,
+          "material_fraction": 0.3875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 63,
+          "material_fraction": 0.39375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 64,
+          "material_fraction": 0.4,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 65,
+          "material_fraction": 0.40625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 66,
+          "material_fraction": 0.4125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 67,
+          "material_fraction": 0.41875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 68,
+          "material_fraction": 0.425,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 69,
+          "material_fraction": 0.43125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 70,
+          "material_fraction": 0.4375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 71,
+          "material_fraction": 0.44375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 72,
+          "material_fraction": 0.45,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 73,
+          "material_fraction": 0.45625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 74,
+          "material_fraction": 0.4625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 75,
+          "material_fraction": 0.46875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 76,
+          "material_fraction": 0.475,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 77,
+          "material_fraction": 0.48125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 78,
+          "material_fraction": 0.4875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 79,
+          "material_fraction": 0.49375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 80,
+          "material_fraction": 0.5,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 81,
+          "material_fraction": 0.50625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 82,
+          "material_fraction": 0.5125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 83,
+          "material_fraction": 0.51875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 84,
+          "material_fraction": 0.525,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 85,
+          "material_fraction": 0.53125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 86,
+          "material_fraction": 0.5375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 90,
+          "material_fraction": 0.5625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 91,
+          "material_fraction": 0.56875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 92,
+          "material_fraction": 0.575,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 93,
+          "material_fraction": 0.58125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 94,
+          "material_fraction": 0.5875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 95,
+          "material_fraction": 0.59375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 96,
+          "material_fraction": 0.6,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 97,
+          "material_fraction": 0.60625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 98,
+          "material_fraction": 0.6125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 99,
+          "material_fraction": 0.61875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 100,
+          "material_fraction": 0.625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 101,
+          "material_fraction": 0.63125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 102,
+          "material_fraction": 0.6375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 103,
+          "material_fraction": 0.64375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 104,
+          "material_fraction": 0.65,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 105,
+          "material_fraction": 0.65625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 106,
+          "material_fraction": 0.6625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 107,
+          "material_fraction": 0.66875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 108,
+          "material_fraction": 0.675,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 109,
+          "material_fraction": 0.68125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 110,
+          "material_fraction": 0.6875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 111,
+          "material_fraction": 0.69375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 112,
+          "material_fraction": 0.7,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 113,
+          "material_fraction": 0.70625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 114,
+          "material_fraction": 0.7125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 115,
+          "material_fraction": 0.71875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 116,
+          "material_fraction": 0.725,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 117,
+          "material_fraction": 0.73125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 118,
+          "material_fraction": 0.7375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 119,
+          "material_fraction": 0.74375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 120,
+          "material_fraction": 0.75,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 121,
+          "material_fraction": 0.75625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 122,
+          "material_fraction": 0.7625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 123,
+          "material_fraction": 0.76875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 124,
+          "material_fraction": 0.775,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 125,
+          "material_fraction": 0.78125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 126,
+          "material_fraction": 0.7875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 127,
+          "material_fraction": 0.79375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 128,
+          "material_fraction": 0.8,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 129,
+          "material_fraction": 0.80625,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 130,
+          "material_fraction": 0.8125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 131,
+          "material_fraction": 0.81875,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 132,
+          "material_fraction": 0.825,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 133,
+          "material_fraction": 0.83125,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 134,
+          "material_fraction": 0.8375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 135,
+          "material_fraction": 0.84375,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        },
+        {
+          "material_ring": 136,
+          "material_fraction": 0.85,
+          "area": 0.006225297796643433,
+          "area_ratio_to_same_initial_section": 0.9881424887282384
+        }
+      ],
+      "legacy_central_section_fields_not_used_for_necking": true
+    },
+    "actual_initial_fracture_material_bounds": [
+      0.548820823431015,
+      0.5511791743338108
+    ]
+  },
+  "technical_verification": {
+    "actual_evaluated_frame_count": 600,
+    "summary": {
+      "frames_measured": 600,
+      "component_transition_frame": 481,
+      "all_grip_material_endpoints_inside_actual_jaws": true,
+      "max_actual_jaw_contact_gap": 1.862645149230957e-09,
+      "max_actual_machine_joint_gap": 2.384185791015625e-07,
+      "min_actual_cap_to_material_clearance": 0.019999980926513672,
+      "all_specimen_jaws_caps_inside_frame": true,
+      "actual_volume_ratio_range": [
+        0.9999998194484719,
+        1.0000001803590426
+      ],
+      "minimum_actual_component_gap_after_rupture": 0.032566606998443604,
+      "max_actual_vertex_step_after_rupture": 0.0,
+      "max_actual_machine_position_step_after_rupture": 0.0,
+      "all_actual_post_event_mesh_coordinate_hashes_identical": true,
+      "actual_event_material_point_axial_displacement_ranges": {
+        "lower_half": [
+          -0.023427754640579224,
+          0.0
+        ],
+        "upper_half": [
+          4.76837158203125e-07,
+          0.01862834393978119
+        ],
+        "interpretation": "nonconstant axial displacement within each half independently measured; endpoints constrained, not uniform rigid translation"
+      },
+      "no_material_removed": "same160 axial material intervals on both sides of shared fracture slice; only slice vertex connectivity is split",
+      "event_release_scope": "nonzero displacement gradient along material path and fixed anchors; not rigid-piece translation",
+      "first_crack_pre_measurement": {
+        "same_material_gauge_arc_length": 2.8335995534429657,
+        "gauge_length_ratio": 1.0119998543506386,
+        "complete_material_sections_excluding_fracture_rings": [
+          {
+            "material_ring": 24,
+            "material_fraction": 0.15,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 25,
+            "material_fraction": 0.15625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 26,
+            "material_fraction": 0.1625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 27,
+            "material_fraction": 0.16875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 28,
+            "material_fraction": 0.175,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 29,
+            "material_fraction": 0.18125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 30,
+            "material_fraction": 0.1875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 31,
+            "material_fraction": 0.19375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 32,
+            "material_fraction": 0.2,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 33,
+            "material_fraction": 0.20625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 34,
+            "material_fraction": 0.2125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 35,
+            "material_fraction": 0.21875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 36,
+            "material_fraction": 0.225,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 37,
+            "material_fraction": 0.23125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 38,
+            "material_fraction": 0.2375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 39,
+            "material_fraction": 0.24375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 40,
+            "material_fraction": 0.25,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 41,
+            "material_fraction": 0.25625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 42,
+            "material_fraction": 0.2625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 43,
+            "material_fraction": 0.26875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 44,
+            "material_fraction": 0.275,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 45,
+            "material_fraction": 0.28125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 46,
+            "material_fraction": 0.2875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 47,
+            "material_fraction": 0.29375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 48,
+            "material_fraction": 0.3,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 49,
+            "material_fraction": 0.30625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 50,
+            "material_fraction": 0.3125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 51,
+            "material_fraction": 0.31875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 52,
+            "material_fraction": 0.325,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 53,
+            "material_fraction": 0.33125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 54,
+            "material_fraction": 0.3375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 55,
+            "material_fraction": 0.34375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 56,
+            "material_fraction": 0.35,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 57,
+            "material_fraction": 0.35625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 58,
+            "material_fraction": 0.3625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 59,
+            "material_fraction": 0.36875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 60,
+            "material_fraction": 0.375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 61,
+            "material_fraction": 0.38125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 62,
+            "material_fraction": 0.3875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 63,
+            "material_fraction": 0.39375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 64,
+            "material_fraction": 0.4,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 65,
+            "material_fraction": 0.40625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 66,
+            "material_fraction": 0.4125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 67,
+            "material_fraction": 0.41875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 68,
+            "material_fraction": 0.425,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 69,
+            "material_fraction": 0.43125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 70,
+            "material_fraction": 0.4375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 71,
+            "material_fraction": 0.44375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 72,
+            "material_fraction": 0.45,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 73,
+            "material_fraction": 0.45625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 74,
+            "material_fraction": 0.4625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 75,
+            "material_fraction": 0.46875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 76,
+            "material_fraction": 0.475,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 77,
+            "material_fraction": 0.48125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 78,
+            "material_fraction": 0.4875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 79,
+            "material_fraction": 0.49375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 80,
+            "material_fraction": 0.5,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 81,
+            "material_fraction": 0.50625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 82,
+            "material_fraction": 0.5125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 83,
+            "material_fraction": 0.51875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 84,
+            "material_fraction": 0.525,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 85,
+            "material_fraction": 0.53125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 86,
+            "material_fraction": 0.5375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 90,
+            "material_fraction": 0.5625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 91,
+            "material_fraction": 0.56875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 92,
+            "material_fraction": 0.575,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 93,
+            "material_fraction": 0.58125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 94,
+            "material_fraction": 0.5875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 95,
+            "material_fraction": 0.59375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 96,
+            "material_fraction": 0.6,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 97,
+            "material_fraction": 0.60625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 98,
+            "material_fraction": 0.6125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 99,
+            "material_fraction": 0.61875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 100,
+            "material_fraction": 0.625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 101,
+            "material_fraction": 0.63125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 102,
+            "material_fraction": 0.6375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 103,
+            "material_fraction": 0.64375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 104,
+            "material_fraction": 0.65,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 105,
+            "material_fraction": 0.65625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 106,
+            "material_fraction": 0.6625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 107,
+            "material_fraction": 0.66875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 108,
+            "material_fraction": 0.675,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 109,
+            "material_fraction": 0.68125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 110,
+            "material_fraction": 0.6875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 111,
+            "material_fraction": 0.69375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 112,
+            "material_fraction": 0.7,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 113,
+            "material_fraction": 0.70625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 114,
+            "material_fraction": 0.7125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 115,
+            "material_fraction": 0.71875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 116,
+            "material_fraction": 0.725,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 117,
+            "material_fraction": 0.73125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 118,
+            "material_fraction": 0.7375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 119,
+            "material_fraction": 0.74375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 120,
+            "material_fraction": 0.75,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 121,
+            "material_fraction": 0.75625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 122,
+            "material_fraction": 0.7625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 123,
+            "material_fraction": 0.76875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 124,
+            "material_fraction": 0.775,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 125,
+            "material_fraction": 0.78125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 126,
+            "material_fraction": 0.7875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 127,
+            "material_fraction": 0.79375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 128,
+            "material_fraction": 0.8,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 129,
+            "material_fraction": 0.80625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 130,
+            "material_fraction": 0.8125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 131,
+            "material_fraction": 0.81875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 132,
+            "material_fraction": 0.825,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 133,
+            "material_fraction": 0.83125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 134,
+            "material_fraction": 0.8375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 135,
+            "material_fraction": 0.84375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 136,
+            "material_fraction": 0.85,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          }
+        ],
+        "minimum_complete_section_ratio": 0.9881424887282384,
+        "fracture_section_area_available": true,
+        "actual_initial_full_fracture_material_fraction_bounds": null,
+        "material_graph_grip_path_exists": true,
+        "evaluated_topology_sha256": "c6d6088ed4e12d6eb1eef9867bbcfe84d80b4d48c304a68cb7da6df06b99c339",
+        "frame": 480,
+        "time_s": 15.966666666666667,
+        "measured_components": 1,
+        "actual_volume": 0.025200004109137808,
+        "same_material_path_length": 4.041999326989799,
+        "lower_half_material_path_length": 2.2233996920727352,
+        "upper_half_material_path_length": 1.8185996349170637,
+        "central_section_area": 0.006233841051294378,
+        "min_section_area": 0.006225297796643433,
+        "max_section_area": 0.006300000119067374,
+        "component_bounds": [
+          [
+            [
+              -0.09000000357627869,
+              0.09000000357627869
+            ],
+            [
+              -0.017500000074505806,
+              0.017500000074505806
+            ],
+            [
+              -2.0,
+              2.041999340057373
+            ]
+          ]
+        ],
+        "minimum_axial_component_gap": 0,
+        "grip_checks": [
+          {
+            "end": "lower",
+            "actual_contact_face_gap": 1.862645149230957e-09,
+            "actual_endpoint_inside_jaw_z_interval": true,
+            "jaw_to_cap_surface_gap": 0.0,
+            "cap_to_rod_surface_gap": 0.0,
+            "cap_to_material_end_clearance": 0.019999980926513672
+          },
+          {
+            "end": "upper",
+            "actual_contact_face_gap": 1.862645149230957e-09,
+            "actual_endpoint_inside_jaw_z_interval": true,
+            "jaw_to_cap_surface_gap": 2.384185791015625e-07,
+            "cap_to_rod_surface_gap": 0.0,
+            "cap_to_material_end_clearance": 0.020000219345092773
+          }
+        ],
+        "projected_specimen_jaw_cap_bounds": [
+          0.43611815571784973,
+          0.5638819932937622,
+          0.07717510312795639,
+          0.9232043027877808
+        ],
+        "all_specimen_and_grips_inside_frame": true,
+        "evaluated_specimen_coordinate_sha256": "5f61f89c3f2cdc7597e3a8ee9bd3d70ca762e7470166bb4099789ccbf1b36e6e",
+        "actual_jaw_cap_rod_positions": [
+          [
+            0.0,
+            -0.2175000011920929,
+            -1.899999976158142
+          ],
+          [
+            0.0,
+            0.2175000011920929,
+            -1.899999976158142
+          ],
+          [
+            -0.36000001430511475,
+            -0.4699999988079071,
+            -1.899999976158142
+          ],
+          [
+            0.36000001430511475,
+            -0.4699999988079071,
+            -1.899999976158142
+          ],
+          [
+            0.0,
+            -0.2175000011920929,
+            1.9419994354248047
+          ],
+          [
+            0.0,
+            0.2175000011920929,
+            1.9419994354248047
+          ],
+          [
+            -0.36000001430511475,
+            -0.4699999988079071,
+            1.9419994354248047
+          ],
+          [
+            0.36000001430511475,
+            -0.4699999988079071,
+            1.9419994354248047
+          ],
+          [
+            0.0,
+            0.0,
+            -2.0899999141693115
+          ],
+          [
+            0.0,
+            0.0,
+            2.1319994926452637
+          ],
+          [
+            0.0,
+            0.0,
+            -2.8299999237060547
+          ],
+          [
+            0.0,
+            0.0,
+            2.9009997844696045
+          ]
+        ],
+        "actual_volume_ratio_to_initial": 1.0000000928502595
+      },
+      "final_connected_pre_measurement": {
+        "same_material_gauge_arc_length": 2.8335995534429657,
+        "gauge_length_ratio": 1.0119998543506386,
+        "complete_material_sections_excluding_fracture_rings": [
+          {
+            "material_ring": 24,
+            "material_fraction": 0.15,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 25,
+            "material_fraction": 0.15625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 26,
+            "material_fraction": 0.1625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 27,
+            "material_fraction": 0.16875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 28,
+            "material_fraction": 0.175,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 29,
+            "material_fraction": 0.18125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 30,
+            "material_fraction": 0.1875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 31,
+            "material_fraction": 0.19375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 32,
+            "material_fraction": 0.2,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 33,
+            "material_fraction": 0.20625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 34,
+            "material_fraction": 0.2125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 35,
+            "material_fraction": 0.21875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 36,
+            "material_fraction": 0.225,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 37,
+            "material_fraction": 0.23125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 38,
+            "material_fraction": 0.2375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 39,
+            "material_fraction": 0.24375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 40,
+            "material_fraction": 0.25,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 41,
+            "material_fraction": 0.25625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 42,
+            "material_fraction": 0.2625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 43,
+            "material_fraction": 0.26875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 44,
+            "material_fraction": 0.275,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 45,
+            "material_fraction": 0.28125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 46,
+            "material_fraction": 0.2875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 47,
+            "material_fraction": 0.29375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 48,
+            "material_fraction": 0.3,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 49,
+            "material_fraction": 0.30625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 50,
+            "material_fraction": 0.3125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 51,
+            "material_fraction": 0.31875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 52,
+            "material_fraction": 0.325,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 53,
+            "material_fraction": 0.33125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 54,
+            "material_fraction": 0.3375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 55,
+            "material_fraction": 0.34375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 56,
+            "material_fraction": 0.35,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 57,
+            "material_fraction": 0.35625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 58,
+            "material_fraction": 0.3625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 59,
+            "material_fraction": 0.36875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 60,
+            "material_fraction": 0.375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 61,
+            "material_fraction": 0.38125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 62,
+            "material_fraction": 0.3875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 63,
+            "material_fraction": 0.39375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 64,
+            "material_fraction": 0.4,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 65,
+            "material_fraction": 0.40625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 66,
+            "material_fraction": 0.4125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 67,
+            "material_fraction": 0.41875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 68,
+            "material_fraction": 0.425,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 69,
+            "material_fraction": 0.43125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 70,
+            "material_fraction": 0.4375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 71,
+            "material_fraction": 0.44375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 72,
+            "material_fraction": 0.45,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 73,
+            "material_fraction": 0.45625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 74,
+            "material_fraction": 0.4625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 75,
+            "material_fraction": 0.46875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 76,
+            "material_fraction": 0.475,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 77,
+            "material_fraction": 0.48125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 78,
+            "material_fraction": 0.4875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 79,
+            "material_fraction": 0.49375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 80,
+            "material_fraction": 0.5,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 81,
+            "material_fraction": 0.50625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 82,
+            "material_fraction": 0.5125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 83,
+            "material_fraction": 0.51875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 84,
+            "material_fraction": 0.525,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 85,
+            "material_fraction": 0.53125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 86,
+            "material_fraction": 0.5375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 90,
+            "material_fraction": 0.5625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 91,
+            "material_fraction": 0.56875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 92,
+            "material_fraction": 0.575,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 93,
+            "material_fraction": 0.58125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 94,
+            "material_fraction": 0.5875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 95,
+            "material_fraction": 0.59375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 96,
+            "material_fraction": 0.6,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 97,
+            "material_fraction": 0.60625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 98,
+            "material_fraction": 0.6125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 99,
+            "material_fraction": 0.61875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 100,
+            "material_fraction": 0.625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 101,
+            "material_fraction": 0.63125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 102,
+            "material_fraction": 0.6375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 103,
+            "material_fraction": 0.64375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 104,
+            "material_fraction": 0.65,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 105,
+            "material_fraction": 0.65625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 106,
+            "material_fraction": 0.6625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 107,
+            "material_fraction": 0.66875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 108,
+            "material_fraction": 0.675,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 109,
+            "material_fraction": 0.68125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 110,
+            "material_fraction": 0.6875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 111,
+            "material_fraction": 0.69375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 112,
+            "material_fraction": 0.7,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 113,
+            "material_fraction": 0.70625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 114,
+            "material_fraction": 0.7125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 115,
+            "material_fraction": 0.71875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 116,
+            "material_fraction": 0.725,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 117,
+            "material_fraction": 0.73125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 118,
+            "material_fraction": 0.7375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 119,
+            "material_fraction": 0.74375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 120,
+            "material_fraction": 0.75,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 121,
+            "material_fraction": 0.75625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 122,
+            "material_fraction": 0.7625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 123,
+            "material_fraction": 0.76875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 124,
+            "material_fraction": 0.775,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 125,
+            "material_fraction": 0.78125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 126,
+            "material_fraction": 0.7875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 127,
+            "material_fraction": 0.79375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 128,
+            "material_fraction": 0.8,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 129,
+            "material_fraction": 0.80625,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 130,
+            "material_fraction": 0.8125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 131,
+            "material_fraction": 0.81875,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 132,
+            "material_fraction": 0.825,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 133,
+            "material_fraction": 0.83125,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 134,
+            "material_fraction": 0.8375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 135,
+            "material_fraction": 0.84375,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          },
+          {
+            "material_ring": 136,
+            "material_fraction": 0.85,
+            "area": 0.006225297796643433,
+            "area_ratio_to_same_initial_section": 0.9881424887282384
+          }
+        ],
+        "minimum_complete_section_ratio": 0.9881424887282384,
+        "fracture_section_area_available": true,
+        "actual_initial_full_fracture_material_fraction_bounds": null,
+        "material_graph_grip_path_exists": true,
+        "evaluated_topology_sha256": "c6d6088ed4e12d6eb1eef9867bbcfe84d80b4d48c304a68cb7da6df06b99c339",
+        "frame": 480,
+        "time_s": 15.966666666666667,
+        "measured_components": 1,
+        "actual_volume": 0.025200004109137808,
+        "same_material_path_length": 4.041999326989799,
+        "lower_half_material_path_length": 2.2233996920727352,
+        "upper_half_material_path_length": 1.8185996349170637,
+        "central_section_area": 0.006233841051294378,
+        "min_section_area": 0.006225297796643433,
+        "max_section_area": 0.006300000119067374,
+        "component_bounds": [
+          [
+            [
+              -0.09000000357627869,
+              0.09000000357627869
+            ],
+            [
+              -0.017500000074505806,
+              0.017500000074505806
+            ],
+            [
+              -2.0,
+              2.041999340057373
+            ]
+          ]
+        ],
+        "minimum_axial_component_gap": 0,
+        "grip_checks": [
+          {
+            "end": "lower",
+            "actual_contact_face_gap": 1.862645149230957e-09,
+            "actual_endpoint_inside_jaw_z_interval": true,
+            "jaw_to_cap_surface_gap": 0.0,
+            "cap_to_rod_surface_gap": 0.0,
+            "cap_to_material_end_clearance": 0.019999980926513672
+          },
+          {
+            "end": "upper",
+            "actual_contact_face_gap": 1.862645149230957e-09,
+            "actual_endpoint_inside_jaw_z_interval": true,
+            "jaw_to_cap_surface_gap": 2.384185791015625e-07,
+            "cap_to_rod_surface_gap": 0.0,
+            "cap_to_material_end_clearance": 0.020000219345092773
+          }
+        ],
+        "projected_specimen_jaw_cap_bounds": [
+          0.43611815571784973,
+          0.5638819932937622,
+          0.07717510312795639,
+          0.9232043027877808
+        ],
+        "all_specimen_and_grips_inside_frame": true,
+        "evaluated_specimen_coordinate_sha256": "5f61f89c3f2cdc7597e3a8ee9bd3d70ca762e7470166bb4099789ccbf1b36e6e",
+        "actual_jaw_cap_rod_positions": [
+          [
+            0.0,
+            -0.2175000011920929,
+            -1.899999976158142
+          ],
+          [
+            0.0,
+            0.2175000011920929,
+            -1.899999976158142
+          ],
+          [
+            -0.36000001430511475,
+            -0.4699999988079071,
+            -1.899999976158142
+          ],
+          [
+            0.36000001430511475,
+            -0.4699999988079071,
+            -1.899999976158142
+          ],
+          [
+            0.0,
+            -0.2175000011920929,
+            1.9419994354248047
+          ],
+          [
+            0.0,
+            0.2175000011920929,
+            1.9419994354248047
+          ],
+          [
+            -0.36000001430511475,
+            -0.4699999988079071,
+            1.9419994354248047
+          ],
+          [
+            0.36000001430511475,
+            -0.4699999988079071,
+            1.9419994354248047
+          ],
+          [
+            0.0,
+            0.0,
+            -2.0899999141693115
+          ],
+          [
+            0.0,
+            0.0,
+            2.1319994926452637
+          ],
+          [
+            0.0,
+            0.0,
+            -2.8299999237060547
+          ],
+          [
+            0.0,
+            0.0,
+            2.9009997844696045
+          ]
+        ],
+        "actual_volume_ratio_to_initial": 1.0000000928502595
+      }
+    },
+    "default_regression": {
+      "scope": "actual evaluated mesh coordinates, edge and face indices, material assignments, and every mesh fixture world matrix for all600 frames; original code backup executed, not parameter comparison",
+      "kind": "brittle",
+      "baseline_file": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/polymer/original_code/polymer_brittle.py",
+      "baseline_sha256": "2a13a1003d3cd75e72d4d68d1d95f7c75291886c9f4083c0a665537c351684d2",
+      "new_file": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/generator/polymer_brittle.py",
+      "new_sha256": "81d2f224c4f7aad68751c8332b5f5901bf3d76fd02704d95c9839775b5b4cbe1",
+      "baseline_actual_arrays": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/polymer/regression/brittle/original_actual_600_frames.npz",
+      "frames": 600,
+      "all_topology_identical": true,
+      "all_coordinate_hashes_identical": true,
+      "max_coordinate_delta": 0,
+      "max_fixture_matrix_delta": 0,
+      "limits": "does not compare re-encoded video; default frame image equivalence not claimed; geometry/fixture/camera code unchanged except parameters"
+    },
+    "mesh_report": "_work/fracture-stage1-20261009/polymer/brittle_position055/mesh_checks.json",
+    "final_encoding_checked": false,
+    "final_video_viewed": false,
+    "scope": "actual mesh and fixture measurements; not independent scientific review, force balance, constitutive prediction, general triangle self-intersection solution, encoded video validation or user acceptance"
+  },
+  "verification_limits": [
+    "Single discrete candidate only; no continuous range/combination or training release",
+    "Source formal gauge and quantitative polymer mechanics unknown",
+    "Final encoded visibility, material behavior/labels independent review, and user acceptance pending",
+    "No force/stress solution or general triangle self-intersection solver"
+  ],
+  "render_preparation": {
+    "candidate_id": "polymer_brittle_stage1_position055_v1",
+    "cwd": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo",
+    "argv": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "-b",
+      "--python",
+      "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/generator/polymer_brittle.py",
+      "--",
+      "--out",
+      "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/polymer/brittle_position055",
+      "--fracture-material-fraction",
+      ".55"
+    ],
+    "frame_pattern": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/polymer/brittle_position055/frames/%06d.png",
+    "frame_count": 600,
+    "start_number": 1,
+    "fps": 30,
+    "recommended_mp4": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/polymer/brittle_position055/polymer_brittle_stage1_position055_v1.mp4",
+    "candidate_json": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/polymer/brittle_position055/polymer_brittle_stage1_position055_v1.json",
+    "scene_snapshot": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/polymer/brittle_position055/polymer_brittle_initial_scene.blend",
+    "note": "rerun reusable generator for full600 PNG; saved blend is static key state and does not contain autonomous animation; renderer must use argv"
+  },
+  "label_check_history": [
+    {
+      "stage": "developer_before_final_review",
+      "checked_labels": {
+        "材料类别": {
+          "expected": "高分子",
+          "status": "pending_independent_review_and_final_video",
+          "technical_mesh_evidence_only": false
+        },
+        "断裂结果": {
+          "expected": "完全断裂",
+          "status": "pending_independent_review_and_final_video",
+          "technical_mesh_evidence_only": true
+        },
+        "单一主要破坏类别": {
+          "expected": "脆性断裂",
+          "status": "pending_independent_review_and_final_video",
+          "technical_mesh_evidence_only": false
+        },
+        "断裂位置": {
+          "expected": "标距内",
+          "status": "pending_independent_review_and_final_video",
+          "technical_mesh_evidence_only": true
+        },
+        "夹持异常": {
+          "expected": "无",
+          "status": "pending_independent_review_and_final_video",
+          "technical_mesh_evidence_only": true
+        },
+        "拍摄异常": {
+          "expected": "无",
+          "status": "pending_independent_review_and_final_video",
+          "technical_mesh_evidence_only": true
+        }
+      },
+      "verified_labels": null
+    }
+  ],
+  "final_label_check_basis": {
+    "material": "Preserved source identity or explicit user confirmation",
+    "mode": "Source-associated/project visual criterion plus independent final-video review, not microscopic mechanism proof",
+    "result_site_anomalies": "Actual evaluated geometry and final encoded video",
+    "independent_report": {
+      "status": "passed_for_single_discrete_qualitative_candidate",
+      "report_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/review/stage1_final_review.md",
+      "report_sha256": "b0ccd029fde3c0dcc8ddcad9707f3e50012155084daf3ada477f18ac246e1645",
+      "video_sha256": "a0e084d4e056e37e3a6c9d5f173bcac04e9e3d50cce7a1ca5a436162d8e10048",
+      "scope": "See complete report and per-candidate limitations; not a constitutive calibration, range approval, or user acceptance"
+    }
+  },
+  "video_file": "polymer_brittle_stage1_position055_v1.mp4",
+  "sha256": "a0e084d4e056e37e3a6c9d5f173bcac04e9e3d50cce7a1ca5a436162d8e10048",
+  "bytes": 268130,
+  "final_media_validation": {
+    "video": "polymer_brittle_stage1_position055_v1.mp4",
+    "blender_exit_code": 0,
+    "render_error_lines": [],
+    "render_error_line_count": 0,
+    "png_count": 600,
+    "png_first": "000001.png",
+    "png_last": "000600.png",
+    "ffmpeg_full_decode_exit_code": 0,
+    "width": 960,
+    "height": 540,
+    "r_frame_rate": "30/1",
+    "avg_frame_rate": "30/1",
+    "frames": 600,
+    "stream_duration_seconds": 20.0,
+    "file_duration_seconds": 20.0,
+    "bytes": 268130,
+    "sha256": "a0e084d4e056e37e3a6c9d5f173bcac04e9e3d50cce7a1ca5a436162d8e10048",
+    "checks": {
+      "png_count_600": true,
+      "frame_count_600": true,
+      "fps_30": true,
+      "duration_20s": true,
+      "decode_success": true,
+      "render_log_no_known_errors": true
+    },
+    "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/polymer_pale_green_brittle_flat_strip/polymer_brittle_stage1_position055_v1.mp4"
+  },
+  "acceptance_scope": "single_video_visual_and_label_acceptance",
+  "downstream_label_preview": {
+    "contract_version": "tensile-vlm/v4.1",
+    "contract_hash": "3798f00cbec7a3cad3e50de66dd2b5bdeecca1a95ae74297cbd0d71e7ec438ab",
+    "input_scope": "entire_paired_20_second_video",
+    "labels": {
+      "clip_state": "发生断裂",
+      "fracture_mechanism": "脆性断裂",
+      "fracture_site": "inside_gauge",
+      "special_case": null
+    },
+    "format_validation": "passed_by_existing_v4_1_validator",
+    "training_released": false,
+    "limits": "Label payload preview only; no new clip_state or slicing rules, no prompt/release binding, no ready-to-train messages dataset. Re-label any future slices by actual interval; precise event seconds remain in simulation metadata.",
+    "status": "user_accepted_label_preview_not_training_release",
+    "user_accepted": true,
+    "video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/polymer_pale_green_brittle_flat_strip/polymer_brittle_stage1_position055_v1.mp4",
+    "video_sha256": "a0e084d4e056e37e3a6c9d5f173bcac04e9e3d50cce7a1ca5a436162d8e10048"
+  },
+  "acceptance_history": [
+    {
+      "stage": "before_user_acceptance_2026-10-09",
+      "status": "checked_pending_user_acceptance",
+      "acceptance": {
+        "user_accepted": false,
+        "independent_review_completed": true,
+        "main_final_video_view_completed": true,
+        "scope": "no candidate acceptance; source and fixed-baseline references only",
+        "style_accepted": false,
+        "parameter_range_accepted": false,
+        "training_released": false,
+        "final_encoding": "passed",
+        "independent_review": "passed_for_single_discrete_qualitative_candidate",
+        "main_final_video_view": "completed_for_final_sha256",
+        "main_agent_final_video_view": "completed_for_final_sha256"
+      },
+      "acceptance_scope": "single_discrete_candidate_pending_user_visual_acceptance",
+      "verified_labels": {
+        "材料类别": {
+          "value": "高分子",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "断裂结果": {
+          "value": "完全断裂",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "单一主要破坏类别": {
+          "value": "脆性断裂",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "断裂位置": {
+          "value": "标距内",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "夹持异常": {
+          "value": "无",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        },
+        "拍摄异常": {
+          "value": "无",
+          "status": "checked_for_single_qualitative_candidate_pending_user_acceptance",
+          "basis": "Preserved detailed source/geometry evidence plus final independent report and main viewing; no microscopic or range claim"
+        }
+      },
+      "checked_labels_six_groups": null
+    }
+  ],
+  "user_acceptance_record": {
+    "date": "2026-10-09",
+    "user_statement": "可以，没问题",
+    "context": "Acceptance of the nine listed first-stage single-parameter videos and their presented visual effects and labels",
+    "video_id": "polymer_brittle_stage1_position055_v1",
+    "video_sha256": "a0e084d4e056e37e3a6c9d5f173bcac04e9e3d50cce7a1ca5a436162d8e10048",
+    "accepted_labels": {
+      "材料类别": "高分子",
+      "断裂结果": "完全断裂",
+      "单一主要破坏类别": "脆性断裂",
+      "断裂位置": "标距内",
+      "夹持异常": "无",
+      "拍摄异常": "无"
+    },
+    "acceptance_scope": "single_video_visual_and_label_acceptance",
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false
+  },
+  "promotion_provenance": {
+    "original_candidate_video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/polymer/brittle_position055/polymer_brittle_stage1_position055_v1.mp4",
+    "original_candidate_metadata_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/fracture-stage1-20261009/polymer/brittle_position055/polymer_brittle_stage1_position055_v1.json",
+    "original_candidate_metadata_sha256": "cd8d975f79aeec488f2034c61b14a250bcbb1932b7c40ff9b0a64cd8f13d4e3e",
+    "copied_without_reencoding": true,
+    "original_video_sha256": "a0e084d4e056e37e3a6c9d5f173bcac04e9e3d50cce7a1ca5a436162d8e10048",
+    "current_video_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/polymer_pale_green_brittle_flat_strip/polymer_brittle_stage1_position055_v1.mp4",
+    "current_metadata_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/polymer_pale_green_brittle_flat_strip/polymer_brittle_stage1_position055_v1.json"
+  }
+}
