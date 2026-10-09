@@ -2045,13 +2045,21 @@
         ],
         "precision_diagnostic": "../_work/training-batch1-20261009/checks/dogbone_precision_diagnostic/diagnostic.json",
         "scope": "Failed gates remain failed; old0.85 residual independently replayed as float32 accumulation and found in accepted history; new values require separate evidence. No tolerance or geometry change authorized; other templates continue."
+      },
+      {
+        "template": "metal_ductile",
+        "status": "strict_volume_envelope_regression_failed_diagnostic_in_progress",
+        "affected_candidate_count": 12,
+        "measured_volume_upper_ratio_approx": 1.0063646,
+        "frozen_upper_bound": 1.0052,
+        "scope": "Two old-source finite regression gates failed; all12 metal ductile candidates blocked by complete template regression. No tolerance or geometry change authorized."
       }
     ],
     "optimized_execution_directory": "../_work/training-batch1-20261009-fastcheck/",
     "precision_policy": {
       "status": "pending_human_confirmation",
       "proposal": "../_work/training-batch1-20261009/review/precision_policy_review.json",
-      "strict_policy_maximum_candidate_count": 50,
+      "strict_policy_maximum_candidate_count": 38,
       "event_precision_certification_implemented": false
     },
     "performance_optimization": {
