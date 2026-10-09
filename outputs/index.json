@@ -1642,7 +1642,7 @@
       "independent_review": "passed_for_two_discrete_candidates_and_metadata_rechecked",
       "user_accepted": false,
       "training_released": false,
-      "metadata_sha256": "582596440ee7c0ec8abf0856dd5752ff662bae78b30811fa7632a3265c2951c3",
+      "metadata_sha256": "47fa06abcfee2b6f2be4c4d8470dd66822c90c0fabb4cb6409d6974eaabfb36d",
       "title": "陶瓷小形变横向脆断：15秒失贯通候选",
       "source_id": "video_0050",
       "duration_s": 20,
@@ -1686,7 +1686,7 @@
       "independent_review": "passed_for_two_discrete_candidates_and_metadata_rechecked",
       "user_accepted": false,
       "training_released": false,
-      "metadata_sha256": "a224244c6175ae7ceac987b47b1d0d37962366a02a4398378d338557cc59dec7",
+      "metadata_sha256": "4a493c95648b44f2fbe383fe6cd778af32e45c097ceeb4a558a96b2491ae0361",
       "title": "陶瓷小形变横向脆断：13秒失贯通候选",
       "source_id": "video_0050",
       "duration_s": 20,
@@ -2010,7 +2010,7 @@
         "independent_review": "passed_for_two_discrete_candidates_and_metadata_rechecked",
         "user_accepted": false,
         "training_released": false,
-        "metadata_sha256": "582596440ee7c0ec8abf0856dd5752ff662bae78b30811fa7632a3265c2951c3"
+        "metadata_sha256": "47fa06abcfee2b6f2be4c4d8470dd66822c90c0fabb4cb6409d6974eaabfb36d"
       },
       {
         "id": "ceramic_fafb6d038402",
@@ -2023,9 +2023,29 @@
         "independent_review": "passed_for_two_discrete_candidates_and_metadata_rechecked",
         "user_accepted": false,
         "training_released": false,
-        "metadata_sha256": "a224244c6175ae7ceac987b47b1d0d37962366a02a4398378d338557cc59dec7"
+        "metadata_sha256": "4a493c95648b44f2fbe383fe6cd778af32e45c097ceeb4a558a96b2491ae0361"
       }
     ],
-    "unmodified_film_regression": "failed_numeric_gap_guard; legacy_float32_residual_diagnosed; full_old_new_regression_not_completed; excluded_from60"
+    "unmodified_film_regression": "failed_numeric_gap_guard; legacy_float32_residual_diagnosed; full_old_new_regression_not_completed; excluded_from60",
+    "template_blockers": [
+      {
+        "template": "dogbone",
+        "status": "blocked_by_failed_strict_gap_gate",
+        "known_old_configurations": [
+          "dogbone_3947a9233a95",
+          "dogbone_7c3790a560c4"
+        ],
+        "new_qualification_failures": [
+          "dogbone_1d1a039424c0",
+          "dogbone_78a30d45bbaa"
+        ],
+        "observed_negative_gap_range_author_units": [
+          -6.4373016357421875e-06,
+          -2.6226043701171875e-06
+        ],
+        "precision_diagnostic": "../_work/training-batch1-20261009/checks/dogbone_precision_diagnostic/diagnostic.json",
+        "scope": "Failed gates remain failed; old0.85 residual independently replayed as float32 accumulation and found in accepted history; new values require separate evidence. No tolerance or geometry change authorized; other templates continue."
+      }
+    ]
   }
 }
