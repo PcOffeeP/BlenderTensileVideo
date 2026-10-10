@@ -6098,7 +6098,7 @@
     }
   },
   "unified_annotations": {
-    "schema": "unified-video-label-export/1.0",
+    "schema": "unified-video-label-export/1.1",
     "scope": "all_65_indexed_simulation_videos",
     "record_count": 65,
     "user_accepted_count": 27,
@@ -6112,20 +6112,28 @@
     ],
     "xlsx": {
       "path": "../_work/unified-video-labels-20261010/all_videos_tag.xlsx",
-      "sha256": "d6072d326c74f70a7e7bb513e769ca8ae61d91fe5d6cb53cb08397b75e244ce9"
+      "sha256": "7f4394b6df0743d7d3ccda40dd9c1bea1239a0d6fb1473225313eeb45480f188"
     },
     "csv": {
       "path": "../_work/unified-video-labels-20261010/all_videos_tag.csv",
-      "sha256": "b5948c6948c811c72212118f3e0522b81a8b95f8d76b8277d0c4a24f063d79b5"
+      "sha256": "08efe92fa2a78f64251e4d9c90a93280474044e3f36c9313ad3e1028aaf3879b"
     },
     "export_verification": {
       "path": "../_work/unified-video-labels-20261010/export_verification.json",
-      "sha256": "4b160696cd5ef49144f54a46467c1b20a4ce33481b53e7b1efca37a3a39c9fe8"
+      "sha256": "aab59d774e79f2172d9fec9fd3ff1f10eac586ba81f5ebca9a6ceb29480e107b"
     },
-    "source_index_revision": "adc7dad",
-    "source_index_sha256": "19d6d5e4f2172a236375aa0ae0b23f934ad61eaf70b82915694cd4c82204b056",
+    "source_index_revision": "659d59d",
+    "source_index_sha256": "2a4bd364e1a2467de4d129bcf6ef5564dafd056472f5d7409f628cf4dfbb4905",
     "first_visual_event_time_unknown_count": 65,
     "training_released": false,
-    "note": "Consolidated labels follow the five columns of the actual real-video XLSX; verification notes preserve six labels and original acceptance states. No unknown event time is inferred from engineering events. Original metadata retained as evidence."
+    "note": "Consolidated five-column real-style labels; all65 simulation event times filled from original measured geometry records, acceptance states unchanged. Exact visual separation times remain unknown in notes.",
+    "simulation_event_time_filled_count": 65,
+    "simulation_event_time_unknown_count": 0,
+    "time_annotation_scope": "Measured final loss of through material or applicable clamp path in simulation; PTS=(one-based frame-1)/fps; not source experiment time or first visual separation.",
+    "time_annotation_review": {
+      "path": "../_work/unified-video-labels-20261010/time_annotation_review.json",
+      "sha256": "337929403846f329d5ea37ec3c62ed5642b301ee4d456b93f43f624850033e13",
+      "status": "passed_for_all_65_measured_simulation_event_times"
+    }
   }
 }

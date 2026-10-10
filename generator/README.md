@@ -92,7 +92,7 @@ ffmpeg -framerate 30 -start_number 1 -i /absolute/new/output/metal/frames/%04d.p
 
 ## 统一视频标注导出
 
-[export_video_labels.py](export_video_labels.py)（`unified-video-label-export/1.0`）从总索引读取已接受或检查通过待接受的视频，核对媒体、标签与文件校验值，输出一个集中 Excel 工作簿和同内容 CSV。主表沿用真实实验标签五列；核验说明保存完整六组标签、状态、媒体路径和已记录工程事件，未知视觉事件时间留空。需要 Python、openpyxl 和 ffprobe，不读取固定 `_work/` 输入，不更改视频、元数据或接受状态。
+[export_video_labels.py](export_video_labels.py)（`unified-video-label-export/1.1`）从总索引读取已接受或检查通过待接受的视频，核对媒体、标签与文件校验值，输出一个集中 Excel 工作簿和同内容 CSV。主表沿用真实实验标签五列；核验说明保存完整六组标签、状态、媒体路径和已记录工程事件，主表时间采用实际模拟最终失去贯通连接的事件，说明页记录精确秒、帧及原测量字段；精确首次视觉分离未知继续单独保存。需要 Python、openpyxl 和 ffprobe，不读取固定 `_work/` 输入，不更改视频、元数据或接受状态。
 
 ```sh
 python3 generator/export_video_labels.py --index outputs/index.json --output-dir /absolute/new/label-output

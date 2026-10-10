@@ -8,8 +8,9 @@ Requires Python 3.10+, openpyxl and ffprobe. Example from any directory::
 
 The five label columns match the real experiment workbook. Exporting includes
 both accepted videos and checked candidates, and does not authorize training.
-Version 1 preserves unknown directly usable visual event times as blanks;
-authored/mesh events never become visual-time annotations automatically.
+Version 1.1 uses the confirmed simulation event: final loss of the through
+material/clamp path, from existing actual geometry checks. Exact first visual
+event timing stays unknown and is kept distinct from this simulation clock.
 """
 
 from __future__ import annotations
@@ -28,7 +29,7 @@ from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
-VERSION = "unified-video-label-export/1.0"
+VERSION = "unified-video-label-export/1.1"
 TAG_COLUMNS = ("id", "断裂时间点", "断裂模式", "材料类型", "清晰度")
 SIX_GROUPS = ("材料类别", "断裂结果", "单一主要破坏类别", "断裂位置", "夹持异常", "拍摄异常")
 V4_FIELDS = ("clip_state", "fracture_mechanism", "fracture_site", "special_case")
@@ -38,7 +39,8 @@ DETAIL_COLUMNS = (
     "video_path", "metadata_path", *SIX_GROUPS, "六组核验依据", "核验标签读取位置",
     *V4_FIELDS, "V4已有字段依据及范围", "视频SHA256", "metadata_SHA256", "SHA核对",
     "视频时长秒", "视频帧率", "视频总帧数", "编码宽", "编码高", "媒体核对",
-    "首次视觉分离时间秒", "首次视觉分离帧", "时间留空原因",
+    "模拟断裂时间精确秒", "模拟断裂帧（1起）", "模拟断裂事件字段路径", "模拟断裂事件依据及口径",
+    "首次视觉分离时间秒", "首次视觉分离帧", "视觉时刻未知原因",
     "已记录模拟测量事件", "已记录作者工程事件与时序", "事件范围说明", "源时间记录",
     "原有未知项", "字段映射", "验收及审查记录",
 )
@@ -112,6 +114,113 @@ def media_info(video_path, ffprobe):
     }
 
 
+def field_at(metadata, path):
+    value = metadata
+    for part in path.split("."):
+        if not isinstance(value, dict) or part not in value:
+            return None
+        value = value[part]
+    return value
+
+
+def simulation_event(metadata, fps):
+    """Read applicable actual connectivity measurements, never native=1.
+
+    Two-container metal needs contact-welded geometric/clamp connectivity.
+    Single native-mesh polymer/ceramic can use measured connected-component
+    transitions. Final end-path loss in batch metadata already selects the
+    appropriate representation; first native path loss is not a fallback.
+    """
+    paths = (
+        "engineering_check_gate.measured_events.final_loss_of_end_path",
+        "technical_checks.measured_events.first_loss_of_geometric_path_frame",
+        "technical_verification.actual_path_loss_frame",
+        "technical_verification.summary.first_material_grip_path_loss_frame",
+        "technical_verification.summary.first_two_component_frame",
+        "technical_verification.summary.component_transition_frame",
+        "technical_checks.all_frame_summary.first_complete_rupture_frame_by_measured_clamp_path",
+        "technical_checks.mesh_summary.first_complete_rupture_frame_by_clamp_connectivity",
+        "technical_checks.mesh_summary.complete_rupture_onset_frame_1_based",
+        "technical_verification.actual_evaluated_mesh.first_two_component_frame",
+        "technical_verification.actual_evaluated_mesh_summary.component_transition_frame",
+        "technical_verification.all_frame_summary.actual_first_disconnection_frame",
+        "technical_verification.last_connection_to_complete_fracture.first_separated_frame",
+        "technical_verification.cut_transition.first_separated_frame",
+        "technical_checks.summary.first_loss_of_all_jaw_to_jaw_paths.frame",
+        "technical_checks.first_measured_separation_frame",
+    )
+    candidates = [(path, field_at(metadata, path)) for path in paths
+                  if type(field_at(metadata, path)) is int]
+    evidence = {"criterion": "既有实际适用材料/夹口贯通连接最终丧失；不取首次正间隙、首次开裂或仅作者设定的事件"}
+    if candidates:
+        path, frame = candidates[0]
+        if any(value != frame for _, value in candidates):
+            raise ValueError(f"Conflicting actual connectivity event records: {candidates}")
+        evidence["matching_actual_measurements"] = dict(candidates)
+    else:
+        # Legacy round bars preserve actual coincident-interface-welded edge
+        # graph samples, including both consecutive frames around rupture.
+        samples = field_at(metadata, "technical_checks.mesh.samples") or []
+        disconnected = [(n, sample) for n, sample in enumerate(samples)
+                        if sample.get("measured_geometric_components", 0) > 1]
+        if not disconnected:
+            raise ValueError("No applicable measured final through-path loss")
+        position, sample = min(disconnected, key=lambda pair: pair[1]["frame"])
+        frame = sample["frame"]
+        previous = [(n, s) for n, s in enumerate(samples) if s.get("frame") == frame - 1]
+        if len(previous) != 1 or previous[0][1].get("measured_geometric_components") != 1:
+            raise ValueError("Legacy geometry samples do not prove an adjacent connected-to-disconnected transition")
+        path = f"technical_checks.mesh.samples[{position}].frame"
+        evidence["geometry_method"] = field_at(metadata, "technical_checks.mesh.measurement_note")
+        evidence["adjacent_actual_samples"] = [
+            {"path": f"technical_checks.mesh.samples[{n}]", "frame": s["frame"],
+             "time_s": s["time_s"], "measured_geometric_components": s["measured_geometric_components"]}
+            for n, s in (previous[0], (position, sample))
+        ]
+    if frame <= 1:
+        raise ValueError("Frame 1 is not a measured connected-to-fractured event")
+    seconds = (frame - 1) / fps
+    corroborating = {}
+    for key in (
+        "technical_verification.actual_path_loss_time_s",
+        "time_mapping.declared_final_disconnection.time_s",
+        "generated_events.final_loss_of_grip_to_grip_material_path.time_s",
+        "time_mapping.events.final_loss_of_clamp_path.time_s",
+        "time_mapping.generated_event_s", "time_mapping.generated_event_pts_s",
+        "time_mapping.simulation_complete_fracture_s", "generated_time_map.rupture_time_s",
+        "technical_checks.mesh_summary.complete_rupture_pts_s",
+        "technical_checks.mesh_summary.interface_and_rupture_onset_pts_s",
+        "complete_config.event_time_s", "configuration.timeline.fracture_complete_time_s",
+    ):
+        value = field_at(metadata, key)
+        if type(value) in (int, float):
+            if not math.isclose(value, seconds, abs_tol=1e-7):
+                raise ValueError(f"Measured frame/time mismatch: {key}={value}; frame {frame} PTS={seconds}")
+            corroborating[key] = value
+    for sample in evidence.get("adjacent_actual_samples", []):
+        if not math.isclose(sample["time_s"], (sample["frame"] - 1) / fps, abs_tol=1e-7):
+            raise ValueError("Legacy measured sample PTS mismatch")
+        corroborating[sample["path"] + ".time_s"] = sample["time_s"]
+    if not corroborating:
+        raise ValueError("Measured event lacks corroborating original frame/time mapping")
+    evidence["original_time_fields"] = corroborating
+    evidence["frame_clock"] = f"1起帧；视频PTS=(frame-1)/{fps:g}，已与原JSON数值时刻核对"
+    synchronous = {}
+    for key in (
+        "engineering_check_gate.measured_events.first_interface_opening_above_tolerance",
+        "technical_checks.all_frame_summary.first_interface_opening_frame_by_measurement",
+        "technical_checks.mesh_summary.interface_opening_onset_frame_1_based",
+    ):
+        value = field_at(metadata, key)
+        if value is not None:
+            if value != frame:
+                raise ValueError("Interface debond event is not simultaneous with measured rupture")
+            synchronous[key] = value
+    if synchronous:
+        evidence["simultaneous_debond_measurements"] = synchronous
+    return {"frame_1_based": frame, "time_s": seconds, "field_path": path, "evidence": evidence}
+
+
 def event_records(metadata):
     """Select engineering records, preserving their source paths and wording."""
     measured = {}
@@ -177,9 +286,21 @@ def export_rows(index_path, ffprobe):
         for field in ("duration_s", "fps", "frames"):
             if not math.isclose(media[field], float(item[field]), abs_tol=1e-6):
                 raise ValueError(f"{video_id}: actual {field} differs from index")
+        recorded_video = metadata.get("video") or {}
+        for binding in (metadata.get("sha256"), metadata.get("video_sha256"), recorded_video.get("sha256")):
+            if binding is not None and binding != video_hash:
+                raise ValueError(f"{video_id}: metadata video hash binding mismatch")
+        for field in ("duration_s", "fps", "frames", "width", "height"):
+            if field in recorded_video and not math.isclose(float(recorded_video[field]), media[field], abs_tol=1e-6):
+                raise ValueError(f"{video_id}: metadata video {field} mismatch")
+        if "resolution" in recorded_video and recorded_video["resolution"] != [media["width"], media["height"]]:
+            raise ValueError(f"{video_id}: metadata video resolution mismatch")
+        event = simulation_event(metadata, media["fps"])
+        if event["frame_1_based"] > media["frames"]:
+            raise ValueError(f"{video_id}: measured event outside encoded video")
         # Pixel height follows the real workbook's P suffix, without claiming
         # subjective sharpness, or borrowing the source experiment resolution.
-        row = {"id": video_id, "断裂时间点": None,
+        row = {"id": video_id, "断裂时间点": f"{event['time_s']:.9f}".rstrip("0").rstrip(".") + " s",
                "断裂模式": labels["单一主要破坏类别"],
                "材料类型": labels["材料类别"], "清晰度": f"{media['height']}P"}
         preview = metadata.get("downstream_label_preview") or {}
@@ -196,7 +317,7 @@ def export_rows(index_path, ffprobe):
         source = metadata.get("source", {})
         source_times = {k: v for k, v in source.items()
                         if any(s in k for s in ("event", "annotation_time", "observed_separation"))}
-        reason = "真实表未细分事件口径；当前模拟JSON未核验可供断裂时间点列直接采用的精确视觉事件时刻，留空。作者事件、拓扑失贯通、首次正间隙及源实验标签时间不代填。"
+        reason = "精确首次视觉分离仍未专门核验。主表采用既有确认方案的模拟最终失去贯通连接时间，不宣称首次肉眼分离、物理裂纹起始或来源实验时间。"
         detail = {
             "id": video_id, "标题": item.get("title"), "源视频ID": item.get("source_id") or source.get("id"),
             "接受状态": "用户已接受单条视频" if accepted else "已核验，待用户逐条接受",
@@ -209,11 +330,13 @@ def export_rows(index_path, ffprobe):
             "视频SHA256": video_hash, "metadata_SHA256": metadata_hash, "SHA核对": "实际文件与索引一致",
             "视频时长秒": media["duration_s"], "视频帧率": media["fps"], "视频总帧数": media["frames"],
             "编码宽": media["width"], "编码高": media["height"], "媒体核对": "实际ffprobe与索引时长/帧率/帧数一致；本次未重做全解码/600帧网格检查",
-            "首次视觉分离时间秒": None, "首次视觉分离帧": None, "时间留空原因": reason,
+            "模拟断裂时间精确秒": event["time_s"], "模拟断裂帧（1起）": event["frame_1_based"],
+            "模拟断裂事件字段路径": event["field_path"], "模拟断裂事件依据及口径": compact(event["evidence"]),
+            "首次视觉分离时间秒": None, "首次视觉分离帧": None, "视觉时刻未知原因": reason,
             "已记录模拟测量事件": compact(measured), "已记录作者工程事件与时序": compact(authored),
             "事件范围说明": "仅转录原有工程/测量记录，未重新求值；native path、接触焊接路径、正间隙和视觉分离是不同事件。旧timeline可能继承模板，具体测量记录及当前配置分别保留，不合并成视觉时刻。",
             "源时间记录": compact(source_times), "原有未知项": compact(metadata.get("unknowns", [])),
-            "字段映射": "id=索引模拟视频ID；模式=当前核验单一主要破坏类别；材料=当前核验材料类别；清晰度=实际编码帧高P；断裂时间点=未知留空。",
+            "字段映射": "id=索引模拟视频ID；模式=当前核验单一主要破坏类别；材料=当前核验材料类别；清晰度=实际编码帧高P；断裂时间点=实际适用几何最终失贯通事件的模拟视频PTS，秒单位，保留9位小数精度。",
             "验收及审查记录": compact(review_summary(metadata)),
         }
         rows.append(row)
@@ -221,7 +344,7 @@ def export_rows(index_path, ffprobe):
         checks.append({"id": video_id, "status": status, "video_sha256": video_hash,
                        "metadata_sha256": metadata_hash, "media": media,
                        "labels": labels, "label_paths": label_paths, "existing_v4": bool(v4),
-                       "first_visual_event": None, "time_unknown_reason": reason})
+                       "simulation_event": event, "first_visual_event": None, "visual_time_unknown_reason": reason})
     if index_path.read_bytes() != index_bytes:
         raise ValueError("Index changed during export")
     for item, check in zip(index["items"], checks):
@@ -286,14 +409,15 @@ def main():
         {"字段或范围": "主表用途", "说明": "与真实实验现有XLSX相同5列；每条完整模拟视频1行。CSV与Sheet1相同。核验说明按id关联。"},
         {"字段或范围": "数量与状态", "说明": compact(dict(counts)) + f"；共{len(rows)}条，待接受视频不会自动变成已接受。"},
         {"字段或范围": "id", "说明": "模拟视频索引ID，保留原ID和文件名；源实验video_XXXX仅在核验说明源视频ID列。"},
-        {"字段或范围": "断裂时间点", "说明": "真实表未细分事件口径；当前模拟JSON未核验可供该列直接采用的精确视觉事件时刻，留空。已有工程/测量时刻单独转录；不把首次正间隙、拓扑失贯通或来源实验标签时间自动映射到该列。"},
+        {"字段或范围": "断裂时间点", "说明": "本项目沿用确认方案docs/fracture-variation-stage1.md第3.4节：最终失去贯通连接的模拟视频时刻。65条读取已有实际适用几何测量；脱粘模板核对同时失贯通事件。字符串如12 s，最多9位小数；精确秒、1起帧和原字段路径另列。不是首次正间隙、首次肉眼分离或源实验时刻。"},
+        {"字段或范围": "视觉时间未知", "说明": "首次可判读视觉分离仍65条未精确核验，说明页视觉时间/帧保持空白；这一未知不否定已有模拟几何失贯通时间。金属双容器不能采用first_native_path_absent=1，采用适用接触/几何夹口贯通连接测量。"},
         {"字段或范围": "断裂模式", "说明": "当前核验单一主要破坏类别原词；包括半脆半韧断裂、无法确认。旧0040来源爆炸性原标签不覆盖模拟核验无法确认。齐根是位置，不改写为模式。"},
         {"字段或范围": "材料类型", "说明": "当前核验材料类别；保留用户已确认材料，不按外观或历史源标签推翻。"},
         {"字段或范围": "清晰度", "说明": "实际ffprobe编码帧高加P（720P/540P等），不是主观质量，也不是原实验源分辨率。核验说明同时给出完整宽高。"},
         {"字段或范围": "六组核验标签", "说明": "与index的当前checked_labels一致；适配metadata checked_labels、checked_labels_six_groups、verified_labels。原记录包含历史限定状态，当前接受状态以索引和metadata顶层旗标核对。"},
         {"字段或范围": "已有V4四字段", "说明": "仅复制已有downstream_label_preview并核对索引有记录的payload；缺失不推导。special_case空白在已有payload中可表示null，不能以空白判定缺证据，详见相邻依据及范围。"},
         {"字段或范围": "训练与切片", "说明": "本次集中导出不是训练发布；待接受状态不变。整段视频标签不复制给未来切片，必须按实际切片输入重新标注。"},
-        {"字段或范围": "下游兼容", "说明": "未生成13列source_bootstrap输入，未改写ID/文件名/状态，未知时间为空；本表不宣称可直接消费或发布。"},
+        {"字段或范围": "下游兼容", "说明": "未生成13列source_bootstrap输入，未改写ID/文件名/状态；本表不宣称可直接消费或发布。"},
         {"字段或范围": "实际验证", "说明": "65条实际video/metadata SHA、当前标签、接受旗标、ffprobe时长帧率帧数逐项核对；CSV与XLSX保存后重读比较。未重渲染、未重做600帧网格检查或首次视觉时刻判定。"},
         {"字段或范围": "索引SHA256", "说明": index_hash},
     ]
@@ -306,8 +430,17 @@ def main():
     reread = load_workbook(xlsx_path, read_only=False, data_only=False)
     if list(reread["Sheet1"].values) != [TAG_COLUMNS] + [tuple(row[key] for key in TAG_COLUMNS) for row in rows]:
         raise ValueError("XLSX label roundtrip mismatch")
-    if list(reread["核验说明"].values) != [DETAIL_COLUMNS] + [tuple(row.get(key) for key in DETAIL_COLUMNS) for row in details]:
-        raise ValueError("XLSX evidence roundtrip mismatch")
+    actual_details = list(reread["核验说明"].values)
+    expected_details = [DETAIL_COLUMNS] + [tuple(row.get(key) for key in DETAIL_COLUMNS) for row in details]
+    if len(actual_details) != len(expected_details):
+        raise ValueError("XLSX evidence row count mismatch")
+    for actual_row, expected_row in zip(actual_details, expected_details):
+        for actual, expected in zip(actual_row, expected_row):
+            # Excel stores up to 15 significant decimal digits, so the
+            # repeating 551/30 seconds cannot roundtrip bit-for-bit.
+            same = math.isclose(actual, expected, rel_tol=0, abs_tol=1e-12) if type(expected) is float and type(actual) in (int, float) else actual == expected
+            if not same:
+                raise ValueError("XLSX evidence roundtrip mismatch")
     for row in reread["核验说明"].iter_rows(min_row=2):
         cell = row[DETAIL_COLUMNS.index("video_path")]
         if cell.hyperlink.target != Path(cell.value).as_uri():
@@ -315,11 +448,12 @@ def main():
     reread.close()
     report = {"schema": VERSION, "index_path": str(index_path), "index_sha256": index_hash,
               "count": len(rows), "status_counts": dict(counts), "columns": TAG_COLUMNS,
+              "simulation_event_time_count": len(rows), "simulation_event_unknown_count": 0,
               "first_visual_time_unknown_count": len(rows), "existing_v4_count": sum(c["existing_v4"] for c in checks),
               "csv_xlsx_roundtrip": "passed", "file_and_media_checks": checks,
               "outputs": {str(path): sha256(path) for path in (csv_path, xlsx_path)}}
     (output / "export_verification.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({key: report[key] for key in ("count", "status_counts", "first_visual_time_unknown_count", "existing_v4_count", "csv_xlsx_roundtrip", "outputs")}, ensure_ascii=False, indent=2))
+    print(json.dumps({key: report[key] for key in ("count", "status_counts", "simulation_event_time_count", "simulation_event_unknown_count", "first_visual_time_unknown_count", "existing_v4_count", "csv_xlsx_roundtrip", "outputs")}, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
