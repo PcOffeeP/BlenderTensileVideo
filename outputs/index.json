@@ -3,7 +3,7 @@
   "updated": "2026-10-10",
   "design_document": "../DESIGN.md",
   "design_version": "v1.12",
-  "status": "training_batch1_38_checked_pending_user_acceptance_22_strictly_blocked",
+  "status": "video_V1_65_user_confirmed_validation_dataset",
   "approved_video_count": 27,
   "reviewable_candidate_count": 38,
   "batch_complete": false,
@@ -14,7 +14,7 @@
       "title": "金属圆棒颈缩分离",
       "status": "user_accepted_video",
       "source_id": "video_0006",
-      "video_path": "current/metal_round_neck_separation/metal_round_ductile_baseline_v1.mp4",
+      "video_path": "video-V1/metal_round_ductile_baseline_v1.mp4",
       "metadata_path": "current/metal_round_neck_separation/metal_round_ductile_baseline_v1.json",
       "sha256": "acb37f0e079e850d4d0562bfd2af487e0b809bcf069e1b3af2652631ebe23b6f",
       "metadata_sha256": "5aee60030a3c0ef218d88ddec489efe5b03afaf5971fa96104a2815aa52d5481",
@@ -43,14 +43,15 @@
         "断裂位置": "标距内",
         "夹持异常": "无",
         "拍摄异常": "无"
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_round_brittle_baseline_v1",
       "title": "金属圆棒小变形突断",
       "status": "user_accepted_video",
       "source_id": "video_0003",
-      "video_path": "current/metal_round_brittle/metal_round_brittle_baseline_v1.mp4",
+      "video_path": "video-V1/metal_round_brittle_baseline_v1.mp4",
       "metadata_path": "current/metal_round_brittle/metal_round_brittle_baseline_v1.json",
       "sha256": "19b3f862a13f4c38200f41bc56e05171cc10ec6721859aeeb97b1b09b22ddc08",
       "metadata_sha256": "3b1e2ec70108c684398feed56dcabf66e561b0f2493d8350a0c6a207b9249915",
@@ -79,14 +80,15 @@
         "断裂位置": "标距内",
         "夹持异常": "无",
         "拍摄异常": "无"
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_black_dogbone_baseline_v2",
       "title": "高分子大伸长断裂",
       "status": "user_accepted_video",
       "source_id": "video_0097",
-      "video_path": "current/polymer_black_flexible_dogbone/polymer_black_dogbone_baseline_v2.mp4",
+      "video_path": "video-V1/polymer_black_dogbone_baseline_v2.mp4",
       "metadata_path": "current/polymer_black_flexible_dogbone/polymer_black_dogbone_baseline_v2.json",
       "sha256": "709bb8db6ee6bdbd28692d40b57f5e6d4248b1bb1368d9b045e8efd8a62b2eb7",
       "metadata_sha256": "c1c1a8a1893d8ff03dd6e6f32f229688f6f7af06ee58f433bcabe97defd8d38b",
@@ -115,14 +117,15 @@
         "断裂位置": "标距内",
         "夹持异常": "无",
         "拍摄异常": "无"
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_yellow_film_grip_root_baseline_v2",
       "title": "高分子薄膜夹口根部断裂",
       "status": "user_accepted_video",
       "source_id": "video_0025",
-      "video_path": "current/polymer_yellow_film_root_rupture/polymer_yellow_film_grip_root_baseline_v2.mp4",
+      "video_path": "video-V1/polymer_yellow_film_grip_root_baseline_v2.mp4",
       "metadata_path": "current/polymer_yellow_film_root_rupture/polymer_yellow_film_grip_root_baseline_v2.json",
       "sha256": "6dae1dcc436a826b095a99e0e78baa1a444199eea03800875c5f10cff81cbece",
       "metadata_sha256": "01253f3db4420b14f4b0e1accb60e7f009241e9a54119d63345d3051ce167aa4",
@@ -151,14 +154,15 @@
         "断裂位置": "夹口根部",
         "夹持异常": "无",
         "拍摄异常": "无"
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "composite_brittle_lower_feedback_v0_3",
       "title": "复材近下夹口突断",
       "status": "user_accepted_video",
       "source_id": "video_0100",
-      "video_path": "current/composite_brittle_lower/composite_brittle_lower_feedback_v0_3.mp4",
+      "video_path": "video-V1/composite_brittle_lower_feedback_v0_3.mp4",
       "metadata_path": "current/composite_brittle_lower/composite_brittle_lower_feedback_v0_3.json",
       "sha256": "fed17e58fe19af53240695aec7c464df4574aa55210980dc1e48fb78f0be404a",
       "metadata_sha256": "49279b9bd78467493cbdde302dd919873b4b06b6c6d2fe36d0569432d178a8a8",
@@ -187,14 +191,15 @@
         "断裂位置": "标距外非根部",
         "夹持异常": "无",
         "拍摄异常": "无"
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "ceramic_dogbone_brittle_baseline_v1",
       "title": "陶瓷小形变横向脆断",
       "status": "user_accepted_video",
       "source_id": "video_0050",
-      "video_path": "current/ceramic_dogbone_brittle/ceramic_dogbone_brittle_baseline_v1.mp4",
+      "video_path": "video-V1/ceramic_dogbone_brittle_baseline_v1.mp4",
       "metadata_path": "current/ceramic_dogbone_brittle/ceramic_dogbone_brittle_baseline_v1.json",
       "sha256": "0fe9e04c0b921765b56b98cdc5b92ee0e7b8a234e345dacb0c5dc79a677e246c",
       "metadata_sha256": "348c89e8e50f064a4eeb484cee0a2d3e66044b28ee8fbd8462338fd83a3a424e",
@@ -224,14 +229,15 @@
         "断裂位置": "标距内",
         "夹持异常": "无",
         "拍摄异常": "无"
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "composite_interface_debond_simultaneous_baseline_v0_4",
       "title": "复材断裂与界面脱粘同时发生",
       "status": "user_accepted_video",
       "source_id": "video_0020",
-      "video_path": "current/composite_interface_debond_simultaneous_complete/composite_interface_debond_simultaneous_baseline_v0_4.mp4",
+      "video_path": "video-V1/composite_interface_debond_simultaneous_baseline_v0_4.mp4",
       "metadata_path": "current/composite_interface_debond_simultaneous_complete/composite_interface_debond_simultaneous_baseline_v0_4.json",
       "sha256": "ff4b576ffd2c29a7c9812ce161ea4f8433993fe013183e5d082d9d7e3a963581",
       "metadata_sha256": "8950fcf7f9063ead92aab4d18736aeaf54ffe82088c3192d4db52585e86c3950",
@@ -260,7 +266,8 @@
         "断裂位置": "标距内",
         "夹持异常": "无",
         "拍摄异常": "无"
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_pale_green_brittle_flat_strip_baseline_v1",
@@ -268,7 +275,7 @@
       "title": "高分子窄平条脆断",
       "status": "user_accepted_video",
       "source_id": "video_0032",
-      "video_path": "current/polymer_pale_green_brittle_flat_strip/polymer_pale_green_brittle_flat_strip_baseline_v1.mp4",
+      "video_path": "video-V1/polymer_pale_green_brittle_flat_strip_baseline_v1.mp4",
       "metadata_path": "current/polymer_pale_green_brittle_flat_strip/polymer_pale_green_brittle_flat_strip_baseline_v1.json",
       "sha256": "5c7d0fd1f5a519c7040a99101a2dbb79a43cb04e7c474b1c4e14a3d206226ddc",
       "metadata_sha256": "1cf611ba56bbdda42527a88bd02f1985ce1b9ce8e4b355a202a35ed6e923d933",
@@ -298,7 +305,8 @@
       "parameter_range_accepted": false,
       "training_released": false,
       "expected_mode_coverage_verified": true,
-      "acceptance_scope": "single_video_visual_acceptance"
+      "acceptance_scope": "single_video_visual_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_finite_deformation_oblique_rupture_baseline_v1",
@@ -306,7 +314,7 @@
       "title": "高分子均匀拉长后瞬时脆断（半脆半韧）",
       "status": "user_accepted_video",
       "source_id": "video_0014",
-      "video_path": "current/polymer_finite_deformation_oblique_rupture/polymer_finite_deformation_oblique_rupture_baseline_v1.mp4",
+      "video_path": "video-V1/polymer_finite_deformation_oblique_rupture_baseline_v1.mp4",
       "metadata_path": "current/polymer_finite_deformation_oblique_rupture/polymer_finite_deformation_oblique_rupture_baseline_v1.json",
       "sha256": "63bf46edbf5065c37f3114e864fb3f7fca5b41fbbcc259e38c51bcdf1dfbfeb6",
       "metadata_sha256": "46c4b124d250b47d1a1910d91cb504bce9f5ac07eeb907da6992e35ab8229271",
@@ -337,7 +345,8 @@
       "training_released": false,
       "expected_mode_coverage_verified": true,
       "acceptance_scope": "single_video_visual_acceptance",
-      "mode_confirmation_basis": "user_project_visual_criterion_DESIGN_v1.9"
+      "mode_confirmation_basis": "user_project_visual_criterion_DESIGN_v1.9",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "composite_rapid_strand_fragmentation_baseline_v0_1",
@@ -345,7 +354,7 @@
       "title": "复材快速分束断裂（爆炸性预期）",
       "status": "user_accepted_video",
       "source_id": "video_0040",
-      "video_path": "current/composite_rapid_strand_fragmentation/composite_rapid_strand_fragmentation_baseline_v0_1.mp4",
+      "video_path": "video-V1/composite_rapid_strand_fragmentation_baseline_v0_1.mp4",
       "metadata_path": "current/composite_rapid_strand_fragmentation/composite_rapid_strand_fragmentation_baseline_v0_1.json",
       "sha256": "7216102004e389b2472c15f382984a21e0d55038ad5066eedb2ba5e020e6881d",
       "metadata_sha256": "0c62d6767398d7131fcaa16e0573a0d8b6af675a8a80e09f75251adfc3fb06d3",
@@ -375,7 +384,8 @@
       "parameter_range_accepted": false,
       "training_released": false,
       "expected_mode_coverage_verified": false,
-      "acceptance_scope": "single_video_visual_acceptance"
+      "acceptance_scope": "single_video_visual_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_flat_limited_deformation_rupture_baseline_v1",
@@ -383,7 +393,7 @@
       "title": "金属平板有限变形后断裂（韧性预期，主模式未知）",
       "status": "user_accepted_video",
       "source_id": "video_0058",
-      "video_path": "current/metal_flat_limited_deformation_rupture/metal_flat_limited_deformation_rupture_baseline_v1.mp4",
+      "video_path": "video-V1/metal_flat_limited_deformation_rupture_baseline_v1.mp4",
       "metadata_path": "current/metal_flat_limited_deformation_rupture/metal_flat_limited_deformation_rupture_baseline_v1.json",
       "sha256": "b1e9ec7b708cdf621721b4e1300506d002f51f5f59907489279a8c71bcb6d065",
       "metadata_sha256": "97dc9073ca123a2d15d8b4b597e6b21b89bf636b37025bd405dd893d459aa92d",
@@ -413,7 +423,8 @@
       "parameter_range_accepted": false,
       "training_released": false,
       "expected_mode_coverage_verified": false,
-      "acceptance_scope": "single_video_visual_acceptance"
+      "acceptance_scope": "single_video_visual_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_round_ductile_stage1_a2_v1",
@@ -421,7 +432,7 @@
       "style_id": "metal_round_ductile",
       "source_id": "video_0006",
       "status": "user_accepted_video",
-      "video_path": "current/metal_round_ductile/metal_round_ductile_stage1_a2_v1.mp4",
+      "video_path": "video-V1/metal_round_ductile_stage1_a2_v1.mp4",
       "metadata_path": "current/metal_round_ductile/metal_round_ductile_stage1_a2_v1.json",
       "sha256": "30e92252e1d53c89d9bf56ec5738cb183f0bd7d297d74af887af86394fd4638d",
       "metadata_sha256": "778e959649c7c3c4a6cac60d15369287ffdf6297250eafdeb3a5852743fdf95f",
@@ -489,7 +500,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_round_brittle_stage1_center_p075_v1",
@@ -497,7 +509,7 @@
       "style_id": "metal_round_brittle",
       "source_id": "video_0003",
       "status": "user_accepted_video",
-      "video_path": "current/metal_round_brittle/metal_round_brittle_stage1_center_p075_v1.mp4",
+      "video_path": "video-V1/metal_round_brittle_stage1_center_p075_v1.mp4",
       "metadata_path": "current/metal_round_brittle/metal_round_brittle_stage1_center_p075_v1.json",
       "sha256": "9c76f1f2a0b91797ec3637e309259b94f8e14b0683f028f0a15c388b33645bc8",
       "metadata_sha256": "a84c606f98c4255f9dfd929f9cfce96d5f9a2f247654d208999789da9a5f869c",
@@ -565,7 +577,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_black_dogbone_stage1_stretch085_v1",
@@ -573,7 +586,7 @@
       "style_id": "polymer_black_flexible_dogbone",
       "source_id": "video_0097",
       "status": "user_accepted_video",
-      "video_path": "current/polymer_black_flexible_dogbone/polymer_black_dogbone_stage1_stretch085_v1.mp4",
+      "video_path": "video-V1/polymer_black_dogbone_stage1_stretch085_v1.mp4",
       "metadata_path": "current/polymer_black_flexible_dogbone/polymer_black_dogbone_stage1_stretch085_v1.json",
       "sha256": "a8fa1902111210a45fff4d616ee5e620743f253d8cdbde63e3beed4a80593ed6",
       "metadata_sha256": "477fe325cab1cfcd2fc176ba6194302eb87914a8d4b648a35a0a215514e9d3d0",
@@ -641,7 +654,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_brittle_stage1_position055_v1",
@@ -649,7 +663,7 @@
       "style_id": "polymer_pale_green_brittle_flat_strip",
       "source_id": "video_0032",
       "status": "user_accepted_video",
-      "video_path": "current/polymer_pale_green_brittle_flat_strip/polymer_brittle_stage1_position055_v1.mp4",
+      "video_path": "video-V1/polymer_brittle_stage1_position055_v1.mp4",
       "metadata_path": "current/polymer_pale_green_brittle_flat_strip/polymer_brittle_stage1_position055_v1.json",
       "sha256": "a0e084d4e056e37e3a6c9d5f173bcac04e9e3d50cce7a1ca5a436162d8e10048",
       "metadata_sha256": "747c34ef2e48b46861fcc9a26d3f5f05029f1ab8fcd354b2c30529b794c3e423",
@@ -717,7 +731,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_mixed_stage1_stretch115_v1",
@@ -725,7 +740,7 @@
       "style_id": "polymer_finite_deformation_oblique_rupture",
       "source_id": "video_0014",
       "status": "user_accepted_video",
-      "video_path": "current/polymer_finite_deformation_oblique_rupture/polymer_mixed_stage1_stretch115_v1.mp4",
+      "video_path": "video-V1/polymer_mixed_stage1_stretch115_v1.mp4",
       "metadata_path": "current/polymer_finite_deformation_oblique_rupture/polymer_mixed_stage1_stretch115_v1.json",
       "sha256": "1e6efd113d7e510615870599b32383f37ccdd2a04d167d364890414342366935",
       "metadata_sha256": "6bf42829c969cdebc20de70d8b27ce3f0b65d2d48cac803751d17f75cec78278",
@@ -793,7 +808,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "composite_brittle_stage1_position_minus012_v1",
@@ -801,7 +817,7 @@
       "style_id": "composite_brittle_lower",
       "source_id": "video_0100",
       "status": "user_accepted_video",
-      "video_path": "current/composite_brittle_lower/composite_brittle_stage1_position_minus012_v1.mp4",
+      "video_path": "video-V1/composite_brittle_stage1_position_minus012_v1.mp4",
       "metadata_path": "current/composite_brittle_lower/composite_brittle_stage1_position_minus012_v1.json",
       "sha256": "2372c4c4108ef2696f8e2ede4fcb62ff65b8747d4d13f74f2abad11075478e21",
       "metadata_sha256": "b52d6c24964e19e9ce37cc26e7a1ad17efd129f98c1eb9d310ed66fe4eaf36fd",
@@ -869,7 +885,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "composite_debond_stage1_length080_v1",
@@ -877,7 +894,7 @@
       "style_id": "composite_interface_debond_simultaneous_complete",
       "source_id": "video_0020",
       "status": "user_accepted_video",
-      "video_path": "current/composite_interface_debond_simultaneous_complete/composite_debond_stage1_length080_v1.mp4",
+      "video_path": "video-V1/composite_debond_stage1_length080_v1.mp4",
       "metadata_path": "current/composite_interface_debond_simultaneous_complete/composite_debond_stage1_length080_v1.json",
       "sha256": "4628f018e1fe17bc66fa3baf9a994a182d77645005342ab94432d3327a617387",
       "metadata_sha256": "65616926c3e968cd7c1dba9aa3e6d17c21696f1266f786da54fd95fa9bea02cc",
@@ -945,7 +962,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "composite_debond_stage1_opening120_v1",
@@ -953,7 +971,7 @@
       "style_id": "composite_interface_debond_simultaneous_complete",
       "source_id": "video_0020",
       "status": "user_accepted_video",
-      "video_path": "current/composite_interface_debond_simultaneous_complete/composite_debond_stage1_opening120_v1.mp4",
+      "video_path": "video-V1/composite_debond_stage1_opening120_v1.mp4",
       "metadata_path": "current/composite_interface_debond_simultaneous_complete/composite_debond_stage1_opening120_v1.json",
       "sha256": "ef09a7b1f0ed1dd70183a78f7979dfb4dda6cfc58f43046211b545b9da2e47b6",
       "metadata_sha256": "d167b99176ceaddbbc86ca365e0fda69b1ed896086fd86ed3883854e45f37a44",
@@ -1021,7 +1039,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "ceramic_brittle_stage1_time12_v1",
@@ -1029,7 +1048,7 @@
       "style_id": "ceramic_dogbone_brittle",
       "source_id": "video_0050",
       "status": "user_accepted_video",
-      "video_path": "current/ceramic_dogbone_brittle/ceramic_brittle_stage1_time12_v1.mp4",
+      "video_path": "video-V1/ceramic_brittle_stage1_time12_v1.mp4",
       "metadata_path": "current/ceramic_dogbone_brittle/ceramic_brittle_stage1_time12_v1.json",
       "sha256": "90286477080b9341383aea821778f2e1e4dcc5599dff6c40baa39b8fe9102a05",
       "metadata_sha256": "1367757e71da97e122e1c063c17dc9bebcd556a16138a9db047b8ba21c76a230",
@@ -1097,7 +1116,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_round_ductile_coupled_a2_time12_v1",
@@ -1105,7 +1125,7 @@
       "style_id": "metal_round_ductile",
       "source_id": "video_0006",
       "status": "user_accepted_video",
-      "video_path": "current/metal_round_ductile/metal_round_ductile_coupled_a2_time12_v1.mp4",
+      "video_path": "video-V1/metal_round_ductile_coupled_a2_time12_v1.mp4",
       "metadata_path": "current/metal_round_ductile/metal_round_ductile_coupled_a2_time12_v1.json",
       "sha256": "e9c8037d2f14372649b66cebb3c59f21501ec3c3d7a6f8e05bf4d8d7f6914a2f",
       "metadata_sha256": "f650ad568a56abc046d59a237903d66e92e381be0f05bd32c5be1bbb9bbed844",
@@ -1173,7 +1193,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_round_brittle_coupled_center_p075_time15_v1",
@@ -1181,7 +1202,7 @@
       "style_id": "metal_round_brittle",
       "source_id": "video_0003",
       "status": "user_accepted_video",
-      "video_path": "current/metal_round_brittle/metal_round_brittle_coupled_center_p075_time15_v1.mp4",
+      "video_path": "video-V1/metal_round_brittle_coupled_center_p075_time15_v1.mp4",
       "metadata_path": "current/metal_round_brittle/metal_round_brittle_coupled_center_p075_time15_v1.json",
       "sha256": "1aec598054a268bd0e8ba0bd705504b2cd8218564b1461e6846c37023df1a849",
       "metadata_sha256": "0c698643f851ccc76ecf40a9794c87f543d56b70766f0662eda026cc0f935917",
@@ -1249,7 +1270,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_dogbone_coupled_stretch085_time17_v1",
@@ -1257,7 +1279,7 @@
       "style_id": "polymer_black_flexible_dogbone",
       "source_id": "video_0097",
       "status": "user_accepted_video",
-      "video_path": "current/polymer_black_flexible_dogbone/polymer_dogbone_coupled_stretch085_time17_v1.mp4",
+      "video_path": "video-V1/polymer_dogbone_coupled_stretch085_time17_v1.mp4",
       "metadata_path": "current/polymer_black_flexible_dogbone/polymer_dogbone_coupled_stretch085_time17_v1.json",
       "sha256": "f8b465299eb63cc1f3f30a450acc30416e51456e68c54377aad67fd113830385",
       "metadata_sha256": "8c07efb7b5e112ab9e933498184f8643dd69d83f1e3c08260d82e610b0609292",
@@ -1325,7 +1347,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_brittle_coupled_position055_time12_v1",
@@ -1333,7 +1356,7 @@
       "style_id": "polymer_pale_green_brittle_flat_strip",
       "source_id": "video_0032",
       "status": "user_accepted_video",
-      "video_path": "current/polymer_pale_green_brittle_flat_strip/polymer_brittle_coupled_position055_time12_v1.mp4",
+      "video_path": "video-V1/polymer_brittle_coupled_position055_time12_v1.mp4",
       "metadata_path": "current/polymer_pale_green_brittle_flat_strip/polymer_brittle_coupled_position055_time12_v1.json",
       "sha256": "c7e93f5ca20cd38fe93882d73b33425aceedae1b935ddafef4d58a2abcd7f598",
       "metadata_sha256": "50df6b88f8ea3e8c32c3c71ca1331432fb64972f494f0c82e9d89831af238d81",
@@ -1401,7 +1424,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_mixed_coupled_stretch115_time15_v1",
@@ -1409,7 +1433,7 @@
       "style_id": "polymer_finite_deformation_oblique_rupture",
       "source_id": "video_0014",
       "status": "user_accepted_video",
-      "video_path": "current/polymer_finite_deformation_oblique_rupture/polymer_mixed_coupled_stretch115_time15_v1.mp4",
+      "video_path": "video-V1/polymer_mixed_coupled_stretch115_time15_v1.mp4",
       "metadata_path": "current/polymer_finite_deformation_oblique_rupture/polymer_mixed_coupled_stretch115_time15_v1.json",
       "sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492",
       "metadata_sha256": "6c3757cafd6a992590bbd6c73e088a1309841404333b1564b30663e01591d034",
@@ -1477,7 +1501,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "composite_brittle_coupled_center_minus195_time12_v1",
@@ -1485,7 +1510,7 @@
       "style_id": "composite_brittle_lower",
       "source_id": "video_0100",
       "status": "user_accepted_video",
-      "video_path": "current/composite_brittle_lower/composite_brittle_coupled_center_minus195_time12_v1.mp4",
+      "video_path": "video-V1/composite_brittle_coupled_center_minus195_time12_v1.mp4",
       "metadata_path": "current/composite_brittle_lower/composite_brittle_coupled_center_minus195_time12_v1.json",
       "sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2",
       "metadata_sha256": "8d6a5b3cc652a855ecf132475783af96d8ec0a7db6a3977a76c097bbe62bc6db",
@@ -1553,7 +1578,8 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "composite_debond_coupled_length080_opening120_time15_v1",
@@ -1561,7 +1587,7 @@
       "style_id": "composite_interface_debond_simultaneous_complete",
       "source_id": "video_0020",
       "status": "user_accepted_video",
-      "video_path": "current/composite_interface_debond_simultaneous_complete/composite_debond_coupled_length080_opening120_time15_v1.mp4",
+      "video_path": "video-V1/composite_debond_coupled_length080_opening120_time15_v1.mp4",
       "metadata_path": "current/composite_interface_debond_simultaneous_complete/composite_debond_coupled_length080_opening120_time15_v1.json",
       "sha256": "645a632daf815b8b4bb48eb64e9652536e5a992cd45c97c6fec7068703e3b32a",
       "metadata_sha256": "d3500515c306451886051280cd17184c443a807fdc6578f37949746a41836d34",
@@ -1629,13 +1655,14 @@
         "style_accepted": false,
         "parameter_range_accepted": false,
         "training_released": false
-      }
+      },
+      "validation_dataset": "video-V1"
     },
     {
       "id": "ceramic_54c9123982ca",
       "template": "ceramic",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009/execution/runs/ceramic_54c9123982ca/a99ea32b123b992f/ceramic_54c9123982ca.mp4",
+      "video_path": "video-V1/ceramic_54c9123982ca.mp4",
       "metadata_path": "../_work/training-batch1-20261009/execution/runs/ceramic_54c9123982ca/a99ea32b123b992f/ceramic_54c9123982ca.json",
       "sha256": "641aecc653e5c88369fccff3d58d96656352729c78875ee39e4a541e3eb21aaa",
       "main_final_video_view_completed": true,
@@ -1678,13 +1705,14 @@
         "path": "../_work/training-batch1-20261009/review/ceramic_metadata_archive_recheck.json",
         "sha256": "e97c8394d931c56b6dd4ab90b87c0b24f49af1775edd34fc3b7e795d531aab69"
       },
-      "pending_reasons": []
+      "pending_reasons": [],
+      "validation_dataset": "video-V1"
     },
     {
       "id": "ceramic_fafb6d038402",
       "template": "ceramic",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009/execution/runs/ceramic_fafb6d038402/321ad3776c4157e1/ceramic_fafb6d038402.mp4",
+      "video_path": "video-V1/ceramic_fafb6d038402.mp4",
       "metadata_path": "../_work/training-batch1-20261009/execution/runs/ceramic_fafb6d038402/321ad3776c4157e1/ceramic_fafb6d038402.json",
       "sha256": "4acc117d71ddf8959c321ed355690fa81ad3ee5b4627b94645d8691b96374235",
       "main_final_video_view_completed": true,
@@ -1727,13 +1755,14 @@
         "path": "../_work/training-batch1-20261009/review/ceramic_metadata_archive_recheck.json",
         "sha256": "e97c8394d931c56b6dd4ab90b87c0b24f49af1775edd34fc3b7e795d531aab69"
       },
-      "pending_reasons": []
+      "pending_reasons": [],
+      "validation_dataset": "video-V1"
     },
     {
       "id": "composite_brittle_40de05bc8db6",
       "template": "composite_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_40de05bc8db6/cf31a152fc1a013c/composite_brittle_40de05bc8db6.mp4",
+      "video_path": "video-V1/composite_brittle_40de05bc8db6.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_40de05bc8db6/cf31a152fc1a013c/composite_brittle_40de05bc8db6.json",
       "sha256": "b7d80b3fd70dd549423c37b9c0b93f7337fa009144395dc7cdbc0c47ce9c3180",
       "metadata_sha256": "9a697434fa6f16e93cde104cd0915da2c608934390be5d8851b3e536518c8868",
@@ -1781,13 +1810,14 @@
         "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
       },
       "pending_reasons": [],
-      "metadata_finalizer_applied": true
+      "metadata_finalizer_applied": true,
+      "validation_dataset": "video-V1"
     },
     {
       "id": "composite_brittle_71add4d43545",
       "template": "composite_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_71add4d43545/4b01eabc2cde4b14/composite_brittle_71add4d43545.mp4",
+      "video_path": "video-V1/composite_brittle_71add4d43545.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_71add4d43545/4b01eabc2cde4b14/composite_brittle_71add4d43545.json",
       "sha256": "9a0940ea72dcc5771aac675ecbcb7f19679382fab0699c12cf3277cb4019408b",
       "metadata_sha256": "7d6dd7bb72fe6b362fc3260fc61400e2dc66bf1ff018c40487e8b6f7a8e3d6fb",
@@ -1835,13 +1865,14 @@
         "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
       },
       "pending_reasons": [],
-      "metadata_finalizer_applied": true
+      "metadata_finalizer_applied": true,
+      "validation_dataset": "video-V1"
     },
     {
       "id": "composite_brittle_85e1faca3a2f",
       "template": "composite_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.mp4",
+      "video_path": "video-V1/composite_brittle_85e1faca3a2f.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.json",
       "sha256": "72caa9c42c92990c72c1447983b49fd6707d5834e0117464dec30f707e1c5aa3",
       "metadata_sha256": "aacc3034ef432045a855a40e8167aa1f5515770f682d2e8fb0b7ead86895a0fb",
@@ -1889,13 +1920,14 @@
         "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
       },
       "pending_reasons": [],
-      "metadata_finalizer_applied": true
+      "metadata_finalizer_applied": true,
+      "validation_dataset": "video-V1"
     },
     {
       "id": "composite_brittle_f8c38a77a63d",
       "template": "composite_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.mp4",
+      "video_path": "video-V1/composite_brittle_f8c38a77a63d.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.json",
       "sha256": "f3cf15df21302ad1b6b7932a7d32f6454616b8d51c7c5bb17e0b65557e31f66f",
       "metadata_sha256": "6a350158a82596dc9b535f57841ec4122ae6a267fc1786254c3b5e3f7b3d3c7d",
@@ -1943,13 +1975,14 @@
         "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
       },
       "pending_reasons": [],
-      "metadata_finalizer_applied": true
+      "metadata_finalizer_applied": true,
+      "validation_dataset": "video-V1"
     },
     {
       "id": "debond_19ad315937d9",
       "template": "debond",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.mp4",
+      "video_path": "video-V1/debond_19ad315937d9.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.json",
       "sha256": "e1d63ae77184b7f349baedd2f8214a65d653a670bb7dc5d2b0363c5c5bd33ddb",
       "metadata_sha256": "14c582fefa6b6a57203eb0e5a2fe801a71ebc372e8085c04de1ea741224981aa",
@@ -1997,13 +2030,14 @@
         "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
       },
       "pending_reasons": [],
-      "metadata_finalizer_applied": true
+      "metadata_finalizer_applied": true,
+      "validation_dataset": "video-V1"
     },
     {
       "id": "debond_3a83e6589f3c",
       "template": "debond",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.mp4",
+      "video_path": "video-V1/debond_3a83e6589f3c.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.json",
       "sha256": "cd1b961b8b2797823de92e9cf8d95b4d8f7bbd581061e7dd3c5bec6cddf39992",
       "metadata_sha256": "f39ca49704c99285ef7352b20f7eb8c1959e245e5be59ceecb0eda7e2ad5f911",
@@ -2051,13 +2085,14 @@
         "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
       },
       "pending_reasons": [],
-      "metadata_finalizer_applied": true
+      "metadata_finalizer_applied": true,
+      "validation_dataset": "video-V1"
     },
     {
       "id": "debond_633abced1e80",
       "template": "debond",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.mp4",
+      "video_path": "video-V1/debond_633abced1e80.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.json",
       "sha256": "6bb1a62d1b1401bb09e756e7654918f2baeae34517b854de3bc00cef3802250b",
       "metadata_sha256": "8a7269a4d0c2c880b58a4ad28ae729d31379ce6f273102e6a6e60e74e9c5a238",
@@ -2105,13 +2140,14 @@
         "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
       },
       "pending_reasons": [],
-      "metadata_finalizer_applied": true
+      "metadata_finalizer_applied": true,
+      "validation_dataset": "video-V1"
     },
     {
       "id": "debond_9a6e9873f857",
       "template": "debond",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.mp4",
+      "video_path": "video-V1/debond_9a6e9873f857.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.json",
       "sha256": "fdc8df3d1e643cf5855a4afb19b221850a4146b83e7adb944f5d2c4759cb4b3e",
       "metadata_sha256": "fa5a8550253710f26ea0f3bacb4aa18bf66eddb6a2a980a5f853ce7004f21abe",
@@ -2159,13 +2195,14 @@
         "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
       },
       "pending_reasons": [],
-      "metadata_finalizer_applied": true
+      "metadata_finalizer_applied": true,
+      "validation_dataset": "video-V1"
     },
     {
       "id": "debond_f1b9bd026fc6",
       "template": "debond",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.mp4",
+      "video_path": "video-V1/debond_f1b9bd026fc6.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.json",
       "sha256": "08ce4e7c85d6ade0c370b940b121b80970ee1a83baa0bb9a54ebd05599d04187",
       "metadata_sha256": "bd57a883a0af85fa2b5c15a3a971db3bd475cd8825318837e5a920ebe8bfb22b",
@@ -2213,13 +2250,14 @@
         "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
       },
       "pending_reasons": [],
-      "metadata_finalizer_applied": true
+      "metadata_finalizer_applied": true,
+      "validation_dataset": "video-V1"
     },
     {
       "id": "debond_f8acebcca850",
       "template": "debond",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.mp4",
+      "video_path": "video-V1/debond_f8acebcca850.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.json",
       "sha256": "97108961137d83a4fe0e95c4b486170f882884ac4a02537bf4f214a9da13eeb0",
       "metadata_sha256": "712f5528e3ee851bf7cb85fe9f684dcaf7632b02e3f363d0c1e65abe114e7887",
@@ -2267,13 +2305,14 @@
         "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
       },
       "pending_reasons": [],
-      "metadata_finalizer_applied": true
+      "metadata_finalizer_applied": true,
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_brittle_24b9f8453ffd",
       "template": "metal_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_24b9f8453ffd/299b1b60ab02fa6d/metal_brittle_24b9f8453ffd.mp4",
+      "video_path": "video-V1/metal_brittle_24b9f8453ffd.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_24b9f8453ffd/299b1b60ab02fa6d/metal_brittle_24b9f8453ffd.json",
       "sha256": "96b7fc198941bf66bb5f570954656ff3305edc125352d301de186c29a40e66af",
       "metadata_sha256": "a98862a5c17cdc7694841481a719fbcb6801890fa75c950f3e0fa52bc261f2d1",
@@ -2321,13 +2360,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
         "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_brittle_5208fef67de7",
       "template": "metal_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_5208fef67de7/e0d63d0994544642/metal_brittle_5208fef67de7.mp4",
+      "video_path": "video-V1/metal_brittle_5208fef67de7.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_5208fef67de7/e0d63d0994544642/metal_brittle_5208fef67de7.json",
       "sha256": "22df21c45fe8ecd22c9d0eae507838f8c56ded13dcaa971585285391ce0a0a05",
       "metadata_sha256": "de80047815bf500ae3864d79fac9343a4b89e127b536f76a1a6ff346a03fafdc",
@@ -2375,13 +2415,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
         "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_brittle_8fd177bc37cd",
       "template": "metal_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_8fd177bc37cd/afbfd0a64e7ecd6c/metal_brittle_8fd177bc37cd.mp4",
+      "video_path": "video-V1/metal_brittle_8fd177bc37cd.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_8fd177bc37cd/afbfd0a64e7ecd6c/metal_brittle_8fd177bc37cd.json",
       "sha256": "74fce195156abf7108f65a1d75f74fc5a902de9d731439ef950f770977ae6562",
       "metadata_sha256": "721495965c017a26b738eb1621ea2fff1e7734da5d224c2c113831e6dd5bb634",
@@ -2429,13 +2470,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
         "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_brittle_95bf83c84c0a",
       "template": "metal_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_95bf83c84c0a/630254443bf4d0f8/metal_brittle_95bf83c84c0a.mp4",
+      "video_path": "video-V1/metal_brittle_95bf83c84c0a.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_95bf83c84c0a/630254443bf4d0f8/metal_brittle_95bf83c84c0a.json",
       "sha256": "83c1a8bc7f72ceb15434f32d09a43a67bc8552b3974056253a0a3415460ff2c5",
       "metadata_sha256": "21e17109028d75bcf4341ed77b02d709cfdac6db1fc9a362a9ef5114e3378885",
@@ -2483,13 +2525,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
         "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_brittle_c3f0c995c8ef",
       "template": "metal_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_c3f0c995c8ef/f6429b6982180419/metal_brittle_c3f0c995c8ef.mp4",
+      "video_path": "video-V1/metal_brittle_c3f0c995c8ef.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_c3f0c995c8ef/f6429b6982180419/metal_brittle_c3f0c995c8ef.json",
       "sha256": "af77f19769bb1cc898025ed6be3c3627f561a722b92161940c2f6df0d2ec713e",
       "metadata_sha256": "4ad4bff695ef9c1688fbf8fc92d7532ab2af8c66db89225f261f79469176d768",
@@ -2537,13 +2580,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
         "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_brittle_cc100241b5f7",
       "template": "metal_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_cc100241b5f7/d57ef5d42534ee45/metal_brittle_cc100241b5f7.mp4",
+      "video_path": "video-V1/metal_brittle_cc100241b5f7.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_cc100241b5f7/d57ef5d42534ee45/metal_brittle_cc100241b5f7.json",
       "sha256": "412cc4be06f6a3c7ae61d86083f1257c7548021cb1e290c9531439333a4eb71e",
       "metadata_sha256": "5bd54c6dd0b63a5d74e475dc5aa3a3dc692f89f6921cfcc054de21a732385de9",
@@ -2591,13 +2635,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
         "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_brittle_d113c4e01c83",
       "template": "metal_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_d113c4e01c83/139b32c24bc6bc14/metal_brittle_d113c4e01c83.mp4",
+      "video_path": "video-V1/metal_brittle_d113c4e01c83.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_d113c4e01c83/139b32c24bc6bc14/metal_brittle_d113c4e01c83.json",
       "sha256": "7eabf55a10f678daae08ffb78838bfb22b0ac2598e4ef7371b0964618b2ee21e",
       "metadata_sha256": "3406b401e92b9fc7f7a4fee7fb8ca44fa559399e51b3167d610856229b435819",
@@ -2645,13 +2690,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
         "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "metal_brittle_dda4b5e6e727",
       "template": "metal_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_dda4b5e6e727/0ce641ad891eda47/metal_brittle_dda4b5e6e727.mp4",
+      "video_path": "video-V1/metal_brittle_dda4b5e6e727.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_dda4b5e6e727/0ce641ad891eda47/metal_brittle_dda4b5e6e727.json",
       "sha256": "6702dfe11b3750f8a3576d05b07190ced9f30b20670b0843030af8137b57fd15",
       "metadata_sha256": "f457453f8b77c963412a1d2aa33bbc09a3bc68f450207f283566b0da54289cc2",
@@ -2699,13 +2745,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
         "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "mixed_2a9499713a2b",
       "template": "mixed",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_2a9499713a2b/fdac8cf6db4b1b29/mixed_2a9499713a2b.mp4",
+      "video_path": "video-V1/mixed_2a9499713a2b.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_2a9499713a2b/fdac8cf6db4b1b29/mixed_2a9499713a2b.json",
       "sha256": "254007d33fe8222230c9834da013aebebbcab7b9488eeafa9bef979f72716b47",
       "metadata_sha256": "a3a11ccfd2a63756a8d60da487b220cf19a8037dcce60fb4f343fb6bf3962c6d",
@@ -2753,13 +2800,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
         "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "mixed_3568deb2ca33",
       "template": "mixed",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_3568deb2ca33/a598f754f98dbcae/mixed_3568deb2ca33.mp4",
+      "video_path": "video-V1/mixed_3568deb2ca33.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_3568deb2ca33/a598f754f98dbcae/mixed_3568deb2ca33.json",
       "sha256": "3bd9fa61a5688ac68b3d132ff4b3c46c42f25341f654f78e01115f4d48feb22d",
       "metadata_sha256": "0dc4301c08bf75822ae29c754d129d652e56c844dc4a6f0b1df63bad3939c4b0",
@@ -2807,13 +2855,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
         "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "mixed_474c4c10ff01",
       "template": "mixed",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_474c4c10ff01/cbe93e29ae240cfe/mixed_474c4c10ff01.mp4",
+      "video_path": "video-V1/mixed_474c4c10ff01.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_474c4c10ff01/cbe93e29ae240cfe/mixed_474c4c10ff01.json",
       "sha256": "335b929c90bcfc1b8b6aefe376961df258fcc289a8fedf52012bbfb205f57efe",
       "metadata_sha256": "69c5c5501b271b5f1ca9425800f4d385d2bcf82d42faf901e5ba3fcc76ad94a2",
@@ -2861,13 +2910,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
         "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "mixed_6bd6ad919f7f",
       "template": "mixed",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_6bd6ad919f7f/cde2e69aa79dea52/mixed_6bd6ad919f7f.mp4",
+      "video_path": "video-V1/mixed_6bd6ad919f7f.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_6bd6ad919f7f/cde2e69aa79dea52/mixed_6bd6ad919f7f.json",
       "sha256": "6ff0a736678a3ac248a3ffd732236ba820c88375000ff23888d72e6c03cd0c0e",
       "metadata_sha256": "285e3f49b9c984a12deda4940379c501360a1c3e0dd5b8256b30c6cea192bb6e",
@@ -2915,13 +2965,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
         "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "mixed_8e505bb139b5",
       "template": "mixed",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_8e505bb139b5/0ae78bbe2cbcc2a9/mixed_8e505bb139b5.mp4",
+      "video_path": "video-V1/mixed_8e505bb139b5.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_8e505bb139b5/0ae78bbe2cbcc2a9/mixed_8e505bb139b5.json",
       "sha256": "284eeda4283811ad34525606263406b0256a5a687fa2bd5fb0921a2adb276e3d",
       "metadata_sha256": "c75b35b2920cfb934e2b74695af7082321359a0ba8fb370d49f21fc502d1df6e",
@@ -2969,13 +3020,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
         "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "mixed_b6dd4440bb01",
       "template": "mixed",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_b6dd4440bb01/d68545a590accaf5/mixed_b6dd4440bb01.mp4",
+      "video_path": "video-V1/mixed_b6dd4440bb01.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_b6dd4440bb01/d68545a590accaf5/mixed_b6dd4440bb01.json",
       "sha256": "e8d380e1a86f367a686af4893b601ab57c685d07b5b3f2334b4474f4c433acb5",
       "metadata_sha256": "d4004c8578e0db86d2a3f6a2d7280272d1e134a0c2a6d314f941ef3ad1bce1f2",
@@ -3023,13 +3075,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
         "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "mixed_c25215a9fc08",
       "template": "mixed",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_c25215a9fc08/b5d0e4175e96743c/mixed_c25215a9fc08.mp4",
+      "video_path": "video-V1/mixed_c25215a9fc08.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_c25215a9fc08/b5d0e4175e96743c/mixed_c25215a9fc08.json",
       "sha256": "f0042bb4f7a5dbb7af6e5346a19d28d1bdd996a0c9106b7b78e446b3b3e27de2",
       "metadata_sha256": "ace58742af7c702cd15299ad1ccae1e73bc963668969c645e9c3aac6eb9b35ec",
@@ -3077,13 +3130,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
         "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "mixed_d78ee0af8f98",
       "template": "mixed",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_d78ee0af8f98/9b9d7e6e89068b74/mixed_d78ee0af8f98.mp4",
+      "video_path": "video-V1/mixed_d78ee0af8f98.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_d78ee0af8f98/9b9d7e6e89068b74/mixed_d78ee0af8f98.json",
       "sha256": "9c7913b746e43963235e94e829b5b57cb0f3cb760a9c7657aefde9225d7105fa",
       "metadata_sha256": "1d44a688e11ab9f16bc19fd9e39a2c2be1c99723b12cc5e12fb1e5ed9acd05b7",
@@ -3131,13 +3185,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
         "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "mixed_e4b70b9f11d1",
       "template": "mixed",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_e4b70b9f11d1/3a7403d5ea862930/mixed_e4b70b9f11d1.mp4",
+      "video_path": "video-V1/mixed_e4b70b9f11d1.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_e4b70b9f11d1/3a7403d5ea862930/mixed_e4b70b9f11d1.json",
       "sha256": "6130391ab53d1350184b15810928de4dd6254ff5b917416546d05332210aa2b4",
       "metadata_sha256": "39d7d0612eba14827895c87af7478d5dea783457637696a35345279615e5ec2d",
@@ -3185,13 +3240,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
         "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "mixed_f22a4a698822",
       "template": "mixed",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_f22a4a698822/02de1d955cdbe03f/mixed_f22a4a698822.mp4",
+      "video_path": "video-V1/mixed_f22a4a698822.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_f22a4a698822/02de1d955cdbe03f/mixed_f22a4a698822.json",
       "sha256": "ca505531d85b6da56c9cf5c3c2d109b7846f8dd38c555da570d59cae3bbd5500",
       "metadata_sha256": "c3c5d85a2f6738fd3e67998dcaa32c4bea98041a94267e7992abd58dfe334bd6",
@@ -3239,13 +3295,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
         "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_brittle_527d847f2741",
       "template": "polymer_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_527d847f2741/c9037aa8bc8a9b75/polymer_brittle_527d847f2741.mp4",
+      "video_path": "video-V1/polymer_brittle_527d847f2741.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_527d847f2741/c9037aa8bc8a9b75/polymer_brittle_527d847f2741.json",
       "sha256": "a268af6b10b44dc7a620bddf4df2e9df2552a87386ee7df301ac6d36d6ac9f33",
       "metadata_sha256": "e6a3c5e8d20dc40d33ef0acfef2a1ede194258818f4d9aa5704c5016f0be0ee0",
@@ -3293,13 +3350,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
         "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_brittle_7c88eeeae51f",
       "template": "polymer_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_7c88eeeae51f/adfb7bbf8e460c61/polymer_brittle_7c88eeeae51f.mp4",
+      "video_path": "video-V1/polymer_brittle_7c88eeeae51f.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_7c88eeeae51f/adfb7bbf8e460c61/polymer_brittle_7c88eeeae51f.json",
       "sha256": "91cb141e52d7ed16e4a4f7cd255b978eae50261854d9adb14b6d02842150960f",
       "metadata_sha256": "e36dc465b906c6475d50df9e17e3d98c4e31ebf124a6fd924b34426aae616bec",
@@ -3347,13 +3405,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
         "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_brittle_b0cd99f7ae30",
       "template": "polymer_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b0cd99f7ae30/303aff50310f92bc/polymer_brittle_b0cd99f7ae30.mp4",
+      "video_path": "video-V1/polymer_brittle_b0cd99f7ae30.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b0cd99f7ae30/303aff50310f92bc/polymer_brittle_b0cd99f7ae30.json",
       "sha256": "ca02e8ebcd31b934b5dd4150eb0957132f6231d759ba26095fa292978bcf2e98",
       "metadata_sha256": "b920dc1de5eefed721bcfa7687a1b7f2746548480d306c42b956dce168db4037",
@@ -3401,13 +3460,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
         "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_brittle_b9ab8a238e19",
       "template": "polymer_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b9ab8a238e19/513abd4d2ec8acf4/polymer_brittle_b9ab8a238e19.mp4",
+      "video_path": "video-V1/polymer_brittle_b9ab8a238e19.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b9ab8a238e19/513abd4d2ec8acf4/polymer_brittle_b9ab8a238e19.json",
       "sha256": "2fef41e0911eafafbf6a5a13d532128cd63d44b62315659fc420af747cbac6ae",
       "metadata_sha256": "85ecde9befe6abe8e30c3f665aa379246e8bbe43303955fdda26c81f533099cb",
@@ -3455,13 +3515,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
         "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_brittle_bcfe3a307376",
       "template": "polymer_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_bcfe3a307376/e1783fa01c4f150d/polymer_brittle_bcfe3a307376.mp4",
+      "video_path": "video-V1/polymer_brittle_bcfe3a307376.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_bcfe3a307376/e1783fa01c4f150d/polymer_brittle_bcfe3a307376.json",
       "sha256": "6763dcb6a9b740f39566f5b2d2bf1671aaf3261fdb09c1fc90fb508332f810b5",
       "metadata_sha256": "229e6c65b9aeb73d32ae9421a1186da7b1443d690b6c2b03dec88e1f66ab8f59",
@@ -3509,13 +3570,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
         "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_brittle_e2c15b3c1473",
       "template": "polymer_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_e2c15b3c1473/44d4b2b618c005d7/polymer_brittle_e2c15b3c1473.mp4",
+      "video_path": "video-V1/polymer_brittle_e2c15b3c1473.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_e2c15b3c1473/44d4b2b618c005d7/polymer_brittle_e2c15b3c1473.json",
       "sha256": "eca11870a7692c158707fd70794f610628dd512e9b2a1d18ad348919ce6861f9",
       "metadata_sha256": "80b8f26bc7ccd257fa3678c588a895da3536de94c4167022bca03067002c6f3b",
@@ -3563,13 +3625,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
         "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_brittle_ea23f4e39317",
       "template": "polymer_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_ea23f4e39317/aee88dd89417680a/polymer_brittle_ea23f4e39317.mp4",
+      "video_path": "video-V1/polymer_brittle_ea23f4e39317.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_ea23f4e39317/aee88dd89417680a/polymer_brittle_ea23f4e39317.json",
       "sha256": "31a66f4d51a74ff45f6a1020c6ec34d276b38b27965b13075c07c657fb657133",
       "metadata_sha256": "65fd038e6fca8b2b227c5cd14dd26a4d7fdd5c29064ef68d430a5d5a0fb31975",
@@ -3617,13 +3680,14 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
         "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     },
     {
       "id": "polymer_brittle_f89aa7bc8961",
       "template": "polymer_brittle",
       "status": "checked_pending_user_acceptance",
-      "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_f89aa7bc8961/5d3bd34030557d9f/polymer_brittle_f89aa7bc8961.mp4",
+      "video_path": "video-V1/polymer_brittle_f89aa7bc8961.mp4",
       "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_f89aa7bc8961/5d3bd34030557d9f/polymer_brittle_f89aa7bc8961.json",
       "sha256": "a86e083a3ca8df61ee84a262965dc746e5b52291cda91883aeb6fe0c24ca82b5",
       "metadata_sha256": "b02e2e2264006cecfbb063026707a15158a63ace0de7fd24d0641afa61a00a89",
@@ -3671,7 +3735,8 @@
         "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
         "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
       },
-      "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "validation_dataset": "video-V1"
     }
   ],
   "candidates": [],
@@ -3721,7 +3786,7 @@
     "高分子半脆半韧按用户项目视觉判据确认当前样片，保持实际配置和弹塑份额未知；无需重生成。",
     "爆炸性断裂生成按用户要求搁置；0.2候选已否定，不再待验收或用于爆炸性模板。等待用户明确恢复指示。",
     "复材韧性与高分子颈缩传播仍保留来源证据缺口；连续参数范围与训练发布未批准。",
-    "首批38条已完成最终元数据及实际归档独立复验，待用户逐条接受效果与标签；另22条受严格门禁阻断。尚未收录current或训练发布。"
+    "video-V1第一批验证模拟视频数据已按用户确认输出：65条MP4与完整CSV，文件名按标签id对应；另22条仍受原严格门禁阻断，下游验证运行另行执行。"
   ],
   "management_cleanup_status": "complete",
   "source_inventory": {
@@ -3957,7 +4022,7 @@
         "id": "ceramic_54c9123982ca",
         "template": "ceramic",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009/execution/runs/ceramic_54c9123982ca/a99ea32b123b992f/ceramic_54c9123982ca.mp4",
+        "video_path": "video-V1/ceramic_54c9123982ca.mp4",
         "metadata_path": "../_work/training-batch1-20261009/execution/runs/ceramic_54c9123982ca/a99ea32b123b992f/ceramic_54c9123982ca.json",
         "sha256": "641aecc653e5c88369fccff3d58d96656352729c78875ee39e4a541e3eb21aaa",
         "main_final_video_view_completed": true,
@@ -4000,13 +4065,14 @@
           "path": "../_work/training-batch1-20261009/review/ceramic_metadata_archive_recheck.json",
           "sha256": "e97c8394d931c56b6dd4ab90b87c0b24f49af1775edd34fc3b7e795d531aab69"
         },
-        "pending_reasons": []
+        "pending_reasons": [],
+        "validation_dataset": "video-V1"
       },
       {
         "id": "ceramic_fafb6d038402",
         "template": "ceramic",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009/execution/runs/ceramic_fafb6d038402/321ad3776c4157e1/ceramic_fafb6d038402.mp4",
+        "video_path": "video-V1/ceramic_fafb6d038402.mp4",
         "metadata_path": "../_work/training-batch1-20261009/execution/runs/ceramic_fafb6d038402/321ad3776c4157e1/ceramic_fafb6d038402.json",
         "sha256": "4acc117d71ddf8959c321ed355690fa81ad3ee5b4627b94645d8691b96374235",
         "main_final_video_view_completed": true,
@@ -4049,13 +4115,14 @@
           "path": "../_work/training-batch1-20261009/review/ceramic_metadata_archive_recheck.json",
           "sha256": "e97c8394d931c56b6dd4ab90b87c0b24f49af1775edd34fc3b7e795d531aab69"
         },
-        "pending_reasons": []
+        "pending_reasons": [],
+        "validation_dataset": "video-V1"
       },
       {
         "id": "composite_brittle_40de05bc8db6",
         "template": "composite_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_40de05bc8db6/cf31a152fc1a013c/composite_brittle_40de05bc8db6.mp4",
+        "video_path": "video-V1/composite_brittle_40de05bc8db6.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_40de05bc8db6/cf31a152fc1a013c/composite_brittle_40de05bc8db6.json",
         "sha256": "b7d80b3fd70dd549423c37b9c0b93f7337fa009144395dc7cdbc0c47ce9c3180",
         "metadata_sha256": "9a697434fa6f16e93cde104cd0915da2c608934390be5d8851b3e536518c8868",
@@ -4103,13 +4170,14 @@
           "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
         },
         "pending_reasons": [],
-        "metadata_finalizer_applied": true
+        "metadata_finalizer_applied": true,
+        "validation_dataset": "video-V1"
       },
       {
         "id": "composite_brittle_71add4d43545",
         "template": "composite_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_71add4d43545/4b01eabc2cde4b14/composite_brittle_71add4d43545.mp4",
+        "video_path": "video-V1/composite_brittle_71add4d43545.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_71add4d43545/4b01eabc2cde4b14/composite_brittle_71add4d43545.json",
         "sha256": "9a0940ea72dcc5771aac675ecbcb7f19679382fab0699c12cf3277cb4019408b",
         "metadata_sha256": "7d6dd7bb72fe6b362fc3260fc61400e2dc66bf1ff018c40487e8b6f7a8e3d6fb",
@@ -4157,13 +4225,14 @@
           "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
         },
         "pending_reasons": [],
-        "metadata_finalizer_applied": true
+        "metadata_finalizer_applied": true,
+        "validation_dataset": "video-V1"
       },
       {
         "id": "composite_brittle_85e1faca3a2f",
         "template": "composite_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.mp4",
+        "video_path": "video-V1/composite_brittle_85e1faca3a2f.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_85e1faca3a2f/ca57a89fe68b9e1b/composite_brittle_85e1faca3a2f.json",
         "sha256": "72caa9c42c92990c72c1447983b49fd6707d5834e0117464dec30f707e1c5aa3",
         "metadata_sha256": "aacc3034ef432045a855a40e8167aa1f5515770f682d2e8fb0b7ead86895a0fb",
@@ -4211,13 +4280,14 @@
           "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
         },
         "pending_reasons": [],
-        "metadata_finalizer_applied": true
+        "metadata_finalizer_applied": true,
+        "validation_dataset": "video-V1"
       },
       {
         "id": "composite_brittle_f8c38a77a63d",
         "template": "composite_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.mp4",
+        "video_path": "video-V1/composite_brittle_f8c38a77a63d.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/composite_brittle_f8c38a77a63d/bf0ef0b2a0346004/composite_brittle_f8c38a77a63d.json",
         "sha256": "f3cf15df21302ad1b6b7932a7d32f6454616b8d51c7c5bb17e0b65557e31f66f",
         "metadata_sha256": "6a350158a82596dc9b535f57841ec4122ae6a267fc1786254c3b5e3f7b3d3c7d",
@@ -4265,13 +4335,14 @@
           "sha256": "83fcc7270b12c9c8d450c6c104b9402ec84ab59a9364bd7e511846132aa9ea8d"
         },
         "pending_reasons": [],
-        "metadata_finalizer_applied": true
+        "metadata_finalizer_applied": true,
+        "validation_dataset": "video-V1"
       },
       {
         "id": "debond_19ad315937d9",
         "template": "debond",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.mp4",
+        "video_path": "video-V1/debond_19ad315937d9.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_19ad315937d9/ce8c4c5307275b33/debond_19ad315937d9.json",
         "sha256": "e1d63ae77184b7f349baedd2f8214a65d653a670bb7dc5d2b0363c5c5bd33ddb",
         "metadata_sha256": "14c582fefa6b6a57203eb0e5a2fe801a71ebc372e8085c04de1ea741224981aa",
@@ -4319,13 +4390,14 @@
           "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
         },
         "pending_reasons": [],
-        "metadata_finalizer_applied": true
+        "metadata_finalizer_applied": true,
+        "validation_dataset": "video-V1"
       },
       {
         "id": "debond_3a83e6589f3c",
         "template": "debond",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.mp4",
+        "video_path": "video-V1/debond_3a83e6589f3c.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_3a83e6589f3c/750b8d5d527eb7b6/debond_3a83e6589f3c.json",
         "sha256": "cd1b961b8b2797823de92e9cf8d95b4d8f7bbd581061e7dd3c5bec6cddf39992",
         "metadata_sha256": "f39ca49704c99285ef7352b20f7eb8c1959e245e5be59ceecb0eda7e2ad5f911",
@@ -4373,13 +4445,14 @@
           "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
         },
         "pending_reasons": [],
-        "metadata_finalizer_applied": true
+        "metadata_finalizer_applied": true,
+        "validation_dataset": "video-V1"
       },
       {
         "id": "debond_633abced1e80",
         "template": "debond",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.mp4",
+        "video_path": "video-V1/debond_633abced1e80.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_633abced1e80/87ef6945bd15b32e/debond_633abced1e80.json",
         "sha256": "6bb1a62d1b1401bb09e756e7654918f2baeae34517b854de3bc00cef3802250b",
         "metadata_sha256": "8a7269a4d0c2c880b58a4ad28ae729d31379ce6f273102e6a6e60e74e9c5a238",
@@ -4427,13 +4500,14 @@
           "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
         },
         "pending_reasons": [],
-        "metadata_finalizer_applied": true
+        "metadata_finalizer_applied": true,
+        "validation_dataset": "video-V1"
       },
       {
         "id": "debond_9a6e9873f857",
         "template": "debond",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.mp4",
+        "video_path": "video-V1/debond_9a6e9873f857.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_9a6e9873f857/29cb36efc2fe9c8c/debond_9a6e9873f857.json",
         "sha256": "fdc8df3d1e643cf5855a4afb19b221850a4146b83e7adb944f5d2c4759cb4b3e",
         "metadata_sha256": "fa5a8550253710f26ea0f3bacb4aa18bf66eddb6a2a980a5f853ce7004f21abe",
@@ -4481,13 +4555,14 @@
           "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
         },
         "pending_reasons": [],
-        "metadata_finalizer_applied": true
+        "metadata_finalizer_applied": true,
+        "validation_dataset": "video-V1"
       },
       {
         "id": "debond_f1b9bd026fc6",
         "template": "debond",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.mp4",
+        "video_path": "video-V1/debond_f1b9bd026fc6.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f1b9bd026fc6/cdd6f60e24205d15/debond_f1b9bd026fc6.json",
         "sha256": "08ce4e7c85d6ade0c370b940b121b80970ee1a83baa0bb9a54ebd05599d04187",
         "metadata_sha256": "bd57a883a0af85fa2b5c15a3a971db3bd475cd8825318837e5a920ebe8bfb22b",
@@ -4535,13 +4610,14 @@
           "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
         },
         "pending_reasons": [],
-        "metadata_finalizer_applied": true
+        "metadata_finalizer_applied": true,
+        "validation_dataset": "video-V1"
       },
       {
         "id": "debond_f8acebcca850",
         "template": "debond",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.mp4",
+        "video_path": "video-V1/debond_f8acebcca850.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/debond_f8acebcca850/29b1720f7c8cfa14/debond_f8acebcca850.json",
         "sha256": "97108961137d83a4fe0e95c4b486170f882884ac4a02537bf4f214a9da13eeb0",
         "metadata_sha256": "712f5528e3ee851bf7cb85fe9f684dcaf7632b02e3f363d0c1e65abe114e7887",
@@ -4589,13 +4665,14 @@
           "sha256": "76088f41622ccc089eb1464c5a1e4c69c1ea389573441cc96095b992f81dead1"
         },
         "pending_reasons": [],
-        "metadata_finalizer_applied": true
+        "metadata_finalizer_applied": true,
+        "validation_dataset": "video-V1"
       },
       {
         "id": "metal_brittle_24b9f8453ffd",
         "template": "metal_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_24b9f8453ffd/299b1b60ab02fa6d/metal_brittle_24b9f8453ffd.mp4",
+        "video_path": "video-V1/metal_brittle_24b9f8453ffd.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_24b9f8453ffd/299b1b60ab02fa6d/metal_brittle_24b9f8453ffd.json",
         "sha256": "96b7fc198941bf66bb5f570954656ff3305edc125352d301de186c29a40e66af",
         "metadata_sha256": "a98862a5c17cdc7694841481a719fbcb6801890fa75c950f3e0fa52bc261f2d1",
@@ -4643,13 +4720,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
           "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "metal_brittle_5208fef67de7",
         "template": "metal_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_5208fef67de7/e0d63d0994544642/metal_brittle_5208fef67de7.mp4",
+        "video_path": "video-V1/metal_brittle_5208fef67de7.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_5208fef67de7/e0d63d0994544642/metal_brittle_5208fef67de7.json",
         "sha256": "22df21c45fe8ecd22c9d0eae507838f8c56ded13dcaa971585285391ce0a0a05",
         "metadata_sha256": "de80047815bf500ae3864d79fac9343a4b89e127b536f76a1a6ff346a03fafdc",
@@ -4697,13 +4775,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
           "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "metal_brittle_8fd177bc37cd",
         "template": "metal_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_8fd177bc37cd/afbfd0a64e7ecd6c/metal_brittle_8fd177bc37cd.mp4",
+        "video_path": "video-V1/metal_brittle_8fd177bc37cd.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_8fd177bc37cd/afbfd0a64e7ecd6c/metal_brittle_8fd177bc37cd.json",
         "sha256": "74fce195156abf7108f65a1d75f74fc5a902de9d731439ef950f770977ae6562",
         "metadata_sha256": "721495965c017a26b738eb1621ea2fff1e7734da5d224c2c113831e6dd5bb634",
@@ -4751,13 +4830,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
           "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "metal_brittle_95bf83c84c0a",
         "template": "metal_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_95bf83c84c0a/630254443bf4d0f8/metal_brittle_95bf83c84c0a.mp4",
+        "video_path": "video-V1/metal_brittle_95bf83c84c0a.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_95bf83c84c0a/630254443bf4d0f8/metal_brittle_95bf83c84c0a.json",
         "sha256": "83c1a8bc7f72ceb15434f32d09a43a67bc8552b3974056253a0a3415460ff2c5",
         "metadata_sha256": "21e17109028d75bcf4341ed77b02d709cfdac6db1fc9a362a9ef5114e3378885",
@@ -4805,13 +4885,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
           "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "metal_brittle_c3f0c995c8ef",
         "template": "metal_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_c3f0c995c8ef/f6429b6982180419/metal_brittle_c3f0c995c8ef.mp4",
+        "video_path": "video-V1/metal_brittle_c3f0c995c8ef.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_c3f0c995c8ef/f6429b6982180419/metal_brittle_c3f0c995c8ef.json",
         "sha256": "af77f19769bb1cc898025ed6be3c3627f561a722b92161940c2f6df0d2ec713e",
         "metadata_sha256": "4ad4bff695ef9c1688fbf8fc92d7532ab2af8c66db89225f261f79469176d768",
@@ -4859,13 +4940,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
           "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "metal_brittle_cc100241b5f7",
         "template": "metal_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_cc100241b5f7/d57ef5d42534ee45/metal_brittle_cc100241b5f7.mp4",
+        "video_path": "video-V1/metal_brittle_cc100241b5f7.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_cc100241b5f7/d57ef5d42534ee45/metal_brittle_cc100241b5f7.json",
         "sha256": "412cc4be06f6a3c7ae61d86083f1257c7548021cb1e290c9531439333a4eb71e",
         "metadata_sha256": "5bd54c6dd0b63a5d74e475dc5aa3a3dc692f89f6921cfcc054de21a732385de9",
@@ -4913,13 +4995,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
           "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "metal_brittle_d113c4e01c83",
         "template": "metal_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_d113c4e01c83/139b32c24bc6bc14/metal_brittle_d113c4e01c83.mp4",
+        "video_path": "video-V1/metal_brittle_d113c4e01c83.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_d113c4e01c83/139b32c24bc6bc14/metal_brittle_d113c4e01c83.json",
         "sha256": "7eabf55a10f678daae08ffb78838bfb22b0ac2598e4ef7371b0964618b2ee21e",
         "metadata_sha256": "3406b401e92b9fc7f7a4fee7fb8ca44fa559399e51b3167d610856229b435819",
@@ -4967,13 +5050,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
           "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "metal_brittle_dda4b5e6e727",
         "template": "metal_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_dda4b5e6e727/0ce641ad891eda47/metal_brittle_dda4b5e6e727.mp4",
+        "video_path": "video-V1/metal_brittle_dda4b5e6e727.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/metal_brittle_dda4b5e6e727/0ce641ad891eda47/metal_brittle_dda4b5e6e727.json",
         "sha256": "6702dfe11b3750f8a3576d05b07190ced9f30b20670b0843030af8137b57fd15",
         "metadata_sha256": "f457453f8b77c963412a1d2aa33bbc09a3bc68f450207f283566b0da54289cc2",
@@ -5021,13 +5105,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/metal_brittle_metadata_actual_recheck_v2.json",
           "sha256": "ab989e1b03b4cd8b1b00af1faf34b5605a0c2e50cc2d558ff08aa480f2c318cb"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "mixed_2a9499713a2b",
         "template": "mixed",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_2a9499713a2b/fdac8cf6db4b1b29/mixed_2a9499713a2b.mp4",
+        "video_path": "video-V1/mixed_2a9499713a2b.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_2a9499713a2b/fdac8cf6db4b1b29/mixed_2a9499713a2b.json",
         "sha256": "254007d33fe8222230c9834da013aebebbcab7b9488eeafa9bef979f72716b47",
         "metadata_sha256": "a3a11ccfd2a63756a8d60da487b220cf19a8037dcce60fb4f343fb6bf3962c6d",
@@ -5075,13 +5160,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
           "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "mixed_3568deb2ca33",
         "template": "mixed",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_3568deb2ca33/a598f754f98dbcae/mixed_3568deb2ca33.mp4",
+        "video_path": "video-V1/mixed_3568deb2ca33.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_3568deb2ca33/a598f754f98dbcae/mixed_3568deb2ca33.json",
         "sha256": "3bd9fa61a5688ac68b3d132ff4b3c46c42f25341f654f78e01115f4d48feb22d",
         "metadata_sha256": "0dc4301c08bf75822ae29c754d129d652e56c844dc4a6f0b1df63bad3939c4b0",
@@ -5129,13 +5215,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
           "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "mixed_474c4c10ff01",
         "template": "mixed",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_474c4c10ff01/cbe93e29ae240cfe/mixed_474c4c10ff01.mp4",
+        "video_path": "video-V1/mixed_474c4c10ff01.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_474c4c10ff01/cbe93e29ae240cfe/mixed_474c4c10ff01.json",
         "sha256": "335b929c90bcfc1b8b6aefe376961df258fcc289a8fedf52012bbfb205f57efe",
         "metadata_sha256": "69c5c5501b271b5f1ca9425800f4d385d2bcf82d42faf901e5ba3fcc76ad94a2",
@@ -5183,13 +5270,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
           "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "mixed_6bd6ad919f7f",
         "template": "mixed",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_6bd6ad919f7f/cde2e69aa79dea52/mixed_6bd6ad919f7f.mp4",
+        "video_path": "video-V1/mixed_6bd6ad919f7f.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_6bd6ad919f7f/cde2e69aa79dea52/mixed_6bd6ad919f7f.json",
         "sha256": "6ff0a736678a3ac248a3ffd732236ba820c88375000ff23888d72e6c03cd0c0e",
         "metadata_sha256": "285e3f49b9c984a12deda4940379c501360a1c3e0dd5b8256b30c6cea192bb6e",
@@ -5237,13 +5325,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
           "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "mixed_8e505bb139b5",
         "template": "mixed",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_8e505bb139b5/0ae78bbe2cbcc2a9/mixed_8e505bb139b5.mp4",
+        "video_path": "video-V1/mixed_8e505bb139b5.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_8e505bb139b5/0ae78bbe2cbcc2a9/mixed_8e505bb139b5.json",
         "sha256": "284eeda4283811ad34525606263406b0256a5a687fa2bd5fb0921a2adb276e3d",
         "metadata_sha256": "c75b35b2920cfb934e2b74695af7082321359a0ba8fb370d49f21fc502d1df6e",
@@ -5291,13 +5380,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
           "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "mixed_b6dd4440bb01",
         "template": "mixed",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_b6dd4440bb01/d68545a590accaf5/mixed_b6dd4440bb01.mp4",
+        "video_path": "video-V1/mixed_b6dd4440bb01.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_b6dd4440bb01/d68545a590accaf5/mixed_b6dd4440bb01.json",
         "sha256": "e8d380e1a86f367a686af4893b601ab57c685d07b5b3f2334b4474f4c433acb5",
         "metadata_sha256": "d4004c8578e0db86d2a3f6a2d7280272d1e134a0c2a6d314f941ef3ad1bce1f2",
@@ -5345,13 +5435,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
           "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "mixed_c25215a9fc08",
         "template": "mixed",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_c25215a9fc08/b5d0e4175e96743c/mixed_c25215a9fc08.mp4",
+        "video_path": "video-V1/mixed_c25215a9fc08.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_c25215a9fc08/b5d0e4175e96743c/mixed_c25215a9fc08.json",
         "sha256": "f0042bb4f7a5dbb7af6e5346a19d28d1bdd996a0c9106b7b78e446b3b3e27de2",
         "metadata_sha256": "ace58742af7c702cd15299ad1ccae1e73bc963668969c645e9c3aac6eb9b35ec",
@@ -5399,13 +5490,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
           "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "mixed_d78ee0af8f98",
         "template": "mixed",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_d78ee0af8f98/9b9d7e6e89068b74/mixed_d78ee0af8f98.mp4",
+        "video_path": "video-V1/mixed_d78ee0af8f98.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_d78ee0af8f98/9b9d7e6e89068b74/mixed_d78ee0af8f98.json",
         "sha256": "9c7913b746e43963235e94e829b5b57cb0f3cb760a9c7657aefde9225d7105fa",
         "metadata_sha256": "1d44a688e11ab9f16bc19fd9e39a2c2be1c99723b12cc5e12fb1e5ed9acd05b7",
@@ -5453,13 +5545,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
           "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "mixed_e4b70b9f11d1",
         "template": "mixed",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_e4b70b9f11d1/3a7403d5ea862930/mixed_e4b70b9f11d1.mp4",
+        "video_path": "video-V1/mixed_e4b70b9f11d1.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_e4b70b9f11d1/3a7403d5ea862930/mixed_e4b70b9f11d1.json",
         "sha256": "6130391ab53d1350184b15810928de4dd6254ff5b917416546d05332210aa2b4",
         "metadata_sha256": "39d7d0612eba14827895c87af7478d5dea783457637696a35345279615e5ec2d",
@@ -5507,13 +5600,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
           "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "mixed_f22a4a698822",
         "template": "mixed",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_f22a4a698822/02de1d955cdbe03f/mixed_f22a4a698822.mp4",
+        "video_path": "video-V1/mixed_f22a4a698822.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/mixed_f22a4a698822/02de1d955cdbe03f/mixed_f22a4a698822.json",
         "sha256": "ca505531d85b6da56c9cf5c3c2d109b7846f8dd38c555da570d59cae3bbd5500",
         "metadata_sha256": "c3c5d85a2f6738fd3e67998dcaa32c4bea98041a94267e7992abd58dfe334bd6",
@@ -5561,13 +5655,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/mixed_metadata_actual_recheck.json",
           "sha256": "42efba7375fceb31c90ae0c9a5c382204468b6680f53bf9e783d1fa735f09705"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "polymer_brittle_527d847f2741",
         "template": "polymer_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_527d847f2741/c9037aa8bc8a9b75/polymer_brittle_527d847f2741.mp4",
+        "video_path": "video-V1/polymer_brittle_527d847f2741.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_527d847f2741/c9037aa8bc8a9b75/polymer_brittle_527d847f2741.json",
         "sha256": "a268af6b10b44dc7a620bddf4df2e9df2552a87386ee7df301ac6d36d6ac9f33",
         "metadata_sha256": "e6a3c5e8d20dc40d33ef0acfef2a1ede194258818f4d9aa5704c5016f0be0ee0",
@@ -5615,13 +5710,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
           "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "polymer_brittle_7c88eeeae51f",
         "template": "polymer_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_7c88eeeae51f/adfb7bbf8e460c61/polymer_brittle_7c88eeeae51f.mp4",
+        "video_path": "video-V1/polymer_brittle_7c88eeeae51f.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_7c88eeeae51f/adfb7bbf8e460c61/polymer_brittle_7c88eeeae51f.json",
         "sha256": "91cb141e52d7ed16e4a4f7cd255b978eae50261854d9adb14b6d02842150960f",
         "metadata_sha256": "e36dc465b906c6475d50df9e17e3d98c4e31ebf124a6fd924b34426aae616bec",
@@ -5669,13 +5765,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
           "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "polymer_brittle_b0cd99f7ae30",
         "template": "polymer_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b0cd99f7ae30/303aff50310f92bc/polymer_brittle_b0cd99f7ae30.mp4",
+        "video_path": "video-V1/polymer_brittle_b0cd99f7ae30.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b0cd99f7ae30/303aff50310f92bc/polymer_brittle_b0cd99f7ae30.json",
         "sha256": "ca02e8ebcd31b934b5dd4150eb0957132f6231d759ba26095fa292978bcf2e98",
         "metadata_sha256": "b920dc1de5eefed721bcfa7687a1b7f2746548480d306c42b956dce168db4037",
@@ -5723,13 +5820,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
           "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "polymer_brittle_b9ab8a238e19",
         "template": "polymer_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b9ab8a238e19/513abd4d2ec8acf4/polymer_brittle_b9ab8a238e19.mp4",
+        "video_path": "video-V1/polymer_brittle_b9ab8a238e19.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_b9ab8a238e19/513abd4d2ec8acf4/polymer_brittle_b9ab8a238e19.json",
         "sha256": "2fef41e0911eafafbf6a5a13d532128cd63d44b62315659fc420af747cbac6ae",
         "metadata_sha256": "85ecde9befe6abe8e30c3f665aa379246e8bbe43303955fdda26c81f533099cb",
@@ -5777,13 +5875,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
           "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "polymer_brittle_bcfe3a307376",
         "template": "polymer_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_bcfe3a307376/e1783fa01c4f150d/polymer_brittle_bcfe3a307376.mp4",
+        "video_path": "video-V1/polymer_brittle_bcfe3a307376.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_bcfe3a307376/e1783fa01c4f150d/polymer_brittle_bcfe3a307376.json",
         "sha256": "6763dcb6a9b740f39566f5b2d2bf1671aaf3261fdb09c1fc90fb508332f810b5",
         "metadata_sha256": "229e6c65b9aeb73d32ae9421a1186da7b1443d690b6c2b03dec88e1f66ab8f59",
@@ -5831,13 +5930,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
           "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "polymer_brittle_e2c15b3c1473",
         "template": "polymer_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_e2c15b3c1473/44d4b2b618c005d7/polymer_brittle_e2c15b3c1473.mp4",
+        "video_path": "video-V1/polymer_brittle_e2c15b3c1473.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_e2c15b3c1473/44d4b2b618c005d7/polymer_brittle_e2c15b3c1473.json",
         "sha256": "eca11870a7692c158707fd70794f610628dd512e9b2a1d18ad348919ce6861f9",
         "metadata_sha256": "80b8f26bc7ccd257fa3678c588a895da3536de94c4167022bca03067002c6f3b",
@@ -5885,13 +5985,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
           "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "polymer_brittle_ea23f4e39317",
         "template": "polymer_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_ea23f4e39317/aee88dd89417680a/polymer_brittle_ea23f4e39317.mp4",
+        "video_path": "video-V1/polymer_brittle_ea23f4e39317.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_ea23f4e39317/aee88dd89417680a/polymer_brittle_ea23f4e39317.json",
         "sha256": "31a66f4d51a74ff45f6a1020c6ec34d276b38b27965b13075c07c657fb657133",
         "metadata_sha256": "65fd038e6fca8b2b227c5cd14dd26a4d7fdd5c29064ef68d430a5d5a0fb31975",
@@ -5939,13 +6040,14 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
           "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       },
       {
         "id": "polymer_brittle_f89aa7bc8961",
         "template": "polymer_brittle",
         "status": "checked_pending_user_acceptance",
-        "video_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_f89aa7bc8961/5d3bd34030557d9f/polymer_brittle_f89aa7bc8961.mp4",
+        "video_path": "video-V1/polymer_brittle_f89aa7bc8961.mp4",
         "metadata_path": "../_work/training-batch1-20261009-fastcheck/execution/runs/polymer_brittle_f89aa7bc8961/5d3bd34030557d9f/polymer_brittle_f89aa7bc8961.json",
         "sha256": "a86e083a3ca8df61ee84a262965dc746e5b52291cda91883aeb6fe0c24ca82b5",
         "metadata_sha256": "b02e2e2264006cecfbb063026707a15158a63ace0de7fd24d0641afa61a00a89",
@@ -5993,7 +6095,8 @@
           "path": "../_work/training-batch1-20261009-fastcheck/review/polymer_brittle_metadata_actual_recheck.json",
           "sha256": "027381104522fcef219a3e9f3269605dee9cb0b831a0e6b48c25e9a7e1402cc2"
         },
-        "acceptance_scope": "pending_single_video_visual_and_label_acceptance"
+        "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+        "validation_dataset": "video-V1"
       }
     ],
     "unmodified_film_regression": "failed_numeric_gap_guard; legacy_float32_residual_diagnosed; full_old_new_regression_not_completed; excluded_from60",
@@ -6115,7 +6218,7 @@
       "sha256": "7f4394b6df0743d7d3ccda40dd9c1bea1239a0d6fb1473225313eeb45480f188"
     },
     "csv": {
-      "path": "../_work/unified-video-labels-20261010/all_videos_tag.csv",
+      "path": "all_videos_tag.csv",
       "sha256": "08efe92fa2a78f64251e4d9c90a93280474044e3f36c9313ad3e1028aaf3879b"
     },
     "export_verification": {
@@ -6135,5 +6238,99 @@
       "sha256": "337929403846f329d5ea37ec3c62ed5642b301ee4d456b93f43f624850033e13",
       "status": "passed_for_all_65_measured_simulation_event_times"
     }
+  },
+  "validation_dataset": {
+    "id": "video-V1",
+    "status": "user_confirmed_first_validation_simulation_dataset",
+    "confirmed_on": "2026-10-10",
+    "video_directory": "video-V1",
+    "video_count": 65,
+    "total_video_bytes": 28732471,
+    "filename_rule": "<CSV id>.mp4",
+    "labels": {
+      "path": "all_videos_tag.csv",
+      "sha256": "08efe92fa2a78f64251e4d9c90a93280474044e3f36c9313ad3e1028aaf3879b",
+      "row_count": 65,
+      "columns": [
+        "id",
+        "断裂时间点",
+        "断裂模式",
+        "材料类型",
+        "清晰度"
+      ],
+      "time_scope": "Measured final loss of applicable through connection in simulation; seconds from video start."
+    },
+    "member_ids": [
+      "metal_round_ductile_baseline_v1",
+      "metal_round_brittle_baseline_v1",
+      "polymer_black_dogbone_baseline_v2",
+      "polymer_yellow_film_grip_root_baseline_v2",
+      "composite_brittle_lower_feedback_v0_3",
+      "ceramic_dogbone_brittle_baseline_v1",
+      "composite_interface_debond_simultaneous_baseline_v0_4",
+      "polymer_pale_green_brittle_flat_strip_baseline_v1",
+      "polymer_finite_deformation_oblique_rupture_baseline_v1",
+      "composite_rapid_strand_fragmentation_baseline_v0_1",
+      "metal_flat_limited_deformation_rupture_baseline_v1",
+      "metal_round_ductile_stage1_a2_v1",
+      "metal_round_brittle_stage1_center_p075_v1",
+      "polymer_black_dogbone_stage1_stretch085_v1",
+      "polymer_brittle_stage1_position055_v1",
+      "polymer_mixed_stage1_stretch115_v1",
+      "composite_brittle_stage1_position_minus012_v1",
+      "composite_debond_stage1_length080_v1",
+      "composite_debond_stage1_opening120_v1",
+      "ceramic_brittle_stage1_time12_v1",
+      "metal_round_ductile_coupled_a2_time12_v1",
+      "metal_round_brittle_coupled_center_p075_time15_v1",
+      "polymer_dogbone_coupled_stretch085_time17_v1",
+      "polymer_brittle_coupled_position055_time12_v1",
+      "polymer_mixed_coupled_stretch115_time15_v1",
+      "composite_brittle_coupled_center_minus195_time12_v1",
+      "composite_debond_coupled_length080_opening120_time15_v1",
+      "ceramic_54c9123982ca",
+      "ceramic_fafb6d038402",
+      "composite_brittle_40de05bc8db6",
+      "composite_brittle_71add4d43545",
+      "composite_brittle_85e1faca3a2f",
+      "composite_brittle_f8c38a77a63d",
+      "debond_19ad315937d9",
+      "debond_3a83e6589f3c",
+      "debond_633abced1e80",
+      "debond_9a6e9873f857",
+      "debond_f1b9bd026fc6",
+      "debond_f8acebcca850",
+      "metal_brittle_24b9f8453ffd",
+      "metal_brittle_5208fef67de7",
+      "metal_brittle_8fd177bc37cd",
+      "metal_brittle_95bf83c84c0a",
+      "metal_brittle_c3f0c995c8ef",
+      "metal_brittle_cc100241b5f7",
+      "metal_brittle_d113c4e01c83",
+      "metal_brittle_dda4b5e6e727",
+      "mixed_2a9499713a2b",
+      "mixed_3568deb2ca33",
+      "mixed_474c4c10ff01",
+      "mixed_6bd6ad919f7f",
+      "mixed_8e505bb139b5",
+      "mixed_b6dd4440bb01",
+      "mixed_c25215a9fc08",
+      "mixed_d78ee0af8f98",
+      "mixed_e4b70b9f11d1",
+      "mixed_f22a4a698822",
+      "polymer_brittle_527d847f2741",
+      "polymer_brittle_7c88eeeae51f",
+      "polymer_brittle_b0cd99f7ae30",
+      "polymer_brittle_b9ab8a238e19",
+      "polymer_brittle_bcfe3a307376",
+      "polymer_brittle_e2c15b3c1473",
+      "polymer_brittle_ea23f4e39317",
+      "polymer_brittle_f89aa7bc8961"
+    ],
+    "migration_verification": {
+      "path": "../_work/video-v1-package-20261010/migration_verification.json",
+      "sha256": "d73f450cabe7bf14979c927d50743171000af3cec704a37e9ea303690717474c"
+    },
+    "scope": "User confirmed these65 videos and complete CSV as the first validation simulation dataset. Individual historical acceptance records and scientific evidence retained. No downstream model training or evaluation run performed."
   }
 }
