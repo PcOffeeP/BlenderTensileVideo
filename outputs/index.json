@@ -6096,5 +6096,36 @@
         }
       ]
     }
+  },
+  "unified_annotations": {
+    "schema": "unified-video-label-export/1.0",
+    "scope": "all_65_indexed_simulation_videos",
+    "record_count": 65,
+    "user_accepted_count": 27,
+    "pending_user_acceptance_count": 38,
+    "columns": [
+      "id",
+      "断裂时间点",
+      "断裂模式",
+      "材料类型",
+      "清晰度"
+    ],
+    "xlsx": {
+      "path": "../_work/unified-video-labels-20261010/all_videos_tag.xlsx",
+      "sha256": "d6072d326c74f70a7e7bb513e769ca8ae61d91fe5d6cb53cb08397b75e244ce9"
+    },
+    "csv": {
+      "path": "../_work/unified-video-labels-20261010/all_videos_tag.csv",
+      "sha256": "b5948c6948c811c72212118f3e0522b81a8b95f8d76b8277d0c4a24f063d79b5"
+    },
+    "export_verification": {
+      "path": "../_work/unified-video-labels-20261010/export_verification.json",
+      "sha256": "4b160696cd5ef49144f54a46467c1b20a4ce33481b53e7b1efca37a3a39c9fe8"
+    },
+    "source_index_revision": "adc7dad",
+    "source_index_sha256": "19d6d5e4f2172a236375aa0ae0b23f934ad61eaf70b82915694cd4c82204b056",
+    "first_visual_event_time_unknown_count": 65,
+    "training_released": false,
+    "note": "Consolidated labels follow the five columns of the actual real-video XLSX; verification notes preserve six labels and original acceptance states. No unknown event time is inferred from engineering events. Original metadata retained as evidence."
   }
 }

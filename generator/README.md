@@ -89,3 +89,13 @@ ffmpeg -framerate 30 -start_number 1 -i /absolute/new/output/metal/frames/%04d.p
 | 陶瓷 | 13秒 | 原裂纹发展窗口及断后静止 |
 
 新配置记录实现版本、允许值与适用范围。新增时间沿用各模板原阶段映射；旧成片版本与接受记录不反写。资格及有限回归、600帧实际求值、最终编码、独立复核和逐片接受分别记录。
+
+## 统一视频标注导出
+
+[export_video_labels.py](export_video_labels.py)（`unified-video-label-export/1.0`）从总索引读取已接受或检查通过待接受的视频，核对媒体、标签与文件校验值，输出一个集中 Excel 工作簿和同内容 CSV。主表沿用真实实验标签五列；核验说明保存完整六组标签、状态、媒体路径和已记录工程事件，未知视觉事件时间留空。需要 Python、openpyxl 和 ffprobe，不读取固定 `_work/` 输入，不更改视频、元数据或接受状态。
+
+```sh
+python3 generator/export_video_labels.py --index outputs/index.json --output-dir /absolute/new/label-output
+```
+
+适用范围为整段模拟视频标注整理；不创建下游13列输入或训练发布，不向切片复制整片标签。
