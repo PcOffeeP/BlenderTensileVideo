@@ -1,8 +1,12 @@
 # Blender 拉伸实验模拟视频
 
-当前方案：[DESIGN.md](DESIGN.md)（v1.12） · 生成工具：[generator/README.md](generator/README.md) · 唯一机器索引：[outputs/index.json](outputs/index.json) · 工作约定：[AGENTS.md](AGENTS.md)。
+当前方案：[DESIGN.md](DESIGN.md)（v1.13） · 生成工具：[generator/README.md](generator/README.md) · 唯一机器索引：[outputs/index.json](outputs/index.json) · 工作约定：[AGENTS.md](AGENTS.md)。
 
 ## 当前状态
+
+2026-11-14，独立合成系列已生成两条待审视频：[陶瓷脆断视频](_work/independent-fracture-20261114/candidates/independent_ceramic_brittle_v2.mp4)及[配套记录](_work/independent-fracture-20261114/candidates/independent_ceramic_brittle_v2.json)；[金属韧断视频](_work/independent-fracture-20261114/candidates/independent_metal_ductile_v1.mp4)及[配套记录](_work/independent-fracture-20261114/candidates/independent_metal_ductile_v1.json)。均未使用真实实验视频作为视觉参考，均为20秒、600帧、30fps，待用户逐条确认效果和标签。
+
+陶瓷脆断画面在12秒的相邻帧完成完整到断后状态的切换；金属韧断显示伸长、局部颈缩和逐渐开裂，在13秒失去贯通连接。两条视频的断口都较细：脆断原生画面约1–2像素，普通尺寸观看时视觉上能否确认完全分离仍待用户判断。600帧实际网格连通、夹持端点与夹口面、裂面对应点及适用材料段变化已检查；韧断0–390帧和599帧、脆断关键状态的非相邻三角面未检出相交。主Agent已播放两条成片；独立协作者完成限定范围检查，项目指定的 `review-workflow` 不可用，不能记作完成该专用流程。技术检查不等于材料行为和标签已被用户接受，也不表示训练发布。
 
 2026-11-14，虚拟评测补充已制作 **1 个陶瓷局部开裂场景、2 个取景候选**，集中在[独立候选目录](_work/virtual-eval-supplement-20261114/candidates/)：[整机视角](_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_standard_v1.mp4) · [裂缝特写](_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_closeup_v1.mp4)。两个视角各配同名 JSON，均待用户逐条观看、确认效果和五类标签；未加入 video-V1，也不是两个独立来源。预期为“开裂、未整体断开”，不是人工真值。
 

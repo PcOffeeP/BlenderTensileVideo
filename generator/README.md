@@ -108,3 +108,18 @@ python3 generator/export_video_labels.py --index outputs/index.json --output-dir
 ```
 
 适用范围为整段模拟视频标注整理；不创建下游13列输入或训练发布，不向切片复制整片标签。
+
+## 独立合成脆断与韧断样片
+
+[independent_fracture.py](independent_fracture.py)（`independent-fracture/0.1.0`）独立构造陶瓷样条脆断与金属平板韧断两种固定配置，不读取任何视频或旧场景。它是几何动画而非材料本构求解器。配置固定为1280×960、30fps，输出编号从0开始；脆断在第360帧失贯通，韧断在第315帧开始几何开裂、第390帧失贯通。静止状态与事件帧的具体实现、假设和检查范围见候选配套 JSON；这两个离散配置的候选不代表连续参数范围或材料行为已接受。
+
+在 Blender 5.2.1 LTS 和 FFmpeg 环境中，指定新的输出目录运行，入口不依赖工作区：
+
+```sh
+/Applications/Blender.app/Contents/MacOS/Blender --background -t 4 --python-exit-code 1 --python generator/independent_fracture.py -- --kind brittle --mode render --out /absolute/output/brittle-frames
+/Applications/Blender.app/Contents/MacOS/Blender --background -t 4 --python-exit-code 1 --python generator/independent_fracture.py -- --kind ductile --mode render --frame-start 0 --frame-end 390 --out /absolute/output/ductile-frames
+python3 generator/independent_fracture_encode.py --kind brittle --frames /absolute/output/brittle-frames --output /absolute/output/brittle.mp4
+python3 generator/independent_fracture_encode.py --kind ductile --frames /absolute/output/ductile-frames --output /absolute/output/ductile.mp4
+```
+
+脆断只渲染两个静态状态；韧断渲染0–390帧，编码器以最终静止画面补足391–599帧。编码器使用 H.264 的无损编码模式保存转换后的 YUV420 画面，避免静止画面因时间压缩产生逐帧波动；RGB 到 YUV420 有色度抽样。旧输出不会被编码器覆盖。`--mode preview` 渲染关键状态；`--mode audit` 对实际求值网格逐帧记录组件、截面、裂面对应点、夹口面和传力部件包围盒。另可用 [independent_fracture_gauge_audit.py](independent_fracture_gauge_audit.py) 的 `--kind` 和 `--out` 参数测量同一作者定义材料段的长度、截面及闭合截取体积。包围盒与对应点检查不能代替全部几何穿透、科学合理性或人工验收。

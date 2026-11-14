@@ -1,8 +1,63 @@
 {
   "schema": "tensile-video-index/v2",
-  "updated": "2026-10-10",
+  "updated": "2026-11-14",
   "design_document": "../DESIGN.md",
-  "design_version": "v1.12",
+  "design_version": "v1.13",
+  "independent_fracture_samples": {
+    "status": "two_candidates_awaiting_user_visual_and_label_review",
+    "real_video_reference": false,
+    "candidate_count": 2,
+    "user_review_required": true,
+    "training_released": false,
+    "designated_review_workflow": "unavailable",
+    "remaining": "用户逐条观看效果和标签；指定独立复核流程不可用。",
+    "items": [
+      {
+        "id": "independent_ceramic_brittle_v2",
+        "status": "candidate_awaiting_user_visual_and_label_review",
+        "video_path": "../_work/independent-fracture-20261114/candidates/independent_ceramic_brittle_v2.mp4",
+        "metadata_path": "../_work/independent-fracture-20261114/candidates/independent_ceramic_brittle_v2.json",
+        "sha256": "9171d11fd99a9048f1d9b736abfbc5aef9204d906af625eaa03a04cb6b135b45",
+        "metadata_sha256": "b8278c13c7a2e06e28385c5a6a5ebd18c1f13f39a01709091faf7c2195f20f4c",
+        "frames": 600,
+        "fps": 30,
+        "duration_s": 20,
+        "expected_labels": {
+          "材料类别": "陶瓷",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "final_disconnection_frame_zero_based": 360,
+        "visual_qualification": "断口较细，视觉上能否确认完全分离待用户判断。",
+        "user_accepted": false
+      },
+      {
+        "id": "independent_metal_ductile_v1",
+        "status": "candidate_awaiting_user_visual_and_label_review",
+        "video_path": "../_work/independent-fracture-20261114/candidates/independent_metal_ductile_v1.mp4",
+        "metadata_path": "../_work/independent-fracture-20261114/candidates/independent_metal_ductile_v1.json",
+        "sha256": "d59f662fb3037cc67a880f512a46e8be7674ffbba174302eaec9aa1a2cab6f29",
+        "metadata_sha256": "df557af22e7b8fb2644ca6d3d6f95a17e0125d5b820dcdb4b38164a7a56db008",
+        "frames": 600,
+        "fps": 30,
+        "duration_s": 20,
+        "expected_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "韧性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "final_disconnection_frame_zero_based": 390,
+        "visual_qualification": "断口较细，视觉上能否确认完全分离待用户判断。",
+        "user_accepted": false
+      }
+    ]
+  },
   "status": "video_V1_65_user_confirmed_validation_dataset",
   "approved_video_count": 27,
   "reviewable_candidate_count": 38,
