@@ -8,7 +8,7 @@
 | [polymer_initial.py](polymer_initial.py) | `polymer-initial/1.3.0` | `--style dogbone` 大伸长或 `film` 薄膜根部断裂；960×540。 |
 | [composite_initial.py](composite_initial.py) | `composite-initial/0.6.0` | `--kind debond` 断裂与脱粘同步或 `brittle` 低位突断；960×540。 |
 | [ceramic_initial.py](ceramic_initial.py) | `ceramic-initial/1.2.0` | 陶瓷小形变脆断定性演示，`--out` 指定目录；1280×720。 |
-| [ceramic_crack.py](ceramic_crack.py) | `ceramic-partial-crack/0.1.0` | 陶瓷狗骨局部开裂、保留材料连接的定性候选；支持画幅、正交尺度和标准／特写取景，验收情况见项目 README。 |
+| [ceramic_crack.py](ceramic_crack.py) | `ceramic-partial-crack/0.2.0` | 陶瓷狗骨从两侧向中间开裂、保留中央材料连接的定性候选；默认生成完整场景，验收情况见项目 README。 |
 | [polymer_brittle.py](polymer_brittle.py) | `polymer-brittle/1.2.0` | 0032参考的窄平条小变形脆断；`--out`、`--keys-only`；960×540。 |
 | [polymer_mixed.py](polymer_mixed.py) | `polymer-mixed/1.2.0` | 0014参考的逐渐拉长后快速斜裂；当前固定样片按用户可见过程判据确认为半脆半韧，弹塑份额仍未知；`--out`、`--render`、`--checks-only`；1280×720。 |
 | [composite_fragmentation.py](composite_fragmentation.py) | `composite-fragmentation/0.2.0` | 爆炸性制作暂停；full_span候选被用户否定，不是有效爆炸性模板；`--variant full_span`（默认）沿自由段细束展开，`--variant local`保留0.1局部几何预设；`--out`、`--render`、`--resume`；960×540。 |
@@ -25,13 +25,13 @@
 /Applications/Blender.app/Contents/MacOS/Blender --background --python generator/ceramic_initial.py -- --out /absolute/new/output/ceramic --render
 ```
 
-局部开裂入口的一个特写配置如下；标准视角使用 `--width 1280 --height 720 --ortho-scale 17.2 --framing-profile standard`。入口会检查相机中的裂缝、装置和夹爪投影范围，逐帧检查材料连通及夹口；图像可辨性、材料依据、用户验收和连续参数范围仍须分别判断。
+局部开裂入口默认生成包含试样与装置的完整视角；入口检查相机中的裂缝、装置和夹爪投影范围，并逐帧检查两侧裂口、中央材料桥、材料连通及夹口。图像可辨性、材料依据、用户验收和连续参数范围仍须分别判断。
 
 ```sh
-/Applications/Blender.app/Contents/MacOS/Blender --background -t 2 --python-exit-code 1 --python generator/ceramic_crack.py -- --out /absolute/new/output/crack --width 200 --height 112 --ortho-scale 1.2 --framing-profile closeup --render
+/Applications/Blender.app/Contents/MacOS/Blender --background -t 2 --python-exit-code 1 --python generator/ceramic_crack.py -- --out /absolute/new/output/crack --render
 ```
 
-编码开裂入口时采用复材及陶瓷的 `frames/frame_%04d.png` 命名。它的源视频、时间映射、预期与人工真值和检查限制仍须写入配套 JSON。
+编码开裂入口时采用复材及陶瓷的 `frames/frame_%04d.png` 命名。后续 ROI 从完整视频另行裁剪；局部关键帧或特写仅供按需检查，不是第二条测评候选。需要渲染完整特写视频时必须显式加 `--inspection-only`。源视频、时间映射、预期与人工真值和检查限制仍须写入配套 JSON。
 
 金属、复材和陶瓷省略 `--render` 时只制作场景、关键预览和网格检查；高分子加 `--keys-only` 跳过600帧全渲染。Blender入口输出PNG、场景与检查配置；最终MP4编码及来源/标签JSON打包另行完成，不能把裸渲染当作完整交付。PNG序列分别为金属 `frames/%04d.png`、高分子 `frames/%06d.png`、复材及陶瓷 `frames/frame_%04d.png`。例如金属编码：
 

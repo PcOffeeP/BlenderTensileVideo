@@ -6334,9 +6334,9 @@
     "scope": "User confirmed these65 videos and complete CSV as the first validation simulation dataset. Individual historical acceptance records and scientific evidence retained. No downstream model training or evaluation run performed."
   },
   "virtual_eval_supplement": {
-    "status": "first_scene_awaiting_user_visual_review",
+    "status": "bilateral_scene_awaiting_user_visual_review",
     "scene_count": 1,
-    "candidate_video_count": 2,
+    "candidate_video_count": 1,
     "candidate_directory": "../_work/virtual-eval-supplement-20261114/candidates",
     "source_id": "video_0050",
     "source_group_membership": [
@@ -6346,22 +6346,23 @@
     ],
     "exposure_audit": "unknown_per_model",
     "license": "unknown",
-    "framing_note": "两条是同一场景的不同镜头，不算两个独立来源；特写无夹具，整机缩放后裂缝是否可辨未知。",
+    "framing_note": "唯一待审候选为完整场景；ROI将由后续数据处理从原片裁剪，按需特写仅用于检查。",
     "expected_labels_are_not_ground_truth": true,
     "user_review_required": true,
     "evaluation_eligible": false,
     "training_released": false,
     "review_workflow": "指定 review-workflow 不可用；独立协作者完成限定范围检查，不能冒称完整专用流程完成。",
-    "remaining": "用户观看首个场景后，再按设计决定后续；未夹紧与爆炸性新场景尚未生成。",
+    "remaining": "用户观看双侧开裂首场景后，再按设计决定后续；未夹紧与爆炸性新场景尚未生成。",
     "items": [
       {
-        "id": "ceramic_partial_crack_standard_v1",
-        "scene_id": "ceramic_partial_crack_0050_v1",
+        "id": "ceramic_partial_crack_bilateral_v2",
+        "scene_id": "ceramic_partial_crack_0050_bilateral_v2",
         "framing_profile": "standard",
-        "video_path": "../_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_standard_v1.mp4",
-        "metadata_path": "../_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_standard_v1.json",
-        "sha256": "48ad0605e80155f934bc3fe090e45c0fc209aca33b21cf4036a1e02dbdf0bb99",
-        "metadata_sha256": "d96b2a252e60bb5dd056a1dc7891cb08b975a4c6fde42e193338625b34a936b4",
+        "purpose": "full_scene_candidate",
+        "video_path": "../_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_bilateral_v2.mp4",
+        "metadata_path": "../_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_bilateral_v2.json",
+        "sha256": "9f2295e872f18a69679ac42ddb4519f4f662e4054af171c5ea41f9b0ec7dff2a",
+        "metadata_sha256": "be1268247c9686260bbc1081915112292865db89101134b31bda35b4093eba5c",
         "duration_s": 20,
         "fps": 30,
         "frames": 600,
@@ -6377,30 +6378,28 @@
         "training_released": false,
         "main_final_video_view_completed": true,
         "independent_review": "scoped_independent_check_completed_designated_workflow_unavailable"
+      }
+    ],
+    "historical_artifacts": [
+      {
+        "id": "ceramic_partial_crack_standard_v1",
+        "status": "superseded_by_user_feedback",
+        "video_path": "../_work/virtual-eval-supplement-20261114/previous-v1/ceramic_partial_crack_standard_v1.mp4",
+        "metadata_path": "../_work/virtual-eval-supplement-20261114/previous-v1/ceramic_partial_crack_standard_v1.json",
+        "sha256": "48ad0605e80155f934bc3fe090e45c0fc209aca33b21cf4036a1e02dbdf0bb99",
+        "metadata_sha256": "b3895cfcc42f60a4c21122555b8fd077dd9de2977f32dbe4153d6629a57e7ea8",
+        "role": "被用户方向纠正的历史单侧样片，非候选",
+        "user_accepted": false
       },
       {
         "id": "ceramic_partial_crack_closeup_v1",
-        "scene_id": "ceramic_partial_crack_0050_v1",
-        "framing_profile": "closeup",
-        "video_path": "../_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_closeup_v1.mp4",
-        "metadata_path": "../_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_closeup_v1.json",
+        "status": "superseded_inspection_only",
+        "video_path": "../_work/virtual-eval-supplement-20261114/previous-v1/ceramic_partial_crack_closeup_v1.mp4",
+        "metadata_path": "../_work/virtual-eval-supplement-20261114/previous-v1/ceramic_partial_crack_closeup_v1.json",
         "sha256": "efd904a6b3cae9f150053a3b86c5dc150018fc4e55c8278bf65f56b7bf2b18b6",
-        "metadata_sha256": "3bde484fdcfe3612a73e2c10683ea5078c46deb18f2fc7d477a3a7c84a746bf5",
-        "duration_s": 20,
-        "fps": 30,
-        "frames": 600,
-        "resolution": [
-          200,
-          112
-        ],
-        "expected_phenomena": [
-          "开裂"
-        ],
-        "five_label_ground_truth": null,
-        "user_accepted": false,
-        "training_released": false,
-        "main_final_video_view_completed": true,
-        "independent_review": "scoped_independent_check_completed_designated_workflow_unavailable"
+        "metadata_sha256": "d75feec62175fc6a3c2176e8c1b9777857fc3283d08914ba29b47e65b522726f",
+        "role": "历史检查特写，非候选",
+        "user_accepted": false
       }
     ]
   }

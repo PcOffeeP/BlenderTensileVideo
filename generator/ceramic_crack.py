@@ -7,22 +7,24 @@ from pathlib import Path
 from mathutils import Vector
 from mathutils.kdtree import KDTree
 from bpy_extras.object_utils import world_to_camera_view
-VERSION = 'ceramic-partial-crack/0.1.0'
+VERSION = 'ceramic-partial-crack/0.2.0'
 p = argparse.ArgumentParser(); p.add_argument('--out', required=True); p.add_argument('--render', action='store_true'); p.add_argument('--checks-only', action='store_true'); p.add_argument('--render-frames', help='comma separated frame indices for targeted rerender')
 p.add_argument('--fracture-center-z', type=float, default=-0.4, help='fracture center in initial material z coordinates; entire transverse seam must remain inside authored gauge')
 p.add_argument('--crack-start-time-s', type=float, default=3.0, help='nominal beginning of progressive local cracking')
 p.add_argument('--crack-stop-time-s', type=float, default=16.0, choices=[12.0,13.0,15.0,16.0,17.0], help='nominal end of crack growth; no full disconnection occurs')
-p.add_argument('--width', type=int, default=200)
-p.add_argument('--height', type=int, default=112)
-p.add_argument('--ortho-scale', type=float, default=1.2)
-p.add_argument('--framing-profile', choices=['standard','closeup'], default='closeup')
+p.add_argument('--width', type=int, default=1280)
+p.add_argument('--height', type=int, default=720)
+p.add_argument('--ortho-scale', type=float, default=17.2)
+p.add_argument('--framing-profile', choices=['standard','closeup'], default='standard')
+p.add_argument('--inspection-only', action='store_true', help='identify an optional closeup as review-only; it is not an evaluation candidate')
 p.add_argument('--crack-loading-travel', type=float, default=0.035)
-p.add_argument('--front-final-u', type=float, default=0.25, help='final crack tip in normalized specimen width; an intact bridge remains on the right')
+p.add_argument('--bridge-half-width-u', type=float, default=0.125, help='half width of the retained central bridge, in normalized specimen width')
 a = p.parse_args(sys.argv[sys.argv.index('--') + 1:])
 if a.width < 2 or a.height < 2 or a.width % 2 or a.height % 2: p.error('width and height must be positive even integers for yuv420p')
 if not math.isfinite(a.ortho_scale) or a.ortho_scale<=0: p.error('ortho-scale must be finite and positive')
 if not math.isfinite(a.crack_loading_travel) or not 0<a.crack_loading_travel<=0.08: p.error('crack-loading-travel must be within (0, 0.08]; engineering guard only')
-if not math.isfinite(a.front_final_u) or not -0.3<=a.front_final_u<=0.30: p.error('front-final-u must leave an intact bridge; engineering guard only')
+if not math.isfinite(a.bridge_half_width_u) or not 0.0625<=a.bridge_half_width_u<=0.30: p.error('bridge-half-width-u must retain a measurable central bridge; engineering guard only')
+if a.framing_profile=='closeup' and a.render and not a.inspection_only: p.error('a full closeup render must be explicitly marked --inspection-only; evaluation candidates use the standard full scene')
 selected_frames=sorted({int(v) for v in a.render_frames.split(',')}) if a.render_frames else None
 if selected_frames and not all(1<=v<=600 for v in selected_frames):p.error('--render-frames entries must be within1..600')
 if not math.isfinite(a.fracture_center_z) or not (-1.5 < a.fracture_center_z-.07 and a.fracture_center_z+.07 < 1.5):
@@ -44,12 +46,13 @@ C = {
  'embed_each_jaw':0.48, 'authored_gauge':[-1.5,1.5], 'source_formal_gauge_known':False,
  'fracture_center_z':a.fracture_center_z, 'fracture_zone_initial_material_z_bounds':[a.fracture_center_z-.07,a.fracture_center_z+.07],
  'moving_end':'upper', 'fixed_end':'lower', 'axis':'z', 'prefracture_extension':0.012,
- 'crack_loading_travel':a.crack_loading_travel, 'crack_front_start_u':-0.5, 'crack_front_final_u':a.front_final_u,
+ 'crack_loading_travel':a.crack_loading_travel, 'crack_front_start_u':[-0.5,0.5], 'crack_front_final_u':[-a.bridge_half_width_u,a.bridge_half_width_u],
  'crack_front_transition_width_u':0.1, 'minimum_resolved_opening':1e-7,
  'crack_growth_start_frame':crack_start, 'crack_growth_stop_frame':hold_frame,
  'crack_growth_interval_s':(hold_frame-crack_start)/30, 'total_grip_travel':0.012+a.crack_loading_travel,
  'stop_from_frame':hold_frame, 'full_separation_event':None, 'no_removed_material':True,
  'camera_fixed':True, 'framing_profile':a.framing_profile, 'camera_ortho_scale':a.ortho_scale,
+ 'output_purpose':'inspection_only' if a.framing_profile=='closeup' or a.inspection_only else 'full_scene_candidate',
  'camera_position':[0,-22,0], 'camera_target':[0,0,a.fracture_center_z] if a.framing_profile=='closeup' else [0,0,0],
  'solver':'prescribed geometry, no constitutive solver',
  'parameter_scope':'one uncalibrated demonstration; no parameter range approved',
@@ -58,8 +61,8 @@ C = {
   'crack_start_time_s':{'unit':'nominal simulation seconds','default':3.0},
   'crack_stop_time_s':{'unit':'nominal simulation seconds','default':16.0,'discrete_values':[12.0,13.0,15.0,16.0,17.0]},
   'crack_loading_travel':{'unit':'dimensionless relative coordinate','default':0.035},
-  'front_final_u':{'unit':'normalized specimen width','default':0.25},
-  'width_height':{'unit':'pixels','default':[200,112]}, 'ortho_scale':{'unit':'dimensionless scene coordinates','default':1.2}},
+  'bridge_half_width_u':{'unit':'normalized specimen width','default':0.125},
+  'width_height':{'unit':'pixels','default':[1280,720]}, 'ortho_scale':{'unit':'dimensionless scene coordinates','default':17.2}},
  'frame_timestamp_convention':'time_s=(frame-1)/30; encoded duration600/30=20s',
  'gauge_marker_material_z':[-1.4,1.4],
  'section_material_z':[(a.fracture_center_z-.07-1.5)/2,(a.fracture_center_z+.07+1.5)/2],
@@ -68,7 +71,7 @@ C = {
  'scene_file_scope':'saved final state only; full animation reconstructed by reusable generator',
  'equations':{'elastic_extension':'prefracture_extension*S((min(frame,hold_frame)-1)/(hold_frame-1))',
   'crack_progress':'S((min(frame,hold_frame)-crack_start)/(hold_frame-crack_start))',
-  'local_open_fraction':'S(((-0.5+(front_final_u+0.5)*p)-u)/0.1)',
+  'local_open_fraction':'max(S((left_front-u)/0.1),S((u-right_front)/0.1)); left_front=-0.5+(0.5-bridge_half_width_u)*p; right_front=-left_front',
   'upper_crack_displacement':'crack_loading_travel*p*(w+(1-w)*t); w=0 when opening <=1e-7',
   'seam':'fracture_center_z+0.045*sin(15*u)+0.025*sin(39*u)',
   'topology':'zero-opening seam vertices share indices at every frame; no final cut'},
@@ -81,7 +84,7 @@ C = {
  'shading':{'light':'STUDIO','color_type':'MATERIAL','show_shadows':True,'show_cavity':True,'cavity_type':'BOTH','curvature_ridge_factor':1.1,'curvature_valley_factor':1.4,'show_specular_highlight':True,'background_type':'WORLD','view_transform':'Standard'},
  'material_colors':{'ceramic':[.81,.79,.70],'fracture':[.57,.55,.49],'steel':[.47,.51,.54],'jaw':[.19,.22,.25],'machine':[.28,.36,.42],'bolts':[.08,.09,.11]},
  'encoding':{'codec':'libx264','crf':18,'pixel_format':'yuv420p','movflags':'+faststart'},
- 'known_limitations':['front advances across width uniformly through thickness; real 3D crack front not observed',
+ 'known_limitations':['two fronts advance inward uniformly through thickness as a user-directed qualitative shape; real 3D crack front is not observed',
   'source is in fold 0/1 training and fold 2 validation; exposure for each model is unknown',
   'no general self-intersection solver', 'closeup profile excludes grips and full specimen']
 }
@@ -142,11 +145,11 @@ def smooth(x):x=max(0,min(1,x));return x*x*(3-2*x)
 def crack_progress(f):return smooth((min(f,hold_frame)-crack_start)/(hold_frame-crack_start))
 def disp(f):return C['prefracture_extension']*smooth((min(f,hold_frame)-1)/(hold_frame-1))+C['crack_loading_travel']*crack_progress(f)
 def local_open_fraction(u,y,f):
- # Through-thickness opening of an edge crack. Its lateral tip travels from
- # the left edge but cannot reach the right edge under the guarded settings.
+ # Two edge cracks advance toward the centre, leaving a finite central bridge.
  progress=crack_progress(f)
- front=C['crack_front_start_u']+(C['crack_front_final_u']-C['crack_front_start_u'])*progress
- return smooth((front-u)/C['crack_front_transition_width_u'])
+ left=-.5+(.5-a.bridge_half_width_u)*progress
+ right=-left
+ return max(smooth((left-u)/C['crack_front_transition_width_u']),smooth((u-right)/C['crack_front_transition_width_u']))
 def upper_crack_displacement(u,y,t,f):
  w=local_open_fraction(u,y,f)
  if C['crack_loading_travel']*crack_progress(f)*w<=C['minimum_resolved_opening']:w=0.0
@@ -238,19 +241,33 @@ def check(f,coords=False):
  # disappear when coincident faces are removed, so this is a boundary sample;
  # the width-times-thickness projection below is not a measured internal area.
  ext=C['prefracture_extension']*smooth((min(f,hold_frame)-1)/(hold_frame-1))
- bridge_layers=[]
+ bridge_layers=[];front_samples=[]
  for y in [-.1,.1]:
-  bridge=[]
-  for j in reversed(range(33)):
+  samples=[]
+  for j in range(33):
    u=-0.5+j/32; z=seam(u); z+=ext*max(0,min(1,(z+2.5)/5)); x=u*width(seam(u))
    lower,li,ld=kd.find(Vector((x,y,z)))
    upper,ui,ud=kd.find(Vector((x,y,z+upper_crack_displacement(u,y,0,f))))
    assert ld<1e-5 and ud<1e-5
-   if li!=ui:break
-   bridge.append(float(lower.x))
-  bridge_layers.append({'y':y,'width':max(bridge)-min(bridge) if len(bridge)>1 else 0.0,'sample_count':len(bridge)})
+   samples.append({'u':u,'x':float(lower.x),'shared':li==ui,'gap':float(upper.z-lower.z)})
+  if y<0:front_samples=samples
+  # Find the contiguous welded run containing u=0; the edge runs may open.
+  assert samples[16]['shared']
+  left=right=16
+  while left>0 and samples[left-1]['shared']:left-=1
+  while right<32 and samples[right+1]['shared']:right+=1
+  bridge_layers.append({'y':y,'u_bounds':[samples[left]['u'],samples[right]['u']],
+   'width':samples[right]['x']-samples[left]['x'],'sample_count':right-left+1})
  bridge_width=bridge_layers[0]['width']
  bridge_area=min(layer['width'] for layer in bridge_layers)*(bridge_layers[-1]['y']-bridge_layers[0]['y'])
+ # Record actual evaluated opening on each half of the front surface. A tip is
+ # the innermost sampled nonzero gap; the sampling grid limits its precision.
+ left_open=[q for q in front_samples if q['u']<0 and q['gap']>C['minimum_resolved_opening']]
+ right_open=[q for q in front_samples if q['u']>0 and q['gap']>C['minimum_resolved_opening']]
+ side_openings={
+  'left':{'outer_gap':front_samples[0]['gap'],'innermost_open_u':max((q['u'] for q in left_open),default=None),'open_vertex_count':len(left_open)},
+  'right':{'outer_gap':front_samples[-1]['gap'],'innermost_open_u':min((q['u'] for q in right_open),default=None),'open_vertex_count':len(right_open)},
+  'sampling':'33 front-surface material points; gap between evaluated matching seam vertices; not a continuous crack-front measurement'}
  # Same material edge paths: geometry built in stable vertex insertion order. Extract longitudinal edge at u=-.5, y=-.1 from each half with unique t coordinate.
  ext=C['prefracture_extension']*smooth((min(f,hold_frame)-1)/(hold_frame-1));paths=[]
  for part in [0,1]:
@@ -280,7 +297,7 @@ def check(f,coords=False):
   for v in vs:
    k=tuple(round(q,8) for q in v);positions[k]=positions.get(k,0)+1
   shared_position_vertices=sum(n-1 for n in positions.values() if n>1)
- r={'frame':f,'time_s':(f-1)/30,'measured_components':len(components),'component_vertices':[len(cc) for cc in components],'evaluated_vertices':len(vs),'evaluated_faces':len(me.polygons),'closed_manifold_edge_incidence':all(v==2 for v in edge_counts.values()),'measured_material_volume':volume,'same_material_lower_upper_edge_lengths':paths,'actual_section_thickness':max(v.y for v in vs)-min(v.y for v in vs),'grip_surface_contact_max_errors':jawcontact,'grip_contact_sampling':'only outside material surfaces y=+/-0.1; interior thickness-layer vertices on embedded end faces are not jaw-contact candidates','grip_material_embed_sampled_lengths':overlap,'upper_jaw_z_displacement':disp(f),'complementary_fracture_gap_z_minmax':gap,'fracture_penetration':gap is not None and min(gap)<-1e-6,'actual_matching_fracture_face_contact_area':contact_area,'actual_matching_contact_polygons':contact_polygons,'actual_coincident_unwelded_vertex_duplicates':shared_position_vertices,'top_to_bottom_material_graph_path_exists':bool(top_components & bottom_components),'actual_front_face_same_vertex_bridge_width':bridge_width,'actual_bridge_width_by_surface':bridge_layers,'bridge_area_xy_from_boundary_projection':bridge_area}
+ r={'frame':f,'time_s':(f-1)/30,'measured_components':len(components),'component_vertices':[len(cc) for cc in components],'evaluated_vertices':len(vs),'evaluated_faces':len(me.polygons),'closed_manifold_edge_incidence':all(v==2 for v in edge_counts.values()),'measured_material_volume':volume,'same_material_lower_upper_edge_lengths':paths,'actual_section_thickness':max(v.y for v in vs)-min(v.y for v in vs),'grip_surface_contact_max_errors':jawcontact,'grip_contact_sampling':'only outside material surfaces y=+/-0.1; interior thickness-layer vertices on embedded end faces are not jaw-contact candidates','grip_material_embed_sampled_lengths':overlap,'upper_jaw_z_displacement':disp(f),'complementary_fracture_gap_z_minmax':gap,'fracture_penetration':gap is not None and min(gap)<-1e-6,'actual_matching_fracture_face_contact_area':contact_area,'actual_matching_contact_polygons':contact_polygons,'actual_coincident_unwelded_vertex_duplicates':shared_position_vertices,'top_to_bottom_material_graph_path_exists':bool(top_components & bottom_components),'actual_front_face_same_vertex_bridge_width':bridge_width,'actual_bridge_width_by_surface':bridge_layers,'bridge_area_xy_from_boundary_projection':bridge_area,'actual_side_openings':side_openings}
  sections=[];rz=[d.value for d in me.attributes['initial_material_z'].data]
  for section_z in C['section_material_z']:
   points={}
@@ -359,7 +376,15 @@ if a.render or a.checks_only or a.render_frames:
   for segment,initial in zip(row['intact_same_material_segments'],baseline['intact_same_material_segments']):segment['endpoint_distance_lambda']=segment['actual_endpoint_distance']/initial['actual_endpoint_distance']
  if not selected_frames:
   opened=[row for row in allchecks if row['complementary_fracture_gap_z_minmax'] is not None and row['complementary_fracture_gap_z_minmax'][1]>C['minimum_resolved_opening']]
+  left_open=[row for row in allchecks if row['actual_side_openings']['left']['innermost_open_u'] is not None]
+  right_open=[row for row in allchecks if row['actual_side_openings']['right']['innermost_open_u'] is not None]
+  assert left_open and right_open
+  assert all(a['actual_side_openings']['left']['innermost_open_u']<=b['actual_side_openings']['left']['innermost_open_u'] for a,b in zip(left_open,left_open[1:]))
+  assert all(a['actual_side_openings']['right']['innermost_open_u']>=b['actual_side_openings']['right']['innermost_open_u'] for a,b in zip(right_open,right_open[1:]))
   summary={'frames_checked':len(allchecks),'actual_first_nonzero_crack_opening_frame':opened[0]['frame'] if opened else None,'actual_first_disconnection_frame':None,
+   'actual_first_left_opening_frame':left_open[0]['frame'],'actual_first_right_opening_frame':right_open[0]['frame'],
+   'actual_left_and_right_innermost_sample_at_hold':allchecks[hold_frame-1]['actual_side_openings'],
+   'sampled_fronts_both_advance_toward_centre':True,
    'all_frame_single_component_and_grip_to_grip_material_path':all(r['measured_components']==1 and r['top_to_bottom_material_graph_path_exists'] for r in allchecks),
    'minimum_front_face_actual_bridge_width':min(r['actual_front_face_same_vertex_bridge_width'] for r in allchecks),
    'minimum_bridge_area_xy_from_boundary_projection':min(r['bridge_area_xy_from_boundary_projection'] for r in allchecks),
