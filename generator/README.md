@@ -111,7 +111,7 @@ python3 generator/export_video_labels.py --index outputs/index.json --output-dir
 
 ## 独立合成脆断与韧断样片
 
-[independent_fracture.py](independent_fracture.py)（`independent-fracture/0.1.0`）独立构造陶瓷样条脆断与金属平板韧断两种固定配置，不读取任何视频或旧场景。它是几何动画而非材料本构求解器。配置固定为1280×960、30fps，输出编号从0开始；脆断在第360帧失贯通，韧断在第315帧开始几何开裂、第390帧失贯通。静止状态与事件帧的具体实现、假设和检查范围见候选配套 JSON；这两个离散配置的候选不代表连续参数范围或材料行为已接受。
+[independent_fracture.py](independent_fracture.py)（`independent-fracture/0.1.0`）独立构造陶瓷样条脆断与金属平板韧断两种固定配置，不读取任何视频或旧场景。它是几何动画而非材料本构求解器。原韧断采用逐侧开裂，已被用户否定；保留代码与旧候选供追溯，不用于本次修正批次。配置固定为1280×960、30fps，输出编号从0开始；脆断在第360帧失贯通，旧韧断在第315帧开始几何开裂、第390帧失贯通。静止状态与事件帧的具体实现、假设和检查范围见候选配套 JSON；这两个离散配置的候选不代表连续参数范围或材料行为已接受。
 
 在 Blender 5.2.1 LTS 和 FFmpeg 环境中，指定新的输出目录运行，入口不依赖工作区：
 
@@ -123,3 +123,17 @@ python3 generator/independent_fracture_encode.py --kind ductile --frames /absolu
 ```
 
 脆断只渲染两个静态状态；韧断渲染0–390帧，编码器以最终静止画面补足391–599帧。编码器使用 H.264 的无损编码模式保存转换后的 YUV420 画面，避免静止画面因时间压缩产生逐帧波动；RGB 到 YUV420 有色度抽样。旧输出不会被编码器覆盖。`--mode preview` 渲染关键状态；`--mode audit` 对实际求值网格逐帧记录组件、截面、裂面对应点、夹口面和传力部件包围盒。另可用 [independent_fracture_gauge_audit.py](independent_fracture_gauge_audit.py) 的 `--kind` 和 `--out` 参数测量同一作者定义材料段的长度、截面及闭合截取体积。包围盒与对应点检查不能代替全部几何穿透、科学合理性或人工验收。
+
+## 独立合成批次：整截面突断
+
+[independent_batch.py](independent_batch.py)（`independent-fracture-batch/0.1.0`）读取 [independent_batch_configs.json](independent_batch_configs.json) 中八个离散配置，不读取真实实验视频、旧视频或旧场景。变化机架、夹具、试样颜色及外形、断裂材料位置和时间。试样截面为矩形；韧断在变形颈缩之后整截面同一帧断开，不含逐侧撕裂。各参数是作者设定的定性几何近似，不是材料本构标定或已批准的连续范围。首帧已断、仅一帧断前、末帧断裂的可判定边界见对应 JSON。
+
+使用 Blender 5.2.1 LTS 和 FFmpeg，选择新的输出目录与视频路径：
+
+```sh
+/Applications/Blender.app/Contents/MacOS/Blender --background -t 4 --python-exit-code 1 --python generator/independent_batch.py -- --case ductile_02 --mode render --out /absolute/new/output/ductile_02_frames
+python3 generator/independent_batch_encode.py --case ductile_02 --frames /absolute/new/output/ductile_02_frames --output /absolute/new/output/ductile_02.mp4
+/Applications/Blender.app/Contents/MacOS/Blender --background -t 4 --python-exit-code 1 --python generator/independent_batch.py -- --case ductile_02 --mode audit --out /absolute/new/output/ductile_02_audit
+```
+
+渲染只计算不同动画状态，重复的静止状态通过同内容帧填充为600帧；编码器不覆盖已有成片，并采用 H.264 的 YUV420 域无损编码，RGB 转换时仍有色度抽样。`preview` 可生成关键状态，`audit` 逐帧检查实际求值网格连通性、对应断面间隙、夹口面与传力部件包围盒、同一材料段、断后状态及非相邻三角面相交；相同网格重复使用相交检查结果。后者排除共享顶点的面，包围盒不证明接触力或全部部件无穿透。新生成视频还须单独整理来源、预期与核验标签及配套 JSON，并完成适用检查和人工验收。
