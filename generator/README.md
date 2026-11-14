@@ -10,12 +10,13 @@
 | [ceramic_initial.py](ceramic_initial.py) | `ceramic-initial/1.2.0` | 陶瓷小形变脆断定性演示，`--out` 指定目录；1280×720。 |
 | [ceramic_crack.py](ceramic_crack.py) | `ceramic-partial-crack/0.2.0` | 陶瓷狗骨从两侧向中间开裂、保留中央材料连接的定性候选；默认生成完整场景，验收情况见项目 README。 |
 | [unclamped_initial.py](unclamped_initial.py) | `unclamped-flexible-strip/0.1.0` | 柔性高分子试样上端滑出夹口、下端保持夹持的完整场景；提供无滑移对照供检查。 |
+| [explosive_fracture.py](explosive_fracture.py) | `composite-explosive-candidate/0.1.0` | 完整场景的复材定性碎裂候选，保留不规则夹持残段及独立碎片；具体样片待用户审核。 |
 | [polymer_brittle.py](polymer_brittle.py) | `polymer-brittle/1.2.0` | 0032参考的窄平条小变形脆断；`--out`、`--keys-only`；960×540。 |
 | [polymer_mixed.py](polymer_mixed.py) | `polymer-mixed/1.2.0` | 0014参考的逐渐拉长后快速斜裂；当前固定样片按用户可见过程判据确认为半脆半韧，弹塑份额仍未知；`--out`、`--render`、`--checks-only`；1280×720。 |
-| [composite_fragmentation.py](composite_fragmentation.py) | `composite-fragmentation/0.2.0` | 爆炸性制作暂停；full_span候选被用户否定，不是有效爆炸性模板；`--variant full_span`（默认）沿自由段细束展开，`--variant local`保留0.1局部几何预设；`--out`、`--render`、`--resume`；960×540。 |
+| [composite_fragmentation.py](composite_fragmentation.py) | `composite-fragmentation/0.2.0` | 旧 full_span 候选被用户否定，停止续跑且不是有效爆炸性模板；`--variant full_span`（默认）沿自由段细束展开，`--variant local`保留0.1局部几何预设；`--out`、`--render`、`--resume`；960×540。 |
 | [metal_flat.py](metal_flat.py) | `metal-flat/1.2.0` | 0058参考的平板狗骨有限变形断裂；`--reference`显式来源记录、`--out`、`--render`；960×540。局部缩窄和完整断裂为作者扩展，主模式未知。 |
 
-各入口均为20秒、30fps的定性几何动画，在配置输出中记录实现版本与适用范围，不读取 `_work/` 输入。除开裂与未夹紧补充入口外，其余入口的参数支持第一阶段及[首批新增设计](../docs/training-batch1-design.md)中的有限候选；新增允许值仍需资格、组合和逐片验收，未标定本构，未批准连续范围。当前金属代码是1.3.0；本轮颈缩成片仍记录原1.0.1配置，以其同名JSON及自包含烘焙场景精确追溯，不因代码复制而改写成片版本。
+各入口均为20秒、30fps的定性几何动画，在配置输出中记录实现版本与适用范围，不读取 `_work/` 输入。除开裂、未夹紧与爆炸性补充入口外，其余入口的参数支持第一阶段及[首批新增设计](../docs/training-batch1-design.md)中的有限候选；新增允许值仍需资格、组合和逐片验收，未标定本构，未批准连续范围。当前金属代码是1.3.0；本轮颈缩成片仍记录原1.0.1配置，以其同名JSON及自包含烘焙场景精确追溯，不因代码复制而改写成片版本。
 
 在项目根目录运行，输出使用新的绝对目录，避免覆盖待验收候选：
 
@@ -38,6 +39,12 @@
 
 ```sh
 /Applications/Blender.app/Contents/MacOS/Blender --background -t 2 --python-exit-code 1 --python generator/unclamped_initial.py -- --out /absolute/new/output/unclamped --render
+```
+
+爆炸性入口生成完整机架、夹具及试样画面，输出 `frames/frame_%04d.png`。夹持残端与不同大小的自由材料段来自可追溯的定性网格分区；碎片数量、形状与运动为作者设定，不复现论文加载速率，不构成材料本构或物理动力学求解。须分别完成编码、来源与标签记录、适用几何检查和用户审核。
+
+```sh
+/Applications/Blender.app/Contents/MacOS/Blender --background -t 2 --python-exit-code 1 --python generator/explosive_fracture.py -- --out /absolute/new/output/explosive --render
 ```
 
 金属、复材和陶瓷省略 `--render` 时只制作场景、关键预览和网格检查；高分子加 `--keys-only` 跳过600帧全渲染。Blender入口输出PNG、场景与检查配置；最终MP4编码及来源/标签JSON打包另行完成，不能把裸渲染当作完整交付。PNG序列分别为金属 `frames/%04d.png`、高分子 `frames/%06d.png`、复材及陶瓷 `frames/frame_%04d.png`。例如金属编码：
@@ -66,9 +73,9 @@ ffmpeg -framerate 30 -start_number 1 -i /absolute/new/output/metal/frames/%04d.p
 
 `--reference`是独立的显式JSON输入，包含`source_id`、`source_path`、`source_sha256`、`structure`（`flat_strip`或`flat_dogbone`）、`source_labels`、`observations`、`unknowns`、`source_time_mapping`和`geometry_assumptions`。入口核对源文件SHA；来源内容由制作与复核人员核实，字段齐全不证明材料行为。当前固定局部伸长增量0.18、均匀伸长增量0.02，宽厚收缩指数0.58/0.42仅为作者耦合假设，不能推广为源实验测量或批准范围。输出`frames/%06d.png`、配置、关键状态、实际网格检查及待完善的成片JSON；仍须最终编码、独立复核与用户验收。
 
-爆炸性入口0.2.0区分两个固定预设：`full_span`扩大沿自由段的纵向分束范围，采用42个不等宽/深度分区的几何束、连续弯曲及参差裂端；分区数与三维轨迹为作者定性配置，不代表源铺层或真实单丝数量。`local`保留六束中部展开的0.1离散几何，旧成片仍以原JSON实现版本追溯。新版配置明确`variant`与`geometry_preset_version`；参数范围仍须分别核验。用户0040与反馈为主要依据，岛津V18连续帧仅补纵向分裂形态，不移用材料身份、尺寸、时间或幅度。
+旧分束入口0.2.0区分两个固定预设：`full_span`扩大沿自由段的纵向分束范围，采用42个不等宽/深度分区的几何束、连续弯曲及参差裂端；分区数与三维轨迹为作者定性配置，不代表源铺层或真实单丝数量。`local`保留六束中部展开的0.1离散几何，旧成片仍以原JSON实现版本追溯。新版配置明确`variant`与`geometry_preset_version`；参数范围仍须分别核验。用户0040与反馈为主要依据，岛津V18连续帧仅补纵向分裂形态，不移用材料身份、尺寸、时间或幅度。
 
-用户已否定0.2/full_span的爆炸性视觉效果，并要求搁置这一款。代码保留为过程追溯，不继续生成，也不作为已核验爆炸性模板。旧local视频此前接受记录保持；恢复制作须有用户明确指示。
+用户已否定0.2/full_span的爆炸性视觉效果，并要求搁置这一款。代码保留为过程追溯，不继续生成，也不作为已核验爆炸性模板。旧local视频此前接受记录保持；2026-11-15用户已授权制作新的独立样片，旧0.2方案仍不续跑。
 
 ## 第一阶段断裂参数入口
 

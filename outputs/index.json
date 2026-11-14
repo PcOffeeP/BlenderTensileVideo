@@ -3784,7 +3784,7 @@
   ],
   "next_steps": [
     "高分子半脆半韧按用户项目视觉判据确认当前样片，保持实际配置和弹塑份额未知；无需重生成。",
-    "爆炸性断裂生成按用户要求搁置；0.2候选已否定，不再待验收或用于爆炸性模板。等待用户明确恢复指示。",
+    "用户于2026-11-15授权制作新的爆炸性断裂样片；新候选的效果与五类标签待审核。旧0.2候选仍被否定，不作为爆炸性模板。",
     "复材韧性与高分子颈缩传播仍保留来源证据缺口；连续参数范围与训练发布未批准。",
     "video-V1第一批验证模拟视频数据已按用户确认输出：65条MP4与完整CSV，文件名按标签id对应；另22条仍受原严格门禁阻断，下游验证运行另行执行。"
   ],
@@ -6334,19 +6334,19 @@
     "scope": "User confirmed these65 videos and complete CSV as the first validation simulation dataset. Individual historical acceptance records and scientific evidence retained. No downstream model training or evaluation run performed."
   },
   "virtual_eval_supplement": {
-    "status": "unclamped_scene_awaiting_user_review",
-    "scene_count": 2,
-    "candidate_video_count": 2,
+    "status": "explosive_sample_awaiting_user_review",
+    "scene_count": 3,
+    "candidate_video_count": 3,
     "candidate_directory": "../_work/virtual-eval-supplement-20261114/candidates",
     "exposure_audit": "unknown_per_model",
     "license": "unknown",
-    "framing_note": "两个候选均为完整场景；ROI由后续数据处理从原片裁剪，历史特写只作检查。",
+    "framing_note": "三个候选均为完整场景；ROI由后续数据处理从原片裁剪，历史特写只作检查。",
     "expected_labels_are_not_ground_truth": true,
     "user_review_required": true,
     "evaluation_eligible": false,
     "training_released": false,
     "review_workflow": "指定 review-workflow 不可用；独立协作者完成限定范围检查，不能冒称完整专用流程完成。",
-    "remaining": "双侧开裂效果已确认、五类标签待审核；未夹紧样片的画面和五类标签待用户审核；爆炸性新场景尚未生成。",
+    "remaining": "双侧开裂与未夹紧画面效果已确认、五类标签待审核；爆炸性断裂样片的画面与五类标签待用户审核。",
     "items": [
       {
         "id": "ceramic_partial_crack_bilateral_v2",
@@ -6390,7 +6390,7 @@
       {
         "id": "unclamped_polymer_upper_release_v1",
         "scene_id": "polymer_upper_grip_release_0002_v1",
-        "status": "candidate_awaiting_user_review",
+        "status": "visual_effect_accepted_labels_pending",
         "source_id": "video_0002",
         "source_group_membership": [
           "fold_0_train",
@@ -6402,7 +6402,7 @@
         "video_path": "../_work/virtual-eval-supplement-20261114/candidates/unclamped_polymer_upper_release_v1.mp4",
         "metadata_path": "../_work/virtual-eval-supplement-20261114/candidates/unclamped_polymer_upper_release_v1.json",
         "sha256": "f1d4a3be9420ce23afb8480a579b541d4349e0b7662c69006f741864d3c09c4a",
-        "metadata_sha256": "2743830061742cc46ec30673c6f5800e0f8a956cbf9e00991d24363aeef3988e",
+        "metadata_sha256": "d5f64895bd739d824ebb0f33a11fa0efa5e31b5a185f296c8463952ae3bae0c7",
         "duration_s": 20,
         "fps": 30,
         "frames": 600,
@@ -6414,6 +6414,48 @@
           "未夹紧"
         ],
         "expected_fracture_state": "未断裂",
+        "five_label_ground_truth": null,
+        "user_accepted": false,
+        "user_visual_effect_accepted": true,
+        "training_released": false,
+        "evaluation_eligible": false,
+        "main_final_video_view_completed": true,
+        "independent_review": "scoped_independent_check_completed_designated_workflow_unavailable",
+        "visual_acceptance_record": {
+          "date": "2026-11-15",
+          "user_quote": "这个未夹紧的效果可以，继续生成爆炸性断裂的样片吧。视频保留完整场景，不要做 ROI 裁剪。",
+          "scope": "仅此条未夹紧样片的视觉效果；未确认五类标签、样式或参数范围、测评资格。",
+          "video_sha256": "f1d4a3be9420ce23afb8480a579b541d4349e0b7662c69006f741864d3c09c4a"
+        }
+      },
+      {
+        "id": "composite_explosive_fragmentation_v1",
+        "scene_id": "composite_explosive_fragmentation_0026_v1",
+        "status": "candidate_awaiting_user_review",
+        "source_id": "video_0026",
+        "source_group_membership": [
+          "fold_0_train",
+          "fold_1_train",
+          "fold_2_val"
+        ],
+        "additional_visual_reference": "https://curate.curtin.edu.au/articles/journal_contribution/Static_and_dynamic_material_properties_of_CFRP_epoxy_laminates/31607107",
+        "framing_profile": "complete_scene",
+        "purpose": "full_scene_candidate",
+        "video_path": "../_work/virtual-eval-supplement-20261114/candidates/composite_explosive_fragmentation_v1.mp4",
+        "metadata_path": "../_work/virtual-eval-supplement-20261114/candidates/composite_explosive_fragmentation_v1.json",
+        "sha256": "c12c68be2aba11e704fc356d45da1ca6b66389900c5eba7c37c1c913a71f0f89",
+        "metadata_sha256": "50b233c81b3db22d30cf1aeda24ea57a387dcfe5c397225b12570e2e1e159ba7",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "resolution": [
+          1280,
+          720
+        ],
+        "expected_fracture_state": "发生断裂",
+        "expected_anomalies": [
+          "爆炸性断裂"
+        ],
         "five_label_ground_truth": null,
         "user_accepted": false,
         "user_visual_effect_accepted": false,
@@ -6446,6 +6488,6 @@
       }
     ],
     "pending_visual_review_count": 1,
-    "visual_effect_accepted_count": 1
+    "visual_effect_accepted_count": 2
   }
 }
