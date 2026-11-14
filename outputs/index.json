@@ -6334,25 +6334,19 @@
     "scope": "User confirmed these65 videos and complete CSV as the first validation simulation dataset. Individual historical acceptance records and scientific evidence retained. No downstream model training or evaluation run performed."
   },
   "virtual_eval_supplement": {
-    "status": "bilateral_scene_awaiting_user_visual_review",
-    "scene_count": 1,
-    "candidate_video_count": 1,
+    "status": "unclamped_scene_awaiting_user_review",
+    "scene_count": 2,
+    "candidate_video_count": 2,
     "candidate_directory": "../_work/virtual-eval-supplement-20261114/candidates",
-    "source_id": "video_0050",
-    "source_group_membership": [
-      "fold_0_train",
-      "fold_1_train",
-      "fold_2_val"
-    ],
     "exposure_audit": "unknown_per_model",
     "license": "unknown",
-    "framing_note": "唯一待审候选为完整场景；ROI将由后续数据处理从原片裁剪，按需特写仅用于检查。",
+    "framing_note": "两个候选均为完整场景；ROI由后续数据处理从原片裁剪，历史特写只作检查。",
     "expected_labels_are_not_ground_truth": true,
     "user_review_required": true,
     "evaluation_eligible": false,
     "training_released": false,
     "review_workflow": "指定 review-workflow 不可用；独立协作者完成限定范围检查，不能冒称完整专用流程完成。",
-    "remaining": "用户观看双侧开裂首场景后，再按设计决定后续；未夹紧与爆炸性新场景尚未生成。",
+    "remaining": "双侧开裂效果已确认、五类标签待审核；未夹紧样片的画面和五类标签待用户审核；爆炸性新场景尚未生成。",
     "items": [
       {
         "id": "ceramic_partial_crack_bilateral_v2",
@@ -6362,7 +6356,7 @@
         "video_path": "../_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_bilateral_v2.mp4",
         "metadata_path": "../_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_bilateral_v2.json",
         "sha256": "9f2295e872f18a69679ac42ddb4519f4f662e4054af171c5ea41f9b0ec7dff2a",
-        "metadata_sha256": "be1268247c9686260bbc1081915112292865db89101134b31bda35b4093eba5c",
+        "metadata_sha256": "50294dec935ea0a1ba4509932246f87705189ab9b6a9d6a1a9529d8e92291bee",
         "duration_s": 20,
         "fps": 30,
         "frames": 600,
@@ -6376,6 +6370,55 @@
         "five_label_ground_truth": null,
         "user_accepted": false,
         "training_released": false,
+        "main_final_video_view_completed": true,
+        "independent_review": "scoped_independent_check_completed_designated_workflow_unavailable",
+        "status": "visual_effect_accepted_labels_pending",
+        "user_visual_effect_accepted": true,
+        "visual_acceptance_record": {
+          "date": "2026-11-14",
+          "user_quote": "这个双侧开裂的效果可以，继续生成未夹紧的样片吧。视频保留完整场景，不要做 ROI 裁剪。",
+          "scope": "仅此条双侧开裂视频的视觉效果；未确认五类标签、参数范围或评测资格。",
+          "video_sha256": "9f2295e872f18a69679ac42ddb4519f4f662e4054af171c5ea41f9b0ec7dff2a"
+        },
+        "source_id": "video_0050",
+        "source_group_membership": [
+          "fold_0_train",
+          "fold_1_train",
+          "fold_2_val"
+        ]
+      },
+      {
+        "id": "unclamped_polymer_upper_release_v1",
+        "scene_id": "polymer_upper_grip_release_0002_v1",
+        "status": "candidate_awaiting_user_review",
+        "source_id": "video_0002",
+        "source_group_membership": [
+          "fold_0_train",
+          "fold_1_train",
+          "fold_2_val"
+        ],
+        "framing_profile": "complete_scene",
+        "purpose": "full_scene_candidate",
+        "video_path": "../_work/virtual-eval-supplement-20261114/candidates/unclamped_polymer_upper_release_v1.mp4",
+        "metadata_path": "../_work/virtual-eval-supplement-20261114/candidates/unclamped_polymer_upper_release_v1.json",
+        "sha256": "f1d4a3be9420ce23afb8480a579b541d4349e0b7662c69006f741864d3c09c4a",
+        "metadata_sha256": "2743830061742cc46ec30673c6f5800e0f8a956cbf9e00991d24363aeef3988e",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "resolution": [
+          1280,
+          720
+        ],
+        "expected_anomalies": [
+          "未夹紧"
+        ],
+        "expected_fracture_state": "未断裂",
+        "five_label_ground_truth": null,
+        "user_accepted": false,
+        "user_visual_effect_accepted": false,
+        "training_released": false,
+        "evaluation_eligible": false,
         "main_final_video_view_completed": true,
         "independent_review": "scoped_independent_check_completed_designated_workflow_unavailable"
       }
@@ -6401,6 +6444,8 @@
         "role": "历史检查特写，非候选",
         "user_accepted": false
       }
-    ]
+    ],
+    "pending_visual_review_count": 1,
+    "visual_effect_accepted_count": 1
   }
 }

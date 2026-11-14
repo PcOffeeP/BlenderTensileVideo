@@ -9,12 +9,13 @@
 | [composite_initial.py](composite_initial.py) | `composite-initial/0.6.0` | `--kind debond` 断裂与脱粘同步或 `brittle` 低位突断；960×540。 |
 | [ceramic_initial.py](ceramic_initial.py) | `ceramic-initial/1.2.0` | 陶瓷小形变脆断定性演示，`--out` 指定目录；1280×720。 |
 | [ceramic_crack.py](ceramic_crack.py) | `ceramic-partial-crack/0.2.0` | 陶瓷狗骨从两侧向中间开裂、保留中央材料连接的定性候选；默认生成完整场景，验收情况见项目 README。 |
+| [unclamped_initial.py](unclamped_initial.py) | `unclamped-flexible-strip/0.1.0` | 柔性高分子试样上端滑出夹口、下端保持夹持的完整场景；提供无滑移对照供检查。 |
 | [polymer_brittle.py](polymer_brittle.py) | `polymer-brittle/1.2.0` | 0032参考的窄平条小变形脆断；`--out`、`--keys-only`；960×540。 |
 | [polymer_mixed.py](polymer_mixed.py) | `polymer-mixed/1.2.0` | 0014参考的逐渐拉长后快速斜裂；当前固定样片按用户可见过程判据确认为半脆半韧，弹塑份额仍未知；`--out`、`--render`、`--checks-only`；1280×720。 |
 | [composite_fragmentation.py](composite_fragmentation.py) | `composite-fragmentation/0.2.0` | 爆炸性制作暂停；full_span候选被用户否定，不是有效爆炸性模板；`--variant full_span`（默认）沿自由段细束展开，`--variant local`保留0.1局部几何预设；`--out`、`--render`、`--resume`；960×540。 |
 | [metal_flat.py](metal_flat.py) | `metal-flat/1.2.0` | 0058参考的平板狗骨有限变形断裂；`--reference`显式来源记录、`--out`、`--render`；960×540。局部缩窄和完整断裂为作者扩展，主模式未知。 |
 
-各入口均为20秒、30fps的定性几何动画，在配置输出中记录实现版本与适用范围，不读取 `_work/` 输入。除开裂补充候选外，其余入口的参数支持第一阶段及[首批新增设计](../docs/training-batch1-design.md)中的有限候选；新增允许值仍需资格、组合和逐片验收，未标定本构，未批准连续范围。当前金属代码是1.3.0；本轮颈缩成片仍记录原1.0.1配置，以其同名JSON及自包含烘焙场景精确追溯，不因代码复制而改写成片版本。
+各入口均为20秒、30fps的定性几何动画，在配置输出中记录实现版本与适用范围，不读取 `_work/` 输入。除开裂与未夹紧补充入口外，其余入口的参数支持第一阶段及[首批新增设计](../docs/training-batch1-design.md)中的有限候选；新增允许值仍需资格、组合和逐片验收，未标定本构，未批准连续范围。当前金属代码是1.3.0；本轮颈缩成片仍记录原1.0.1配置，以其同名JSON及自包含烘焙场景精确追溯，不因代码复制而改写成片版本。
 
 在项目根目录运行，输出使用新的绝对目录，避免覆盖待验收候选：
 
@@ -32,6 +33,12 @@
 ```
 
 编码开裂入口时采用复材及陶瓷的 `frames/frame_%04d.png` 命名。后续 ROI 从完整视频另行裁剪；局部关键帧或特写仅供按需检查，不是第二条测评候选。需要渲染完整特写视频时必须显式加 `--inspection-only`。源视频、时间映射、预期与人工真值和检查限制仍须写入配套 JSON。
+
+未夹紧入口生成包含两端夹具和试样的完整场景，输出 `frames/frame_%04d.png`。`--control-no-slip` 可用于相同几何与夹具行程的内部对照，不是另一个测评候选。滑移、卸载和回弯为定性运动学构造；真实夹持力、摩擦及材料参数未知。
+
+```sh
+/Applications/Blender.app/Contents/MacOS/Blender --background -t 2 --python-exit-code 1 --python generator/unclamped_initial.py -- --out /absolute/new/output/unclamped --render
+```
 
 金属、复材和陶瓷省略 `--render` 时只制作场景、关键预览和网格检查；高分子加 `--keys-only` 跳过600帧全渲染。Blender入口输出PNG、场景与检查配置；最终MP4编码及来源/标签JSON打包另行完成，不能把裸渲染当作完整交付。PNG序列分别为金属 `frames/%04d.png`、高分子 `frames/%06d.png`、复材及陶瓷 `frames/frame_%04d.png`。例如金属编码：
 

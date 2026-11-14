@@ -4,9 +4,11 @@
 
 ## 当前状态
 
-2026-11-14，用户纠正开裂应从试样两侧向中间扩展；已制作 **1 条双侧开裂的完整场景候选**：[视频](_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_bilateral_v2.mp4) · [同名 JSON](_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_bilateral_v2.json)。候选目录只登记这条完整视频。此前单侧视频和单独特写保留为[历史检查材料](_work/virtual-eval-supplement-20261114/previous-v1/)，不作为候选；后续 ROI 由数据处理从完整视频裁剪，不为每条视频额外生成特写。
+2026-11-14，用户确认了**双侧开裂完整场景样片的画面效果**：[视频](_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_bilateral_v2.mp4) · [同名 JSON](_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_bilateral_v2.json)。两侧裂口向中间发展，中央材料桥保持；五类标签仍待逐项审核。此前单侧视频和检查特写保留为[历史检查材料](_work/virtual-eval-supplement-20261114/previous-v1/)，不作为候选。
 
-新版为20秒、600帧、30fps，完整解码及600帧实际求值网格检查完成；左右裂口分别从外缘向中央发展，中央材料桥及上下夹口间的材料通路保持。裂缝在整机画面中较细，后续实际 ROI 和模型输入的可辨性尚未检查；“未断裂、开裂”仅为预期，仍须用户观看后判断五类标签。独立协作者核查了成片与限定几何，项目指定的 `review-workflow` 不可用，不能记作完成该专用流程。参考源 video_0050 属开发组，部分折列为训练成员；具体模型暴露与许可尚未核实，不能直接宣称独立测评资格。按方案先由用户查看首场景，再决定后续；未夹紧和爆炸性新场景尚未生成。
+同日已制作**未夹紧首个完整场景样片**：[视频](_work/virtual-eval-supplement-20261114/candidates/unclamped_polymer_upper_release_v1.mp4) · [同名 JSON](_work/virtual-eval-supplement-20261114/candidates/unclamped_polymer_upper_release_v1.json)。上夹具上移，试样上端相对夹口滑移并脱出，随后向右回弯；下端保持夹持。生成动画是定性构造，预期为未断裂、异常未夹紧、断裂模式和位置为无；效果及五类标签均待用户观看审核。
+
+两条样片均为20秒、600帧、30fps，保留完整场景，后续 ROI 由数据处理从原片裁剪；本次未生成未夹紧特写。已完整解码并逐帧检查实际网格、夹口与限定间隙，未夹紧样片还与相同夹具行程的无滑移对照比较；主Agent播放了成片，独立协作者完成限定范围核查。指定 `review-workflow` 不可用，不能记作完成该专用流程。参考源 video_0050 和 video_0002 均列于部分折训练或验证成员；具体模型暴露、许可及后续 ROI 可辨性尚未核实，不能直接宣称独立测评资格。爆炸性新场景尚未生成。
 
 2026-10-10，用户确认全部65条作为本轮第一批验证模拟视频数据，已集中到 [video-V1 视频目录](outputs/video-V1/)，完整标签为同级 [all_videos_tag.csv](outputs/all_videos_tag.csv)。目录内仅有65个MP4，标签表65行，以 `id` 对应 `video-V1/<id>.mp4`；五列为id、断裂时间点、断裂模式、材料类型、清晰度。时间采用实际模拟最终失去贯通连接时刻（秒）。视频共约28.7MB，均20秒、600帧、30fps；迁移前后校验值与实际帧数一致。
 
