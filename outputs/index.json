@@ -6332,5 +6332,76 @@
       "sha256": "d73f450cabe7bf14979c927d50743171000af3cec704a37e9ea303690717474c"
     },
     "scope": "User confirmed these65 videos and complete CSV as the first validation simulation dataset. Individual historical acceptance records and scientific evidence retained. No downstream model training or evaluation run performed."
+  },
+  "virtual_eval_supplement": {
+    "status": "first_scene_awaiting_user_visual_review",
+    "scene_count": 1,
+    "candidate_video_count": 2,
+    "candidate_directory": "../_work/virtual-eval-supplement-20261114/candidates",
+    "source_id": "video_0050",
+    "source_group_membership": [
+      "fold_0_train",
+      "fold_1_train",
+      "fold_2_val"
+    ],
+    "exposure_audit": "unknown_per_model",
+    "license": "unknown",
+    "framing_note": "两条是同一场景的不同镜头，不算两个独立来源；特写无夹具，整机缩放后裂缝是否可辨未知。",
+    "expected_labels_are_not_ground_truth": true,
+    "user_review_required": true,
+    "evaluation_eligible": false,
+    "training_released": false,
+    "review_workflow": "指定 review-workflow 不可用；独立协作者完成限定范围检查，不能冒称完整专用流程完成。",
+    "remaining": "用户观看首个场景后，再按设计决定后续；未夹紧与爆炸性新场景尚未生成。",
+    "items": [
+      {
+        "id": "ceramic_partial_crack_standard_v1",
+        "scene_id": "ceramic_partial_crack_0050_v1",
+        "framing_profile": "standard",
+        "video_path": "../_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_standard_v1.mp4",
+        "metadata_path": "../_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_standard_v1.json",
+        "sha256": "48ad0605e80155f934bc3fe090e45c0fc209aca33b21cf4036a1e02dbdf0bb99",
+        "metadata_sha256": "d96b2a252e60bb5dd056a1dc7891cb08b975a4c6fde42e193338625b34a936b4",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "resolution": [
+          1280,
+          720
+        ],
+        "expected_phenomena": [
+          "开裂"
+        ],
+        "five_label_ground_truth": null,
+        "user_accepted": false,
+        "training_released": false,
+        "main_final_video_view_completed": true,
+        "independent_review": "scoped_independent_check_completed_designated_workflow_unavailable"
+      },
+      {
+        "id": "ceramic_partial_crack_closeup_v1",
+        "scene_id": "ceramic_partial_crack_0050_v1",
+        "framing_profile": "closeup",
+        "video_path": "../_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_closeup_v1.mp4",
+        "metadata_path": "../_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_closeup_v1.json",
+        "sha256": "efd904a6b3cae9f150053a3b86c5dc150018fc4e55c8278bf65f56b7bf2b18b6",
+        "metadata_sha256": "3bde484fdcfe3612a73e2c10683ea5078c46deb18f2fc7d477a3a7c84a746bf5",
+        "duration_s": 20,
+        "fps": 30,
+        "frames": 600,
+        "resolution": [
+          200,
+          112
+        ],
+        "expected_phenomena": [
+          "开裂"
+        ],
+        "five_label_ground_truth": null,
+        "user_accepted": false,
+        "training_released": false,
+        "main_final_video_view_completed": true,
+        "independent_review": "scoped_independent_check_completed_designated_workflow_unavailable"
+      }
+    ]
   }
 }
