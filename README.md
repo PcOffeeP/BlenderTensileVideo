@@ -1,6 +1,6 @@
 # Blender 拉伸实验模拟视频
 
-当前方案：[DESIGN.md](DESIGN.md)（v1.12） · 生成工具：[generator/README.md](generator/README.md) · 唯一机器索引：[outputs/index.json](outputs/index.json) · 工作约定：[AGENTS.md](AGENTS.md)。
+当前方案：[DESIGN.md](DESIGN.md)（v1.12） · 参数目录：[虚拟拉伸视频可选参数](docs/video-generation-parameters.md) · 生成工具：[generator/README.md](generator/README.md) · 唯一机器索引：[outputs/index.json](outputs/index.json) · 工作约定：[AGENTS.md](AGENTS.md)。
 
 ## 当前状态
 
