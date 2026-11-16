@@ -1,8 +1,299 @@
 {
   "schema": "tensile-video-index/v2",
-  "updated": "2026-10-10",
+  "updated": "2026-11-16",
   "design_document": "../DESIGN.md",
-  "design_version": "v1.12",
+  "design_version": "v1.14",
+  "independent_batch_20261114": {
+    "status": "eight_candidates_awaiting_user_visual_and_label_review",
+    "user_authorized": true,
+    "real_video_reference": false,
+    "planned_case_count": 8,
+    "planned_case_ids": [
+      "brittle_01",
+      "brittle_02",
+      "brittle_03",
+      "brittle_04",
+      "ductile_01",
+      "ductile_02",
+      "ductile_03",
+      "ductile_04"
+    ],
+    "candidate_count": 8,
+    "user_review_required": true,
+    "training_released": false,
+    "items": [
+      {
+        "id": "brittle_01",
+        "status": "candidate_awaiting_user_visual_and_label_review",
+        "video_path": "../_work/independent-batch-20261114/candidates/brittle_01.mp4",
+        "metadata_path": "../_work/independent-batch-20261114/candidates/brittle_01.json",
+        "sha256": "cdc8a3c476bc96c06cd46442b6ad29316f5c1bba9b3ecb5e6df80328487176e2",
+        "metadata_sha256": "5bb792b816e3459fb757acabb28f10b1c97f38b73d8c1c82166df873feeebbdf",
+        "frames": 600,
+        "fps": 30,
+        "duration_s": 20,
+        "expected_labels": {
+          "材料类别": "陶瓷",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "simulation_event_frame_zero_based": 0,
+        "simulation_event_seconds": 0.0,
+        "author_fracture_s": -0.6,
+        "visibility_notes": [
+          "首帧已经断开；片内没有断裂前状态或事件，无法仅据该视频确认断裂时刻及脆性过程。第0帧是作者模拟状态切换，不是视觉实测事件时刻。",
+          "断口在画面中较细，能否在正常播放与下游缩放后清楚辨识完整分离，需用户判断。"
+        ],
+        "user_accepted": false
+      },
+      {
+        "id": "brittle_02",
+        "status": "candidate_awaiting_user_visual_and_label_review",
+        "video_path": "../_work/independent-batch-20261114/candidates/brittle_02.mp4",
+        "metadata_path": "../_work/independent-batch-20261114/candidates/brittle_02.json",
+        "sha256": "3e5dfd3f79e39e4058798c0a3840970f23fe74b40e9f05e84a71b9f7cd35fc28",
+        "metadata_sha256": "23fe41e3ecc1c6fb4c3e18954d54fdcbf8e3d610655abe88d2d2fc62c558b770",
+        "frames": 600,
+        "fps": 30,
+        "duration_s": 20,
+        "expected_labels": {
+          "材料类别": "陶瓷",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "simulation_event_frame_zero_based": 150,
+        "simulation_event_seconds": 5.0,
+        "author_fracture_s": 0.6,
+        "visibility_notes": [
+          "断口在画面中较细，能否在正常播放与下游缩放后清楚辨识完整分离，需用户判断。"
+        ],
+        "user_accepted": false
+      },
+      {
+        "id": "brittle_03",
+        "status": "candidate_awaiting_user_visual_and_label_review",
+        "video_path": "../_work/independent-batch-20261114/candidates/brittle_03.mp4",
+        "metadata_path": "../_work/independent-batch-20261114/candidates/brittle_03.json",
+        "sha256": "e7e3b20f26281202a74a46e1800329206d21249f95fe3494949ea52dee3e72b7",
+        "metadata_sha256": "75ff356cda1c79f9c251ebf88ea1c7dca9977577101e3a996862bc50abfece2f",
+        "frames": 600,
+        "fps": 30,
+        "duration_s": 20,
+        "expected_labels": {
+          "材料类别": "陶瓷",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "simulation_event_frame_zero_based": 360,
+        "simulation_event_seconds": 12.0,
+        "author_fracture_s": -0.15,
+        "visibility_notes": [
+          "断口在画面中较细，能否在正常播放与下游缩放后清楚辨识完整分离，需用户判断。"
+        ],
+        "user_accepted": false
+      },
+      {
+        "id": "brittle_04",
+        "status": "candidate_awaiting_user_visual_and_label_review",
+        "video_path": "../_work/independent-batch-20261114/candidates/brittle_04.mp4",
+        "metadata_path": "../_work/independent-batch-20261114/candidates/brittle_04.json",
+        "sha256": "fceeadcdcdf2604f612c2cc010c7392e6418b00bee8f18a65966df35b6d884b8",
+        "metadata_sha256": "a44d081579b7858d15d2328f177bda85b1e809be90011523b04dab00d1ac6600",
+        "frames": 600,
+        "fps": 30,
+        "duration_s": 20,
+        "expected_labels": {
+          "材料类别": "陶瓷",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "simulation_event_frame_zero_based": 599,
+        "simulation_event_seconds": 19.966666666666665,
+        "author_fracture_s": 0.35,
+        "visibility_notes": [
+          "只有最后一帧显示断后状态，无法由本视频观察后续运动或停止。",
+          "断口在画面中较细，能否在正常播放与下游缩放后清楚辨识完整分离，需用户判断。"
+        ],
+        "user_accepted": false
+      },
+      {
+        "id": "ductile_01",
+        "status": "candidate_awaiting_user_visual_and_label_review",
+        "video_path": "../_work/independent-batch-20261114/candidates/ductile_01.mp4",
+        "metadata_path": "../_work/independent-batch-20261114/candidates/ductile_01.json",
+        "sha256": "7cf0faf70b4658000eace5803c66c680c231b5c313e2018e5b3b881297ba7eb4",
+        "metadata_sha256": "a2ad301b07a7e4b809b53ec4662232be5f5ad57a083b4e4bfb3c2d03c6e05fad",
+        "frames": 600,
+        "fps": 30,
+        "duration_s": 20,
+        "expected_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "韧性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "simulation_event_frame_zero_based": 1,
+        "simulation_event_seconds": 0.03333333333333333,
+        "author_fracture_s": 0.6,
+        "visibility_notes": [
+          "首帧已经预加载并颈缩，第1帧即断开；视频只有一帧断前状态，无法观察伸长及颈缩的发展过程。",
+          "断口在画面中较细，能否在正常播放与下游缩放后清楚辨识完整分离，需用户判断。"
+        ],
+        "user_accepted": false
+      },
+      {
+        "id": "ductile_02",
+        "status": "candidate_awaiting_user_visual_and_label_review",
+        "video_path": "../_work/independent-batch-20261114/candidates/ductile_02.mp4",
+        "metadata_path": "../_work/independent-batch-20261114/candidates/ductile_02.json",
+        "sha256": "8bf432f816371086f44844706459c224340f4ddf3e182ac147f6321d4c1a06c5",
+        "metadata_sha256": "900aa0fc89adaf1c3528642f021af5c6c99953f2225a6ea5d95d901e3b451c19",
+        "frames": 600,
+        "fps": 30,
+        "duration_s": 20,
+        "expected_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "韧性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "simulation_event_frame_zero_based": 180,
+        "simulation_event_seconds": 6.0,
+        "author_fracture_s": -0.6,
+        "visibility_notes": [
+          "断口在画面中较细，能否在正常播放与下游缩放后清楚辨识完整分离，需用户判断。"
+        ],
+        "user_accepted": false
+      },
+      {
+        "id": "ductile_03",
+        "status": "candidate_awaiting_user_visual_and_label_review",
+        "video_path": "../_work/independent-batch-20261114/candidates/ductile_03.mp4",
+        "metadata_path": "../_work/independent-batch-20261114/candidates/ductile_03.json",
+        "sha256": "a614d824e7d5dafbbdf4736dcf069faf77441ed8ff26cdbfc84f06cffb2e13b1",
+        "metadata_sha256": "ffbe9d01df4205472b5388e6e9b9d0bdea495b72b21714338c66d94322f14567",
+        "frames": 600,
+        "fps": 30,
+        "duration_s": 20,
+        "expected_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "韧性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "simulation_event_frame_zero_based": 390,
+        "simulation_event_seconds": 13.0,
+        "author_fracture_s": 0.15,
+        "visibility_notes": [
+          "断口在画面中较细，能否在正常播放与下游缩放后清楚辨识完整分离，需用户判断。"
+        ],
+        "user_accepted": false
+      },
+      {
+        "id": "ductile_04",
+        "status": "candidate_awaiting_user_visual_and_label_review",
+        "video_path": "../_work/independent-batch-20261114/candidates/ductile_04.mp4",
+        "metadata_path": "../_work/independent-batch-20261114/candidates/ductile_04.json",
+        "sha256": "92607feeba3ca0e300dbf42ffa9e3edbcb47eaf807476430341b1d348f16cd22",
+        "metadata_sha256": "1ef6cd3fa6addf80dce27846c7368ccf8739c07711964f7feebc0324f3d34457",
+        "frames": 600,
+        "fps": 30,
+        "duration_s": 20,
+        "expected_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "韧性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "simulation_event_frame_zero_based": 585,
+        "simulation_event_seconds": 19.5,
+        "author_fracture_s": -0.35,
+        "visibility_notes": [
+          "仅保留15帧、0.5秒断后状态。",
+          "断口在画面中较细，能否在正常播放与下游缩放后清楚辨识完整分离，需用户判断。"
+        ],
+        "user_accepted": false
+      }
+    ],
+    "designated_review_workflow": "unavailable"
+  },
+  "independent_fracture_samples": {
+    "status": "one_candidate_pending_one_rejected_by_user",
+    "real_video_reference": false,
+    "candidate_count": 1,
+    "user_review_required": true,
+    "training_released": false,
+    "designated_review_workflow": "unavailable",
+    "remaining": "新批次按用户纠正的韧断方式制作；原陶瓷候选待用户确认。",
+    "items": [
+      {
+        "id": "independent_ceramic_brittle_v2",
+        "status": "candidate_awaiting_user_visual_and_label_review",
+        "video_path": "../_work/independent-fracture-20261114/candidates/independent_ceramic_brittle_v2.mp4",
+        "metadata_path": "../_work/independent-fracture-20261114/candidates/independent_ceramic_brittle_v2.json",
+        "sha256": "9171d11fd99a9048f1d9b736abfbc5aef9204d906af625eaa03a04cb6b135b45",
+        "metadata_sha256": "b8278c13c7a2e06e28385c5a6a5ebd18c1f13f39a01709091faf7c2195f20f4c",
+        "frames": 600,
+        "fps": 30,
+        "duration_s": 20,
+        "expected_labels": {
+          "材料类别": "陶瓷",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "脆性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "final_disconnection_frame_zero_based": 360,
+        "visual_qualification": "断口较细，视觉上能否确认完全分离待用户判断。",
+        "user_accepted": false
+      },
+      {
+        "id": "independent_metal_ductile_v1",
+        "status": "user_rejected_for_sequential_tearing",
+        "video_path": "../_work/independent-fracture-20261114/candidates/independent_metal_ductile_v1.mp4",
+        "metadata_path": "../_work/independent-fracture-20261114/candidates/independent_metal_ductile_v1.json",
+        "sha256": "d59f662fb3037cc67a880f512a46e8be7674ffbba174302eaec9aa1a2cab6f29",
+        "metadata_sha256": "9ac11bc3e6d71e5f7118f3f941e79e8ab0f4fd710f8a7b1fdfdf023e6dcf853e",
+        "frames": 600,
+        "fps": 30,
+        "duration_s": 20,
+        "expected_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "韧性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "final_disconnection_frame_zero_based": 390,
+        "visual_qualification": "断口较细，视觉上能否确认完全分离待用户判断。",
+        "user_accepted": false,
+        "user_feedback": "用户指出逐渐从一侧撕向另一侧不符合所需的韧断效果。"
+      }
+    ],
+    "rejected_count": 1
+  },
   "status": "video_V1_65_user_confirmed_validation_dataset",
   "approved_video_count": 27,
   "reviewable_candidate_count": 38,

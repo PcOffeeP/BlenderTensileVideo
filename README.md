@@ -1,6 +1,6 @@
 # Blender 拉伸实验模拟视频
 
-当前方案：[DESIGN.md](DESIGN.md)（v1.12） · 参数目录：[虚拟拉伸视频可选参数](docs/video-generation-parameters.md) · 生成工具：[generator/README.md](generator/README.md) · 唯一机器索引：[outputs/index.json](outputs/index.json) · 工作约定：[AGENTS.md](AGENTS.md)。
+当前方案：[DESIGN.md](DESIGN.md)（v1.14） · 参数目录：[虚拟拉伸视频可选参数](docs/video-generation-parameters.md) · 生成工具：[generator/README.md](generator/README.md) · 唯一机器索引：[outputs/index.json](outputs/index.json) · 工作约定：[AGENTS.md](AGENTS.md)。
 
 ## 当前状态
 
@@ -19,6 +19,29 @@
 用户要求废弃的本轮错误7秒圆棒诊断，其视频、场景、实现与论文调查过程已删除，失效链接与索引已清除。此前收集的原始资料保留。
 
 直接参考 `/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data` 的真实视频及 `video_mapping.csv`、`all_videos_tag.xlsx`，论文不是生成前提。视频目标15–30秒，当前成片均20秒，按来源重定时：较长实验过程压缩，短来源的阶段延长；分别呈现加载、变形、破坏和断后观察；源时间与模拟时间分别记录。
+
+## 独立合成样片
+
+2026-11-14，独立合成批次已生成 **8 条待验收候选：脆断与修正后的韧断各4条**。没有以真实实验视频作为视觉参考；机架、夹具、试样外形与颜色、断裂位置和事件时间均有变化。每条为20秒、30fps、600帧，预期标签及检查范围见同名 JSON；用户尚未接受画面和标签。表中的位置为作者定义标距上的材料坐标，正值朝上。
+
+| 类型 | 模拟断裂时刻 | 断裂位置 | 候选 |
+|---|---:|---|---|
+| 脆断 01 | 首帧已断 | 下部（-0.60） | [视频](_work/independent-batch-20261114/candidates/brittle_01.mp4) · [标签及记录](_work/independent-batch-20261114/candidates/brittle_01.json) |
+| 脆断 02 | 5 秒 | 上部（+0.60） | [视频](_work/independent-batch-20261114/candidates/brittle_02.mp4) · [标签及记录](_work/independent-batch-20261114/candidates/brittle_02.json) |
+| 脆断 03 | 12 秒 | 中部（-0.15） | [视频](_work/independent-batch-20261114/candidates/brittle_03.mp4) · [标签及记录](_work/independent-batch-20261114/candidates/brittle_03.json) |
+| 脆断 04 | 19.967 秒（末帧） | 上部（+0.35） | [视频](_work/independent-batch-20261114/candidates/brittle_04.mp4) · [标签及记录](_work/independent-batch-20261114/candidates/brittle_04.json) |
+| 韧断 01 | 0.0333333 秒 | 上部（+0.60） | [视频](_work/independent-batch-20261114/candidates/ductile_01.mp4) · [标签及记录](_work/independent-batch-20261114/candidates/ductile_01.json) |
+| 韧断 02 | 6 秒 | 下部（-0.60） | [视频](_work/independent-batch-20261114/candidates/ductile_02.mp4) · [标签及记录](_work/independent-batch-20261114/candidates/ductile_02.json) |
+| 韧断 03 | 13 秒 | 中部（+0.15） | [视频](_work/independent-batch-20261114/candidates/ductile_03.mp4) · [标签及记录](_work/independent-batch-20261114/candidates/ductile_03.json) |
+| 韧断 04 | 19.5 秒 | 下部（-0.35） | [视频](_work/independent-batch-20261114/candidates/ductile_04.mp4) · [标签及记录](_work/independent-batch-20261114/candidates/ductile_04.json) |
+
+脆断01首帧已断，不能仅据片内画面判定断裂过程或事件时刻；脆断04只在最后一帧显示断后状态。韧断01首帧已颈缩、第二帧断开，不能观察颈缩的发展；韧断04断后仅保留0.5秒。断口较细，完整分离能否看清待用户判断。
+
+八条均完成最终视频的完整解码、帧数和时间核对，以及600帧实际求值网格检查；断前／断后连通与整截面切换、夹口平面、材料段及非共顶点三角面检查范围记录在 JSON。独立协作者核对了八条成片关键帧、标签记录，并做了有限拓扑与夹口采样复核；项目指定的 `review-workflow` 不可用，不能记作完成该专用材料与标签复核。技术检查与作者设定不代替用户视觉和标签验收。
+
+2026-11-14，独立合成系列曾生成[陶瓷脆断视频](_work/independent-fracture-20261114/candidates/independent_ceramic_brittle_v2.mp4)及[配套记录](_work/independent-fracture-20261114/candidates/independent_ceramic_brittle_v2.json)，以及[旧金属韧断视频](_work/independent-fracture-20261114/candidates/independent_metal_ductile_v1.mp4)及[配套记录](_work/independent-fracture-20261114/candidates/independent_metal_ductile_v1.json)。均未使用真实实验视频作为视觉参考。陶瓷样片仍待用户确认；用户指出旧金属韧断像从一侧逐步撕开，不符合所需效果，旧片保留为未接受的历史候选，不再作为当前方案的待审片。
+
+原两条画面均为20秒、600帧、30fps，断口较细。用户已要求新批次中的韧断改为先拉伸颈缩、到临界状态后整条断面突然断开，并变化装置外观、试样、断裂位置和事件时刻。原片的技术检查及受限独立检查保留，项目指定的 `review-workflow` 不可用，不能记作完成该专用流程；旧片的技术通过不代表用户接受其韧断表现。
 
 ## 当前成果
 
