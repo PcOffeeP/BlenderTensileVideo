@@ -1,6 +1,6 @@
 # 生成工具
 
-规则见 [DESIGN.md](../DESIGN.md)，状态与成片链接见 [项目 README](../README.md)。本目录提供新的首版程序化场景入口；用户废弃的7秒诊断实现已删除。
+规则见 [DESIGN.md](../docs/DESIGN.md)，状态与成片链接见 [项目 README](../README.md)。按[参数目录的模板代号](../docs/video-generation-parameters.md#模板代号)选择有实验来源的场景。独立合成使用[批次入口](#独立合成批次整截面突断)，读取现有数据使用[标签导出器](#统一视频标注导出)。
 
 | 入口 | 实现版本 | 适用范围与选项 |
 |---|---|---|
@@ -13,12 +13,12 @@
 | [explosive_fracture.py](explosive_fracture.py) | `composite-explosive-candidate/0.1.0` | 完整场景的复材定性碎裂候选，保留不规则夹持残段及独立碎片；具体样片待用户审核。 |
 | [polymer_brittle.py](polymer_brittle.py) | `polymer-brittle/1.2.0` | 0032参考的窄平条小变形脆断；`--out`、`--keys-only`；960×540。 |
 | [polymer_mixed.py](polymer_mixed.py) | `polymer-mixed/1.2.0` | 0014参考的逐渐拉长后快速斜裂；当前固定样片按用户可见过程判据确认为半脆半韧，弹塑份额仍未知；`--out`、`--render`、`--checks-only`；1280×720。 |
-| [composite_fragmentation.py](composite_fragmentation.py) | `composite-fragmentation/0.2.0` | 旧 full_span 候选被用户否定，停止续跑且不是有效爆炸性模板；`--variant full_span`（默认）沿自由段细束展开，`--variant local`保留0.1局部几何预设；`--out`、`--render`、`--resume`；960×540。 |
-| [metal_flat.py](metal_flat.py) | `metal-flat/1.2.0` | 0058参考的平板狗骨有限变形断裂；`--reference`显式来源记录、`--out`、`--render`；960×540。局部缩窄和完整断裂为作者扩展，主模式未知。 |
+| [composite_fragmentation.py](composite_fragmentation.py) | `composite-fragmentation/0.2.1` | 历史分束复现，必须显式选预设。`--variant local` 复现局部分束，`--variant full_span` 对应用户已否定的广自由段方案；`--out`、`--render`、`--resume`；960×540。 |
+| [metal_flat.py](metal_flat.py) | `metal-flat/1.2.0` | 0058参考的平板狗骨有限变形断裂；`--reference`显式来源记录、`--out`、`--render`；960×540。局部缩窄和完整断裂为作者扩展。用户已确认该 V1 成片为韧性断裂，源实验的局部动态仍未知。 |
 
-各入口均为20秒、30fps的定性几何动画，在配置输出中记录实现版本与适用范围，不读取 `_work/` 输入。除开裂、未夹紧与爆炸性补充入口外，其余入口的参数支持第一阶段及[首批新增设计](../docs/training-batch1-design.md)中的有限候选；新增允许值仍需资格、组合和逐片验收，未标定本构，未批准连续范围。当前金属代码是1.3.0；本轮颈缩成片仍记录原1.0.1配置，以其同名JSON及自包含烘焙场景精确追溯，不因代码复制而改写成片版本。
+各入口均为20秒、30fps的定性几何动画，在配置输出中记录实现版本与适用范围，不读取 `_work/` 输入。除开裂、未夹紧与爆炸性补充入口外，其余入口的参数支持第一阶段及[首批新增设计](../docs/history/video-v1/training-batch1-design.md)中的有限候选；新增允许值仍需资格、组合和逐片验收，未标定本构，未批准连续范围。当前金属代码是1.3.0；本轮颈缩成片仍记录原1.0.1配置，以其同名JSON及自包含烘焙场景精确追溯，不因代码复制而改写成片版本。
 
-在项目根目录运行，输出使用新的绝对目录，避免覆盖待验收候选：
+在项目根目录运行，输出使用新的绝对目录（平板入口要求位于 `_work/` 内），避免覆盖待验收候选：
 
 ```sh
 /Applications/Blender.app/Contents/MacOS/Blender --background --python generator/metal_initial.py -- --style brittle --out /absolute/new/output/metal --render
@@ -53,9 +53,9 @@
 ffmpeg -framerate 30 -start_number 1 -i /absolute/new/output/metal/frames/%04d.png -frames:v 600 -c:v libx264 -crf 18 -pix_fmt yuv420p -movflags +faststart /absolute/new/output/metal/candidate.mp4
 ```
 
-已在Blender 5.2.1 LTS制作本轮候选并检查实际求值网格和编码。复制到本目录的代码与工作实现字节相同，不为复制操作重复渲染。再生成仍须检查成片、完善来源与六组标签JSON、独立复核，并交用户验收；接受后才收录到 `outputs/current/`。场景、候选、抽帧与日志保留在工作目录。
+已在Blender 5.2.1 LTS制作本轮候选并检查实际求值网格和编码。复制到本目录的代码与工作实现字节相同，不为复制操作重复渲染。再生成仍须检查成片、完善来源与六组标签JSON、独立复核，并交用户验收；确认用途后才收录到指定版本的数据集。场景、候选、抽帧与日志保留在工作目录。
 
-颈缩参数 `--neck-local-stretch-amplitude` 仅适用于金属 `ductile`，默认4.0。它是局部轴向伸长增量，长度由材料坐标积分，半径按局部伸长的平方根倒数耦合变化。工程守卫为有限 `0 < A ≤ 4.0`，不是批准的材料/视觉连续范围；在 `brittle` 上显式传该参数会被拒绝。更弱离散值2.0的早期检查限于网格／关键状态；第一阶段新成片的当前核验与待验收状态见README和index，接受的基准视频保持不变。
+颈缩参数 `--neck-local-stretch-amplitude` 仅适用于金属 `ductile`，默认4.0。它是局部轴向伸长增量，长度由材料坐标积分，半径按局部伸长的平方根倒数耦合变化。工程守卫为有限 `0 < A ≤ 4.0`，不是批准的材料/视觉连续范围；在 `brittle` 上显式传该参数会被拒绝。更弱离散值2.0的早期检查限于网格／关键状态；第一阶段新成片的当前核验与待验收状态见项目 README，接受的基准视频保持不变。
 
 高分子1.1.1补机械连接、全机取景及顶梁净间隙，试样600帧顶点坐标/拓扑与1.0对比；复材沿用已去后板与孤立机架柱的夹具和试样视图；debond0.4.0样片按用户进一步纠正将断裂与局部界面脱粘放在同一事件；brittle分支保留0.3.1配置，已接受旧成片不改写。陶瓷身份来自用户确认的video_0050，完整脆断是超出其可见裂纹阶段的初版建模扩展，原标签表与用户确认分别保存。
 
@@ -64,7 +64,7 @@ ffmpeg -framerate 30 -start_number 1 -i /absolute/new/output/metal/frames/%04d.p
 ```sh
 /Applications/Blender.app/Contents/MacOS/Blender --background --python generator/polymer_brittle.py -- --out /absolute/new/output/polymer_brittle
 /Applications/Blender.app/Contents/MacOS/Blender --background --python generator/polymer_mixed.py -- --out /absolute/new/output/polymer_mixed --render
-/Applications/Blender.app/Contents/MacOS/Blender --background --python generator/composite_fragmentation.py -- --out /absolute/new/output/composite_fragmentation --render
+/Applications/Blender.app/Contents/MacOS/Blender --background --python generator/composite_fragmentation.py -- --out /absolute/new/output/composite_fragmentation --variant local --render
 ```
 
 新增PNG序列：脆性高分子 `frames/%06d.png`；有限变形高分子与复材分束 `frames/frame_%04d.png`。省略全渲染时仍输出关键状态和配置；`polymer_mixed.py --checks-only` 单独检查600帧。最终编码及来源标签包装仍须完成，裸入口输出不等于可收录或可训练视频。
@@ -79,7 +79,7 @@ ffmpeg -framerate 30 -start_number 1 -i /absolute/new/output/metal/frames/%04d.p
 
 ## 第一阶段断裂参数入口
 
-用途与离散候选见 [专项设计](../docs/fracture-variation-stage1.md)；候选视频、核验结果及待办仍只在 [项目入口](../README.md) 和 [总索引](../outputs/index.json) 维护。新版本默认值用于与旧固定基准回归，已接受成片的同名JSON仍记录其原版本。工程守卫不表示材料、视觉或连续范围通过。
+用途与离散候选见 [专项设计](../docs/history/video-v1/fracture-variation-stage1.md)；候选视频、核验结果及待办仍只在 [项目入口](../README.md) 和 [V1 清单](../datasets/video-V1/manifest.json) 维护。新版本默认值用于与旧固定基准回归，已接受成片的同名JSON仍记录其原版本。工程守卫不表示材料、视觉或连续范围通过。
 
 | 入口 | 断裂相关参数 | 适用边界 |
 |---|---|---|
@@ -100,7 +100,7 @@ ffmpeg -framerate 30 -start_number 1 -i /absolute/new/output/metal/frames/%04d.p
 
 ## 首批新增离散参数支持
 
-按[首批新增设计](../docs/training-batch1-design.md)扩展解析和配置输出；入口支持不表示新增值已通过材料、画面或组合检查，实际结果见README/index。
+按[首批新增设计](../docs/history/video-v1/training-batch1-design.md)扩展解析和配置输出；入口支持不表示新增值已通过材料、画面或组合检查，实际结果见项目 README。
 
 | 入口 | 本批新增允许值 | 适用边界 |
 |---|---|---|
@@ -144,10 +144,26 @@ python3 generator/independent_batch_encode.py --case ductile_02 --frames /absolu
 
 ## 统一视频标注导出
 
-[export_video_labels.py](export_video_labels.py)（`unified-video-label-export/1.1`）从总索引读取已接受或检查通过待接受的视频，核对媒体、标签与文件校验值，输出一个集中 Excel 工作簿和同内容 CSV。主表沿用真实实验标签五列；核验说明保存完整六组标签、状态、媒体路径和已记录工程事件，主表时间采用实际模拟最终失去贯通连接的事件，说明页记录精确秒、帧及原测量字段；精确首次视觉分离未知继续单独保存。需要 Python、openpyxl 和 ffprobe，不读取固定 `_work/` 输入，不更改视频、元数据或接受状态。
+[export_video_labels.py](export_video_labels.py)（`unified-video-label-export/2.0`）按参考表 `annotation-table-full.csv` 的 28 列及原顺序导出 CSV 和 Excel 主表。按清单 `validation_dataset.member_ids` 取整片及顺序，旧索引缺少该声明时沿用 `items`。运行需要 Python、openpyxl 和 ffprobe。
+
+| 字段 | 导出规则 |
+|---|---|
+| id、video_path、清晰度、视频时长／帧率／总帧数 | 采用模拟视频的稳定 ID 和相对于清单的路径。实际探测编码宽×高、时长（秒）、帧率和总帧数。 |
+| 断裂时间点、断裂帧_前／后 | V1 用最终失去适用贯通连接的模拟事件。后帧等于工程记录的 1 起帧号减 1，前帧再减 1。时间点为后帧除以帧率的数值秒。首次肉眼分离的精确时刻仍未知，逐条备注说明口径。 |
+| 断裂模式、材料类型、断裂位置 | 采用清单中的有效标签。附件的模式列区分脆性、韧性、半脆半韧。项目主模式为界面脱粘或爆炸性断裂时，对应现象或异常列填“是”，模式列填“无法判断”，备注保留项目主模式。陶瓷写作“其他(无机非)”并备注，夹口根部写作“夹持根部”。 |
+| 标注状态、断裂状态 | 有完整断裂为“已标注·有断裂／发生断裂”。未呈现破坏或末态仍连接为“已标注·无断裂／未断裂”，时间、前后帧、模式与位置填“无”，局部破坏在备注说明。结果无法确认时用“无法判读／无法判断”，时间点留空。用户验收状态另见清单。 |
+| 异常与现象 | 夹持、拍摄异常按各自的核验标签转换。其余现象有逐片依据才填“是／否”。在清单成员的 `annotation_observations` 中按 CSV 列名保存 `value` 和指向同片元数据的 `metadata_field`，可引用成片观察或明确的同材料段测量。证据不足填“无法判断”。未夹紧和断后脱夹分别判断。 |
+| 空列与时间范围 | 参考表的“断裂帧数”、`has_fracture`、`is_abnormal` 为保留空列。V1 全部有明确的模拟事件时刻，因此区间上下界均留空。附件按区间标注时，时间点留空，前后帧为“无”，上下界以秒计。 |
+
+工作簿的“核验说明”保留原六组标签、精确模拟帧与测量字段。导出报告按 ID 列出媒体校验与新增现象的依据。
 
 ```sh
-python3 generator/export_video_labels.py --index outputs/index.json --output-dir /absolute/new/label-output
+python3 generator/export_video_labels.py --summary
+python3 generator/export_video_labels.py --manifest datasets/video-V1/manifest.json --output-dir /absolute/new/label-output
 ```
 
+默认使用仓库内 V1 清单。项目内的 `--summary` 同时读取审核目录；单独复制的数据包可用 `--manifest <数据包>/manifest.json` 查询或导出。验收时将导出的 `all_videos_tag.csv` 与包内 `labels.csv` 比对。
+
 适用范围为整段模拟视频标注整理；不创建下游13列输入或训练发布，不向切片复制整片标签。
+
+标签后续由用户明确确认时，导出器采用索引中绑定原metadata校验值的确认记录更新有效标签；原metadata与独立复核保留为历史依据，未绑定确认的字段冲突仍阻断导出。

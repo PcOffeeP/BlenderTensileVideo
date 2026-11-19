@@ -1,12 +1,25 @@
 """Qualitative source-constrained rapid splitting of a narrow composite strip.
-Run Blender --background --python generator/composite_fragmentation.py -- --out DIR [--render].
+Run Blender --background --python generator/composite_fragmentation.py -- --out DIR --variant local [--render].
 Fixed baseline only; no approved parameter range or constitutive inference.
 """
-import bpy, math, json, sys, argparse
+import argparse
+import json
+import math
+import sys
 from pathlib import Path
+VERSION='composite-fragmentation/0.2.1'
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--out', required=True)
+parser.add_argument('--variant', choices=('local', 'full_span'), required=True,
+                    help='Select the archived geometry preset explicitly.')
+parser.add_argument('--render', action='store_true')
+parser.add_argument('--resume', action='store_true')
+argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else sys.argv[1:]
+a = parser.parse_args(argv)
+
+import bpy
 from mathutils import Vector
-VERSION='composite-fragmentation/0.2.0'
-p=argparse.ArgumentParser();p.add_argument('--out',required=True);p.add_argument('--variant',choices=['local','full_span'],default='full_span');p.add_argument('--render',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args(sys.argv[sys.argv.index('--')+1:])
+
 out=Path(a.out).resolve();out.mkdir(parents=True,exist_ok=True)
 C={'implementation_version':VERSION,'fps':30,'frames':600,'resolution':[960,540],'loading_axis':'z','fixed_end':'lower','moving_end':'upper','free_span':5.0,'width':0.60,'strand_boundaries':[-.3,-.22,-.11,-.025,.09,.19,.3],'strand_splay_x':[-.085,-.040,-.022,.009,.034,.073],'strand_shear_factors':[.95,1.1,.9,1.05,.98,1.0],'surface_texture':'subtle axial colour bands, illustrative rather than observed fiber orientation','thickness':0.12,'grip_overlap':0.48,'synthetic_gauge':[-1.5,1.5],'units':'dimensionless relative coordinates','event_frame':481,'settled_frame':526,'maximum_grip_displacement':0.10,'strand_count':6,'strand_seam_centres':[-.25,.12,-.05,.26,-.15,.05],'fracture_plane_slope_y':0.8,'local_shear_y':0.10,'splay_plateau_z':[-.35,.35],'splay_zero_z':[-.85,.85],'decay_amplitude_ratio':0.16,'decay_cycles':2.0,'free_detached_fragments':0,'camera':{'position':[9,-17,3],'look_at':[0,0,0],'projection':'orthographic','ortho_scale':16.4},'renderer':{'engine':'BLENDER_WORKBENCH','studio_light':'paint.sl','aa':'8','world_color':[.13,.16,.19],'cavity':'BOTH','color':'MATERIAL','view_transform':'Standard'},'fixture':{'jaw_inner_y':[-.06,.06],'jaw_centres_y':[-.26,.26],'jaw_size':[1.48,.40,.72],'jaw_centres_z':[-2.86,2.86],'body_size':[2.40,1.1,.70],'body_centres_z':[-3.33,3.33],'shaft_size':[.75,.80,.57],'shaft_centres_z':[-3.94,3.94],'bolt_x':[-.96,.96],'bolt_size':[.19,.12,.19],'bevel_width':.035,'bevel_segments':3},'encoding':{'codec':'libx264','preset':'slow','crf':16,'pixel_format':'yuv420p'},'rear_panel':False,'machine_columns':False,'no_constitutive_solver':True,'scope':'fixed qualitative rapid rupture with longitudinal branched remnants; strand count and geometry authored, reinforcement and layup unknown'}
 C.update({'variant':a.variant,'geometry_preset_version':'local/0.1.0' if a.variant=='local' else 'full_span/0.2.0'})

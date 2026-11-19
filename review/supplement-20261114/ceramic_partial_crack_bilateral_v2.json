@@ -1,0 +1,702 @@
+{
+  "schema": "virtual-eval-supplement-candidate/1",
+  "id": "ceramic_partial_crack_bilateral_v2",
+  "status": "visual_effect_accepted_labels_pending",
+  "user_accepted": false,
+  "five_label_ground_truth": null,
+  "candidate_expectations": {
+    "断裂状态": "未断裂",
+    "断裂现象_开裂": "是"
+  },
+  "expectation_scope": "作者制作目标，不是人工真值；用户需观看完整视频和后续实际输入后独立审核五类标签。",
+  "generated_date": "2026-11-14",
+  "implementation_version": "ceramic-partial-crack/0.2.0",
+  "implementation": {
+    "path": "generator/ceramic_crack.py",
+    "sha256": "da3d96abeddfaecb80fd8375bc0198b9761deeae5326d677cb52600961bf44aa",
+    "blender_version": "5.2.1 LTS",
+    "scope": "单个未标定陶瓷狗骨双侧局部开裂场景；工程守卫不是参数范围批准。"
+  },
+  "video": {
+    "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/virtual-eval-supplement-20261114/candidates/ceramic_partial_crack_bilateral_v2.mp4",
+    "sha256": "9f2295e872f18a69679ac42ddb4519f4f662e4054af171c5ea41f9b0ec7dff2a",
+    "bytes": 505111,
+    "duration_s": 20,
+    "fps": 30,
+    "frame_count": 600,
+    "resolution": [
+      1280,
+      720
+    ],
+    "framing_profile": "standard",
+    "purpose": "full_scene_candidate",
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "avg_frame_rate": "30/1",
+          "nb_read_frames": "600"
+        }
+      ],
+      "format": {
+        "duration": "20.000000",
+        "size": "505111"
+      }
+    }
+  },
+  "parent_virtual_scene": {
+    "id": "ceramic_dogbone_brittle_baseline_v1",
+    "relationship": "同一既有脚本家族及装置/材料参考；重新生成局部裂纹，不是由旧视频裁剪或旧视频标签转写。",
+    "parent_metadata_path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/outputs/current/ceramic_dogbone_brittle/ceramic_dogbone_brittle_baseline_v1.json",
+    "parent_metadata_sha256": "348c89e8e50f064a4eeb484cee0a2d3e66044b28ee8fbd8462338fd83a3a424e",
+    "parent_implementation": "ceramic-initial/1.2.0",
+    "parent_video_implementation": "ceramic-initial/1.0.1"
+  },
+  "source": {
+    "id": "video_0050",
+    "path": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/standard-videos/video_0050.mp4",
+    "sha256": "bae5b69d0be58e36b37871d812941adf8d1f70c029ce8e95643bb33faeddb9b0",
+    "source_type": "real_video_visual_reference",
+    "structure": "白色狗骨形试样；实际成分、尺寸、正式标距未知",
+    "material_identity": "陶瓷身份由用户此前确认；具体材料与增强结构未知",
+    "original_record": {
+      "id": "video_0050",
+      "断裂时间点": null,
+      "断裂模式": "视频异常",
+      "材料类型": "其他(无机非)",
+      "清晰度": "720P"
+    },
+    "lineage_exposure": "参考源归 fold_0_train、fold_1_train、fold_2_val；各候选模型实际使用情况未核实，不自动具备独立测评资格。",
+    "license": "未知；参考素材和新生成视频的许可范围均待核实。"
+  },
+  "time_mapping": {
+    "type": "定性重定时，无精确逐帧源映射",
+    "source_duration_s": 53.633,
+    "source_observations": "约 10–53 秒裂纹逐渐明显、后期主裂纹较宽；来源中未确认完整分离及精确分离时刻。",
+    "simulation": "0–3 秒初始加载；之后左右裂口向中央扩展；材料及夹具从帧 480 开始保持到结束。",
+    "actual_first_left_opening": {
+      "blender_frame": 106,
+      "time_s": 3.5
+    },
+    "actual_first_right_opening": {
+      "blender_frame": 106,
+      "time_s": 3.5
+    },
+    "actual_stop": {
+      "blender_frame": 480,
+      "time_s": 15.966666666666667,
+      "nominal_stop_parameter_s": 16.0
+    },
+    "source_and_simulated_seconds_are_not_equivalent": true,
+    "frame_timestamp_convention": "Blender帧从1开始，时间=(帧-1)/30；编码600帧、20秒。"
+  },
+  "observations": {
+    "source": "真实参考有多条细横向裂纹，不能确认本片构造的双侧前沿、三维形态或开口数值。",
+    "view": "主Agent通过 QuickTime 实际播放最终视频并查看开始、约7秒、约11秒与约18秒：整机、夹具和试样可见，左右细裂口向中央发展，中央有材料连接；非逐帧人工观看。",
+    "roi": "本视频为完整场景；后续裁剪由数据处理另行完成，此次未生成ROI视频。"
+  },
+  "assumptions": [
+    "用户要求本样片裂纹从两侧向中间发展；本实现用同步、均匀贯穿厚度的两个前沿，中央保留材料桥。",
+    "两侧裂口形状、速度、开口和中央桥宽为作者设定，不是源片测量。",
+    "上端加载、下端固定，采用定性位移控制，开裂发展结束后保持。",
+    "尺寸、开口与时程均为相对演示参数，不是标定的材料参数或物理尺度。"
+  ],
+  "unknowns": [
+    "真实试样组成、力学参数、正式标距与裂纹的精确三维路径、发展速度。",
+    "具体模型历史暴露、参考素材及生成视频的许可范围。",
+    "整机视频及后续实际ROI对于用户和模型的可判读性；未运行ROI处理或模型。",
+    "没有穷尽通用三角面自相交和完整夹具碰撞求解。"
+  ],
+  "complete_config": {
+    "implementation_version": "ceramic-partial-crack/0.2.0",
+    "parent_implementation_version": "ceramic-initial/1.2.0",
+    "parent_virtual_id": "ceramic_dogbone_brittle_baseline_v1",
+    "applicability": "one qualitative partial crack of a ceramic dogbone, uncalibrated and not accepted",
+    "fps": 30,
+    "frames": 600,
+    "duration_s": 20,
+    "resolution": [
+      1280,
+      720
+    ],
+    "units": "dimensionless relative coordinates, no asserted mm scale",
+    "free_span": 5.0,
+    "width_gauge": 0.7,
+    "width_shoulders": 1.3,
+    "thickness": 0.2,
+    "embed_each_jaw": 0.48,
+    "authored_gauge": [
+      -1.5,
+      1.5
+    ],
+    "source_formal_gauge_known": false,
+    "fracture_center_z": -0.4,
+    "fracture_zone_initial_material_z_bounds": [
+      -0.47000000000000003,
+      -0.33
+    ],
+    "moving_end": "upper",
+    "fixed_end": "lower",
+    "axis": "z",
+    "prefracture_extension": 0.012,
+    "crack_loading_travel": 0.035,
+    "crack_front_start_u": [
+      -0.5,
+      0.5
+    ],
+    "crack_front_final_u": [
+      -0.125,
+      0.125
+    ],
+    "crack_front_transition_width_u": 0.1,
+    "minimum_resolved_opening": 1e-07,
+    "crack_growth_start_frame": 91,
+    "crack_growth_stop_frame": 480,
+    "crack_growth_interval_s": 12.966666666666667,
+    "total_grip_travel": 0.047,
+    "stop_from_frame": 480,
+    "full_separation_event": null,
+    "no_removed_material": true,
+    "camera_fixed": true,
+    "framing_profile": "standard",
+    "camera_ortho_scale": 17.2,
+    "output_purpose": "full_scene_candidate",
+    "camera_position": [
+      0,
+      -22,
+      0
+    ],
+    "camera_target": [
+      0,
+      0,
+      0
+    ],
+    "solver": "prescribed geometry, no constitutive solver",
+    "parameter_scope": "one uncalibrated demonstration; no parameter range approved",
+    "parameter_definitions": {
+      "fracture_center_z": {
+        "unit": "initial dimensionless material z",
+        "default": -0.4,
+        "engineering_guard": "finite center +/-0.07 strictly inside (-1.5,1.5)"
+      },
+      "crack_start_time_s": {
+        "unit": "nominal simulation seconds",
+        "default": 3.0
+      },
+      "crack_stop_time_s": {
+        "unit": "nominal simulation seconds",
+        "default": 16.0,
+        "discrete_values": [
+          12.0,
+          13.0,
+          15.0,
+          16.0,
+          17.0
+        ]
+      },
+      "crack_loading_travel": {
+        "unit": "dimensionless relative coordinate",
+        "default": 0.035
+      },
+      "bridge_half_width_u": {
+        "unit": "normalized specimen width",
+        "default": 0.125
+      },
+      "width_height": {
+        "unit": "pixels",
+        "default": [
+          1280,
+          720
+        ]
+      },
+      "ortho_scale": {
+        "unit": "dimensionless scene coordinates",
+        "default": 17.2
+      }
+    },
+    "frame_timestamp_convention": "time_s=(frame-1)/30; encoded duration600/30=20s",
+    "gauge_marker_material_z": [
+      -1.4,
+      1.4
+    ],
+    "section_material_z": [
+      -0.985,
+      0.585
+    ],
+    "section_measurement": "evaluated outer edges intersect initial material z plane; projected xy polygon area and 3D polygon vector area; entire crack envelope excluded",
+    "volume_applicability": "uncalibrated elastic-like geometric volume; no incompressibility or force-equilibrium assertion",
+    "scene_file_scope": "saved final state only; full animation reconstructed by reusable generator",
+    "equations": {
+      "elastic_extension": "prefracture_extension*S((min(frame,hold_frame)-1)/(hold_frame-1))",
+      "crack_progress": "S((min(frame,hold_frame)-crack_start)/(hold_frame-crack_start))",
+      "local_open_fraction": "max(S((left_front-u)/0.1),S((u-right_front)/0.1)); left_front=-0.5+(0.5-bridge_half_width_u)*p; right_front=-left_front",
+      "upper_crack_displacement": "crack_loading_travel*p*(w+(1-w)*t); w=0 when opening <=1e-7",
+      "seam": "fracture_center_z+0.045*sin(15*u)+0.025*sin(39*u)",
+      "topology": "zero-opening seam vertices share indices at every frame; no final cut"
+    },
+    "geometry_constants": {
+      "embedded_z_endpoints": [
+        -2.98,
+        2.98
+      ],
+      "width_equation": "0.7 if abs(material_z)<=1.4; 1.3 if >=2.4; otherwise 0.7+0.6*S((abs(material_z)-1.4)/1.0)",
+      "seam_amplitudes": [
+        0.045,
+        0.025
+      ],
+      "seam_frequencies": [
+        15,
+        39
+      ],
+      "elastic_free_span_z": [
+        -2.5,
+        2.5
+      ]
+    },
+    "render_engine": "BLENDER_WORKBENCH",
+    "studio_light": "paint.sl",
+    "anti_aliasing": "8",
+    "world_color": [
+      0.31,
+      0.43,
+      0.55
+    ],
+    "mesh_surface_subdivisions_u_t": [
+      32,
+      32
+    ],
+    "material_thickness_y_layers": [
+      -0.1,
+      -0.075,
+      -0.05,
+      -0.025,
+      0,
+      0.025,
+      0.05,
+      0.075,
+      0.095,
+      0.099,
+      0.0998,
+      0.1
+    ],
+    "shading": {
+      "light": "STUDIO",
+      "color_type": "MATERIAL",
+      "show_shadows": true,
+      "show_cavity": true,
+      "cavity_type": "BOTH",
+      "curvature_ridge_factor": 1.1,
+      "curvature_valley_factor": 1.4,
+      "show_specular_highlight": true,
+      "background_type": "WORLD",
+      "view_transform": "Standard"
+    },
+    "material_colors": {
+      "ceramic": [
+        0.81,
+        0.79,
+        0.7
+      ],
+      "fracture": [
+        0.57,
+        0.55,
+        0.49
+      ],
+      "steel": [
+        0.47,
+        0.51,
+        0.54
+      ],
+      "jaw": [
+        0.19,
+        0.22,
+        0.25
+      ],
+      "machine": [
+        0.28,
+        0.36,
+        0.42
+      ],
+      "bolts": [
+        0.08,
+        0.09,
+        0.11
+      ]
+    },
+    "encoding": {
+      "codec": "libx264",
+      "crf": 18,
+      "pixel_format": "yuv420p",
+      "movflags": "+faststart"
+    },
+    "known_limitations": [
+      "two fronts advance inward uniformly through thickness as a user-directed qualitative shape; real 3D crack front is not observed",
+      "source is in fold 0/1 training and fold 2 validation; exposure for each model is unknown",
+      "no general self-intersection solver",
+      "closeup profile excludes grips and full specimen"
+    ],
+    "framing_projection_check": {
+      "crack_envelope_visible": true,
+      "machine_bounds_visible": true,
+      "grip_centers_visible": [
+        true,
+        true
+      ],
+      "jaw_bounds_intersect_frame": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "jaw_bounds_fully_visible": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "scope": "projected authored bounds across fixture motion, not image visibility after encoding"
+    },
+    "fixtures_initial": [
+      {
+        "name": "lower physical jaw -0.3",
+        "location": [
+          0.0,
+          -0.30000001192092896,
+          -2.8499999046325684
+        ],
+        "dimensions": [
+          1.649999976158142,
+          0.4000000059604645,
+          0.699999988079071
+        ],
+        "moving_sign": -1
+      },
+      {
+        "name": "lower physical jaw 0.3",
+        "location": [
+          0.0,
+          0.30000001192092896,
+          -2.8499999046325684
+        ],
+        "dimensions": [
+          1.649999976158142,
+          0.4000000059604645,
+          0.699999988079071
+        ],
+        "moving_sign": -1
+      },
+      {
+        "name": "fixture load body -1",
+        "location": [
+          0.0,
+          0.05000000074505806,
+          -3.309999942779541
+        ],
+        "dimensions": [
+          2.0999999046325684,
+          1.149999976158142,
+          0.30000001192092896
+        ],
+        "moving_sign": -1
+      },
+      {
+        "name": "load transfer rod -1",
+        "location": [
+          0.0,
+          0.05000000074505806,
+          -3.7300000190734863
+        ],
+        "dimensions": [
+          0.6200000047683716,
+          0.7200000286102295,
+          0.6000000238418579
+        ],
+        "moving_sign": -1
+      },
+      {
+        "name": "jaw fastener -1-0.77",
+        "location": [
+          -0.7699999809265137,
+          -0.5299999713897705,
+          -2.8499999046325684
+        ],
+        "dimensions": [
+          0.18000000715255737,
+          0.09000000357627869,
+          0.18000000715255737
+        ],
+        "moving_sign": -1
+      },
+      {
+        "name": "jaw fastener -10.77",
+        "location": [
+          0.7699999809265137,
+          -0.5299999713897705,
+          -2.8499999046325684
+        ],
+        "dimensions": [
+          0.18000000715255737,
+          0.09000000357627869,
+          0.18000000715255737
+        ],
+        "moving_sign": -1
+      },
+      {
+        "name": "upper physical jaw -0.3",
+        "location": [
+          0.0,
+          -0.30000001192092896,
+          2.8499999046325684
+        ],
+        "dimensions": [
+          1.649999976158142,
+          0.4000000059604645,
+          0.699999988079071
+        ],
+        "moving_sign": 1
+      },
+      {
+        "name": "upper physical jaw 0.3",
+        "location": [
+          0.0,
+          0.30000001192092896,
+          2.8499999046325684
+        ],
+        "dimensions": [
+          1.649999976158142,
+          0.4000000059604645,
+          0.699999988079071
+        ],
+        "moving_sign": 1
+      },
+      {
+        "name": "fixture load body 1",
+        "location": [
+          0.0,
+          0.05000000074505806,
+          3.309999942779541
+        ],
+        "dimensions": [
+          2.0999999046325684,
+          1.149999976158142,
+          0.30000001192092896
+        ],
+        "moving_sign": 1
+      },
+      {
+        "name": "load transfer rod 1",
+        "location": [
+          0.0,
+          0.05000000074505806,
+          3.7300000190734863
+        ],
+        "dimensions": [
+          0.6200000047683716,
+          0.7200000286102295,
+          0.6000000238418579
+        ],
+        "moving_sign": 1
+      },
+      {
+        "name": "jaw fastener 1-0.77",
+        "location": [
+          -0.7699999809265137,
+          -0.5299999713897705,
+          2.8499999046325684
+        ],
+        "dimensions": [
+          0.18000000715255737,
+          0.09000000357627869,
+          0.18000000715255737
+        ],
+        "moving_sign": 1
+      },
+      {
+        "name": "jaw fastener 10.77",
+        "location": [
+          0.7699999809265137,
+          -0.5299999713897705,
+          2.8499999046325684
+        ],
+        "dimensions": [
+          0.18000000715255737,
+          0.09000000357627869,
+          0.18000000715255737
+        ],
+        "moving_sign": 1
+      }
+    ],
+    "fixed_machine_geometry": [
+      {
+        "name": "upper machine crossbeam",
+        "location": [
+          0.0,
+          0.07999999821186066,
+          4.170000076293945
+        ],
+        "dimensions": [
+          6.650000095367432,
+          1.0,
+          0.5
+        ]
+      },
+      {
+        "name": "lower machine base",
+        "location": [
+          0.0,
+          0.07999999821186066,
+          -4.170000076293945
+        ],
+        "dimensions": [
+          6.650000095367432,
+          1.149999976158142,
+          0.5
+        ]
+      },
+      {
+        "name": "machine support column -3.12",
+        "location": [
+          -3.119999885559082,
+          0.07999999821186066,
+          0.0
+        ],
+        "dimensions": [
+          0.47999998927116394,
+          0.6000000238418579,
+          8.0
+        ]
+      },
+      {
+        "name": "machine support column 3.12",
+        "location": [
+          3.119999885559082,
+          0.07999999821186066,
+          0.0
+        ],
+        "dimensions": [
+          0.47999998927116394,
+          0.6000000238418579,
+          8.0
+        ]
+      },
+      {
+        "name": "floor base",
+        "location": [
+          0.0,
+          0.07999999821186066,
+          -4.559999942779541
+        ],
+        "dimensions": [
+          7.349999904632568,
+          1.7000000476837158,
+          0.2800000011920929
+        ]
+      }
+    ]
+  },
+  "technical_verification": {
+    "frames_checked": 600,
+    "all_frame_geometry_summary": {
+      "frames_checked": 600,
+      "actual_first_nonzero_crack_opening_frame": 106,
+      "actual_first_disconnection_frame": null,
+      "actual_first_left_opening_frame": 106,
+      "actual_first_right_opening_frame": 106,
+      "actual_left_and_right_innermost_sample_at_hold": {
+        "left": {
+          "outer_gap": 0.034999996423721313,
+          "innermost_open_u": -0.15625,
+          "open_vertex_count": 12
+        },
+        "right": {
+          "outer_gap": 0.034999996423721313,
+          "innermost_open_u": 0.15625,
+          "open_vertex_count": 12
+        },
+        "sampling": "33 front-surface material points; gap between evaluated matching seam vertices; not a continuous crack-front measurement"
+      },
+      "sampled_fronts_both_advance_toward_centre": true,
+      "all_frame_single_component_and_grip_to_grip_material_path": true,
+      "minimum_front_face_actual_bridge_width": 0.17499999701976776,
+      "minimum_bridge_area_xy_from_boundary_projection": 0.034999999403953555,
+      "maximum_actual_seam_gap": 0.0350000262260437,
+      "minimum_actual_seam_gap": 0.0,
+      "max_jaw_contact_error": 7.450580596923828e-09,
+      "volume_ratio_minmax": [
+        1.0,
+        1.0034429995401162
+      ],
+      "hold_frame": 480,
+      "all_frames_after_hold_match_mesh_and_fixture_hashes": true,
+      "scope": "actual evaluated 600-frame geometry checks; encoded visibility, independent material review, user acceptance pending"
+    },
+    "both_side_tips_and_open_counts_progress_toward_center": true,
+    "same_material_intact_segment_endpoint_length_ratio_minmax": [
+      0.9999997752675917,
+      1.0024001268844334
+    ],
+    "intact_section_xy_projected_area_ratio_minmax": [
+      1.0,
+      1.0
+    ],
+    "bridge_area_interpretation": "两个外表面连续共享顶点宽度的较小值乘厚度，是按构造得到的投影估算，非内部截面积直接测量。",
+    "clearance_scope": "检查互补裂面对应点及网格闭合边；未穷尽一般自相交。",
+    "frame_decode": "ffmpeg -xerror 完整解码、600帧检查通过",
+    "estimated_peak_aperture_px_before_encoding": 2.6046531144962755,
+    "aperture_note": "理想正交投影估算，不是编码或ROI中的实测可见性。",
+    "left_and_right_sampled_openings_contiguous_from_outer_edge": {
+      "frames_checked": 600,
+      "exceptions": 0,
+      "method": "各帧逐侧核对外缘非零、最内采样前沿及开口顶点数；33个前表面采样点，不是连续三维前沿。"
+    }
+  },
+  "acceptance_scope": {
+    "user_accepted": false,
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "independent_review_workflow": "指定 review-workflow 不可用，未声称完成该流程",
+    "training_released": false,
+    "evaluation_eligible": false,
+    "evaluation_use_note": "须逐模型核对来源暴露、许可、实际画面标签与用户接受；真实和虚拟分别报告。",
+    "visual_effect_accepted": true,
+    "user_acceptance_note": "用户确认本视频的视觉效果；五类标签尚未逐项确认，完整验收仍待。"
+  },
+  "evidence_artifacts": {
+    "full_frame_checks": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/virtual-eval-supplement-20261114/runs/crack-bilateral-v2/all_frame_mesh_checks.json",
+    "summary": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/virtual-eval-supplement-20261114/runs/crack-bilateral-v2/all_frame_summary.json"
+  },
+  "main_final_video_view_record": {
+    "completed": true,
+    "player": "QuickTime Player",
+    "video_sha256": "9f2295e872f18a69679ac42ddb4519f4f662e4054af171c5ea41f9b0ec7dff2a",
+    "scope": "播放及关键状态查看，非逐帧人工验收；不代表用户接受。"
+  },
+  "independent_review_record": {
+    "role": "独立协作者",
+    "scope": [
+      "最终编码视频摘要及严格解码",
+      "实际600帧连通、夹口、左右开口、中央桥和保持状态",
+      "两侧采样裂口从外缘连续并向中心发展",
+      "查看最终视频关键时刻、来源和标签边界"
+    ],
+    "result": "在检查范围内未发现阻断交用户观看的编码或几何错误；不代表用户接受、ROI检查或定量材料模型验证。",
+    "limits": [
+      "项目指定 review-workflow 不可用，本检查不代表完成该流程",
+      "一般三角面自相交未穷尽检查",
+      "后续实际ROI和模型输入的可辨性未知",
+      "材料桥面积为表面宽度与厚度的投影估算，不是内部截面积实测"
+    ]
+  },
+  "user_visual_effect_accepted": true,
+  "visual_acceptance_record": {
+    "date": "2026-11-14",
+    "user_quote": "这个双侧开裂的效果可以，继续生成未夹紧的样片吧。视频保留完整场景，不要做 ROI 裁剪。",
+    "scope": "仅此条双侧开裂视频的视觉效果；未确认五类标签、参数范围或评测资格。",
+    "video_sha256": "9f2295e872f18a69679ac42ddb4519f4f662e4054af171c5ea41f9b0ec7dff2a"
+  }
+}

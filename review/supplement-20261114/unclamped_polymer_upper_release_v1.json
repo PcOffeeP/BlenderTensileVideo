@@ -1,0 +1,302 @@
+{
+  "schema": "virtual-eval-supplement-candidate/1",
+  "id": "unclamped_polymer_upper_release_v1",
+  "status": "visual_effect_accepted_labels_pending",
+  "user_accepted": false,
+  "five_label_ground_truth": null,
+  "candidate_expectations": {
+    "断裂状态": "未断裂",
+    "异常_未夹紧": "是",
+    "断裂模式": "无",
+    "断裂位置": "无"
+  },
+  "expectation_scope": "作者制作目标与上游组合规则，均非用户人工真值；完整视频及后续实际输入的五类标签由用户观看后独立审核。",
+  "generated_date": "2026-11-14",
+  "implementation_version": "unclamped-flexible-strip/0.1.0",
+  "implementation": {
+    "path": "generator/unclamped_initial.py",
+    "sha256": "c26e35e7856595ec885572ead76c2f4e171acee50f1bd6aa277a9b4e19a789fa",
+    "blender_version": "5.2.1 LTS",
+    "scope": "单个柔性高分子上端滑出夹口场景，未标定材料、接触力或摩擦，参数范围未批准。"
+  },
+  "video": {
+    "path": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/virtual-eval-supplement-20261114/candidates/unclamped_polymer_upper_release_v1.mp4",
+    "sha256": "f1d4a3be9420ce23afb8480a579b541d4349e0b7662c69006f741864d3c09c4a",
+    "bytes": 500204,
+    "duration_s": 20,
+    "fps": 30,
+    "frame_count": 600,
+    "resolution": [
+      1280,
+      720
+    ],
+    "framing_profile": "complete_scene",
+    "purpose": "full_scene_candidate",
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv420p",
+          "avg_frame_rate": "30/1",
+          "nb_read_frames": "600"
+        }
+      ],
+      "format": {
+        "duration": "20.000000",
+        "size": "500204"
+      }
+    }
+  },
+  "parent_virtual_scene": null,
+  "source": {
+    "id": "video_0002",
+    "path": "/Users/pcoffeep/Documents/BUAA/IDM/Finetune-VLLM/Vedio_data/standard-videos/video_0002.mp4",
+    "sha256": "b2dccaf9a98020d661adfd0665f8320436abd04a52ac87f8165184f157a24f29",
+    "source_type": "real_video_visual_reference",
+    "mapping_record": {
+      "original_filename": "http_20251105_0011.mp4",
+      "source_directory": "raw-video/fetch",
+      "source_material_label": "高分子",
+      "original_resolution": [
+        810,
+        898
+      ]
+    },
+    "original_label_reference": "旧记录为未夹紧且未发生断裂；旧记录和参考画面不自动成为本视频五类真值。",
+    "source_video_stream": {
+      "frames": 194,
+      "fps": 30,
+      "duration_s": 6.466666666666667,
+      "last_presented_frame_time_s": 6.433333333333334
+    },
+    "source_container_duration_s": 6.591979,
+    "source_event_anchor": {
+      "frame_index_zero_based": 174,
+      "time_s": 5.8,
+      "meaning": "用户确认的未夹紧现象锚点，不是精确滑移起始帧"
+    },
+    "group_membership": [
+      "fold_0_train",
+      "fold_1_train",
+      "fold_2_val"
+    ],
+    "model_specific_exposure": "unknown",
+    "license": "unknown"
+  },
+  "time_mapping": {
+    "type": "定性重定时，非真实试验逐帧重建",
+    "source_observations": "源帧171–172仍见张紧试样，约173后上夹口下方试样消失、下夹具侧材料回弯；夹口内部遮挡。旧标注与用户确认将其作为未夹紧现象，源帧174／5.8秒是现象锚点，非起滑时刻。",
+    "simulation": "完整场景中上夹具上移；上端相对夹口滑移并脱出，随后柔性试样向右回弯并停止；下端保持夹持。",
+    "source_anchor_s": 5.8,
+    "simulated_first_fully_clear_frame": 384,
+    "simulated_first_fully_clear_time_s": 12.766666666666667,
+    "mapping_note": "源和模拟不是线性标定映射；为可见性延长滑移阶段，具体时间由作者设定。",
+    "frame_timestamp_convention": "Blender帧从1开始，时间=(帧-1)/30；编码600帧、20秒。"
+  },
+  "observations": {
+    "source": "上夹具逐渐上移，源帧171–172仍见张紧试样；约173后上夹口下方试样消失，下夹具侧材料回弯。夹口内部被遮挡，无法直接核实端部完整滑出的过程；未夹紧和未断裂是旧标注／用户确认的参考信息。",
+    "video": "主Agent在QuickTime实际播放最终MP4并查看初始、约10秒、13秒和19秒画面：装置与试样保留在画面内；上夹具上移，上端脱出并向右下回弯，下端留在夹口内。",
+    "roi": "完整装置及试样均在画面中；本次未进行ROI裁剪。"
+  },
+  "assumptions": [
+    "沿用用户旧资料的高分子材料类别；具体牌号、结构、厚度与力学参数未知。",
+    "采用定性位移控制：上端运动、作者给定的相对滑移、上端脱出后的平滑卸载及向右弯回。",
+    "为显示相对运动延长滑移过程；夹具几何及材料三维形态不是源片定量重建。",
+    "局部纵向伸长与横截面按几何规则耦合，以近似控制体积；没有求解应力、摩擦、夹持力或真实动力学。"
+  ],
+  "unknowns": [
+    "真实试样牌号、厚度、强度、力学曲线、夹持力、摩擦、滑移起始与真实三维运动。",
+    "源片和生成视频许可，以及具体模型训练或开发数据中的暴露情况。",
+    "实际ROI或模型预处理下可否判读；本轮未执行ROI裁剪或模型推理。",
+    "一般三角面自相交、全部设备细节和完整扫掠碰撞未穷尽求解。"
+  ],
+  "complete_config": {
+    "implementation_version": "unclamped-flexible-strip/0.1.0",
+    "applicability": "single qualitative flexible polymer upper-grip slip and release; no calibrated material or friction solver",
+    "output_purpose": "full_scene_candidate",
+    "reference_source_id": "video_0002",
+    "duration_s": 20,
+    "fps": 30,
+    "frames": 600,
+    "resolution": [
+      1280,
+      720
+    ],
+    "frame_timestamp_convention": "time_s=(frame-1)/30; encoded duration=600/30=20s",
+    "units": "dimensionless author geometry, no physical scale asserted",
+    "rest_material_centerline_length": 4.84,
+    "held_lower_material_fraction": 0.10416666666666667,
+    "end_width": 0.44,
+    "gauge_width": 0.14,
+    "rest_thickness": 0.075,
+    "specimen_mesh_rings": 97,
+    "initial_lower_material_end_z": -2.42,
+    "loading_end": "upper",
+    "fixed_end": "lower",
+    "axis": "z",
+    "upper_jaw_travel": 0.8,
+    "upper_jaw_load_end_s": 14.0,
+    "slip_start_s": 10.0,
+    "slip_end_s": 14.0,
+    "prescribed_relative_pullback_parameter": 0.55,
+    "post_release_bend_radians": 3.05,
+    "planned_release_frame": 384,
+    "planned_release_time_s": 12.766666666666667,
+    "settle_end_s": 14.166666666666668,
+    "post_release_motion": "prescribed smooth flexible return to a fixed curved state; no constitutive, friction or contact dynamics solver",
+    "jaws": {
+      "centres_initial_z": [
+        -2.25,
+        2.25
+      ],
+      "inner_x_planes": [
+        -0.22,
+        0.22
+      ],
+      "side_block_dimensions": [
+        0.3,
+        0.4,
+        0.5
+      ],
+      "cap_dimensions": [
+        1.28,
+        0.7,
+        0.14
+      ]
+    },
+    "camera_fixed": true,
+    "camera_position": [
+      0,
+      -25,
+      0
+    ],
+    "camera_target": [
+      0,
+      0,
+      0
+    ],
+    "orthographic_scale": 15.0,
+    "render_engine": "BLENDER_WORKBENCH",
+    "anti_aliasing": "8",
+    "parameter_range_accepted": false,
+    "source_time_mapping": "qualitative re-timing of the 6.467s source video stream; source 174/30=5.8s is an event anchor, not measured slip onset; candidate slip and return timing are authored",
+    "known_limitations": [
+      "real grip interior, friction, material properties and 3D path are unresolved",
+      "prescribed axisymmetric-ish ribbon shape is a qualitative author assumption, not a mechanical simulation",
+      "jaw collision check covers specimen triangles clipped to the z intervals of axis-aligned side jaw solids and their inner x planes; it is not a general self-intersection solver",
+      "source belongs to fold_0_train, fold_1_train and fold_2_val; model-specific exposure and license are unknown",
+      "no downstream ROI or model inference is performed"
+    ]
+  },
+  "technical_verification": {
+    "frames_checked": 600,
+    "all_frame_geometry_summary": {
+      "frames_checked": 600,
+      "actual_first_fully_clear_frame": 384,
+      "actual_first_fully_clear_time_s": 12.766666666666667,
+      "actual_max_endpoint_relative_motion_through_exit": 0.42537999153137207,
+      "actual_max_endpoint_relative_motion_all_frames": 5.005808711051941,
+      "relative_motion_interpretation": "after the endpoint exits the upper jaws, further endpoint motion includes free bending and is not jaw slip",
+      "actual_volume_ratio_range": [
+        0.9998293444412037,
+        1.000025294453689
+      ],
+      "actual_centerline_length_ratio_range": [
+        0.9999530518966802,
+        1.134980084257452
+      ],
+      "actual_gauge_length_ratio_range": [
+        0.999947465476886,
+        1.2076606087747075
+      ],
+      "actual_section_area_ratio_range": [
+        0.8280471699538834,
+        1.0000002538901263
+      ],
+      "minimum_jaw_normal_clearance": 0.0,
+      "minimum_cap_clearance": 0.07999992370605469,
+      "post_settle_all_material_and_fixture_hashes_identical": true,
+      "scope": "actual evaluated 600-frame mesh and axis-aligned jaw slab checks; no general self-intersection solver; encoded video, independent material review, and user acceptance remain separate"
+    },
+    "actual_first_fully_clear_frame": 384,
+    "last_frame_before_clear": 383,
+    "actual_upper_endpoint_relative_displacement_until_last_embedded_frame": 0.41947174072265625,
+    "displacement_boundary": "上一数值来自最后一个仍在夹口内的采样帧；首个完全脱出帧及之后的自由回弯不称为接触期滑移。",
+    "actual_lower_end_and_material_connectivity": "600帧下端在夹口轴向范围内、侧向接触、材料边图单连通且两端材料路径存在。",
+    "no_slip_control": {
+      "scope": "同一场景、相同夹具行程；600帧几何对照和选定完整视角关键帧，仅供诊断，非评测候选。",
+      "control_summary": {
+        "frames_checked": 600,
+        "actual_first_fully_clear_frame": null,
+        "actual_first_fully_clear_time_s": null,
+        "actual_max_endpoint_relative_motion_through_exit": 2.384185791015625e-07,
+        "actual_max_endpoint_relative_motion_all_frames": 2.384185791015625e-07,
+        "relative_motion_interpretation": "after the endpoint exits the upper jaws, further endpoint motion includes free bending and is not jaw slip",
+        "actual_volume_ratio_range": [
+          0.999999915433597,
+          1.0000319933790065
+        ],
+        "actual_centerline_length_ratio_range": [
+          1.0,
+          1.165289244240376
+        ],
+        "actual_gauge_length_ratio_range": [
+          1.0,
+          1.2542897716042067
+        ],
+        "actual_section_area_ratio_range": [
+          0.7972637814439535,
+          1.0
+        ],
+        "minimum_jaw_normal_clearance": 0.0,
+        "minimum_cap_clearance": 0.07999992370605469,
+        "post_settle_all_material_and_fixture_hashes_identical": true,
+        "scope": "actual evaluated 600-frame mesh and axis-aligned jaw slab checks; no general self-intersection solver; encoded video, independent material review, and user acceptance remain separate"
+      },
+      "actual_jaw_trajectory_identical_all_frames": true
+    },
+    "actual_render_geometry_matches_separate_600_frame_check": true,
+    "jaw_and_cap_clearance_scope": "实际试样三角面裁入每个轴对齐夹爪的轴向范围并测侧面法向间隙，另检查两端盖净距；不代表全面自穿、任意设备碰撞或接触力求解。",
+    "frame_decode": "ffmpeg -xerror 完整解码、600帧检查通过"
+  },
+  "main_final_video_view_record": {
+    "completed": true,
+    "player": "QuickTime Player",
+    "video_sha256": "f1d4a3be9420ce23afb8480a579b541d4349e0b7662c69006f741864d3c09c4a",
+    "scope": "实际播放最终编码并查看初始、滑移附近、回弯及末态的完整场景；不替代用户对效果和标签的验收。"
+  },
+  "independent_scoped_review": {
+    "completed": true,
+    "reviewer": "independent collaborator",
+    "scope": "最终编码摘要和完整解码、关键时刻画面，600帧实际连通、夹爪及端盖限定几何、夹具行程和无滑移对照；未发现其他阻断交用户观看的错误。",
+    "limitations": "不构成材料动力学、本构、全部碰撞、用户标签或指定专用流程的验证；源夹口内部遮挡的机制不可直接确认。"
+  },
+  "acceptance_scope": {
+    "user_accepted": false,
+    "style_accepted": false,
+    "parameter_range_accepted": false,
+    "training_released": false,
+    "evaluation_eligible": false,
+    "independent_review_workflow": "指定 review-workflow 不可用，不声称完成该流程",
+    "evaluation_use_note": "需用户逐片审核、逐模型暴露和许可核查；真实与虚拟分别报告。",
+    "visual_effect_accepted": true,
+    "user_acceptance_note": "用户确认此视频的视觉效果；五类标签尚未逐项确认，完整验收仍待。"
+  },
+  "evidence_artifacts": {
+    "full_frame_checks": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/virtual-eval-supplement-20261114/unclamped/run-v2/all_frame_mesh_checks.json",
+    "summary": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/virtual-eval-supplement-20261114/unclamped/run-v2/all_frame_summary.json",
+    "no_slip_control_checks": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/virtual-eval-supplement-20261114/unclamped/control-checks-v4/all_frame_mesh_checks.json",
+    "no_slip_control_frames": "/Users/pcoffeep/AgentPlayground/active-projects/BlenderTensileVideo/_work/virtual-eval-supplement-20261114/unclamped/control-preview-v4/frames"
+  },
+  "user_visual_effect_accepted": true,
+  "visual_acceptance_record": {
+    "date": "2026-11-15",
+    "user_quote": "这个未夹紧的效果可以，继续生成爆炸性断裂的样片吧。视频保留完整场景，不要做 ROI 裁剪。",
+    "scope": "仅此条未夹紧样片的视觉效果；未确认五类标签、样式或参数范围、测评资格。",
+    "video_sha256": "f1d4a3be9420ce23afb8480a579b541d4349e0b7662c69006f741864d3c09c4a"
+  }
+}

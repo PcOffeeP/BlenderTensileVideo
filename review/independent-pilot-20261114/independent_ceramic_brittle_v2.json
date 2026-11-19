@@ -1,0 +1,283 @@
+{
+  "id": "independent_ceramic_brittle_v2",
+  "status": "candidate_awaiting_user_visual_and_label_review",
+  "source": {
+    "type": "original_synthetic",
+    "real_experiment_video_used": false,
+    "prior_virtual_scene_as_visual_template": false,
+    "description": "作者依据用户确认的方案独立制作；材料类别是合成设定。",
+    "design": "DESIGN.md v1.13, independent synthetic sample section",
+    "material_principle_texts": [
+      "https://ntrs.nasa.gov/citations/20050186842",
+      "https://www.nist.gov/publications/understanding-deformation-behavior-uniaxial-tensile-tests-steel-specimens-varying"
+    ]
+  },
+  "implementation": {
+    "generator": "independent-fracture/0.1.0",
+    "generator_sha256": "f23f8c59c12176166f75f399cf5b33ccab871d979f33787467e896fadc1225a2",
+    "encoder_sha256": "5e0365ab7aa7425f568eb58e2b8e1da19dbd0ef1c697fa900c9b74e366bb21e3",
+    "gauge_audit_sha256": "e6c996950a9db66391dd50f716521c7bad46cfdc3627e280ce04c628db178b52"
+  },
+  "configuration": {
+    "frame_count": 600,
+    "fps": 30,
+    "duration_seconds": 20,
+    "resolution_px": [
+      1280,
+      960
+    ],
+    "render_engine": "BLENDER_EEVEE",
+    "render_samples": 32,
+    "motion_blur": false,
+    "color_management": "AgX",
+    "blender_version": "5.2.1 LTS",
+    "camera": {
+      "projection": "orthographic",
+      "ortho_scale": 6.3,
+      "position": [
+        0,
+        -16,
+        0.3
+      ],
+      "target": [
+        0,
+        0,
+        0.3
+      ]
+    },
+    "illumination": [
+      {
+        "position": [
+          -3.5,
+          -5,
+          5.5
+        ],
+        "energy": 850,
+        "size": 5.0,
+        "color": [
+          1,
+          0.93,
+          0.82
+        ]
+      },
+      {
+        "position": [
+          4,
+          -2.5,
+          1.8
+        ],
+        "energy": 600,
+        "size": 4.0,
+        "color": [
+          0.82,
+          0.9,
+          1
+        ]
+      },
+      {
+        "position": [
+          0,
+          0.8,
+          4.5
+        ],
+        "energy": 250,
+        "size": 3.0,
+        "color": [
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "materials": {
+      "specimen_base_color": [
+        0.72,
+        0.68,
+        0.58
+      ],
+      "specimen_metallic": 0.0,
+      "specimen_roughness": 0.36,
+      "fresh_fracture_color": [
+        0.52,
+        0.47,
+        0.39
+      ],
+      "background_color": [
+        0.06,
+        0.075,
+        0.073
+      ]
+    },
+    "geometry": {
+      "unit": "作者设定的无量纲 Blender 单位，非真实测量尺寸",
+      "material_coordinate_s_range": [
+        -1.7,
+        1.7
+      ],
+      "author_defined_gauge_s_range": [
+        -1.0625,
+        1.0625
+      ],
+      "gauge_initial_width": 0.48,
+      "grip_initial_width": 0.78,
+      "initial_thickness": 0.22,
+      "axial_intervals": 64,
+      "width_intervals": 32,
+      "thickness_intervals": 4,
+      "fracture_center_s": 0,
+      "grip_y_faces": [
+        -0.11,
+        0.11
+      ],
+      "jaw_center_z": [
+        -1.65,
+        1.65
+      ],
+      "jaw_size": [
+        1.05,
+        0.3,
+        0.54
+      ],
+      "guide_x": [
+        -1.55,
+        1.55
+      ],
+      "guide_y": 0.5,
+      "guide_radius": 0.095,
+      "beam_center_y": 0.25,
+      "upper_beam_size": [
+        3.5,
+        0.8,
+        0.27
+      ],
+      "lower_beam_size": [
+        3.5,
+        0.8,
+        0.26
+      ]
+    },
+    "deformation": {
+      "pre_and_post_static": true,
+      "frame_360_axial_opening": 0.014,
+      "gap_provenance": "作者设定的瞬时卸载近似，端部锚定；不是实测参数",
+      "fracture_shape": "沿厚度一致的起伏互补断面，凹凸幅度控制0.012"
+    },
+    "encoding": {
+      "format": "MP4",
+      "codec": "H.264/libx264",
+      "crf": 0,
+      "pix_fmt": "yuv420p",
+      "frame_rate": 30,
+      "frame_policy": "脆断重复0和360状态；韧断渲染0–390帧并重复390至599帧",
+      "color_note": "H.264在YUV420域无损；RGB到YUV420有色度抽样"
+    }
+  },
+  "video": {
+    "filename": "independent_ceramic_brittle_v2.mp4",
+    "sha256": "9171d11fd99a9048f1d9b736abfbc5aef9204d906af625eaa03a04cb6b135b45",
+    "bytes": 345658,
+    "ffprobe": {
+      "codec_name": "h264",
+      "profile": "High 4:4:4 Predictive",
+      "width": 1280,
+      "height": 960,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "30/1",
+      "duration": "20.000000",
+      "nb_frames": "600"
+    },
+    "full_decode": "passed"
+  },
+  "event_mapping": {
+    "frame_numbering": "从0开始，首帧呈现时刻为0秒",
+    "fps": 30,
+    "author_geometry_crack_onset_frame": null,
+    "actual_mesh_final_disconnection_frame": 360,
+    "actual_mesh_final_disconnection_time_s": 12.0,
+    "first_visible_line_frame": 360,
+    "first_visually_confirmable_complete_separation_frame": null,
+    "clarification": "前后视频采样状态和模拟事件，不代表真实材料物理破坏持续时间。"
+  },
+  "预期标签": {
+    "材料类别": "陶瓷",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "脆性断裂",
+    "断裂位置": "标距内",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "核验标签": {
+    "材料类别": "合成设定，未从外观独立确定",
+    "断裂结果": "网格测得完全断开；画面完整分离待用户判断",
+    "单一主要破坏类别": "待用户及科学复核",
+    "断裂位置": "作者定义标距内，几何中心破断",
+    "夹持异常": "对应夹口接触面与端点核对，用户视觉确认待进行",
+    "拍摄异常": "固定视角，无人为遮挡；用户视觉确认待进行"
+  },
+  "observations": [
+    "第360帧出现贯穿宽度的暗细线，放大后可见背景色；原生画面开口约1–2像素。",
+    "0–359与360–599帧分别保持静止；完整分离不易仅凭普通大小画面判定。"
+  ],
+  "assumptions_and_unknowns": [
+    "没有对应真实实验视频或来源时间映射。",
+    "材料牌号、微观破坏机制、本构曲线、真实载荷、物理尺寸和实验条件均未知。",
+    "运动、卸载、断面粗糙度、断口间隙及夹具停止均为作者设定的几何近似，非物理求解。",
+    "不同分辨率、缩放或模型抽帧时的可见性未知。"
+  ],
+  "checks": {
+    "frames_checked": 600,
+    "connected_components_before": [
+      1
+    ],
+    "connected_components_after": [
+      2
+    ],
+    "final_disconnection_frame_zero_based": 360,
+    "final_disconnection_time_s": 12.0,
+    "matched_crack_face_gap_min": 0.013999999035149813,
+    "event_gap_range": [
+      0.013999999035149813,
+      0.014000000664964318
+    ],
+    "jaw_face_gap_abs_max": 1.4901161193847656e-08,
+    "load_path_bounds_overlap_all_frames": true,
+    "post_event_unique_geometry_hash_count": 1,
+    "author_material_segment": [
+      -1.0625,
+      1.0624999999999998
+    ],
+    "material_path_length_initial": 2.124999985402414,
+    "material_path_length_at_event": 2.11329860097788,
+    "material_path_length_ratio_at_event": 0.9944934661153334,
+    "cross_section_envelope_area_ratio_at_event": 1.0,
+    "volume_ratio_min_max": [
+      0.9944934317805443,
+      1.0
+    ],
+    "volume_ratio_at_event": 0.9944934317805443,
+    "whole_specimen_volume_ratio_at_event": 0.99633818351634,
+    "nonadjacent_triangle_overlap_test": {
+      "checked_frames": [
+        0,
+        359,
+        360,
+        599
+      ],
+      "overlap_count": 0,
+      "scope": "BVH 排除共用任一顶点的三角面对；不证明相邻面或试样与夹具之间没有所有穿透。"
+    },
+    "scope": "材料段体积以实际网格截取并封口计算；路径沿同一前表面，不计断口间隙。开裂后面积是外形包络，不是剩余承载面积；传力连接为实际网格包围盒检查，非接触力证明。"
+  },
+  "independent_review": {
+    "limited_independent_check": "performed for candidate and/or key states; scope described in README",
+    "designated_review_workflow": "unavailable; not claimed as completed",
+    "scientific_accuracy_certified": false
+  },
+  "acceptance": {
+    "main_agent_final_video_viewed": true,
+    "user_visual_acceptance": false,
+    "user_label_acceptance": false,
+    "published_to_current": false,
+    "training_release": false
+  }
+}

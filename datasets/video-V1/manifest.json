@@ -1,0 +1,2804 @@
+{
+  "schema": "tensile-video-dataset/v1",
+  "validation_dataset": {
+    "id": "video-V1",
+    "status": "user_confirmed_first_validation_simulation_dataset",
+    "confirmed_on": "2026-10-10",
+    "video_directory": "videos",
+    "video_count": 65,
+    "total_video_bytes": 28732471,
+    "filename_rule": "<CSV id>.mp4",
+    "labels": {
+      "path": "labels.csv",
+      "sha256": "a236073d548fb8d1ce7a73c6118b0cf7eb64887a17e10bcd89bedb4a93c43a5d",
+      "row_count": 65,
+      "columns": [
+        "id",
+        "video_path",
+        "断裂时间点",
+        "断裂模式",
+        "材料类型",
+        "清晰度",
+        "断裂位置",
+        "断裂帧数",
+        "视频时长",
+        "视频帧率",
+        "视频总帧数",
+        "has_fracture",
+        "is_abnormal",
+        "标注状态",
+        "断裂帧_前",
+        "断裂帧_后",
+        "标注备注",
+        "断裂状态",
+        "异常_未夹紧",
+        "异常_视频异常",
+        "异常_爆炸性断裂",
+        "现象_伸长",
+        "现象_颈缩",
+        "现象_开裂",
+        "现象_界面分离",
+        "断裂时间范围_下界",
+        "断裂时间范围_上界",
+        "现象_断后脱夹"
+      ],
+      "time_scope": "Measured final loss of applicable through connection in simulation; seconds from video start.",
+      "format_reference": "annotation-table-full.csv",
+      "frame_index_base": 0,
+      "format_revision": {
+        "date": "2026-11-19",
+        "previous_csv_sha256": "58ad4322b6b1a92927afe7975c0a5499db133c41e0fcc41345a047f62cc39d28",
+        "scope": "整片标签表格式迁移。新增字段依据沿用清单有效标签、成片编码信息及逐片元数据记录。2026-10-10 的用户确认仅涵盖当时的数据包和标签。"
+      }
+    },
+    "member_ids": [
+      "metal_round_ductile_baseline_v1",
+      "metal_round_brittle_baseline_v1",
+      "polymer_black_dogbone_baseline_v2",
+      "polymer_yellow_film_grip_root_baseline_v2",
+      "composite_brittle_lower_feedback_v0_3",
+      "ceramic_dogbone_brittle_baseline_v1",
+      "composite_interface_debond_simultaneous_baseline_v0_4",
+      "polymer_pale_green_brittle_flat_strip_baseline_v1",
+      "polymer_finite_deformation_oblique_rupture_baseline_v1",
+      "composite_rapid_strand_fragmentation_baseline_v0_1",
+      "metal_flat_limited_deformation_rupture_baseline_v1",
+      "metal_round_ductile_stage1_a2_v1",
+      "metal_round_brittle_stage1_center_p075_v1",
+      "polymer_black_dogbone_stage1_stretch085_v1",
+      "polymer_brittle_stage1_position055_v1",
+      "polymer_mixed_stage1_stretch115_v1",
+      "composite_brittle_stage1_position_minus012_v1",
+      "composite_debond_stage1_length080_v1",
+      "composite_debond_stage1_opening120_v1",
+      "ceramic_brittle_stage1_time12_v1",
+      "metal_round_ductile_coupled_a2_time12_v1",
+      "metal_round_brittle_coupled_center_p075_time15_v1",
+      "polymer_dogbone_coupled_stretch085_time17_v1",
+      "polymer_brittle_coupled_position055_time12_v1",
+      "polymer_mixed_coupled_stretch115_time15_v1",
+      "composite_brittle_coupled_center_minus195_time12_v1",
+      "composite_debond_coupled_length080_opening120_time15_v1",
+      "ceramic_54c9123982ca",
+      "ceramic_fafb6d038402",
+      "composite_brittle_40de05bc8db6",
+      "composite_brittle_71add4d43545",
+      "composite_brittle_85e1faca3a2f",
+      "composite_brittle_f8c38a77a63d",
+      "debond_19ad315937d9",
+      "debond_3a83e6589f3c",
+      "debond_633abced1e80",
+      "debond_9a6e9873f857",
+      "debond_f1b9bd026fc6",
+      "debond_f8acebcca850",
+      "metal_brittle_24b9f8453ffd",
+      "metal_brittle_5208fef67de7",
+      "metal_brittle_8fd177bc37cd",
+      "metal_brittle_95bf83c84c0a",
+      "metal_brittle_c3f0c995c8ef",
+      "metal_brittle_cc100241b5f7",
+      "metal_brittle_d113c4e01c83",
+      "metal_brittle_dda4b5e6e727",
+      "mixed_2a9499713a2b",
+      "mixed_3568deb2ca33",
+      "mixed_474c4c10ff01",
+      "mixed_6bd6ad919f7f",
+      "mixed_8e505bb139b5",
+      "mixed_b6dd4440bb01",
+      "mixed_c25215a9fc08",
+      "mixed_d78ee0af8f98",
+      "mixed_e4b70b9f11d1",
+      "mixed_f22a4a698822",
+      "polymer_brittle_527d847f2741",
+      "polymer_brittle_7c88eeeae51f",
+      "polymer_brittle_b0cd99f7ae30",
+      "polymer_brittle_b9ab8a238e19",
+      "polymer_brittle_bcfe3a307376",
+      "polymer_brittle_e2c15b3c1473",
+      "polymer_brittle_ea23f4e39317",
+      "polymer_brittle_f89aa7bc8961"
+    ],
+    "scope": "User confirmed these65 videos and complete CSV as the first validation simulation dataset. Individual historical acceptance records and scientific evidence retained. No downstream model training or evaluation run performed.",
+    "label_confirmation_update": {
+      "confirmed_on": "2026-11-10",
+      "source": "explicit_user_confirmation",
+      "affected_video_ids": [
+        "metal_flat_limited_deformation_rupture_baseline_v1",
+        "polymer_yellow_film_grip_root_baseline_v2"
+      ],
+      "description": "用户确认薄膜和金属平板均为韧性断裂；薄膜保持夹口根部。原视频、时间和其余字段不变。"
+    }
+  },
+  "items": [
+    {
+      "id": "metal_round_ductile_baseline_v1",
+      "title": "金属圆棒颈缩分离",
+      "source_id": "video_0006",
+      "status": "user_accepted_video",
+      "video_path": "videos/metal_round_ductile_baseline_v1.mp4",
+      "metadata_path": "metadata/metal_round_ductile_baseline_v1.json",
+      "sha256": "acb37f0e079e850d4d0562bfd2af487e0b809bcf069e1b3af2652631ebe23b6f",
+      "metadata_sha256": "5aee60030a3c0ef218d88ddec489efe5b03afaf5971fa96104a2815aa52d5481",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "annotation_observations": {
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "technical_checks.same_material_and_full_frame_stop"
+        },
+        "现象_颈缩": {
+          "value": "是",
+          "metadata_field": "technical_checks.same_material_and_full_frame_stop"
+        },
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_checks.mesh.samples"
+        }
+      }
+    },
+    {
+      "id": "metal_round_brittle_baseline_v1",
+      "title": "金属圆棒小变形突断",
+      "source_id": "video_0003",
+      "status": "user_accepted_video",
+      "video_path": "videos/metal_round_brittle_baseline_v1.mp4",
+      "metadata_path": "metadata/metal_round_brittle_baseline_v1.json",
+      "sha256": "19b3f862a13f4c38200f41bc56e05171cc10ec6721859aeeb97b1b09b22ddc08",
+      "metadata_sha256": "3b1e2ec70108c684398feed56dcabf66e561b0f2493d8350a0c6a207b9249915",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_checks.mesh.samples"
+        }
+      }
+    },
+    {
+      "id": "polymer_black_dogbone_baseline_v2",
+      "title": "高分子大伸长断裂",
+      "source_id": "video_0097",
+      "status": "user_accepted_video",
+      "video_path": "videos/polymer_black_dogbone_baseline_v2.mp4",
+      "metadata_path": "metadata/polymer_black_dogbone_baseline_v2.json",
+      "sha256": "709bb8db6ee6bdbd28692d40b57f5e6d4248b1bb1368d9b045e8efd8a62b2eb7",
+      "metadata_sha256": "c1c1a8a1893d8ff03dd6e6f32f229688f6f7af06ee58f433bcabe97defd8d38b",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "annotation_observations": {
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "technical_verification.actual_evaluated_mesh_samples"
+        },
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_verification.actual_evaluated_mesh.all_grip_endpoints_in_actual_jaws"
+        }
+      }
+    },
+    {
+      "id": "polymer_yellow_film_grip_root_baseline_v2",
+      "title": "高分子薄膜夹口根部断裂",
+      "source_id": "video_0025",
+      "status": "user_accepted_video",
+      "video_path": "videos/polymer_yellow_film_grip_root_baseline_v2.mp4",
+      "metadata_path": "metadata/polymer_yellow_film_grip_root_baseline_v2.json",
+      "sha256": "6dae1dcc436a826b095a99e0e78baa1a444199eea03800875c5f10cff81cbece",
+      "metadata_sha256": "01253f3db4420b14f4b0e1accb60e7f009241e9a54119d63345d3051ce167aa4",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "夹口根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "user_label_confirmation": {
+        "source": "explicit_user_confirmation",
+        "confirmed_on": "2026-11-10",
+        "previous_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "无法确认",
+          "断裂位置": "夹口根部",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "confirmed_labels": {
+          "材料类别": "高分子",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "韧性断裂",
+          "断裂位置": "夹口根部",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "metadata_sha256": "01253f3db4420b14f4b0e1accb60e7f009241e9a54119d63345d3051ce167aa4",
+        "scope": "Current validation dataset label correction; original metadata and scientific review preserved as historical evidence."
+      },
+      "annotation_observations": {
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "technical_verification.actual_evaluated_mesh_samples"
+        },
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_verification.actual_evaluated_mesh.all_grip_endpoints_in_actual_jaws"
+        }
+      }
+    },
+    {
+      "id": "composite_brittle_lower_feedback_v0_3",
+      "title": "复材近下夹口突断",
+      "source_id": "video_0100",
+      "status": "user_accepted_video",
+      "video_path": "videos/composite_brittle_lower_feedback_v0_3.mp4",
+      "metadata_path": "metadata/composite_brittle_lower_feedback_v0_3.json",
+      "sha256": "fed17e58fe19af53240695aec7c464df4574aa55210980dc1e48fb78f0be404a",
+      "metadata_sha256": "49279b9bd78467493cbdde302dd919873b4b06b6c6d2fe36d0569432d178a8a8",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "annotation_observations": {
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "checked_labels_six_groups.单一主要破坏类别.evidence"
+        },
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_checks.mesh_summary.post_event_each_fragment_connected_to_single_clamp"
+        },
+        "现象_界面分离": {
+          "value": "否",
+          "metadata_field": "technical_checks.mesh_summary.interface_opening_measured_max"
+        }
+      }
+    },
+    {
+      "id": "ceramic_dogbone_brittle_baseline_v1",
+      "title": "陶瓷小形变横向脆断",
+      "source_id": "video_0050",
+      "status": "user_accepted_video",
+      "video_path": "videos/ceramic_dogbone_brittle_baseline_v1.mp4",
+      "metadata_path": "metadata/ceramic_dogbone_brittle_baseline_v1.json",
+      "sha256": "0fe9e04c0b921765b56b98cdc5b92ee0e7b8a234e345dacb0c5dc79a677e246c",
+      "metadata_sha256": "348c89e8e50f064a4eeb484cee0a2d3e66044b28ee8fbd8462338fd83a3a424e",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "陶瓷",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "annotation_observations": {
+        "现象_开裂": {
+          "value": "是",
+          "metadata_field": "main_agent_view_record.observed"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "verified_labels.单一主要破坏类别.basis"
+        },
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "verified_labels.夹持异常.basis"
+        }
+      }
+    },
+    {
+      "id": "composite_interface_debond_simultaneous_baseline_v0_4",
+      "title": "复材断裂与界面脱粘同时发生",
+      "source_id": "video_0020",
+      "status": "user_accepted_video",
+      "video_path": "videos/composite_interface_debond_simultaneous_baseline_v0_4.mp4",
+      "metadata_path": "metadata/composite_interface_debond_simultaneous_baseline_v0_4.json",
+      "sha256": "ff4b576ffd2c29a7c9812ce161ea4f8433993fe013183e5d082d9d7e3a963581",
+      "metadata_sha256": "8950fcf7f9063ead92aab4d18736aeaf54ffe82088c3192d4db52585e86c3950",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_checks.mesh_summary.post_event_all_fragments_attached_to_single_jaw"
+        }
+      }
+    },
+    {
+      "id": "polymer_pale_green_brittle_flat_strip_baseline_v1",
+      "title": "高分子窄平条脆断",
+      "source_id": "video_0032",
+      "status": "user_accepted_video",
+      "video_path": "videos/polymer_pale_green_brittle_flat_strip_baseline_v1.mp4",
+      "metadata_path": "metadata/polymer_pale_green_brittle_flat_strip_baseline_v1.json",
+      "sha256": "5c7d0fd1f5a519c7040a99101a2dbb79a43cb04e7c474b1c4e14a3d206226ddc",
+      "metadata_sha256": "1cf611ba56bbdda42527a88bd02f1985ce1b9ce8e4b355a202a35ed6e923d933",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "main_agent_view_record.observations"
+        }
+      }
+    },
+    {
+      "id": "polymer_finite_deformation_oblique_rupture_baseline_v1",
+      "title": "高分子均匀拉长后瞬时脆断（半脆半韧）",
+      "source_id": "video_0014",
+      "status": "user_accepted_video",
+      "video_path": "videos/polymer_finite_deformation_oblique_rupture_baseline_v1.mp4",
+      "metadata_path": "metadata/polymer_finite_deformation_oblique_rupture_baseline_v1.json",
+      "sha256": "63bf46edbf5065c37f3114e864fb3f7fca5b41fbbcc259e38c51bcdf1dfbfeb6",
+      "metadata_sha256": "46c4b124d250b47d1a1910d91cb504bce9f5ac07eeb907da6992e35ab8229271",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "main_agent_view_record.observations"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "checked_labels.单一主要破坏类别.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "checked_labels.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "composite_rapid_strand_fragmentation_baseline_v0_1",
+      "title": "复材快速分束断裂（爆炸性预期）",
+      "source_id": "video_0040",
+      "status": "user_accepted_video",
+      "video_path": "videos/composite_rapid_strand_fragmentation_baseline_v0_1.mp4",
+      "metadata_path": "metadata/composite_rapid_strand_fragmentation_baseline_v0_1.json",
+      "sha256": "7216102004e389b2472c15f382984a21e0d55038ad5066eedb2ba5e020e6881d",
+      "metadata_sha256": "0c62d6767398d7131fcaa16e0573a0d8b6af675a8a80e09f75251adfc3fb06d3",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "无法确认",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "annotation_observations": {
+        "异常_爆炸性断裂": {
+          "value": "无法判断",
+          "metadata_field": "mode_evidence_adjudication.basis"
+        },
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_checks.summary.all_final_components_attached_to_exactly_one_jaw"
+        }
+      }
+    },
+    {
+      "id": "metal_flat_limited_deformation_rupture_baseline_v1",
+      "title": "金属平板有限变形后韧性断裂",
+      "source_id": "video_0058",
+      "status": "user_accepted_video",
+      "video_path": "videos/metal_flat_limited_deformation_rupture_baseline_v1.mp4",
+      "metadata_path": "metadata/metal_flat_limited_deformation_rupture_baseline_v1.json",
+      "sha256": "b1e9ec7b708cdf621721b4e1300506d002f51f5f59907489279a8c71bcb6d065",
+      "metadata_sha256": "97dc9073ca123a2d15d8b4b597e6b21b89bf636b37025bd405dd893d459aa92d",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_acceptance",
+      "user_label_confirmation": {
+        "source": "explicit_user_confirmation",
+        "confirmed_on": "2026-11-10",
+        "previous_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "无法确认",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "confirmed_labels": {
+          "材料类别": "金属",
+          "断裂结果": "完全断裂",
+          "单一主要破坏类别": "韧性断裂",
+          "断裂位置": "标距内",
+          "夹持异常": "无",
+          "拍摄异常": "无"
+        },
+        "metadata_sha256": "97dc9073ca123a2d15d8b4b597e6b21b89bf636b37025bd405dd893d459aa92d",
+        "scope": "Current validation dataset label correction; original metadata and scientific review preserved as historical evidence."
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "main_agent_view_record.observations"
+        },
+        "现象_开裂": {
+          "value": "是",
+          "metadata_field": "main_agent_view_record.observations"
+        }
+      }
+    },
+    {
+      "id": "metal_round_ductile_stage1_a2_v1",
+      "title": "金属韧断：较弱颈缩",
+      "source_id": "video_0006",
+      "status": "user_accepted_video",
+      "video_path": "videos/metal_round_ductile_stage1_a2_v1.mp4",
+      "metadata_path": "metadata/metal_round_ductile_stage1_a2_v1.json",
+      "sha256": "30e92252e1d53c89d9bf56ec5738cb183f0bd7d297d74af887af86394fd4638d",
+      "metadata_sha256": "778e959649c7c3c4a6cac60d15369287ffdf6297250eafdeb3a5852743fdf95f",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "technical_checks.prefracture_measurements.before_first_opening"
+        },
+        "现象_颈缩": {
+          "value": "是",
+          "metadata_field": "technical_checks.prefracture_measurements.before_first_opening"
+        },
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_checks.minimum_axial_embedding_overlap"
+        }
+      }
+    },
+    {
+      "id": "metal_round_brittle_stage1_center_p075_v1",
+      "title": "金属脆断：标距内偏移",
+      "source_id": "video_0003",
+      "status": "user_accepted_video",
+      "video_path": "videos/metal_round_brittle_stage1_center_p075_v1.mp4",
+      "metadata_path": "metadata/metal_round_brittle_stage1_center_p075_v1.json",
+      "sha256": "9c76f1f2a0b91797ec3637e309259b94f8e14b0683f028f0a15c388b33645bc8",
+      "metadata_sha256": "a84c606f98c4255f9dfd929f9cfce96d5f9a2f247654d208999789da9a5f869c",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_checks.minimum_axial_embedding_overlap"
+        }
+      }
+    },
+    {
+      "id": "polymer_black_dogbone_stage1_stretch085_v1",
+      "title": "高分子韧断：较小伸长",
+      "source_id": "video_0097",
+      "status": "user_accepted_video",
+      "video_path": "videos/polymer_black_dogbone_stage1_stretch085_v1.mp4",
+      "metadata_path": "metadata/polymer_black_dogbone_stage1_stretch085_v1.json",
+      "sha256": "a8fa1902111210a45fff4d616ee5e620743f253d8cdbde63e3beed4a80593ed6",
+      "metadata_sha256": "477fe325cab1cfcd2fc176ba6194302eb87914a8d4b648a35a0a215514e9d3d0",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "technical_verification.summary.first_crack_pre_measurement.gauge_length_ratio"
+        },
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_verification.summary.all_grip_endpoints_in_actual_jaws"
+        }
+      }
+    },
+    {
+      "id": "polymer_brittle_stage1_position055_v1",
+      "title": "高分子脆断：标距内偏移",
+      "source_id": "video_0032",
+      "status": "user_accepted_video",
+      "video_path": "videos/polymer_brittle_stage1_position055_v1.mp4",
+      "metadata_path": "metadata/polymer_brittle_stage1_position055_v1.json",
+      "sha256": "a0e084d4e056e37e3a6c9d5f173bcac04e9e3d50cce7a1ca5a436162d8e10048",
+      "metadata_sha256": "747c34ef2e48b46861fcc9a26d3f5f05029f1ab8fcd354b2c30529b794c3e423",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_verification.summary.all_grip_material_endpoints_inside_actual_jaws"
+        }
+      }
+    },
+    {
+      "id": "polymer_mixed_stage1_stretch115_v1",
+      "title": "高分子半脆半韧：较大伸长",
+      "source_id": "video_0014",
+      "status": "user_accepted_video",
+      "video_path": "videos/polymer_mixed_stage1_stretch115_v1.mp4",
+      "metadata_path": "metadata/polymer_mixed_stage1_stretch115_v1.json",
+      "sha256": "1e6efd113d7e510615870599b32383f37ccdd2a04d167d364890414342366935",
+      "metadata_sha256": "6bf42829c969cdebc20de70d8b27ce3f0b65d2d48cac803751d17f75cec78278",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "technical_verification.summary.first_crack_pre_measurement.gauge_length_ratio"
+        },
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_verification.summary.all_grip_contacts"
+        }
+      }
+    },
+    {
+      "id": "composite_brittle_stage1_position_minus012_v1",
+      "title": "复材脆断：低位偏移",
+      "source_id": "video_0100",
+      "status": "user_accepted_video",
+      "video_path": "videos/composite_brittle_stage1_position_minus012_v1.mp4",
+      "metadata_path": "metadata/composite_brittle_stage1_position_minus012_v1.json",
+      "sha256": "2372c4c4108ef2696f8e2ede4fcb62ff65b8747d4d13f74f2abad11075478e21",
+      "metadata_sha256": "b52d6c24964e19e9ce37cc26e7a1ad17efd129f98c1eb9d310ed66fe4eaf36fd",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_checks.all_frame_summary.post_event_every_frame_two_clamped_fragments"
+        }
+      }
+    },
+    {
+      "id": "composite_debond_stage1_length080_v1",
+      "title": "复材同步脱粘：较短范围",
+      "source_id": "video_0020",
+      "status": "user_accepted_video",
+      "video_path": "videos/composite_debond_stage1_length080_v1.mp4",
+      "metadata_path": "metadata/composite_debond_stage1_length080_v1.json",
+      "sha256": "4628f018e1fe17bc66fa3baf9a994a182d77645005342ab94432d3327a617387",
+      "metadata_sha256": "65616926c3e968cd7c1dba9aa3e6d17c21696f1266f786da54fd95fa9bea02cc",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_checks.all_frame_summary.post_event_every_frame_two_clamped_fragments"
+        }
+      }
+    },
+    {
+      "id": "composite_debond_stage1_opening120_v1",
+      "title": "复材同步脱粘：较大开口",
+      "source_id": "video_0020",
+      "status": "user_accepted_video",
+      "video_path": "videos/composite_debond_stage1_opening120_v1.mp4",
+      "metadata_path": "metadata/composite_debond_stage1_opening120_v1.json",
+      "sha256": "ef09a7b1f0ed1dd70183a78f7979dfb4dda6cfc58f43046211b545b9da2e47b6",
+      "metadata_sha256": "d167b99176ceaddbbc86ca365e0fda69b1ed896086fd86ed3883854e45f37a44",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_checks.all_frame_summary.post_event_every_frame_two_clamped_fragments"
+        }
+      }
+    },
+    {
+      "id": "ceramic_brittle_stage1_time12_v1",
+      "title": "陶瓷脆断：较早断裂",
+      "source_id": "video_0050",
+      "status": "user_accepted_video",
+      "video_path": "videos/ceramic_brittle_stage1_time12_v1.mp4",
+      "metadata_path": "metadata/ceramic_brittle_stage1_time12_v1.json",
+      "sha256": "90286477080b9341383aea821778f2e1e4dcc5599dff6c40baa39b8fe9102a05",
+      "metadata_sha256": "1367757e71da97e122e1c063c17dc9bebcd556a16138a9db047b8ba21c76a230",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "陶瓷",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_开裂": {
+          "value": "是",
+          "metadata_field": "technical_verification.all_frame_summary.actual_first_nonzero_crack_opening_frame"
+        },
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_verification.all_frame_summary.max_jaw_contact_error"
+        }
+      }
+    },
+    {
+      "id": "metal_round_ductile_coupled_a2_time12_v1",
+      "title": "金属韧断：较弱颈缩＋12秒",
+      "source_id": "video_0006",
+      "status": "user_accepted_video",
+      "video_path": "videos/metal_round_ductile_coupled_a2_time12_v1.mp4",
+      "metadata_path": "metadata/metal_round_ductile_coupled_a2_time12_v1.json",
+      "sha256": "e9c8037d2f14372649b66cebb3c59f21501ec3c3d7a6f8e05bf4d8d7f6914a2f",
+      "metadata_sha256": "f650ad568a56abc046d59a237903d66e92e381be0f05bd32c5be1bbb9bbed844",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "main_agent_view_record.observations"
+        },
+        "现象_颈缩": {
+          "value": "是",
+          "metadata_field": "main_agent_view_record.observations"
+        }
+      }
+    },
+    {
+      "id": "metal_round_brittle_coupled_center_p075_time15_v1",
+      "title": "金属脆断：位置偏移＋15秒",
+      "source_id": "video_0003",
+      "status": "user_accepted_video",
+      "video_path": "videos/metal_round_brittle_coupled_center_p075_time15_v1.mp4",
+      "metadata_path": "metadata/metal_round_brittle_coupled_center_p075_time15_v1.json",
+      "sha256": "1aec598054a268bd0e8ba0bd705504b2cd8218564b1461e6846c37023df1a849",
+      "metadata_sha256": "0c698643f851ccc76ecf40a9794c87f543d56b70766f0662eda026cc0f935917",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "technical_checks.minimum_axial_embedding_overlap"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "main_agent_view_record.observations"
+        }
+      }
+    },
+    {
+      "id": "polymer_dogbone_coupled_stretch085_time17_v1",
+      "title": "高分子韧断：较小伸长＋17秒",
+      "source_id": "video_0097",
+      "status": "user_accepted_video",
+      "video_path": "videos/polymer_dogbone_coupled_stretch085_time17_v1.mp4",
+      "metadata_path": "metadata/polymer_dogbone_coupled_stretch085_time17_v1.json",
+      "sha256": "f8b465299eb63cc1f3f30a450acc30416e51456e68c54377aad67fd113830385",
+      "metadata_sha256": "8c07efb7b5e112ab9e933498184f8643dd69d83f1e3c08260d82e610b0609292",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "韧性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "main_agent_view_record.observations"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "main_agent_view_record.observations"
+        }
+      }
+    },
+    {
+      "id": "polymer_brittle_coupled_position055_time12_v1",
+      "title": "高分子脆断：位置偏移＋12秒",
+      "source_id": "video_0032",
+      "status": "user_accepted_video",
+      "video_path": "videos/polymer_brittle_coupled_position055_time12_v1.mp4",
+      "metadata_path": "metadata/polymer_brittle_coupled_position055_time12_v1.json",
+      "sha256": "c7e93f5ca20cd38fe93882d73b33425aceedae1b935ddafef4d58a2abcd7f598",
+      "metadata_sha256": "50df6b88f8ea3e8c32c3c71ca1331432fb64972f494f0c82e9d89831af238d81",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance"
+    },
+    {
+      "id": "polymer_mixed_coupled_stretch115_time15_v1",
+      "title": "高分子半脆半韧：较大伸长＋15秒",
+      "source_id": "video_0014",
+      "status": "user_accepted_video",
+      "video_path": "videos/polymer_mixed_coupled_stretch115_time15_v1.mp4",
+      "metadata_path": "metadata/polymer_mixed_coupled_stretch115_time15_v1.json",
+      "sha256": "a462a2d8403f4397be1093a802baf4917bc36499e7834048bc84485a9b615492",
+      "metadata_sha256": "6c3757cafd6a992590bbd6c73e088a1309841404333b1564b30663e01591d034",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "main_agent_view_record.observations"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "main_agent_view_record.observations"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "main_agent_view_record.observations"
+        }
+      }
+    },
+    {
+      "id": "composite_brittle_coupled_center_minus195_time12_v1",
+      "title": "复材脆断：低位偏移＋12秒",
+      "source_id": "video_0100",
+      "status": "user_accepted_video",
+      "video_path": "videos/composite_brittle_coupled_center_minus195_time12_v1.mp4",
+      "metadata_path": "metadata/composite_brittle_coupled_center_minus195_time12_v1.json",
+      "sha256": "fed25df11c5aa779c484bd5c415f2534f3d5ce7bb69948443d3ae4a2a434e7c2",
+      "metadata_sha256": "8d6a5b3cc652a855ecf132475783af96d8ec0a7db6a3977a76c097bbe62bc6db",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "main_agent_view_record.observations"
+        }
+      }
+    },
+    {
+      "id": "composite_debond_coupled_length080_opening120_time15_v1",
+      "title": "复材同步脱粘：长度＋开口＋15秒",
+      "source_id": "video_0020",
+      "status": "user_accepted_video",
+      "video_path": "videos/composite_debond_coupled_length080_opening120_time15_v1.mp4",
+      "metadata_path": "metadata/composite_debond_coupled_length080_opening120_time15_v1.json",
+      "sha256": "645a632daf815b8b4bb48eb64e9652536e5a992cd45c97c6fec7068703e3b32a",
+      "metadata_sha256": "d3500515c306451886051280cd17184c443a807fdc6578f37949746a41836d34",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": true,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "single_video_visual_and_label_acceptance",
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "main_agent_view_record.observations"
+        }
+      }
+    },
+    {
+      "id": "ceramic_54c9123982ca",
+      "title": "陶瓷小形变横向脆断：15秒失贯通候选",
+      "source_id": "video_0050",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/ceramic_54c9123982ca.mp4",
+      "metadata_path": "metadata/ceramic_54c9123982ca.json",
+      "sha256": "641aecc653e5c88369fccff3d58d96656352729c78875ee39e4a541e3eb21aaa",
+      "metadata_sha256": "47fa06abcfee2b6f2be4c4d8470dd66822c90c0fabb4cb6409d6974eaabfb36d",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "陶瓷",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_开裂": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_界面分离": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "异常_爆炸性断裂": {
+          "value": "否",
+          "metadata_field": "main_agent_view_record.observations"
+        }
+      }
+    },
+    {
+      "id": "ceramic_fafb6d038402",
+      "title": "陶瓷小形变横向脆断：13秒失贯通候选",
+      "source_id": "video_0050",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/ceramic_fafb6d038402.mp4",
+      "metadata_path": "metadata/ceramic_fafb6d038402.json",
+      "sha256": "4acc117d71ddf8959c321ed355690fa81ad3ee5b4627b94645d8691b96374235",
+      "metadata_sha256": "4a493c95648b44f2fbe383fe6cd778af32e45c097ceeb4a558a96b2491ae0361",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "陶瓷",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_开裂": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_界面分离": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "异常_爆炸性断裂": {
+          "value": "否",
+          "metadata_field": "main_agent_view_record.observations"
+        }
+      }
+    },
+    {
+      "id": "composite_brittle_40de05bc8db6",
+      "source_id": "video_0100",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/composite_brittle_40de05bc8db6.mp4",
+      "metadata_path": "metadata/composite_brittle_40de05bc8db6.json",
+      "sha256": "b7d80b3fd70dd549423c37b9c0b93f7337fa009144395dc7cdbc0c47ce9c3180",
+      "metadata_sha256": "9a697434fa6f16e93cde104cd0915da2c608934390be5d8851b3e536518c8868",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "outside_gauge_non_root",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_界面分离": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "异常_爆炸性断裂": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "composite_brittle_71add4d43545",
+      "source_id": "video_0100",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/composite_brittle_71add4d43545.mp4",
+      "metadata_path": "metadata/composite_brittle_71add4d43545.json",
+      "sha256": "9a0940ea72dcc5771aac675ecbcb7f19679382fab0699c12cf3277cb4019408b",
+      "metadata_sha256": "7d6dd7bb72fe6b362fc3260fc61400e2dc66bf1ff018c40487e8b6f7a8e3d6fb",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "outside_gauge_non_root",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_界面分离": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "异常_爆炸性断裂": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "composite_brittle_85e1faca3a2f",
+      "source_id": "video_0100",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/composite_brittle_85e1faca3a2f.mp4",
+      "metadata_path": "metadata/composite_brittle_85e1faca3a2f.json",
+      "sha256": "72caa9c42c92990c72c1447983b49fd6707d5834e0117464dec30f707e1c5aa3",
+      "metadata_sha256": "aacc3034ef432045a855a40e8167aa1f5515770f682d2e8fb0b7ead86895a0fb",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "outside_gauge_non_root",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_界面分离": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "异常_爆炸性断裂": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "composite_brittle_f8c38a77a63d",
+      "source_id": "video_0100",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/composite_brittle_f8c38a77a63d.mp4",
+      "metadata_path": "metadata/composite_brittle_f8c38a77a63d.json",
+      "sha256": "f3cf15df21302ad1b6b7932a7d32f6454616b8d51c7c5bb17e0b65557e31f66f",
+      "metadata_sha256": "6a350158a82596dc9b535f57841ec4122ae6a267fc1786254c3b5e3f7b3d3c7d",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距外非根部",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "outside_gauge_non_root",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_界面分离": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "异常_爆炸性断裂": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "debond_19ad315937d9",
+      "source_id": "video_0020",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/debond_19ad315937d9.mp4",
+      "metadata_path": "metadata/debond_19ad315937d9.json",
+      "sha256": "e1d63ae77184b7f349baedd2f8214a65d653a670bb7dc5d2b0363c5c5bd33ddb",
+      "metadata_sha256": "14c582fefa6b6a57203eb0e5a2fe801a71ebc372e8085c04de1ea741224981aa",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "界面脱粘",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        }
+      }
+    },
+    {
+      "id": "debond_3a83e6589f3c",
+      "source_id": "video_0020",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/debond_3a83e6589f3c.mp4",
+      "metadata_path": "metadata/debond_3a83e6589f3c.json",
+      "sha256": "cd1b961b8b2797823de92e9cf8d95b4d8f7bbd581061e7dd3c5bec6cddf39992",
+      "metadata_sha256": "f39ca49704c99285ef7352b20f7eb8c1959e245e5be59ceecb0eda7e2ad5f911",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "界面脱粘",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        }
+      }
+    },
+    {
+      "id": "debond_633abced1e80",
+      "source_id": "video_0020",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/debond_633abced1e80.mp4",
+      "metadata_path": "metadata/debond_633abced1e80.json",
+      "sha256": "6bb1a62d1b1401bb09e756e7654918f2baeae34517b854de3bc00cef3802250b",
+      "metadata_sha256": "8a7269a4d0c2c880b58a4ad28ae729d31379ce6f273102e6a6e60e74e9c5a238",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "界面脱粘",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        }
+      }
+    },
+    {
+      "id": "debond_9a6e9873f857",
+      "source_id": "video_0020",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/debond_9a6e9873f857.mp4",
+      "metadata_path": "metadata/debond_9a6e9873f857.json",
+      "sha256": "fdc8df3d1e643cf5855a4afb19b221850a4146b83e7adb944f5d2c4759cb4b3e",
+      "metadata_sha256": "fa5a8550253710f26ea0f3bacb4aa18bf66eddb6a2a980a5f853ce7004f21abe",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "界面脱粘",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        }
+      }
+    },
+    {
+      "id": "debond_f1b9bd026fc6",
+      "source_id": "video_0020",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/debond_f1b9bd026fc6.mp4",
+      "metadata_path": "metadata/debond_f1b9bd026fc6.json",
+      "sha256": "08ce4e7c85d6ade0c370b940b121b80970ee1a83baa0bb9a54ebd05599d04187",
+      "metadata_sha256": "bd57a883a0af85fa2b5c15a3a971db3bd475cd8825318837e5a920ebe8bfb22b",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "界面脱粘",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        }
+      }
+    },
+    {
+      "id": "debond_f8acebcca850",
+      "source_id": "video_0020",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/debond_f8acebcca850.mp4",
+      "metadata_path": "metadata/debond_f8acebcca850.json",
+      "sha256": "97108961137d83a4fe0e95c4b486170f882884ac4a02537bf4f214a9da13eeb0",
+      "metadata_sha256": "712f5528e3ee851bf7cb85fe9f684dcaf7632b02e3f363d0c1e65abe114e7887",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "复材",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "界面脱粘",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "界面脱粘",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        }
+      }
+    },
+    {
+      "id": "metal_brittle_24b9f8453ffd",
+      "source_id": "video_0003",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/metal_brittle_24b9f8453ffd.mp4",
+      "metadata_path": "metadata/metal_brittle_24b9f8453ffd.json",
+      "sha256": "96b7fc198941bf66bb5f570954656ff3305edc125352d301de186c29a40e66af",
+      "metadata_sha256": "a98862a5c17cdc7694841481a719fbcb6801890fa75c950f3e0fa52bc261f2d1",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "metal_brittle_5208fef67de7",
+      "source_id": "video_0003",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/metal_brittle_5208fef67de7.mp4",
+      "metadata_path": "metadata/metal_brittle_5208fef67de7.json",
+      "sha256": "22df21c45fe8ecd22c9d0eae507838f8c56ded13dcaa971585285391ce0a0a05",
+      "metadata_sha256": "de80047815bf500ae3864d79fac9343a4b89e127b536f76a1a6ff346a03fafdc",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "metal_brittle_8fd177bc37cd",
+      "source_id": "video_0003",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/metal_brittle_8fd177bc37cd.mp4",
+      "metadata_path": "metadata/metal_brittle_8fd177bc37cd.json",
+      "sha256": "74fce195156abf7108f65a1d75f74fc5a902de9d731439ef950f770977ae6562",
+      "metadata_sha256": "721495965c017a26b738eb1621ea2fff1e7734da5d224c2c113831e6dd5bb634",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "metal_brittle_95bf83c84c0a",
+      "source_id": "video_0003",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/metal_brittle_95bf83c84c0a.mp4",
+      "metadata_path": "metadata/metal_brittle_95bf83c84c0a.json",
+      "sha256": "83c1a8bc7f72ceb15434f32d09a43a67bc8552b3974056253a0a3415460ff2c5",
+      "metadata_sha256": "21e17109028d75bcf4341ed77b02d709cfdac6db1fc9a362a9ef5114e3378885",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "metal_brittle_c3f0c995c8ef",
+      "source_id": "video_0003",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/metal_brittle_c3f0c995c8ef.mp4",
+      "metadata_path": "metadata/metal_brittle_c3f0c995c8ef.json",
+      "sha256": "af77f19769bb1cc898025ed6be3c3627f561a722b92161940c2f6df0d2ec713e",
+      "metadata_sha256": "4ad4bff695ef9c1688fbf8fc92d7532ab2af8c66db89225f261f79469176d768",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "metal_brittle_cc100241b5f7",
+      "source_id": "video_0003",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/metal_brittle_cc100241b5f7.mp4",
+      "metadata_path": "metadata/metal_brittle_cc100241b5f7.json",
+      "sha256": "412cc4be06f6a3c7ae61d86083f1257c7548021cb1e290c9531439333a4eb71e",
+      "metadata_sha256": "5bd54c6dd0b63a5d74e475dc5aa3a3dc692f89f6921cfcc054de21a732385de9",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "metal_brittle_d113c4e01c83",
+      "source_id": "video_0003",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/metal_brittle_d113c4e01c83.mp4",
+      "metadata_path": "metadata/metal_brittle_d113c4e01c83.json",
+      "sha256": "7eabf55a10f678daae08ffb78838bfb22b0ac2598e4ef7371b0964618b2ee21e",
+      "metadata_sha256": "3406b401e92b9fc7f7a4fee7fb8ca44fa559399e51b3167d610856229b435819",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "metal_brittle_dda4b5e6e727",
+      "source_id": "video_0003",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/metal_brittle_dda4b5e6e727.mp4",
+      "metadata_path": "metadata/metal_brittle_dda4b5e6e727.json",
+      "sha256": "6702dfe11b3750f8a3576d05b07190ced9f30b20670b0843030af8137b57fd15",
+      "metadata_sha256": "f457453f8b77c963412a1d2aa33bbc09a3bc68f450207f283566b0da54289cc2",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "金属",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "mixed_2a9499713a2b",
+      "source_id": "video_0014",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/mixed_2a9499713a2b.mp4",
+      "metadata_path": "metadata/mixed_2a9499713a2b.json",
+      "sha256": "254007d33fe8222230c9834da013aebebbcab7b9488eeafa9bef979f72716b47",
+      "metadata_sha256": "a3a11ccfd2a63756a8d60da487b220cf19a8037dcce60fb4f343fb6bf3962c6d",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "半脆半韧断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "mixed_3568deb2ca33",
+      "source_id": "video_0014",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/mixed_3568deb2ca33.mp4",
+      "metadata_path": "metadata/mixed_3568deb2ca33.json",
+      "sha256": "3bd9fa61a5688ac68b3d132ff4b3c46c42f25341f654f78e01115f4d48feb22d",
+      "metadata_sha256": "0dc4301c08bf75822ae29c754d129d652e56c844dc4a6f0b1df63bad3939c4b0",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "半脆半韧断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "mixed_474c4c10ff01",
+      "source_id": "video_0014",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/mixed_474c4c10ff01.mp4",
+      "metadata_path": "metadata/mixed_474c4c10ff01.json",
+      "sha256": "335b929c90bcfc1b8b6aefe376961df258fcc289a8fedf52012bbfb205f57efe",
+      "metadata_sha256": "69c5c5501b271b5f1ca9425800f4d385d2bcf82d42faf901e5ba3fcc76ad94a2",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "半脆半韧断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "mixed_6bd6ad919f7f",
+      "source_id": "video_0014",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/mixed_6bd6ad919f7f.mp4",
+      "metadata_path": "metadata/mixed_6bd6ad919f7f.json",
+      "sha256": "6ff0a736678a3ac248a3ffd732236ba820c88375000ff23888d72e6c03cd0c0e",
+      "metadata_sha256": "285e3f49b9c984a12deda4940379c501360a1c3e0dd5b8256b30c6cea192bb6e",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "半脆半韧断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "mixed_8e505bb139b5",
+      "source_id": "video_0014",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/mixed_8e505bb139b5.mp4",
+      "metadata_path": "metadata/mixed_8e505bb139b5.json",
+      "sha256": "284eeda4283811ad34525606263406b0256a5a687fa2bd5fb0921a2adb276e3d",
+      "metadata_sha256": "c75b35b2920cfb934e2b74695af7082321359a0ba8fb370d49f21fc502d1df6e",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "半脆半韧断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "mixed_b6dd4440bb01",
+      "source_id": "video_0014",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/mixed_b6dd4440bb01.mp4",
+      "metadata_path": "metadata/mixed_b6dd4440bb01.json",
+      "sha256": "e8d380e1a86f367a686af4893b601ab57c685d07b5b3f2334b4474f4c433acb5",
+      "metadata_sha256": "d4004c8578e0db86d2a3f6a2d7280272d1e134a0c2a6d314f941ef3ad1bce1f2",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "半脆半韧断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "mixed_c25215a9fc08",
+      "source_id": "video_0014",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/mixed_c25215a9fc08.mp4",
+      "metadata_path": "metadata/mixed_c25215a9fc08.json",
+      "sha256": "f0042bb4f7a5dbb7af6e5346a19d28d1bdd996a0c9106b7b78e446b3b3e27de2",
+      "metadata_sha256": "ace58742af7c702cd15299ad1ccae1e73bc963668969c645e9c3aac6eb9b35ec",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "半脆半韧断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "mixed_d78ee0af8f98",
+      "source_id": "video_0014",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/mixed_d78ee0af8f98.mp4",
+      "metadata_path": "metadata/mixed_d78ee0af8f98.json",
+      "sha256": "9c7913b746e43963235e94e829b5b57cb0f3cb760a9c7657aefde9225d7105fa",
+      "metadata_sha256": "1d44a688e11ab9f16bc19fd9e39a2c2be1c99723b12cc5e12fb1e5ed9acd05b7",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "半脆半韧断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "mixed_e4b70b9f11d1",
+      "source_id": "video_0014",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/mixed_e4b70b9f11d1.mp4",
+      "metadata_path": "metadata/mixed_e4b70b9f11d1.json",
+      "sha256": "6130391ab53d1350184b15810928de4dd6254ff5b917416546d05332210aa2b4",
+      "metadata_sha256": "39d7d0612eba14827895c87af7478d5dea783457637696a35345279615e5ec2d",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "半脆半韧断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "mixed_f22a4a698822",
+      "source_id": "video_0014",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/mixed_f22a4a698822.mp4",
+      "metadata_path": "metadata/mixed_f22a4a698822.json",
+      "sha256": "ca505531d85b6da56c9cf5c3c2d109b7846f8dd38c555da570d59cae3bbd5500",
+      "metadata_sha256": "c3c5d85a2f6738fd3e67998dcaa32c4bea98041a94267e7992abd58dfe334bd6",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "半脆半韧断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "半脆半韧断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_伸长": {
+          "value": "是",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        }
+      }
+    },
+    {
+      "id": "polymer_brittle_527d847f2741",
+      "source_id": "video_0032",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/polymer_brittle_527d847f2741.mp4",
+      "metadata_path": "metadata/polymer_brittle_527d847f2741.json",
+      "sha256": "a268af6b10b44dc7a620bddf4df2e9df2552a87386ee7df301ac6d36d6ac9f33",
+      "metadata_sha256": "e6a3c5e8d20dc40d33ef0acfef2a1ede194258818f4d9aa5704c5016f0be0ee0",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_开裂": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.断裂结果.basis"
+        }
+      }
+    },
+    {
+      "id": "polymer_brittle_7c88eeeae51f",
+      "source_id": "video_0032",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/polymer_brittle_7c88eeeae51f.mp4",
+      "metadata_path": "metadata/polymer_brittle_7c88eeeae51f.json",
+      "sha256": "91cb141e52d7ed16e4a4f7cd255b978eae50261854d9adb14b6d02842150960f",
+      "metadata_sha256": "e36dc465b906c6475d50df9e17e3d98c4e31ebf124a6fd924b34426aae616bec",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_开裂": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.断裂结果.basis"
+        }
+      }
+    },
+    {
+      "id": "polymer_brittle_b0cd99f7ae30",
+      "source_id": "video_0032",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/polymer_brittle_b0cd99f7ae30.mp4",
+      "metadata_path": "metadata/polymer_brittle_b0cd99f7ae30.json",
+      "sha256": "ca02e8ebcd31b934b5dd4150eb0957132f6231d759ba26095fa292978bcf2e98",
+      "metadata_sha256": "b920dc1de5eefed721bcfa7687a1b7f2746548480d306c42b956dce168db4037",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_开裂": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.断裂结果.basis"
+        }
+      }
+    },
+    {
+      "id": "polymer_brittle_b9ab8a238e19",
+      "source_id": "video_0032",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/polymer_brittle_b9ab8a238e19.mp4",
+      "metadata_path": "metadata/polymer_brittle_b9ab8a238e19.json",
+      "sha256": "2fef41e0911eafafbf6a5a13d532128cd63d44b62315659fc420af747cbac6ae",
+      "metadata_sha256": "85ecde9befe6abe8e30c3f665aa379246e8bbe43303955fdda26c81f533099cb",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_开裂": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.断裂结果.basis"
+        }
+      }
+    },
+    {
+      "id": "polymer_brittle_bcfe3a307376",
+      "source_id": "video_0032",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/polymer_brittle_bcfe3a307376.mp4",
+      "metadata_path": "metadata/polymer_brittle_bcfe3a307376.json",
+      "sha256": "6763dcb6a9b740f39566f5b2d2bf1671aaf3261fdb09c1fc90fb508332f810b5",
+      "metadata_sha256": "229e6c65b9aeb73d32ae9421a1186da7b1443d690b6c2b03dec88e1f66ab8f59",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_开裂": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.断裂结果.basis"
+        }
+      }
+    },
+    {
+      "id": "polymer_brittle_e2c15b3c1473",
+      "source_id": "video_0032",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/polymer_brittle_e2c15b3c1473.mp4",
+      "metadata_path": "metadata/polymer_brittle_e2c15b3c1473.json",
+      "sha256": "eca11870a7692c158707fd70794f610628dd512e9b2a1d18ad348919ce6861f9",
+      "metadata_sha256": "80b8f26bc7ccd257fa3678c588a895da3536de94c4167022bca03067002c6f3b",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_开裂": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.断裂结果.basis"
+        }
+      }
+    },
+    {
+      "id": "polymer_brittle_ea23f4e39317",
+      "source_id": "video_0032",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/polymer_brittle_ea23f4e39317.mp4",
+      "metadata_path": "metadata/polymer_brittle_ea23f4e39317.json",
+      "sha256": "31a66f4d51a74ff45f6a1020c6ec34d276b38b27965b13075c07c657fb657133",
+      "metadata_sha256": "65fd038e6fca8b2b227c5cd14dd26a4d7fdd5c29064ef68d430a5d5a0fb31975",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_开裂": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.断裂结果.basis"
+        }
+      }
+    },
+    {
+      "id": "polymer_brittle_f89aa7bc8961",
+      "source_id": "video_0032",
+      "status": "checked_pending_user_acceptance",
+      "video_path": "videos/polymer_brittle_f89aa7bc8961.mp4",
+      "metadata_path": "metadata/polymer_brittle_f89aa7bc8961.json",
+      "sha256": "a86e083a3ca8df61ee84a262965dc746e5b52291cda91883aeb6fe0c24ca82b5",
+      "metadata_sha256": "b02e2e2264006cecfbb063026707a15158a63ace0de7fd24d0641afa61a00a89",
+      "duration_s": 20,
+      "fps": 30,
+      "frames": 600,
+      "checked_labels": {
+        "材料类别": "高分子",
+        "断裂结果": "完全断裂",
+        "单一主要破坏类别": "脆性断裂",
+        "断裂位置": "标距内",
+        "夹持异常": "无",
+        "拍摄异常": "无"
+      },
+      "user_accepted": false,
+      "training_released": false,
+      "style_accepted": false,
+      "parameter_range_accepted": false,
+      "acceptance_scope": "pending_single_video_visual_and_label_acceptance",
+      "v4_1_whole_video_labels": {
+        "clip_state": "发生断裂",
+        "fracture_mechanism": "脆性断裂",
+        "fracture_site": "inside_gauge",
+        "special_case": null
+      },
+      "annotation_observations": {
+        "现象_断后脱夹": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.夹持异常.basis"
+        },
+        "现象_颈缩": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.单一主要破坏类别.basis"
+        },
+        "现象_开裂": {
+          "value": "否",
+          "metadata_field": "final_label_check_basis.field_evidence.断裂结果.basis"
+        }
+      }
+    }
+  ]
+}

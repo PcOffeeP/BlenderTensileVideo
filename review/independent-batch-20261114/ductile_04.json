@@ -1,0 +1,435 @@
+{
+  "id": "ductile_04",
+  "status": "candidate_awaiting_user_visual_and_label_review",
+  "source": {
+    "type": "original_synthetic",
+    "real_experiment_video_used": false,
+    "prior_virtual_video_as_visual_reference": false,
+    "source_video_or_time_mapping": null,
+    "description": "作者依据用户行为要求直接设定场景和参数；材料类别为合成设定。",
+    "design": "DESIGN.md v1.14 独立合成样片"
+  },
+  "implementation": {
+    "generator": "independent-fracture-batch/0.1.0",
+    "generator_sha256": "30e5c90d52f1626bfe39bbe286d33e57eeea5184487a2b8cca4c295d8280a332",
+    "configuration_sha256": "6d00ad0fd8c401648d1e2f3e4c5326722bf194c859cd3421c420b671996b5d63",
+    "encoder_sha256": "cde5cab51a5067974f711010c39c43c9713914918abc61190e05ce8aee4c76bb"
+  },
+  "configuration": {
+    "config_schema": "independent-fracture-batch/v1",
+    "config_scope": "Eight discrete author-defined candidate scenes; no parameter range is approved.",
+    "case": {
+      "id": "ductile_04",
+      "kind": "ductile",
+      "event_frame": 585,
+      "ramp_start_frame": 435,
+      "fracture_s": -0.35,
+      "style": "navy_round",
+      "gauge_width": 0.42,
+      "grip_width": 0.72,
+      "thickness": 0.18,
+      "specimen_color": [
+        0.63,
+        0.58,
+        0.48
+      ]
+    },
+    "expanded_style": {
+      "fixture_color": [
+        0.045,
+        0.12,
+        0.2
+      ],
+      "jaw_color": [
+        0.18,
+        0.24,
+        0.28
+      ],
+      "accent_color": [
+        0.3,
+        0.42,
+        0.48
+      ],
+      "background_color": [
+        0.075,
+        0.085,
+        0.1
+      ],
+      "jaw_shape": "rounded",
+      "rail_shape": "round",
+      "jaw_width": 1.1,
+      "jaw_height": 0.56
+    },
+    "media": {
+      "frame_count": 600,
+      "fps": 30,
+      "duration_seconds": 20,
+      "resolution_px": [
+        1280,
+        960
+      ],
+      "render_engine": "BLENDER_EEVEE",
+      "render_samples": 16,
+      "blender_version": "5.2.1 LTS",
+      "view_transform": "AgX",
+      "motion_blur": false,
+      "audio": false
+    },
+    "camera": {
+      "projection": "orthographic",
+      "ortho_scale": 6.3,
+      "position": [
+        0,
+        -16,
+        0.3
+      ],
+      "target": [
+        0,
+        0,
+        0.3
+      ]
+    },
+    "illumination": [
+      {
+        "position": [
+          -3.5,
+          -5,
+          5.5
+        ],
+        "energy": 850,
+        "size": 5.0,
+        "color": [
+          1,
+          0.93,
+          0.82
+        ]
+      },
+      {
+        "position": [
+          4,
+          -2.5,
+          1.8
+        ],
+        "energy": 600,
+        "size": 4.0,
+        "color": [
+          0.82,
+          0.9,
+          1
+        ]
+      },
+      {
+        "position": [
+          0,
+          0.8,
+          4.5
+        ],
+        "energy": 250,
+        "size": 3.0,
+        "color": [
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "geometry": {
+      "units": "作者定义的 Blender 无量纲单位，不表示真实尺寸",
+      "material_s_range": [
+        -1.7,
+        1.7
+      ],
+      "author_defined_gauge_s_range": [
+        -1.0625,
+        1.0625
+      ],
+      "axial_intervals": 64,
+      "width_intervals": 32,
+      "thickness_intervals": 4,
+      "section_shape": "矩形截面",
+      "fracture_s": -0.35,
+      "jaw_center_z": [
+        -1.65,
+        1.65
+      ],
+      "jaw_depth": 0.3,
+      "guide_x": [
+        -1.55,
+        1.55
+      ],
+      "guide_y": 0.5,
+      "guide_radius_or_half_width": 0.095,
+      "upper_beam_initial_size": [
+        3.5,
+        0.8,
+        0.27
+      ],
+      "lower_beam_size": [
+        3.5,
+        0.8,
+        0.26
+      ],
+      "upper_load_rod_radius_length": [
+        0.2,
+        0.7
+      ],
+      "lower_load_rod_radius_length": [
+        0.2,
+        0.65
+      ],
+      "jaw_width": 1.1,
+      "jaw_height": 0.56
+    },
+    "materials": {
+      "specimen_metallic": 0.48,
+      "specimen_roughness": 0.32,
+      "fracture_color_multiplier": 0.65,
+      "fracture_roughness": 0.84
+    },
+    "animation": {
+      "kind": "ductile",
+      "event_frame": 585,
+      "ramp_start_frame": 435,
+      "preloaded_at_first_frame": false,
+      "local_axial_stretch_amplitude": 0.54,
+      "uniform_component": 0.035,
+      "local_gaussian_sigma": 0.32,
+      "width_thickness_scale": "1/sqrt(local axial stretch)",
+      "event_opening": 0.022,
+      "fracture_roughness_amplitude": 0.006,
+      "break_model": "整截面在一个帧边界同时分离；断后状态冻结",
+      "loading_interpolation": "smoothstep",
+      "state_reuse": "相同静止状态使用同内容帧，不改变输出总帧数"
+    },
+    "static_scene_details": {
+      "background_center": [
+        0,
+        1.8,
+        0
+      ],
+      "background_size": [
+        16,
+        0.15,
+        14
+      ],
+      "guide_length": 6.1,
+      "lower_beam_center": [
+        0,
+        0.25,
+        -2.65
+      ],
+      "upper_beam_initial_center": [
+        0,
+        0.25,
+        2.7
+      ],
+      "lower_rod_center": [
+        0,
+        0,
+        -2.22
+      ],
+      "upper_rod_initial_center": [
+        0,
+        0,
+        2.24
+      ],
+      "jaw_y_center_abs_formula": "initial_thickness/2 + 0.15",
+      "bolts_per_jaw": 2,
+      "bolt_x": [
+        -0.35,
+        0.35
+      ],
+      "bolt_y_formula": "-initial_thickness/2 - 0.315",
+      "bolt_radius": 0.065,
+      "bolt_depth": 0.08,
+      "cylinder_vertices": 32,
+      "jaw_edge_bevel": {
+        "box": 0.018,
+        "rounded": 0.105,
+        "wedge": 0.015,
+        "chamfer": 0.015
+      },
+      "box_and_cylinder_bevel_segments": 3,
+      "wedge_top_half_width_ratio": 0.36,
+      "chamfer_corner_ratio": 0.18,
+      "lower_beam_bevel": 0.05,
+      "upper_beam_bevel": 0.05,
+      "fixture_metallic_roughness": [
+        0.68,
+        0.34
+      ],
+      "jaw_metallic_roughness": [
+        0.72,
+        0.3
+      ],
+      "accent_metallic_roughness": [
+        0.55,
+        0.42
+      ],
+      "background_roughness": 0.95,
+      "fracture_metallic": 0.15,
+      "world_color": [
+        0.12,
+        0.12,
+        0.12
+      ],
+      "light_targets": [
+        [
+          0,
+          0,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0.1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "animation_formulas": {
+      "smoothstep": "clamp x to 0..1; x*x*(3-2*x)",
+      "axial_window": "1-smoothstep((abs(s)-1.05)/0.36)",
+      "initial_width": "gauge_width+(grip_width-gauge_width)*smoothstep((abs(s)-1.05)/0.45)",
+      "material_levels": "64 intervals, piecewise evenly spaced from -1.7 to fracture_s to +1.7, 32 each side",
+      "ductile_local_stretch": "1+load*(0.035+0.54*exp(-0.5*((s-fracture_s)/0.32)^2))*axial_window(s)",
+      "axial_position": "integrate local axial stretch over material levels using trapezoids; lower end fixed",
+      "upper_machine_lift": "actual upper specimen end displacement",
+      "rough_fracture_line": "amplitude*(0.65*sin(3.8*x+0.3)+0.35*sin(9*x)), x from -1 to +1 across width",
+      "roughness_spatial_fade": "1-smoothstep(abs(s-fracture_s)/0.34)",
+      "opening_spatial_fade": "symmetric half-opening at fracture; smoothstep fade to zero at the grip",
+      "event_transition": "frame >= event is separated; no intermediate opened columns",
+      "load": "zero for brittle; one for preloaded; otherwise smoothstep from ramp_start to event-1, then fixed"
+    },
+    "encoding": {
+      "format": "MP4",
+      "codec": "H.264/libx264",
+      "crf": 0,
+      "preset": "fast",
+      "pixel_format": "yuv420p",
+      "gop": 600,
+      "b_frames": 0,
+      "scene_cut": false,
+      "faststart": true,
+      "color_note": "YUV420 域无损编码；RGB 到 YUV420 有色度抽样"
+    }
+  },
+  "video": {
+    "filename": "ductile_04.mp4",
+    "sha256": "92607feeba3ca0e300dbf42ffa9e3edbcb47eaf807476430341b1d348f16cd22",
+    "bytes": 7578467,
+    "ffprobe": {
+      "codec_name": "h264",
+      "profile": "High 4:4:4 Predictive",
+      "width": 1280,
+      "height": 960,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "30/1",
+      "duration": "20.000000",
+      "nb_frames": "600",
+      "nb_read_frames": "600"
+    },
+    "full_decode": "passed",
+    "decoded_frames": 600
+  },
+  "event_mapping": {
+    "frame_numbering": "从0开始，首帧呈现时刻为0秒",
+    "fps": 30,
+    "simulation_event_frame": 585,
+    "simulation_event_seconds": 19.5,
+    "actual_mesh_final_disconnection_frame_in_video": 585,
+    "event_visibility": "事件帧前后均有视频画面",
+    "first_visually_confirmable_complete_separation_frame": null,
+    "clarification": "时间为动画采样与模拟定义，不代表真实断裂的物理持续时间。"
+  },
+  "预期标签": {
+    "材料类别": "金属",
+    "断裂结果": "完全断裂",
+    "单一主要破坏类别": "韧性断裂",
+    "断裂位置": "标距内",
+    "夹持异常": "无",
+    "拍摄异常": "无"
+  },
+  "核验标签": {
+    "材料类别": "合成设定；无法仅从画面核验材料牌号",
+    "断裂结果": "求值网格为两个连通体；画面可判性待用户确认",
+    "单一主要破坏类别": "待用户确认，未完成专用材料复核",
+    "断裂位置": "作者定义的标距内；视觉位置待用户确认",
+    "夹持异常": "对夹口几何做了有限检查，画面待用户确认",
+    "拍摄异常": "完整解码；画面待用户确认"
+  },
+  "observations": [
+    "仅保留15帧、0.5秒断后状态。",
+    "断口在画面中较细，能否在正常播放与下游缩放后清楚辨识完整分离，需用户判断。"
+  ],
+  "assumptions_and_unknowns": [
+    "没有对应真实实验视频或源时间映射。",
+    "材料牌号、本构曲线、微观破坏机制、真实载荷、物理尺寸及实验条件未知。",
+    "变形、断面、瞬时开口和断后静止均为作者设定的定性几何近似，不是物理求解。",
+    "30fps 的帧边界切换不证明真实材料的微观破坏时间。",
+    "下游缩放、抽帧和模型输入后的可见性未知。"
+  ],
+  "checks": {
+    "实际求值视频帧数": 600,
+    "片外前史帧": {
+      "frame": -1,
+      "components": 1,
+      "说明": "作者预设、只用于边界检查，不属于视频"
+    },
+    "断前连通体数量": [
+      1
+    ],
+    "断后连通体数量": [
+      2
+    ],
+    "断面完整切换帧": 585,
+    "事件帧断面对应点间隙范围": [
+      0.02199999988079071,
+      0.02199999988079071
+    ],
+    "断后几何哈希数量": 1,
+    "夹口端点到夹面误差绝对值最大": 1.4901161193847656e-08,
+    "试样至夹面最小平面净间隙": -1.4901161193847656e-08,
+    "四处传力连接的包围盒所有帧重叠": true,
+    "非共顶点三角面对自交数量最大": 0,
+    "材料段坐标范围": [
+      -0.7718749999999999,
+      0.09843749999999996
+    ],
+    "材料段前表面路径初长": 0.8703125290641199,
+    "断前相同材料段路径与基准长度之比": 1.4456430000187481,
+    "事件时相同材料段路径与基准长度之比": 1.4393626891615494,
+    "断前断面宽度与基准之比": 0.7968191128827568,
+    "断前断面宽厚乘积与基准之比": 0.6349206347557468,
+    "同一材料段体积相对基准的范围": [
+      0.9957056922192008,
+      1.0002113184944814
+    ],
+    "度量范围说明": "基准为片外第−1帧；对首帧已预加载的韧断01，基准本身已颈缩。材料段路径不含断口间隙；断面宽厚为几何包络。断后运动只覆盖视频中存在的帧。夹口净间隙为夹面平面范围，传力连接为包围盒。三角面检查排除共顶点面，且不覆盖试样与所有夹具部件间全部穿透。"
+  },
+  "independent_review": {
+    "limited_check": "独立协作者检查八配置的事件前后16个实际求值状态拓扑；对28个代表状态的夹口做1680点采样，范围有限。",
+    "limited_final_video_key_frames": "八条最终视频解码后的事件前后关键帧逐条检查，韧断02–04另检查加载中间帧；仅观察到细断线，完整分离可辨性待用户判断。",
+    "limited_final_video_playback": [
+      "brittle_01",
+      "brittle_04",
+      "ductile_02",
+      "ductile_03",
+      "ductile_04"
+    ],
+    "limited_label_record_check": "核对八条预期标签、事件帧与秒数、来源和未验收状态；不将作者预期等同视觉真值。",
+    "designated_review_workflow": "unavailable; not claimed as completed",
+    "scientific_accuracy_certified": false
+  },
+  "acceptance": {
+    "main_agent_final_video_viewed": true,
+    "user_visual_acceptance": false,
+    "user_label_acceptance": false,
+    "published_to_current": false,
+    "training_release": false
+  }
+}
