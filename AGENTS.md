@@ -23,7 +23,7 @@
 - 本仓库长期主线分支为 `main`，PR 审查主远程为 `github`（PR 流程基线 tag：`pr-workflow-baseline-20261120`）。
 - 每次提交按任务范围组织，说明验证结果，提交说明须包含“以上commit由ai生成。”。
 - 准入检查：`generator/*.py` Python 语法校验（`py_compile`）及 `datasets/`、`review/`、`generator/` JSON 合法性校验；涉及视频制作须完成实际画面核对。
-- 允许 Agent 推送自己的 `work/*` 任务分支并创建/更新 PR；**严禁** push `main`，**严禁**自行合并 PR，也不要在本地直接合并回主线。
+- 允许 Agent 推送自己的 `work/*` 任务分支并创建/更新 PR；**严禁** push `main`，**严禁**自行合并 PR，也不要在本地直接合并回主线；发布前须有对应授权。
 
 ### 4. 共享关键资源防并发规则（Draft PR 占坑）
 
@@ -38,7 +38,7 @@
   git push -u github work/<线名>
   gh pr create --draft --base main --title "wip(lock): <简述>" --body-file docs/changes/<日期>-<线名>-<对象>.md
   ```
-- **完工转正与自动释放**：修改完成并在变更单中追加「已完成 + 实际结果」后，推送到同一分支并将 Draft PR 转为 Ready for review（`gh pr ready`）；PR 合并或关闭后占坑自动释放。
+- **完工转正与自动释放**：修改完成并在变更单中追加「已完成 + 实际结果」后，推送到同一分支，按 `.github/PULL_REQUEST_TEMPLATE.md` 更新 PR 正文（`gh pr edit`）再转为 Ready for review（`gh pr ready`）；PR 合并或关闭后占坑自动释放。
 
 ---
 
