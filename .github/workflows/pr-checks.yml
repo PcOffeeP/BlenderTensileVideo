@@ -1,0 +1,58 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  syntax-and-json-check:
+    name: syntax-and-json-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check Python syntax for generator scripts
+        run: |
+          python3 - <<'PY'
+          import py_compile
+          from pathlib import Path
+
+          py_files = sorted(Path("generator").rglob("*.py"))
+          assert py_files, "No Python files found under generator/"
+          for path in py_files:
+              py_compile.compile(str(path), doraise=True)
+          print(f"✅ Compiled {len(py_files)} Python files under generator/ successfully.")
+          PY
+
+      - name: Validate JSON files under datasets/, review/, and generator/
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          json_files = []
+          for root in ("datasets", "review", "generator"):
+              base = Path(root)
+              if base.is_dir():
+                  json_files.extend(sorted(base.rglob("*.json")))
+
+          for path in json_files:
+              with path.open("r", encoding="utf-8") as f:
+                  json.load(f)
+          print(f"✅ Validated {len(json_files)} JSON files successfully.")
+          PY
